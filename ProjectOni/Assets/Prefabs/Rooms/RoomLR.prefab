@@ -75,11 +75,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420ce4e655d4bd64fb7f7816e8879896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rType: 1
+  rType: 0
   left: 1
   right: 1
   up: 0
   down: 0
+  dir: 4
+  roomTam: 10
   room: {fileID: 2286203201265067813}
 --- !u!1001 &2286203199742935436
 PrefabInstance:

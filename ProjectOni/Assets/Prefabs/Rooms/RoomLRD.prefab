@@ -78,6 +78,8 @@ MonoBehaviour:
   right: 1
   up: 0
   down: 1
+  dir: 4
+  roomTam: 10
   room: {fileID: 2302413596308664884}
 --- !u!1001 &2302413595974337941
 PrefabInstance:
