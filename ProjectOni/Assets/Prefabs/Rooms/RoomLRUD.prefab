@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1953684646350616706}
   - component: {fileID: 5743588168583315758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LRUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}

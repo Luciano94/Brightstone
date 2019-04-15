@@ -15,6 +15,7 @@ public class LevelGeneration : MonoBehaviour
     [SerializeField]private Transform roomsParent;
     [SerializeField]private Transform backStreetsParent;
     [SerializeField]private int roomCant = 10;
+    [SerializeField]private float mapX = 50, mapY = 50;
     
 
     private PoolManager poolM;
@@ -22,7 +23,6 @@ public class LevelGeneration : MonoBehaviour
     private Directions previusDirection;
     private int value;
     //Main Level
-    [SerializeField]private float mapX = 100, mapY = 100;
     private Transform[] rooms;
     private Room[] roomsInfo;
     //Room Info
@@ -31,6 +31,27 @@ public class LevelGeneration : MonoBehaviour
     private bool stopCreate = true;
     private int roomNumber;
     
+    public Transform[] Rooms{
+        get{return rooms;}
+    }
+
+    public Room[] RoomsInfo{
+        get{return roomsInfo;}
+    }
+
+    private static LevelGeneration instance;
+
+    public static LevelGeneration Instance {
+        get {
+            instance = FindObjectOfType<LevelGeneration>();
+            if(instance == null) {
+                GameObject go = new GameObject("LevelGeneration");
+                instance = go.AddComponent<LevelGeneration>();
+            }
+            return instance;
+        }
+    }
+
     void Start(){
         poolM = PoolManager.Instance;
         transform.position = startingPositions.position;
@@ -66,6 +87,7 @@ public class LevelGeneration : MonoBehaviour
             }
             SetEspecialRooms();
             stopCreate = true;
+            MapGeneration.Instance.StartGeneration = roomNumber;
         }
     }
 
