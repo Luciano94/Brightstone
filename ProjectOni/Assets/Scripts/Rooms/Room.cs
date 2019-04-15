@@ -25,10 +25,23 @@ public class Room: MonoBehaviour{
     public bool left, right, up, down;
     public Directions dir;
     public float roomTam;
-    public GameObject room;
-    public RoomBehaviour rBehaviour = RoomBehaviour.Normal;
+    public SpriteRenderer room;
+    private RoomBehaviour rBehaviour;
 
     private void Awake() {
         rBehaviour = RoomBehaviour.Normal;
     }
+
+    public RoomBehaviour RBehaviour{
+        set{
+            if(value == RoomBehaviour.Exit)
+                room.color = Color.red;
+            if(value == RoomBehaviour.Boss)
+                room.color = Color.green;
+            if(value == RoomBehaviour.Start)
+                room.color = Color.blue;
+            rBehaviour = value;
+        }
+    }
+
 }

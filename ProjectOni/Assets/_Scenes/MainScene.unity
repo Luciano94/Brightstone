@@ -219,8 +219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -10}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -50, y: -50}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &137971166
 MonoBehaviour:
@@ -475,6 +475,8 @@ MonoBehaviour:
   roomsParent: {fileID: 899085312}
   backStreetsParent: {fileID: 1528942329}
   roomCant: 10
+  mapX: 50
+  mapY: 50
 --- !u!1 &1367350926
 GameObject:
   m_ObjectHideFlags: 0

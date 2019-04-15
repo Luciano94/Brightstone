@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum Directions
 {
@@ -24,11 +22,9 @@ public class LevelGeneration : MonoBehaviour
     private Directions previusDirection;
     private int value;
     //Main Level
+    [SerializeField]private float mapX = 100, mapY = 100;
     private Transform[] rooms;
     private Room[] roomsInfo;
-    //BackStreets
-    private List<Transform> backRooms;
-    private List<Room> backRoomsInfo;
     //Room Info
     private float roomTam;
     private bool stopGeneration=false;
@@ -37,23 +33,24 @@ public class LevelGeneration : MonoBehaviour
     
     void Start(){
         poolM = PoolManager.Instance;
-        backRooms = new List<Transform>();
-        backRoomsInfo = new List<Room>();
         transform.position = startingPositions.position;
+
         /*create first room */
         GameObject go = Instantiate(poolM.GetOneExitRoom(), transform.position, Quaternion.identity);
         go.transform.parent = roomsParent;
         directions = go.GetComponent<Room>().dir;
         previusDirection = oppositeDirection(directions);
+
         /*Init rooms and rooms info arrays */
         roomNumber = 0;
-        rooms = new Transform[roomCant];
-        roomsInfo = new Room[roomCant];
+        rooms = new Transform[roomCant*3];
+        roomsInfo = new Room[roomCant*3];
+
         /*fill the arrays whith the first room */
         rooms[roomNumber] = go.transform;
         roomsInfo[roomNumber]= go.GetComponent<Room>();
         roomTam = roomsInfo[roomNumber].roomTam;
-        roomsInfo[roomNumber].rBehaviour = RoomBehaviour.Start;
+        roomsInfo[roomNumber].RBehaviour = RoomBehaviour.Start;
         roomNumber++;
     }
 
@@ -73,18 +70,10 @@ public class LevelGeneration : MonoBehaviour
     }
 
     private void SetEspecialRooms(){
-        int bossRoom = Random.Range(0, backRoomsInfo.Count);
-        int exitRoom = Random.Range(0, backRoomsInfo.Count);
-        int index = 0;
-        foreach (Transform r in backRooms){
-            if(index == bossRoom){
-                r.gameObject.GetComponent<Room>().rBehaviour = RoomBehaviour.Boss;
-            }
-            if(index == exitRoom){
-                r.gameObject.GetComponent<Room>().rBehaviour = RoomBehaviour.Exit;
-            }
-            index++;
-        }
+        int bossRoom = Random.Range(roomCant, roomNumber);
+        int exitRoom = Random.Range(roomCant, roomNumber);
+        roomsInfo[bossRoom].RBehaviour = RoomBehaviour.Boss;
+        roomsInfo[exitRoom].RBehaviour = RoomBehaviour.Exit;        
     }
 
     private void Move(){
@@ -120,7 +109,6 @@ public class LevelGeneration : MonoBehaviour
         if(roomNumber < roomCant){
             value = Random.Range(0,14);
             GetNextDirection();
-            roomNumber++;
         }
         if(roomNumber == roomCant){
             stopGeneration = true;
@@ -160,12 +148,14 @@ public class LevelGeneration : MonoBehaviour
     }
 
     private void CreateBackStreet(){
-        if(CanCreate(transform) && CanCreateBackStreet(transform)){
+        if(CanCreate(transform)){
             GameObject go = Instantiate(poolM.GetOneExitRoom(previusDirection), 
             transform.position, Quaternion.identity);
-            backRooms.Add(go.transform);
-            backRoomsInfo.Add(go.GetComponent<Room>());
+            rooms[roomNumber] = go.transform;
+            roomsInfo[roomNumber]= go.GetComponent<Room>();
+            roomTam = roomsInfo[roomNumber].roomTam;
             go.transform.parent = backStreetsParent;
+            roomNumber++;
         }
     }
 
@@ -173,30 +163,42 @@ public class LevelGeneration : MonoBehaviour
         int value = Random.Range(0,10);
         switch (previusDirection){
             case Directions.Down:
-                if(value < 4)
-                    return RoomsTypes.LRD;
-                else
-                    return RoomsTypes.LRUD;
+                if(transform.position.y < mapY)
+                    if(value < 4)
+                        return RoomsTypes.LRD;
+                    else
+                        return RoomsTypes.LRUD;
+                else CreateBackStreet();
+            break;
             case Directions.Up:
-                if(value < 4)
-                    return RoomsTypes.LRU;
-                else
-                    return RoomsTypes.LRUD;
+                if(transform.position.y > -mapY)
+                    if(value < 4)
+                        return RoomsTypes.LRU;
+                    else
+                        return RoomsTypes.LRUD;
+                else CreateBackStreet();
+            break;
             case Directions.Left:
-                if(value < 4)
-                    return RoomsTypes.LRD;
-                else
-                    return RoomsTypes.LRU;
+                if(transform.position.x < mapX)
+                    if(value < 4)
+                        return RoomsTypes.LRD;
+                    else
+                        return RoomsTypes.LRU;
+                else CreateBackStreet();
+            break;
             case Directions.Right:
-                if(value < 4)
-                    return RoomsTypes.LRU;
-                else
-                    return RoomsTypes.LRD;
+                if(transform.position.x > -mapX)
+                    if(value < 4)
+                        return RoomsTypes.LRU;
+                    else
+                        return RoomsTypes.LRD;
+                else CreateBackStreet();
+            break;
         }
         return RoomsTypes.LRUD;
     }
     
-    private void GetNextDirection(){
+    private void GetNextDirection(){ 
         switch (roomsInfo[roomNumber].rType){
             case RoomsTypes.LR:
                 switch (previusDirection){
@@ -290,6 +292,7 @@ public class LevelGeneration : MonoBehaviour
             break;
         }
         previusDirection = oppositeDirection(directions);
+        roomNumber++;
     }
 
     private Directions oppositeDirection(Directions dir){
@@ -316,12 +319,5 @@ public class LevelGeneration : MonoBehaviour
         return true;
     }
 
-    private bool CanCreateBackStreet(Transform tr){
-        foreach (Transform t in backRooms){
-            if(t.position == tr.position){
-                return false;
-            }
-        }
-        return true;
-    }
+
 }
