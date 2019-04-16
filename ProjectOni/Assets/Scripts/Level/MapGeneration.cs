@@ -53,6 +53,6 @@ public class MapGeneration : MonoBehaviour
     }
 
     private void CameraPos(){
-        Camera.main.transform.position = new Vector3(0,0,-1);
+        Camera.main.transform.position = new Vector3(0,0,-15);
     }
 }
