@@ -48,7 +48,7 @@ MonoBehaviour:
   left: 0
   right: 0
   up: 0
-  down: 1
+  down: 0
   dir: 3
   roomTam: 10
   room: {fileID: 6221723816461597671}

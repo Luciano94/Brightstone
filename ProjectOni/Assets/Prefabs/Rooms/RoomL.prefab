@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rType: 4
-  left: 1
+  left: 0
   right: 0
   up: 0
   down: 0

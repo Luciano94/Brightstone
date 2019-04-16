@@ -46,6 +46,8 @@ public class MapGeneration : MonoBehaviour
                 GameObject go = Instantiate(mapManager.GetRoomOfType(roomsInfo[i].rType), 
                              transform.position, Quaternion.identity);
                 go.transform.parent = mapParent;
+                go.GetComponent<Room>().SetLinks(roomsInfo[i].left,roomsInfo[i].right, 
+                                                roomsInfo[i].up,roomsInfo[i].down);
             }
             CameraPos();
             startGeneration = false;

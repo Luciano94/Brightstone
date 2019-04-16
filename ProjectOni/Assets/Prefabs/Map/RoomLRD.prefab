@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rType: 1
-  left: 1
-  right: 1
+  left: 0
+  right: 0
   up: 0
-  down: 1
+  down: 0
   dir: 4
   roomTam: 10
   room: {fileID: 5565244714148732179}

@@ -44,4 +44,11 @@ public class Room: MonoBehaviour{
         }
     }
 
+    public void SetLinks(bool l,bool r,bool u,bool d){
+        left = l;
+        right = r;
+        up = u;
+        down = d;
+    }
+
 }
