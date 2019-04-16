@@ -15,7 +15,6 @@ public class LevelGeneration : MonoBehaviour
     [SerializeField]private Transform roomsParent;
     [SerializeField]private Transform backStreetsParent;
     [SerializeField]private int roomCant = 10;
-    [SerializeField]private float mapX = 50, mapY = 50;
     
 
     private PoolManager poolM;
@@ -122,15 +121,18 @@ public class LevelGeneration : MonoBehaviour
 
     private void Create(){
         if(CanCreate(transform)){
-            GameObject go = Instantiate(poolM.GetRoomOfType(GetNextTypeOfRoom()), transform.position, Quaternion.identity);
+            GameObject go = Instantiate(poolM.GetRoomOfType(GetNextTypeOfRoom()), 
+                                        transform.position, Quaternion.identity);
             rooms[roomNumber] = go.transform;
             roomsInfo[roomNumber]= go.GetComponent<Room>();
             roomTam = roomsInfo[roomNumber].roomTam;
             go.transform.parent = roomsParent;
+            GenerateLinks(roomsInfo[roomNumber],roomsInfo[roomNumber-1]);
         }
         if(roomNumber < roomCant){
             value = Random.Range(0,14);
             GetNextDirection();
+            roomNumber++;
         }
         if(roomNumber == roomCant){
             stopGeneration = true;
@@ -139,44 +141,111 @@ public class LevelGeneration : MonoBehaviour
     }
 
     private void ResolvePositionOfBackStreet(int room){
-        if(roomsInfo[room].left){
-            directions = Directions.Left;
-            previusDirection = oppositeDirection(directions);
-            transform.position = rooms[room].position;
-            Move();
-            CreateBackStreet();
-        }
-        if(roomsInfo[room].down){
-            directions = Directions.Down;
-            previusDirection = oppositeDirection(directions);
-            transform.position = rooms[room].position;
-            Move();
-            CreateBackStreet();
-        }
-        if(roomsInfo[room].right){
-            directions = Directions.Right;
-            previusDirection = oppositeDirection(directions);
-            transform.position = rooms[room].position;
-            Move();
-            CreateBackStreet();
-        }
-        if(roomsInfo[room].up){
-            directions = Directions.Up;
-            previusDirection = oppositeDirection(directions);
-            transform.position = rooms[room].position;
-            Move();
-            CreateBackStreet();
+        switch(roomsInfo[room].rType){
+            case RoomsTypes.LR:
+                if(!roomsInfo[room].left){
+                    directions = Directions.Left;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].right){
+                    directions = Directions.Right;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+            break;
+            case RoomsTypes.LRD:
+                if(!roomsInfo[room].left){
+                    directions = Directions.Left;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].right){
+                    directions = Directions.Right;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].down){
+                    directions = Directions.Down;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+            break;
+            case RoomsTypes.LRU:
+                if(!roomsInfo[room].left){
+                    directions = Directions.Left;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].right){
+                    directions = Directions.Right;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].up){
+                    directions = Directions.Up;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+            break;
+            case RoomsTypes.LRUD:
+                if(!roomsInfo[room].left){
+                    directions = Directions.Left;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].right){
+                    directions = Directions.Right;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].up){
+                    directions = Directions.Up;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+                if(!roomsInfo[room].down){
+                    directions = Directions.Down;
+                    previusDirection = oppositeDirection(directions);
+                    transform.position = rooms[room].position;
+                    Move();
+                    CreateBackStreet(roomsInfo[room]);
+                }
+            break;
         }
     }
 
-    private void CreateBackStreet(){
+    private void CreateBackStreet(Room prevRoom){
         if(CanCreate(transform)){
             GameObject go = Instantiate(poolM.GetOneExitRoom(previusDirection), 
-            transform.position, Quaternion.identity);
+                                        transform.position, Quaternion.identity);
             rooms[roomNumber] = go.transform;
             roomsInfo[roomNumber]= go.GetComponent<Room>();
             roomTam = roomsInfo[roomNumber].roomTam;
             go.transform.parent = backStreetsParent;
+            GenerateLinks(roomsInfo[roomNumber],prevRoom);
             roomNumber++;
         }
     }
@@ -185,37 +254,25 @@ public class LevelGeneration : MonoBehaviour
         int value = Random.Range(0,10);
         switch (previusDirection){
             case Directions.Down:
-                if(transform.position.y < mapY)
                     if(value < 4)
                         return RoomsTypes.LRD;
                     else
                         return RoomsTypes.LRUD;
-                else CreateBackStreet();
-            break;
             case Directions.Up:
-                if(transform.position.y > -mapY)
                     if(value < 4)
                         return RoomsTypes.LRU;
                     else
                         return RoomsTypes.LRUD;
-                else CreateBackStreet();
-            break;
             case Directions.Left:
-                if(transform.position.x < mapX)
                     if(value < 4)
                         return RoomsTypes.LRD;
                     else
                         return RoomsTypes.LRU;
-                else CreateBackStreet();
-            break;
             case Directions.Right:
-                if(transform.position.x > -mapX)
-                    if(value < 4)
-                        return RoomsTypes.LRU;
-                    else
-                        return RoomsTypes.LRD;
-                else CreateBackStreet();
-            break;
+                if(value < 4)
+                    return RoomsTypes.LRU;
+                else
+                    return RoomsTypes.LRD;
         }
         return RoomsTypes.LRUD;
     }
@@ -314,7 +371,6 @@ public class LevelGeneration : MonoBehaviour
             break;
         }
         previusDirection = oppositeDirection(directions);
-        roomNumber++;
     }
 
     private Directions oppositeDirection(Directions dir){
@@ -341,5 +397,34 @@ public class LevelGeneration : MonoBehaviour
         return true;
     }
 
-
+    private void GenerateLinks(Room actRoom, Room prevRoom){
+        switch(previusDirection){
+            case Directions.Down:
+                actRoom.down = true;
+            break;
+            case Directions.Up:
+                actRoom.up = true;
+            break;
+            case Directions.Left:
+                actRoom.left = true;
+            break;
+            case Directions.Right:
+                actRoom.right = true;
+            break;
+        }
+        switch(directions){
+            case Directions.Down:
+                prevRoom.down = true;
+            break;
+            case Directions.Up:
+                prevRoom.up = true;
+            break;
+            case Directions.Left:
+                prevRoom.left = true;
+            break;
+            case Directions.Right:
+                prevRoom.right = true;
+            break;
+        }
+    }
 }

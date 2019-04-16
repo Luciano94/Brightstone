@@ -47,7 +47,7 @@ MonoBehaviour:
   rType: 6
   left: 0
   right: 0
-  up: 1
+  up: 0
   down: 0
   dir: 2
   roomTam: 10
