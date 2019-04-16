@@ -3,6 +3,7 @@
 public class PlayerMovement : MonoBehaviour{
 
     [SerializeField]private float speed;
+    [SerializeField]private float rotSpeed;
     [SerializeField]private float atckTime;
     [SerializeField]private GameObject weapon;
     [SerializeField]private GameObject player;
@@ -24,17 +25,18 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     private void Rotation(){
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical") * -1;
+        rotH = Input.GetAxis("Horizontal");
+        rotV = Input.GetAxis("Vertical") * -1;
 
-        var angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
+        var angle = Mathf.Atan2(rotH, rotV) * Mathf.Rad2Deg;
 
-        angle = Mathf.Lerp(player.transform.eulerAngles.z , angle, Time.time);
+        angle = Mathf.Lerp(player.transform.eulerAngles.z , angle,rotSpeed * Time.time);
         player.transform.rotation =  Quaternion.Euler(0,0,angle);
     }
+
     private void Movement(){
-        horizontal = Input.GetAxis("Horizontal")*speed*Time.deltaTime;
-        vertical = Input.GetAxis("Vertical")*speed*Time.deltaTime;
+        horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(horizontal,vertical,0);
     }

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  rotSpeed: 1.5
   atckTime: 0.1
   weapon: {fileID: 4555218928698328546}
   player: {fileID: 6276584208348804366}
@@ -115,8 +116,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7506809460513346352, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
 --- !u!1 &6276584208348804366 stripped
 GameObject:
