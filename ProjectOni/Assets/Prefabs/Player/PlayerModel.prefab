@@ -88,9 +88,8 @@ GameObject:
   - component: {fileID: 7506809460513346349}
   - component: {fileID: 7506809460513346350}
   - component: {fileID: 7506809460513346351}
-  - component: {fileID: 7506809460513346352}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,18 +155,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7506809460513346352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7506809460513346353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e763909477ebd45a602521dac3bf51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  atckTime: 0.1
-  weapon: {fileID: 1882678237}
