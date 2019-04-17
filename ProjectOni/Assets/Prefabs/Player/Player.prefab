@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6276584207758848109}
   - component: {fileID: 6276584207758848108}
+  - component: {fileID: 786400172}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -46,9 +47,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotSpeed: 1.5
-  atckTime: 0.1
-  weapon: {fileID: 4555218928698328546}
   player: {fileID: 6276584208348804366}
+--- !u!114 &786400172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276584207758848107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd5286c69381b64d859b6c66dafe69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 4555218928698328546}
+  atckTime: 0.1
+  parryTime: 0.2
 --- !u!1001 &4555218929500579391
 PrefabInstance:
   m_ObjectHideFlags: 0
