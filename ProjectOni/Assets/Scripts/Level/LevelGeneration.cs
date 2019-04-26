@@ -131,8 +131,10 @@ public class LevelGeneration : MonoBehaviour
         }
         if(roomNumber < roomCant){
             value = Random.Range(0,14);
-            GetNextDirection();
-            roomNumber++;
+            if(roomsInfo[roomNumber] != null){
+                GetNextDirection();
+                roomNumber++;
+            }
         }
         if(roomNumber == roomCant){
             stopGeneration = true;
