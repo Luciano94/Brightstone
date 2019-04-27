@@ -1,15 +1,35 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class ExperienceTest : MonoBehaviour
 {
-    private PlayerExperience pExp;
+    private ExperienceMarket expMrk;
+    private PlayerStats plStats;
+    [SerializeField]private bool isHit = false;
 
     private void Start() {
-        pExp = gameObject.GetComponent<PlayerExperience>();
+        expMrk = ExperienceMarket.Instance;
+        plStats = GameManager.Instance.playerSts;
     }
+
     private void Update() {
-        if(Input.GetButton("Fire3")){
-            pExp.Experience = 10;
+        if(isHit)
+            LevelUp();
+    }
+
+    private void LevelUp(){
+        if(Input.GetButtonUp("Fire3")){
+            expMrk.LifeUp();
         }
+        if(Input.GetButtonUp("Jump")){
+            expMrk.AtkUp();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        isHit = true;
+    }
+    
+    private void OnTriggerExit(Collider other) {
+        isHit = false;
     }
 }
