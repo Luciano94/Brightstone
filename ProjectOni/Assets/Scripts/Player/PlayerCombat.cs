@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerCombat : MonoBehaviour
-{
+public class PlayerCombat : MonoBehaviour{
     [Header("Attack")]
     [SerializeField]private GameObject weapon;
     [SerializeField]private float atckTime;

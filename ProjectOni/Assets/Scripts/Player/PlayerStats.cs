@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlayerStats : MonoBehaviour{
+    
     private float currentLife = 100;
     private float life = 100;
     private float atkDmg = 1;
