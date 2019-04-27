@@ -19,11 +19,11 @@ public class PlayerMovement : MonoBehaviour{
     private void Rotation(){
         rotH = Input.GetAxis("Horizontal");
         rotV = Input.GetAxis("Vertical") * -1;
-
-        var angle = Mathf.Atan2(rotH, rotV) * Mathf.Rad2Deg;
-
-        angle = Mathf.Lerp(player.transform.eulerAngles.z , angle,rotSpeed * Time.time);
-        player.transform.rotation =  Quaternion.Euler(0,0,angle);
+        if(rotH != 0 || rotV != 0){
+            var angle = Mathf.Atan2(rotH, rotV) * Mathf.Rad2Deg;
+            angle = Mathf.Lerp(player.transform.eulerAngles.z , angle,rotSpeed * Time.time);
+            player.transform.rotation =  Quaternion.Euler(0,0,angle);
+        }
     }
 
     private void Movement(){
