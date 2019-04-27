@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6276584207758848109}
   - component: {fileID: 6276584207758848108}
   - component: {fileID: 786400172}
+  - component: {fileID: 6306704886763780479}
+  - component: {fileID: 786400176}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -46,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rotSpeed: 1.5
+  rotSpeed: 5
   player: {fileID: 6276584208348804366}
 --- !u!114 &786400172
 MonoBehaviour:
@@ -63,6 +65,34 @@ MonoBehaviour:
   weapon: {fileID: 4555218928698328546}
   atckTime: 0.1
   parryTime: 0.2
+--- !u!114 &6306704886763780479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276584207758848107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32316642e9b823048a415903452ff3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 100
+--- !u!114 &786400176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276584207758848107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523f994ab0f25594f95e1274cbe9c114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvl: 1
+  currentExp: 0
+  requiredExp: 100
 --- !u!1001 &4555218929500579391
 PrefabInstance:
   m_ObjectHideFlags: 0
