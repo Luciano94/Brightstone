@@ -6,7 +6,7 @@ public class ActiveRoom : MonoBehaviour
 {
     private Transform activeRoom = null;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         if(activeRoom != null)
             ChangeLayer(0);
         
