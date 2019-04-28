@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 8767666440214113500}
-  atckTime: 1
+  atckTime: 0.2
   player: {fileID: 0}
 --- !u!114 &1592394171438056261
 MonoBehaviour:
