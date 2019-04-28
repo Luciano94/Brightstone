@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6276584207758848109}
   - component: {fileID: 6276584207758848108}
   - component: {fileID: 786400172}
-  - component: {fileID: 3045867531870881782}
   - component: {fileID: 5555938806466054037}
   - component: {fileID: 786400179}
   - component: {fileID: 8318096352524940248}
@@ -69,19 +68,6 @@ MonoBehaviour:
   weapon: {fileID: 4555218928698328546}
   atckTime: 0.1
   parryTime: 0.2
---- !u!114 &3045867531870881782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6276584207758848107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8a479802fecb640be9c3d11b66b5d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isHit: 0
 --- !u!114 &5555938806466054037
 MonoBehaviour:
   m_ObjectHideFlags: 0

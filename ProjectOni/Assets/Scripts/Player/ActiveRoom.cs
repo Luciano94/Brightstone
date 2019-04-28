@@ -7,13 +7,15 @@ public class ActiveRoom : MonoBehaviour
     private Transform activeRoom = null;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(activeRoom != null)
-            ChangeLayer(0);
-        
-        activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
-        ChangeLayer(9);
-        Debug.Log(activeRoom.gameObject.layer);
-        Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
+        if(other.gameObject.layer != 11){
+            if(activeRoom != null)
+                ChangeLayer(0);
+            
+            activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
+            ChangeLayer(9);
+            Debug.Log(activeRoom.gameObject.layer);
+            Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
+        }
     }
 
     private void ChangeLayer(int layer){

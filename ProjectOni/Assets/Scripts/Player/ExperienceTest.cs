@@ -17,19 +17,21 @@ public class ExperienceTest : MonoBehaviour
     }
 
     private void LevelUp(){
-        if(Input.GetButtonUp("Fire3")){
+        if(Input.GetKeyUp(KeyCode.Keypad1)){
             expMrk.LifeUp();
         }
-        if(Input.GetButtonUp("Jump")){
+        if(Input.GetKeyUp(KeyCode.Keypad2)){
             expMrk.AtkUp();
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         isHit = true;
+        UIManager.Instance.EnterMarket();
     }
     
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit2D(Collider2D other) {
         isHit = false;
+        UIManager.Instance.ExitMarket();
     }
 }
