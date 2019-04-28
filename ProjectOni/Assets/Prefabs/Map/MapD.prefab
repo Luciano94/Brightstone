@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1280999278410758850}
   - component: {fileID: 2484023281161153373}
   - component: {fileID: 5672185635473270710}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallRU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 2588082489942271505}
   - component: {fileID: 313404949765667537}
   - component: {fileID: 6595276351429418986}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DoorR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,8 +193,8 @@ GameObject:
   - component: {fileID: 2718898306087316497}
   - component: {fileID: 5866206029724251052}
   - component: {fileID: 3290504840494932602}
-  m_Layer: 9
-  m_Name: RoomD
+  m_Layer: 0
+  m_Name: MapD
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 8629035249894866701}
   - component: {fileID: 1562461492728392631}
   - component: {fileID: 9013815618852155380}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallUL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 5424176730535312888}
   - component: {fileID: 4105723693137381264}
   - component: {fileID: 6646654957177196533}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DoorD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 3535316745016902889}
   - component: {fileID: 8600066188379150376}
   - component: {fileID: 6183536485036527028}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallLU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 8293808028666820965}
   - component: {fileID: 1930249465264564227}
   - component: {fileID: 6300079889786246686}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallUR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 1846670297690241389}
   - component: {fileID: 6917607571819223667}
   - component: {fileID: 7056036104541884978}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallRD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 2482493002724493176}
   - component: {fileID: 1850848197477988341}
   - component: {fileID: 2424194970646485424}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DoorU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,8 @@ GameObject:
   - component: {fileID: 1051412795033664782}
   - component: {fileID: 6463057554079891938}
   - component: {fileID: 9009340224739109328}
-  m_Layer: 9
+  - component: {fileID: 8835104528092624029}
+  m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,11 +896,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8057462062283912162}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -1}
+--- !u!114 &8835104528092624029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057462062283912162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95bff607ffbb6d40894e7c4dacefb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePadre: {fileID: 2718898306087316497}
 --- !u!1 &8197012264952415727
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +926,7 @@ GameObject:
   - component: {fileID: 6066357305027272071}
   - component: {fileID: 4109435513676633033}
   - component: {fileID: 6973986782624214716}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallDR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1017,7 @@ GameObject:
   - component: {fileID: 8368755780875341624}
   - component: {fileID: 820897589220314617}
   - component: {fileID: 8710638082477563012}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1108,7 @@ GameObject:
   - component: {fileID: 943909348805817631}
   - component: {fileID: 9044076519190344094}
   - component: {fileID: 8147349218668995714}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DoorL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1199,7 @@ GameObject:
   - component: {fileID: 2142933404500956702}
   - component: {fileID: 7905139904704573769}
   - component: {fileID: 6607835692535020291}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WallDL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
