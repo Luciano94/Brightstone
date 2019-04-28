@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerCombat : MonoBehaviour
-{
+public class PlayerCombat : MonoBehaviour{
     [Header("Attack")]
     [SerializeField]private GameObject weapon;
     [SerializeField]private float atckTime;
@@ -15,12 +12,16 @@ public class PlayerCombat : MonoBehaviour
     private float actParryTime;
     private bool isParryng;
 
+    private PlayerStats plStat;
+
     private void Awake() {
         actAtkTime = atckTime;
-        isAttacking = false;
+        isAttacking = true;
 
         actParryTime = parryTime;
         isParryng = false;
+
+        plStat = GameManager.Instance.playerSts;
     }
 
     void Update(){
@@ -28,6 +29,11 @@ public class PlayerCombat : MonoBehaviour
             Attack();
         if(!isAttacking)
             Parry();
+
+        if(Input.GetKeyUp(KeyCode.R)){
+            plStat.Experience = 100;
+            UIManager.Instance.ExpUpdate();
+        }
     }
 
     private void Attack(){
@@ -38,7 +44,7 @@ public class PlayerCombat : MonoBehaviour
                 weapon.SetActive(true);
             }
         }
-        if(isAttacking && actAtkTime > atckTime){
+        if(isAttacking && actAtkTime >= atckTime){
             weapon.SetActive(false);
             isAttacking = false;
         }else
@@ -54,7 +60,7 @@ public class PlayerCombat : MonoBehaviour
                 weapon.transform.Rotate(0,0,90);
             }
         }
-        if(isParryng && actParryTime > parryTime){
+        if(isParryng && actParryTime >= parryTime){
             weapon.SetActive(false);
             weapon.transform.Rotate(0,0,-90);
             isParryng = false;
