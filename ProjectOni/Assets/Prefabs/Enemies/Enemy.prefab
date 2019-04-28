@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3142141347888250692}
   - component: {fileID: 6152008538549597274}
   - component: {fileID: 5300433679770175938}
+  - component: {fileID: 1592394171438056261}
   - component: {fileID: 5214262294038708786}
   - component: {fileID: 2813292159449229467}
   m_Layer: 10
@@ -96,6 +97,18 @@ MonoBehaviour:
   weapon: {fileID: 8767666440214113500}
   atckTime: 1
   player: {fileID: 0}
+--- !u!114 &1592394171438056261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476885487686456383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fee5b615ce55543bdeeece77a9f2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &5214262294038708786
 Rigidbody2D:
   serializedVersion: 4

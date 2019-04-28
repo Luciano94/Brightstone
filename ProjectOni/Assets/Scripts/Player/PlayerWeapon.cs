@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWeapon : MonoBehaviour {
+public class PlayerWeapon : MonoBehaviour {
     PlayerStats playerStats;
     EnemyStats enemyStats;
 
@@ -12,7 +12,7 @@ public class EnemyWeapon : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        playerStats.Life = enemyStats.AtkDmg;
-        UIManager.Instance.lifeUpdate();
+        Debug.Log(playerStats.AtkDmg + "ontrigger");
+        enemyStats.Life = playerStats.AtkDmg;
     }
 }

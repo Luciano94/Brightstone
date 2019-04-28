@@ -3,8 +3,8 @@
 public class PlayerStats : MonoBehaviour{
     
     private float currentLife = 100;
-    private float life = 100;
-    private float atkDmg = 1;
+    [SerializeField] float life = 100.0f;
+    [SerializeField] float atkDmg = 25.0f;
 
     private float experience = 0;
 
