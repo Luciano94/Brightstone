@@ -11,14 +11,16 @@ public class PlayerStats : MonoBehaviour{
     public float Life{
         get{return currentLife;}
         set{
-            if(value < 0)
+            /*if(value < 0)
                 if(currentLife + value <= 0){
                     //te moriste wey
                 }else currentLife += value;
             else
                 if(currentLife + value > life)
                     currentLife = life;
-                else currentLife += value;
+                else currentLife += value;*/
+            if(life > 0)
+                life -= value;
         }
     }
 
