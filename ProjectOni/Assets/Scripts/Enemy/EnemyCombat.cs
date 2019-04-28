@@ -8,6 +8,8 @@ public class EnemyCombat : MonoBehaviour{
     [SerializeField] private float atckTime;
     private float actAtkTime;
     private bool isAttacking;
+    private float fireRate = 1.0f;
+    private float timeSinceAtk = 0.0f;
 
     [SerializeField] private Transform player;
     private BoxCollider boxCollider;
@@ -27,17 +29,23 @@ public class EnemyCombat : MonoBehaviour{
 
     private void Attack()
     {
-        Vector3 diff = player.position - transform.position;
-
-        if (diff.magnitude < 2.0f)
+        timeSinceAtk -= Time.deltaTime;
+        if (timeSinceAtk < 0.0f)
         {
-            if (!isAttacking)
+            Vector3 diff = player.position - transform.position;
+
+            if (diff.magnitude < 2.0f)
             {
-                isAttacking = true;
-                actAtkTime = 0.0f;
-                weapon.SetActive(true);
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    actAtkTime = 0.0f;
+                    weapon.SetActive(true);
+                }
             }
+            timeSinceAtk = fireRate;
         }
+
         if (isAttacking && actAtkTime > atckTime)
         {
             weapon.SetActive(false);
@@ -45,5 +53,8 @@ public class EnemyCombat : MonoBehaviour{
         }
         else
             actAtkTime += Time.deltaTime;
+
+            
+            
     }
 }
