@@ -18,10 +18,12 @@ public class UIManager : MonoBehaviour{
     [SerializeField]private Text expTxt;
     [SerializeField]private Text lifeTxt;
     [SerializeField]private Text atkTxt;
+    [SerializeField]private Text mrkTxt;
     private GameManager gameM;
 
     private void Awake() {
         gameM = GameManager.Instance;
+        mrkTxt.enabled = false;
     }
 
     public void ExpUpdate(){
@@ -36,5 +38,13 @@ public class UIManager : MonoBehaviour{
     public void atkUpdate(){
         atkTxt.text = "AtkDmg: " + gameM.playerSts.AtkDmg.ToString();
         expTxt.text = "Exp: " + gameM.playerSts.Experience.ToString();   
+    }
+
+    public void EnterMarket(){
+        mrkTxt.enabled = true;
+    }
+
+    public void ExitMarket(){
+        mrkTxt.enabled = false;
     }
 }
