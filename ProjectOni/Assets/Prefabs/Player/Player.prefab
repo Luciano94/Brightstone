@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!61 &1123212163
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4555218928698328546}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6276584207758848107
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523f994ab0f25594f95e1274cbe9c114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 100
+  atkDmg: 25
 --- !u!114 &786400179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,15 +184,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 101601448096767822, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1882678237, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7506809460513346349, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -230,6 +249,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 101601448096767822, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1882678240, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
@@ -237,6 +261,14 @@ PrefabInstance:
     - target: {fileID: 1882678240, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882678237, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882678237, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}

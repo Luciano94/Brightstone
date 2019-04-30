@@ -456,7 +456,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3584
+    m_Bits: 32256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -766,38 +766,6 @@ Transform:
   m_Father: {fileID: 2126348687}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1123212159 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4555218928698328546, guid: ffdd525add8a97447bd10942bf690db1,
-    type: 3}
-  m_PrefabInstance: {fileID: 6276584208199939008}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1123212163
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123212159}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1143670114
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +954,7 @@ Light:
   m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3584
+    m_Bits: 32256
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -1536,11 +1504,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 786400179}
-    - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
-        type: 3}
-      propertyPath: atckTime
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5771b711ff6d3e4f8c2ee6d2831842d, type: 3}
 --- !u!1001 &6276584208199939008
@@ -1609,16 +1572,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555938806466054037, guid: ffdd525add8a97447bd10942bf690db1,
-        type: 3}
-      propertyPath: atkDmg
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2781029851747844617, guid: ffdd525add8a97447bd10942bf690db1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}

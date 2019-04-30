@@ -12,7 +12,10 @@ public class PlayerWeapon : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log(playerStats.AtkDmg + "ontrigger");
-        enemyStats.Life = playerStats.AtkDmg;
+        if(collision.gameObject.layer == 14 &&
+            GameManager.Instance.PlayerIsAttack){
+            Debug.Log(playerStats.AtkDmg + "ontrigger");
+            enemyStats.Life = playerStats.AtkDmg;
+        }
     }
 }

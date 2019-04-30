@@ -29,4 +29,12 @@ public class GameManager : MonoBehaviour
     public EnemyStats enemySts {
         get { return enemy.GetComponent<EnemyStats>(); }
     }
+
+    public bool PlayerIsParry{
+        get{ return player.GetComponent<PlayerCombat>().isParry; }
+    }
+    
+    public bool PlayerIsAttack{
+        get{ return player.GetComponent<PlayerCombat>().isAttack; }
+    }
 }

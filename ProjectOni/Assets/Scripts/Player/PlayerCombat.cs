@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour{
-    [Header("Attack")]
     [SerializeField]private GameObject weapon;
+    
+    [Header("Attack")]
     [SerializeField]private float atckTime;
     private float actAtkTime;
     private bool isAttacking;
@@ -12,16 +13,26 @@ public class PlayerCombat : MonoBehaviour{
     private float actParryTime;
     private bool isParryng;
 
+    public bool isParry{
+        get{return isParryng;}
+    }
+
+    public bool isAttack{
+        get{return isAttacking;}
+    }
+
     private PlayerStats plStat;
 
     private void Awake() {
+
         actAtkTime = atckTime;
-        isAttacking = true;
+        isAttacking = false;
 
         actParryTime = parryTime;
         isParryng = false;
 
         plStat = GameManager.Instance.playerSts;
+
     }
 
     void Update(){
@@ -57,12 +68,10 @@ public class PlayerCombat : MonoBehaviour{
                 isParryng = true;
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
-                weapon.transform.Rotate(0,0,90);
             }
         }
         if(isParryng && actParryTime >= parryTime){
             weapon.SetActive(false);
-            weapon.transform.Rotate(0,0,-90);
             isParryng = false;
         }else
             actParryTime += Time.deltaTime; 

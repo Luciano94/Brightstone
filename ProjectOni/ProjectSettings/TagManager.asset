@@ -17,10 +17,10 @@ TagManager:
   - Map
   - Player
   - Market
-  - 
-  - 
-  - 
-  - 
+  - PlayerWeapon
+  - EnemyWeapon
+  - Enemy
+  - MapHide
   - 
   - 
   - 

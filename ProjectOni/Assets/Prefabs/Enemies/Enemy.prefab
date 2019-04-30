@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2133090242933827583}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: SwordPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1592394171438056261}
   - component: {fileID: 5214262294038708786}
   - component: {fileID: 2813292159449229467}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fee5b615ce55543bdeeece77a9f2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 50
+  atkDmg: 10
 --- !u!50 &5214262294038708786
 Rigidbody2D:
   serializedVersion: 4
@@ -167,7 +169,7 @@ GameObject:
   - component: {fileID: 2572856049372406319}
   - component: {fileID: 7160279322325835485}
   - component: {fileID: 6668168965197518396}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +249,7 @@ GameObject:
   - component: {fileID: 1905123888161924619}
   - component: {fileID: 7676399944632850406}
   - component: {fileID: 1486178626}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

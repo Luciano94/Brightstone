@@ -18,8 +18,6 @@ public class EnemyCombat : MonoBehaviour{
     {
         actAtkTime = atckTime;
         isAttacking = false;
-
-        boxCollider = GetComponentInChildren<Transform>().GetComponentInChildren<BoxCollider>();
     }
 
     void Update()

@@ -7,9 +7,9 @@ public class ActiveRoom : MonoBehaviour
     private Transform activeRoom = null;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.layer != 11){
+        if(other.gameObject.layer == 15){
             if(activeRoom != null)
-                ChangeLayer(0);
+                ChangeLayer(15);
             
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             ChangeLayer(9);
