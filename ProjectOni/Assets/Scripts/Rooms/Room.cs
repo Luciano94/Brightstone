@@ -50,5 +50,4 @@ public class Room: MonoBehaviour{
         up = u;
         down = d;
     }
-
 }

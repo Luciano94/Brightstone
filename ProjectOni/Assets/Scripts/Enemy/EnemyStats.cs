@@ -9,13 +9,25 @@ public class EnemyStats : MonoBehaviour {
 
     private float experience = 0;
 
+    
+    GameObject myRoom;
+
+    public GameObject MyRoom{
+        get{return myRoom;}
+        set{myRoom = value;}
+    }
+
+
     public float Life {
         get { return life; }
         set {
             if (life > 0)
                 life -= value;
-            else
-                gameObject.SetActive(false);
+            else{
+                myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();
+                Destroy(gameObject);
+            }
+                //gameObject.SetActive(false);
         }
     }
 

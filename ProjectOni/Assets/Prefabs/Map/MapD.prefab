@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 2718898306087316497}
   - component: {fileID: 5866206029724251052}
   - component: {fileID: 3290504840494932602}
+  - component: {fileID: 7484805269340512155}
   m_Layer: 15
   m_Name: MapD
   m_TagString: Untagged
@@ -289,6 +290,24 @@ MonoBehaviour:
   doorU: {fileID: 8000371765635677680}
   doorL: {fileID: 8837728665457753847}
   doorR: {fileID: 1493480196602599459}
+--- !u!114 &7484805269340512155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718898306087316494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350ab2bc038c9964884f8457118bf768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesCant: 5
+  haveMarket: 0
+  marketPrefab: {fileID: 4167642003479408697, guid: 731cb2a5ce432724da888a942a8a8aae,
+    type: 3}
+  enemyPrefab: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+    type: 3}
 --- !u!1 &3621084919210120527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1048,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!1 &8197012264952415727
 GameObject:

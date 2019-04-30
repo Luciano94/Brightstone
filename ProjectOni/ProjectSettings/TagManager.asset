@@ -21,8 +21,8 @@ TagManager:
   - EnemyWeapon
   - Enemy
   - MapHide
-  - 
-  - 
+  - ObjHide
+  - EnemyHide
   - 
   - 
   - 

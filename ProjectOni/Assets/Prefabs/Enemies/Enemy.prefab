@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  player: {fileID: 0}
+  player: {x: 0, y: 0, z: 0}
   sword: {fileID: 4093589057318080765}
 --- !u!114 &5300433679770175938
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 8767666440214113500}
   atckTime: 0.2
-  player: {fileID: 0}
+  player: {x: 0, y: 0, z: 0}
 --- !u!114 &1592394171438056261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa3d0ec65075864bba4464d86dffec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStats: {fileID: 1592394171438056261}
 --- !u!33 &1905123888161924619
 MeshFilter:
   m_ObjectHideFlags: 0

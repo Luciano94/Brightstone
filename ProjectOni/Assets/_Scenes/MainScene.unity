@@ -341,7 +341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'AtkDmg: 1'
+  m_Text: 'AtkDmg: 25'
 --- !u!222 &189593489
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1439,6 +1439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1504,6 +1509,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 786400179}
+    - target: {fileID: 8767666440214113500, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093589057318080765, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715005263628820139, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5771b711ff6d3e4f8c2ee6d2831842d, type: 3}
 --- !u!1001 &6276584208199939008

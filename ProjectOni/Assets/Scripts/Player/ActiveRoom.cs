@@ -8,12 +8,15 @@ public class ActiveRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 15){
-            if(activeRoom != null)
+            if(activeRoom != null){
                 ChangeLayer(15);
-            
+            }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
+            if(!activeRoom.GetComponent<RoomsBehaviour>().Complete){
+                activeRoom.GetComponent<RoomsBehaviour>().ActiveEnemies();
+                activeRoom.GetComponent<DoorManager>().ActiveRoom();
+            }
             ChangeLayer(9);
-            Debug.Log(activeRoom.gameObject.layer);
             Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
         }
     }

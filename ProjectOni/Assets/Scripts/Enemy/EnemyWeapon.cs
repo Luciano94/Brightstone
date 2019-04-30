@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour {
     PlayerStats playerStats;
-    EnemyStats enemyStats;
+    [SerializeField]EnemyStats enemyStats;
     GameManager gameM;
-
     private void Awake() {
         playerStats = GameManager.Instance.playerSts;
-        enemyStats = GameManager.Instance.enemySts;
         gameM = GameManager.Instance;
     }
 

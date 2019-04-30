@@ -5,17 +5,21 @@ using UnityEngine;
 public class EnemyCombat : MonoBehaviour{
     [Header("Attack")]
     [SerializeField] private GameObject weapon;
+    public EnemyWeapon Weapon{
+        get{return weapon.GetComponent<EnemyWeapon>();}
+    }
     [SerializeField] private float atckTime;
     private float actAtkTime;
     private bool isAttacking;
     private float fireRate = 1.0f;
     private float timeSinceAtk = 0.0f;
 
-    [SerializeField] private Transform player;
+    [SerializeField] private Vector3 player;
     private BoxCollider boxCollider;
 
     private void Awake()
     {
+        player = GameManager.Instance.PlayerPos;
         actAtkTime = atckTime;
         isAttacking = false;
     }
@@ -30,7 +34,7 @@ public class EnemyCombat : MonoBehaviour{
         timeSinceAtk -= Time.deltaTime;
         if (timeSinceAtk < 0.0f)
         {
-            Vector3 diff = player.position - transform.position;
+            Vector3 diff = player - transform.position;
 
             if (diff.magnitude < 2.0f)
             {

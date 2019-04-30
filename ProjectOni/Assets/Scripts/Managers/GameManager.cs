@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField]private GameObject player;
-    [SerializeField]private GameObject enemy;
+   // [SerializeField]private GameObject enemy;
 
     public Vector3 PlayerPos{
         get{return player.transform.position;}
@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
         get{return player.GetComponent<PlayerStats>();}
     }
 
-    public EnemyStats enemySts {
-        get { return enemy.GetComponent<EnemyStats>(); }
-    }
+    /*public EnemyStats enemySts {
+       // get { return enemy.GetComponent<EnemyStats>(); }
+    }*/
 
     public bool PlayerIsParry{
         get{ return player.GetComponent<PlayerCombat>().isParry; }
