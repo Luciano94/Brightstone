@@ -6,7 +6,7 @@ public class EnemyWeapon : MonoBehaviour {
     PlayerStats playerStats;
     [SerializeField]EnemyStats enemyStats;
     GameManager gameM;
-    private void Awake() {
+    private void Start() {
         playerStats = GameManager.Instance.playerSts;
         gameM = GameManager.Instance;
     }

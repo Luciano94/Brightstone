@@ -58,7 +58,6 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     void Update(){
-        Debug.Log(dir);
         if(!isParryng && isAttacking){
             AttackMove();
             switch (atkAnim.State)
@@ -78,11 +77,6 @@ public class PlayerCombat : MonoBehaviour{
             Attack();
         if(!isAttacking)
             Parry();
-
-        if(Input.GetKeyUp(KeyCode.R)){
-            plStat.Experience = 100;
-            UIManager.Instance.ExpUpdate();
-        }
     }
 
     private void Attack(){
@@ -133,7 +127,6 @@ public class PlayerCombat : MonoBehaviour{
             needMove = false;
         }else{
             Vector2 hola = weapon.transform.position - transform.position;
-            Debug.Log("Hola: " + hola);
             dir = hola.normalized;
         }
     }

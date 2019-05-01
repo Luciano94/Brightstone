@@ -17,7 +17,7 @@ public class EnemyCombat : MonoBehaviour{
     [SerializeField] private Vector3 player;
     private BoxCollider boxCollider;
 
-    private void Awake()
+    private void Start()
     {
         player = GameManager.Instance.PlayerPos;
         actAtkTime = atckTime;

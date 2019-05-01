@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomsBehaviour : MonoBehaviour{
 
     [SerializeField]private int enemiesCant = 5;
-    [SerializeField]private bool haveMarket = true;
+    [SerializeField]private bool haveMarket = false;
     [SerializeField]private GameObject marketPrefab;
     [SerializeField]private GameObject enemyPrefab;
 
@@ -19,7 +19,12 @@ public class RoomsBehaviour : MonoBehaviour{
         get{return isComplete;}
     }
 
+    public bool HaveMarket{
+        get{return haveMarket;}
+    }
+
     private void Start() {
+        enemiesCant = Random.Range(0, enemiesCant);
         if(enemiesCant > 0){
             enemiesLeft = enemiesCant;
             enemies = new List<GameObject>();
@@ -31,15 +36,31 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
                 enemies[i].SetActive(false);
             }
+        }else{
+            haveMarket = true;
         }
 
-        if(haveMarket)
+        if(haveMarket){
             market = Instantiate(marketPrefab, transform.position, transform.rotation);
+            EnemyDeath();
+        }
     }
 
     public void ActiveEnemies(){
-        foreach (GameObject enemy in enemies){
-            enemy.SetActive(true);
+        if(!haveMarket){
+            foreach (GameObject enemy in enemies){
+                enemy.SetActive(true);
+            }
+        }else{
+            SwitchMarket();
+        }
+    }
+
+    public void SwitchMarket(){
+        if(market.layer == 11){
+            market.layer = 16;
+        }else{
+            market.layer = 11;
         }
     }
 
@@ -48,7 +69,6 @@ public class RoomsBehaviour : MonoBehaviour{
         if(enemiesCant <= 0){
             GetComponent<DoorManager>().DesactiveRoom();
             isComplete = true;
-            Debug.Log(enemiesCant);
         }
     }
 

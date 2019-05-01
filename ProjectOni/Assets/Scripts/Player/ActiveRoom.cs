@@ -5,6 +5,8 @@ using UnityEngine;
 public class ActiveRoom : MonoBehaviour
 {
     private Transform activeRoom = null;
+    private RoomsBehaviour roomsBehaviour;
+    private DoorManager doorManager;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 15){
@@ -12,9 +14,11 @@ public class ActiveRoom : MonoBehaviour
                 ChangeLayer(15);
             }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
-            if(!activeRoom.GetComponent<RoomsBehaviour>().Complete){
-                activeRoom.GetComponent<RoomsBehaviour>().ActiveEnemies();
-                activeRoom.GetComponent<DoorManager>().ActiveRoom();
+            roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
+            doorManager = activeRoom.GetComponent<DoorManager>();
+            if(!roomsBehaviour.Complete){
+                roomsBehaviour.ActiveEnemies();
+                doorManager.ActiveRoom();
             }
             ChangeLayer(9);
             Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
@@ -25,6 +29,9 @@ public class ActiveRoom : MonoBehaviour
         foreach (Transform child in activeRoom){
             if(child.gameObject.layer != layer)
                 child.gameObject.layer = layer;
+        }
+        if(roomsBehaviour.HaveMarket){
+            roomsBehaviour.SwitchMarket();
         }
     }
 }

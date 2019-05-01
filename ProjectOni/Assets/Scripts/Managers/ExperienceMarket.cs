@@ -22,11 +22,14 @@ public class ExperienceMarket : MonoBehaviour
 
     private PlayerStats playerStats;
 
+    public string Required{
+        get{return (level + " / " + requiredExp);}
+    }
+
     private void Awake() {
         playerStats = GameManager.Instance.playerSts;
         level = 1;
         requiredExp = 100;
-        Debug.Log(level + " / " + requiredExp);
     }
 
     public void LifeUp(){
@@ -36,7 +39,7 @@ public class ExperienceMarket : MonoBehaviour
             requiredExp += requiredExp * level;
             playerStats.LifeStat = 50;
             UIManager.Instance.lifeUpdate();
-            Debug.Log(level + " / " + requiredExp);
+            UIManager.Instance.marketUPdate();
         }
     }
 
@@ -45,9 +48,9 @@ public class ExperienceMarket : MonoBehaviour
             playerStats.Experience = -requiredExp;
             level ++;
             requiredExp += requiredExp * level;
-            playerStats.AtkDmg = 1;
+            playerStats.AtkDmg = 5;
             UIManager.Instance.atkUpdate();
-            Debug.Log(level + " / " + requiredExp);
+            UIManager.Instance.marketUPdate();
         }
     }
 }

@@ -1,22 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyStats : MonoBehaviour {
-    //private float currentLife = 100;
     [SerializeField] float life = 50;
     [SerializeField] float atkDmg = 10.0f;
-
-    private float experience = 0;
-
-    
+    private float experience = 100;
     GameObject myRoom;
 
     public GameObject MyRoom{
         get{return myRoom;}
         set{myRoom = value;}
     }
-
 
     public float Life {
         get { return life; }
@@ -25,9 +18,10 @@ public class EnemyStats : MonoBehaviour {
                 life -= value;
             else{
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();
+                GameManager.Instance.playerSts.Experience = experience;
+                UIManager.Instance.ExpUpdate();
                 Destroy(gameObject);
             }
-                //gameObject.SetActive(false);
         }
     }
 

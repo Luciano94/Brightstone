@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour{
     [SerializeField]private Text lifeTxt;
     [SerializeField]private Text atkTxt;
     [SerializeField]private Text mrkTxt;
+    [SerializeField]private Text requiredTxt;
     private GameManager gameM;
 
     private void Awake() {
@@ -42,9 +43,16 @@ public class UIManager : MonoBehaviour{
 
     public void EnterMarket(){
         mrkTxt.enabled = true;
+        requiredTxt.text = ExperienceMarket.Instance.Required;
+        requiredTxt.enabled = true;
+    }
+
+    public void marketUPdate(){
+        requiredTxt.text = ExperienceMarket.Instance.Required;
     }
 
     public void ExitMarket(){
         mrkTxt.enabled = false;
+        requiredTxt.enabled = false;
     }
 }

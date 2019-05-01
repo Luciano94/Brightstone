@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
 
-    private void Awake() {
+    private void Start() {
         player = GameManager.Instance.PlayerPos;
     }
 

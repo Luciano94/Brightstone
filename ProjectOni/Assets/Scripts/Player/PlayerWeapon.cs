@@ -15,7 +15,6 @@ public class PlayerWeapon : MonoBehaviour {
         if(collision.gameObject.layer == 14 &&
             GameManager.Instance.PlayerIsAttack){
             enemyStats = collision.gameObject.GetComponent<EnemyStats>();
-            Debug.Log(playerStats.AtkDmg + "ontrigger");
             enemyStats.Life = playerStats.AtkDmg;
         }
     }
