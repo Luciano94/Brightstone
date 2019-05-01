@@ -44,8 +44,8 @@ public class PlayerCombat : MonoBehaviour{
 
         actAtkTime = 0;
         isAttacking = false;
-        atkAnim.enterFrames = 0.4f;
-        atkAnim.activeFrames = 0.4f;
+        atkAnim.enterFrames = ((20 * atckTime)/ 100);
+        atkAnim.activeFrames = ((40 * atckTime) / 100);
         atkAnim.exitFrames = atckTime;
         atkAnim.State = 0;
 
@@ -112,11 +112,11 @@ public class PlayerCombat : MonoBehaviour{
 
     private void ExitState(){
         actAtkTime += Time.deltaTime;
+        weapon.SetActive(false);
         if(actAtkTime >= atckTime){
             atkAnim.State = 3;
             actAtkTime = 0;
             actualCombo =0;
-            weapon.SetActive(false);
             isAttacking = false;
         }
     }

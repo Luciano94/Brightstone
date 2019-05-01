@@ -1515,7 +1515,7 @@ PrefabInstance:
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
@@ -1568,7 +1568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 786400172, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
       propertyPath: atckTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8318096352524940248, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}

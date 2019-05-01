@@ -48,7 +48,6 @@ public class MapGeneration : MonoBehaviour
                 go.transform.parent = mapParent;
                 Rooms[i] = go;
                 SetLinks(i);
-
             }
             CameraPos();
             startGeneration = false;

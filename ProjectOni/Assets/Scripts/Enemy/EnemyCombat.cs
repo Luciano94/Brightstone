@@ -31,11 +31,12 @@ public class EnemyCombat : MonoBehaviour{
 
     private void Attack()
     {
+        player = GameManager.Instance.PlayerPos;
         timeSinceAtk -= Time.deltaTime;
         if (timeSinceAtk < 0.0f)
         {
-            Vector3 diff = player - transform.position;
-
+            Vector2 diff = player - transform.position;
+            Debug.Log(diff);
             if (diff.magnitude < 2.0f)
             {
                 if (!isAttacking)
