@@ -17,10 +17,14 @@ public class ExperienceTest : MonoBehaviour
     }
 
     private void LevelUp(){
-        if(Input.GetKeyUp(KeyCode.Keypad1)){
+        if(Input.GetKeyUp(KeyCode.Keypad1) ||
+            Input.GetButtonUp("Jump")){
+            
             expMrk.LifeUp();
         }
-        if(Input.GetKeyUp(KeyCode.Keypad2)){
+        if(Input.GetKeyUp(KeyCode.Keypad2) ||
+            Input.GetButtonUp("Fire3")){
+            
             expMrk.AtkUp();
         }
     }

@@ -14,13 +14,14 @@ public class EnemyMovement : MonoBehaviour {
 
     private void Update() {
         player = GameManager.Instance.PlayerPos;
-        Movement();
-        Rotation();
+        if(!GetComponent<EnemyCombat>().IsAttacking){
+            Movement();
+            Rotation();
+        }
     }
 
     private void Rotation() {
         
-
         Vector3 diff = player - transform.position;
 
         Vector3 dir = diff.normalized;

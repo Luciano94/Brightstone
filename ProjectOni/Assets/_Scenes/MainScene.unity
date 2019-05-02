@@ -619,9 +619,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1 - lifeUp(in market)
+  m_Text: '1 / Y - lifeUp(in market)
 
-    2 - atkUp(in market)'
+    2 / X - atkUp(in market)'
 --- !u!222 &746988631
 CanvasRenderer:
   m_ObjectHideFlags: 0
