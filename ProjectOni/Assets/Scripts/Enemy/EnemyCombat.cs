@@ -4,60 +4,53 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour{
     [Header("Attack")]
+    [SerializeField]private float animTime = 1.0f;
     [SerializeField] private GameObject weapon;
-    public EnemyWeapon Weapon{
-        get{return weapon.GetComponent<EnemyWeapon>();}
+    private float standTime;
+    private float currentTime = 0.0f;
+    private bool isChasing = false;
+    private bool isAttaking = false;
+
+    public bool IsAttacking{
+        get{return isAttaking;}
     }
-    [SerializeField] private float atckTime;
-    private float actAtkTime;
-    private bool isAttacking;
-    private float fireRate = 1.0f;
-    private float timeSinceAtk = 0.0f;
 
-    [SerializeField] private Vector3 player;
-    private BoxCollider boxCollider;
+    private Vector2 diff;
+    private Vector3 player;
 
-    private void Start()
-    {
+    private void Start() {
+        standTime = animTime * 0.5f;
+        isChasing = true;
+    }
+
+    private void Update() {
         player = GameManager.Instance.PlayerPos;
-        actAtkTime = atckTime;
-        isAttacking = false;
-    }
-
-    void Update()
-    {
-        Attack();
-    }
-
-    private void Attack()
-    {
-        player = GameManager.Instance.PlayerPos;
-        timeSinceAtk -= Time.deltaTime;
-        if (timeSinceAtk < 0.0f)
-        {
-            Vector2 diff = player - transform.position;
-            Debug.Log(diff);
-            if (diff.magnitude < 2.0f)
-            {
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                    actAtkTime = 0.0f;
-                    weapon.SetActive(true);
-                }
-            }
-            timeSinceAtk = fireRate;
+        if(isChasing){
+            Chase();
         }
+        if(isAttaking){
+            Attack();
+        }
+    }
 
-        if (isAttacking && actAtkTime > atckTime)
-        {
+    private void Chase(){
+        diff = player - transform.position;
+        if(diff.magnitude < 2.0f){
+            isChasing = false;
+            isAttaking = true;
+        }
+    }
+
+    private void Attack(){
+        currentTime += Time.deltaTime;
+        if(currentTime > standTime){
+            weapon.SetActive(true);
+        }
+        if(currentTime > animTime){
             weapon.SetActive(false);
-            isAttacking = false;
+            isAttaking = false;
+            isChasing = true;
+            currentTime = 0.0f;
         }
-        else
-            actAtkTime += Time.deltaTime;
-
-            
-            
     }
 }

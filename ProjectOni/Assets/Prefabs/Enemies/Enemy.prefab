@@ -95,8 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 8767666440214113500}
-  atckTime: 0.2
-  player: {x: 0, y: 0, z: 0}
 --- !u!114 &1592394171438056261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +129,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &2813292159449229467
 BoxCollider2D:
   m_ObjectHideFlags: 0
