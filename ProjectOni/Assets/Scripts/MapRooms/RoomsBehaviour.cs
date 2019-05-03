@@ -42,6 +42,7 @@ public class RoomsBehaviour : MonoBehaviour{
 
         if(haveMarket){
             market = Instantiate(marketPrefab, transform.position, transform.rotation);
+            market.transform.position += new Vector3(0,0,-1);
             EnemyDeath();
         }
     }

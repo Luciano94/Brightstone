@@ -41,9 +41,9 @@ public class UIManager : MonoBehaviour{
         expTxt.text = "Exp: " + gameM.playerSts.Experience.ToString();   
     }
 
-    public void EnterMarket(){
+    public void EnterMarket(int layer){
         mrkTxt.enabled = true;
-        requiredTxt.text = ExperienceMarket.Instance.Required;
+        requiredTxt.text = ExperienceMarket.Instance.Required + "   " + layer;
         requiredTxt.enabled = true;
     }
 
