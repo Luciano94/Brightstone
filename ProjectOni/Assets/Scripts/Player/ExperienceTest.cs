@@ -31,7 +31,7 @@ public class ExperienceTest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         isHit = true;
-        UIManager.Instance.EnterMarket(other.gameObject.layer);
+        UIManager.Instance.EnterMarket();
     }
     
     private void OnTriggerExit2D(Collider2D other) {

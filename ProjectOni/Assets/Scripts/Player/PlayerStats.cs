@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour{
     
@@ -11,8 +12,12 @@ public class PlayerStats : MonoBehaviour{
     public float Life{
         get{return currentLife;}
         set{
-            if(life > 0)
+            if(life > 0){
                 life -= value;
+                if(life <= 0){
+                    SceneManager.LoadScene(0);
+                }
+            }
         }
     }
 
