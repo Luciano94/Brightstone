@@ -48,13 +48,9 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     private void Movement(){
-        horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-
         mov = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         mov *= (speed * Time.deltaTime);
-
-
+        
         transform.Translate(mov);
     }
 }

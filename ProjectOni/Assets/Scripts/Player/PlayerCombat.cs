@@ -45,7 +45,7 @@ public class PlayerCombat : MonoBehaviour{
         actAtkTime = 0;
         isAttacking = false;
         atkAnim.enterFrames = ((20 * atckTime)/ 100);
-        atkAnim.activeFrames = ((40 * atckTime) / 100);
+        atkAnim.activeFrames = ((30 * atckTime) / 100);
         atkAnim.exitFrames = atckTime;
         atkAnim.State = 0;
 
@@ -146,15 +146,3 @@ public class PlayerCombat : MonoBehaviour{
             actParryTime += Time.deltaTime; 
     }
 }
-
-/*            if(!isAttacking){
-                isAttacking = true;
-                actAtkTime = 0.0f;
-                weapon.SetActive(true);
-            }
-        }
-        if(isAttacking && actAtkTime > ){
-            weapon.SetActive(false);
-            isAttacking = false;
-        }else
-            actAtkTime += Time.deltaTime;  */

@@ -5,6 +5,8 @@ public class EnemyStats : MonoBehaviour {
     [SerializeField] float atkDmg = 10.0f;
     private float experience = 100;
     GameObject myRoom;
+    public EnemyType enemyType;
+    MonoBehaviour[] movSet; 
 
     public GameObject MyRoom{
         get{return myRoom;}
@@ -31,5 +33,9 @@ public class EnemyStats : MonoBehaviour {
             if (value > 0)
                 atkDmg += value;
         }
+    }
+
+    public void Hit(){
+        EnemyManager.Instance.PlusPercent(enemyType);
     }
 }

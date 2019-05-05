@@ -13,6 +13,7 @@ public class EnemyWeapon : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(!gameM.PlayerIsParry){
+            enemyStats.Hit();
             playerStats.Life = enemyStats.AtkDmg;
             UIManager.Instance.lifeUpdate();
         }

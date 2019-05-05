@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private float speed;
     [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
+    private Vector3 diff;
+    private Vector3 dir;
 
     private void Start() {
         player = GameManager.Instance.PlayerPos;
@@ -21,19 +23,16 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     private void Rotation() {
+        diff = player - transform.position;
+        dir = diff.normalized;
         
-        Vector3 diff = player - transform.position;
-
-        Vector3 dir = diff.normalized;
-
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
         sword.transform.rotation = Quaternion.Euler(0, 0, angle + 90.0f);
     }
 
     private void Movement() {
 
-        Vector3 diff = player - transform.position;
+        diff = player - transform.position;
         float dist = diff.magnitude;
         if(dist > 1.5f)
             transform.Translate(diff.normalized * speed * Time.deltaTime); 

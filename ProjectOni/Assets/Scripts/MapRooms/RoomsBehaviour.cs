@@ -8,6 +8,9 @@ public class RoomsBehaviour : MonoBehaviour{
     [SerializeField]private bool haveMarket = false;
     [SerializeField]private GameObject marketPrefab;
     [SerializeField]private GameObject enemyPrefab;
+    [SerializeField]private Transform[] enemySpawns;
+
+    private Vector3 pos;
 
     private List<GameObject> enemies = null;
     private GameObject market = null;   
@@ -29,9 +32,7 @@ public class RoomsBehaviour : MonoBehaviour{
             enemiesLeft = enemiesCant;
             enemies = new List<GameObject>();
             for(int i = 0; i < enemiesCant; i++){
-                float x = Random.Range(transform.position.x,transform.position.x + 5);
-                float y = Random.Range(transform.position.y,transform.position.y + 5);
-                Vector3 pos = new Vector3(x,y,transform.position.z);
+                pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
                 enemies.Add( Instantiate(enemyPrefab, pos, transform.rotation));
                 enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
                 enemies[i].SetActive(false);
