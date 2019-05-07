@@ -23,7 +23,7 @@ public class ExperienceMarket : MonoBehaviour
     private PlayerStats playerStats;
 
     public string Required{
-        get{return (level + " / " + requiredExp);}
+        get{return ("Level: " + level + " \n Experience: " + requiredExp);}
     }
 
     private void Awake() {
