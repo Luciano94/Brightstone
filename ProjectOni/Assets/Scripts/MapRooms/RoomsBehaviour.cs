@@ -10,6 +10,8 @@ public class RoomsBehaviour : MonoBehaviour{
     [SerializeField]private GameObject enemyPrefab;
     [SerializeField]private Transform[] enemySpawns;
 
+    private Node node;
+
     private Vector3 pos;
 
     private List<GameObject> enemies = null;
@@ -22,29 +24,41 @@ public class RoomsBehaviour : MonoBehaviour{
         get{return isComplete;}
     }
 
+    public Node Node{
+        set{
+            node = value;
+            setRoom();
+        }
+    }
+
     public bool HaveMarket{
         get{return haveMarket;}
     }
 
-    private void Start() {
-        enemiesCant = Random.Range(0, enemiesCant);
-        if(enemiesCant > 0){
-            enemiesLeft = enemiesCant;
-            enemies = new List<GameObject>();
-            for(int i = 0; i < enemiesCant; i++){
-                pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
-                enemies.Add( Instantiate(enemyPrefab, pos, transform.rotation));
-                enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
-                enemies[i].SetActive(false);
-            }
-        }else{
-            haveMarket = true;
-        }
+    private void setRoom() {
+        enemies = new List<GameObject>();
 
-        if(haveMarket){
-            market = Instantiate(marketPrefab, transform.position, transform.rotation);
-            market.transform.position += new Vector3(0,0,-1);
-            EnemyDeath();
+        switch(node.Behaviour){
+            case NodeBehaviour.Normal:
+                enemiesCant = Random.Range(1, enemiesCant);
+                enemiesLeft = enemiesCant;
+                for(int i = 0; i < enemiesCant; i++){
+                    pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
+                    enemies.Add( Instantiate(enemyPrefab, pos, transform.rotation));
+                    enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
+                    enemies[i].SetActive(false);
+                }
+            break;
+            case NodeBehaviour.Market:
+                haveMarket = true;
+                market = Instantiate(marketPrefab, transform.position, transform.rotation);
+                market.transform.position += new Vector3(0,0,-1);
+                isComplete = true;
+            break;
+            case NodeBehaviour.MediumBoss:
+            break;
+            case NodeBehaviour.Boss:
+            break;
         }
     }
 

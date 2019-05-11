@@ -10,7 +10,7 @@ public class Generate : MonoBehaviour{
     [Header("Logic Generation")]
     [SerializeField]int nodeSize = 20;
     [SerializeField]int nodeQuantity = 2;
-    int nodeQ = 0;
+    int nodeQ = -1;
     Vector3 nextPos;
     Vector3 nullVec = new Vector3(-1,-1,-1);
 
@@ -21,6 +21,7 @@ public class Generate : MonoBehaviour{
     private void Start() {
         nodes = new List<Node>();
         CreateNode();
+        nodeQ++;
         nextPos = head.transform.position;
         state = 0;
     }
@@ -56,7 +57,13 @@ public class Generate : MonoBehaviour{
     }
 #region StateOne
     private void CreateNode(){
-       nodes.Add(new Node(head.transform.position, nodeSize)); 
+        Node n = new Node(head.transform.position, nodeSize);
+        if(nodeQ < 0){
+            n.SetBehaviour(NodeBehaviour.Market);
+        }else{
+            n.SetBehaviour(NodeBehaviour.Normal);
+        }
+        nodes.Add(n); 
     }
 
     private Vector3 GetNewPosition(){

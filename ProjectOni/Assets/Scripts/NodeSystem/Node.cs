@@ -39,6 +39,10 @@ public class Node{
         get{return position;}
     }
 
+    public NodeBehaviour Behaviour{
+        get{return nBehaviour;}
+    }
+
     public Node(Vector3 pos, int nSize){
         position = pos;
         nodeSize = nSize;
@@ -105,6 +109,7 @@ public class Node{
 
     public void setNode(GameObject go){
         node = go;
+        go.GetComponent<RoomsBehaviour>().Node = this;
         for (int i = 0; i < exits.Count; i++){
             exits[i].SetDoor(node.GetComponent<NodeExits>().GetDoor(exits[i].Pos));
             exits[i].OpenCloseDoor(false);
