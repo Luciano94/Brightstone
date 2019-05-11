@@ -69,7 +69,7 @@ public class RoomsBehaviour : MonoBehaviour{
     public void EnemyDeath(){
         enemiesCant--;
         if(enemiesCant <= 0){
-            GetComponent<DoorManager>().DesactiveRoom();
+//            GetComponent<DoorManager>().DesactiveRoom();
             isComplete = true;
         }
     }

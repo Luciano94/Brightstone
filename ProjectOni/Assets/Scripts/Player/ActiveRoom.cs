@@ -15,10 +15,10 @@ public class ActiveRoom : MonoBehaviour
             }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
-            doorManager = activeRoom.GetComponent<DoorManager>();
+            //doorManager = activeRoom.GetComponent<DoorManager>();
             if(!roomsBehaviour.Complete){
                 roomsBehaviour.ActiveEnemies();
-                doorManager.ActiveRoom();
+                //doorManager.ActiveRoom();
             }
             ChangeLayer(9);
             Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
