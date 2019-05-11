@@ -6,7 +6,7 @@ public class ActiveRoom : MonoBehaviour
 {
     private Transform activeRoom = null;
     private RoomsBehaviour roomsBehaviour;
-    private DoorManager doorManager;
+    private NodeExits doorManager;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 15){
@@ -15,10 +15,10 @@ public class ActiveRoom : MonoBehaviour
             }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
-            //doorManager = activeRoom.GetComponent<DoorManager>();
+            doorManager = activeRoom.GetComponent<NodeExits>();
             if(!roomsBehaviour.Complete){
                 roomsBehaviour.ActiveEnemies();
-                //doorManager.ActiveRoom();
+                doorManager.CloseDoors();
             }
             ChangeLayer(9);
             Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);

@@ -67,8 +67,8 @@ public class Node{
         get{return exitsTakes;}
     }
 
-    public int ExitsCount{
-        get{return exits.Count;}
+    public List<Exit> ExitsDoors{
+        get{return exits;}
     }
 
     public NodeType NodeType{

@@ -140,7 +140,7 @@ public class Generate : MonoBehaviour{
 #region StateThree
     private void Draw(){
         for (int i = 0; i < nodes.Count; i++){
-            nodes[i].setNode( DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position));
+            nodes[i].setNode( DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position, nodes[i].ExitsDoors));
         }
     }
 #endregion

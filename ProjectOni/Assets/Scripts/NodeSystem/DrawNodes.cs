@@ -37,7 +37,7 @@ public class DrawNodes : MonoBehaviour{
 
 
 
-    public GameObject DrawExitsNode(NodeType nType, Vector3 pos){
+    public GameObject DrawExitsNode(NodeType nType, Vector3 pos, List<Exit> exits){
         GameObject[] node;
         switch (nType)
         {
@@ -81,6 +81,8 @@ public class DrawNodes : MonoBehaviour{
                 node = nodeLRUD;
             break;
         }
-        return Instantiate(node[Random.Range(0,node.Length)], pos, Quaternion.identity);
+        GameObject go = Instantiate(node[Random.Range(0,node.Length)], pos, Quaternion.identity);
+        go.GetComponent<NodeExits>().SetExits = exits;
+        return go;
     }
 }
