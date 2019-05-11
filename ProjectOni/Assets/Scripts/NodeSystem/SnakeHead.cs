@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SnakeHead : MonoBehaviour{
-    float nodeSize = 20;
+    float nodeSize = 40;
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.B)){

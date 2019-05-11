@@ -36,14 +36,15 @@ public class PlayerMovement : MonoBehaviour{
         }else{
             rot =  Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             rot = rot.normalized;
+            //rot.y *= -1;
             rotH = rot.x;
-            rotV = rot.y * -1;
+            rotV = rot.y;
         }
 
         if(rotH != 0 || rotV != 0){
             var angle = Mathf.Atan2(rotH, rotV) * Mathf.Rad2Deg;
             angle = Mathf.Lerp(player.transform.eulerAngles.z , angle, rotSpeed * Time.time);
-            sword.transform.rotation =  Quaternion.Euler(0,0,angle);
+            sword.transform.rotation =  Quaternion.Euler(0,0, angle);
         }
     }
 

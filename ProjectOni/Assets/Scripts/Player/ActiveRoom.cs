@@ -21,7 +21,7 @@ public class ActiveRoom : MonoBehaviour
                 doorManager.CloseDoors();
             }
             ChangeLayer(9);
-            Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
+            //Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
         }
     }
 
