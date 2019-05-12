@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour{
     [Header("Attack")]
-    [SerializeField]private float animTime = 1.0f;
+    [SerializeField]private float animTime = 0.3f;
     [SerializeField] private GameObject weapon;
     private float standTime;
     private float currentTime = 0.0f;
