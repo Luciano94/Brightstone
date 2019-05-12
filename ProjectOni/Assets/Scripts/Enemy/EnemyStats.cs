@@ -1,24 +1,35 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyStats : MonoBehaviour {
     [SerializeField] float life = 50;
     [SerializeField] float atkDmg = 10.0f;
+    
+    private float currentLife;
     private float experience = 100;
     GameObject myRoom;
     public EnemyType enemyType;
     MonoBehaviour[] movSet; 
 
-    public GameObject MyRoom{
-        get{return myRoom;}
-        set{myRoom = value;}
+    [HideInInspector][SerializeField] UnityEvent onHit;
+
+    private void Awake() {
+        currentLife = life;
+    }
+
+    public GameObject MyRoom {
+        get { return myRoom; }
+        set { myRoom = value; }
     }
 
     public float Life {
-        get { return life; }
+        get { return currentLife; }
         set {
-            if (life > 0)
-                life -= value;
-            else{
+            currentLife -= value;
+            if (currentLife >= 0) {
+                OnHit.Invoke();
+            }
+            else {
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();
                 GameManager.Instance.playerSts.Experience = experience;
                 UIManager.Instance.ExpUpdate();
@@ -37,5 +48,10 @@ public class EnemyStats : MonoBehaviour {
 
     public void Hit(){
         EnemyManager.Instance.PlusPercent(enemyType);
+    }
+
+    public UnityEvent OnHit
+    {
+        get { return onHit; }
     }
 }
