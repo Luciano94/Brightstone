@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour{
         }else{
             rot =  Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             rot = rot.normalized;
-            //rot.y *= -1;
+            rot.y *= -1;
             rotH = rot.x;
             rotV = rot.y;
         }
