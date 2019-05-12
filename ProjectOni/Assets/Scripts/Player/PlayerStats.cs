@@ -12,9 +12,9 @@ public class PlayerStats : MonoBehaviour{
     public float Life{
         get{return currentLife;}
         set{
-            if(life > 0){
-                life -= value;
-                if(life <= 0){
+            if(currentLife > 0){
+                currentLife -= value;
+                if(currentLife <= 0){
                     SceneManager.LoadScene(0);
                 }
             }
@@ -22,12 +22,17 @@ public class PlayerStats : MonoBehaviour{
     }
 
     public float LifeStat{
-        get{return life;}
+        get{return currentLife;}
         set{
             if(value > 0)
+            {
+                currentLife += value;
                 life += value;
+            }
         }
     }
+
+    public float MaxLife() { return life; }
 
     public float AtkDmg{
         get{return atkDmg;}

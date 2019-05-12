@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour{
     [SerializeField]private Text atkTxt;
     [SerializeField]private Text mrkTxt;
     [SerializeField]private Text requiredTxt;
+
+    [Header("FillBars")]
+    [SerializeField] Image hpFillBar;
     private GameManager gameM;
 
     private void Awake() {
@@ -27,18 +30,29 @@ public class UIManager : MonoBehaviour{
         mrkTxt.enabled = false;
     }
 
+    private void Start(){
+        float actualHp = gameM.playerSts.LifeStat;
+        float maxHp = gameM.playerSts.MaxLife();
+        hpFillBar.fillAmount = actualHp / maxHp;
+        lifeTxt.text = actualHp + " / " + maxHp;
+        expTxt.text = "Exp: " + gameM.playerSts.Experience;
+    }
+
     public void ExpUpdate(){
-        expTxt.text = "Exp: " + gameM.playerSts.Experience.ToString();
+        expTxt.text = "Exp: " + gameM.playerSts.Experience;
     }
 
     public void lifeUpdate(){
-        lifeTxt.text = "Life: " + gameM.playerSts.LifeStat.ToString(); 
-        expTxt.text = "Exp: " + gameM.playerSts.Experience.ToString();       
+        float actualHp = gameM.playerSts.LifeStat;
+        float maxHp = gameM.playerSts.MaxLife();
+        hpFillBar.fillAmount = actualHp / maxHp;
+        lifeTxt.text = actualHp + " / " + maxHp;
+        ExpUpdate();    
     }
 
     public void atkUpdate(){
         atkTxt.text = "AtkDmg: " + gameM.playerSts.AtkDmg.ToString();
-        expTxt.text = "Exp: " + gameM.playerSts.Experience.ToString();   
+        ExpUpdate();  
     }
 
     public void EnterMarket(){
