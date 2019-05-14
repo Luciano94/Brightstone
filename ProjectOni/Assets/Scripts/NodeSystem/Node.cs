@@ -22,6 +22,8 @@ public enum NodeType{
     DL,
     LRD,
     LRU,
+    UDL,
+    UDR,
     LRUD,
 }
 
@@ -127,8 +129,10 @@ public class Node{
             case Direction.Left:
                 nType = NodeType.L;
             break;
+            default:
+                nType = NodeType.R;
+            break;
         }
-        nType = NodeType.R;
     }
 
     private void DefineTwoExitNode(Direction dir1, Direction dir2){
@@ -157,14 +161,24 @@ public class Node{
                 break;
             }
         }
-        nType = NodeType.LR;
+        if(dir1 == Direction.Right&& dir2 == Direction.Left)
+            nType = NodeType.LR;
     }
 
     private void DefineThreeExitNode(Direction dir1, Direction dir2, Direction dir3){
-        if(dir3 == Direction.Up)
-            nType = NodeType.LRU;
-        else
-            nType = NodeType.LRD;
+        if(dir2 == Direction.Right){
+            if(dir1 == Direction.Down){
+                nType = NodeType.LRD;
+            }else{
+                nType = NodeType.LRU;
+            }
+        }else if(dir2 == Direction.Down){
+            if(dir3 == Direction.Left){
+                nType = NodeType.UDL;
+            }else{
+                nType = NodeType.UDR;
+            }
+        }
     }
 
     public bool SetBehaviour(NodeBehaviour type){

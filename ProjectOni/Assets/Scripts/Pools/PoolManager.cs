@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    //POOLS
-    [SerializeField]private GameObject[] roomsLR;
-    [SerializeField]private GameObject[] roomsLRD;
-    [SerializeField]private GameObject[] roomsLRU;
-    [SerializeField]private GameObject[] roomsLRUD;
-    [SerializeField]private GameObject[] roomsL;
-    [SerializeField]private GameObject[] roomsR;
-    [SerializeField]private GameObject[] roomsU;
-    [SerializeField]private GameObject[] roomsD;
-
+    [Header("One Exit")]
+    [SerializeField]private GameObject[] nodeL;
+    [SerializeField]private GameObject[] nodeR;
+    [SerializeField]private GameObject[] nodeU;
+    [SerializeField]private GameObject[] nodeD;
+    [Header("Two Exit")]
+    [SerializeField]private GameObject[] nodeLR;
+    [SerializeField]private GameObject[] nodeUD;
+    [SerializeField]private GameObject[] nodeUL;
+    [SerializeField]private GameObject[] nodeUR;
+    [SerializeField]private GameObject[] nodeDR;
+    [SerializeField]private GameObject[] nodeDL;
+    [Header("Three Exit")]
+    [SerializeField]private GameObject[] nodeLRD;
+    [SerializeField]private GameObject[] nodeLRU;
+    [SerializeField]private GameObject[] nodeUDL;
+    [SerializeField]private GameObject[] nodeUDR;
+    [Header("Four Exit")]
+    [SerializeField]private GameObject[] nodeLRUD;
     private static PoolManager instance;
 
     public static PoolManager Instance {
@@ -27,34 +36,58 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    private GameObject[][] poolOfRooms;
-
-    private void Start() {
-        poolOfRooms = new GameObject[(int)RoomsTypes.Count][];
-        poolOfRooms[(int)RoomsTypes.LR] =  roomsLR;
-        poolOfRooms[(int)RoomsTypes.LRD] =  roomsLRD;
-        poolOfRooms[(int)RoomsTypes.LRU] =  roomsLRU;
-        poolOfRooms[(int)RoomsTypes.LRUD] =  roomsLRUD;
-        poolOfRooms[(int)RoomsTypes.L] =  roomsL;
-        poolOfRooms[(int)RoomsTypes.R] =  roomsR;
-        poolOfRooms[(int)RoomsTypes.U] =  roomsU;
-        poolOfRooms[(int)RoomsTypes.D] =  roomsD;
-    }
-
-    public GameObject GetRoomOfType(RoomsTypes type){
-        int value = Random.Range(0, poolOfRooms[(int)type].Length);
-        return poolOfRooms[(int)type][value];
-    }
-
-    public GameObject GetOneExitRoom(){
-        int roomType = Random.Range((int)RoomsTypes.L, (int)RoomsTypes.D);
-        int room = Random.Range(0, poolOfRooms[roomType].Length);
-        return poolOfRooms[roomType][room];
-    }
-
-    public GameObject GetOneExitRoom(Directions dir){
-        int roomType = (int)dir + 4;
-        int room = Random.Range(0, poolOfRooms[roomType].Length);
-        return poolOfRooms[roomType][room];
+    public GameObject DrawExitsNode(NodeType nType, Vector3 pos, List<Exit> exits){
+        GameObject[] node;
+        switch (nType)
+        {
+            case NodeType.U:
+                node = nodeU;
+            break;
+            case NodeType.D:
+                node = nodeD;
+            break;
+            case NodeType.L:
+                node = nodeL;
+            break;
+            case NodeType.R:
+                node = nodeR;
+            break;
+            case NodeType.LR:
+                node = nodeLR;
+            break;
+            case NodeType.UD:
+                node = nodeUD;
+            break;
+            case NodeType.UL:
+                node = nodeUL;
+            break;
+            case NodeType.UR:
+                node = nodeUR;
+            break;
+            case NodeType.DR:
+                node = nodeDR;
+            break;
+            case NodeType.DL:
+                node = nodeDL;
+            break;
+            case NodeType.LRU:
+                node = nodeLRU;
+            break;
+            case NodeType.LRD:
+                node = nodeLRD;
+            break;
+            case NodeType.UDR:
+                node = nodeUDR;
+            break;
+            case NodeType.UDL:
+                node = nodeUDL;
+            break;
+            default:
+                node = nodeLRUD;
+            break;
+        }
+        GameObject go = Instantiate(node[Random.Range(0,node.Length)], pos, Quaternion.identity);
+       // go.GetComponent<NodeExits>().SetExits = exits;
+        return go;
     }
 }
