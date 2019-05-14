@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]private GameObject player;
    // [SerializeField]private GameObject enemy;
-
+    [SerializeField]private GameObject levelBoss;
     public Vector3 PlayerPos{
         get{return player.transform.position;}
     }
@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     /*public EnemyStats enemySts {
        // get { return enemy.GetComponent<EnemyStats>(); }
     }*/
+
+    public BossStats bossSts{
+        get{return levelBoss.GetComponent<BossStats>();}
+    }
 
     public bool PlayerIsParry{
         get{ return player.GetComponent<PlayerCombat>().isParry; }

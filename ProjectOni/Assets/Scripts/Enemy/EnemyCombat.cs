@@ -44,6 +44,8 @@ public class EnemyCombat : MonoBehaviour {
             else return;
         }
 
+        player = GameManager.Instance.PlayerPos;
+
         if(isChasing) {
             Chase();
         }
@@ -75,6 +77,7 @@ public class EnemyCombat : MonoBehaviour {
 
     private void Hit() {
         currentTime = 0.0f;
+        isChasing = true;
         isAttaking = false;
         isHit = true;
     }

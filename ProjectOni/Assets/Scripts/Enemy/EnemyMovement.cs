@@ -45,6 +45,6 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     private void MoveByHit() {
-        transform.Translate(-diff.normalized * speed * 0.5f * Time.deltaTime); 
+        transform.Translate(-diff.normalized * speed * 0.3f * Time.deltaTime);
     }
 }

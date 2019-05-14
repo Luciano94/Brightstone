@@ -15,14 +15,15 @@ public class UIManager : MonoBehaviour{
         }
     }
 
-    [SerializeField]private Text expTxt;
-    [SerializeField]private Text lifeTxt;
-    [SerializeField]private Text atkTxt;
-    [SerializeField]private Text mrkTxt;
-    [SerializeField]private Text requiredTxt;
+    [SerializeField] private Text expTxt;
+    [SerializeField] private Text lifeTxt;
+    [SerializeField] private Text atkTxt;
+    [SerializeField] private Text mrkTxt;
+    [SerializeField] private Text requiredTxt;
 
     [Header("FillBars")]
-    [SerializeField] Image hpFillBar;
+    [SerializeField] Image playerHpFillBar;
+    [SerializeField] Image bossHpFillBar;
     private GameManager gameM;
 
     private void Awake() {
@@ -33,7 +34,7 @@ public class UIManager : MonoBehaviour{
     private void Start(){
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
-        hpFillBar.fillAmount = actualHp / maxHp;
+        playerHpFillBar.fillAmount = actualHp / maxHp;
         lifeTxt.text = actualHp + " / " + maxHp;
         expTxt.text = "Exp: " + gameM.playerSts.Experience;
     }
@@ -45,7 +46,7 @@ public class UIManager : MonoBehaviour{
     public void lifeUpdate(){
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
-        hpFillBar.fillAmount = actualHp / maxHp;
+        playerHpFillBar.fillAmount = actualHp / maxHp;
         lifeTxt.text = actualHp + " / " + maxHp;
         ExpUpdate();    
     }
@@ -68,5 +69,11 @@ public class UIManager : MonoBehaviour{
     public void ExitMarket(){
         mrkTxt.enabled = false;
         requiredTxt.enabled = false;
+    }
+
+    public void BossDamaged(){
+        float actualHp = gameM.bossSts.Life;
+        float maxHp = gameM.bossSts.MaxLife();
+        bossHpFillBar.fillAmount = actualHp / maxHp;
     }
 }
