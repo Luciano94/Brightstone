@@ -9,7 +9,6 @@ public class PlayerWeapon : MonoBehaviour {
 
     private void Start() {
         playerStats = GameManager.Instance.playerSts;
-       // enemyStats = GameManager.Instance.enemySts;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

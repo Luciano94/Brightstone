@@ -32,6 +32,8 @@ public class DrawNodes : MonoBehaviour{
     [Header("Three Exit")]
     [SerializeField]private GameObject[] nodeLRD;
     [SerializeField]private GameObject[] nodeLRU;
+    [SerializeField]private GameObject[] nodeUDL;
+    [SerializeField]private GameObject[] nodeUDR;
     [Header("Four Exit")]
     [SerializeField]private GameObject[] nodeLRUD;
 
@@ -76,6 +78,12 @@ public class DrawNodes : MonoBehaviour{
             break;
             case NodeType.LRD:
                 node = nodeLRD;
+            break;
+            case NodeType.UDR:
+                node = nodeUDR;
+            break;
+            case NodeType.UDL:
+                node = nodeUDL;
             break;
             default:
                 node = nodeLRUD;

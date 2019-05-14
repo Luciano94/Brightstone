@@ -62,6 +62,10 @@ public class EnemyCombat : MonoBehaviour {
         }
     }
 
+    public void EndAttack(){
+        currentTime += animTime;
+    }
+
     private void Attack(){
         currentTime += Time.deltaTime;
         if(currentTime > standTime) {

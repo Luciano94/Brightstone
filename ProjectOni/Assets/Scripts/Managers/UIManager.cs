@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour{
     }
 
     public void atkUpdate(){
-        atkTxt.text = "AtkDmg: " + gameM.playerSts.AtkDmg.ToString();
+        atkTxt.text = "AtkDmg: " + gameM.playerSts.AtkMult.ToString();
         ExpUpdate();  
     }
 

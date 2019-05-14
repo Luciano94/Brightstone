@@ -9,6 +9,7 @@ public class Generate : MonoBehaviour{
 
     [Header("Logic Generation")]
     [SerializeField]int nodeSize = 20;
+    [SerializeField]int nodeMult;
     [SerializeField]int nodeQuantity = 2;
     int nodeQ = -1;
     Vector3 nextPos;
@@ -24,6 +25,7 @@ public class Generate : MonoBehaviour{
         nodeQ++;
         nextPos = head.transform.position;
         state = 0;
+        nodeMult = nodeSize / 10;
     }
 
     private void Update() {
@@ -70,7 +72,6 @@ public class Generate : MonoBehaviour{
         Vector3 pos= head.transform.position;
         GetAvailablePos();
         int newPos = Random.Range(0,4);
-        Debug.Log(newPos);
         switch (newPos){
             case 0:
                 if(exits[0]){
@@ -148,6 +149,7 @@ public class Generate : MonoBehaviour{
     private void Draw(){
         for (int i = 0; i < nodes.Count; i++){
             nodes[i].setNode( DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position, nodes[i].ExitsDoors));
+            PoolManager.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
         }
     }
 #endregion

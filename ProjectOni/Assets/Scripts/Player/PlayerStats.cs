@@ -5,7 +5,9 @@ public class PlayerStats : MonoBehaviour{
     
     private float currentLife = 100;
     [SerializeField] float life = 100.0f;
-    [SerializeField] float atkDmg = 25.0f;
+    [SerializeField] float atkMult = 1.0f;
+    float atkDmg = 0.0f;
+
 
     private float experience = 0;
 
@@ -35,6 +37,14 @@ public class PlayerStats : MonoBehaviour{
     public float MaxLife() { return life; }
 
     public float AtkDmg{
+        get{return atkDmg;}
+        set{
+            if(value > 0)
+                atkDmg = value;
+        }
+    }
+
+    public float AtkMult{
         get{return atkDmg;}
         set{
             if(value > 0)

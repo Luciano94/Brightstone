@@ -56,9 +56,9 @@ public class LevelGeneration : MonoBehaviour
         transform.position = startingPositions.position;
 
         /*create first room */
-        GameObject go = Instantiate(poolM.GetOneExitRoom(), transform.position, Quaternion.identity);
-        go.transform.parent = roomsParent;
-        directions = go.GetComponent<Room>().dir;
+       // GameObject go = Instantiate(poolM.GetOneExitRoom(), transform.position, Quaternion.identity);
+        //go.transform.parent = roomsParent;
+        //directions = go.GetComponent<Room>().dir;
         previusDirection = oppositeDirection(directions);
 
         /*Init rooms and rooms info arrays */
@@ -67,8 +67,8 @@ public class LevelGeneration : MonoBehaviour
         roomsInfo = new Room[roomCant*3];
 
         /*fill the arrays whith the first room */
-        rooms[roomNumber] = go.transform;
-        roomsInfo[roomNumber]= go.GetComponent<Room>();
+        //rooms[roomNumber] = go.transform;
+        //roomsInfo[roomNumber]= go.GetComponent<Room>();
         roomTam = roomsInfo[roomNumber].roomTam;
         roomsInfo[roomNumber].RBehaviour = RoomBehaviour.Start;
         roomNumber++;
@@ -121,12 +121,12 @@ public class LevelGeneration : MonoBehaviour
 
     private void Create(){
         if(CanCreate(transform)){
-            GameObject go = Instantiate(poolM.GetRoomOfType(GetNextTypeOfRoom()), 
-                                        transform.position, Quaternion.identity);
-            rooms[roomNumber] = go.transform;
-            roomsInfo[roomNumber]= go.GetComponent<Room>();
-            roomTam = roomsInfo[roomNumber].roomTam;
-            go.transform.parent = roomsParent;
+            //GameObject go = Instantiate(poolM.GetRoomOfType(GetNextTypeOfRoom()), 
+            //                            transform.position, Quaternion.identity);
+            //rooms[roomNumber] = go.transform;
+            //roomsInfo[roomNumber]= go.GetComponent<Room>();
+            //roomTam = roomsInfo[roomNumber].roomTam;
+            //go.transform.parent = roomsParent;
             GenerateLinks(roomsInfo[roomNumber],roomsInfo[roomNumber-1]);
         }
         if(roomNumber < roomCant){
@@ -241,12 +241,12 @@ public class LevelGeneration : MonoBehaviour
 
     private void CreateBackStreet(Room prevRoom){
         if(CanCreate(transform)){
-            GameObject go = Instantiate(poolM.GetOneExitRoom(previusDirection), 
-                                        transform.position, Quaternion.identity);
-            rooms[roomNumber] = go.transform;
-            roomsInfo[roomNumber]= go.GetComponent<Room>();
-            roomTam = roomsInfo[roomNumber].roomTam;
-            go.transform.parent = backStreetsParent;
+            //GameObject go = Instantiate(poolM.GetOneExitRoom(previusDirection), 
+            //                            transform.position, Quaternion.identity);
+            //rooms[roomNumber] = go.transform;
+            //roomsInfo[roomNumber]= go.GetComponent<Room>();
+            //roomTam = roomsInfo[roomNumber].roomTam;
+            //go.transform.parent = backStreetsParent;
             GenerateLinks(roomsInfo[roomNumber],prevRoom);
             roomNumber++;
         }
