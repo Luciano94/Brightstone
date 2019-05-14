@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
 
-public struct FrameData{
-    public float enterFrames;
-    public float activeFrames;
-    public float exitFrames;
-    public int State;
-}
-
 public class PlayerCombat : MonoBehaviour{
     [SerializeField]private GameObject weapon;
     
     [Header("Attack")]
+    Action action = null;
+    [SerializeField]private ComboManager cManager;
     [SerializeField]private float atckTime;
-    [SerializeField]private int comboCount = 3;
-    private int actualCombo = 0;
     public FrameData atkAnim;
     private float actAtkTime;
     private bool isAttacking;
@@ -38,16 +31,21 @@ public class PlayerCombat : MonoBehaviour{
         get{return isAttacking;}
     }
 
+    public ActionState State{
+        get{return atkAnim.State;}
+    }
+
+    public float ActualTime{
+        get{return actAtkTime;}
+    }
+
     private PlayerStats plStat;
 
     private void Awake() {
 
         actAtkTime = 0;
         isAttacking = false;
-        atkAnim.enterFrames = ((20 * atckTime)/ 100);
-        atkAnim.activeFrames = ((30 * atckTime) / 100);
-        atkAnim.exitFrames = atckTime;
-        atkAnim.State = 0;
+        atkAnim.State = ActionState.enterFrames;
 
         rig = GetComponent<Rigidbody2D>();
 
@@ -57,18 +55,138 @@ public class PlayerCombat : MonoBehaviour{
         plStat = GameManager.Instance.playerSts;
     }
 
+    public void StartAction(Action _action){
+        action=_action;
+        plStat.AtkDmg = action.Damage;
+        isAttacking = true;
+    }
+
+    public void StopAction(){
+        action = null;
+        needMove = false;
+        isAttacking = false;
+    }
+
+    void Update(){
+        if(action != null){
+            if(!isParryng && isAttacking){
+                AttackMove();
+                switch (action.Fdata.State)
+                {
+                    case ActionState.enterFrames:
+                        EnterState();
+                    break;
+                    case ActionState.activeFrames:
+                        ActiveState();
+                    break;
+                    case ActionState.exitFrames:
+                        ExitState();
+                    break;
+                }
+            }
+        }
+        if(!isParryng)
+            Attack();
+        if(!isAttacking)
+            Parry();
+    }
+
+    private void Attack(){
+        if(Input.GetButtonDown("Fire1")){
+            cManager.ManageAction(Actions.X);
+        }
+        if(Input.GetButtonDown("Fire2")){
+            cManager.ManageAction(Actions.Y);
+        }
+    }
+
+    private void EnterState(){
+        if(!needMove){
+            needMove = true;
+        }
+        weapon.SetActive(false);
+    }
+
+    private void ActiveState(){
+        weapon.SetActive(true);
+    }
+
+    private void ExitState(){
+        weapon.SetActive(false);
+        action = null;
+        needMove = false;
+        isAttacking = false;
+    }
+
+    private void AttackMove(){
+        if(needMove){
+            rig.AddForce(dir * speed * Time.deltaTime,ForceMode2D.Impulse);
+            needMove = false;
+        }else{
+            Vector2 hola = weapon.transform.position - transform.position;
+            dir = hola.normalized;
+        }
+    }
+
+    private void Parry(){
+        if(Input.GetButtonDown("Jump")){
+            if(!isParryng){
+                isParryng = true;
+                actParryTime = 0.0f;
+                weapon.SetActive(true);
+            }
+        }
+        if(isParryng && actParryTime >= parryTime){
+            weapon.SetActive(false);
+            isParryng = false;
+        }else
+            actParryTime += Time.deltaTime; 
+    }
+
+}
+
+/*
+    private void Awake() {
+
+        actAtkTime = 0;
+        isAttacking = false;
+        atkAnim.State = ActionState.enterFrames;
+
+        rig = GetComponent<Rigidbody2D>();
+
+        actParryTime = parryTime;
+        isParryng = false;
+
+        plStat = GameManager.Instance.playerSts;
+    }
+
+    public void StartAttack(Action act){
+        actAtkTime = 0;
+        atkAnim.enterFrames = act.FData.enterFrames;
+        atkAnim.activeFrames = act.FData.activeFrames;
+        atkAnim.exitFrames = act.FData.exitFrames;
+        atkAnim.State = act.FData.State;
+        isAttacking = true;
+    }
+
+    public void StopAttack(){
+        weapon.SetActive(false);
+        actAtkTime = 0;
+        isAttacking = false;
+    }
+
     void Update(){
         if(!isParryng && isAttacking){
             AttackMove();
             switch (atkAnim.State)
             {
-                case 0:
+                case ActionState.enterFrames:
                     EnterState();
                 break;
-                case 1:
+                case ActionState.activeFrames:
                     ActiveState();
                 break;
-                case 2:
+                case ActionState.exitFrames:
                     ExitState();
                 break;
             }
@@ -81,8 +199,7 @@ public class PlayerCombat : MonoBehaviour{
 
     private void Attack(){
         if(Input.GetButtonDown("Fire1") && !isAttacking){
-            isAttacking = true;
-            atkAnim.State = 0;
+            cManager.ManageAction(Actions.X);
         }
     }
 
@@ -99,14 +216,8 @@ public class PlayerCombat : MonoBehaviour{
     private void ActiveState(){
         actAtkTime += Time.deltaTime;
         weapon.SetActive(true);
-        if(Input.GetButtonDown("Fire1") && actualCombo < comboCount){
-            actualCombo++;
-            actAtkTime = 0;
-            atkAnim.State = 0;
-            weapon.SetActive(false);
-        }
         if(actAtkTime >= atkAnim.activeFrames + atkAnim.enterFrames){
-            atkAnim.State++;
+            atkAnim.State = ActionState.exitFrames;
         }
     }
 
@@ -114,9 +225,9 @@ public class PlayerCombat : MonoBehaviour{
         actAtkTime += Time.deltaTime;
         weapon.SetActive(false);
         if(actAtkTime >= atckTime){
-            atkAnim.State = 3;
+            //cManager.EndCombo();
+            atkAnim.State = ActionState.exitFrames;
             actAtkTime = 0;
-            actualCombo =0;
             isAttacking = false;
         }
     }
@@ -145,4 +256,4 @@ public class PlayerCombat : MonoBehaviour{
         }else
             actParryTime += Time.deltaTime; 
     }
-}
+ */

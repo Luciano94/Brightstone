@@ -70,7 +70,6 @@ public class Generate : MonoBehaviour{
         Vector3 pos= head.transform.position;
         GetAvailablePos();
         int newPos = Random.Range(0,4);
-        Debug.Log(newPos);
         switch (newPos){
             case 0:
                 if(exits[0]){

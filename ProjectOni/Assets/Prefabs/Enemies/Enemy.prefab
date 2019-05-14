@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 1592394171438056261}
+  enemyCombat: {fileID: 5300433679770175938}
 --- !u!33 &1905123888161924619
 MeshFilter:
   m_ObjectHideFlags: 0

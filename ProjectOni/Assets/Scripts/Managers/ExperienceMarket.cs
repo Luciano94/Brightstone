@@ -48,7 +48,7 @@ public class ExperienceMarket : MonoBehaviour
             playerStats.Experience = -requiredExp;
             level ++;
             requiredExp += requiredExp * level;
-            playerStats.AtkDmg = 5;
+            playerStats.AtkMult = 0.25f;
             UIManager.Instance.atkUpdate();
             UIManager.Instance.marketUPdate();
         }

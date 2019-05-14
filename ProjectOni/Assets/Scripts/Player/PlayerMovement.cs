@@ -24,9 +24,11 @@ public class PlayerMovement : MonoBehaviour{
 
     private void Update() {
         DetectDivice();
-        if(!GetComponent<PlayerCombat>().isAttack)
+        if(!GetComponent<PlayerCombat>().isAttack &&
+            !GetComponent<PlayerCombat>().isParry){
             Movement();
-        Rotation();
+            Rotation();
+        }
     }
 
     private void Rotation(){

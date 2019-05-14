@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyWeapon : MonoBehaviour {
     PlayerStats playerStats;
     [SerializeField]EnemyStats enemyStats;
+    [SerializeField]EnemyCombat enemyCombat;
     GameManager gameM;
     private void Start() {
         playerStats = GameManager.Instance.playerSts;
@@ -14,9 +15,9 @@ public class EnemyWeapon : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if(!gameM.PlayerIsParry){
             enemyStats.Hit();
-            gameObject.SetActive(false);
             playerStats.Life = enemyStats.AtkDmg;
             UIManager.Instance.lifeUpdate();
+            enemyCombat.EndAttack();
         }
     }
 }
