@@ -33,6 +33,11 @@ public class BossCombat : MonoBehaviour {
         GetComponent<BossStats>().OnHit.AddListener(Hit);
     }
 
+
+    public void EndAttack(){
+        currentTime += animTime;
+    }
+
     private void Update() {
         
         /*Debug.Log("IsHit: " + isHit);

@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour{
     }
 
     public void atkUpdate(){
-        atkTxt.text = "AtkDmg: " + gameM.playerSts.AtkMult.ToString();
+        atkTxt.text = "Attack multiplier: " + gameM.playerSts.AtkMult.ToString();
         ExpUpdate();  
     }
 

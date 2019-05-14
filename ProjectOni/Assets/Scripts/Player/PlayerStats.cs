@@ -45,10 +45,10 @@ public class PlayerStats : MonoBehaviour{
     }
 
     public float AtkMult{
-        get{return atkDmg;}
+        get{return atkMult;}
         set{
             if(value > 0)
-                atkDmg += value;
+                atkMult += value;
         }
     }
 

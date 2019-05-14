@@ -18,6 +18,8 @@ public class EnemyWeapon : MonoBehaviour {
             playerStats.Life = enemyStats.AtkDmg;
             UIManager.Instance.lifeUpdate();
             enemyCombat.EndAttack();
+        }else{
+            enemyCombat.EndAttack();            
         }
     }
 }

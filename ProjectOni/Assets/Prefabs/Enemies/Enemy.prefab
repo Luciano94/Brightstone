@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fee5b615ce55543bdeeece77a9f2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 50
+  life: 100
   atkDmg: 10
   enemyType: 0
   onHit:

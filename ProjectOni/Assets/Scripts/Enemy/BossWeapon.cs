@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossWeapon : MonoBehaviour {
     PlayerStats playerStats;
+    [SerializeField]BossCombat bCombat;
     [SerializeField] BossStats bossStats;
     GameManager gameM;
     private void Start() {
@@ -17,6 +18,10 @@ public class BossWeapon : MonoBehaviour {
             gameObject.SetActive(false);
             playerStats.Life = bossStats.AtkDmg;
             UIManager.Instance.lifeUpdate();
+            bCombat.EndAttack();
+        }else{
+            gameObject.SetActive(false);
+            bCombat.EndAttack();
         }
     }
 }

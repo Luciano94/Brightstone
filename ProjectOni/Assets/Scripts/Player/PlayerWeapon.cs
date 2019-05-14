@@ -17,10 +17,10 @@ public class PlayerWeapon : MonoBehaviour {
             
             EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
             if (enemyStats)
-                enemyStats.Life = playerStats.AtkDmg;
+                enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
             else {
                 BossStats bossStats = collision.gameObject.GetComponent<BossStats>();
-                bossStats.Life = playerStats.AtkDmg;
+                bossStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
             }
         }
     }
