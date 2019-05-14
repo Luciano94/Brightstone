@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
         get{return player.GetComponent<PlayerStats>();}
     }
 
+    public GameObject SetBoss{
+        set{levelBoss = value;
+            UIManager.Instance.DesactiveBoss();
+            }
+    }
+
     /*public EnemyStats enemySts {
        // get { return enemy.GetComponent<EnemyStats>(); }
     }*/

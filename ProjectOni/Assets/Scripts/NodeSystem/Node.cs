@@ -184,12 +184,8 @@ public class Node{
     public bool SetBehaviour(NodeBehaviour type){
         switch (type){
             case NodeBehaviour.Boss:
-                if(exits.Count > 1)
-                    return false;
-                else{
-                    nBehaviour = NodeBehaviour.Boss;
-                    return true;
-                }
+                nBehaviour = NodeBehaviour.Boss;
+                return true;
             case NodeBehaviour.MediumBoss:
                 nBehaviour = NodeBehaviour.MediumBoss;
                 return true;

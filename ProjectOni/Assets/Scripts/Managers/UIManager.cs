@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour{
     [Header("FillBars")]
     [SerializeField] Image playerHpFillBar;
     [SerializeField] Image bossHpFillBar;
+    [SerializeField] GameObject bossHPBar;
     private GameManager gameM;
 
     private void Awake() {
@@ -34,6 +35,7 @@ public class UIManager : MonoBehaviour{
     private void Start(){
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
+        bossHPBar.SetActive(false);
         playerHpFillBar.fillAmount = actualHp / maxHp;
         lifeTxt.text = actualHp + " / " + maxHp;
         expTxt.text = "Exp: " + gameM.playerSts.Experience;
@@ -75,5 +77,13 @@ public class UIManager : MonoBehaviour{
         float actualHp = gameM.bossSts.Life;
         float maxHp = gameM.bossSts.MaxLife();
         bossHpFillBar.fillAmount = actualHp / maxHp;
+    }
+
+    public void InitBoss(){
+        bossHPBar.SetActive(true);
+    }
+
+    public void DesactiveBoss(){
+        bossHPBar.SetActive(false);
     }
 }

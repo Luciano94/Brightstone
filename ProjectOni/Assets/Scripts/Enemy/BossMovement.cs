@@ -16,6 +16,10 @@ public class BossMovement : MonoBehaviour {
         bossCombat = GetComponent<BossCombat>();
     }
 
+    private void OnEnable() {
+        UIManager.Instance.InitBoss();
+    }
+
     private void Update() {
         player = GameManager.Instance.PlayerPos;
         

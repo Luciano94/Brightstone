@@ -7,6 +7,7 @@ public class RoomsBehaviour : MonoBehaviour{
     [SerializeField]private int enemiesCant = 5;
     [SerializeField]private bool haveMarket = false;
     [SerializeField]private GameObject marketPrefab;
+    [SerializeField]private GameObject bossPrefab;
     [SerializeField]private GameObject enemyPrefab;
     [SerializeField]private Transform[] enemySpawns;
 
@@ -58,6 +59,12 @@ public class RoomsBehaviour : MonoBehaviour{
             case NodeBehaviour.MediumBoss:
             break;
             case NodeBehaviour.Boss:
+                enemiesLeft = 1;
+                pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
+                enemies.Add( Instantiate(bossPrefab, pos, transform.rotation));
+                enemies[0].GetComponent<BossStats>().MyRoom = gameObject;
+                enemies[0].SetActive(false);
+                GameManager.Instance.SetBoss = enemies[0];
             break;
         }
     }

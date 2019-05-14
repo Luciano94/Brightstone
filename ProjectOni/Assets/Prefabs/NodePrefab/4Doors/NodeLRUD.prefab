@@ -321,6 +321,8 @@ MonoBehaviour:
   haveMarket: 0
   marketPrefab: {fileID: 4167642003479408697, guid: 731cb2a5ce432724da888a942a8a8aae,
     type: 3}
+  bossPrefab: {fileID: 3141483355052190513, guid: f851078f9c8e6f048adfaad29a784b70,
+    type: 3}
   enemyPrefab: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
     type: 3}
   enemySpawns:

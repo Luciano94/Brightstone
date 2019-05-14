@@ -12,6 +12,7 @@ public class Generate : MonoBehaviour{
     [SerializeField]int nodeMult;
     [SerializeField]int nodeQuantity = 2;
     int nodeQ = -1;
+    int nodeBoss = 0;
     Vector3 nextPos;
     Vector3 nullVec = new Vector3(-1,-1,-1);
 
@@ -20,6 +21,7 @@ public class Generate : MonoBehaviour{
     private bool[] exits;
 
     private void Start() {
+        nodeBoss = Random.Range(5,nodeQ);
         nodes = new List<Node>();
         CreateNode();
         nodeQ++;
@@ -29,6 +31,7 @@ public class Generate : MonoBehaviour{
     }
 
     private void Update() {
+        
         switch (state)
         {
             case 0:
@@ -63,7 +66,10 @@ public class Generate : MonoBehaviour{
         if(nodeQ < 0){
             n.SetBehaviour(NodeBehaviour.Market);
         }else{
-            n.SetBehaviour(NodeBehaviour.Normal);
+            if(nodeQ == nodeBoss)
+                n.SetBehaviour(NodeBehaviour.Boss);
+            else
+                n.SetBehaviour(NodeBehaviour.Normal);
         }
         nodes.Add(n); 
     }
