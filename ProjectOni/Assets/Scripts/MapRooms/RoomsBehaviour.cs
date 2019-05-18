@@ -12,7 +12,7 @@ public class RoomsBehaviour : MonoBehaviour{
     [SerializeField]private Transform[] enemySpawns;
 
     private Node node;
-
+    private SpriteRenderer mapNode;
     private Vector3 pos;
 
     private List<GameObject> enemies = null;
@@ -20,6 +20,15 @@ public class RoomsBehaviour : MonoBehaviour{
     private int enemiesLeft;
 
     private bool isComplete = false;
+
+    public SpriteRenderer SetMapNode{
+        set{mapNode = value;
+            mapNode.color = Color.clear;}
+    }
+
+    public void SetColorNode(Color c){
+        mapNode.color = c;
+    }
 
     public bool Complete{
         get{return isComplete;}
@@ -92,12 +101,6 @@ public class RoomsBehaviour : MonoBehaviour{
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
-        }
-    }
-
-    public void DesactiveEnemies(){
-        foreach (GameObject enemy in enemies){
-            enemy.SetActive(true);
         }
     }
 }

@@ -154,8 +154,10 @@ public class Generate : MonoBehaviour{
 #region StateThree
     private void Draw(){
         for (int i = 0; i < nodes.Count; i++){
-            nodes[i].setNode( DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position, nodes[i].ExitsDoors));
-            PoolManager.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+            GameObject go =  DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position, nodes[i].ExitsDoors);
+            nodes[i].setNode(go);
+            GameObject mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+            go.GetComponent<RoomsBehaviour>().SetMapNode = mapNode.GetComponent<RenderReference>().node;
         }
     }
 #endregion

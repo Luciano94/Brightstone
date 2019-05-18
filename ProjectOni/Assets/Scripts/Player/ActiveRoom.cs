@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActiveRoom : MonoBehaviour
 {
+    [SerializeField]private Color activeColor;
+    [SerializeField]private Color normalColor;
     private Transform activeRoom = null;
     private RoomsBehaviour roomsBehaviour;
     private NodeExits doorManager;
@@ -11,12 +13,14 @@ public class ActiveRoom : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 15){
             if(activeRoom != null){
+                roomsBehaviour.SetColorNode(normalColor);
                 ChangeLayer(15);
             }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
             doorManager = activeRoom.GetComponent<NodeExits>();
             Camera.main.gameObject.GetComponent<CameraFollow>().ResetXY(activeRoom.transform.position);
+            roomsBehaviour.SetColorNode(activeColor);
             if(!roomsBehaviour.Complete){
                 roomsBehaviour.ActiveEnemies();
                 doorManager.CloseDoors();
