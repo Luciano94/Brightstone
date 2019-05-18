@@ -16,6 +16,7 @@ public class ActiveRoom : MonoBehaviour
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
             doorManager = activeRoom.GetComponent<NodeExits>();
+            Camera.main.gameObject.GetComponent<CameraFollow>().ResetXY(activeRoom.transform.position);
             if(!roomsBehaviour.Complete){
                 roomsBehaviour.ActiveEnemies();
                 doorManager.CloseDoors();
