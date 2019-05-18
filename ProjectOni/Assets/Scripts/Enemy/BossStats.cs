@@ -37,7 +37,7 @@ public class BossStats : MonoBehaviour {
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();
                 GameManager.Instance.playerSts.Experience = experience;
                 UIManager.Instance.ExpUpdate();
-                SceneManager.LoadScene(0);
+                GameManager.Instance.PLayerWin();
                 Destroy(gameObject);
             }
         }

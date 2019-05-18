@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour{
     
     private float currentLife = 100;
     [SerializeField] float life = 100.0f;
     [SerializeField] float atkMult = 1.0f;
+    [SerializeField] int lostExpPercent = 40;
     float atkDmg = 0.0f;
 
 
@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour{
             if(currentLife > 0){
                 currentLife -= value;
                 if(currentLife <= 0){
-                    SceneManager.LoadScene(0);
+                    GameManager.Instance.PlayerDeath();
                 }
             }
         }
@@ -63,5 +63,19 @@ public class PlayerStats : MonoBehaviour{
                 else
                     experience += value;
         }
+    }
+
+    public float SetExperience{
+        set{experience = value;}
+    }
+
+    public float Death(){
+        float newExp = ((experience * 4.0f)/10.0f);
+        if((experience - newExp) > 1.0f){
+            experience -= newExp;
+        }else{
+            experience = 0.0f; 
+        }
+        return experience;
     }
 }
