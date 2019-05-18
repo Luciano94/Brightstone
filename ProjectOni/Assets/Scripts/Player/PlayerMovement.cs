@@ -31,6 +31,10 @@ public class PlayerMovement : MonoBehaviour{
         }
     }
 
+    public Vector3 GetRotation{
+        get{return sword.transform.eulerAngles;}
+    }
+
     private void Rotation(){
         if(isConnected){
             rotH = Input.GetAxis("Horizontal");

@@ -9,9 +9,10 @@ public class ComboManager : MonoBehaviour{
     private List<int> activeCombos;//array con los combos que estan ejecutandose
     private Action currentAction; //estado de la accion que se esta ejecutando en ese momento
     [SerializeField]private Action[] actions; //acciones posibles
+    private bool found = false;
 
     private void Awake() {
-        comboMatrix = new int[,]{{0,0,0},{0,1,0},{1,1,-1},{1,0,1}};
+        comboMatrix = new int[,]{{0,0,-1},{1,1,-1}};
         activeCombos = new List<int>();
         comboIndex = 0;
         currentAction = null;
@@ -39,7 +40,7 @@ public class ComboManager : MonoBehaviour{
             if(activeCombos.Count > 0){
                 currentAction = actions[comboMatrix[activeCombos[0],comboIndex]];
             //se pone play a la accion
-                currentAction.StartAction();
+                currentAction.StartAction(comboIndex);
             }
             //se inicializa el combo index
             comboIndex = 1;
@@ -47,7 +48,9 @@ public class ComboManager : MonoBehaviour{
             if(comboIndex >= comboMatrix.GetLength(1)){
                 comboIndex = 0;
                 activeCombos.Clear();
+                found = false;
             }else{
+                found = false;
                 //si esta en el tiempo de encadenar
                 if(currentAction.Fdata.State == ActionState.activeFrames){
                     //coincide la action con la del comboindex
@@ -55,11 +58,13 @@ public class ComboManager : MonoBehaviour{
                         if((int)actionNumber == comboMatrix[activeCombos[0],comboIndex]){
                             currentAction.StopAction();
                             currentAction = actions[comboMatrix[activeCombos[0],comboIndex]];
+                            found = true;
                             break;
                         }
                     }
-                    //se pone play a esa accion.
-                    currentAction.StartAction();
+                    if(found)
+                        //se pone play a esa accion.
+                        currentAction.StartAction(comboIndex);
                     //se quitan los que no coinciden.
                     for (int i = 0; i < activeCombos.Count; i++){
                         if(comboMatrix[activeCombos[i],comboIndex] != (int)actionNumber){               

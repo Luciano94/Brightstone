@@ -15,10 +15,18 @@ public class PlayerAnimations : MonoBehaviour
         anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
 	}
 
-    void SetAttackTrigger()
+    public void SetAttackTrigger(int dir, bool isStrong)
     {
-        //anim.SetTrigger("Attacking");
-        //anim.SetInteger("Direction", batScript.ActualDirection);
+        if(!isStrong)
+            anim.SetTrigger("Attacking");
+        else
+            anim.SetTrigger("StrongAtk");
+        anim.SetInteger("Direction", dir);
+    }
+
+    public void SetParryTrigger(int dir){
+        anim.SetTrigger("Parry");
+        anim.SetInteger("Direction", dir);
     }
 
     public void Death()

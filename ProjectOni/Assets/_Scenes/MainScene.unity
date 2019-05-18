@@ -2069,6 +2069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  anim: []
   dmg: 25
   totalTime: 0.5
   playerCombat: {fileID: 786400176}
@@ -2099,6 +2101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  anim: []
   dmg: 40
   totalTime: 1
   playerCombat: {fileID: 786400176}
@@ -2237,28 +2241,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6276584208348804370, guid: ffdd525add8a97447bd10942bf690db1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6276584208348804370, guid: ffdd525add8a97447bd10942bf690db1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 31269897, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300012, guid: db6c96d51659b6746b0d7b32a44127c9,
-        type: 3}
-    - target: {fileID: 31269897, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 31269897, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6276584208348804368, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+    - {fileID: 6276584208348804369, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}

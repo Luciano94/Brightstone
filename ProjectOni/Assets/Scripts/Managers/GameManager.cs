@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField]private GameObject player;
+    private Vector3 weaponRotation;
     [SerializeField]private GameObject levelBoss;
 
     private void Awake() {
@@ -50,6 +51,20 @@ public class GameManager : MonoBehaviour
     
     public bool PlayerIsAttack{
         get{ return player.GetComponent<PlayerCombat>().isAttack; }
+    }
+
+    public static int GetDirection(float angle){
+
+        Debug.Log(angle);
+
+        if (angle > 45.0f && angle < 135.0f)
+            return 3;
+        else if (angle >= 135.0f && angle <= 225.0f)
+            return 2;
+        else if (angle > 225.0f && angle < 315.0f)
+            return 1;
+        else
+            return 0;
     }
 
     public void PlayerDeath(){

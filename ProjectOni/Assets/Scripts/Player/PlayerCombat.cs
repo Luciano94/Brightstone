@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour{
     public FrameData atkAnim;
     private float actAtkTime;
     private bool isAttacking;
+    private bool isStrong;
     [Header("Attack Move")]
     [SerializeField]private float speed; 
 	private Vector2 dir;
@@ -22,6 +23,7 @@ public class PlayerCombat : MonoBehaviour{
     [SerializeField]private float parryTime;
     private float actParryTime;
     private bool isParryng;
+    [SerializeField]private PlayerAnimations plAnim;
 
     public bool isParry{
         get{return isParryng;}
@@ -46,7 +48,6 @@ public class PlayerCombat : MonoBehaviour{
         actAtkTime = 0;
         isAttacking = false;
         atkAnim.State = ActionState.enterFrames;
-
         rig = GetComponent<Rigidbody2D>();
 
         actParryTime = parryTime;
@@ -94,9 +95,11 @@ public class PlayerCombat : MonoBehaviour{
     private void Attack(){
         if(Input.GetButtonDown("Fire1")){
             cManager.ManageAction(Actions.X);
+            isStrong = false;
         }
         if(Input.GetButtonDown("Fire2")){
             cManager.ManageAction(Actions.Y);
+            isStrong = true;
         }
     }
 
@@ -109,6 +112,7 @@ public class PlayerCombat : MonoBehaviour{
 
     private void ActiveState(){
         weapon.SetActive(true);
+        plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), isStrong);
     }
 
     private void ExitState(){
@@ -134,6 +138,7 @@ public class PlayerCombat : MonoBehaviour{
                 isParryng = true;
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
+                plAnim.SetParryTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
             }
         }
         if(isParryng && actParryTime >= parryTime){

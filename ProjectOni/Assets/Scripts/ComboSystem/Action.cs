@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 public class Action :MonoBehaviour{
+    
+    [SerializeField]private new string  name;
+    [SerializeField]private Animation[] anim;
     [SerializeField]private float dmg;
     [SerializeField]private float totalTime;
     [SerializeField]private PlayerCombat playerCombat;
@@ -20,7 +23,7 @@ public class Action :MonoBehaviour{
         fData.exitFrames = totalTime;
     }
 
-    public void StartAction(){
+    public void StartAction(int index){
         isActive = true;
         actualTime = 0.0f;
         fData.State = ActionState.enterFrames;
