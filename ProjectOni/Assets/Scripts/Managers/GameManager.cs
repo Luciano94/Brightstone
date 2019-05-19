@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake() {
         if(!PlayerPrefs.HasKey("XP")){
-            PlayerPrefs.SetFloat("XP",playerSts.Experience);
+            PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{
-            playerSts.SetExperience = PlayerPrefs.GetFloat("XP", 0);
+            playerSts.SetExperience = PlayerPrefs.GetInt("XP", 0);
         }
     }
 
@@ -68,13 +68,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayerDeath(){
-        PlayerPrefs.SetFloat("XP", playerSts.Death());
+        PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }
 
     public void PLayerWin(){
-        PlayerPrefs.SetFloat("XP", playerSts.Experience);
+        PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);
     }

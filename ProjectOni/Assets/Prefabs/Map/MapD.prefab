@@ -337,10 +337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350ab2bc038c9964884f8457118bf768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesCant: 5
+  enemiesCant: 10
   haveMarket: 0
   marketPrefab: {fileID: 4167642003479408697, guid: 731cb2a5ce432724da888a942a8a8aae,
     type: 3}
+  bossPrefab: {fileID: 0}
   enemyPrefab: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
     type: 3}
   enemySpawns:

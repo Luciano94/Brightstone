@@ -8,11 +8,12 @@ public class Generate : MonoBehaviour{
     List<Node> nodes;
 
     [Header("Logic Generation")]
-    [SerializeField]int nodeSize = 20;
-    [SerializeField]int nodeMult;
-    [SerializeField]int nodeQuantity = 2;
+    [SerializeField]int nodeSize = 40;
+    [SerializeField]int nodeQuantity = 30;
+    int nodeMult;
     int nodeQ = -1;
     int nodeBoss = 0;
+    int nodeMarket = 0;
     Vector3 nextPos;
     Vector3 nullVec = new Vector3(-1,-1,-1);
 
@@ -22,6 +23,9 @@ public class Generate : MonoBehaviour{
 
     private void Start() {
         nodeBoss = Random.Range(5,nodeQ);
+        nodeMarket = Random.Range(0, nodeQ);
+        if(nodeBoss == nodeMarket)
+            nodeBoss++;
         nodes = new List<Node>();
         CreateNode();
         nodeQ++;
@@ -63,7 +67,7 @@ public class Generate : MonoBehaviour{
 #region StateOne
     private void CreateNode(){
         Node n = new Node(head.transform.position, nodeSize);
-        if(nodeQ < 0){
+        if(nodeQ == nodeMarket){
             n.SetBehaviour(NodeBehaviour.Market);
         }else{
             if(nodeQ == nodeBoss)
