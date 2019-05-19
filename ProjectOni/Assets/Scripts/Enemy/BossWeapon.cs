@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossWeapon : MonoBehaviour {
     PlayerStats playerStats;
-    [SerializeField]BossCombat bCombat;
+    [SerializeField] BossCombat bCombat;
     [SerializeField] BossStats bossStats;
     GameManager gameM;
     private void Start() {
@@ -20,6 +20,7 @@ public class BossWeapon : MonoBehaviour {
             UIManager.Instance.lifeUpdate();
             bCombat.EndAttack();
         }else{
+            bossStats.Parried();
             gameObject.SetActive(false);
             bCombat.EndAttack();
         }

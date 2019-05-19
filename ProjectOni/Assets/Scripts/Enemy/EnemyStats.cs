@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour {
     MonoBehaviour[] movSet; 
 
     [HideInInspector][SerializeField] UnityEvent onHit;
+    [HideInInspector][SerializeField] UnityEvent onParried;
 
     private void Awake() {
         currentLife = life;
@@ -50,8 +51,17 @@ public class EnemyStats : MonoBehaviour {
         EnemyManager.Instance.PlusPercent(enemyType);
     }
 
+    public void Parried(){
+        onParried.Invoke();
+    }
+
     public UnityEvent OnHit
     {
         get { return onHit; }
+    }
+
+    public UnityEvent OnParried
+    {
+        get { return onParried; }
     }
 }

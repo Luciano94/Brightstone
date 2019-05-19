@@ -20,7 +20,8 @@ public class EnemyWeapon : MonoBehaviour {
             UIManager.Instance.lifeUpdate();
             enemyCombat.EndAttack();
         }else{
-            enemyCombat.EndAttack();            
+            enemyStats.Parried();
+            enemyCombat.EndAttack();
         }
     }
 }

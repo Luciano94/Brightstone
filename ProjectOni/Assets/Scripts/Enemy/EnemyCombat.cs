@@ -9,15 +9,22 @@ public class EnemyCombat : MonoBehaviour {
     [SerializeField] private EnemyAnimations eAnim;
     private float standTime;
     private float currentTime = 0.0f;
+    private float currentTimeForBeingHit = 0.0f;
     private bool isChasing = false;
     private bool isAttaking = false;
     private bool isHit = false;
-    private float timeParalized = 0.2f;
+    private bool isParried = false;
+    private float timeParalizedForHit = 0.2f;
+    private float timeParalizedForParry = 2.0f;
 
     public bool IsAttacking {
         get { return isAttaking; }
     }
 
+    public bool IsParried {
+        get { return isParried; }
+        set { isParried = value; }
+    }
     public bool IsHit {
         get { return isHit; }
     }
@@ -32,14 +39,24 @@ public class EnemyCombat : MonoBehaviour {
         player = GameManager.Instance.PlayerPos;
 
         GetComponent<EnemyStats>().OnHit.AddListener(Hit);
+        GetComponent<EnemyStats>().OnParried.AddListener(Parried);
     }
 
     private void Update() {
-        
+        if(isParried) {
+            currentTimeForBeingHit += Time.deltaTime;
+            if (currentTimeForBeingHit >= timeParalizedForParry) {
+                currentTimeForBeingHit = 0.0f;
+                isParried = false;
+                isHit = false;
+            }
+            else return;
+        }
+
         if(isHit) {
-            currentTime += Time.deltaTime;
-            if (currentTime >= timeParalized) {
-                currentTime = 0.0f;
+            currentTimeForBeingHit += Time.deltaTime;
+            if (currentTimeForBeingHit >= timeParalizedForHit) {
+                currentTimeForBeingHit = 0.0f;
                 isHit = false;
             }
             else return;
@@ -63,11 +80,11 @@ public class EnemyCombat : MonoBehaviour {
         }
     }
 
-    public void EndAttack(){
+    public void EndAttack() {
         currentTime += animTime;
     }
 
-    private void Attack(){
+    private void Attack() {
         currentTime += Time.deltaTime;
         if(currentTime > standTime) {
             weapon.SetActive(true);
@@ -82,9 +99,18 @@ public class EnemyCombat : MonoBehaviour {
     }
 
     private void Hit() {
+        currentTimeForBeingHit = 0.0f;
         currentTime = 0.0f;
         isChasing = true;
         isAttaking = false;
         isHit = true;
+    }
+
+    private void Parried() {
+        currentTimeForBeingHit = 0.0f;
+        currentTime = 0.0f;
+        isChasing = true;
+        isAttaking = false;
+        isParried = true;
     }
 }

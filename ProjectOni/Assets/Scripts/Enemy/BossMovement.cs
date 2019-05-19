@@ -24,6 +24,8 @@ public class BossMovement : MonoBehaviour {
     private void Update() {
         player = GameManager.Instance.PlayerPos;
         
+        if(bossCombat.IsParried)
+            return;
         if(bossCombat.IsHit) {
             MoveByHit();
             return;

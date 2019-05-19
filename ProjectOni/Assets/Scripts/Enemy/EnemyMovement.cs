@@ -21,6 +21,8 @@ public class EnemyMovement : MonoBehaviour {
     private void Update() {
         player = GameManager.Instance.PlayerPos;
         
+        if(enemyCombat.IsParried)
+            return;
         if(enemyCombat.IsHit) {
             MoveByHit();
             return;

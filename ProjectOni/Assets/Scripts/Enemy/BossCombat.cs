@@ -9,13 +9,21 @@ public class BossCombat : MonoBehaviour {
     [SerializeField]private EnemyAnimations eAnim;
     private float standTime;
     private float currentTime = 0.0f;
+    private float currentTimeForBeingHit = 0.0f;
     private bool isChasing = false;
     private bool isAttaking = false;
     private bool isHit = false;
-    private float timeParalized = 0.05f;
+    private bool isParried = false;
+    private float timeParalizedForHit = 0.2f;
+    private float timeParalizedForParry = 2.0f;
 
     public bool IsAttacking {
         get { return isAttaking; }
+    }
+
+    public bool IsParried {
+        get { return isParried; }
+        set { isParried = value; }
     }
 
     public bool IsHit {
@@ -32,6 +40,7 @@ public class BossCombat : MonoBehaviour {
         player = GameManager.Instance.PlayerPos;
 
         GetComponent<BossStats>().OnHit.AddListener(Hit);
+        GetComponent<BossStats>().OnHit.AddListener(Parried);
     }
 
 
@@ -40,15 +49,20 @@ public class BossCombat : MonoBehaviour {
     }
 
     private void Update() {
-        
-        /*Debug.Log("IsHit: " + isHit);
-        Debug.Log("IsChasing: " + isChasing);
-        Debug.Log("IsAttaking: " + isAttaking);*/
+        if(isParried) {
+            currentTimeForBeingHit += Time.deltaTime;
+            if (currentTimeForBeingHit >= timeParalizedForParry) {
+                currentTimeForBeingHit = 0.0f;
+                isParried = false;
+                isHit = false;
+            }
+            else return;
+        }
 
         if(isHit) {
-            currentTime += Time.deltaTime;
-            if (currentTime >= timeParalized) {
-                currentTime = 0.0f;
+            currentTimeForBeingHit += Time.deltaTime;
+            if (currentTimeForBeingHit >= timeParalizedForHit) {
+                currentTimeForBeingHit = 0.0f;
                 isHit = false;
             }
             else return;
@@ -88,6 +102,7 @@ public class BossCombat : MonoBehaviour {
     }
 
     private void Hit() {
+        currentTimeForBeingHit = 0.0f;
         currentTime = 0.0f;
         isChasing = true;
         if (isAttaking) {
@@ -95,5 +110,16 @@ public class BossCombat : MonoBehaviour {
             weapon.SetActive(false);
         }
         isHit = true;
+    }
+
+    private void Parried() {
+        currentTimeForBeingHit = 0.0f;
+        currentTime = 0.0f;
+        isChasing = true;
+        if (isAttaking) {
+            isAttaking = false;
+            weapon.SetActive(false);
+        }
+        isParried = true;
     }
 }
