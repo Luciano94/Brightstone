@@ -23,22 +23,43 @@ public class UIManager : MonoBehaviour{
 
     [Header("FillBars")]
     [SerializeField] Image playerHpFillBar;
+    [SerializeField] Image playerHitHpFillBar;
+    [SerializeField] float timeToDownHp;
+    private float timeLeft;
+    private float hpPercentage;
+    private float hpHitPercentage;
     [SerializeField] Image bossHpFillBar;
     [SerializeField] GameObject bossHPBar;
     private GameManager gameM;
 
-    private void Awake() {
+    
+
+    private void Awake(){
         gameM = GameManager.Instance;
         mrkTxt.enabled = false;
+        timeLeft = timeToDownHp;
     }
 
     private void Start(){
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
         bossHPBar.SetActive(false);
-        playerHpFillBar.fillAmount = actualHp / maxHp;
+        hpPercentage = hpHitPercentage = actualHp / maxHp;
+        playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
         expTxt.text = "Exp: " + gameM.playerSts.Experience;
+    }
+
+    private void Update(){
+        if (hpHitPercentage > hpPercentage){
+            if(timeLeft <= 0){
+                hpHitPercentage -= Time.deltaTime * 0.5f;
+                playerHitHpFillBar.fillAmount = hpHitPercentage;
+            }
+            else
+                timeLeft -= Time.deltaTime;
+        }
+            
     }
 
     public void ExpUpdate(){
@@ -48,8 +69,12 @@ public class UIManager : MonoBehaviour{
     public void lifeUpdate(){
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
-        playerHpFillBar.fillAmount = actualHp / maxHp;
+        hpPercentage = actualHp / maxHp;
+        playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
+
+        timeLeft = timeToDownHp;
+
         ExpUpdate();    
     }
 
