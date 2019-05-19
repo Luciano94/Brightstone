@@ -13,17 +13,23 @@ public class PlayerMovement : MonoBehaviour{
     private float rotV;
     private Vector2 rot;
     private Vector2 mov;
+    private Vector3 diffFromEnemy;
+    private string[] joystickConnected;
+    private bool isConnected = false;
 
-    string[] joystickConnected;
-    bool isConnected = false;
-
-    private void DetectDivice() {
+    private void DetectDivice(){
         if( Input.GetJoystickNames().Length > 0)
             isConnected = true;
     }
 
     private void Update() {
         DetectDivice();
+
+        if(GetComponent<PlayerCombat>().IsHit){
+            MoveByHit();
+            return;
+        }
+        
         if(!GetComponent<PlayerCombat>().isAttack &&
             !GetComponent<PlayerCombat>().isParry){
             Movement();
@@ -59,5 +65,13 @@ public class PlayerMovement : MonoBehaviour{
         mov *= (speed * Time.deltaTime);
         
         transform.Translate(mov);
+    }
+
+    private void MoveByHit(){
+        transform.Translate(-diffFromEnemy.normalized * speed * 0.3f * Time.deltaTime);
+    }
+
+    public void SetEnemyPos(Vector3 enemyPos){
+        diffFromEnemy = enemyPos - transform.position;
     }
 }

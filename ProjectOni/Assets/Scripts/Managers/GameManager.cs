@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
         get{return player.GetComponent<PlayerStats>();}
     }
 
+    public void SetEnemyHitFrom(Vector3 enemyPos){
+        player.GetComponent<PlayerMovement>().SetEnemyPos(enemyPos);
+    }
+
     public GameObject SetBoss{
         set{levelBoss = value;
             UIManager.Instance.DesactiveBoss();
@@ -54,9 +58,6 @@ public class GameManager : MonoBehaviour
     }
 
     public static int GetDirection(float angle){
-
-        Debug.Log(angle);
-
         if (angle > 45.0f && angle < 135.0f)
             return 3;
         else if (angle >= 135.0f && angle <= 225.0f)

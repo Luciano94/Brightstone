@@ -16,6 +16,7 @@ public class EnemyWeapon : MonoBehaviour {
         if(!gameM.PlayerIsParry){
             enemyStats.Hit();
             playerStats.Life = enemyStats.AtkDmg;
+            GameManager.Instance.SetEnemyHitFrom(transform.position);
             UIManager.Instance.lifeUpdate();
             enemyCombat.EndAttack();
         }else{
