@@ -17,13 +17,14 @@ public class CameraFollow: MonoBehaviour{
 	private float horzExtent;
 	private float offsetX;
 	private float offsetY;
+	private Vector2 position;
      
     private void Start() {
         vertExtent = Camera.main.orthographicSize;    
         horzExtent = vertExtent * Screen.width / Screen.height;
 		offsetX = nodeSize;
 		offsetY = nodeSize;
- 
+		position = new Vector2(0,0);
          // Calculations assume map is position at the origin
 		minX = horzExtent - offsetX / 2.0f;
 		maxX = offsetX / 2.0f - horzExtent;
@@ -33,6 +34,15 @@ public class CameraFollow: MonoBehaviour{
     }
 
 	public void ResetXY(Vector3 pos){
+		if(position.x == pos.x){
+			nodeSize = position.y - pos.y; 
+		}else{
+			nodeSize = position.x - pos.x;
+		}
+		if(nodeSize < 0){
+			nodeSize*=-1;
+		}
+		position = pos;
 		if(minX > pos.x){
 			minX -= nodeSize;
 			maxX -= nodeSize;
@@ -51,10 +61,10 @@ public class CameraFollow: MonoBehaviour{
 	}
      
     private void Update() {
-		newPos =new Vector3(target.position.x,target.position.y, -15 );
-		newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
-		newPos.y = Mathf.Clamp(newPos.y, minY, maxY);	
-		transform.position = newPos;
+			newPos =new Vector3(target.position.x,target.position.y, -15 );
+			newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
+			newPos.y = Mathf.Clamp(newPos.y, minY, maxY);	
+			transform.position = newPos;
     }
 
 /*	[SerializeField]private Transform target;
