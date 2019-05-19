@@ -6,6 +6,7 @@ public class BossCombat : MonoBehaviour {
     [Header("Attack")]
     [SerializeField]private float animTime = 0.6f;
     [SerializeField] private GameObject weapon;
+    [SerializeField]private EnemyAnimations eAnim;
     private float standTime;
     private float currentTime = 0.0f;
     private bool isChasing = false;
@@ -76,6 +77,7 @@ public class BossCombat : MonoBehaviour {
         currentTime += Time.deltaTime;
         if(currentTime > standTime) {
             weapon.SetActive(true);
+            eAnim.SetAttack();
         }
         if(currentTime > animTime) {
             weapon.SetActive(false);

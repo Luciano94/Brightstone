@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private float speed;
     [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
+    [SerializeField]private EnemyAnimations eAnim;
     private Vector3 diff;
     private Vector3 dir;
 
@@ -32,6 +33,11 @@ public class EnemyMovement : MonoBehaviour {
 
     private void Movement() {
         diff = player - transform.position;
+        if(player.x > transform.position.x){
+            eAnim.SetDirection(0);
+        }else{
+            eAnim.SetDirection(1);
+        }
         float dist = diff.magnitude;
         if(dist > 1.5f)
             transform.Translate(diff.normalized * speed * Time.deltaTime); 
