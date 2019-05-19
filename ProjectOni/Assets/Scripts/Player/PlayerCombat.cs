@@ -3,6 +3,10 @@
 public class PlayerCombat : MonoBehaviour{
     [SerializeField]private GameObject weapon;
     
+    private bool isHit = false;
+    private float timeParalized = 0.15f;
+    private float currentTime = 0.0f;
+
     [Header("Attack")]
     Action action = null;
     [SerializeField]private ComboManager cManager;
@@ -11,22 +15,26 @@ public class PlayerCombat : MonoBehaviour{
     private float actAtkTime;
     private bool isAttacking;
     private bool isStrong;
+
     [Header("Attack Move")]
     [SerializeField]private float speed; 
 	private Vector2 dir;
 	private Vector3 targetPos;
     private Rigidbody2D rig;
-
     private bool needMove = false;
    
     [Header("Parry")]
     [SerializeField]private float parryTime;
     private float actParryTime;
-    private bool isParryng;
+    private bool isParrying;
     [SerializeField]private PlayerAnimations plAnim;
 
+    public bool IsHit {
+        get { return isHit; }
+    }
+
     public bool isParry{
-        get{return isParryng;}
+        get{return isParrying;}
     }
 
     public bool isAttack{
@@ -51,9 +59,13 @@ public class PlayerCombat : MonoBehaviour{
         rig = GetComponent<Rigidbody2D>();
 
         actParryTime = parryTime;
-        isParryng = false;
+        isParrying = false;
 
         plStat = GameManager.Instance.playerSts;
+    }
+
+    private void Start(){
+        GetComponent<PlayerStats>().OnHit.AddListener(Hit);
     }
 
     public void StartAction(Action _action){
@@ -69,11 +81,19 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     void Update(){
+        if(isHit){
+            currentTime += Time.deltaTime;
+            if (currentTime >= timeParalized){
+                currentTime = 0.0f;
+                isHit = false;
+            }
+            else return;
+        }
+
         if(action != null){
-            if(!isParryng && isAttacking){
+            if(!isParrying && isAttacking){
                 AttackMove();
-                switch (action.Fdata.State)
-                {
+                switch (action.Fdata.State){
                     case ActionState.enterFrames:
                         EnterState();
                     break;
@@ -86,7 +106,7 @@ public class PlayerCombat : MonoBehaviour{
                 }
             }
         }
-        if(!isParryng)
+        if(!isParrying)
             Attack();
         if(!isAttacking)
             Parry();
@@ -134,20 +154,28 @@ public class PlayerCombat : MonoBehaviour{
 
     private void Parry(){
         if(Input.GetButtonDown("Jump")){
-            if(!isParryng){
-                isParryng = true;
+            if(!isParrying){
+                isParrying = true;
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
                 plAnim.SetParryTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
             }
         }
-        if(isParryng && actParryTime >= parryTime){
+        if(isParrying && actParryTime >= parryTime){
             weapon.SetActive(false);
-            isParryng = false;
+            isParrying = false;
         }else
             actParryTime += Time.deltaTime; 
     }
 
+    private void Hit() {
+        if (action)
+            action.StopAction();
+        currentTime = 0.0f;
+        isAttacking = false;
+        isParrying = false;
+        isHit = true;
+    }
 }
 
 /*

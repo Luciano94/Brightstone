@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour{
     
@@ -8,17 +9,19 @@ public class PlayerStats : MonoBehaviour{
     [SerializeField] int lostExpPercent = 40;
     float atkDmg = 0.0f;
 
-
     private float experience = 0;
+
+    [HideInInspector][SerializeField] UnityEvent onHit;
 
     public float Life{
         get{return currentLife;}
         set{
             if(currentLife > 0){
                 currentLife -= value;
-                if(currentLife <= 0){
+                if(currentLife <= 0)
                     GameManager.Instance.PlayerDeath();
-                }
+                else
+                    OnHit.Invoke();
             }
         }
     }
@@ -77,5 +80,10 @@ public class PlayerStats : MonoBehaviour{
             experience = 0.0f; 
         }
         return experience;
+    }
+
+    public UnityEvent OnHit
+    {
+        get { return onHit; }
     }
 }
