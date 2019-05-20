@@ -20,12 +20,18 @@ public class GameManager : MonoBehaviour
     private Vector3 weaponRotation;
     [SerializeField]private GameObject levelBoss;
 
+    private const int mainMenuIndex = 0;
+
     private void Awake() {
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{
             playerSts.SetExperience = PlayerPrefs.GetInt("XP", 0);
         }
+    }
+
+    public void ExitToMainMenu(){
+        SceneManager.LoadScene(mainMenuIndex);
     }
 
     public Vector3 PlayerPos{
