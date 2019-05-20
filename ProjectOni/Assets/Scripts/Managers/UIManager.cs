@@ -15,11 +15,13 @@ public class UIManager : MonoBehaviour{
         }
     }
 
+    [Header("Texts")]
     [SerializeField] private Text expTxt;
     [SerializeField] private Text lifeTxt;
     [SerializeField] private Text atkTxt;
     [SerializeField] private Text mrkTxt;
     [SerializeField] private Text requiredTxt;
+    [SerializeField] private GameObject market; 
 
     [Header("FillBars")]
     [SerializeField] Image playerHpFillBar;
@@ -36,11 +38,11 @@ public class UIManager : MonoBehaviour{
 
     private void Awake(){
         gameM = GameManager.Instance;
-        mrkTxt.enabled = false;
         timeLeft = timeToDownHp;
     }
 
     private void Start(){
+        // Fillbars
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
         bossHPBar.SetActive(false);
@@ -51,6 +53,7 @@ public class UIManager : MonoBehaviour{
     }
 
     private void Update(){
+        // Fillbars
         if (hpHitPercentage > hpPercentage){
             if(timeLeft <= 0){
                 hpHitPercentage -= Time.deltaTime * 0.5f;
@@ -59,7 +62,6 @@ public class UIManager : MonoBehaviour{
             else
                 timeLeft -= Time.deltaTime;
         }
-            
     }
 
     public void ExpUpdate(){
@@ -67,12 +69,14 @@ public class UIManager : MonoBehaviour{
     }
 
     public void lifeUpdate(){
+        // Fillbars
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
         hpPercentage = actualHp / maxHp;
         playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
 
+        // Timers
         timeLeft = timeToDownHp;
 
         ExpUpdate();    
@@ -84,9 +88,9 @@ public class UIManager : MonoBehaviour{
     }
 
     public void EnterMarket(){
-        mrkTxt.enabled = true;
+        market.SetActive(true);
         requiredTxt.text = ExperienceMarket.Instance.Required;
-        requiredTxt.enabled = true;
+        //requiredTxt.enabled = true;
     }
 
     public void marketUPdate(){
@@ -94,8 +98,8 @@ public class UIManager : MonoBehaviour{
     }
 
     public void ExitMarket(){
-        mrkTxt.enabled = false;
-        requiredTxt.enabled = false;
+        market.SetActive(false);
+        //requiredTxt.enabled = false;
     }
 
     public void BossDamaged(){

@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
         get{return player.GetComponent<PlayerStats>();}
     }
 
+    public PlayerCombat playerCombat{
+        get{return player.GetComponent<PlayerCombat>();}
+    }
+
     public void SetEnemyHitFrom(Vector3 enemyPos){
         player.GetComponent<PlayerMovement>().SetEnemyPos(enemyPos);
     }

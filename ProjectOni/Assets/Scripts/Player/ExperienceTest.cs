@@ -12,8 +12,8 @@ public class ExperienceTest : MonoBehaviour
     }
 
     private void Update() {
-        if(isHit)
-            LevelUp();
+        //if(isHit)
+            //LevelUp();
     }
 
     private void LevelUp(){
@@ -31,11 +31,15 @@ public class ExperienceTest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         isHit = true;
+        GameManager.Instance.playerCombat.enabled = false;
         UIManager.Instance.EnterMarket();
     }
     
     private void OnTriggerExit2D(Collider2D other) {
         isHit = false;
+        GameManager.Instance.playerCombat.enabled = true;
         UIManager.Instance.ExitMarket();
     }
+
+    public bool IsHit(){ return isHit; }
 }
