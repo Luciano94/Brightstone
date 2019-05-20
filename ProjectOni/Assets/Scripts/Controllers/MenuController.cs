@@ -2,10 +2,10 @@
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour{
-    const int level1Index = 1;
+    const int loadingIndex = 2;
 
     public void Play(){
-        SceneManager.LoadScene(level1Index);
+        SceneManager.LoadScene(loadingIndex);
     }
 
     public void Exit(){
