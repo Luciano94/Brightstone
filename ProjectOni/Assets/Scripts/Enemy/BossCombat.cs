@@ -15,7 +15,7 @@ public class BossCombat : MonoBehaviour {
     private bool isAttaking = false;
     private bool isHit = false;
     private bool isParried = false;
-    private float timeParalizedForHit = 0.2f;
+    private float timeParalizedForHit = 0.01f;
     private float timeParalizedForParry = 2.0f;
 
     public bool IsAttacking {
