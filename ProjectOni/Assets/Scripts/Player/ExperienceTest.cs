@@ -12,20 +12,20 @@ public class ExperienceTest : MonoBehaviour
     }
 
     private void Update() {
-        //if(isHit)
-            //LevelUp();
+        if(isHit)
+            LevelUp();
     }
 
     private void LevelUp(){
-        if(Input.GetKeyUp(KeyCode.Keypad1) ||
-            Input.GetButtonUp("Jump")){
+        if(Input.GetButtonUp("Yattack")){
             
             expMrk.LifeUp();
+            AudioManager.Instance.MenuHit();
         }
-        if(Input.GetKeyUp(KeyCode.Keypad2) ||
-            Input.GetButtonUp("Fire3")){
+        if(Input.GetButtonUp("Xattack")){
             
             expMrk.AtkUp();
+            AudioManager.Instance.MenuHit();
         }
     }
 

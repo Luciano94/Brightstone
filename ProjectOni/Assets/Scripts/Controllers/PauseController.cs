@@ -11,9 +11,16 @@ public class PauseController : MonoBehaviour{
 
     private void Update(){
 
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetButtonDown("Pause")){
             pauseState = !pauseState;
             pausePanel.SetActive(pauseState);
+        }
+        if(Input.GetButtonDown("Select") && pauseState){
+            if(!optionsState)
+                ActivateOptionsPanel();
+            else{
+                GameManager.Instance.ExitToMainMenu();
+            }
         }
     }
 

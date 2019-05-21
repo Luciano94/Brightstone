@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour{
             isConnected = true;
     }
 
+    public bool IsConnected{
+        get{return isConnected;}
+    }
+
     private void Update() {
         DetectDivice();
 

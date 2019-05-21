@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour{
     const int loadingIndex = 1;
+    [SerializeField]Button playButton;
+
+    private void Awake() {
+        playButton.Select();
+    }
 
     public void Play(){
         SceneManager.LoadScene(loadingIndex);

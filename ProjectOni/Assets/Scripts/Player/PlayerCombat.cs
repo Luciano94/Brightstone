@@ -7,6 +7,7 @@ public class PlayerCombat : MonoBehaviour{
     private bool isHit = false;
     private float timeParalized = 0.15f;
     private float currentTime = 0.0f;
+    private PlayerMovement pMovement;
 
     [Header("Attack")]
     Action action = null;
@@ -54,6 +55,7 @@ public class PlayerCombat : MonoBehaviour{
 
     private void Awake() {
         weaponColl = weapon.GetComponent<BoxCollider2D>();
+        pMovement = GetComponent<PlayerMovement>();
         actAtkTime = 0;
         isAttacking = false;
         atkAnim.State = ActionState.enterFrames;
@@ -114,11 +116,11 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Attack(){
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetButtonDown("Xattack")){
             cManager.ManageAction(Actions.X);
             isStrong = false;
         }
-        if(Input.GetButtonDown("Fire2")){
+        if(Input.GetButtonDown("Yattack")){
             cManager.ManageAction(Actions.Y);
             isStrong = true;
         }
@@ -157,7 +159,7 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Parry(){
-        if(Input.GetButtonDown("Jump")){
+        if(Input.GetButtonDown("Parry")){
             if(!isParrying){
                 isParrying = true;
                 actParryTime = 0.0f;
