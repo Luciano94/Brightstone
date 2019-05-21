@@ -41,6 +41,7 @@ public class ComboManager : MonoBehaviour{
                 currentAction = actions[comboMatrix[activeCombos[0],comboIndex]];
             //se pone play a la accion
                 currentAction.StartAction(comboIndex);
+                AudioManager.Instance.PlayerAttack();
             }
             //se inicializa el combo index
             comboIndex = 1;
@@ -65,6 +66,7 @@ public class ComboManager : MonoBehaviour{
                     if(found)
                         //se pone play a esa accion.
                         currentAction.StartAction(comboIndex);
+                        AudioManager.Instance.PlayerAttack();
                     //se quitan los que no coinciden.
                     for (int i = 0; i < activeCombos.Count; i++){
                         if(comboMatrix[activeCombos[i],comboIndex] != (int)actionNumber){               

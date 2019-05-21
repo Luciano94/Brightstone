@@ -27,7 +27,7 @@ public class BossMovement : MonoBehaviour {
         if(bossCombat.IsParried)
             return;
         if(bossCombat.IsHit) {
-            MoveByHit();
+            //MoveByHit();
             return;
         }
         if(!bossCombat.IsAttacking) {

@@ -20,6 +20,7 @@ public class BossWeapon : MonoBehaviour {
             UIManager.Instance.lifeUpdate();
             bCombat.EndAttack();
         }else{
+            AudioManager.Instance.PlayerParry();
             bossStats.Parried();
             gameObject.SetActive(false);
             bCombat.EndAttack();

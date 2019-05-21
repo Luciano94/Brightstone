@@ -20,6 +20,7 @@ public class EnemyWeapon : MonoBehaviour {
             UIManager.Instance.lifeUpdate();
             enemyCombat.EndAttack();
         }else{
+            AudioManager.Instance.PlayerParry();
             enemyStats.Parried();
             enemyCombat.EndAttack();
         }

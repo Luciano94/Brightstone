@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayerDeath(){
+        AudioManager.Instance.PlayerDeath();
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
         SceneManager.LoadScene(0);

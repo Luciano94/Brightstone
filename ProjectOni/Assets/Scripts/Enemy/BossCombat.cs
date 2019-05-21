@@ -6,6 +6,7 @@ public class BossCombat : MonoBehaviour {
     [Header("Attack")]
     [SerializeField]private float animTime = 0.6f;
     [SerializeField] private GameObject weapon;
+    private BoxCollider2D weaponColl;
     [SerializeField]private EnemyAnimations eAnim;
     private float standTime;
     private float currentTime = 0.0f;
@@ -36,7 +37,7 @@ public class BossCombat : MonoBehaviour {
     private void Start() {
         standTime = animTime * 0.5f;
         isChasing = true;
-
+        weaponColl = weapon.GetComponent<BoxCollider2D>();
         player = GameManager.Instance.PlayerPos;
 
         GetComponent<BossStats>().OnHit.AddListener(Hit);
@@ -90,11 +91,14 @@ public class BossCombat : MonoBehaviour {
     private void Attack() {
         currentTime += Time.deltaTime;
         if(currentTime > standTime) {
+            AudioManager.Instance.EnemyAttack();
             weapon.SetActive(true);
+            weaponColl.enabled = true;
             eAnim.SetAttack();
         }
         if(currentTime > animTime) {
             weapon.SetActive(false);
+            weaponColl.enabled = false;
             isAttaking = false;
             isChasing = true;
             currentTime = 0.0f;

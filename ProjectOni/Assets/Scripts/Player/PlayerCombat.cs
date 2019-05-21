@@ -2,6 +2,7 @@
 
 public class PlayerCombat : MonoBehaviour{
     [SerializeField]private GameObject weapon;
+    private BoxCollider2D weaponColl;
     
     private bool isHit = false;
     private float timeParalized = 0.15f;
@@ -52,7 +53,7 @@ public class PlayerCombat : MonoBehaviour{
     private PlayerStats plStat;
 
     private void Awake() {
-
+        weaponColl = weapon.GetComponent<BoxCollider2D>();
         actAtkTime = 0;
         isAttacking = false;
         atkAnim.State = ActionState.enterFrames;
@@ -128,15 +129,18 @@ public class PlayerCombat : MonoBehaviour{
             needMove = true;
         }
         weapon.SetActive(false);
+        weaponColl.enabled = false;
     }
 
     private void ActiveState(){
         weapon.SetActive(true);
+        weaponColl.enabled = true;
         plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), isStrong);
     }
 
     private void ExitState(){
         weapon.SetActive(false);
+        weaponColl.enabled = false;
         action = null;
         needMove = false;
         isAttacking = false;
@@ -158,11 +162,13 @@ public class PlayerCombat : MonoBehaviour{
                 isParrying = true;
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
+                weaponColl.enabled = true;
                 plAnim.SetParryTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
             }
         }
         if(isParrying && actParryTime >= parryTime){
             weapon.SetActive(false);
+            weaponColl.enabled = false;
             isParrying = false;
         }else
             actParryTime += Time.deltaTime; 
