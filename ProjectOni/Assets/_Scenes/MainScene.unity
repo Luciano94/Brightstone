@@ -494,7 +494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  \"Press X\"\n   Attack\n    +0,25"
+  m_Text: " \"Press X\"\n   Attack\n   +0,25"
 --- !u!222 &188438945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1311,7 +1311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  \"Press Y\"\n     Life\n     +50"
+  m_Text: " \"Press Y\"\n     Life\n     +50"
 --- !u!222 &746988631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3127,6 +3127,8 @@ MonoBehaviour:
   atkTxt: {fileID: 189593488}
   mrkTxt: {fileID: 746988630}
   requiredTxt: {fileID: 1745043065}
+  mAttackTxt: {fileID: 188438944}
+  mLifeTxt: {fileID: 746988630}
   market: {fileID: 1677186246}
   playerHpFillBar: {fileID: 859255623}
   playerHitHpFillBar: {fileID: 1775969139}

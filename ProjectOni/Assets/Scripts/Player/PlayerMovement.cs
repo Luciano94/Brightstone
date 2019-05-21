@@ -18,8 +18,14 @@ public class PlayerMovement : MonoBehaviour{
     private bool isConnected = false;
 
     private void DetectDivice(){
-        if( Input.GetJoystickNames().Length > 0)
-            isConnected = true;
+        if( Input.GetJoystickNames().Length > 0){
+            if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10)
+                isConnected = true;
+            else
+                isConnected = false;
+        }
+        else
+            isConnected = false;
     }
 
     public bool IsConnected{

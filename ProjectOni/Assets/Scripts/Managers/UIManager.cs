@@ -17,12 +17,17 @@ public class UIManager : MonoBehaviour{
 
     [Header("LoadingScreen")]
     [SerializeField] private GameObject loadingPanel;
-    [Header("Texts")]
+
+    [Header("UI Texts")]
     [SerializeField] private Text expTxt;
     [SerializeField] private Text lifeTxt;
     [SerializeField] private Text atkTxt;
     [SerializeField] private Text mrkTxt;
+
+    [Header("Market Texts")]
     [SerializeField] private Text requiredTxt;
+    [SerializeField] private Text mAttackTxt;
+    [SerializeField] private Text mLifeTxt;
     [SerializeField] private GameObject market; 
 
     [Header("FillBars")]
@@ -97,7 +102,15 @@ public class UIManager : MonoBehaviour{
     public void EnterMarket(){
         market.SetActive(true);
         requiredTxt.text = ExperienceMarket.Instance.Required;
-        //requiredTxt.enabled = true;
+        
+        if (!gameM.playerMovement.IsConnected){
+            mAttackTxt.text = "\n  Attack\n   +0,25";
+            mLifeTxt.text =  "\n     Life\n     +50";
+        }
+        else{
+            mAttackTxt.text =  "Press X\n  Attack\n   +0,25";
+            mLifeTxt.text =  " Press Y\n     Life\n     +50";
+        }
     }
 
     public void marketUPdate(){
@@ -106,7 +119,6 @@ public class UIManager : MonoBehaviour{
 
     public void ExitMarket(){
         market.SetActive(false);
-        //requiredTxt.enabled = false;
     }
 
     public void BossDamaged(){
