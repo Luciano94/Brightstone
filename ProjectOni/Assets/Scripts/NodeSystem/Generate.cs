@@ -60,6 +60,7 @@ public class Generate : MonoBehaviour{
             break;
             case 2:
                 Draw();
+                UIManager.Instance.LoadingFinish();
                 state = -1;
             break;
         }

@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour{
         }
     }
 
+    [Header("LoadingScreen")]
+    [SerializeField] private GameObject loadingPanel;
     [Header("Texts")]
     [SerializeField] private Text expTxt;
     [SerializeField] private Text lifeTxt;
@@ -39,6 +41,7 @@ public class UIManager : MonoBehaviour{
     private void Awake(){
         gameM = GameManager.Instance;
         timeLeft = timeToDownHp;
+        loadingPanel.SetActive(true);
     }
 
     private void Start(){
@@ -50,6 +53,10 @@ public class UIManager : MonoBehaviour{
         playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
         expTxt.text = "Exp: " + gameM.playerSts.Experience;
+    }
+
+    public void LoadingFinish(){
+        loadingPanel.SetActive(false);
     }
 
     private void Update(){
