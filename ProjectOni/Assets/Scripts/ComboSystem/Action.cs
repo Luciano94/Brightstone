@@ -3,7 +3,7 @@
 public class Action :MonoBehaviour{
     
     [SerializeField]private new string  name;
-    [SerializeField]private Animation[] anim;
+    [SerializeField]private Animation anim;
     [SerializeField]private float dmg;
     [SerializeField]private float totalTime;
     [SerializeField]private PlayerCombat playerCombat;
