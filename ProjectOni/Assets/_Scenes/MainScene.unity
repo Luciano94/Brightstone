@@ -4326,7 +4326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  anim: []
+  anim: {fileID: 0}
   dmg: 25
   totalTime: 0.5
   playerCombat: {fileID: 786400176}
@@ -4342,6 +4342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d16f3a476ee0464fa389c1008e49355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Combos:
+  - combo: 000000000000000000000000
+  - combo: 0100000001000000
+  activeCombos: 
   actions:
   - {fileID: 2109171034}
   - {fileID: 2109171036}
@@ -4358,7 +4362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  anim: []
+  anim: {fileID: 0}
   dmg: 40
   totalTime: 1
   playerCombat: {fileID: 786400176}
