@@ -17,15 +17,17 @@ public class ExperienceTest : MonoBehaviour
     }
 
     private void LevelUp(){
-        if(Input.GetButtonUp("Yattack")){
-            
-            expMrk.LifeUp();
-            AudioManager.Instance.MenuHit();
-        }
-        if(Input.GetButtonUp("Xattack")){
-            
-            expMrk.AtkUp();
-            AudioManager.Instance.MenuHit();
+        if (GameManager.Instance.playerMovement.IsConnected){
+            if(Input.GetButtonUp("Yattack")){
+                
+                expMrk.LifeUp();
+                AudioManager.Instance.MenuHit();
+            }
+            if(Input.GetButtonUp("Xattack")){
+                
+                expMrk.AtkUp();
+                AudioManager.Instance.MenuHit();
+            }
         }
     }
 
