@@ -71,10 +71,12 @@ public class PlayerCombat : MonoBehaviour{
         GetComponent<PlayerStats>().OnHit.AddListener(Hit);
     }
 
-    public void StartAction(Action _action){
+    public void StartAction(Action _action, float animToRun){
         action=_action;
         plStat.AtkDmg = action.Damage;
         isAttacking = true;
+
+        plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), animToRun);
     }
 
     public void StopAction(){
@@ -137,7 +139,7 @@ public class PlayerCombat : MonoBehaviour{
     private void ActiveState(){
         weapon.SetActive(true);
         weaponColl.enabled = true;
-        plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), isStrong);
+        //plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
     }
 
     private void ExitState(){
