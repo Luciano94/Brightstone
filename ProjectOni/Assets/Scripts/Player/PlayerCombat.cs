@@ -181,7 +181,7 @@ public class PlayerCombat : MonoBehaviour{
             actParryTime += Time.deltaTime; 
     }
 
-    private void Hit() {
+    private void Hit(){
         if (action)
             action.StopAction();
         currentTime = 0.0f;
@@ -191,6 +191,11 @@ public class PlayerCombat : MonoBehaviour{
 
         // Color by hit
         GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
+    }
+
+    private void OnDisable(){
+        isAttacking = false;
+        isParrying = false;
     }
 }
 
