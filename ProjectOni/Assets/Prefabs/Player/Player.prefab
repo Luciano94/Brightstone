@@ -112,6 +112,11 @@ MonoBehaviour:
   life: 100
   atkMult: 1
   lostExpPercent: 40
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &786400179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +236,7 @@ Animator:
   m_GameObject: {fileID: 6276584208348804366}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 15e6ed1423c2fdb44ad12bdb86f82198, type: 2}
+  m_Controller: {fileID: 9100000, guid: a3b8638def3be7744a2cc75fe33fe6ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -355,7 +360,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7506809460513346351, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+    - {fileID: 7506809460513346350, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
 --- !u!1 &6276584208348804366 stripped
 GameObject:
