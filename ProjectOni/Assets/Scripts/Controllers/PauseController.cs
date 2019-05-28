@@ -7,25 +7,13 @@ public class PauseController : MonoBehaviour{
     [SerializeField] private GameObject optionsPanel;
 
     private bool pauseState = false;
-    private bool optionsState = false;
-
+    
     private void Update(){
-
         if(Input.GetButtonDown("Pause")){
             pauseState = !pauseState;
+            if (!pauseState && optionsPanel.activeSelf)
+                UIManager.Instance.ChangeState(optionsPanel);
             pausePanel.SetActive(pauseState);
         }
-        if(Input.GetButtonDown("Select") && pauseState){
-            if(!optionsState)
-                ActivateOptionsPanel();
-            else{
-                GameManager.Instance.ExitToMainMenu();
-            }
-        }
-    }
-
-    public void ActivateOptionsPanel(){
-        optionsState = !optionsState;
-        optionsPanel.SetActive(optionsState);
     }
 }
