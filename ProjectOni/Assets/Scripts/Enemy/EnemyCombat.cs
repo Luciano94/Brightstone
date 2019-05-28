@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
     [Header("Attack")]
-    [SerializeField]private float animTime = 0.3f;
+    [SerializeField]private float animTime;
     [SerializeField] private GameObject weapon;
     private BoxCollider2D weaponColl;
     [SerializeField] private EnemyAnimations eAnim;
@@ -34,7 +34,7 @@ public class EnemyCombat : MonoBehaviour {
     private Vector3 player;
 
     private void Start() {
-        standTime = animTime * 0.5f;
+        standTime = animTime * 0.4f;
         isChasing = true;
         weaponColl = weapon.GetComponent<BoxCollider2D>();
         player = GameManager.Instance.PlayerPos;
@@ -50,6 +50,9 @@ public class EnemyCombat : MonoBehaviour {
                 currentTimeForBeingHit = 0.0f;
                 isParried = false;
                 isHit = false;
+
+                // Color back to normal
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
             }
             else return;
         }
@@ -59,6 +62,9 @@ public class EnemyCombat : MonoBehaviour {
             if (currentTimeForBeingHit >= timeParalizedForHit) {
                 currentTimeForBeingHit = 0.0f;
                 isHit = false;
+
+                // Color back to normal
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
             }
             else return;
         }
@@ -108,6 +114,9 @@ public class EnemyCombat : MonoBehaviour {
         isChasing = true;
         isAttaking = false;
         isHit = true;
+
+        // Color by hit
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
     }
 
     private void Parried() {
@@ -116,5 +125,8 @@ public class EnemyCombat : MonoBehaviour {
         isChasing = true;
         isAttaking = false;
         isParried = true;
+
+        // Color by hit
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
     }
 }

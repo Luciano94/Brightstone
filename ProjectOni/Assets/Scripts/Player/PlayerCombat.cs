@@ -91,6 +91,9 @@ public class PlayerCombat : MonoBehaviour{
             if (currentTime >= timeParalized){
                 currentTime = 0.0f;
                 isHit = false;
+
+                // Color back to normal
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
             }
             else return;
         }
@@ -155,8 +158,8 @@ public class PlayerCombat : MonoBehaviour{
             rig.AddForce(dir * speed * Time.deltaTime,ForceMode2D.Impulse);
             needMove = false;
         }else{
-            Vector2 hola = weapon.transform.position - transform.position;
-            dir = hola.normalized;
+            Vector2 diff = weapon.transform.position - transform.position;
+            dir = diff.normalized;
         }
     }
 
@@ -185,6 +188,9 @@ public class PlayerCombat : MonoBehaviour{
         isAttacking = false;
         isParrying = false;
         isHit = true;
+
+        // Color by hit
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
     }
 }
 
