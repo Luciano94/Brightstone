@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class BossStats : MonoBehaviour {
     [SerializeField] float life = 500;
     [SerializeField] float atkDmg = 20.0f;
+    [SerializeField] Transform numPos;
     
     private float currentLife;
     private float experience = 100;
@@ -30,10 +31,10 @@ public class BossStats : MonoBehaviour {
         get { return currentLife; }
         set {
             currentLife -= value;
+            DamagePopup.Create(numPos.position, (int)value, 10, Color.red);
             if (currentLife >= 0) {
                 OnHit.Invoke();
                 UIManager.Instance.BossDamaged();
-                DamagePopup.Create(transform.position, (int)value);
             }
             else {
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();

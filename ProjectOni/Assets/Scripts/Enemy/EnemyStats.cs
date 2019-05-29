@@ -4,7 +4,9 @@ using UnityEngine.Events;
 public class EnemyStats : MonoBehaviour {
     [SerializeField] float life = 50;
     [SerializeField] float atkDmg = 10.0f;
-    
+    [SerializeField] Transform numPos;
+    [SerializeField]Color lifeColor;
+    float colorPercent = 100;
     private float currentLife;
     private float experience = 100;
     GameObject myRoom;
@@ -16,6 +18,7 @@ public class EnemyStats : MonoBehaviour {
 
     private void Awake() {
         currentLife = life;
+
     }
 
     public GameObject MyRoom {
@@ -26,10 +29,12 @@ public class EnemyStats : MonoBehaviour {
     public float Life {
         get { return currentLife; }
         set {
+            ColorPercent(value);
             currentLife -= value;
+            
+            DamagePopup.Create(numPos.position, (int)value, 8, lifeColor);
             if (currentLife >= 0) {
                 OnHit.Invoke();
-                DamagePopup.Create(transform.position, (int)value);
             }
             else {
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();
@@ -38,6 +43,12 @@ public class EnemyStats : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void ColorPercent(float value){
+        colorPercent = (value * (life * 0.01f));
+        colorPercent *= 0.01f;
+        lifeColor.g -= colorPercent;
     }
 
     public float AtkDmg {
