@@ -954,7 +954,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32256
+    m_Bits: 556544
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3121,6 +3121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c6e9765e8970845b51a1e248640bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textPopupPrefab: {fileID: 8665552849060373072, guid: 5b39d1dbe9deb2d4ca30b69b33bf2c32,
+    type: 3}
   loadingPanel: {fileID: 948993234}
   expTxt: {fileID: 1938389456}
   lifeTxt: {fileID: 1822181410}
@@ -4344,7 +4346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Combos:
   - combo: 000000000000000000000000
-  - combo: 0100000001000000
+  - combo: 0000000000000000
+  - combo: 00000000000000000000000000000000
   activeCombos: 
   actions:
   - {fileID: 2109171034}

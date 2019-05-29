@@ -75,7 +75,8 @@ public class ComboManager : MonoBehaviour{
                         AudioManager.Instance.PlayerAttack();
                     //se quitan los que no coinciden.
                     for (int i = 0; i < activeCombos.Count; i++){
-                        if(Combos[activeCombos[i]].combo[comboIndex] != (int)actionNumber){               
+                        if(comboIndex == Combos[activeCombos[i]].combo.Count ||
+                            Combos[activeCombos[i]].combo[comboIndex] != (int)actionNumber){               
                             activeCombos.RemoveAt(i);
                         }
                     }

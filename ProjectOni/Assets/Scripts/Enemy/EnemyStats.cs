@@ -29,6 +29,7 @@ public class EnemyStats : MonoBehaviour {
             currentLife -= value;
             if (currentLife >= 0) {
                 OnHit.Invoke();
+                DamagePopup.Create(transform.position, (int)value);
             }
             else {
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();

@@ -14,7 +14,8 @@ public class UIManager : MonoBehaviour{
             return instance;
         }
     }
-
+    [Header("Popup text")]
+    [SerializeField] private GameObject textPopupPrefab;
     [Header("LoadingScreen")]
     [SerializeField] private GameObject loadingPanel;
 
@@ -41,7 +42,9 @@ public class UIManager : MonoBehaviour{
     [SerializeField] GameObject bossHPBar;
     private GameManager gameM;
 
-    
+    public GameObject TextPopupPrefab{
+        get{return textPopupPrefab;}
+    }
 
     private void Awake(){
         gameM = GameManager.Instance;

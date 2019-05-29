@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class PlayerAnimations : MonoBehaviour
-{
+public class PlayerAnimations : MonoBehaviour{
     Animator anim;
 
     private void Awake() {
 		anim = GetComponent<Animator>();
 	}
 
-	void Update() 
-	{
+	void Update() {
         anim.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
         anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
 	}
 
-    public void SetAttackTrigger(int dir, bool isStrong)
-    {
+    public void SetAttackTrigger(int dir, bool isStrong){
         if(!isStrong)
             anim.SetTrigger("Attacking");
         else
@@ -29,8 +26,7 @@ public class PlayerAnimations : MonoBehaviour
         anim.SetInteger("Direction", dir);
     }
 
-    public void Death()
-    {
+    public void Death(){
         anim.SetTrigger("Death");
 
         enabled = false;
