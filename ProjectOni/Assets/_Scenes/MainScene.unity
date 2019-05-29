@@ -259,6 +259,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 774118047}
+  - {fileID: 928125578}
   m_Father: {fileID: 737330615}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -315,7 +316,7 @@ GameObject:
   - component: {fileID: 128960211}
   - component: {fileID: 128960210}
   m_Layer: 18
-  m_Name: PostProces
+  m_Name: PostProcess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,7 +1219,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 124925860}
-  - {fileID: 928125578}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1398,12 +1398,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 928125577}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1896201158}
+        m_MethodName: ChangeState
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 928125577}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1849,13 +1849,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952543296}
-  m_Father: {fileID: 737330615}
+  m_Father: {fileID: 124925860}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26000002, y: 0.39344445}
   m_AnchorMax: {x: 0.36360422, y: 0.5092963}
-  m_AnchoredPosition: {x: 0.39996338, y: -0.5}
-  m_SizeDelta: {x: -1.1999512, y: 1.4000244}
+  m_AnchoredPosition: {x: 95.59256, y: -185.62299}
+  m_SizeDelta: {x: 145.7564, y: 98.36803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928125579
 MonoBehaviour:
@@ -4345,9 +4345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combos:
-  - combo: 000000000000000000000000
-  - combo: 0000000000000000
   - combo: 00000000000000000000000000000000
+  - combo: 0100000001000000
   activeCombos: 
   actions:
   - {fileID: 2109171034}
@@ -4504,7 +4503,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6276584208348804368, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-    - {fileID: 6276584208348804369, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}

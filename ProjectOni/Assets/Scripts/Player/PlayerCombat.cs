@@ -71,10 +71,12 @@ public class PlayerCombat : MonoBehaviour{
         GetComponent<PlayerStats>().OnHit.AddListener(Hit);
     }
 
-    public void StartAction(Action _action){
+    public void StartAction(Action _action, float animToRun){
         action=_action;
         plStat.AtkDmg = action.Damage;
         isAttacking = true;
+
+        plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), animToRun);
     }
 
     public void StopAction(){
@@ -89,6 +91,9 @@ public class PlayerCombat : MonoBehaviour{
             if (currentTime >= timeParalized){
                 currentTime = 0.0f;
                 isHit = false;
+
+                // Color back to normal
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
             }
             else return;
         }
@@ -137,7 +142,7 @@ public class PlayerCombat : MonoBehaviour{
     private void ActiveState(){
         weapon.SetActive(true);
         weaponColl.enabled = true;
-        plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), isStrong);
+        //plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
     }
 
     private void ExitState(){
@@ -153,8 +158,8 @@ public class PlayerCombat : MonoBehaviour{
             rig.AddForce(dir * speed * Time.deltaTime,ForceMode2D.Impulse);
             needMove = false;
         }else{
-            Vector2 hola = weapon.transform.position - transform.position;
-            dir = hola.normalized;
+            Vector2 diff = weapon.transform.position - transform.position;
+            dir = diff.normalized;
         }
     }
 
@@ -176,13 +181,21 @@ public class PlayerCombat : MonoBehaviour{
             actParryTime += Time.deltaTime; 
     }
 
-    private void Hit() {
+    private void Hit(){
         if (action)
             action.StopAction();
         currentTime = 0.0f;
         isAttacking = false;
         isParrying = false;
         isHit = true;
+
+        // Color by hit
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
+    }
+
+    private void OnDisable(){
+        isAttacking = false;
+        isParrying = false;
     }
 }
 

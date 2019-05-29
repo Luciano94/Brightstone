@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossCombat : MonoBehaviour {
     [Header("Attack")]
-    [SerializeField]private float animTime = 0.6f;
+    [SerializeField]private float animTime;
     [SerializeField] private GameObject weapon;
     private BoxCollider2D weaponColl;
     [SerializeField]private EnemyAnimations eAnim;
@@ -15,8 +15,8 @@ public class BossCombat : MonoBehaviour {
     private bool isAttaking = false;
     private bool isHit = false;
     private bool isParried = false;
-    private float timeParalizedForHit = 0.01f;
-    private float timeParalizedForParry = 2.0f;
+    private float timeParalizedForHit = 0.15f;
+    private float timeParalizedForParry = 1.0f;
 
     public bool IsAttacking {
         get { return isAttaking; }
@@ -35,13 +35,13 @@ public class BossCombat : MonoBehaviour {
     private Vector3 player;
 
     private void Start() {
-        standTime = animTime * 0.5f;
+        standTime = animTime * 0.4f;
         isChasing = true;
         weaponColl = weapon.GetComponent<BoxCollider2D>();
         player = GameManager.Instance.PlayerPos;
 
         GetComponent<BossStats>().OnHit.AddListener(Hit);
-        GetComponent<BossStats>().OnHit.AddListener(Parried);
+        GetComponent<BossStats>().OnParried.AddListener(Parried);
     }
 
 
@@ -56,6 +56,9 @@ public class BossCombat : MonoBehaviour {
                 currentTimeForBeingHit = 0.0f;
                 isParried = false;
                 isHit = false;
+
+                // Color back to normal
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
             }
             else return;
         }
@@ -65,6 +68,9 @@ public class BossCombat : MonoBehaviour {
             if (currentTimeForBeingHit >= timeParalizedForHit) {
                 currentTimeForBeingHit = 0.0f;
                 isHit = false;
+
+                // Color back to normal
+                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
             }
             else return;
         }
@@ -114,6 +120,9 @@ public class BossCombat : MonoBehaviour {
             weapon.SetActive(false);
         }
         isHit = true;
+
+        // Color by hit
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
     }
 
     private void Parried() {
@@ -125,5 +134,8 @@ public class BossCombat : MonoBehaviour {
             weapon.SetActive(false);
         }
         isParried = true;
+
+        // Color by hit
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
     }
 }

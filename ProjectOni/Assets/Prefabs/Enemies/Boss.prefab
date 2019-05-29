@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbda8431797b9b5418a9d04634617cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animTime: 1.2
+  animTime: 1
   weapon: {fileID: 3141483355779995974}
   eAnim: {fileID: 5559408988468806604}
 --- !u!114 &3141483355052190512
@@ -83,6 +83,11 @@ MonoBehaviour:
   atkDmg: 20
   enemyType: 3
   onHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onParried:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,

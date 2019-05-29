@@ -137,4 +137,8 @@ public class UIManager : MonoBehaviour{
     public void DesactiveBoss(){
         bossHPBar.SetActive(false);
     }
+
+    public void ChangeState(GameObject go){
+        go.SetActive(!go.activeSelf);
+    }
 }

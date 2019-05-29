@@ -4,26 +4,24 @@
 public class PlayerAnimations : MonoBehaviour{
     Animator anim;
 
-    private void Awake() {
+    private void Awake(){
 		anim = GetComponent<Animator>();
 	}
 
-	void Update() {
+	void Update(){
         anim.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
         anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
 	}
 
-    public void SetAttackTrigger(int dir, bool isStrong){
-        if(!isStrong)
-            anim.SetTrigger("Attacking");
-        else
-            anim.SetTrigger("StrongAtk");
-        anim.SetInteger("Direction", dir);
+    public void SetAttackTrigger(int dir, float animIndex){
+        anim.SetTrigger("Attacking");
+        anim.SetFloat("Anim", animIndex);
+        anim.SetFloat("Dir", (float)dir);
     }
 
     public void SetParryTrigger(int dir){
         anim.SetTrigger("Parry");
-        anim.SetInteger("Direction", dir);
+        anim.SetFloat("Dir", (float)dir);
     }
 
     public void Death(){
