@@ -5,8 +5,9 @@ public class EnemyStats : MonoBehaviour {
     [SerializeField] float life = 50;
     [SerializeField] float atkDmg = 10.0f;
     [SerializeField] Transform numPos;
-    [SerializeField]Color lifeColor;
-    float colorPercent = 100;
+    [SerializeField]Gradient lifeColor;
+    private Color actualLifeColor;
+    float colorPercent;
     private float currentLife;
     private float experience = 100;
     GameObject myRoom;
@@ -29,10 +30,9 @@ public class EnemyStats : MonoBehaviour {
     public float Life {
         get { return currentLife; }
         set {
-            ColorPercent(value);
             currentLife -= value;
-            
-            DamagePopup.Create(numPos.position, (int)value, 8, lifeColor);
+            ColorPercent(value);
+            DamagePopup.Create(numPos.position, (int)value, 8, actualLifeColor);
             if (currentLife >= 0) {
                 OnHit.Invoke();
             }
@@ -46,9 +46,8 @@ public class EnemyStats : MonoBehaviour {
     }
 
     private void ColorPercent(float value){
-        colorPercent = (value * (life * 0.01f));
-        colorPercent *= 0.01f;
-        lifeColor.g -= colorPercent;
+        colorPercent = ((value * 100f) / currentLife) * 0.01f;
+        actualLifeColor =  lifeColor.Evaluate(colorPercent);
     }
 
     public float AtkDmg {

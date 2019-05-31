@@ -182,15 +182,20 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Hit(){
+        FilterManager.SetChromaticAberration(true);
         if (action)
             action.StopAction();
         currentTime = 0.0f;
         isAttacking = false;
         isParrying = false;
         isHit = true;
-
         // Color by hit
         GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
+        Invoke("TurnOffCA", 0.05f);
+    }
+
+    public void TurnOffCA(){
+        FilterManager.SetChromaticAberration(false);
     }
 
     private void OnDisable(){

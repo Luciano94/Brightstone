@@ -8,7 +8,9 @@ public class BossStats : MonoBehaviour {
     [SerializeField] float life = 500;
     [SerializeField] float atkDmg = 20.0f;
     [SerializeField] Transform numPos;
-    
+    [SerializeField]Gradient lifeColor;
+    private Color actualLifeColor;
+    float colorPercent;
     private float currentLife;
     private float experience = 100;
     GameObject myRoom;
@@ -31,7 +33,8 @@ public class BossStats : MonoBehaviour {
         get { return currentLife; }
         set {
             currentLife -= value;
-            DamagePopup.Create(numPos.position, (int)value, 10, Color.red);
+            ColorPercent(value);
+            DamagePopup.Create(numPos.position, (int)value, 10, actualLifeColor);
             if (currentLife >= 0) {
                 OnHit.Invoke();
                 UIManager.Instance.BossDamaged();
@@ -44,6 +47,11 @@ public class BossStats : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void ColorPercent(float value){
+        colorPercent = ((value * 100f) / currentLife) * 0.01f;
+        actualLifeColor =  lifeColor.Evaluate(colorPercent);
     }
     
     public float MaxLife() { return life; }
