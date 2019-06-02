@@ -26,6 +26,7 @@ public class PlayerStats : MonoBehaviour{
         }
     }
 
+
     public float LifeStat{
         get{return currentLife;}
         set{
@@ -37,6 +38,11 @@ public class PlayerStats : MonoBehaviour{
         }
     }
 
+    private int LifeNormalized(){
+        int value = (int)(currentLife * 100); 
+        return (int)(value / life); 
+    }
+    
     public float MaxLife() { return life; }
 
     public float AtkDmg{

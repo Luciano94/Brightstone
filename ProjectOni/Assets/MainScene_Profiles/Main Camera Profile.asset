@@ -40,10 +40,10 @@ MonoBehaviour:
     value: 1
   colored:
     overrideState: 1
-    value: 0
+    value: 1
   intensity:
     overrideState: 1
-    value: 0.25
+    value: 1
   size:
     overrideState: 1
     value: 0.3
@@ -67,7 +67,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   externalLut:
     overrideState: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   saturation:
-    overrideState: 0
+    overrideState: 1
     value: 0
   brightness:
     overrideState: 0
@@ -1379,25 +1379,25 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 10
+    value: 100
   threshold:
     overrideState: 1
-    value: 20
+    value: 15
   softKnee:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 1
   clamp:
-    overrideState: 0
-    value: 65472
+    overrideState: 1
+    value: 100
   diffusion:
-    overrideState: 0
-    value: 7
+    overrideState: 1
+    value: 5.64
   anamorphicRatio:
-    overrideState: 0
+    overrideState: 1
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 0, b: 0, a: 1}
+    value: {r: 0.6509804, g: 0.09019608, b: 0.09019608, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -1420,16 +1420,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   mode:
     overrideState: 1
-    value: 0
+    value: 1
   color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 1, g: 0, b: 0, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
@@ -1446,12 +1446,12 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   mask:
-    overrideState: 0
-    value: {fileID: 0}
+    overrideState: 1
+    value: {fileID: 2800000, guid: d96c9674a7fc8ab4b991501827ab87b9, type: 3}
     defaultState: 1
   opacity:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.5
 --- !u!114 &114301047529950970
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1547,10 +1547,10 @@ MonoBehaviour:
     value: 1
   shutterAngle:
     overrideState: 0
-    value: 270
+    value: 111
   sampleCount:
     overrideState: 0
-    value: 10
+    value: 4
 --- !u!114 &114673681600788536
 MonoBehaviour:
   m_ObjectHideFlags: 3

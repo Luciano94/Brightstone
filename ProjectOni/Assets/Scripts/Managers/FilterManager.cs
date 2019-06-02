@@ -15,4 +15,10 @@ public class FilterManager : MonoBehaviour
         postVolume.profile.TryGetSettings(out cA);
         cA.active = state;
     }
+
+    public static void SetColorSaturation(int value){
+        ColorGrading cG;
+        postVolume.profile.TryGetSettings(out cG);
+        cG.saturation.value = value;
+    }
 }
