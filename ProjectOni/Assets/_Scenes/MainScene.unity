@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20784312, g: 0.94509804, b: 0.6340319, a: 0.9019608}
+  m_Color: {r: 0.20784312, g: 0.94509804, b: 0.6340319, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2957,7 +2957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.6644906, b: 0.10902455, a: 0.9019608}
+  m_Color: {r: 0.9245283, g: 0.6644906, b: 0.10902455, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3147,9 +3147,13 @@ MonoBehaviour:
   market: {fileID: 1677186246}
   playerHpFillBar: {fileID: 859255623}
   playerHitHpFillBar: {fileID: 1775969139}
+  normalLifeColorBar: {r: 0.20784314, g: 0.94509804, b: 0.63529414, a: 1}
+  lowLifeColorBar: {r: 0.9411765, g: 0.19607843, b: 0.23529412, a: 1}
+  hitLifeColorBar: {r: 0.9254902, g: 0.6627451, b: 0.10980392, a: 1}
   timeToDownHp: 2
   bossHpFillBar: {fileID: 2029499973}
   bossHPBar: {fileID: 250927703}
+  smoothnessLimit: 0.05
 --- !u!114 &1896201159
 MonoBehaviour:
   m_ObjectHideFlags: 0

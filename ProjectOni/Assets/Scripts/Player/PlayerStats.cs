@@ -7,9 +7,10 @@ public class PlayerStats : MonoBehaviour{
     [SerializeField] float life = 100.0f;
     [SerializeField] float atkMult = 1.0f;
     [SerializeField] int lostExpPercent = 40;
-    float atkDmg = 0.0f;
-
+    private float atkDmg = 0.0f;
     private float experience = 0;
+    private bool isLowHealth = false;
+    public bool IsLowHealth { get { return isLowHealth; } private set { isLowHealth = value; } }
 
     [HideInInspector][SerializeField] UnityEvent onHit;
 
@@ -18,6 +19,9 @@ public class PlayerStats : MonoBehaviour{
         set{
             if(currentLife > 0){
                 currentLife -= value;
+
+                CheckLowHealth();
+                
                 if(currentLife <= 0)
                     GameManager.Instance.PlayerDeath();
                 else
@@ -26,7 +30,6 @@ public class PlayerStats : MonoBehaviour{
         }
     }
 
-
     public float LifeStat{
         get{return currentLife;}
         set{
@@ -34,8 +37,17 @@ public class PlayerStats : MonoBehaviour{
             {
                 currentLife += value;
                 life += value;
+
+                CheckLowHealth();
             }
         }
+    }
+
+    private void CheckLowHealth(){
+        if (currentLife / life < 0.3f)
+            isLowHealth = true;
+        else
+            isLowHealth = false;            
     }
 
     private int LifeNormalized(){

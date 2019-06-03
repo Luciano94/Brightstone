@@ -32,14 +32,20 @@ public class UIManager : MonoBehaviour{
     [SerializeField] private GameObject market; 
 
     [Header("FillBars")]
-    [SerializeField] Image playerHpFillBar;
-    [SerializeField] Image playerHitHpFillBar;
-    [SerializeField] float timeToDownHp;
+    [SerializeField] private Image playerHpFillBar;
+    [SerializeField] private Image playerHitHpFillBar;
+    [SerializeField] private Color normalLifeColorBar;
+    [SerializeField] private Color lowLifeColorBar;
+    [SerializeField] private Color hitLifeColorBar;
+    [SerializeField] private float timeToDownHp;
     private float timeLeft;
     private float hpPercentage;
     private float hpHitPercentage;
-    [SerializeField] Image bossHpFillBar;
-    [SerializeField] GameObject bossHPBar;
+    [SerializeField] private Image bossHpFillBar;
+    [SerializeField] private GameObject bossHPBar;
+
+    [Header("PostProcess")]
+    [SerializeField] private float smoothnessLimit;
     private GameManager gameM;
 
     public GameObject TextPopupPrefab{
@@ -61,6 +67,9 @@ public class UIManager : MonoBehaviour{
         playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
         expTxt.text = "Exp: " + gameM.playerSts.Experience;
+
+        playerHpFillBar.color = normalLifeColorBar;
+        playerHitHpFillBar.color = hitLifeColorBar;
     }
 
     public void LoadingFinish(){
@@ -77,6 +86,11 @@ public class UIManager : MonoBehaviour{
             else
                 timeLeft -= Time.deltaTime;
         }
+
+        if (gameM.playerSts.IsLowHealth){
+            FilterManager.SetVignetteSmoothness(Mathf.PingPong(Time.time * 0.1f, smoothnessLimit));
+        }
+
     }
 
     public void ExpUpdate(){
@@ -90,6 +104,18 @@ public class UIManager : MonoBehaviour{
         hpPercentage = actualHp / maxHp;
         playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
+
+        if(gameM.playerSts.IsLowHealth){
+            playerHpFillBar.color = lowLifeColorBar;
+            FilterManager.SetActiveVignette(true);
+        }
+        else{
+            playerHpFillBar.color = normalLifeColorBar;
+            FilterManager.SetVignetteSmoothness(0.0f);
+            FilterManager.SetActiveVignette(false);
+        }
+
+        if(playerHitHpFillBar.color != hitLifeColorBar) playerHitHpFillBar.color = hitLifeColorBar;
 
         // Timers
         timeLeft = timeToDownHp;
