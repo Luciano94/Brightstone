@@ -46,7 +46,11 @@ public class EnemyStats : MonoBehaviour {
     }
 
     private void ColorPercent(float value){
-        colorPercent = ((value * 100f) / currentLife) * 0.01f;
+        if (currentLife > 0)
+            //colorPercent = ((value * 100f) / currentLife) * 0.01f;
+            colorPercent = currentLife / life;
+        else
+            colorPercent = 0.01f;
         actualLifeColor =  lifeColor.Evaluate(colorPercent);
     }
 

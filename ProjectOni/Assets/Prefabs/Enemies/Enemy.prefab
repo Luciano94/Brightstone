@@ -146,8 +146,8 @@ MonoBehaviour:
   numPos: {fileID: 4998499608362035148}
   lifeColor:
     serializedVersion: 2
-    key0: {r: 1, g: 0.78431374, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0.06321812, a: 1}
+    key0: {r: 0.74509805, g: 0, b: 0.0627451, a: 1}
+    key1: {r: 1, g: 0.6615062, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
