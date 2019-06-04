@@ -3153,7 +3153,7 @@ MonoBehaviour:
   timeToDownHp: 2
   bossHpFillBar: {fileID: 2029499973}
   bossHPBar: {fileID: 250927703}
-  smoothnessLimit: 0.05
+  smoothnessLimit: 0.1
 --- !u!114 &1896201159
 MonoBehaviour:
   m_ObjectHideFlags: 0

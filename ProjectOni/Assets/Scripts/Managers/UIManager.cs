@@ -70,6 +70,8 @@ public class UIManager : MonoBehaviour{
 
         playerHpFillBar.color = normalLifeColorBar;
         playerHitHpFillBar.color = hitLifeColorBar;
+
+        FilterManager.SetActiveVignette(false);
     }
 
     public void LoadingFinish(){
@@ -88,7 +90,7 @@ public class UIManager : MonoBehaviour{
         }
 
         if (gameM.playerSts.IsLowHealth){
-            FilterManager.SetVignetteSmoothness(Mathf.PingPong(Time.time * 0.1f, smoothnessLimit));
+            FilterManager.SetVignetteSmoothness(Mathf.PingPong(Time.time * 0.2f, smoothnessLimit));
         }
 
     }
