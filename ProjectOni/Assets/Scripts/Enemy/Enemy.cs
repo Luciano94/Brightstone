@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Enemy : EnemyBase
-{
-    public enum States
-    {
+public class Enemy : EnemyBase{
+    public enum States{
         Patrol = 0,
         Chase,
         Attack,
@@ -13,8 +11,7 @@ public class Enemy : EnemyBase
         Count
     }
 
-    public enum Events
-    {
+    public enum Events{
         InSight = 0,
         OutOfSight,
         InAttackRange,
@@ -30,8 +27,7 @@ public class Enemy : EnemyBase
     // ===========================================================
     // Inicialization
     // ===========================================================
-    private void Start()
-    {
+    private void Start(){
         fsm = new EnemyFSM((int)States.Count, (int)Events.Count, (int)States.Patrol);
 
                                   // Origin             // Event                       // Destiny
@@ -55,14 +51,12 @@ public class Enemy : EnemyBase
     // ===========================================================
     // Virtual Methods
     // ===========================================================
-    override protected void OnUpdate()
-    {
+    override protected void OnUpdate(){
         //Debug.Log((States)fsm.GetState());
 
         Updating();
 
-        switch (fsm.GetState())
-        {
+        switch (fsm.GetState()){
             case (int)States.Patrol:
                 Patrolling();
                 break;
@@ -81,38 +75,31 @@ public class Enemy : EnemyBase
         }
     }
 
-    virtual protected void Updating()
-    {
+    virtual protected void Updating(){
 
     }
 
-    virtual protected void Patrolling()
-    {
+    virtual protected void Patrolling(){
 
     }
 
-    virtual protected void Chasing()
-    {
+    virtual protected void Chasing(){
 
     }
 
-    virtual protected void Attacking()
-    {
+    virtual protected void Attacking(){
 
     }
 
-    virtual protected void Recovering()
-    {
+    virtual protected void Recovering(){
 
     }
 
-    void Die()
-    {
+    void Die(){
         
     }
 
-    virtual protected void Attack()
-    {
+    virtual protected void Attack(){
 
     }
 
@@ -120,43 +107,35 @@ public class Enemy : EnemyBase
     // Events
     // ===========================================================
 
-    override protected void OnEnemyInSight()
-    {
+    override protected void OnEnemyInSight(){
         fsm.SendEvent((int)Events.InSight);
     }
 
-    override protected void OnEnemyOutOfSight()
-    {
+    override protected void OnEnemyOutOfSight(){
         fsm.SendEvent((int)Events.OutOfSight);
     }
 
-    override protected void OnEnemyInAttackRange()
-    {
+    override protected void OnEnemyInAttackRange(){
         fsm.SendEvent((int)Events.InAttackRange);
     }
 
-    override protected void OnEnemyOutOfAttackRange()
-    {
+    override protected void OnEnemyOutOfAttackRange(){
         fsm.SendEvent((int)Events.OutOfAttackRange);
     }
 
-    protected override void OnHit()
-    {
+    protected override void OnHit(){
         fsm.SendEvent((int)Events.OnHit);
     }
 
-    protected override void OnNoHealth()
-    {
+    protected override void OnNoHealth(){
         fsm.SendEvent((int)Events.NoHealth);
     }
 
-    protected override void OnPlayerDeath()
-    {
+    protected override void OnPlayerDeath(){
         fsm.SendEvent((int)Events.OnPlayerDeath);
     }
 
-    public int GetActualState()
-    {
+    public int GetActualState(){
         return fsm.GetState();
     }
 }

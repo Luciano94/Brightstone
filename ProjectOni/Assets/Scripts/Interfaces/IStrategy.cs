@@ -1,4 +1,3 @@
-﻿public interface IStrategy
-{
-    
+﻿public interface IStrategy{
+
 }

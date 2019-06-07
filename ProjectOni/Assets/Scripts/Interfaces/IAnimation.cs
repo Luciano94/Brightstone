@@ -1,4 +1,3 @@
-﻿public interface IAnimation
-{
+﻿public interface IAnimation{
     void Death();
 }
