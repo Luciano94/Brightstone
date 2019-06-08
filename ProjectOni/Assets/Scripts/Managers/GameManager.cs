@@ -86,12 +86,18 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayerDeath();
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
-        SceneManager.LoadScene(0);
+        MenuManager.Instance.LoseMenuCanvas= true;
+        Invoke("GoToMenu", 5.0f);
     }
 
-    public void PLayerWin(){
+    public void PlayerWin(){
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
+        MenuManager.Instance.WinMenuCanvas=true;
+        Invoke("GoToMenu", 5.0f);
+    }
+
+    private void GoToMenu(){
         SceneManager.LoadScene(0);
     }
 }

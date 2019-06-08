@@ -121,13 +121,15 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Attack(){
-        if(Input.GetButtonDown("Xattack")){
-            cManager.ManageAction(Actions.X);
-            isStrong = false;
-        }
-        if(Input.GetButtonDown("Yattack")){
-            cManager.ManageAction(Actions.Y);
-            isStrong = true;
+        if(!MenuManager.Instance.StartMenu){
+          if(Input.GetButtonDown("Xattack")){
+                cManager.ManageAction(Actions.X);
+                isStrong = false;
+            }
+            if(Input.GetButtonDown("Yattack")){
+                cManager.ManageAction(Actions.Y);
+                isStrong = true;
+            }
         }
     }
 
