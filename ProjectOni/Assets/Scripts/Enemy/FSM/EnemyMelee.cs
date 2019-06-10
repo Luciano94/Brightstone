@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class EnemyMelee : Enemy{
-    protected override void Patrolling(){
+    protected override void Surround(){
             
     }
 

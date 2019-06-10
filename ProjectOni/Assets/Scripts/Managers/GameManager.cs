@@ -55,12 +55,14 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject SetBoss{
-        set{levelBoss = value;
+        set{
+            levelBoss = value;
+            UIManager.Instance.SetBossListener();
             UIManager.Instance.DesactiveBoss();
-            }
+        }
     }
-    public BossStats bossSts{
-        get{return levelBoss.GetComponent<BossStats>();}
+    public EnemyStats bossSts{
+        get{return levelBoss.GetComponent<EnemyStats>();}
     }
 
     public bool PlayerIsParry{
@@ -86,15 +88,15 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayerDeath();
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
-        MenuManager.Instance.LoseMenuCanvas= true;
-        Invoke("GoToMenu", 5.0f);
+        MenuManager.Instance.LoseMenuCanvas = true;
+        Invoke("GoToMenu", 2.0f);
     }
 
     public void PlayerWin(){
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
-        MenuManager.Instance.WinMenuCanvas=true;
-        Invoke("GoToMenu", 5.0f);
+        MenuManager.Instance.WinMenuCanvas = true;
+        Invoke("GoToMenu", 2.0f);
     }
 
     private void GoToMenu(){

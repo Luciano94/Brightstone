@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animTime: 0.8
   weapon: {fileID: 8767666440214113500}
-  eAnim: {fileID: 4914635166833622913}
+  enemyAnim: {fileID: 4914635166833622913}
 --- !u!114 &1592394171438056261
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -39,7 +39,7 @@ public class ExperienceMarket : MonoBehaviour
             requiredExp += requiredExp * level;
             playerStats.LifeStat = 50;
             UIManager.Instance.lifeUpdate();
-            UIManager.Instance.marketUPdate();
+            UIManager.Instance.MarketUpdate();
         }
     }
 
@@ -50,7 +50,7 @@ public class ExperienceMarket : MonoBehaviour
             requiredExp += requiredExp * level;
             playerStats.AtkMult = 0.25f;
             UIManager.Instance.atkUpdate();
-            UIManager.Instance.marketUPdate();
+            UIManager.Instance.MarketUpdate();
         }
     }
 }

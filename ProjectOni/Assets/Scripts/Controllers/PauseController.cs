@@ -10,7 +10,6 @@ public class PauseController : MonoBehaviour{
     
     private void Update(){
         if(Input.GetButtonDown("Pause")){
-            Debug.Log(pauseState);   
             pauseState = !pauseState;
             MenuManager.Instance.StartMenu = pauseState;
             if (!pauseState && optionsPanel.activeSelf){

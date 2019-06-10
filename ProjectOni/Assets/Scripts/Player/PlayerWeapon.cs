@@ -2,26 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWeapon : MonoBehaviour {
+public class PlayerWeapon : MonoBehaviour{
     PlayerStats playerStats;
-    //EnemyStats enemyStats;
-    //BossStats bossStats;
+    const int ENEMY_LAYER = 14;
 
-    private void Start() {
+    private void Start(){
         playerStats = GameManager.Instance.playerSts;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.layer == 14 &&
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.layer == ENEMY_LAYER &&
             GameManager.Instance.PlayerIsAttack){
-            
             EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
-            if (enemyStats)
-                enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
-            else {
-                BossStats bossStats = collision.gameObject.GetComponent<BossStats>();
-                bossStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
-            }
+            enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
         }
     }
 }

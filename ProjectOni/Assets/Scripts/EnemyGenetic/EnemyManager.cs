@@ -4,6 +4,7 @@ public enum EnemyType{
     Samurai,
     Archer,
     Lancer,
+    Boss,
     Count,
 }
 

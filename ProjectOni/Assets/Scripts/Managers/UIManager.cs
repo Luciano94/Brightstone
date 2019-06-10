@@ -59,10 +59,8 @@ public class UIManager : MonoBehaviour{
     }
 
     private void Start(){
-        // Fillbars
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
-        bossHPBar.SetActive(false);
         hpPercentage = hpHitPercentage = actualHp / maxHp;
         playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
         lifeTxt.text = actualHp + " / " + maxHp;
@@ -79,7 +77,6 @@ public class UIManager : MonoBehaviour{
     }
 
     private void Update(){
-        // Fillbars
         if (hpHitPercentage > hpPercentage){
             if(timeLeft <= 0){
                 hpHitPercentage -= Time.deltaTime * 0.5f;
@@ -100,7 +97,6 @@ public class UIManager : MonoBehaviour{
     }
 
     public void lifeUpdate(){
-        // Fillbars
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
         hpPercentage = actualHp / maxHp;
@@ -119,7 +115,6 @@ public class UIManager : MonoBehaviour{
 
         if(playerHitHpFillBar.color != hitLifeColorBar) playerHitHpFillBar.color = hitLifeColorBar;
 
-        // Timers
         timeLeft = timeToDownHp;
 
         ExpUpdate();    
@@ -144,7 +139,7 @@ public class UIManager : MonoBehaviour{
         }
     }
 
-    public void marketUPdate(){
+    public void MarketUpdate(){
         requiredTxt.text = ExperienceMarket.Instance.Required;
     }
 
@@ -156,6 +151,10 @@ public class UIManager : MonoBehaviour{
         float actualHp = gameM.bossSts.Life;
         float maxHp = gameM.bossSts.MaxLife();
         bossHpFillBar.fillAmount = actualHp / maxHp;
+    }
+
+    public void SetBossListener(){
+        gameM.bossSts.OnHit.AddListener(BossDamaged);
     }
 
     public void InitBoss(){

@@ -71,7 +71,7 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemiesLeft = 1;
                 pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
                 enemies.Add( Instantiate(bossPrefab, pos, transform.rotation));
-                enemies[0].GetComponent<BossStats>().MyRoom = gameObject;
+                enemies[0].GetComponent<EnemyStats>().MyRoom = gameObject;
                 enemies[0].SetActive(false);
                 GameManager.Instance.SetBoss = enemies[0];
             break;
@@ -80,9 +80,11 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public void ActiveEnemies(){
         if(!haveMarket){
-            foreach (GameObject enemy in enemies){
+            foreach (GameObject enemy in enemies)
                 enemy.SetActive(true);
-            }
+            EnemyBahaviour.Instance.SetEnemies(enemies);
+            if(enemies[0].GetComponent<EnemyStats>().enemyType == EnemyType.Boss)
+                UIManager.Instance.InitBoss();
         }else{
             SwitchMarket();
         }
