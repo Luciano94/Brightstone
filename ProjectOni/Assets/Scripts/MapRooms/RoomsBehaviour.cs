@@ -54,7 +54,7 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemiesLeft = enemiesCant;
                 for(int i = 0; i < enemiesCant; i++){
                     pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
-                    enemies.Add( Instantiate(enemyPrefab, pos, transform.rotation));
+                    enemies.Add(Instantiate(enemyPrefab, pos, transform.rotation));
                     enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
                     enemies[i].SetActive(false);
                 }
@@ -70,7 +70,7 @@ public class RoomsBehaviour : MonoBehaviour{
             case NodeBehaviour.Boss:
                 enemiesLeft = 1;
                 pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
-                enemies.Add( Instantiate(bossPrefab, pos, transform.rotation));
+                enemies.Add(Instantiate(bossPrefab, pos, transform.rotation));
                 enemies[0].GetComponent<EnemyStats>().MyRoom = gameObject;
                 enemies[0].SetActive(false);
                 GameManager.Instance.SetBoss = enemies[0];
@@ -80,9 +80,11 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public void ActiveEnemies(){
         if(!haveMarket){
-            foreach (GameObject enemy in enemies)
+            foreach (GameObject enemy in enemies){
                 enemy.SetActive(true);
-            EnemyBahaviour.Instance.SetEnemies(enemies);
+                EnemyBahaviour.Instance.AddEnemyToBehaviour(enemy);
+            }
+            
             if(enemies[0].GetComponent<EnemyStats>().enemyType == EnemyType.Boss)
                 UIManager.Instance.InitBoss();
         }else{
@@ -98,8 +100,9 @@ public class RoomsBehaviour : MonoBehaviour{
         }
     }
 
-    public void EnemyDeath(){
+    public void EnemyDeath(GameObject thisEnemy){
         enemiesCant--;
+        EnemyBahaviour.Instance.Death(thisEnemy);
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;

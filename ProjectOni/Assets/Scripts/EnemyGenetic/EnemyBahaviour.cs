@@ -16,23 +16,61 @@ public class EnemyBahaviour : MonoBehaviour{
         }
     }
 
-    private List<GameObject> enemies = null;
+    [SerializeField] private int maxWarriorsAtking;
 
-    private void Update(){
-        if(enemies != null){
-            
+    private List<List<EnemyBase>> enemies;
+    private int enemiesLeft = 0;
 
+    private bool enemyAdded = false;
+
+    void Awake(){
+        enemies = new List<List<EnemyBase>>();
+        for (int i = 0; i < (int)EnemyType.Count; i++)
+            enemies.Add(new List<EnemyBase>());
+    }
+
+    private void LateUpdate(){
+        if(enemyAdded){
+            enemyAdded = false;
+            UpdateStrategy();
         }
     }
 
-    public void Death(GameObject thisEnemy){
-        enemies.Remove(thisEnemy);
+    public void AddEnemyToBehaviour(GameObject enemy){
+        enemiesLeft++;
+        EnemyBase enemyBase = enemy.GetComponent<EnemyBase>();
+        enemies[(int)enemyBase.GetEnemyType()].Add(enemyBase);
 
-        if(enemies.Count <= 0)
-            enemies = null;
+        enemyAdded = true;
     }
 
-    public void SetEnemies(List<GameObject> enemies){
-        this.enemies = enemies;
+    public void Death(GameObject thisEnemy){
+        EnemyBase enemyBase = thisEnemy.GetComponent<EnemyBase>();
+        enemies[(int)enemyBase.GetEnemyType()].Remove(enemyBase);
+
+        enemiesLeft--;
+
+        UpdateStrategy();
+    }
+    
+    public void UpdateStrategy(){
+        if(enemiesLeft > 0){
+            int countChasing = 0;
+            
+            foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior]){
+                if (!enemy.IsWaiting()) countChasing++;
+                
+            }
+
+            if (countChasing < maxWarriorsAtking || countChasing == enemies[(int)EnemyType.Warrior].Count)
+                foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior])
+                    if (enemy.IsWaiting() && countChasing < maxWarriorsAtking){
+                        countChasing++;
+                        enemy.Chase();
+                    }
+
+            if (enemies[(int)EnemyType.Boss].Count > 0)
+                enemies[(int)EnemyType.Boss][0].Chase();
+        }
     }
 }

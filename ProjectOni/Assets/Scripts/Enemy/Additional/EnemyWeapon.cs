@@ -16,11 +16,9 @@ public class EnemyWeapon : MonoBehaviour{
             playerStats.Life = enemyStats.AtkDmg;
             GameManager.Instance.SetEnemyHitFrom(transform.position);
             UIManager.Instance.lifeUpdate();
-            enemyCombat.EndAttack();
         }else{
             AudioManager.Instance.PlayerParry();
             enemyStats.Parried();
-            enemyCombat.EndAttack();
         }
     }
 }

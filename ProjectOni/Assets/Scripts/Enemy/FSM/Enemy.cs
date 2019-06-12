@@ -6,6 +6,7 @@ public class Enemy : EnemyBase{
         Attack=0,
         Chase,
         Wait,
+        Relocate,
         Hurt,
         Death,
         Count
@@ -13,15 +14,15 @@ public class Enemy : EnemyBase{
 
     public enum Events{
         OnAttack=0,
+        OnAttackStop,
         OnChase,
         OnHit,
-        OnCloseRange,
         OnRestitution,
         NoHealth,
         Count
     }
 
-    EnemyFSM fsm;
+    private EnemyFSM fsm;
 
     // ===========================================================
     // Inicialization
@@ -29,21 +30,25 @@ public class Enemy : EnemyBase{
     private void Start(){
         fsm = new EnemyFSM((int)States.Count, (int)Events.Count, (int)States.Wait);
 
-                                  // Origin            // Event                    // Destiny
-        fsm.SetRelation( (int)States.Attack,  (int)Events.OnHit,          (int)States.Hurt   );
-        fsm.SetRelation( (int)States.Attack,  (int)Events.NoHealth,       (int)States.Death  );
+                                  // Origin             // Event                   // Destiny
+        fsm.SetRelation( (int)States.Attack,   (int)Events.OnAttackStop,  (int)States.Relocate );
+        fsm.SetRelation( (int)States.Attack,   (int)Events.OnHit,         (int)States.Hurt     );
+        fsm.SetRelation( (int)States.Attack,   (int)Events.NoHealth,      (int)States.Death    );
 
-        fsm.SetRelation( (int)States.Chase,   (int)Events.OnAttack,       (int)States.Attack );
-        fsm.SetRelation( (int)States.Chase,   (int)Events.OnHit,          (int)States.Hurt   );
-        fsm.SetRelation( (int)States.Chase,   (int)Events.NoHealth,       (int)States.Death  );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.OnAttack,      (int)States.Attack   );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.OnHit,         (int)States.Hurt     );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.NoHealth,      (int)States.Death    );
 
-        fsm.SetRelation( (int)States.Wait,    (int)Events.OnChase,        (int)States.Chase  );
-        fsm.SetRelation( (int)States.Wait,    (int)Events.OnCloseRange,   (int)States.Chase  );
-        fsm.SetRelation( (int)States.Wait,    (int)Events.OnHit,          (int)States.Hurt   );
-        fsm.SetRelation( (int)States.Wait,    (int)Events.NoHealth,       (int)States.Death  );
+        fsm.SetRelation( (int)States.Wait,     (int)Events.OnChase,       (int)States.Chase    );
+        fsm.SetRelation( (int)States.Wait,     (int)Events.OnHit,         (int)States.Hurt     );
+        fsm.SetRelation( (int)States.Wait,     (int)Events.NoHealth,      (int)States.Death    );
+
+        fsm.SetRelation( (int)States.Relocate, (int)Events.OnChase,       (int)States.Chase    );
+        fsm.SetRelation( (int)States.Relocate, (int)Events.OnHit,         (int)States.Hurt     );
+        fsm.SetRelation( (int)States.Relocate, (int)Events.NoHealth,      (int)States.Death    );
         
-        fsm.SetRelation( (int)States.Hurt,    (int)Events.OnRestitution,  (int)States.Chase  );
-        fsm.SetRelation( (int)States.Hurt,    (int)Events.NoHealth,       (int)States.Death  );
+        fsm.SetRelation( (int)States.Hurt,     (int)Events.OnRestitution, (int)States.Chase    );
+        fsm.SetRelation( (int)States.Hurt,     (int)Events.NoHealth,      (int)States.Death    );
     }
 
     // ===========================================================
@@ -62,7 +67,10 @@ public class Enemy : EnemyBase{
                 Chasing();
                 break;
             case (int)States.Wait:
-                Surround();
+                Waiting();
+                break;
+            case (int)States.Relocate:
+                Relocating();
                 break;
             case (int)States.Hurt:
                 Hurt();
@@ -77,11 +85,15 @@ public class Enemy : EnemyBase{
 
     }
 
-    virtual protected void Surround(){
+    virtual protected void Chasing(){
 
     }
 
-    virtual protected void Chasing(){
+    virtual protected void Waiting(){
+
+    }
+
+    virtual protected void Relocating(){
 
     }
 
@@ -93,27 +105,35 @@ public class Enemy : EnemyBase{
 
     }
 
-    void Die(){
+    private void Die(){
         
-    }
-
-    virtual protected void Attack(){
-
     }
 
     // ===========================================================
     // Events
     // ===========================================================
     protected override void OnChase(){
+        isWaiting = false;
         fsm.SendEvent((int)Events.OnChase);
     }
 
-    protected override void OnCloseRange(){
-        fsm.SendEvent((int)Events.OnCloseRange);
+    protected override void OnAttackRange(){
+        enemyMovement.IsMovingBackwards = true;
+        fsm.SendEvent((int)Events.OnAttack);
+    }
+
+    protected override void OnRelocate(){
+        fsm.SendEvent((int)Events.OnAttackStop);
     }
 
     protected override void OnHit(){
+        if(enemyMovement.IsMovingBackwards)
+            enemyMovement.IsMovingBackwards = false;
         fsm.SendEvent((int)Events.OnHit);
+    }
+
+    protected override void OnRestitution(){
+        fsm.SendEvent((int)Events.OnRestitution);
     }
 
     protected override void OnNoHealth(){

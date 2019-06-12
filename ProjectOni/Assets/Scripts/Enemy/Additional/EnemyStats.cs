@@ -37,7 +37,7 @@ public class EnemyStats : MonoBehaviour{
                 OnHit.Invoke();
             }
             else{
-                myRoom.GetComponent<RoomsBehaviour>().EnemyDeath();
+                myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(gameObject);
                 GameManager.Instance.playerSts.Experience = experience;
                 UIManager.Instance.ExpUpdate();
                 if (enemyType == EnemyType.Boss)

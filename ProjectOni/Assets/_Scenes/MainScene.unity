@@ -3638,6 +3638,7 @@ GameObject:
   - component: {fileID: 1896201156}
   - component: {fileID: 1896201158}
   - component: {fileID: 1896201159}
+  - component: {fileID: 1896201171}
   - component: {fileID: 1896201168}
   - component: {fileID: 1896201169}
   - component: {fileID: 1896201170}
@@ -4558,6 +4559,19 @@ MonoBehaviour:
   startMenuCanvas: {fileID: 124925859}
   winMenuCanvas: {fileID: 1850017215}
   loseMenuCanvas: {fileID: 1030141165}
+--- !u!114 &1896201171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896201154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7a524797d4cc5488712bc8a59c2267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWarriorsAtking: 3
 --- !u!1 &1902178257
 GameObject:
   m_ObjectHideFlags: 0
