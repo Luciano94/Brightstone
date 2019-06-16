@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour{
 
     [Header("UI Texts")]
     [SerializeField] private Text expTxt;
-    [SerializeField] private Text lifeTxt;
+    //[SerializeField] private Text lifeTxt;
     [SerializeField] private Text atkTxt;
     [SerializeField] private Text mrkTxt;
 
@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour{
         float maxHp = gameM.playerSts.MaxLife();
         hpPercentage = hpHitPercentage = actualHp / maxHp;
         playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
-        lifeTxt.text = actualHp + " / " + maxHp;
+        //lifeTxt.text = actualHp + " / " + maxHp;
         expTxt.text = "Exp: " + gameM.playerSts.Experience;
 
         playerHpFillBar.color = normalLifeColorBar;
@@ -101,7 +101,7 @@ public class UIManager : MonoBehaviour{
         float maxHp = gameM.playerSts.MaxLife();
         hpPercentage = actualHp / maxHp;
         playerHpFillBar.fillAmount = hpPercentage;
-        lifeTxt.text = actualHp + " / " + maxHp;
+        //lifeTxt.text = actualHp + " / " + maxHp;
 
         if(gameM.playerSts.IsLowHealth){
             playerHpFillBar.color = lowLifeColorBar;
