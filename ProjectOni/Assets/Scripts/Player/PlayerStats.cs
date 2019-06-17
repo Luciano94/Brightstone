@@ -9,10 +9,15 @@ public class PlayerStats : MonoBehaviour{
     [SerializeField] int lostExpPercent = 40;
     private float atkDmg = 0.0f;
     private float experience = 0;
+    private int playerLevel = 10;
     private bool isLowHealth = false;
     public bool IsLowHealth { get { return isLowHealth; } private set { isLowHealth = value; } }
 
     [HideInInspector][SerializeField] UnityEvent onHit;
+
+    public int Defense{
+        get{return 20;}
+    }
 
     public float Life{
         get{return currentLife;}
@@ -28,6 +33,11 @@ public class PlayerStats : MonoBehaviour{
                     OnHit.Invoke();
             }
         }
+    }
+
+    public int PlayerLevel{
+        set{playerLevel = value;}
+        get{return playerLevel;}
     }
 
     public float LifeStat{

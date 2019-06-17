@@ -36,7 +36,7 @@ public class ExperienceMarket : MonoBehaviour
         if(playerStats.Experience >= requiredExp){
             playerStats.Experience = -requiredExp;
             level ++;
-            requiredExp += requiredExp * level;
+            requiredExp = requiredExp * level;
             playerStats.LifeStat = 50;
             UIManager.Instance.lifeUpdate();
             UIManager.Instance.MarketUpdate();
