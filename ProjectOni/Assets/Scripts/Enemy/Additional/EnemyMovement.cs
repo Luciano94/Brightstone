@@ -19,7 +19,6 @@ public class EnemyMovement : MonoBehaviour {
 
     private void Start(){
         player = GameManager.Instance.PlayerPos;
-        timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
 
         StartSurrounding(); // Temporary here
     }

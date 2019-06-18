@@ -31,8 +31,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlayerAttack(){
         int attack = Random.Range(0, playerAttack.Length);
-        if(!playerAttack[attack].isPlaying)
+        //if(!playerAttack[attack].isPlaying)
             playerAttack[attack].Play();
+            playerAttack[attack].pitch = Random.Range(0.9f, 1.1f);
     }
 
     public void PlayerDeath(){
@@ -45,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
     public void EnemyAttack(){
         int attack = Random.Range(0, enemyAttack.Length);
-        if(!enemyAttack[attack].isPlaying)
+        //if(!enemyAttack[attack].isPlaying)
             enemyAttack[attack].Play();
     }
 }

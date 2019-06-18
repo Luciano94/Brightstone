@@ -9,6 +9,7 @@ public class EnemyCombat : MonoBehaviour{
     private BoxCollider2D weaponColl;
     private float currentTime = 0.0f;
     private bool isAttacking = false;
+    private bool active = false;
 
     public bool IsAttacking{
         get { return isAttacking; }
@@ -32,17 +33,18 @@ public class EnemyCombat : MonoBehaviour{
 
     public void Attacking(){
         currentTime += Time.deltaTime;
-        if(currentTime > activeMoment){
+        if(currentTime > activeMoment && !active){
             weapon.SetActive(true);
             weaponColl.enabled = true;
             AudioManager.Instance.EnemyAttack();
-            
+            active = true;
         }
         if(currentTime > animTime){
             weapon.SetActive(false);
             weaponColl.enabled = false;
             isAttacking = false;
             currentTime = 0.0f;
+            active = false;
         }
     }
 
@@ -64,6 +66,7 @@ public class EnemyCombat : MonoBehaviour{
 
     private void ResetValues(){
         currentTime = 0.0f;
+        active = false;
         if (isAttacking){
             isAttacking = false;
             weapon.SetActive(false);

@@ -16,13 +16,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [SerializeField]private GameObject player;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject levelBoss;
     private Vector3 weaponRotation;
-    [SerializeField]private GameObject levelBoss;
 
     private const int mainMenuIndex = 0;
 
-    private void Awake() {
+    private void Awake(){
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{
@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayerDeath();
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
+        player.SetActive(false);
         MenuManager.Instance.LoseMenuCanvas = true;
         Invoke("GoToMenu", 2.0f);
     }
