@@ -88,7 +88,11 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayerDeath();
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
+
+        // Temp
+        player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
         player.SetActive(false);
+
         MenuManager.Instance.LoseMenuCanvas = true;
         Invoke("GoToMenu", 2.0f);
     }
