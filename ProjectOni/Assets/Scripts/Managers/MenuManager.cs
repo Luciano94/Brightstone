@@ -15,25 +15,25 @@ public class MenuManager : MonoBehaviour{
         }
     }
 
-    [SerializeField]private GameObject startMenuCanvas;
-    [SerializeField]private GameObject winMenuCanvas;
-    [SerializeField]private GameObject loseMenuCanvas;
+    [SerializeField] private GameObject startMenuCanvas;
+    [SerializeField] private GameObject winMenuCanvas;
+    [SerializeField] private GameObject loseMenuCanvas;
 
     private bool startMenu = false;
 
     public bool StartMenu{
-        get{return startMenu;}
-        set{
+        get { return startMenu; }
+        set {
             startMenu = value;
             startMenuCanvas.SetActive(value);
         }
     }
 
     public bool WinMenuCanvas{
-        set{winMenuCanvas.SetActive(value);}
+        set { winMenuCanvas.SetActive(value); }
     }
 
     public bool LoseMenuCanvas{
-        set{loseMenuCanvas.SetActive(value);}
+        set { loseMenuCanvas.SetActive(value); }
     }
 }

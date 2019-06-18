@@ -114,21 +114,26 @@ public class Enemy : EnemyBase{
     // ===========================================================
     protected override void OnChase(){
         isWaiting = false;
+        if(fsm.GetState() == (int)States.Wait)
+            enemyMovement.StopSurrounding();
+        enemyMovement.IsMovingForward = true;
         fsm.SendEvent((int)Events.OnChase);
     }
 
     protected override void OnAttackRange(){
-        enemyMovement.IsMovingBackwards = true;
+        enemyMovement.IsMovingForward = true;
         fsm.SendEvent((int)Events.OnAttack);
     }
 
     protected override void OnRelocate(){
+        enemyMovement.IsMovingForward = false;
         fsm.SendEvent((int)Events.OnAttackStop);
     }
 
     protected override void OnHit(){
-        if(enemyMovement.IsMovingBackwards)
-            enemyMovement.IsMovingBackwards = false;
+        enemyMovement.IsMovingForward = true;
+        if(fsm.GetState() == (int)States.Wait)
+            enemyMovement.StopSurrounding();
         fsm.SendEvent((int)Events.OnHit);
     }
 

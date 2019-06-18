@@ -8,32 +8,20 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
     [SerializeField] private EnemyAnimations eAnim;
+    [SerializeField] private float speedSurrounding;
+    [SerializeField] private float timeSurrounding;
+    [SerializeField] private float deltaTimeSurrounding;
     private Vector3 diff;
-    private Vector3 dir;
-    private bool movingBackwards = false;
-    private EnemyCombat enemyCombat;
-    private EnemyStats enemyStats;
+    private Vector2 dir;
+    private float timeLeft = 0.0f;
+    private bool movingForward = false;
+    private bool movingRight = false;
 
     private void Start(){
         player = GameManager.Instance.PlayerPos;
-        enemyCombat = GetComponent<EnemyCombat>();
-        enemyStats = GetComponent<EnemyStats>();
-    }
+        timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
 
-    private void Update(){
-        /*player = GameManager.Instance.PlayerPos;
-        
-        if(enemyCombat.IsParried)
-            return;
-        if(enemyCombat.IsHit){
-            if(enemyStats.enemyType != EnemyType.Boss)
-                MoveByHit();
-            return;
-        }
-        if(!enemyCombat.IsAttacking){
-            Movement();
-            Rotation();
-        }*/
+        StartSurrounding(); // Temporary here
     }
 
     public void MoveToPlayer(){
@@ -50,15 +38,53 @@ public class EnemyMovement : MonoBehaviour {
         // Here i have to move the Enemy around the Player, like making a circle, with a Delta of the distance
         //  from the Player to the Enemy so that distance is not a perfect circle. Also, the speed of the
         //  enemies is slower.
-        //transform.Translate(diff.normalized * speed * Time.deltaTime);
 
-        Rotation();
+        /*timeLeft -= Time.deltaTime;
+
+        if (timeLeft < 0.0f){
+            timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
+            movingRight = Random.value > 0.5f ? true : false;
+        }
+
+        Vector3 inverseDiff = transform.position - player;
+        float radio = inverseDiff.magnitude;
+
+        dir = inverseDiff.normalized;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        Vector3 extraPos = ((radio * Mathf.Cos(angle) * Vector3.right) + (radio * Mathf.Sin(angle) * Vector3.up)) * (movingRight ? 1.0f : -1.0f);
+
+        //transform.Translate(extraPos * surroundSpeed * Time.deltaTime);
+        transform.position += extraPos * surroundSpeed * Time.deltaTime;
+        */
+
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft < 0.0f){
+            timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
+            dir = Random.insideUnitCircle.normalized;
+        }
+
+        transform.Translate(dir * speed * speedSurrounding * Time.deltaTime);
+
+        if(player.x > transform.position.x){
+            if (dir.x > 0.0f)
+                IsMovingForward = true;
+            else
+                IsMovingForward = false;
+        }
+        else{
+            if (dir.x > 0.0f)
+                IsMovingForward = false;
+            else
+                IsMovingForward = true;
+        }
     }
 
     public void Relocate(){
         PrepareVariables();
 
-        transform.Translate(-diff.normalized * speed * 0.5f  * Time.deltaTime);
+        transform.Translate(-diff.normalized * speed * 0.4f  * Time.deltaTime);
 
         Rotation();
     }
@@ -83,11 +109,26 @@ public class EnemyMovement : MonoBehaviour {
             eAnim.SetDirection(1);
     }
 
-    public bool IsMovingBackwards{
-        get{ return movingBackwards; }
+    public float DistToPlayer(){
+        return diff.magnitude;
+    }
+
+    public void StartSurrounding(){
+        eAnim.UpdateSpeed(speedSurrounding);
+    }
+
+    public void StopSurrounding(){
+        eAnim.UpdateSpeed(1.0f);
+    }
+
+    public bool IsMovingForward{
+        get{ return movingForward; }
         set{
-            movingBackwards = value;
-            if (movingBackwards)
+            if(movingForward == value)
+                return;
+
+            movingForward = value;
+            if (movingForward)
                 eAnim.MovingBackwards();
             else
                 eAnim.StopMovingBackwards();

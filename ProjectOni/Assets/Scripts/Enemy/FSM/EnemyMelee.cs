@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
 public class EnemyMelee : Enemy{
+    [Header("OwnVariables")]
+    [SerializeField] private float maxDistSurround;
+
     protected override void Chasing(){
         if (IsOnAttackRange()){
             enemyCombat.Attack();
@@ -17,13 +20,16 @@ public class EnemyMelee : Enemy{
             return;
         }
         
-        enemyMovement.SurroundPlayer();
+        if (enemyMovement.DistToPlayer() > maxDistSurround)
+            enemyMovement.MoveToPlayer();
+        else
+            enemyMovement.SurroundPlayer();
     }
 
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
-            enemyMovement.IsMovingBackwards = false;
+            enemyMovement.IsMovingForward = false;
             OnChase();
             return;
         }

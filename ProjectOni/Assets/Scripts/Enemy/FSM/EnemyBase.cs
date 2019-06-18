@@ -14,9 +14,9 @@ public abstract class EnemyBase : MonoBehaviour{
     protected bool isWaiting = true;
 
     virtual protected void Awake(){
-        enemyMovement = GetComponent<EnemyMovement>();
-        enemyCombat   = GetComponent<EnemyCombat>();
-        enemyStats    = GetComponent<EnemyStats>();
+        enemyMovement   = GetComponent<EnemyMovement>();
+        enemyCombat     = GetComponent<EnemyCombat>();
+        enemyStats      = GetComponent<EnemyStats>();
 
         enemyStats.OnHit.AddListener(Hit);
         enemyStats.OnParried.AddListener(Parried);

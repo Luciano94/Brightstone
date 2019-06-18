@@ -111,11 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61517e442ab7ee643b5d92d21c9ed094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceToChase: 5
-  minDistanceToAttack: 2
-  timeRelocating: 2
+  minDistanceToChase: 8
+  minDistanceToAttack: 1.8
+  timeRelocating: 1
   timeParalyzedForHit: 0.2
   timeParalyzedForParry: 2
+  maxDistSurround: 20
 --- !u!114 &6152008538549597274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,9 @@ MonoBehaviour:
   player: {x: 0, y: 0, z: 0}
   sword: {fileID: 4093589057318080765}
   eAnim: {fileID: 4914635166833622913}
+  speedSurrounding: 0.4
+  timeSurrounding: 1.5
+  deltaTimeSurrounding: 0.6
 --- !u!114 &5300433679770175938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cba4d0535b041f459f045629ef515b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animTime: 0.8
+  animTime: 0.5
+  activeMoment: 0.3
   weapon: {fileID: 8767666440214113500}
   enemyAnim: {fileID: 4914635166833622913}
 --- !u!114 &1592394171438056261

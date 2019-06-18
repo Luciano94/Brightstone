@@ -2,33 +2,22 @@
 
 public class EnemyCombat : MonoBehaviour{
     [Header("Attack")]
-    [SerializeField]private float animTime;
+    [SerializeField] private float animTime;
+    [SerializeField] private float activeMoment;
     [SerializeField] private GameObject weapon;
-    private BoxCollider2D weaponColl;
     [SerializeField] private EnemyAnimations enemyAnim;
-    private float standTime;
+    private BoxCollider2D weaponColl;
     private float currentTime = 0.0f;
     private bool isAttacking = false;
-    private bool isHit = false;
-    private bool isParried = false;
 
     public bool IsAttacking{
         get { return isAttacking; }
-    }
-
-    public bool IsParried{
-        get { return isParried; }
-        set { isParried = value; }
-    }
-    public bool IsHit{
-        get { return isHit; }
     }
 
     private Vector2 diff;
     private Vector3 player;
 
     private void Start(){
-        standTime = animTime * 0.4f;
         weaponColl = weapon.GetComponent<BoxCollider2D>();
         player = GameManager.Instance.PlayerPos;
 
@@ -36,53 +25,18 @@ public class EnemyCombat : MonoBehaviour{
         GetComponent<EnemyStats>().OnParried.AddListener(Parried);
     }
 
-    private void Update(){
-        /*if(isParried){
-            currentTimeParalized += Time.deltaTime;
-            if (currentTimeParalized >= timeParalizedForParry){
-                currentTimeParalized = 0.0f;
-                isParried = false;
-                isHit = false;
-
-                // Color back to normal
-                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
-            }
-            else return;
-        }
-
-        if(isHit){
-            currentTimeParalized += Time.deltaTime;
-            if (currentTimeParalized >= timeParalizedForHit){
-                currentTimeParalized = 0.0f;
-                isHit = false;
-
-                // Color back to normal
-                GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
-            }
-            else return;
-        }
-
-        player = GameManager.Instance.PlayerPos;
-
-        if(isChasing){
-            Chase();
-        }
-        if(isAttaking){
-            Attack();
-        }*/
-    }
-
     public void Attack(){
         isAttacking = true;
+        enemyAnim.SetAttack();
     }
 
     public void Attacking(){
         currentTime += Time.deltaTime;
-        if(currentTime > standTime){
+        if(currentTime > activeMoment){
             weapon.SetActive(true);
             weaponColl.enabled = true;
             AudioManager.Instance.EnemyAttack();
-            enemyAnim.SetAttack();
+            
         }
         if(currentTime > animTime){
             weapon.SetActive(false);
@@ -94,6 +48,7 @@ public class EnemyCombat : MonoBehaviour{
 
     private void Hit(){
         ResetValues();
+        enemyAnim.Hit();
 
         // Color by hit
         GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
@@ -101,6 +56,7 @@ public class EnemyCombat : MonoBehaviour{
 
     private void Parried(){
         ResetValues();
+        enemyAnim.Hit();
 
         // Color by hit
         GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
@@ -115,6 +71,8 @@ public class EnemyCombat : MonoBehaviour{
     }
 
     public void Restitute(){
+        enemyAnim.Restore();
+
         // Color back to normal
         GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
     }
