@@ -6,6 +6,7 @@ public class RoomsBehaviour : MonoBehaviour{
 
     [SerializeField]private int enemiesCant = 5;
     [SerializeField]private bool haveMarket = false;
+    [SerializeField]private bool haveBoss = false;
     [SerializeField]private GameObject marketPrefab;
     [SerializeField]private GameObject bossPrefab;
     [SerializeField]private GameObject enemyPrefab;
@@ -21,9 +22,9 @@ public class RoomsBehaviour : MonoBehaviour{
 
     private bool isComplete = false;
 
-    public SpriteRenderer SetMapNode{
-        set{mapNode = value;
-            mapNode.color = Color.clear;}
+    public void SetMapNode(SpriteRenderer spr, Color color){
+        mapNode = spr;
+        mapNode.color = color;
     }
 
     public void SetColorNode(Color c){
@@ -43,6 +44,14 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public bool HaveMarket{
         get{return haveMarket;}
+    }
+
+    public bool HaveBoss{
+        get{return haveBoss;}
+    }
+
+    public NodeBehaviour NodeBehaviour{
+        get{return node.Behaviour;}
     }
 
     private void setRoom() {
@@ -69,6 +78,7 @@ public class RoomsBehaviour : MonoBehaviour{
             break;
             case NodeBehaviour.Boss:
                 enemiesLeft = 1;
+                haveBoss = true;
                 pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
                 enemies.Add(Instantiate(bossPrefab, pos, transform.rotation));
                 enemies[0].GetComponent<EnemyStats>().MyRoom = gameObject;

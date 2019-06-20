@@ -20,7 +20,8 @@ public class ActiveRoom : MonoBehaviour
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
             doorManager = activeRoom.GetComponent<NodeExits>();
             Camera.main.gameObject.GetComponent<CameraFollow>().ResetXY(activeRoom.transform.position);
-            roomsBehaviour.SetColorNode(activeColor);
+            if(!roomsBehaviour.HaveBoss && !roomsBehaviour.HaveMarket)
+                roomsBehaviour.SetColorNode(activeColor);
             if(!roomsBehaviour.Complete){
                 roomsBehaviour.ActiveEnemies();
                 doorManager.CloseDoors();

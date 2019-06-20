@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour{
         hpPercentage = hpHitPercentage = actualHp / maxHp;
         playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
         //lifeTxt.text = actualHp + " / " + maxHp;
-        expTxt.text = "Exp: " + gameM.playerSts.Experience;
+        expTxt.text = gameM.playerSts.Experience.ToString();
 
         playerHpFillBar.color = normalLifeColorBar;
         playerHitHpFillBar.color = hitLifeColorBar;
@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour{
     }
 
     public void ExpUpdate(){
-        expTxt.text = "Exp: " + gameM.playerSts.Experience;
+        expTxt.text = gameM.playerSts.Experience.ToString();
     }
 
     public void lifeUpdate(){

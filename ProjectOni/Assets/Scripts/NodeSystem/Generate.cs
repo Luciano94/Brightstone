@@ -21,6 +21,15 @@ public class Generate : MonoBehaviour{
     [SerializeField]SnakeHead head;
     private bool[] exits;
 
+    [Header("Node Atributes")]
+    [SerializeField]private Color marketColor;
+    [SerializeField]private Color bossColor;
+    [SerializeField]private Color normalColor;
+    [SerializeField]private Color miniBossColor;
+
+
+
+
     private void Start() {
         nodeBoss = Random.Range(5,nodeQ);
         nodeMarket = Random.Range(0, nodeQ);
@@ -162,7 +171,30 @@ public class Generate : MonoBehaviour{
             GameObject go =  DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position, nodes[i].ExitsDoors);
             nodes[i].setNode(go);
             GameObject mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
-            go.GetComponent<RoomsBehaviour>().SetMapNode = mapNode.GetComponent<RenderReference>().node;
+            RoomsBehaviour room = go.GetComponent<RoomsBehaviour>();
+            switch (room.NodeBehaviour)
+            {
+                case NodeBehaviour.Normal:
+                    go.GetComponent<RoomsBehaviour>().SetMapNode(
+                        mapNode.GetComponent<RenderReference>().node, 
+                        normalColor);
+                break;
+                case NodeBehaviour.Boss:
+                    go.GetComponent<RoomsBehaviour>().SetMapNode(
+                    mapNode.GetComponent<RenderReference>().node, 
+                    bossColor);
+                break;
+                case NodeBehaviour.Market:
+                    go.GetComponent<RoomsBehaviour>().SetMapNode(
+                    mapNode.GetComponent<RenderReference>().node, 
+                    marketColor);
+                break;
+                case NodeBehaviour.MediumBoss:
+                    go.GetComponent<RoomsBehaviour>().SetMapNode(
+                    mapNode.GetComponent<RenderReference>().node, 
+                    miniBossColor);
+                break;
+            }
         }
     }
 #endregion

@@ -15,6 +15,10 @@ public class EnemyCombat : MonoBehaviour{
         get { return isAttacking; }
     }
 
+    public float AnimTime{
+        get{return animTime;}
+    }
+
     private Vector2 diff;
     private Vector3 player;
 

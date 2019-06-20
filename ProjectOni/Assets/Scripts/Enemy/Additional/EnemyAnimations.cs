@@ -2,6 +2,7 @@
 
 public class EnemyAnimations : MonoBehaviour{
     [SerializeField] private Animator anim;
+    [SerializeField] private EnemyCombat enemyCombat;
     [SerializeField] private Color hitColor;
 
     private SpriteRenderer sprRenderer;
@@ -9,8 +10,9 @@ public class EnemyAnimations : MonoBehaviour{
     private bool isHit = false;
     private bool isLowHealth = false;
 
-    private void Awake(){
+    private void Start(){
         sprRenderer = GetComponent<SpriteRenderer>();
+        //anim.SetFloat("AnimSpeed", enemyCombat.AnimTime);
     }
 
     private void Update(){
