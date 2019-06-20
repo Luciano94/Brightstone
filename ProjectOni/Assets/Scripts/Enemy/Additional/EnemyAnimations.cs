@@ -13,6 +13,16 @@ public class EnemyAnimations : MonoBehaviour{
         anim.SetTrigger("Attack");
     }
 
+    public void Idle(){
+        anim.ResetTrigger("Move");
+        anim.SetTrigger("Idle");
+    }
+
+    public void Move(){
+        anim.ResetTrigger("Idle");
+        anim.SetTrigger("Move");
+    }
+
     public void MovingBackwards(){
         anim.SetFloat("AnimSpeed", speed * 1.0f);
     }

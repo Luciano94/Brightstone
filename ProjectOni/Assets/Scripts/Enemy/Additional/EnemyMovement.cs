@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour{
 
     [SerializeField] private float speed;
     [SerializeField] private Vector3 player;
@@ -11,8 +11,10 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private float speedSurrounding;
     [SerializeField] private float timeSurrounding;
     [SerializeField] private float deltaTimeSurrounding;
+    [SerializeField] private float timeWaiting;
     private Vector3 diff;
-    private Vector2 dir;
+    private Vector2 playerDir;
+    private Vector2 moveDir;
     private float timeLeft = 0.0f;
     private bool movingForward = false;
     private bool movingRight = false;
@@ -59,21 +61,29 @@ public class EnemyMovement : MonoBehaviour {
 
         timeLeft -= Time.deltaTime;
 
-        if (timeLeft < 0.0f){
-            timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
-            dir = Random.insideUnitCircle.normalized;
+        if (timeLeft < timeWaiting && moveDir != Vector2.zero){
+            moveDir = Vector2.zero;
+            eAnim.Idle();
+            StopSurrounding();
+        }
+        else if (timeLeft < 0.0f){
+            timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding) + timeWaiting;
+            Debug.Log(timeLeft);
+            moveDir = Random.insideUnitCircle.normalized;
+            eAnim.Move();
+            StartSurrounding();
         }
 
-        transform.Translate(dir * speed * speedSurrounding * Time.deltaTime);
+        transform.Translate(moveDir * speed * speedSurrounding * Time.deltaTime);
 
         if(player.x > transform.position.x){
-            if (dir.x > 0.0f)
+            if (moveDir.x > 0.0f)
                 IsMovingForward = true;
             else
                 IsMovingForward = false;
         }
         else{
-            if (dir.x > 0.0f)
+            if (moveDir.x > 0.0f)
                 IsMovingForward = false;
             else
                 IsMovingForward = true;
@@ -93,8 +103,8 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     private void Rotation(){
-        dir = diff.normalized;
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        playerDir = diff.normalized;
+        var angle = Mathf.Atan2(playerDir.y, playerDir.x) * Mathf.Rad2Deg;
         sword.transform.rotation = Quaternion.Euler(0, 0, angle + 90.0f);
     }
 

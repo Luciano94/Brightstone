@@ -75,6 +75,7 @@ MonoBehaviour:
   speedSurrounding: 0.4
   timeSurrounding: 2
   deltaTimeSurrounding: 0.2
+  timeWaiting: 1
 --- !u!114 &6909983587600513968
 MonoBehaviour:
   m_ObjectHideFlags: 0

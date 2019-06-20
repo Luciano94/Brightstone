@@ -4715,7 +4715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7a524797d4cc5488712bc8a59c2267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWarriorsAtking: 3
+  maxWarriorsAtking: 0
 --- !u!1 &1903297076
 GameObject:
   m_ObjectHideFlags: 0

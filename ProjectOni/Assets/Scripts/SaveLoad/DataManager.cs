@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// ==========================================================================
+// This will save the Data of the Run if the player close it before finishing
+// ==========================================================================
+
 [System.Serializable]
 public class DataManager{
     [System.Serializable]
@@ -13,12 +17,6 @@ public class DataManager{
         public int[] playerUpgrades;
         public int enemyBodies;
         public bool saveCreated;*/
-
-        public List<ushort> runTimers;
-        public ushort bestTime;
-        public ushort runsPlayed;
-        public uint enemiesKilled;
-        public uint bossesKilled;
     }
 
 	public static DataManager current;
