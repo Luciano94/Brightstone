@@ -68,7 +68,6 @@ public class EnemyMovement : MonoBehaviour{
         }
         else if (timeLeft < 0.0f){
             timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding) + timeWaiting;
-            Debug.Log(timeLeft);
             moveDir = Random.insideUnitCircle.normalized;
             eAnim.Move();
             StartSurrounding();
@@ -128,6 +127,11 @@ public class EnemyMovement : MonoBehaviour{
 
     public void StopSurrounding(){
         eAnim.UpdateSpeed(1.0f);
+    }
+
+    public void StartChasing(){
+        eAnim.Move();
+        StopSurrounding();
     }
 
     public bool IsMovingForward{

@@ -5,9 +5,10 @@ public class EnemyStats : MonoBehaviour{
     [SerializeField] float life;
     [SerializeField] float atkDmg;
     [SerializeField] Transform numPos;
-    [SerializeField]Gradient lifeColor;
+    [SerializeField] Gradient lifeColor;
+    [SerializeField] float lowHealthPerc;
     private Color actualLifeColor;
-    float colorPercent;
+    float lifePercent;
     private float currentLife;
     private float experience = 100;
     GameObject myRoom;
@@ -16,6 +17,7 @@ public class EnemyStats : MonoBehaviour{
 
     [HideInInspector][SerializeField] UnityEvent onHit;
     [HideInInspector][SerializeField] UnityEvent onParried;
+    [HideInInspector][SerializeField] UnityEvent onLowHealth;
 
     private void Awake(){
         currentLife = life;
@@ -31,7 +33,7 @@ public class EnemyStats : MonoBehaviour{
         get { return currentLife; }
         set {
             currentLife -= value;
-            ColorPercent(value);
+            LifePercent(value);
             DamagePopup.Create(numPos.position, (int)value, 8, actualLifeColor);
             if (currentLife >= 0){
                 OnHit.Invoke();
@@ -47,12 +49,15 @@ public class EnemyStats : MonoBehaviour{
         }
     }
 
-    private void ColorPercent(float value){
-        if (currentLife > 0)
-            colorPercent = currentLife / life;
+    private void LifePercent(float value){
+        if (currentLife > 0){
+            lifePercent = currentLife / life;
+            if (lifePercent <= lowHealthPerc)
+                OnLowHealth.Invoke();
+        }
         else
-            colorPercent = 0.01f;
-        actualLifeColor =  lifeColor.Evaluate(colorPercent);
+            lifePercent = 0.01f;
+        actualLifeColor =  lifeColor.Evaluate(lifePercent);
     }
 
     public float MaxLife() { return life; }
@@ -73,11 +78,19 @@ public class EnemyStats : MonoBehaviour{
         onParried.Invoke();
     }
 
+    public void LowHealth(){
+
+    }
+
     public UnityEvent OnHit{
         get { return onHit; }
     }
 
     public UnityEvent OnParried{
         get { return onParried; }
+    }
+
+    public UnityEvent OnLowHealth{
+        get { return onLowHealth; }
     }
 }

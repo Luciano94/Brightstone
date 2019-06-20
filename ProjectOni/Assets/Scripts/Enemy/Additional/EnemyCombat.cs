@@ -24,6 +24,7 @@ public class EnemyCombat : MonoBehaviour{
 
         GetComponent<EnemyStats>().OnHit.AddListener(Hit);
         GetComponent<EnemyStats>().OnParried.AddListener(Parried);
+        GetComponent<EnemyStats>().OnLowHealth.AddListener(LowHealth);
     }
 
     public void Attack(){
@@ -53,7 +54,7 @@ public class EnemyCombat : MonoBehaviour{
         enemyAnim.Hit();
 
         // Color by hit
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
+        //GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
     }
 
     private void Parried(){
@@ -61,7 +62,11 @@ public class EnemyCombat : MonoBehaviour{
         enemyAnim.Hit();
 
         // Color by hit
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
+        //GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
+    }
+
+    private void LowHealth(){
+        enemyAnim.IsLowHealth();
     }
 
     private void ResetValues(){
@@ -77,6 +82,6 @@ public class EnemyCombat : MonoBehaviour{
         enemyAnim.Restore();
 
         // Color back to normal
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
+        //GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
     }
 }

@@ -114,8 +114,10 @@ public class Enemy : EnemyBase{
     // ===========================================================
     protected override void OnChase(){
         isWaiting = false;
-        if(fsm.GetState() == (int)States.Wait)
-            enemyMovement.StopSurrounding();
+        if(fsm.GetState() == (int)States.Wait){
+            enemyMovement.StartChasing();
+            
+        }
         enemyMovement.IsMovingForward = true;
         fsm.SendEvent((int)Events.OnChase);
     }
@@ -133,7 +135,7 @@ public class Enemy : EnemyBase{
     protected override void OnHit(){
         enemyMovement.IsMovingForward = true;
         if(fsm.GetState() == (int)States.Wait)
-            enemyMovement.StopSurrounding();
+            enemyMovement.StartChasing();
         fsm.SendEvent((int)Events.OnHit);
     }
 
