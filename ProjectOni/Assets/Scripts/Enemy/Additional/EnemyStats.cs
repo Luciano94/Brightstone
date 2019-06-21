@@ -8,12 +8,12 @@ public class EnemyStats : MonoBehaviour{
     [SerializeField] Gradient lifeColor;
     [SerializeField] float lowHealthPerc;
     private Color actualLifeColor;
-    float lifePercent;
+    private float lifePercent;
     private float currentLife;
     private float experience = 100;
-    GameObject myRoom;
+    private GameObject myRoom;
+    private MonoBehaviour[] movSet; 
     public EnemyType enemyType;
-    MonoBehaviour[] movSet; 
 
     [HideInInspector][SerializeField] UnityEvent onHit;
     [HideInInspector][SerializeField] UnityEvent onParried;
@@ -21,7 +21,6 @@ public class EnemyStats : MonoBehaviour{
 
     private void Awake(){
         currentLife = life;
-
     }
 
     public GameObject MyRoom{
@@ -33,6 +32,7 @@ public class EnemyStats : MonoBehaviour{
         get { return currentLife; }
         set {
             currentLife -= value;
+            RunSaver.currentRun.data.damageDealt += (uint)value;
             LifePercent(value);
             DamagePopup.Create(numPos.position, (int)value, 8, actualLifeColor);
             if (currentLife >= 0){
@@ -42,8 +42,13 @@ public class EnemyStats : MonoBehaviour{
                 myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(gameObject);
                 GameManager.Instance.playerSts.Experience = experience;
                 UIManager.Instance.ExpUpdate();
-                if (enemyType == EnemyType.Boss)
+                if (enemyType == EnemyType.Boss){
                     GameManager.Instance.PlayerWin();
+                    RunSaver.currentRun.data.bossesKilled++;
+                }
+                else{
+                    RunSaver.currentRun.data.enemiesKilled++;
+                }
                 Destroy(gameObject);
             }
         }

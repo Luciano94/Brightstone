@@ -25,6 +25,8 @@ public class PlayerStats : MonoBehaviour{
             if(currentLife > 0){
                 currentLife -= value;
 
+                RunSaver.currentRun.data.damageRecieved += (uint)value;
+
                 CheckLowHealth();
                 
                 if(currentLife <= 0)
@@ -43,8 +45,7 @@ public class PlayerStats : MonoBehaviour{
     public float LifeStat{
         get{return currentLife;}
         set{
-            if(value > 0)
-            {
+            if(value > 0){
                 currentLife += value;
                 life += value;
 
@@ -86,8 +87,10 @@ public class PlayerStats : MonoBehaviour{
     public float Experience{
         get{return experience;}
         set{
-            if(value > 0)
+            if(value > 0){
                 experience += value;
+                RunSaver.currentRun.data.expObtained += (uint)value;
+            }
             else 
                 if(experience + value < 0)
                     experience = 0;

@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour{
     private static GameManager instance;
 
-    public static GameManager Instance {
+    public static GameManager Instance{
         get {
             instance = FindObjectOfType<GameManager>();
-            if(instance == null) {
+            if(instance == null){
                 GameObject go = new GameObject("GameManager");
                 instance = go.AddComponent<GameManager>();
             }
@@ -18,16 +17,21 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject levelBoss;
-    private Vector3 weaponRotation;
 
     private const int mainMenuIndex = 0;
 
     private void Awake(){
+        RunSaver.NewGame();
+
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{
             playerSts.SetExperience = PlayerPrefs.GetInt("XP", 0);
         }
+    }
+
+    private void Update(){
+        RunSaver.currentRun.data.time += Time.deltaTime;
     }
 
     public void ExitToMainMenu(){
@@ -89,19 +93,27 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
 
+        RunSaver.Save();
+
         // Temp
         player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
         player.SetActive(false);
 
+        UIManager.Instance.RunFinished();
         MenuManager.Instance.LoseMenuCanvas = true;
-        Invoke("GoToMenu", 2.0f);
+        Invoke("GoToMenu", 10.0f);
     }
 
     public void PlayerWin(){
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
+
+        RunSaver.currentRun.data.win = true;
+        RunSaver.Save();
+
+        UIManager.Instance.RunFinished();
         MenuManager.Instance.WinMenuCanvas = true;
-        Invoke("GoToMenu", 2.0f);
+        Invoke("GoToMenu", 10.0f);
     }
 
     private void GoToMenu(){

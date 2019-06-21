@@ -28,7 +28,8 @@ public class PlayerCombat : MonoBehaviour{
     [Header("Parry")]
     [SerializeField]private float parryTime;
     private float actParryTime;
-    private bool isParrying;
+    private bool isParrying = false;
+    private bool parriedSomeone = false;
     [SerializeField]private PlayerAnimations plAnim;
 
     public bool IsHit {
@@ -62,7 +63,6 @@ public class PlayerCombat : MonoBehaviour{
         rig = GetComponent<Rigidbody2D>();
 
         actParryTime = parryTime;
-        isParrying = false;
 
         plStat = GameManager.Instance.playerSts;
     }
@@ -168,6 +168,7 @@ public class PlayerCombat : MonoBehaviour{
     private void Parry(){
         if(Input.GetButtonDown("Parry")){
             if(!isParrying){
+                RunSaver.currentRun.data.timesParried++;
                 isParrying = true;
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
@@ -179,8 +180,16 @@ public class PlayerCombat : MonoBehaviour{
             weapon.SetActive(false);
             weaponColl.enabled = false;
             isParrying = false;
+            parriedSomeone = false;
         }else
             actParryTime += Time.deltaTime; 
+    }
+
+    public void ParriedSomeone(){
+        if (!parriedSomeone){
+            parriedSomeone = true;
+            RunSaver.currentRun.data.goodParry++;
+        }
     }
 
     private void Hit(){
@@ -190,6 +199,7 @@ public class PlayerCombat : MonoBehaviour{
         currentTime = 0.0f;
         isAttacking = false;
         isParrying = false;
+        parriedSomeone = false;
         isHit = true;
         // Color by hit
         GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.7f, 0.7f);
@@ -203,6 +213,7 @@ public class PlayerCombat : MonoBehaviour{
     private void OnDisable(){
         isAttacking = false;
         isParrying = false;
+        parriedSomeone = false;
     }
 }
 

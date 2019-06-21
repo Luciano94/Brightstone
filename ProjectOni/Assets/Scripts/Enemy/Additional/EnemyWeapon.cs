@@ -19,6 +19,7 @@ public class EnemyWeapon : MonoBehaviour{
         }else{
             AudioManager.Instance.PlayerParry();
             enemyStats.Parried();
+            gameM.playerCombat.ParriedSomeone();
         }
     }
 }

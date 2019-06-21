@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour{
     private static UIManager instance;
 
-    public static UIManager Instance {
+    public static UIManager Instance{
         get {
             instance = FindObjectOfType<UIManager>();
-            if(instance == null) {
+            if(instance == null){
                 GameObject go = new GameObject("UIManager");
                 instance = go.AddComponent<UIManager>();
             }
@@ -46,6 +46,17 @@ public class UIManager : MonoBehaviour{
 
     [Header("PostProcess")]
     [SerializeField] private float smoothnessLimit;
+
+    [Header("Run Data")]
+    [SerializeField] private GameObject statsHolder;
+    [SerializeField] private Text damageDealtTxt;
+    [SerializeField] private Text damageRecievedTxt;
+    [SerializeField] private Text timesParriedTxt;
+    [SerializeField] private Text goodParryTxt;
+    [SerializeField] private Text enemiesKilledTxt;
+    [SerializeField] private Text bossesKilledTxt;
+    [SerializeField] private Text expObtainedTxt;
+    [SerializeField] private Text timeTxt;
     private GameManager gameM;
 
     public GameObject TextPopupPrefab{
@@ -163,6 +174,24 @@ public class UIManager : MonoBehaviour{
 
     public void DesactiveBoss(){
         bossHPBar.SetActive(false);
+    }
+
+    public void RunFinished(){
+        statsHolder.SetActive(true);
+
+        RunDataManager.Data cData = RunSaver.currentRun.data;
+
+        string minutes = Mathf.Floor(cData.time / 60).ToString("00");
+        string seconds = Mathf.Floor(cData.time % 60).ToString("00");
+
+        damageDealtTxt.text    = "" + cData.damageDealt;
+        damageRecievedTxt.text = "" + cData.damageRecieved;
+        timesParriedTxt.text   = "" + cData.timesParried;
+        goodParryTxt.text      = "" + cData.goodParry;
+        enemiesKilledTxt.text  = "" + cData.enemiesKilled;
+        bossesKilledTxt.text   = "" + cData.bossesKilled;
+        expObtainedTxt.text    = "" + cData.expObtained;
+        timeTxt.text           = "" + minutes + ":" + seconds;
     }
 
     public void ChangeState(GameObject go){
