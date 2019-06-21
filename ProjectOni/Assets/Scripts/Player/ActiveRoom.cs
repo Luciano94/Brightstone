@@ -35,6 +35,10 @@ public class ActiveRoom : MonoBehaviour
         foreach (Transform child in activeRoom){
             if(child.gameObject.layer != layer)
                 child.gameObject.layer = layer;
+                foreach (Transform childofChild in child){
+                    if(childofChild.gameObject.layer != layer)
+                        childofChild.gameObject.layer = layer;
+                }
         }
         if(roomsBehaviour.HaveMarket){
             roomsBehaviour.SwitchMarket();

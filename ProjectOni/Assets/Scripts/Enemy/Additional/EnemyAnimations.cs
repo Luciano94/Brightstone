@@ -12,7 +12,6 @@ public class EnemyAnimations : MonoBehaviour{
 
     private void Start(){
         sprRenderer = GetComponent<SpriteRenderer>();
-        //anim.SetFloat("AnimSpeed", enemyCombat.AnimTime);
     }
 
     private void Update(){
@@ -28,6 +27,7 @@ public class EnemyAnimations : MonoBehaviour{
 
     public void SetAttack(){
         anim.SetTrigger("Attack");
+        //anim.SetFloat("AnimSpeed", enemyCombat.AnimTime);
     }
 
     public void Idle(){
