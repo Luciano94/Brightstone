@@ -51,8 +51,7 @@ public class UIManager : MonoBehaviour{
     [SerializeField] private GameObject statsHolder;
     [SerializeField] private Text damageDealtTxt;
     [SerializeField] private Text damageRecievedTxt;
-    [SerializeField] private Text timesParriedTxt;
-    [SerializeField] private Text goodParryTxt;
+    [SerializeField] private Text parryPercentTxt;
     [SerializeField] private Text enemiesKilledTxt;
     [SerializeField] private Text bossesKilledTxt;
     [SerializeField] private Text expObtainedTxt;
@@ -183,11 +182,11 @@ public class UIManager : MonoBehaviour{
 
         string minutes = Mathf.Floor(cData.time / 60).ToString("00");
         string seconds = Mathf.Floor(cData.time % 60).ToString("00");
-
+        float parryPerc = (float)cData.goodParry / (float)cData.timesParried * 100;
+        
         damageDealtTxt.text    = "" + cData.damageDealt;
         damageRecievedTxt.text = "" + cData.damageRecieved;
-        timesParriedTxt.text   = "" + cData.timesParried;
-        goodParryTxt.text      = "" + cData.goodParry;
+        parryPercentTxt.text   = "" + parryPerc.ToString("00") + "%";
         enemiesKilledTxt.text  = "" + cData.enemiesKilled;
         bossesKilledTxt.text   = "" + cData.bossesKilled;
         expObtainedTxt.text    = "" + cData.expObtained;
