@@ -182,11 +182,16 @@ public class UIManager : MonoBehaviour{
 
         string minutes = Mathf.Floor(cData.time / 60).ToString("00");
         string seconds = Mathf.Floor(cData.time % 60).ToString("00");
-        float parryPerc = (float)cData.goodParry / (float)cData.timesParried * 100;
+        
+        if (cData.timesParried > 0){
+            float parryPerc = (float)cData.goodParry / (float)cData.timesParried * 100;
+            parryPercentTxt.text = parryPerc.ToString("00") + "%";
+        }
+        else
+            parryPercentTxt.text = "0%";
         
         damageDealtTxt.text    = "" + cData.damageDealt;
         damageRecievedTxt.text = "" + cData.damageRecieved;
-        parryPercentTxt.text   = "" + parryPerc.ToString("00") + "%";
         enemiesKilledTxt.text  = "" + cData.enemiesKilled;
         bossesKilledTxt.text   = "" + cData.bossesKilled;
         expObtainedTxt.text    = "" + cData.expObtained;

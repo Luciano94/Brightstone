@@ -132,7 +132,7 @@ public class MarketCanvasManager : MonoBehaviour{
 
     public void LifeLevel(){
         if(newPlayerExperience >= newRequiredExperience){
-            newPlayerLevel++;
+            playerSts.PlayerLevel = newPlayerLevel++;
             newLifeLevel++;
             newPlayerExperience -= newRequiredExperience;
             newRequiredExperience = newRequiredExperience * newPlayerLevel; 
@@ -143,7 +143,7 @@ public class MarketCanvasManager : MonoBehaviour{
 
     public void AttackLevel(){
         if(newPlayerExperience >= newRequiredExperience){
-            newPlayerLevel++;
+            playerSts.PlayerLevel = newPlayerLevel++;
             newAttackLevel++;
             newPlayerExperience -= newRequiredExperience;
             newRequiredExperience = newRequiredExperience * newPlayerLevel; 

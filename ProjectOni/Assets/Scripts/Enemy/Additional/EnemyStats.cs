@@ -43,8 +43,8 @@ public class EnemyStats : MonoBehaviour{
                 GameManager.Instance.playerSts.Experience = experience;
                 UIManager.Instance.ExpUpdate();
                 if (enemyType == EnemyType.Boss){
-                    GameManager.Instance.PlayerWin();
                     RunSaver.currentRun.data.bossesKilled++;
+                    GameManager.Instance.PlayerWin();
                 }
                 else{
                     RunSaver.currentRun.data.enemiesKilled++;

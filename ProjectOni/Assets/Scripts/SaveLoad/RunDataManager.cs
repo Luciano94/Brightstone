@@ -14,6 +14,9 @@ public class RunDataManager{
         public uint bossesKilled;
         public uint expObtained;
         public float time;
+        public ushort level;
+        public ushort roomsDiscovered;
+        public bool runFinished;
         public bool win;
     }
 

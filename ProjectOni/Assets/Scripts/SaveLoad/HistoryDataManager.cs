@@ -11,12 +11,13 @@ public class HistoryDataManager{
     [System.Serializable]
     public struct Data{
         public List<float> runTimers;
-        public ushort bestTime;
+        public float bestTime;
         public uint timesParried;
         public uint goodParry;
         public uint enemiesKilled;
         public uint bossesKilled;
         public uint totalExp;
+        public uint totalDamageDealt;
         public ushort totalDeaths;
         public ushort totalAttacks;
         public ushort actualLevel;

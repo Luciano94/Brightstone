@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour{
     [SerializeField] int lostExpPercent = 40;
     private float atkDmg = 0.0f;
     private float experience = 0;
-    private int playerLevel = 10;
+    private int playerLevel = 1;
     private bool isLowHealth = false;
     public bool IsLowHealth { get { return isLowHealth; } private set { isLowHealth = value; } }
 

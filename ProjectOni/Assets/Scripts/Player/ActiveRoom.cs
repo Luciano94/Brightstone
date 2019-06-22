@@ -23,6 +23,7 @@ public class ActiveRoom : MonoBehaviour
             if(!roomsBehaviour.HaveBoss && !roomsBehaviour.HaveMarket)
                 roomsBehaviour.SetColorNode(activeColor);
             if(!roomsBehaviour.Complete){
+                RunSaver.currentRun.data.roomsDiscovered++;
                 roomsBehaviour.ActiveEnemies();
                 doorManager.CloseDoors();
             }

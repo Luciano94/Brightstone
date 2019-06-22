@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour{
     private const int mainMenuIndex = 0;
 
     private void Awake(){
-        RunSaver.NewGame();
+        RunSaver.NewRun();
 
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour{
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
 
+        RunSaver.currentRun.data.level = (ushort)playerSts.PlayerLevel;
+        RunSaver.currentRun.data.runFinished = true;
         RunSaver.Save();
 
         // Temp
@@ -108,6 +110,8 @@ public class GameManager : MonoBehaviour{
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
 
+        RunSaver.currentRun.data.level = (ushort)playerSts.PlayerLevel;
+        RunSaver.currentRun.data.runFinished = true;
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
 
