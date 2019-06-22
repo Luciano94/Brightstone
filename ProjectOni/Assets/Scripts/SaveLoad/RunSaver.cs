@@ -6,19 +6,10 @@ using UnityEngine.SceneManagement;
 public static class RunSaver{
     public static RunDataManager currentRun = new RunDataManager();
     private static RunDataManager savedRun = new RunDataManager();
+    private static HistoryDataManager historyData = new HistoryDataManager();
 
     public static void NewGame(){
-        currentRun.data.damageDealt = 0;
-        currentRun.data.damageRecieved = 0;
-        currentRun.data.timesParried = 0;
-        currentRun.data.goodParry = 0;
-        currentRun.data.enemiesKilled = 0;
-        currentRun.data.bossesKilled = 0;
-        currentRun.data.expObtained = 0;
-        currentRun.data.time = 0;
-        currentRun.data.win = false;
-
-        savedRun = currentRun;
+        FillDefaultRunData();
 
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/bsSave.save");
@@ -54,5 +45,23 @@ public static class RunSaver{
 
     public static bool FileExists(){
         return File.Exists(Application.persistentDataPath + "/bsSave.save");
+    }
+
+    private static void FillDefaultRunData(){
+        currentRun.data.damageDealt = 0;
+        currentRun.data.damageRecieved = 0;
+        currentRun.data.timesParried = 0;
+        currentRun.data.goodParry = 0;
+        currentRun.data.enemiesKilled = 0;
+        currentRun.data.bossesKilled = 0;
+        currentRun.data.expObtained = 0;
+        currentRun.data.time = 0;
+        currentRun.data.win = false;
+
+        savedRun = currentRun;
+    }
+
+    private static void FillDefaultHistoryData(){
+
     }
 }
