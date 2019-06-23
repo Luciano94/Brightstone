@@ -6507,5 +6507,13 @@ PrefabInstance:
       propertyPath: activeColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 31269897, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -774315649
+      objectReference: {fileID: 0}
+    - target: {fileID: 31269897, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
