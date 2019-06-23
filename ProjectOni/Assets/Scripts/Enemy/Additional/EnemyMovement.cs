@@ -101,6 +101,10 @@ public class EnemyMovement : MonoBehaviour{
         transform.Translate(-diff.normalized * speed * 0.3f * Time.deltaTime);
     }
 
+    public void MoveByParried(){
+        transform.Translate(-diff.normalized * speed * 0.05f * Time.deltaTime);
+    }
+
     private void Rotation(){
         playerDir = diff.normalized;
         var angle = Mathf.Atan2(playerDir.y, playerDir.x) * Mathf.Rad2Deg;

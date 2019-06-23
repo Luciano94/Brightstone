@@ -48,13 +48,17 @@ public class EnemyMelee : Enemy{
     }
 
     protected override void Hurt(){
-        timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0.0f){
+        timeLeftHit -= Time.deltaTime;
+        timeLeftParried -= Time.deltaTime;
+        if (timeLeftHit <= 0.0f && timeLeftParried <= 0.0f){
             enemyCombat.Restitute();
             OnRestitution();
             return;
         }
 
-        enemyMovement.MoveByHit();
+        if (timeLeftHit >= 0.0f)
+            enemyMovement.MoveByHit();
+        else
+            enemyMovement.MoveByParried();
     }
 }

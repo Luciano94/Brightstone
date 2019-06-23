@@ -11,6 +11,8 @@ public abstract class EnemyBase : MonoBehaviour{
     protected EnemyStats enemyStats;
     protected Vector3 playerPos;
     protected float timeLeft = 0.0f;
+    protected float timeLeftHit = 0.0f;
+    protected float timeLeftParried = 0.0f;
     protected bool isWaiting = true;
 
     virtual protected void Awake(){
@@ -34,12 +36,12 @@ public abstract class EnemyBase : MonoBehaviour{
     }
 
     public void Hit(){
-        timeLeft = timeParalyzedForHit;
+        timeLeftHit = timeParalyzedForHit;
         OnHit();
     }
 
     public void Parried(){
-        timeLeft = timeParalyzedForParry;
+        timeLeftParried = timeParalyzedForParry;
         OnHit();
     }
 
