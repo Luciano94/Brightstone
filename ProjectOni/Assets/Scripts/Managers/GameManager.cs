@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour{
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{
-            playerSts.SetExperience = PlayerPrefs.GetInt("XP", 0);
+            playerSts.SetExperience = 9999;//PlayerPrefs.GetInt("XP", 0);
         }
     }
 

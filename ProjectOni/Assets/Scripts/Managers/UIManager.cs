@@ -137,7 +137,7 @@ public class UIManager : MonoBehaviour{
 
     public void EnterMarket(){
         market.SetActive(true);
-        requiredTxt.text = ExperienceMarket.Instance.Required;
+       // requiredTxt.text = ExperienceMarket.Instance.Required;
         
         if (!gameM.playerMovement.IsConnected){
             mAttackTxt.text = "\n  Attack\n   +0,25";
