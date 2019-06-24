@@ -18,6 +18,8 @@ public class MenuManager : MonoBehaviour{
     [SerializeField] private GameObject startMenuCanvas;
     [SerializeField] private GameObject winMenuCanvas;
     [SerializeField] private GameObject loseMenuCanvas;
+    [SerializeField] private GameObject stateUI;
+    [SerializeField] private float timeToActivateStateUi;
 
     private bool startMenu = false;
 
@@ -30,10 +32,20 @@ public class MenuManager : MonoBehaviour{
     }
 
     public bool WinMenuCanvas{
-        set { winMenuCanvas.SetActive(value); }
+        set {
+            winMenuCanvas.SetActive(value);
+            Invoke("ActivateStateUI", timeToActivateStateUi);
+        }
     }
 
     public bool LoseMenuCanvas{
-        set { loseMenuCanvas.SetActive(value); }
+        set {
+            loseMenuCanvas.SetActive(value);
+            Invoke("ActivateStateUI", timeToActivateStateUi);
+        }
+    }
+
+    private void ActivateStateUI(){
+        stateUI.SetActive(true);
     }
 }

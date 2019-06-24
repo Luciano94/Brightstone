@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour{
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject levelBoss;
 
+    private bool isConnected;
     private const int mainMenuIndex = 0;
 
     private void Awake(){
@@ -32,10 +33,27 @@ public class GameManager : MonoBehaviour{
 
     private void Update(){
         RunSaver.currentRun.data.time += Time.deltaTime;
+
+        DetectDivice();
     }
 
     public void ExitToMainMenu(){
         SceneManager.LoadScene(mainMenuIndex);
+    }
+
+    private void DetectDivice(){
+        if( Input.GetJoystickNames().Length > 0){
+            if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10)
+                isConnected = true;
+            else
+                isConnected = false;
+        }
+        else
+            isConnected = false;
+    }
+
+    public bool IsConnected{
+        get{return isConnected;}
     }
 
     public Vector3 PlayerPos{
@@ -103,7 +121,6 @@ public class GameManager : MonoBehaviour{
 
         UIManager.Instance.RunFinished();
         MenuManager.Instance.LoseMenuCanvas = true;
-        Invoke("GoToMenu", 10.0f);
     }
 
     public void PlayerWin(){
@@ -117,10 +134,5 @@ public class GameManager : MonoBehaviour{
 
         UIManager.Instance.RunFinished();
         MenuManager.Instance.WinMenuCanvas = true;
-        Invoke("GoToMenu", 10.0f);
-    }
-
-    private void GoToMenu(){
-        SceneManager.LoadScene(0);
     }
 }

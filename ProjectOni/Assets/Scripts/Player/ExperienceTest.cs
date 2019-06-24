@@ -4,20 +4,20 @@ public class ExperienceTest : MonoBehaviour
 {
     private ExperienceMarket expMrk;
     private PlayerStats plStats;
-    [SerializeField]private bool isHit = false;
+    [SerializeField] private bool isHit = false;
 
-    private void Start() {
+    private void Start(){
         expMrk = ExperienceMarket.Instance;
         plStats = GameManager.Instance.playerSts;
     }
 
-    private void Update() {
+    private void Update(){
         if(isHit)
             LevelUp();
     }
 
     private void LevelUp(){
-        if (GameManager.Instance.playerMovement.IsConnected){
+        if (GameManager.Instance.IsConnected){
             if(Input.GetButtonUp("Yattack")){
                 
                 expMrk.LifeUp();

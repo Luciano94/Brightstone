@@ -139,7 +139,7 @@ public class UIManager : MonoBehaviour{
         market.SetActive(true);
        // requiredTxt.text = ExperienceMarket.Instance.Required;
         
-        if (!gameM.playerMovement.IsConnected){
+        if (!gameM.IsConnected){
             mAttackTxt.text = "\n  Attack\n   +0,25";
             mLifeTxt.text =  "\n     Life\n     +50";
         }
