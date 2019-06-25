@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour{
     [SerializeField] private Text loadingText;
 
-    const int level1Index = 1;
+    const int level1Index = 2;
 
     private void Start(){
         StartCoroutine(LoadSceneAsync());

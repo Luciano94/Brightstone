@@ -27,22 +27,22 @@ public class GameManager : MonoBehaviour{
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{
-            playerSts.SetExperience = 9999;//PlayerPrefs.GetInt("XP", 0);
+            PlayerPrefs.GetInt("XP", 0);
         }
     }
 
     private void Update(){
         RunSaver.currentRun.data.time += Time.deltaTime;
 
-        DetectDivice();
+        DetectDevice();
     }
 
     public void ExitToMainMenu(){
         SceneManager.LoadScene(mainMenuIndex);
     }
 
-    private void DetectDivice(){
-        if( Input.GetJoystickNames().Length > 0){
+    private void DetectDevice(){
+        if (Input.GetJoystickNames().Length > 0){
             if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10)
                 isConnected = true;
             else

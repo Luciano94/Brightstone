@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour{
-    const int loadingIndex = 1;
+    const int synopsisIndex = 1;
     [SerializeField] Button playButton;
     [SerializeField] Text runTimeAvgTxt;
     [SerializeField] Text bestTimeTxt;
@@ -21,7 +21,7 @@ public class MenuController : MonoBehaviour{
     }
 
     public void Play(){
-        SceneManager.LoadScene(loadingIndex);
+        SceneManager.LoadScene(synopsisIndex);
     }
 
     public void Stats(){
