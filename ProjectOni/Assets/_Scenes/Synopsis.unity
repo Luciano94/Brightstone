@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &153018284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -601,12 +601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b75a24e655ad6b4aae8304c21e82003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skipBtn: {fileID: 153018283}
-  timeToAppear: 10
   xImg: {fileID: 1168714911}
   synopsisTxt: {fileID: 344853978}
   txtSpeed: 60
-  timeMoving: 17.5
 --- !u!1 &975590322
 GameObject:
   m_ObjectHideFlags: 0
