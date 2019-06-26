@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour{
     private static UIManager instance;
@@ -230,5 +231,9 @@ public class UIManager : MonoBehaviour{
 
     public void ChangeState(GameObject go){
         go.SetActive(!go.activeSelf);
+    }
+
+    public void RestartButton(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
