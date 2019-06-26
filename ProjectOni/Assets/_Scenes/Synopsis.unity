@@ -494,15 +494,15 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "You are in Kyoto region, Japan, in the middle of a war due to the lack
     of a rare, shiny-like-the-moon material, called Brightstone.\r\n\r\nThe Brightstone
-    allows weapons' modifications, such as changes in their appearance, which gives
+    allows weapon's modifications, such as changes in their appearance, which gives
     the carrier impossible abilities to do with a regular weapon.\r\n\r\nIt's users
-    tend to be corrupted by the greater power's hunt.\r\n\r\nThe clans' leaders are
+    tend to be corrupted by the greater power's hunt.\r\n\r\nThe clan's leaders are
     looking to take the Brightstone's power as they declare war.\r\n\r\nYou are an
-    exiled ninja who is part of a clan known as The Forgotten Ones, which is a group
-    made up of men who were expelled from their clans.\r\n\r\nLion, this group's leader
-    is giving you the task of ending this war once and for all, which is starting
-    to affect your clan's members lives.\r\n\r\nIn order to finish the war, your goal
-    is to end with the clans' leaders.\r"
+    exiled ninja who is part of a clan known as The Forgotten Ones, a group of men
+    who were expelled from their clans.\r\n\r\nLion, this group's leader is giving
+    you the task of ending this war once and for all, because is starting to affect
+    your clan's members lives.\r\n\r\nIn order to finish the war, your goal is to
+    end with the clan's leaders.\r"
 --- !u!222 &344853980
 CanvasRenderer:
   m_ObjectHideFlags: 0
