@@ -20,7 +20,7 @@ public class SynopsisController : MonoBehaviour{
         timeLeft += Time.deltaTime;
 
         if (synopsisTxt.anchoredPosition.y < -10.0f){
-            synopsisTxt.Translate(0.0f, txtSpeed, 0.0f);
+            synopsisTxt.Translate(0.0f, txtSpeed * Time.deltaTime, 0.0f);
         }
 
         if (timeLeft >= timeToAppear){

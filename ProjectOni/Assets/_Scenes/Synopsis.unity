@@ -605,7 +605,7 @@ MonoBehaviour:
   timeToAppear: 10
   xImg: {fileID: 1168714911}
   synopsisTxt: {fileID: 344853978}
-  txtSpeed: 1
+  txtSpeed: 60
   timeMoving: 17.5
 --- !u!1 &975590322
 GameObject:
