@@ -46,15 +46,22 @@ public class MarketCanvasManager : MonoBehaviour{
     private int newLifeStat;
     [SerializeField]private Text newLifeStatTxt;
     [Header("Attack Stat")]
-    private int attackStat;
+    private float attackStat;
     [SerializeField]private Text attackStatTxt;
-    private int newAttackStat;
+    private float newAttackStat;
     [SerializeField]private Text newAttackStatTxt;
     [Header("Defense Stat")]
     private int defenseStat;
     [SerializeField]private Text defenseStatTxt;
     private int newDefenseStat;
     [SerializeField]private Text newDefenseStatTxt;
+
+    [Header("Buttons")]
+    [SerializeField]private Button plusLife;
+    [SerializeField]private Button minusLife;
+    [SerializeField]private Button plusAttack;
+    [SerializeField]private Button minusAttack;
+
 
     private PlayerStats playerSts;
     private bool canPlus;
@@ -77,24 +84,42 @@ public class MarketCanvasManager : MonoBehaviour{
     private void Start() {   
         playerSts = GameManager.Instance.playerSts;
         InitStats();
-        UpdateText();
+        UpdateUI();
         if(playerExperience >= requiredExperience){
             canPlus = true;
         }
         canConfirm = false;
         canMinus = false;
+        UIManager.Instance.ExpUpdate();
+    }
+
+    public void EnterMarket(){
+        playerSts = GameManager.Instance.playerSts;
+        UpdateStats();
+        UpdateUI();
+        if(playerExperience >= requiredExperience){
+            canPlus = true;
+            playerExperienceTxt.color = Color.white;
+            newPlayerExperienceTxt.color = Color.white;
+        }else{
+            playerExperienceTxt.color = Color.red;
+        }
+        canConfirm = false;
+        canMinus = false;
+        UIManager.Instance.ExpUpdate();
     }
 
     private void InitStats(){
         playerLevel = playerSts.PlayerLevel;
         playerExperience = (int)playerSts.Experience;
-        requiredExperience = 100;
+        if(playerLevel == 1)
+            requiredExperience = 100;
         lifeLevel = playerSts.PlayerLevel;
         defenseLevel = playerSts.PlayerLevel;
         attackLevel = playerSts.PlayerLevel;
-        lifeStat = (int)playerSts.Life;
+        lifeStat = (int)playerSts.setLifeStat;
         defenseStat = (int)playerSts.Defense;
-        attackStat = (int)playerSts.AtkMult;
+        attackStat = playerSts.AtkMult;
 
 
         newPlayerLevel = playerLevel;
@@ -111,16 +136,16 @@ public class MarketCanvasManager : MonoBehaviour{
     private void UpdateStats(){
         playerLevel = playerSts.PlayerLevel;
         playerExperience = (int)playerSts.Experience;
-        requiredExperience = playerExperience * playerLevel;
+        //requiredExperience = playerExperience * playerLevel;
         if(lifeLevel != newLifeLevel)
             lifeLevel = playerSts.PlayerLevel;
         if(defenseLevel != newDefenseLevel)
             defenseLevel = playerSts.PlayerLevel;
         if(attackLevel != newAttackLevel)
             attackLevel = playerSts.PlayerLevel;
-        lifeStat = (int)playerSts.Life;
+        lifeStat = (int)playerSts.setLifeStat;
         defenseStat = (int)playerSts.Defense;
-        attackStat = (int)playerSts.AtkMult;
+        attackStat = playerSts.setAtkMult;
 
 
         newPlayerLevel = playerLevel;
@@ -136,10 +161,15 @@ public class MarketCanvasManager : MonoBehaviour{
 
     private void SetStats(){
         playerSts.PlayerLevel = playerLevel;
-        playerSts.Experience = (float)playerExperience;
+        //playerSts.Experience = (float)playerExperience;
         oldLevelrequiredExp = 0;
-        UpdateStats();
+        //UpdateStats();
+        UpdateUI();
+    }
+
+    private void UpdateUI(){
         UpdateText();
+        UpdateButtons();
     }
 
     private void UpdateText(){
@@ -155,40 +185,68 @@ public class MarketCanvasManager : MonoBehaviour{
 
         newAttackStatTxt.text = newAttackStat.ToString();
         newLifeStatTxt.text = newLifeStat.ToString();
-        newDefenseLevelTxt.text = newDefenseStat.ToString();
-        newPlayerLevelTxt.text = newPlayerLevel.ToString();
-        newAttackLevelTxt.text = newAttackLevel.ToString();
+        newDefenseStatTxt.text = newDefenseStat.ToString();
+        
         newDefenseLevelTxt.text = newDefenseLevel.ToString();
+        newAttackLevelTxt.text = newAttackLevel.ToString();
         newLifeLevelTxt.text = newLifeLevel.ToString();
+        
+        newPlayerLevelTxt.text = newPlayerLevel.ToString();
         newRequiredExperienceTxt.text = newRequiredExperience.ToString();
         newPlayerExperienceTxt.text = newPlayerExperience.ToString();
-
     }
 
+    private void UpdateButtons(){
+        if(newPlayerExperience < newRequiredExperience){
+            plusAttack.interactable = false;
+            plusLife.interactable = false;
+        }else{
+            plusAttack.interactable = true;
+            plusLife.interactable = true;
+        }
+
+        if(playerLevel == newPlayerLevel){
+            minusLife.interactable = false;
+            minusAttack.interactable = false;
+        }else{
+            minusLife.interactable = true;
+            minusAttack.interactable = true;            
+        }
+    }
     public void Confirm(){
         if(canConfirm){
             canConfirm = false;
+
             //updateo el nivel del personaje
             playerLevel = newPlayerLevel;
             requiredExperience = newRequiredExperience;
             playerExperience = newPlayerExperience;
 
-            //updateo los level stats 
-            playerSts.LifeStat = (50 * (newLifeLevel - lifeLevel));
-            playerSts.AtkMult = (5 * (newAttackLevel - attackLevel));
-            //Falta agregar stat de defesa
+            //updateo los stats en el player
+            if(newLifeStat != lifeStat){
+                playerSts.setLifeStat = newLifeStat;
+                UIManager.Instance.UpdateFillBar(lifeStat);
+            }
+            playerSts.setAtkMult = newAttackStat;
             playerSts.SetExperience = playerExperience;
+            //Falta agregar stat de defesa
             
             //updateo los stats
             lifeStat = (int)playerSts.Life;
-            defenseStat = (int)playerSts.Defense;
-            attackStat = (int)playerSts.AtkMult;
+            defenseStat = playerSts.Defense;
+            attackStat = playerSts.setAtkMult;
             
             //updateo los stats en la UI
             lifeLevel = newLifeLevel;
             defenseLevel = newDefenseLevel;
             attackLevel = newAttackLevel;
+            UIManager.Instance.ExpUpdate();
+            UIManager.Instance.LifeUpdate();
             SetStats();
+            newLifeLevelTxt.color = Color.white;
+            newLifeStatTxt.color = Color.white;
+            newAttackLevelTxt.color = Color.white;
+            newAttackStatTxt.color = Color.white;
         }
     }
 
@@ -197,28 +255,35 @@ public class MarketCanvasManager : MonoBehaviour{
             newPlayerExperience += oldLevelrequiredExp;
             newPlayerLevel--;
             newLifeLevel--;
-            newLifeStat =lifeStat + (50 * (newLifeLevel));
-            newRequiredExperience -= oldLevelrequiredExp; 
+            newLifeStat = newLifeStat - 50;
+            newRequiredExperience -= oldLevelrequiredExp;
+                newPlayerExperienceTxt.color = Color.white;
             if(playerLevel == newPlayerLevel){
                 canMinus = false;
                 canConfirm = false;
                 newPlayerExperience = playerExperience;
                 newRequiredExperience = 100;
                 oldLevelrequiredExp = 0;
+                newLifeLevelTxt.color = Color.white;
+                newLifeStatTxt.color = Color.white;
             }
         }else if(operation && newPlayerExperience >= newRequiredExperience){
             newPlayerLevel++;
             newLifeLevel++;
-            newLifeStat = lifeStat + (50 * (newLifeLevel));
+            newLifeStat = 50 + newLifeStat;
             newPlayerExperience -= newRequiredExperience;
             oldLevelrequiredExp = newRequiredExperience;
             newRequiredExperience = newRequiredExperience * newPlayerLevel; 
-            if(newPlayerExperience < newRequiredExperience)
-            canPlus = false;
-            canMinus = true;
-            canConfirm = true;
+            newLifeLevelTxt.color = Color.cyan;
+            newLifeStatTxt.color = Color.cyan;
+            if(newPlayerExperience < newRequiredExperience){
+                canPlus = false;
+                canMinus = true;
+                canConfirm = true;
+                newPlayerExperienceTxt.color = Color.red;
+            }
         }
-        UpdateText();
+        UpdateUI();
     }
 
     public void AttackLevel(bool operation){
@@ -226,27 +291,34 @@ public class MarketCanvasManager : MonoBehaviour{
             newPlayerExperience += oldLevelrequiredExp;
             newPlayerLevel--;
             newAttackLevel--;
-            newAttackStat = attackStat + (5 * (newAttackLevel));
+            newAttackStat = newAttackStat - 0.5f;
             newRequiredExperience -= oldLevelrequiredExp; 
+                newPlayerExperienceTxt.color = Color.white;
             if(playerLevel == newPlayerLevel){
                 newRequiredExperience = 100;
                 newPlayerExperience = playerExperience;
-                                canConfirm = false;
+                canConfirm = false;
                 canMinus = false;
+                newAttackLevelTxt.color = Color.white;
+                newAttackStatTxt.color = Color.white;
             }
         } else if(operation && newPlayerExperience >= newRequiredExperience){
             newPlayerLevel++;
             newAttackLevel++;
-            newAttackStat = attackStat + (5 * (newAttackLevel));
+            newAttackStat = 0.5f +newAttackStat;
             newPlayerExperience -= newRequiredExperience;
             oldLevelrequiredExp = newRequiredExperience;
             newRequiredExperience = newRequiredExperience * newPlayerLevel;
-            if(newPlayerExperience < newRequiredExperience)
-            canPlus = false;
-            canMinus = true;
-            canConfirm = true;
+            newAttackLevelTxt.color = Color.cyan;
+            newAttackStatTxt.color = Color.cyan;
+            if(newPlayerExperience < newRequiredExperience){
+                canPlus = false;
+                canMinus = true;
+                canConfirm = true;
+                newPlayerExperienceTxt.color = Color.red;
+            }
         }
-        UpdateText();
+        UpdateUI();
     }
 
     public void DefenseLevel(bool operation){
@@ -270,9 +342,8 @@ public class MarketCanvasManager : MonoBehaviour{
             if(newPlayerExperience < newRequiredExperience)
             canPlus = false;
             canMinus = true;
-
             canConfirm = true;
         }
-        UpdateText();
+        UpdateUI();
     }
 }

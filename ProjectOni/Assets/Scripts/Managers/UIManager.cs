@@ -32,8 +32,10 @@ public class UIManager : MonoBehaviour{
     [SerializeField] private GameObject market; 
 
     [Header("FillBars")]
+    [SerializeField] private float sizePerLifePoint = 2.7f;
     [SerializeField] private Image playerHpFillBar;
     [SerializeField] private Image playerHitHpFillBar;
+    [SerializeField] private Image playerEmptyFillBar;
     [SerializeField] private Color normalLifeColorBar;
     [SerializeField] private Color lowLifeColorBar;
     [SerializeField] private Color hitLifeColorBar;
@@ -91,6 +93,9 @@ public class UIManager : MonoBehaviour{
             if(timeLeft <= 0){
                 hpHitPercentage -= Time.deltaTime * 0.5f;
                 playerHitHpFillBar.fillAmount = hpHitPercentage;
+                if(hpHitPercentage < hpPercentage){
+                    hpHitPercentage = hpPercentage;
+                }
             }
             else
                 timeLeft -= Time.deltaTime;
@@ -106,11 +111,13 @@ public class UIManager : MonoBehaviour{
         expTxt.text = gameM.playerSts.Experience.ToString();
     }
 
-    public void lifeUpdate(){
+    public void LifeUpdate(){
         float actualHp = gameM.playerSts.LifeStat;
         float maxHp = gameM.playerSts.MaxLife();
         hpPercentage = actualHp / maxHp;
+        playerHitHpFillBar.fillAmount = hpHitPercentage;
         playerHpFillBar.fillAmount = hpPercentage;
+
         //lifeTxt.text = actualHp + " / " + maxHp;
 
         if(gameM.playerSts.IsLowHealth){
@@ -119,6 +126,7 @@ public class UIManager : MonoBehaviour{
         }
         else{
             playerHpFillBar.color = normalLifeColorBar;
+
             FilterManager.SetVignetteSmoothness(0.0f);
             FilterManager.SetActiveVignette(false);
         }
@@ -130,6 +138,28 @@ public class UIManager : MonoBehaviour{
         ExpUpdate();    
     }
 
+    public void UpdateFillBar(float value){
+        //Orange bar
+        playerHitHpFillBar.rectTransform.sizeDelta = new Vector2(
+            value * sizePerLifePoint,
+            playerEmptyFillBar.rectTransform.rect.height
+        );
+
+        //Grey bar
+        playerEmptyFillBar.rectTransform.sizeDelta = new Vector2(
+            value * sizePerLifePoint,
+            playerEmptyFillBar.rectTransform.rect.height
+        );
+
+        //Red bar
+        playerHpFillBar.rectTransform.sizeDelta = new Vector2(
+            value * sizePerLifePoint,
+            playerHpFillBar.rectTransform.rect.height
+        );
+        LifeUpdate();
+        hpHitPercentage = hpPercentage;
+    }
+
     public void atkUpdate(){
         atkTxt.text = "Attack multiplier: " + gameM.playerSts.AtkMult.ToString();
         ExpUpdate();  
@@ -138,7 +168,7 @@ public class UIManager : MonoBehaviour{
     public void EnterMarket(){
         market.SetActive(true);
        // requiredTxt.text = ExperienceMarket.Instance.Required;
-        
+        MarketCanvasManager.Instance.EnterMarket();
         if (!gameM.IsConnected){
             mAttackTxt.text = "\n  Attack\n   +0,25";
             mLifeTxt.text =  "\n     Life\n     +50";
@@ -150,7 +180,7 @@ public class UIManager : MonoBehaviour{
     }
 
     public void MarketUpdate(){
-        requiredTxt.text = ExperienceMarket.Instance.Required;
+       // requiredTxt.text = ExperienceMarket.Instance.Required;
     }
 
     public void ExitMarket(){
