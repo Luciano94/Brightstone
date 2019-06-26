@@ -54,6 +54,17 @@ public class PlayerStats : MonoBehaviour{
         }
     }
 
+    public float setLifeStat{
+        get{return life;}
+        set{
+            if(value > 0){
+                currentLife = value;
+                life = value;
+                CheckLowHealth();
+            }
+        }
+    }
+
     private void CheckLowHealth(){
         if (currentLife / life < 0.3f)
             isLowHealth = true;
@@ -84,6 +95,15 @@ public class PlayerStats : MonoBehaviour{
         }
     }
 
+    public float setAtkMult{
+        get{return atkMult;}
+        set{
+            if(value > 0)
+                atkMult = value;
+        }
+
+    }
+
     public float Experience{
         get{return experience;}
         set{
@@ -100,7 +120,10 @@ public class PlayerStats : MonoBehaviour{
     }
 
     public float SetExperience{
-        set{experience = value;}
+        set{
+            experience = value;
+            RunSaver.currentRun.data.expObtained = (uint)value;
+        }
     }
 
     public float Death(){

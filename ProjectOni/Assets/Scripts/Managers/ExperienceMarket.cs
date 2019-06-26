@@ -38,7 +38,7 @@ public class ExperienceMarket : MonoBehaviour
             level ++;
             requiredExp = requiredExp * level;
             playerStats.LifeStat = 50;
-            UIManager.Instance.lifeUpdate();
+            UIManager.Instance.LifeUpdate();
             UIManager.Instance.MarketUpdate();
         }
     }
