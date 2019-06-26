@@ -61,6 +61,7 @@ public class MarketCanvasManager : MonoBehaviour{
     [SerializeField]private Button minusLife;
     [SerializeField]private Button plusAttack;
     [SerializeField]private Button minusAttack;
+    [SerializeField]private Button confirmButton;
 
 
     private PlayerStats playerSts;
@@ -94,6 +95,7 @@ public class MarketCanvasManager : MonoBehaviour{
     }
 
     public void EnterMarket(){
+        confirmButton.interactable = false;
         playerSts = GameManager.Instance.playerSts;
         UpdateStats();
         UpdateUI();
@@ -200,9 +202,11 @@ public class MarketCanvasManager : MonoBehaviour{
         if(newPlayerExperience < newRequiredExperience){
             plusAttack.interactable = false;
             plusLife.interactable = false;
+
         }else{
             plusAttack.interactable = true;
             plusLife.interactable = true;
+
         }
 
         if(playerLevel == newPlayerLevel){
@@ -215,6 +219,7 @@ public class MarketCanvasManager : MonoBehaviour{
     }
     public void Confirm(){
         if(canConfirm){
+            confirmButton.interactable = true;
             canConfirm = false;
 
             //updateo el nivel del personaje
@@ -247,6 +252,8 @@ public class MarketCanvasManager : MonoBehaviour{
             newLifeStatTxt.color = Color.white;
             newAttackLevelTxt.color = Color.white;
             newAttackStatTxt.color = Color.white;
+        }else{
+            confirmButton.interactable = false;
         }
     }
 
@@ -257,12 +264,11 @@ public class MarketCanvasManager : MonoBehaviour{
             newLifeLevel--;
             newLifeStat = newLifeStat - 50;
             newRequiredExperience -= oldLevelrequiredExp;
-                newPlayerExperienceTxt.color = Color.white;
+            newPlayerExperienceTxt.color = Color.white;
             if(playerLevel == newPlayerLevel){
                 canMinus = false;
                 canConfirm = false;
                 newPlayerExperience = playerExperience;
-                newRequiredExperience = 100;
                 oldLevelrequiredExp = 0;
                 newLifeLevelTxt.color = Color.white;
                 newLifeStatTxt.color = Color.white;
@@ -273,9 +279,12 @@ public class MarketCanvasManager : MonoBehaviour{
             newLifeStat = 50 + newLifeStat;
             newPlayerExperience -= newRequiredExperience;
             oldLevelrequiredExp = newRequiredExperience;
+            //Como se calcula la Exp
             newRequiredExperience = newRequiredExperience * newPlayerLevel; 
             newLifeLevelTxt.color = Color.cyan;
             newLifeStatTxt.color = Color.cyan;
+            canMinus = true;
+            confirmButton.interactable = true;
             if(newPlayerExperience < newRequiredExperience){
                 canPlus = false;
                 canMinus = true;
@@ -293,9 +302,8 @@ public class MarketCanvasManager : MonoBehaviour{
             newAttackLevel--;
             newAttackStat = newAttackStat - 0.5f;
             newRequiredExperience -= oldLevelrequiredExp; 
-                newPlayerExperienceTxt.color = Color.white;
+            newPlayerExperienceTxt.color = Color.white;
             if(playerLevel == newPlayerLevel){
-                newRequiredExperience = 100;
                 newPlayerExperience = playerExperience;
                 canConfirm = false;
                 canMinus = false;
@@ -308,9 +316,13 @@ public class MarketCanvasManager : MonoBehaviour{
             newAttackStat = 0.5f +newAttackStat;
             newPlayerExperience -= newRequiredExperience;
             oldLevelrequiredExp = newRequiredExperience;
+            //Como se calcula la Exp
+
             newRequiredExperience = newRequiredExperience * newPlayerLevel;
             newAttackLevelTxt.color = Color.cyan;
             newAttackStatTxt.color = Color.cyan;
+            canMinus = true;
+            confirmButton.interactable = true;
             if(newPlayerExperience < newRequiredExperience){
                 canPlus = false;
                 canMinus = true;
@@ -328,7 +340,6 @@ public class MarketCanvasManager : MonoBehaviour{
             newDefenseLevel--;
             newRequiredExperience = newRequiredExperience * newPlayerLevel; 
             if(playerLevel == newPlayerLevel){
-                newRequiredExperience = 100;
                 newPlayerExperience = playerExperience;
                 canMinus = false;
                 canConfirm = false;
@@ -338,6 +349,8 @@ public class MarketCanvasManager : MonoBehaviour{
             newDefenseLevel++;
             newPlayerExperience -= newRequiredExperience;
             oldLevelrequiredExp = newRequiredExperience;
+            //Como se calcula la Exp
+
             newRequiredExperience = newRequiredExperience * newPlayerLevel;
             if(newPlayerExperience < newRequiredExperience)
             canPlus = false;
