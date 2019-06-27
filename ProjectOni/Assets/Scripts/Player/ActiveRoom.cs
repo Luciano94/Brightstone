@@ -13,7 +13,8 @@ public class ActiveRoom : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 15){
             if(activeRoom != null){
-                roomsBehaviour.SetColorNode(normalColor);
+                if(!roomsBehaviour.HaveMarket && !roomsBehaviour.HaveBoss)
+                    roomsBehaviour.SetColorNode(normalColor);
                 ChangeLayer(15);
             }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
