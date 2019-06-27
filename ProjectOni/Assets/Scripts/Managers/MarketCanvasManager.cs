@@ -263,7 +263,7 @@ public class MarketCanvasManager : MonoBehaviour{
             newPlayerLevel--;
             newLifeLevel--;
             newLifeStat = newLifeStat - 50;
-            newRequiredExperience -= oldLevelrequiredExp;
+            newRequiredExperience = (int)(newRequiredExperience * 0.5f);
             newPlayerExperienceTxt.color = Color.white;
             if(playerLevel == newPlayerLevel){
                 canMinus = false;
@@ -280,7 +280,7 @@ public class MarketCanvasManager : MonoBehaviour{
             newPlayerExperience -= newRequiredExperience;
             oldLevelrequiredExp = newRequiredExperience;
             //Como se calcula la Exp
-            newRequiredExperience = newRequiredExperience * newPlayerLevel; 
+            newRequiredExperience = newRequiredExperience * 2; 
             newLifeLevelTxt.color = Color.cyan;
             newLifeStatTxt.color = Color.cyan;
             canMinus = true;
@@ -301,7 +301,7 @@ public class MarketCanvasManager : MonoBehaviour{
             newPlayerLevel--;
             newAttackLevel--;
             newAttackStat = newAttackStat - 0.5f;
-            newRequiredExperience -= oldLevelrequiredExp; 
+            newRequiredExperience =(int)(newRequiredExperience * 0.5f);; 
             newPlayerExperienceTxt.color = Color.white;
             if(playerLevel == newPlayerLevel){
                 newPlayerExperience = playerExperience;
@@ -318,7 +318,7 @@ public class MarketCanvasManager : MonoBehaviour{
             oldLevelrequiredExp = newRequiredExperience;
             //Como se calcula la Exp
 
-            newRequiredExperience = newRequiredExperience * newPlayerLevel;
+            newRequiredExperience = newRequiredExperience * 2;
             newAttackLevelTxt.color = Color.cyan;
             newAttackStatTxt.color = Color.cyan;
             canMinus = true;
@@ -338,7 +338,7 @@ public class MarketCanvasManager : MonoBehaviour{
             newPlayerExperience += newRequiredExperience;
             newPlayerLevel--;
             newDefenseLevel--;
-            newRequiredExperience = newRequiredExperience * newPlayerLevel; 
+            newRequiredExperience = (int)(newRequiredExperience * 0.5f);; 
             if(playerLevel == newPlayerLevel){
                 newPlayerExperience = playerExperience;
                 canMinus = false;
@@ -351,7 +351,7 @@ public class MarketCanvasManager : MonoBehaviour{
             oldLevelrequiredExp = newRequiredExperience;
             //Como se calcula la Exp
 
-            newRequiredExperience = newRequiredExperience * newPlayerLevel;
+            newRequiredExperience = newRequiredExperience * 2;
             if(newPlayerExperience < newRequiredExperience)
             canPlus = false;
             canMinus = true;
