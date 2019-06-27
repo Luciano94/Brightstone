@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour{
     private float experience = 0;
     private int playerLevel = 1;
     private bool isLowHealth = false;
+    private bool inmortalState = false;
     public bool IsLowHealth { get { return isLowHealth; } private set { isLowHealth = value; } }
 
     [HideInInspector][SerializeField] UnityEvent onHit;
@@ -22,7 +23,7 @@ public class PlayerStats : MonoBehaviour{
     public float Life{
         get{return currentLife;}
         set{
-            if(currentLife > 0){
+            if(currentLife > 0 && !inmortalState){
                 currentLife -= value;
 
                 RunSaver.currentRun.data.damageRecieved += (uint)value;
@@ -134,6 +135,10 @@ public class PlayerStats : MonoBehaviour{
             experience = 0.0f; 
         }
         return experience;
+    }
+
+    public void ActivateInmortalState(){
+        inmortalState = true;
     }
 
     public UnityEvent OnHit
