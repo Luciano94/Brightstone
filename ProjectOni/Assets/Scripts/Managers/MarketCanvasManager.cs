@@ -109,6 +109,8 @@ public class MarketCanvasManager : MonoBehaviour{
         canConfirm = false;
         canMinus = false;
         UIManager.Instance.ExpUpdate();
+
+        plusLife.Select();
     }
 
     private void InitStats(){

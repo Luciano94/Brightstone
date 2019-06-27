@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour{
 
@@ -19,6 +20,7 @@ public class MenuManager : MonoBehaviour{
     [SerializeField] private GameObject winMenuCanvas;
     [SerializeField] private GameObject loseMenuCanvas;
     [SerializeField] private GameObject stateUI;
+    [SerializeField] private Button buttonToSelect;
     [SerializeField] private float timeToActivateStateUi;
 
     private bool startMenu = false;
@@ -47,5 +49,6 @@ public class MenuManager : MonoBehaviour{
 
     private void ActivateStateUI(){
         stateUI.SetActive(true);
+        buttonToSelect.Select();
     }
 }

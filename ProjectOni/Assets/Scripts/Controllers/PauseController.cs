@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour{
     [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private OptionsController optionsPanel;
+    [SerializeField] private Button firstOption;
 
     private bool pauseState = false;
     
@@ -12,9 +12,11 @@ public class PauseController : MonoBehaviour{
         if(Input.GetButtonDown("Pause")){
             pauseState = !pauseState;
             MenuManager.Instance.StartMenu = pauseState;
-            if (!pauseState && optionsPanel.activeSelf){
-                UIManager.Instance.ChangeState(optionsPanel);
-            }
+            firstOption.Select();
+
+            if (!pauseState && optionsPanel.gameObject.activeSelf)
+                optionsPanel.DesactivateThis();
+
             pausePanel.SetActive(pauseState);
         }
     }

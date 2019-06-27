@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour{
     [SerializeField] Text roomsDiscoveredTxt;
     [SerializeField] Text actualLevelTxt;
 
-    private void Awake(){
+    private void Start(){
         playButton.Select();
     }
 

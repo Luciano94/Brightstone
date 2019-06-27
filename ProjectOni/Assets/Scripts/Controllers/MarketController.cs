@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MarketController : MonoBehaviour
-{
+public class MarketController : MonoBehaviour{
     public void Confirm(){
         MarketCanvasManager.Instance.Confirm();
     }
