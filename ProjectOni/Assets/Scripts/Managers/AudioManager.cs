@@ -17,12 +17,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    [SerializeField]private AudioSource playerDeath;
-    [SerializeField]private AudioSource[] playerAttack;
+    [Header("Player")]
+    [SerializeField] private AudioSource playerDeath;
+    [SerializeField] private AudioSource[] playerAttack;
     private bool isAttack = false;
-    [SerializeField]private AudioSource playerParry;
-    [SerializeField]private AudioSource[] enemyAttack;
+    [SerializeField] private AudioSource playerParry;
+
+    [Header("Enemy")]
+    [SerializeField] private AudioSource[] enemyAttack;
     private bool enemyIsAttack = false;
+
+    [Header("Ingame")]
+    [SerializeField] private AudioSource roomStart;
+    [SerializeField] private AudioSource roomFinished;
+
+    [Header("Menu")]
     [SerializeField]private AudioSource menuHit;
 
     public void MenuHit(){
@@ -31,9 +40,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayerAttack(){
         int attack = Random.Range(0, playerAttack.Length);
-        //if(!playerAttack[attack].isPlaying)
-            playerAttack[attack].Play();
-            playerAttack[attack].pitch = Random.Range(0.9f, 1.1f);
+        playerAttack[attack].Play();
+        playerAttack[attack].pitch = Random.Range(0.9f, 1.1f);
     }
 
     public void PlayerDeath(){
@@ -46,7 +54,15 @@ public class AudioManager : MonoBehaviour
 
     public void EnemyAttack(){
         int attack = Random.Range(0, enemyAttack.Length);
-        //if(!enemyAttack[attack].isPlaying)
-            enemyAttack[attack].Play();
+        
+        enemyAttack[attack].Play();
+    }
+
+    public void RoomStart(){
+        roomStart.Play();
+    }
+
+    public void RoomFinished(){
+        roomFinished.Play();
     }
 }

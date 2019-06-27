@@ -27,6 +27,7 @@ public class ActiveRoom : MonoBehaviour
                 RunSaver.currentRun.data.roomsDiscovered++;
                 roomsBehaviour.ActiveEnemies();
                 doorManager.CloseDoors();
+                AudioManager.Instance.RoomStart();
             }
             ChangeLayer(9);
             //Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);

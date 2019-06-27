@@ -116,6 +116,7 @@ public class RoomsBehaviour : MonoBehaviour{
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
+            AudioManager.Instance.RoomFinished();
         }
     }
 }
