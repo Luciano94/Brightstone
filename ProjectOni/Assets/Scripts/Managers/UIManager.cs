@@ -61,6 +61,9 @@ public class UIManager : MonoBehaviour{
     [SerializeField] private Text timeTxt;
     private GameManager gameM;
 
+    [Header("Cheatcodes")]
+    [SerializeField] private GameObject godMode;
+
     public GameObject TextPopupPrefab{
         get{return textPopupPrefab;}
     }
@@ -231,6 +234,10 @@ public class UIManager : MonoBehaviour{
 
     public void ChangeState(GameObject go){
         go.SetActive(!go.activeSelf);
+    }
+
+    public void ChangeGodModeState(){
+        godMode.SetActive(!godMode.activeSelf);
     }
 
     public void RestartButton(){

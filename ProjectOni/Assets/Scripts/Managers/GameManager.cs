@@ -34,8 +34,10 @@ public class GameManager : MonoBehaviour{
     private void Update(){
         RunSaver.currentRun.data.time += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.H))
-            playerSts.ActivateInmortalState();
+        if (Input.GetKeyDown(KeyCode.H)){
+            playerSts.ChangeGodModeState();
+            UIManager.Instance.ChangeGodModeState();
+        }
 
         DetectDevice();
     }
