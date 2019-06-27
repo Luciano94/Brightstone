@@ -32,7 +32,22 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource roomFinished;
 
     [Header("Menu")]
-    [SerializeField]private AudioSource menuHit;
+    [SerializeField] private AudioSource menuHit;
+
+    [Header("Music")]
+    [SerializeField] private AudioSource theme;
+
+    public void Awake(){
+        Invoke("StartTheme", 1.0f);
+    }
+
+    private void StartTheme(){
+        theme.Play();
+    }
+
+    public void StopTheme(){
+        theme.Stop();
+    }
 
     public void MenuHit(){
         menuHit.Play();

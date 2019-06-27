@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour{
         player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
         player.SetActive(false);
 
+        AudioManager.Instance.StopTheme();
         UIManager.Instance.RunFinished();
         MenuManager.Instance.LoseMenuCanvas = true;
     }
@@ -137,6 +138,7 @@ public class GameManager : MonoBehaviour{
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
 
+        AudioManager.Instance.StopTheme();
         UIManager.Instance.RunFinished();
         MenuManager.Instance.WinMenuCanvas = true;
     }
