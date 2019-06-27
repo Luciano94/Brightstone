@@ -130,6 +130,8 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayerWin(){
+        AudioManager.Instance.BossDeath();
+
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
 
@@ -137,9 +139,15 @@ public class GameManager : MonoBehaviour{
         RunSaver.currentRun.data.runFinished = true;
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
-
+        
         AudioManager.Instance.StopTheme();
         UIManager.Instance.RunFinished();
         MenuManager.Instance.WinMenuCanvas = true;
+
+        DisablePlayer();
+    }
+
+    private void DisablePlayer(){
+        playerCombat.enabled = false;
     }
 }

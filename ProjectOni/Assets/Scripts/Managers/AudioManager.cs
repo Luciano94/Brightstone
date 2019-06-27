@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Enemy")]
     [SerializeField] private AudioSource[] enemyAttack;
+    [SerializeField] private AudioSource bossDeath;
     private bool enemyIsAttack = false;
 
     [Header("Ingame")]
@@ -71,6 +72,10 @@ public class AudioManager : MonoBehaviour
         int attack = Random.Range(0, enemyAttack.Length);
         
         enemyAttack[attack].Play();
+    }
+
+    public void BossDeath(){
+        bossDeath.Play();
     }
 
     public void RoomStart(){
