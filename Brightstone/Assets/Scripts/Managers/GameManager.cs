@@ -21,9 +21,19 @@ public class GameManager : MonoBehaviour{
     private bool isConnected;
     private const int mainMenuIndex = 0;
 
+    public bool isTutorial = false;
+    private  bool playerOn = false;
+
+    public bool PlayerOn{
+        set{player.SetActive(value);
+            playerOn = value;}
+    }
+
     private void Awake(){
         RunSaver.NewRun();
-
+        if(isTutorial){
+            player.SetActive(false);
+        }
         if(!PlayerPrefs.HasKey("XP")){
             PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
         }else{

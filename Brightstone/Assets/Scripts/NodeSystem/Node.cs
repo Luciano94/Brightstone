@@ -53,6 +53,15 @@ public class Node{
         nBehaviour = NodeBehaviour.Normal;
     }
 
+    public Node(GameObject _node,Vector3 pos, int nSize){
+        position = pos;
+        nodeSize = nSize;
+        CreateReference();
+        exits = new List<Exit>();
+        nBehaviour = NodeBehaviour.Normal;
+        setNode(_node);
+    }
+
     private void CreateReference(){
         Vector3 pos = position;
         references = new Vector3[4];
@@ -85,6 +94,19 @@ public class Node{
         exitsTakes = new bool[4]{false,false,false,false};
         for (int i = 0; i < references.Length; i++){
             for (int j = 0; j < nodes.Count; j++){
+               if(references[i] == nodes[j].Position){
+                   exitsTakes[i] = true;
+                   exits.Add(new Exit((Direction)i));
+               } 
+            }
+        }
+        setType();
+    }
+    public void setTutorialExits(Node[] nodes){
+        exitsTakes = new bool[4]{false,false,false,false};
+        for (int i = 0; i < references.Length; i++){
+            for (int j = 0; j < nodes.Length; j++){
+               // Debug.Log(references[i] + "     " + nodes[j].position);
                if(references[i] == nodes[j].Position){
                    exitsTakes[i] = true;
                    exits.Add(new Exit((Direction)i));

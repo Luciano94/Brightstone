@@ -28,7 +28,8 @@ public class RoomsBehaviour : MonoBehaviour{
     }
 
     public void SetColorNode(Color c){
-        mapNode.color = c;
+        if(mapNode != null)
+            mapNode.color = c;
     }
 
     public bool Complete{

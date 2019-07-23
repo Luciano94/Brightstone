@@ -5,7 +5,9 @@ using UnityEngine;
 public class Generate : MonoBehaviour{
 
     int state = -1;
-    List<Node> nodes;
+    [SerializeField] GameObject[] preGeneratedRooms;
+    private Node[] preGeneratedNodes;
+    [SerializeField]List<Node> nodes;
 
     [Header("Logic Generation")]
     [SerializeField]int nodeSize = 40;
@@ -41,37 +43,65 @@ public class Generate : MonoBehaviour{
         nextPos = head.transform.position;
         state = 0;
         nodeMult = nodeSize / 10;
+        if(GameManager.Instance.isTutorial)
+            PreChargeNodes();
+    }
+
+
+    private void PreChargeNodes(){
+        preGeneratedNodes = new Node[preGeneratedRooms.Length];
+        for (int i = 0; i < preGeneratedRooms.Length; i++){
+            preGeneratedNodes[i] = new Node(preGeneratedRooms[i],preGeneratedRooms[i].transform.position,
+                                            nodeSize);
+        }
+
+        for (int i = 0; i < preGeneratedNodes.Length; i++){   
+            preGeneratedNodes[i].setTutorialExits(preGeneratedNodes);
+        }
+
+        for (int i = 0; i < preGeneratedRooms.Length; i++){
+           // Debug.Log(preGeneratedNodes[i].ExitsDoors.Count);
+            preGeneratedRooms[i].GetComponent<NodeExits>().SetExits = preGeneratedNodes[i].ExitsDoors;
+            preGeneratedNodes[i].setNode(preGeneratedRooms[i]);
+            GameObject mapNode = PoolManager.Instance.DrawExitsNode(preGeneratedNodes[i].NodeType,
+                                    preGeneratedNodes[i].Position / nodeMult, preGeneratedNodes[i].ExitsDoors );
+            RoomsBehaviour room = preGeneratedRooms[i].GetComponent<RoomsBehaviour>();
+            room.SetMapNode(mapNode.GetComponent<RenderReference>().node, normalColor);
+        }
+        GameManager.Instance.PlayerOn = true;
+        UIManager.Instance.LoadingFinish();
     }
 
     private void Update() {
-        
-        switch (state)
-        {
-            case 0:
-                if(nodeQ < nodeQuantity){
-                    nextPos = GetNewPosition();
-                    if(nextPos != nullVec){
-                        head.transform.position = nextPos;
-                        CreateNode();
-                        nodeQ ++;   
+        if(!GameManager.Instance.isTutorial){
+            switch (state)
+            {
+                case 0:
+                    if(nodeQ < nodeQuantity){
+                        nextPos = GetNewPosition();
+                        if(nextPos != nullVec){
+                            head.transform.position = nextPos;
+                            CreateNode();
+                            nodeQ ++;   
+                        }
+                        else{
+                            int node = Random.Range(0, nodeQ);
+                            head.transform.position = nodes[node].Position;
+                        }
+                    }else{
+                        state = 1;
                     }
-                    else{
-                        int node = Random.Range(0, nodeQ);
-                        head.transform.position = nodes[node].Position;
-                    }
-                }else{
-                    state = 1;
-                }
-            break;
-            case 1:
-                SetExit();
-                state = 2;
-            break;
-            case 2:
-                Draw();
-                UIManager.Instance.LoadingFinish();
-                state = -1;
-            break;
+                break;
+                case 1:
+                    SetExit();
+                    state = 2;
+                break;
+                case 2:
+                    Draw();
+                    UIManager.Instance.LoadingFinish();
+                    state = -1;
+                break;
+            }
         }
     }
 #region StateOne
@@ -160,7 +190,7 @@ public class Generate : MonoBehaviour{
 #endregion
 #region StateTwo
     private void SetExit(){
-        for (int i = 0; i < nodes.Count; i++){
+        for (int i = 0; i < nodes.Count; i++){   
             nodes[i].setExits(nodes);
         }
     }
@@ -168,16 +198,18 @@ public class Generate : MonoBehaviour{
 #region StateThree
     private void Draw(){
         for (int i = 0; i < nodes.Count; i++){
-            GameObject go =  DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position, nodes[i].ExitsDoors);
+            GameObject go =  DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, 
+                                        nodes[i].Position, nodes[i].ExitsDoors);
             nodes[i].setNode(go);
-            GameObject mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType, nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+            GameObject mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType,
+                                 nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
             RoomsBehaviour room = go.GetComponent<RoomsBehaviour>();
             switch (room.NodeBehaviour)
             {
                 case NodeBehaviour.Normal:
                     go.GetComponent<RoomsBehaviour>().SetMapNode(
-                        mapNode.GetComponent<RenderReference>().node, 
-                        normalColor);
+                    mapNode.GetComponent<RenderReference>().node, 
+                    normalColor);
                 break;
                 case NodeBehaviour.Boss:
                     go.GetComponent<RoomsBehaviour>().SetMapNode(
