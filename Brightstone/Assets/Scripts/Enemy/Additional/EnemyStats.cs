@@ -11,6 +11,7 @@ public class EnemyStats : MonoBehaviour{
     private float lifePercent;
     private float currentLife;
     private float experience = 100;
+    private float lastDamageRecieved;
     private GameObject myRoom;
     private MonoBehaviour[] movSet; 
     public EnemyType enemyType;
@@ -32,9 +33,13 @@ public class EnemyStats : MonoBehaviour{
         get { return currentLife; }
         set {
             currentLife -= value;
+            lastDamageRecieved = value;
             RunSaver.currentRun.data.damageDealt += (uint)value;
             LifePercent(value);
-            DamagePopup.Create(numPos.position, (int)value, 8, actualLifeColor);
+            
+            if (value > 0.0f)
+                DamagePopup.Create(numPos.position, (int)value, 8, actualLifeColor);
+
             if (currentLife >= 0){
                 OnHit.Invoke();
             }
@@ -86,6 +91,8 @@ public class EnemyStats : MonoBehaviour{
     public void LowHealth(){
 
     }
+
+    public float LastDamageRecieved() { return lastDamageRecieved; }
 
     public UnityEvent OnHit{
         get { return onHit; }
