@@ -1,21 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EventManager : MonoBehaviour{
-    private static EventManager instance;
-
-    public static EventManager Instance{
-        get {
-            instance = FindObjectOfType<EventManager>();
-            if(instance == null){
-                GameObject go = new GameObject("EventManager");
-                instance = go.AddComponent<EventManager>();
-            }
-            return instance;
-        }
-    }
-
     [SerializeField] private Step[] steps;
     private int actualStep = 0;
 

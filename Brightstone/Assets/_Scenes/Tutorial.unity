@@ -2166,6 +2166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc186f23b200bfa4c83c00962af491b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimapBack: {fileID: 656810102}
+  minimapFront: {fileID: 1814517083}
+  timeToFinish: 2
 --- !u!1 &188438942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5999,7 +6002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &656810103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12064,7 +12067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1426453977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13846,6 +13849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a61c410ca48b4a48821fe6577bcf0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experience: {fileID: 1426453976}
+  timeToFinish: 1
 --- !u!1 &1641178748
 GameObject:
   m_ObjectHideFlags: 0
@@ -15334,6 +15339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866f421944179214996b19d090f1d0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToFinish: 2
 --- !u!1 &1805366564
 GameObject:
   m_ObjectHideFlags: 0
@@ -15382,7 +15388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1814517084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17128,8 +17134,6 @@ MonoBehaviour:
   - {fileID: 495043224}
   - {fileID: 308876877}
   - {fileID: 1395673590}
-  pauseController: {fileID: 0}
-  movementObjective: {fileID: 0}
 --- !u!1 &1903297076
 GameObject:
   m_ObjectHideFlags: 0
