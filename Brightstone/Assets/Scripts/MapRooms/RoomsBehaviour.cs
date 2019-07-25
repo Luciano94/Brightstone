@@ -86,6 +86,9 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemies[0].SetActive(false);
                 GameManager.Instance.SetBoss = enemies[0];
             break;
+            case NodeBehaviour.Tutorial:
+                //isComplete = true;
+            break;
         }
     }
 

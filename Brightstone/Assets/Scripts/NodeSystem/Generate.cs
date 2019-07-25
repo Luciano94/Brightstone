@@ -53,6 +53,9 @@ public class Generate : MonoBehaviour{
         for (int i = 0; i < preGeneratedRooms.Length; i++){
             preGeneratedNodes[i] = new Node(preGeneratedRooms[i],preGeneratedRooms[i].transform.position,
                                             nodeSize);
+            preGeneratedNodes[i].SetBehaviour(NodeBehaviour.Tutorial);
+            if(i == preGeneratedRooms.Length-1)
+                preGeneratedNodes[i].SetBehaviour(NodeBehaviour.Market);
         }
 
         for (int i = 0; i < preGeneratedNodes.Length; i++){   

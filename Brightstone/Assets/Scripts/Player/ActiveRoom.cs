@@ -21,17 +21,32 @@ public class ActiveRoom : MonoBehaviour
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
             doorManager = activeRoom.GetComponent<NodeExits>();
             Camera.main.gameObject.GetComponent<CameraFollow>().ResetXY(activeRoom.transform.position);
-            if(!roomsBehaviour.HaveBoss && !roomsBehaviour.HaveMarket)
-                roomsBehaviour.SetColorNode(activeColor);
-            if(!roomsBehaviour.Complete){
-                RunSaver.currentRun.data.roomsDiscovered++;
-                roomsBehaviour.ActiveEnemies();
-                doorManager.CloseDoors();
-                AudioManager.Instance.RoomStart();
+            if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Tutorial){
+                HandleTutorialRooms(other);
+            }else{
+                HandleNormalRooms(other);
             }
-            ChangeLayer(9);
             //Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
         }
+    }
+
+    private void HandleNormalRooms(Collider2D other){
+        if(!roomsBehaviour.HaveBoss && !roomsBehaviour.HaveMarket)
+            roomsBehaviour.SetColorNode(activeColor);
+        if(!roomsBehaviour.Complete){
+            RunSaver.currentRun.data.roomsDiscovered++;
+            roomsBehaviour.ActiveEnemies();
+            doorManager.CloseDoors();
+            AudioManager.Instance.RoomStart();
+        }
+        ChangeLayer(9);
+    }
+
+    private void HandleTutorialRooms(Collider2D other){
+        if(!roomsBehaviour.HaveBoss && !roomsBehaviour.HaveMarket)
+            roomsBehaviour.SetColorNode(activeColor);
+            //doorManager.CloseDoors();
+            ChangeLayer(9);
     }
 
     private void ChangeLayer(int layer){

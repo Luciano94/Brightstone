@@ -7,6 +7,7 @@ public enum NodeBehaviour{
     Boss,
     MediumBoss,
     Market,
+    Tutorial,
 }
 
 public enum NodeType{
@@ -213,6 +214,9 @@ public class Node{
                 return true;
             case NodeBehaviour.Market:
                 nBehaviour = NodeBehaviour.Market;
+                return true;
+            case NodeBehaviour.Tutorial:
+                nBehaviour = NodeBehaviour.Tutorial;
                 return true;
         }
         return false;
