@@ -4,6 +4,10 @@ public class EventManager : MonoBehaviour{
     [SerializeField] private Step[] steps;
     private int actualStep = 0;
 
+    private void Start(){
+        steps[actualStep].StepInitialize();
+    }
+
     private void Update(){
         if (steps[actualStep].HadFinished()){
             steps[actualStep].StepFinished();
