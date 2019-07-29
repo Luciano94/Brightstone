@@ -62,4 +62,12 @@ public class ActiveRoom : MonoBehaviour
             roomsBehaviour.SwitchMarket();
         }
     }
+
+    public NodeExits GetNodeExits(){
+        return doorManager;
+    }
+
+    public RoomsBehaviour GetRoomsBehaviour(){
+        return roomsBehaviour;
+    }
 }

@@ -123,4 +123,8 @@ public class RoomsBehaviour : MonoBehaviour{
             AudioManager.Instance.RoomFinished();
         }
     }
+
+    public void RoomFinished(){
+        isComplete = true;
+    }
 }

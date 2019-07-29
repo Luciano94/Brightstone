@@ -91,6 +91,10 @@ public class GameManager : MonoBehaviour{
         get{return player.GetComponentInChildren<PlayerAnimations>();}
     }
 
+    public ActiveRoom activeRoom{
+        get{return player.GetComponent<ActiveRoom>();}
+    }
+
     public void SetEnemyHitFrom(Vector3 enemyPos){
         player.GetComponent<PlayerMovement>().SetEnemyPos(enemyPos);
     }
@@ -161,7 +165,16 @@ public class GameManager : MonoBehaviour{
         DisablePlayer();
     }
 
-    private void DisablePlayer(){
+    public void EnablePlayer(){
+        playerMovement.enabled = true;
+        playerCombat.enabled = true;
+        playerAnimations.enabled = true;
+    }
+
+    public void DisablePlayer(){
+        playerMovement.enabled = false;
         playerCombat.enabled = false;
+        player.GetComponentInChildren<PlayerAnimations>().Idle();
+        playerAnimations.enabled = false;
     }
 }

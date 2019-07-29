@@ -13,7 +13,6 @@ public class Step4SimpleAttack : Step{
     public override void StepInitialize(){
         playerCombat = GameManager.Instance.playerCombat;
         playerCombat.enabled = false;
-
         enemyStats.OnHit.AddListener(EnemyHit);
     }
 

@@ -1,20 +1,20 @@
-﻿using UnityEngine;
-
-public class Step3Door1 : Step{
-    [SerializeField] float timeToFinish = 2.0f;
+﻿public class Step3Door1 : Step{
+    private ActiveRoom aR;
 
     public override void StepInitialize(){
-        
+        aR = GameManager.Instance.activeRoom;
+        aR.GetRoomsBehaviour().RoomFinished();
+        aR.GetNodeExits().OpenDoors();
     }
 
     public override void StepFinished(){
-        
+        aR.GetNodeExits().CloseDoors();
     }
 
     public override void StepUpdate(){
-        timeToFinish -= Time.deltaTime;
-
-        if (timeToFinish <= 0.0f)
+        if (!aR.GetRoomsBehaviour().Complete){
+            aR.GetNodeExits().CloseDoors();
             finished = true;
+        }
     }
 }

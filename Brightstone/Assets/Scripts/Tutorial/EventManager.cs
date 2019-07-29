@@ -5,6 +5,10 @@ public class EventManager : MonoBehaviour{
     private int actualStep = 0;
 
     private void Start(){
+        Invoke("TutorialStart", 0.1f);
+    }
+
+    private void TutorialStart(){
         steps[actualStep].StepInitialize();
     }
 

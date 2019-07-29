@@ -29,4 +29,9 @@ public class PlayerAnimations : MonoBehaviour{
 
         enabled = false;
     }
+
+    public void Idle(){
+        anim.SetFloat("VerticalSpeed",   0.0f);
+        anim.SetFloat("HorizontalSpeed", 0.0f);
+    }
 }
