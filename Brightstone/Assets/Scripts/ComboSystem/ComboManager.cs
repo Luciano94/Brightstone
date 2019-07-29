@@ -91,6 +91,22 @@ public class ComboManager : MonoBehaviour{
             }
         }
     }
+
+    public void AddCombo(List<int> newCombo){
+        Combo combo;
+        combo.combo = newCombo;
+        Combos.Add(combo);
+    }
+
+    public void ChangeCombo(int comboIndex, List<int> newCombo){
+        Combo combo;
+        combo.combo = newCombo;
+        Combos[comboIndex] = combo;
+    }
+
+    public int ActualComboIndex(){
+        return comboIndex;
+    }
 }
 
     /* 

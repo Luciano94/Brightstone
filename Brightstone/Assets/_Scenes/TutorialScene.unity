@@ -207,7 +207,7 @@ PrefabInstance:
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 93.85
       objectReference: {fileID: 0}
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
@@ -267,6 +267,11 @@ PrefabInstance:
     - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: speedSurrounding
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
@@ -6382,17 +6387,47 @@ PrefabInstance:
     - target: {fileID: 5935143177351948023, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935143177351948023, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: minDistanceToChase
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935143177351948023, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: timeRelocating
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935143177351948023, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: minDistanceToAttack
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: speedSurrounding
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592394171438056261, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: life
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5771b711ff6d3e4f8c2ee6d2831842d, type: 3}
@@ -14632,7 +14667,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: {fileID: 1426453976}
-  timeToFinish: 1
+  initialTexts:
+  - Esto que esta abajo del minimapa es tu experiencia, invertila bien
+  - "Terminaste con esta habitaci\xF3n, avanza a la siguiente"
 --- !u!114 &1668400529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14645,6 +14682,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016ef26bd2c19154dac424dfdde23bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboManager: {fileID: 2109171035}
+  enemyStats: {fileID: 723008744}
+  initialTexts:
+  - Ya me canse de imaginar texto Mati
+  - Ahora que aprendiste los tipos de golpe...
+  - "Podr\xE1s hacer ataques en combo."
+  - Nada, eso. Ahora matalo con un combo entero
+  middleTexts:
+  - "\xA1Muy bien!"
 --- !u!114 &1668400530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14657,8 +14703,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a831fcc8e26b44b960a12b6d44f1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboManager: {fileID: 2109171035}
   enemyStats: {fileID: 723008744}
   minDistance: 0.5
+  initialTexts:
+  - "Ahora te ense\xF1ar\xE9 las bases del combate"
+  - "Ac\xE9rcate al enemigo y at\xE1calo con un golpe simple ( click izquierdo )"
+  middleTexts:
+  - Ya aprendiste a golpear a tus enemigos
+  - "Tenes otro ataque, que es m\xE1s poderoso pero te deja m\xE1s vulnerable"
+  - Usa un golpe fuerte ( click derecho )
 --- !u!114 &1668400531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14688,6 +14742,7 @@ MonoBehaviour:
   timeToFinish: 2
   initialTexts:
   - Lo que ves arriba a la derecha es el minimapa, suerte
+  - "Terminaste con esta habitaci\xF3n, avanza a la siguiente"
 --- !u!114 &1668400533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14719,6 +14774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToStart: 1
+  timeToFinish: 0.5
   initialTexts:
   - Hola Ninja...
   - Ha pasado tiempo, espero que estes bien
@@ -19101,8 +19157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combos:
-  - combo: 00000000000000000000000000000000
-  - combo: 0100000001000000
+  - combo: 00000000
   activeCombos: 
   actions:
   - {fileID: 2109171034}

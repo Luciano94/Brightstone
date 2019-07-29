@@ -17,6 +17,7 @@ public class EnemyStats : MonoBehaviour{
     public EnemyType enemyType;
 
     [HideInInspector][SerializeField] UnityEvent onHit;
+    [HideInInspector][SerializeField] UnityEvent onDeath;
     [HideInInspector][SerializeField] UnityEvent onParried;
     [HideInInspector][SerializeField] UnityEvent onLowHealth;
 
@@ -34,27 +35,33 @@ public class EnemyStats : MonoBehaviour{
         set {
             currentLife -= value;
             lastDamageRecieved = value;
-            RunSaver.currentRun.data.damageDealt += (uint)value;
+            if (!GameManager.Instance.isTutorial){
+                RunSaver.currentRun.data.damageDealt += (uint)value;
+            }
             LifePercent(value);
-            
-            if (value > 0.0f)
+            if (value > 0.0f){
                 DamagePopup.Create(numPos.position, (int)value, 8, actualLifeColor);
 
-            if (currentLife >= 0){
-                OnHit.Invoke();
-            }
-            else{
-                myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(gameObject);
-                GameManager.Instance.playerSts.Experience = experience;
-                UIManager.Instance.ExpUpdate();
-                if (enemyType == EnemyType.Boss){
-                    RunSaver.currentRun.data.bossesKilled++;
-                    GameManager.Instance.PlayerWin();
+                if (currentLife > 0){
+                    OnHit.Invoke();
                 }
                 else{
-                    RunSaver.currentRun.data.enemiesKilled++;
+                        GameManager.Instance.playerSts.Experience = experience;
+                        UIManager.Instance.ExpUpdate();
+                        
+                    if (!GameManager.Instance.isTutorial){
+                        myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(gameObject);
+                        if (enemyType == EnemyType.Boss){
+                            RunSaver.currentRun.data.bossesKilled++;
+                            GameManager.Instance.PlayerWin();
+                        }
+                        else{
+                            RunSaver.currentRun.data.enemiesKilled++;
+                        }
+                    }
+                    OnDeath.Invoke();
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
             }
         }
     }
@@ -96,6 +103,10 @@ public class EnemyStats : MonoBehaviour{
 
     public UnityEvent OnHit{
         get { return onHit; }
+    }
+
+    public UnityEvent OnDeath{
+        get { return onDeath; }
     }
 
     public UnityEvent OnParried{

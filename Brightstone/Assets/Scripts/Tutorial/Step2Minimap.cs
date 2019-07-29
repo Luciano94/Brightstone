@@ -5,7 +5,7 @@ using UnityEngine;
 public class Step2Minimap : Step{
     [SerializeField] private GameObject minimapBack;
     [SerializeField] private GameObject minimapFront;
-    [SerializeField] private float timeToFinish = 2.0f;
+    [SerializeField] private float timeToFinish = 0.15f;
     [SerializeField] private string[] initialTexts;
 
     private int textIndex = 0;

@@ -2,11 +2,14 @@
 
 public class Step6ExperienceSystem : Step{
     [SerializeField] private GameObject experience; 
+    [SerializeField] private string[] initialTexts;
 
-    [SerializeField] private float timeToFinish = 1.0f;
+    private int textIndex = 0;
 
     public override void StepInitialize(){
         experience.SetActive(true);
+        TextGenerator.Instance.Show(initialTexts[textIndex]);
+        GameManager.Instance.DisablePlayer();
     }
 
     public override void StepFinished(){
@@ -14,9 +17,20 @@ public class Step6ExperienceSystem : Step{
     }
 
     public override void StepUpdate(){
-        timeToFinish -= Time.deltaTime;
-
-        if (timeToFinish <= 0.0f)
-            finished = true;
+        if (textIndex < initialTexts.Length){
+            if (Input.GetButtonDown("Fire1")){
+                textIndex++;
+                if (textIndex < initialTexts.Length){
+                    TextGenerator.Instance.Show(initialTexts[textIndex]);
+                }
+                else{
+                    TextGenerator.Instance.Hide();
+                    GameManager.Instance.EnablePlayer();
+                }
+            }
+            return;
+        }
+        
+        finished = true;
     }
 }
