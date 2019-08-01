@@ -274,6 +274,11 @@ PrefabInstance:
       propertyPath: speedSurrounding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
@@ -6499,7 +6504,7 @@ PrefabInstance:
     - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
@@ -7966,6 +7971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057462062283912162, guid: f41039bc2afe60749892deffba8e9544,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41039bc2afe60749892deffba8e9544, type: 3}
@@ -14725,8 +14735,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experience: {fileID: 1426453976}
   initialTexts:
-  - Esto que esta abajo del minimapa es tu experiencia, invertila bien
-  - "Terminaste con esta habitaci\xF3n, avanza a la siguiente"
+  - Fijate abajo del minimapa, esa es la experiencia, tu moneda principal de compra.
+  - "Esta se obtiene al derrotar enemigos. Tambi\xE9n sirve para subir de nivel, pero
+    luego profundizaremos en eso."
+  - 'Avanza a la siguiente sala. '
 --- !u!114 &1668400529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14742,12 +14754,15 @@ MonoBehaviour:
   comboManager: {fileID: 2109171035}
   enemyStats: {fileID: 723008744}
   initialTexts:
-  - Ya me canse de imaginar texto Mati
-  - Ahora que aprendiste los tipos de golpe...
-  - "Podr\xE1s hacer ataques en combo."
-  - Nada, eso. Ahora matalo con un combo entero
+  - "Como te habr\xE1s dado cuenta, estos ataques tienen ventajas y desventajas..."
+  - "que tendr\xE1s que descubrir para poder ser lo m\xE1s efectivo contra los enemigos
+    que te vayas a enfrentar."
+  - "Adem\xE1s, puedes combinar estos ataques para generar lo que conocemos como \u201Ccombos\u201D."
+  - Intenta este combo sencillo (input).
   middleTexts:
   - "\xA1Muy bien!"
+  - "A medida que avances descubrir\xE1s mejores combos para cada situaci\xF3n que
+    se te presente."
 --- !u!114 &1668400530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14764,12 +14779,10 @@ MonoBehaviour:
   enemyStats: {fileID: 723008744}
   minDistance: 0.5
   initialTexts:
-  - "Ahora te ense\xF1ar\xE9 las bases del combate"
-  - "Ac\xE9rcate al enemigo y at\xE1calo con un golpe simple ( click izquierdo )"
+  - Repasemos las bases del combate.
+  - "Ataca al enemigo con un ataque r\xE1pido (input)."
   middleTexts:
-  - Ya aprendiste a golpear a tus enemigos
-  - "Tenes otro ataque, que es m\xE1s poderoso pero te deja m\xE1s vulnerable"
-  - Usa un golpe fuerte ( click derecho )
+  - Perfecto, ahora intenta con un ataque fuerte (input).
 --- !u!114 &1668400531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14798,8 +14811,10 @@ MonoBehaviour:
   minimapFront: {fileID: 1814517083}
   timeToFinish: 2
   initialTexts:
-  - Lo que ves arriba a la derecha es el minimapa, suerte
-  - "Terminaste con esta habitaci\xF3n, avanza a la siguiente"
+  - "En la parte superior derecha, tienes un minimapa de la zona para que sepas d\xF3nde
+    est\xE1s y d\xF3nde estuviste."
+  - "Estate atento a las salas especiales. Estas estar\xE1n con otro color en el minimapa."
+  - Prueba ir a la siguiente sala.
 --- !u!114 &1668400533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14816,8 +14831,8 @@ MonoBehaviour:
   sprDestination: {fileID: 985372337}
   minDistance: 0.5
   initialTexts:
-  - "Ahora te voy a ense\xF1ar a moverte amiguito"
-  - "W A S D para moverte con teclado y anal\xF3gico izquierdo con el joystick"
+  - Para moverte utiliza (input).
+  - "Dir\xEDgete al punto marcado en pantalla."
 --- !u!114 &1668400534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14833,9 +14848,9 @@ MonoBehaviour:
   timeToStart: 1
   timeToFinish: 0.5
   initialTexts:
-  - Hola Ninja...
-  - Ha pasado tiempo, espero que estes bien
-  - Jaja saludos
+  - Bienvenido al entrenamiento.
+  - "Ac\xE1 vas a poder calentar. Hace a\xF1os que no tenemos una emergencia como
+    esta. "
 --- !u!114 &1668400535
 MonoBehaviour:
   m_ObjectHideFlags: 0
