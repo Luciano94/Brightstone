@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class Step0Explanation : Step{
     [SerializeField] private float timeToStart = 1.0f;
-    [SerializeField] private float timeToFinish = 0.5f;
     [SerializeField] private string[] initialTexts;
 
     private int textIndex = 0;
@@ -35,9 +34,7 @@ public class Step0Explanation : Step{
             return;
         }
 
-        timeToFinish -= Time.deltaTime;
-        if (timeToFinish <= 0.0f)
-            finished = true;
+        finished = true;
     }
 
     private void StartTuto(){

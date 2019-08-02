@@ -262,12 +262,17 @@ PrefabInstance:
     - target: {fileID: 5935143177351948023, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935143177351948023, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: timeRelocating
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6152008538549597274, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
@@ -282,6 +287,11 @@ PrefabInstance:
     - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592394171438056261, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: atkDmg
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -292,6 +302,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 33749422}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &33749424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592394171438056261, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+    type: 3}
+  m_PrefabInstance: {fileID: 33749422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fee5b615ce55543bdeeece77a9f2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &39942456
 GameObject:
   m_ObjectHideFlags: 0
@@ -10739,6 +10761,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199164576}
   m_CullTransparentMesh: 0
+--- !u!1 &1199682541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1199682542}
+  - component: {fileID: 1199682543}
+  - component: {fileID: 1199682544}
+  m_Layer: 11
+  m_Name: FinalTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1199682542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199682541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 142.55, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1987035863}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1199682543
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199682541}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 6}
+  m_EdgeRadius: 0
+--- !u!114 &1199682544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199682541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c9590dfdc12eb4bb45402c29fb3da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1200965131
 GameObject:
   m_ObjectHideFlags: 0
@@ -13571,6 +13668,7 @@ Transform:
   - {fileID: 1964520639}
   - {fileID: 859991186}
   - {fileID: 2057246085}
+  - {fileID: 1987035863}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14673,6 +14771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29734d91133f1d4fb0761aa93c45769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalTrigger: {fileID: 1199682543}
+  triggerAdvisor: {fileID: 1199682544}
 --- !u!114 &1668400524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14685,6 +14785,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ec76af9bbbab541bbb76fb80fa36dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialTexts:
+  - Ahora hace algo
+  middleTexts:
+  - "\xA1Bien hecho!"
+  - Terminaste el tutorial
+  - Sal de esta sala y termina con la guerra
 --- !u!114 &1668400525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14709,6 +14815,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290d90b103e61a74aa85f15498d09272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboManager: {fileID: 2109171035}
+  enemyStats: {fileID: 33749424}
+  initialTexts:
+  - "Adem\xE1s de atacar, puedes defenderte."
+  - Utiliza (input) para bloquear el ataque del enemigo.
+  middleTexts:
+  - "Fant\xE1stico!"
+  - "Avanza a la \xFAltima sala."
 --- !u!114 &1668400527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14737,7 +14851,7 @@ MonoBehaviour:
   initialTexts:
   - Fijate abajo del minimapa, esa es la experiencia, tu moneda principal de compra.
   - "Esta se obtiene al derrotar enemigos. Tambi\xE9n sirve para subir de nivel, pero
-    luego profundizaremos en eso."
+    luego profundizaremos."
   - 'Avanza a la siguiente sala. '
 --- !u!114 &1668400529
 MonoBehaviour:
@@ -14809,11 +14923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimapBack: {fileID: 656810102}
   minimapFront: {fileID: 1814517083}
-  timeToFinish: 2
   initialTexts:
-  - "En la parte superior derecha, tienes un minimapa de la zona para que sepas d\xF3nde
+  - "En la parte superior derecha tienes un minimapa de la zona para que sepas d\xF3nde
     est\xE1s y d\xF3nde estuviste."
-  - "Estate atento a las salas especiales. Estas estar\xE1n con otro color en el minimapa."
+  - "Estate atento a las salas especiales. Estar\xE1n con otro color en el minimapa."
   - Prueba ir a la siguiente sala.
 --- !u!114 &1668400533
 MonoBehaviour:
@@ -14846,7 +14959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToStart: 1
-  timeToFinish: 0.5
   initialTexts:
   - Bienvenido al entrenamiento.
   - "Ac\xE1 vas a poder calentar. Hace a\xF1os que no tenemos una emergencia como
@@ -18248,6 +18360,37 @@ Transform:
   m_Father: {fileID: 1525286430}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1987035862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987035863}
+  m_Layer: 0
+  m_Name: Step11Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987035863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987035862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1199682542}
+  m_Father: {fileID: 1525286430}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010723203
 GameObject:
   m_ObjectHideFlags: 0
@@ -19345,6 +19488,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6276584207758848107, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 786400172, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
       propertyPath: cManager
       value: 
@@ -19451,6 +19599,10 @@ PrefabInstance:
     - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
       propertyPath: activeColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400173, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour{
 
@@ -136,6 +134,10 @@ public class EnemyMovement : MonoBehaviour{
     public void StartChasing(){
         eAnim.Move();
         StopSurrounding();
+    }
+
+    public void SetSpeed(float speed){
+        this.speed = speed;
     }
 
     public bool IsMovingForward{

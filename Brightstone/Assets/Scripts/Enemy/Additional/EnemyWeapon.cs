@@ -11,15 +11,17 @@ public class EnemyWeapon : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(!gameM.PlayerIsParry){
-            enemyStats.Hit();
-            playerStats.Life = enemyStats.AtkDmg;
-            GameManager.Instance.SetEnemyHitFrom(transform.position);
-            UIManager.Instance.LifeUpdate();
-        }else{
-            AudioManager.Instance.PlayerParry();
-            enemyStats.Parried();
-            gameM.playerCombat.ParriedSomeone();
+        if (collision.tag == "Player"){
+            if(!gameM.PlayerIsParry){
+                enemyStats.Hit();
+                playerStats.Life = enemyStats.AtkDmg;
+                GameManager.Instance.SetEnemyHitFrom(transform.position);
+                UIManager.Instance.LifeUpdate();
+            }else{
+                AudioManager.Instance.PlayerParry();
+                enemyStats.Parried();
+                gameM.playerCombat.ParriedSomeone();
+            }
         }
     }
 }

@@ -73,7 +73,8 @@ public class RoomsBehaviour : MonoBehaviour{
                 haveMarket = true;
                 market = Instantiate(marketPrefab, transform.position, transform.rotation);
                 market.transform.position += new Vector3(0,0,-1);
-                isComplete = true;
+                if (!GameManager.Instance.isTutorial)
+                    isComplete = true;
             break;
             case NodeBehaviour.MediumBoss:
             break;

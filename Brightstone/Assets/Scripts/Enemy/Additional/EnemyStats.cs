@@ -92,7 +92,7 @@ public class EnemyStats : MonoBehaviour{
     }
 
     public void Parried(){
-        onParried.Invoke();
+        OnParried.Invoke();
     }
 
     public void LowHealth(){
