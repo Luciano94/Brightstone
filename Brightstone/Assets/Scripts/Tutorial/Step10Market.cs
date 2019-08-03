@@ -5,7 +5,7 @@ using UnityEngine;
 public class Step10Market : Step{
     [SerializeField] private string[] initialTexts;
     [SerializeField] private string[] middleTexts;
-    
+    private ActiveRoom aR;
     private int textIndex = 0;
     private bool aguanteLaMerca = false;
     private bool firstDialogueFinished = false;
@@ -16,7 +16,6 @@ public class Step10Market : Step{
     }
 
     public override void StepFinished(){
-        
     }
 
     public override void StepUpdate(){

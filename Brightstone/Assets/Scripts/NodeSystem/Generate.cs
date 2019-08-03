@@ -70,6 +70,8 @@ public class Generate : MonoBehaviour{
                                     preGeneratedNodes[i].Position / nodeMult, preGeneratedNodes[i].ExitsDoors );
             RoomsBehaviour room = preGeneratedRooms[i].GetComponent<RoomsBehaviour>();
             room.SetMapNode(mapNode.GetComponent<RenderReference>().node, normalColor);
+            if(i == preGeneratedNodes.Length-1)
+                room.SetMapNode(mapNode.GetComponent<RenderReference>().node, marketColor);
         }
         GameManager.Instance.PlayerOn = true;
         UIManager.Instance.LoadingFinish();

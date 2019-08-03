@@ -73,8 +73,10 @@ public class RoomsBehaviour : MonoBehaviour{
                 haveMarket = true;
                 market = Instantiate(marketPrefab, transform.position, transform.rotation);
                 market.transform.position += new Vector3(0,0,-1);
-                if (!GameManager.Instance.isTutorial)
+                if (!GameManager.Instance.isTutorial){
                     isComplete = true;
+                    market.layer = 11;
+                }
             break;
             case NodeBehaviour.MediumBoss:
             break;
@@ -108,11 +110,13 @@ public class RoomsBehaviour : MonoBehaviour{
     }
 
     public void SwitchMarket(){
-        if(market.layer == 11){
+        Debug.Log("me suichie perro");
+       /*if(market.layer == 11){
             market.layer = 16;
         }else{
             market.layer = 11;
-        }
+        }*/
+        market.layer = 11;
     }
 
     public void EnemyDeath(GameObject thisEnemy){

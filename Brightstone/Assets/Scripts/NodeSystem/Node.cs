@@ -34,7 +34,7 @@ public class Node{
     bool[] exitsTakes;
     Vector3 position;
     Vector3[] references;
-    NodeBehaviour nBehaviour;
+    [SerializeField]NodeBehaviour nBehaviour;
     GameObject node;
     NodeType nType;
 
