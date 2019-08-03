@@ -170,9 +170,17 @@ public class UIManager : MonoBehaviour{
     }
 
     public void EnterMarket(){
-        market.SetActive(true);
+        if(gameM.isTutorial){
+            if(!gameM.tutorialMarketComplete){
+                market.SetActive(true);
+                 MarketCanvasManager.Instance.EnterMarket();
+            }
+        }
+        else{
+            market.SetActive(true);
+            MarketCanvasManager.Instance.EnterMarket();
+        }
        // requiredTxt.text = ExperienceMarket.Instance.Required;
-        MarketCanvasManager.Instance.EnterMarket();
         if (!gameM.IsConnected){
             mAttackTxt.text = "\n  Attack\n   +0,25";
             mLifeTxt.text =  "\n     Life\n     +50";

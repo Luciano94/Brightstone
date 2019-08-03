@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour{
     public bool isTutorial = false;
     private  bool playerOn = false;
 
+    public GameObject tutorialMarket;
+    public bool tutorialMarketComplete = false;
+
     public bool PlayerOn{
         set{player.SetActive(value);
             playerOn = value;}

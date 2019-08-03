@@ -254,6 +254,8 @@ public class MarketCanvasManager : MonoBehaviour{
             newLifeStatTxt.color = Color.white;
             newAttackLevelTxt.color = Color.white;
             newAttackStatTxt.color = Color.white;
+
+            GameManager.Instance.tutorialMarketComplete = true;
         }else{
             confirmButton.interactable = false;
         }

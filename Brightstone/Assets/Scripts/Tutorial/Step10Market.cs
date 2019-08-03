@@ -5,14 +5,21 @@ using UnityEngine;
 public class Step10Market : Step{
     [SerializeField] private string[] initialTexts;
     [SerializeField] private string[] middleTexts;
+    [SerializeField] private string[] finalTexts;
+    [SerializeField] private GameObject Market;
+
     private ActiveRoom aR;
     private int textIndex = 0;
-    private bool aguanteLaMerca = false;
+    private bool lifeBought = false;
     private bool firstDialogueFinished = false;
+    private bool secondDialogueFinished = false;
+    private bool hitMarket = false;
+    private ExperienceTest experienceTest;
 
     public override void StepInitialize(){
         TextGenerator.Instance.Show(initialTexts[textIndex]);
         GameManager.Instance.DisablePlayer();
+        experienceTest = GameManager.Instance.tutorialMarket.GetComponent<ExperienceTest>();
     }
 
     public override void StepFinished(){
@@ -35,14 +42,15 @@ public class Step10Market : Step{
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)){
-            aguanteLaMerca = true;
-            TextGenerator.Instance.Show(middleTexts[textIndex]);
+        if (!hitMarket){
+            if (experienceTest.IsHit()){
+                hitMarket = true;
+                TextGenerator.Instance.Show(middleTexts[textIndex]);
+                GameManager.Instance.DisablePlayer();
+            }
+            return;
         }
-
-        if (!aguanteLaMerca) return;
-
-        if (textIndex < middleTexts.Length){
+        if (!secondDialogueFinished){
             if (Input.GetButtonDown("Fire1")){
                 textIndex++;
                 if (textIndex < middleTexts.Length){
@@ -50,12 +58,37 @@ public class Step10Market : Step{
                 }
                 else{
                     TextGenerator.Instance.Hide();
-                    GameManager.Instance.EnablePlayer();
+                    textIndex = 0;
+                    secondDialogueFinished = true;
+                    //GameManager.Instance.EnablePlayer();
                 }
             }
             return;
         }
 
+        if (!lifeBought){
+            lifeBought = GameManager.Instance.tutorialMarketComplete;
+            if(lifeBought){
+                TextGenerator.Instance.Show(finalTexts[textIndex]);
+                GameManager.Instance.DisablePlayer();
+            }
+            return;
+        }
+
+        if (textIndex < finalTexts.Length){
+            if (Input.GetButtonDown("Fire1")){
+                textIndex++;
+                if (textIndex < finalTexts.Length){
+                    TextGenerator.Instance.Show(finalTexts[textIndex]);
+                }
+                else{
+                    TextGenerator.Instance.Hide();
+                    GameManager.Instance.EnablePlayer();
+                    Market.SetActive(false);
+                }
+            }
+            return;
+        }
         finished = true;
     }
 }

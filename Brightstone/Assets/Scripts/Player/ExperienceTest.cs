@@ -6,9 +6,12 @@ public class ExperienceTest : MonoBehaviour
     private PlayerStats plStats;
     [SerializeField] private bool isHit = false;
 
+
     private void Start(){
         expMrk = ExperienceMarket.Instance;
         plStats = GameManager.Instance.playerSts;
+        if(GameManager.Instance.isTutorial)
+            GameManager.Instance.tutorialMarket = gameObject;
     }
 
     private void Update(){

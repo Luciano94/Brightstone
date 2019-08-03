@@ -110,13 +110,15 @@ public class RoomsBehaviour : MonoBehaviour{
     }
 
     public void SwitchMarket(){
-        Debug.Log("me suichie perro");
-       /*if(market.layer == 11){
-            market.layer = 16;
-        }else{
+        if(GameManager.Instance.isTutorial){
             market.layer = 11;
-        }*/
-        market.layer = 11;
+        }else{
+            if(market.layer == 11){
+                    market.layer = 16;
+            }else{
+                market.layer = 11;
+            }
+        }
     }
 
     public void EnemyDeath(GameObject thisEnemy){
