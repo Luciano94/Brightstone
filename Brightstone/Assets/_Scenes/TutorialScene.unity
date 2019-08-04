@@ -19498,19 +19498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6276584207758848107, guid: ffdd525add8a97447bd10942bf690db1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 786400172, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
       propertyPath: cManager
       value: 
       objectReference: {fileID: 2109171035}
-    - target: {fileID: 786400172, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: parryTime
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19564,54 +19555,6 @@ PrefabInstance:
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: bossColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: bossColor.r
-      value: 0.754717
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: bossColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: bossColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: marketColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: marketColor.g
-      value: 0.6430502
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: marketColor.r
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: marketColor.b
-      value: 0.08503916
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: activeColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: activeColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: activeColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 786400173, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -82,6 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6296902554122635014}
   - component: {fileID: 6826328545441929735}
+  - component: {fileID: 8340938701070957990}
   m_Layer: 11
   m_Name: MarketSprite
   m_TagString: Untagged
@@ -151,3 +152,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8340938701070957990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804517851337685255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5353e494562e0746a3c3f213c9633c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetPos: {x: 0.55, y: 0, z: 0}
+  offsetRot: {x: 0, y: 0, z: -0.16, w: 1}
+  shadowMaterial: {fileID: 2100000, guid: 77b8afeef98d7584c85d9f5e2f201a5e, type: 2}
