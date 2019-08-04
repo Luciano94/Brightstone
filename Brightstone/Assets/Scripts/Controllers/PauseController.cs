@@ -9,7 +9,7 @@ public class PauseController : MonoBehaviour{
     private bool pauseState = false;
     
     private void Update(){
-        if(Input.GetButtonDown("Pause")){
+        if(Input.GetButtonDown("Pause") && !GameManager.Instance.isTutorial){
             pauseState = !pauseState;
             MenuManager.Instance.StartMenu = pauseState;
             firstOption.Select();

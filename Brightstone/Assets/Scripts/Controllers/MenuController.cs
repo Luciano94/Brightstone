@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour{
     const int synopsisIndex = 1;
+    const int tutorialIndex = 4;
+
     [SerializeField] Button playButton;
     [SerializeField] Text runTimeAvgTxt;
     [SerializeField] Text bestTimeTxt;
@@ -16,12 +18,39 @@ public class MenuController : MonoBehaviour{
     [SerializeField] Text roomsDiscoveredTxt;
     [SerializeField] Text actualLevelTxt;
 
+    [SerializeField] Text tutorialReset;
+    private int isTutorial;
+    private float timeReset = -1.0f;
     private void Start(){
         playButton.Select();
     }
 
     public void Play(){
-        SceneManager.LoadScene(synopsisIndex);
+        isTutorial = PlayerPrefs.GetInt("isTutorial", -1);
+        if(isTutorial == -1){
+            PlayerPrefs.SetInt("isTutorial", 1);
+            SceneManager.LoadScene(tutorialIndex);
+        }else{
+            SceneManager.LoadScene(synopsisIndex);
+        }
+    }
+
+    private void Update() {
+        if(Input.GetKeyUp(KeyCode.X)){
+            PlayerPrefs.DeleteKey("isTutorial");
+            timeReset = 2.0f;
+        }
+        ShowTutorialReset();
+    }
+
+    private void ShowTutorialReset(){
+        Debug.Log(timeReset);
+        if(timeReset > 0){
+            timeReset -= Time.deltaTime;
+            tutorialReset.enabled = true;
+        }else{
+            tutorialReset.enabled = false;
+        }
     }
 
     public void Stats(){
