@@ -143,6 +143,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onParried:
     m_PersistentCalls:
       m_Calls: []
@@ -212,6 +217,7 @@ GameObject:
   - component: {fileID: 306884139375470709}
   - component: {fileID: 1572558232632571850}
   - component: {fileID: 5559408988468806604}
+  - component: {fileID: 1696274786084370585}
   m_Layer: 14
   m_Name: BossMesh
   m_TagString: Untagged
@@ -316,6 +322,21 @@ MonoBehaviour:
   anim: {fileID: 1572558232632571850}
   enemyCombat: {fileID: 0}
   hitColor: {r: 1, g: 0.69803923, b: 0.69803923, a: 1}
+--- !u!114 &1696274786084370585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141483355107932919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5353e494562e0746a3c3f213c9633c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetPos: {x: 0.55, y: 0, z: 0}
+  offsetRot: {x: 0, y: 0, z: -0.16, w: 1}
+  shadowMaterial: {fileID: 2100000, guid: 77b8afeef98d7584c85d9f5e2f201a5e, type: 2}
 --- !u!1 &3141483355779995974
 GameObject:
   m_ObjectHideFlags: 0
