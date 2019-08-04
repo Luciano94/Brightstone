@@ -113,11 +113,11 @@ public class RoomsBehaviour : MonoBehaviour{
         if(GameManager.Instance.isTutorial){
             market.layer = 11;
         }else{
-            if(market.layer == 11){
+            market.layer = 11;
+           /* if(market.layer == 11){
                     market.layer = 16;
             }else{
-                market.layer = 11;
-            }
+            }*/
         }
     }
 

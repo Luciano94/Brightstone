@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 
 public class Step6ExperienceSystem : Step{
-    [SerializeField] private GameObject experience; 
+    [SerializeField] private GameObject experience;
+    [SerializeField] private GameObject expArrow; 
     [SerializeField] private string[] initialTexts;
 
     private int textIndex = 0;
 
     public override void StepInitialize(){
         experience.SetActive(true);
+        expArrow.SetActive(true);
         TextGenerator.Instance.Show(initialTexts[textIndex]);
         GameManager.Instance.DisablePlayer();
     }
@@ -26,6 +28,7 @@ public class Step6ExperienceSystem : Step{
                 else{
                     TextGenerator.Instance.Hide();
                     GameManager.Instance.EnablePlayer();
+                    expArrow.SetActive(false);
                 }
             }
             return;
