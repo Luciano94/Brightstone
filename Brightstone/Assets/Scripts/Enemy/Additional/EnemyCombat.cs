@@ -29,6 +29,7 @@ public class EnemyCombat : MonoBehaviour{
         GetComponent<EnemyStats>().OnHit.AddListener(Hit);
         GetComponent<EnemyStats>().OnParried.AddListener(Parried);
         GetComponent<EnemyStats>().OnLowHealth.AddListener(LowHealth);
+        GetComponent<EnemyStats>().OnDeath.AddListener(Death);
     }
 
     public void Attack(){
@@ -87,5 +88,9 @@ public class EnemyCombat : MonoBehaviour{
 
         // Color back to normal
         //GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
+    }
+
+    public void Death(){
+        enemyAnim.Death();
     }
 }

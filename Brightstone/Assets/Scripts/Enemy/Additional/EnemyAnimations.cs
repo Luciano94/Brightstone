@@ -69,4 +69,22 @@ public class EnemyAnimations : MonoBehaviour{
     public void IsLowHealth(){
         isLowHealth = true;
     }
+
+    public void Death(){
+        float dir = anim.GetInteger("Direction");
+        anim.SetFloat("Dir", dir);
+
+        float whichDeath = Random.Range(0, 3);
+        anim.SetFloat("WhichDeath", whichDeath);
+
+        anim.SetTrigger("Death");
+
+        transform.SetParent(null);
+
+        Autodestroy autoD = gameObject.AddComponent<Autodestroy>() as Autodestroy;
+        autoD.PrepareValues(5.5f);
+
+        VanishToDeath vanishD = gameObject.AddComponent<VanishToDeath>() as VanishToDeath;
+        vanishD.PrepareValues(3.0f, 2.0f);
+    }
 }
