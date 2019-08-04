@@ -8,6 +8,7 @@ public class EnemyAnimations : MonoBehaviour{
     private SpriteRenderer sprRenderer;
     private float speed = 1.0f;
     private bool isHit = false;
+    private bool isDeath = false;
     private bool isLowHealth = false;
 
     private void Start(){
@@ -15,7 +16,7 @@ public class EnemyAnimations : MonoBehaviour{
     }
 
     private void Update(){
-        if (isLowHealth && !isHit){
+        if (isLowHealth && !isHit && !isDeath){
             float perc = Mathf.PingPong(Time.time * 0.5f, 1.0f - hitColor.g);
             sprRenderer.color = new Color(hitColor.r, hitColor.g - perc, hitColor.b - perc);
         }
@@ -71,6 +72,12 @@ public class EnemyAnimations : MonoBehaviour{
     }
 
     public void Death(){
+        isDeath = true;
+
+        sprRenderer.color = new Color(1.0f, 1.0f, 1.0f);
+        sprRenderer.sortingLayerName = "Top";
+        sprRenderer.sortingOrder = 0;
+
         float dir = anim.GetInteger("Direction");
         anim.SetFloat("Dir", dir);
 
@@ -80,11 +87,5 @@ public class EnemyAnimations : MonoBehaviour{
         anim.SetTrigger("Death");
 
         transform.SetParent(null);
-
-        Autodestroy autoD = gameObject.AddComponent<Autodestroy>() as Autodestroy;
-        autoD.PrepareValues(5.5f);
-
-        VanishToDeath vanishD = gameObject.AddComponent<VanishToDeath>() as VanishToDeath;
-        vanishD.PrepareValues(3.0f, 2.0f);
     }
 }
