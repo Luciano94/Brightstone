@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour{
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject levelBoss;
     [SerializeField] private ShakerController shakerController;
+    [SerializeField] private ZoomWhenParrying zoomWhenParrying;
 
     private bool isConnected;
     private const int mainMenuIndex = 0;
@@ -124,6 +125,10 @@ public class GameManager : MonoBehaviour{
 
     public ShakerController ShakerController{
         get{ return shakerController; }
+    }
+
+    public ZoomWhenParrying ZoomWhenParrying{
+        get{ return zoomWhenParrying; }
     }
 
     public static int GetDirection(float angle){

@@ -16,13 +16,13 @@ public class EnemyWeapon : MonoBehaviour{
                 enemyStats.Hit();
                 gM.playerSts.Life = enemyStats.AtkDmg;
                 gM.SetEnemyHitFrom(transform.position);
-                gM.ShakerController.Shake();
+                gM.ShakerController.Shake(1.2f, 1.2f, 0.1f, 0.2f);
                 UIManager.Instance.LifeUpdate();
             }else{
                 AudioManager.Instance.PlayerParry();
                 enemyStats.Parried();
                 gM.playerCombat.ParriedSomeone();
-                gM.ShakerController.Shake();
+                gM.ZoomWhenParrying.ReduceSize();
             }
         }
     }

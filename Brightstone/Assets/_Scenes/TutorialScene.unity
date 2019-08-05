@@ -4499,6 +4499,7 @@ GameObject:
   - component: {fileID: 471958720}
   - component: {fileID: 471958724}
   - component: {fileID: 471958723}
+  - component: {fileID: 471958725}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4646,6 +4647,22 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &471958725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471958719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281366bcfd4aecd468ae88bfba4c8f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToZoom: 0.25
+  velocityTurningBack: 0.015
+  minCameraSize: 9
+  maxCameraSize: 10
 --- !u!1 &481818222
 GameObject:
   m_ObjectHideFlags: 0
@@ -17124,7 +17141,8 @@ MonoBehaviour:
   player: {fileID: 786400171}
   levelBoss: {fileID: 3141483355052190513, guid: f851078f9c8e6f048adfaad29a784b70,
     type: 3}
-  shakerController: {fileID: 0}
+  shakerController: {fileID: 1188802142}
+  zoomWhenParrying: {fileID: 471958725}
   isTutorial: 1
   tutorialMarket: {fileID: 0}
   tutorialMarketComplete: 0
@@ -20156,5 +20174,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: cameraFollow
+      value: 
+      objectReference: {fileID: 1188802143}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}

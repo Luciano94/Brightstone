@@ -7,13 +7,22 @@ public class FilterManager : MonoBehaviour
     static Vignette cV;
     static float minSmoothValue;
 
-    private void Awake() {
+    private void Awake(){
         postVolume = gameObject.GetComponent<PostProcessVolume>();
         postVolume.profile.TryGetSettings(out cV);
 
         minSmoothValue = cV.smoothness.value;
     }
 
+    private void Start(){
+        ColorGrading cG;
+        postVolume.profile.TryGetSettings(out cG);
+        
+        if (GameManager.Instance.isTutorial)
+            cG.active = false;
+        else
+            cG.active = true;
+    }
 
     public static void SetChromaticAberration(bool state){
         ChromaticAberration cA;
