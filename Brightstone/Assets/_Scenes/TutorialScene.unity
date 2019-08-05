@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 19784212}
   - component: {fileID: 19784214}
   - component: {fileID: 19784213}
+  - component: {fileID: 19784215}
   m_Layer: 5
   m_Name: ConfirmArrow
   m_TagString: Untagged
@@ -266,6 +267,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19784211}
   m_CullTransparentMesh: 0
+--- !u!95 &19784215
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19784211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 212a9d481d53d0e4cb636609601e389d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &33250210
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +297,7 @@ GameObject:
   - component: {fileID: 33250211}
   - component: {fileID: 33250213}
   - component: {fileID: 33250212}
+  - component: {fileID: 33250214}
   m_Layer: 5
   m_Name: MinimapArrow
   m_TagString: Untagged
@@ -340,6 +361,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33250210}
   m_CullTransparentMesh: 0
+--- !u!95 &33250214
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33250210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 212a9d481d53d0e4cb636609601e389d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &33749422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2965,6 +3005,7 @@ GameObject:
   - component: {fileID: 238990675}
   - component: {fileID: 238990677}
   - component: {fileID: 238990676}
+  - component: {fileID: 238990678}
   m_Layer: 5
   m_Name: LifeArrow
   m_TagString: Untagged
@@ -3028,6 +3069,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238990674}
   m_CullTransparentMesh: 0
+--- !u!95 &238990678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238990674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 212a9d481d53d0e4cb636609601e389d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &259866393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9707,6 +9767,7 @@ GameObject:
   - component: {fileID: 1039184507}
   - component: {fileID: 1039184509}
   - component: {fileID: 1039184508}
+  - component: {fileID: 1039184510}
   m_Layer: 5
   m_Name: ExpArrow
   m_TagString: Untagged
@@ -9746,7 +9807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9770,6 +9831,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039184506}
   m_CullTransparentMesh: 0
+--- !u!95 &1039184510
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039184506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 212a9d481d53d0e4cb636609601e389d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1043296502
 GameObject:
   m_ObjectHideFlags: 0
@@ -14200,7 +14280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534788631}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -14851,6 +14931,7 @@ GameObject:
   - component: {fileID: 1627495835}
   - component: {fileID: 1627495837}
   - component: {fileID: 1627495836}
+  - component: {fileID: 1627495838}
   m_Layer: 5
   m_Name: DamageArrow
   m_TagString: Untagged
@@ -14914,6 +14995,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627495834}
   m_CullTransparentMesh: 0
+--- !u!95 &1627495838
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627495834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 212a9d481d53d0e4cb636609601e389d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1641178748
 GameObject:
   m_ObjectHideFlags: 0

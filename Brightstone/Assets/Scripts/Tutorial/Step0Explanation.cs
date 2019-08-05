@@ -22,13 +22,10 @@ public class Step0Explanation : Step{
         if (!init) return;
         
         if (textIndex < initialTexts.Length){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < initialTexts.Length){
                     TextGenerator.Instance.Show(initialTexts[textIndex]);
-                }
-                else{
-                    TextGenerator.Instance.Hide();
                 }
             }
             return;
@@ -39,6 +36,7 @@ public class Step0Explanation : Step{
 
     private void StartTuto(){
         init = true;
+        TextGenerator.Instance.Appear();
         TextGenerator.Instance.Show(initialTexts[textIndex]);
 
         ActiveRoom aR = GameManager.Instance.activeRoom;

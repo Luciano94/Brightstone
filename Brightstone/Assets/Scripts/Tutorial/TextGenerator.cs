@@ -19,20 +19,22 @@ public class TextGenerator : MonoBehaviour{
 
     [SerializeField] private Image backgroundImg;
     private Text text;
+    private Animator anim;
 
     private void Awake(){
         text = GetComponent<Text>();
+        anim = backgroundImg.GetComponent<Animator>();
     }
 
     public void Show(string info){
-        backgroundImg.enabled = true;
-        text.enabled = true;
         text.text = info;
     }
 
+    public void Appear(){
+        anim.SetTrigger("In");
+    }
+
     public void Hide(){
-        text.text = "";
-        text.enabled = false;
-        backgroundImg.enabled = false;
+        anim.SetTrigger("Out");
     }
 }

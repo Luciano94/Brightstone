@@ -20,7 +20,7 @@ public class Step1Movement : Step{
 
     public override void StepUpdate(){
         if (textIndex < initialTexts.Length){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < initialTexts.Length){
                     TextGenerator.Instance.Show(initialTexts[textIndex]);
