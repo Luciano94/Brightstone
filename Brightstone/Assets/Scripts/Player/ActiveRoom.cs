@@ -6,6 +6,7 @@ public class ActiveRoom : MonoBehaviour
 {
     [SerializeField]private Color activeColor;
     [SerializeField]private Color normalColor;
+    [SerializeField]private CameraFollow cameraFollow;
     private Transform activeRoom = null;
     private RoomsBehaviour roomsBehaviour;
     private NodeExits doorManager;
@@ -20,7 +21,7 @@ public class ActiveRoom : MonoBehaviour
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
             doorManager = activeRoom.GetComponent<NodeExits>();
-            Camera.main.gameObject.GetComponent<CameraFollow>().ResetXY(activeRoom.transform.position);
+            cameraFollow.ResetXY(activeRoom.transform.position);
             if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Tutorial){
                 HandleTutorialRooms(other);
             }else{
