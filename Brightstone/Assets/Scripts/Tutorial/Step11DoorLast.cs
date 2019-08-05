@@ -5,9 +5,9 @@ public class Step11DoorLast : Step{
     [SerializeField] private TriggerAdvisor triggerAdvisor;
     private ActiveRoom aR;
     public override void StepInitialize(){
-        //aR = GameManager.Instance.activeRoom;
-        //aR.GetRoomsBehaviour().RoomFinished();
-        //aR.GetNodeExits().OpenDoors();
+        aR = GameManager.Instance.activeRoom;
+        aR.GetRoomsBehaviour().RoomFinished();
+        aR.GetNodeExits().OpenDoors();
 
         triggerAdvisor.OnTrigger.AddListener(OnFinalTrigger);
         finalTrigger.enabled = true;

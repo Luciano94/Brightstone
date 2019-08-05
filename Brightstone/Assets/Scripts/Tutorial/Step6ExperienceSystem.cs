@@ -10,6 +10,7 @@ public class Step6ExperienceSystem : Step{
     public override void StepInitialize(){
         experience.SetActive(true);
         expArrow.SetActive(true);
+        TextGenerator.Instance.Appear();
         TextGenerator.Instance.Show(initialTexts[textIndex]);
         GameManager.Instance.DisablePlayer();
     }
@@ -20,7 +21,7 @@ public class Step6ExperienceSystem : Step{
 
     public override void StepUpdate(){
         if (textIndex < initialTexts.Length){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < initialTexts.Length){
                     TextGenerator.Instance.Show(initialTexts[textIndex]);

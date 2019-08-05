@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour{
     public bool GetPauseButton()        { return input.GetPauseButton();        }
     public bool GetActionButton()       { return input.GetActionButton();       }
     public bool GetRestartButton()      { return input.GetRestartButton();      }
+    public bool GetPassButton()         { return input.GetPassButton();         }
 
     static public InputManager Instance{
         get{

@@ -15,6 +15,7 @@ public class Step2Minimap : Step{
         minimapFront.SetActive(true);
         minimapArrow.SetActive(true);
         GameManager.Instance.DisablePlayer();
+        TextGenerator.Instance.Appear();
         TextGenerator.Instance.Show(initialTexts[textIndex]);
     }
 
@@ -24,7 +25,7 @@ public class Step2Minimap : Step{
 
     public override void StepUpdate(){
         if (textIndex < initialTexts.Length){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < initialTexts.Length){
                     TextGenerator.Instance.Show(initialTexts[textIndex]);

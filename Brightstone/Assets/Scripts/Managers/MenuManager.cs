@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour{
         get { return startMenu; }
         set {
             startMenu = value;
-            startMenuCanvas.SetActive(value);
+            //startMenuCanvas.SetActive(value);
         }
     }
 

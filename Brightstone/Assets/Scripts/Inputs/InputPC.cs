@@ -25,4 +25,7 @@ public class InputPC : IInput{
     public bool GetRestartButton(){
         return Input.GetButtonDown("Restart");
     }
+    public bool GetPassButton(){
+        return Input.GetButtonDown("Pass");
+    }
 }

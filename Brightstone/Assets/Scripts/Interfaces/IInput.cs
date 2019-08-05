@@ -7,4 +7,5 @@
     bool GetActionButton();
     bool GetPauseButton();
     bool GetRestartButton();
+    bool GetPassButton();
 }

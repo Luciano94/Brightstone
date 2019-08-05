@@ -21,6 +21,7 @@ public class Step4SimpleAttack : Step{
         playerCombat.enabled = false;
         enemyStats.OnHit.AddListener(EnemyHit);
         GameManager.Instance.DisablePlayer();
+        TextGenerator.Instance.Appear();
         TextGenerator.Instance.Show(initialTexts[textIndex]);
     }
 
@@ -34,7 +35,7 @@ public class Step4SimpleAttack : Step{
             enemyStats.Life = -hpDiff;
 
         if (!firstDialogueFinished){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < initialTexts.Length){
                     TextGenerator.Instance.Show(initialTexts[textIndex]);
@@ -52,7 +53,7 @@ public class Step4SimpleAttack : Step{
         if (!usedSimpleAttack) return;
 
         if (textIndex < middleTexts.Length){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < middleTexts.Length){
                     TextGenerator.Instance.Show(middleTexts[textIndex]);
@@ -77,6 +78,7 @@ public class Step4SimpleAttack : Step{
     private void EnemyHit(){
         if (enemyStats.LastDamageRecieved() == 15.0f && !usedSimpleAttack){
             usedSimpleAttack = true;
+            TextGenerator.Instance.Appear();
             TextGenerator.Instance.Show(middleTexts[textIndex]);
             GameManager.Instance.DisablePlayer();
         }

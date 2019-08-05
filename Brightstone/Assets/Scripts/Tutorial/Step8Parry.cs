@@ -20,6 +20,7 @@ public class Step8Parry : Step{
         enemyStats.OnParried.AddListener(EnemyParried);
         enemyStats.GetComponent<EnemyMovement>().SetSpeed(10.0f);
 
+        TextGenerator.Instance.Appear();
         TextGenerator.Instance.Show(initialTexts[textIndex]);
         GameManager.Instance.DisablePlayer();
     }
@@ -30,7 +31,7 @@ public class Step8Parry : Step{
 
     public override void StepUpdate(){
         if (!firstDialogueFinished){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < initialTexts.Length){
                     TextGenerator.Instance.Show(initialTexts[textIndex]);
@@ -59,7 +60,7 @@ public class Step8Parry : Step{
         if (parriedTimes < parryTotal) return;
 
         if (textIndex < middleTexts.Length){
-            if (Input.GetButtonDown("Fire1")){
+            if (InputManager.Instance.GetPassButton()){
                 textIndex++;
                 if (textIndex < middleTexts.Length){
                     TextGenerator.Instance.Show(middleTexts[textIndex]);
@@ -85,6 +86,7 @@ public class Step8Parry : Step{
         if (parriedTimes >= parryTotal){
             Invoke("DestroyEnemy", 1.5f);
             GameManager.Instance.DisablePlayer();
+            TextGenerator.Instance.Appear();
             TextGenerator.Instance.Show(middleTexts[textIndex]);
         }
     }
