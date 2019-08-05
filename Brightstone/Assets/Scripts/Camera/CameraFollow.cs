@@ -26,10 +26,10 @@ public class CameraFollow: MonoBehaviour{
 		offsetY = nodeSize;
 		position = new Vector2(0,0);
          // Calculations assume map is position at the origin
-		minX = horzExtent - offsetX / 2.0f;
-		maxX = offsetX / 2.0f - horzExtent;
-		minY = vertExtent - offsetY / 2.0f;
-		maxY = offsetY / 2.0f - vertExtent;
+		minX = horzExtent - offsetX * 0.5f;
+		maxX = offsetX * 0.5f - horzExtent;
+		minY = vertExtent - offsetY * 0.5f;
+		maxY = offsetY * 0.5f - vertExtent;
 
     }
 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour{
     PlayerStats playerStats;
@@ -15,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour{
             GameManager.Instance.PlayerIsAttack){
             EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
             enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
+            GameManager.Instance.ShakerController.Shake();
         }
     }
 }

@@ -1,26 +1,28 @@
 ﻿using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour{
-    PlayerStats playerStats;
-    [SerializeField]EnemyStats enemyStats;
-    [SerializeField]EnemyCombat enemyCombat;
-    GameManager gameM;
+    [SerializeField] EnemyStats enemyStats;
+    [SerializeField] EnemyCombat enemyCombat;
+
+    private GameManager gM;
+
     private void Start(){
-        playerStats = GameManager.Instance.playerSts;
-        gameM = GameManager.Instance;
+        gM = GameManager.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.tag == "Player"){
-            if(!gameM.PlayerIsParry){
+            if(!gM.PlayerIsParry){
                 enemyStats.Hit();
-                playerStats.Life = enemyStats.AtkDmg;
-                GameManager.Instance.SetEnemyHitFrom(transform.position);
+                gM.playerSts.Life = enemyStats.AtkDmg;
+                gM.SetEnemyHitFrom(transform.position);
+                gM.ShakerController.Shake();
                 UIManager.Instance.LifeUpdate();
             }else{
                 AudioManager.Instance.PlayerParry();
                 enemyStats.Parried();
-                gameM.playerCombat.ParriedSomeone();
+                gM.playerCombat.ParriedSomeone();
+                gM.ShakerController.Shake();
             }
         }
     }

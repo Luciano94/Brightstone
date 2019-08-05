@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour{
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject levelBoss;
+    [SerializeField] private ShakerController shakerController;
 
     private bool isConnected;
     private const int mainMenuIndex = 0;
@@ -119,6 +120,10 @@ public class GameManager : MonoBehaviour{
     
     public bool PlayerIsAttack{
         get{ return player.GetComponent<PlayerCombat>().isAttack; }
+    }
+
+    public ShakerController ShakerController{
+        get{ return shakerController; }
     }
 
     public static int GetDirection(float angle){
