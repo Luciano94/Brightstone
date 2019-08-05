@@ -4497,8 +4497,8 @@ GameObject:
   - component: {fileID: 471958722}
   - component: {fileID: 471958721}
   - component: {fileID: 471958720}
-  - component: {fileID: 471958723}
   - component: {fileID: 471958724}
+  - component: {fileID: 471958723}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4564,11 +4564,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471958719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1188802144}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &471958723
 MonoBehaviour:
@@ -4579,11 +4579,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 471958719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5961a1980c39db946a8288bdad22d4df, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeSize: 40
-  target: {fileID: 786400178}
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &471958724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10881,6 +10883,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177685167}
   m_CullTransparentMesh: 0
+--- !u!1 &1188802141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188802144}
+  - component: {fileID: 1188802143}
+  - component: {fileID: 1188802142}
+  m_Layer: 0
+  m_Name: CameraHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1188802142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188802141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ea9a8299e011049a1c8b22be5cf79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: 1.5
+  roughness: 1.5
+  fadeInTime: 0.1
+  fadeOutTime: 0.2
+--- !u!114 &1188802143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188802141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5961a1980c39db946a8288bdad22d4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeSize: 40
+  target: {fileID: 786400178}
+--- !u!4 &1188802144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188802141}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 471958722}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191917567
 GameObject:
   m_ObjectHideFlags: 0
@@ -17059,6 +17124,7 @@ MonoBehaviour:
   player: {fileID: 786400171}
   levelBoss: {fileID: 3141483355052190513, guid: f851078f9c8e6f048adfaad29a784b70,
     type: 3}
+  shakerController: {fileID: 0}
   isTutorial: 1
   tutorialMarket: {fileID: 0}
   tutorialMarketComplete: 0
