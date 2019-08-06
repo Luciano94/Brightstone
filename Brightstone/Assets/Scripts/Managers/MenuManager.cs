@@ -34,8 +34,7 @@ public class MenuManager : MonoBehaviour{
 
     public bool WinMenuCanvas{
         set {
-            winMenuCanvas.SetActive(value);
-            Invoke("ActivateStateUI", timeToActivateStateUi);
+            Invoke("ActivateWinCanvas", 2.5f);
         }
     }
 
@@ -44,6 +43,12 @@ public class MenuManager : MonoBehaviour{
             loseMenuCanvas.SetActive(value);
             Invoke("ActivateStateUI", timeToActivateStateUi);
         }
+    }
+
+    private void ActivateWinCanvas(){
+        UIManager.Instance.RunFinished();
+        winMenuCanvas.SetActive(true);
+        Invoke("ActivateStateUI", timeToActivateStateUi);
     }
 
     private void ActivateStateUI(){

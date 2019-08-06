@@ -1852,7 +1852,7 @@ PrefabInstance:
     - target: {fileID: 2718898306087316497, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82
+      value: 81.5
       objectReference: {fileID: 0}
     - target: {fileID: 2718898306087316497, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
@@ -8092,7 +8092,7 @@ PrefabInstance:
     - target: {fileID: 2718898306087316497, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41
+      value: 40.5
       objectReference: {fileID: 0}
     - target: {fileID: 2718898306087316497, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
@@ -8264,7 +8264,7 @@ PrefabInstance:
     - target: {fileID: 2718898306087316497, guid: f41039bc2afe60749892deffba8e9544,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2718898306087316497, guid: f41039bc2afe60749892deffba8e9544,
         type: 3}
@@ -12208,7 +12208,7 @@ PrefabInstance:
     - target: {fileID: 2718898306087316497, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123
+      value: 122.5
       objectReference: {fileID: 0}
     - target: {fileID: 2718898306087316497, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
@@ -13037,6 +13037,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419882166}
   m_CullTransparentMesh: 0
+--- !u!1 &1420238775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1493480196602599459, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1288974941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1423596788
 GameObject:
   m_ObjectHideFlags: 0
@@ -15405,14 +15411,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialTexts:
-  - Ahora hace algo
+  - Now you are in a special room. Take a look at the minimap, this room has a different
+    color.
+  - In this room you can upgrade your attributes spending your experience achieved
+    by killing enemies.
+  - Try to get closer to the seller.
   middleTexts:
-  - "\xA1Bien hecho!"
-  - Terminaste el tutorial
-  - Sal de esta sala y termina con la guerra
+  - This is the marketplace.
+  - At your left, you have the purchase panel.
+  - Here you have information about the exp you earned, the exp required to level
+    up, your current level, and the level of each attribute.
+  - In the right panel you have information about how each of these attributes can
+    improve every time they level up.
+  - I see you have enough experience to upgrade one attribute. Try to buy the one
+    you want.
   finalTexts:
-  - 'Ale escribio que le gusta la merca :D '
+  - Good job, here is the end of your training. Go to complete your mission. Go and
+    end the war once and for all.
   Market: {fileID: 1677186246}
+  nodeExitRight: {fileID: 1420238775}
 --- !u!114 &1668400525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15440,11 +15457,11 @@ MonoBehaviour:
   comboManager: {fileID: 2109171035}
   enemyStats: {fileID: 33749424}
   initialTexts:
-  - "Adem\xE1s de atacar, puedes defenderte."
-  - Utiliza (input) para bloquear el ataque del enemigo.
+  - Besides attacking, you can defend yourself.
+  - Use Spacebar to parry enemy attacks.
   middleTexts:
-  - "Fant\xE1stico!"
-  - "Avanza a la \xFAltima sala."
+  - Well Done.
+  - Move to the final room.
 --- !u!114 &1668400527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15472,10 +15489,10 @@ MonoBehaviour:
   experience: {fileID: 1426453976}
   expArrow: {fileID: 1039184506}
   initialTexts:
-  - Fijate abajo del minimapa, esa es la experiencia, tu moneda principal de compra.
-  - "Esta se obtiene al derrotar enemigos. Tambi\xE9n sirve para subir de nivel, pero
-    luego profundizaremos."
-  - 'Avanza a la siguiente sala. '
+  - 'Look below the minimap, this is your experience, use it to buy attributes. '
+  - The experience is obtained for defeating enemies. Also you can use it to level
+    up.
+  - Advance to the next room.
 --- !u!114 &1668400529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15491,15 +15508,13 @@ MonoBehaviour:
   comboManager: {fileID: 2109171035}
   enemyStats: {fileID: 723008744}
   initialTexts:
-  - "Como te habr\xE1s dado cuenta, estos ataques tienen ventajas y desventajas..."
-  - "que tendr\xE1s que descubrir para poder ser lo m\xE1s efectivo contra los enemigos
-    que te vayas a enfrentar."
-  - "Adem\xE1s, puedes combinar estos ataques para generar lo que conocemos como \u201Ccombos\u201D."
-  - Intenta este combo sencillo (input).
+  - As you can see, this attacks have pros and cons. You will have to discover them
+    to defeat your enemies.
+  - "Also, you can combine those attacks to make what we know as \u201Ccombos\u201D."
+  - Try this simple combo (left click x4).
   middleTexts:
-  - "\xA1Muy bien!"
-  - "A medida que avances descubrir\xE1s mejores combos para cada situaci\xF3n que
-    se te presente."
+  - Very well..
+  - As you go on, you will discover better combos for every situation that you encounter.
 --- !u!114 &1668400530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15516,10 +15531,10 @@ MonoBehaviour:
   enemyStats: {fileID: 723008744}
   minDistance: 0.5
   initialTexts:
-  - Repasemos las bases del combate.
-  - "Ataca al enemigo con un ataque r\xE1pido (input)."
+  - Lets see the bases of the combat.
+  - Attack the enemy with a quick attack (left click).
   middleTexts:
-  - Perfecto, ahora intenta con un ataque fuerte (input).
+  - Perfect, now try with a strong attack (right attack).
 --- !u!114 &1668400531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15548,10 +15563,9 @@ MonoBehaviour:
   minimapFront: {fileID: 1814517083}
   minimapArrow: {fileID: 33250210}
   initialTexts:
-  - "En la parte superior derecha tienes un minimapa de la zona para que sepas d\xF3nde
-    est\xE1s y d\xF3nde estuviste."
-  - "Estate atento a las salas especiales. Estar\xE1n con otro color en el minimapa."
-  - Prueba ir a la siguiente sala.
+  - In the upper right corner you have a minimap for orientation.
+  - Pay attention to specials rooms. They have a different color in the minimap.
+  - Go to the next room.
 --- !u!114 &1668400533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15568,8 +15582,8 @@ MonoBehaviour:
   sprDestination: {fileID: 985372337}
   minDistance: 0.5
   initialTexts:
-  - Para moverte utiliza (input).
-  - "Dir\xEDgete al punto marcado en pantalla."
+  - For movement use WASD and the Mouse to aim.
+  - Go to the point marked on the screen.
 --- !u!114 &1668400534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15584,9 +15598,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToStart: 1
   initialTexts:
-  - Bienvenido al entrenamiento.
-  - "Ac\xE1 vas a poder calentar. Hace a\xF1os que no tenemos una emergencia como
-    esta. "
+  - Welcome to your training.
+  - "Here you can warm yourself up. We haven\u2019t had an emergency like this for
+    years."
 --- !u!114 &1668400535
 MonoBehaviour:
   m_ObjectHideFlags: 0

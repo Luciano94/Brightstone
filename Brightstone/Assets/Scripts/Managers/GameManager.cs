@@ -175,8 +175,11 @@ public class GameManager : MonoBehaviour{
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
         
+        playerAnimations.enabled = false;
+        playerCombat.enabled = false;
+        playerSts.enabled = false;
+
         AudioManager.Instance.StopTheme();
-        UIManager.Instance.RunFinished();
         MenuManager.Instance.WinMenuCanvas = true;
 
         DisablePlayer();

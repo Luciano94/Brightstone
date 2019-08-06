@@ -5,6 +5,7 @@ public class Step10Market : Step{
     [SerializeField] private string[] middleTexts;
     [SerializeField] private string[] finalTexts;
     [SerializeField] private GameObject Market;
+    [SerializeField] private GameObject nodeExitRight;
 
     private ActiveRoom aR;
     private int textIndex = 0;
@@ -86,6 +87,7 @@ public class Step10Market : Step{
                     TextGenerator.Instance.Hide();
                     GameManager.Instance.EnablePlayer();
                     Market.SetActive(false);
+                    nodeExitRight.SetActive(false);
                 }
             }
             return;
