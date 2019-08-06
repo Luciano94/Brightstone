@@ -7,13 +7,18 @@ public class ZoomWhenParrying : MonoBehaviour
     [SerializeField] float velocityTurningBack;
     [SerializeField] float minCameraSize;
     [SerializeField] float maxCameraSize;
-    bool isGoingBack;
+    [SerializeField] float timeToGoBack;
+
+    private float timeLeft;
 
     void Update()
     {
-        if (isGoingBack && Camera.main.orthographicSize < maxCameraSize)
+        if (Camera.main.orthographicSize < maxCameraSize)
         {
-            Camera.main.orthographicSize += velocityTurningBack;
+            if (timeLeft <= 0)
+                Camera.main.orthographicSize += velocityTurningBack;
+            else
+                timeLeft -= Time.deltaTime;
         }
     }
 
@@ -21,18 +26,12 @@ public class ZoomWhenParrying : MonoBehaviour
     {
         if(Camera.main.orthographicSize > minCameraSize)
             Camera.main.orthographicSize -= distanceToZoom;
-        isGoingBack = false;
+
+        timeLeft = timeToGoBack;
     }
 
     public void SetNewMaxSize(float newSize)
     {
         maxCameraSize = newSize;
-        IsGoingBack = true;
-    }
-
-    public bool IsGoingBack
-    {
-        get { return isGoingBack;  }
-        set { isGoingBack = value; }
     }
 }

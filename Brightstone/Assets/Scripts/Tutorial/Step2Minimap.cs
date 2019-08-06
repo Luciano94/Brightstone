@@ -32,7 +32,8 @@ public class Step2Minimap : Step{
                 }
                 else{
                     TextGenerator.Instance.Hide();
-                    GameManager.Instance.EnablePlayer();
+                    GameManager.Instance.playerMovement.enabled = true;
+                    GameManager.Instance.playerAnimations.enabled = true;
                     minimapArrow.SetActive(false);
                 }
             }

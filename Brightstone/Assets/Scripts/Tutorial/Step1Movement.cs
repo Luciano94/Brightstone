@@ -10,7 +10,6 @@ public class Step1Movement : Step{
 
     public override void StepInitialize(){
         sprDestination.enabled = true;
-        GameManager.Instance.DisablePlayer();
         TextGenerator.Instance.Show(initialTexts[textIndex]);
     }
 
@@ -27,7 +26,8 @@ public class Step1Movement : Step{
                 }
                 else{
                     TextGenerator.Instance.Hide();
-                    GameManager.Instance.EnablePlayer();
+                    GameManager.Instance.playerMovement.enabled = true;
+                    GameManager.Instance.playerAnimations.enabled = true;
                 }
             }
             return;

@@ -32,4 +32,8 @@ public class EventManager : MonoBehaviour{
     private void TutorialFinished(){
         SceneManager.LoadScene(loadingIndex);
     }
+
+    public int GetActualStep(){
+        return actualStep;
+    }
 }

@@ -167,6 +167,9 @@ public class PlayerCombat : MonoBehaviour{
 
     private void Parry(){
         if(Input.GetButtonDown("Parry")){
+            if (GameManager.Instance.isTutorial)
+                if (!GameManager.Instance.IsReadyToParry())
+                    return;
             if(!isParrying){
                 RunSaver.currentRun.data.timesParried++;
                 isParrying = true;

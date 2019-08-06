@@ -4186,6 +4186,7 @@ MonoBehaviour:
   velocityTurningBack: 0.015
   minCameraSize: 9
   maxCameraSize: 10
+  timeToGoBack: 1
 --- !u!1 &481818222
 GameObject:
   m_ObjectHideFlags: 0

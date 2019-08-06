@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour{
     private const int mainMenuIndex = 0;
 
     public bool isTutorial = false;
-    private  bool playerOn = false;
-
+    private bool playerOn = false;
+    public EventManager eventManager;
     public GameObject tutorialMarket;
     public bool tutorialMarketComplete = false;
 
@@ -129,6 +129,10 @@ public class GameManager : MonoBehaviour{
 
     public ZoomWhenParrying ZoomWhenParrying{
         get{ return zoomWhenParrying; }
+    }
+
+    public bool IsReadyToParry(){
+        return eventManager.GetActualStep() >= 8 ? true : false;
     }
 
     public static int GetDirection(float angle){
