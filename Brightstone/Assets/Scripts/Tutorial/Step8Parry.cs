@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Step8Parry : Step{
     [SerializeField] private ComboManager comboManager;
     [SerializeField] private EnemyStats enemyStats;
     [SerializeField] private string[] initialTexts;
     [SerializeField] private string[] middleTexts;
+    [SerializeField] private Text counterTxt;
     
     private PlayerStats playerStats;
     private int textIndex = 0;
@@ -41,6 +43,8 @@ public class Step8Parry : Step{
                     GameManager.Instance.EnablePlayer();
                     textIndex = 0;
                     firstDialogueFinished = true;
+                    counterTxt.enabled = true;
+                    counterTxt.text = "Parry count: 0/3";
                 }
             }
             return;
@@ -68,6 +72,7 @@ public class Step8Parry : Step{
                 else{
                     TextGenerator.Instance.Hide();
                     GameManager.Instance.EnablePlayer();
+                    counterTxt.enabled = false;
                 }
             }
             return;
@@ -78,12 +83,17 @@ public class Step8Parry : Step{
 
     private void PlayerHit(){
         parriedTimes = 0;
+
+        counterTxt.text = "Parry count: " + parriedTimes + "/" + parryTotal;
     }
 
     private void EnemyParried(){
         parriedTimes++;
         
+        counterTxt.text = "Parry count: " + parriedTimes + "/" + parryTotal;
+
         if (parriedTimes >= parryTotal){
+            counterTxt.color = new Color(0.5f, 1.0f, 0.5f);
             Invoke("DestroyEnemy", 1.5f);
             GameManager.Instance.DisablePlayer();
             TextGenerator.Instance.Appear();
