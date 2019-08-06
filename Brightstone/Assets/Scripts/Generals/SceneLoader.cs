@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour{
     [SerializeField] private Text loadingText;
 
     const int level1Index = 2;
+    const int tutorialIndex = 4;
 
     private void Start(){
         StartCoroutine(LoadSceneAsync());
@@ -16,7 +17,17 @@ public class SceneLoader : MonoBehaviour{
     }
 
     private IEnumerator LoadSceneAsync(){
-        AsyncOperation async = SceneManager.LoadSceneAsync(level1Index);
+        int sceneToLoad;
+        int isTutorial = PlayerPrefs.GetInt("isTutorial", -1);
+
+        if(isTutorial == -1){
+            PlayerPrefs.SetInt("isTutorial", 1);
+            sceneToLoad = tutorialIndex;
+        }else{
+            sceneToLoad = level1Index;
+        }
+
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneToLoad);
         while (!async.isDone)
             yield return null;
     }

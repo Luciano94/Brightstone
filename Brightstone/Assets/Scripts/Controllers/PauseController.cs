@@ -23,7 +23,7 @@ public class PauseController : MonoBehaviour{
                 optionsPanel.DesactivateThis();
 
             if (pauseState){
-                firstOption.Select();
+                //firstOption.Select();
                 pauseAnim.SetTrigger("In");
             }
             else{

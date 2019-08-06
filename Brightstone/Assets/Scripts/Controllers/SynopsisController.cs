@@ -10,7 +10,7 @@ public class SynopsisController : MonoBehaviour{
     private const int loadingIndex = 3;
 
     private void Start(){
-        skipBtn.Select();
+        //skipBtn.Select();
     }
 
     private void Update(){

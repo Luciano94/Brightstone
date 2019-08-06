@@ -53,6 +53,6 @@ public class MenuManager : MonoBehaviour{
 
     private void ActivateStateUI(){
         stateUI.SetActive(true);
-        buttonToSelect.Select();
+        //buttonToSelect.Select();
     }
 }
