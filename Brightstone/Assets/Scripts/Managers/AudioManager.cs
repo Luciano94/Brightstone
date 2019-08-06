@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource theme;
 
     public void Awake(){
-        Invoke("StartTheme", 1.0f);
+        Invoke("StartTheme", 0.5f);
     }
 
     private void StartTheme(){
