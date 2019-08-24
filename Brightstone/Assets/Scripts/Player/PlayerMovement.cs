@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField]private float rotSpeed;
     [SerializeField]private GameObject player;
     [SerializeField]private GameObject sword;
+    [SerializeField]private Camera combatCamera;
     
     private float horizontal;
     private float vertical;
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour{
             rotH = Input.GetAxis("Horizontal");
             rotV = Input.GetAxis("Vertical") * -1;
         }else{
-            rot =  Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            rot = combatCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             rot = rot.normalized;
             rot.y *= -1;
             rotH = rot.x;

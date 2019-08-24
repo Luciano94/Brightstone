@@ -27,7 +27,6 @@ public class ActiveRoom : MonoBehaviour
             }else{
                 HandleNormalRooms(other);
             }
-            //Camera.main.GetComponent<CameraFollow>().MoveTo(activeRoom.position);
         }
     }
 

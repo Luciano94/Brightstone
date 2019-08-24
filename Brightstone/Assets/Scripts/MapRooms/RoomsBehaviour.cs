@@ -64,6 +64,7 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemiesLeft = enemiesCant;
                 for(int i = 0; i < enemiesCant; i++){
                     pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
+                    pos.z = GameManager.Instance.PlayerPos.z;
                     enemies.Add(Instantiate(enemyPrefab, pos, transform.rotation));
                     enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
                     enemies[i].SetActive(false);
@@ -71,7 +72,9 @@ public class RoomsBehaviour : MonoBehaviour{
             break;
             case NodeBehaviour.Market:
                 haveMarket = true;
-                market = Instantiate(marketPrefab, transform.position, transform.rotation);
+                pos = transform.position;
+                pos.z = GameManager.Instance.PlayerPos.z;
+                market = Instantiate(marketPrefab, pos, transform.rotation);
                 market.transform.position += new Vector3(0,0,-1);
                 if (!GameManager.Instance.isTutorial){
                     isComplete = true;
@@ -84,6 +87,7 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemiesLeft = 1;
                 haveBoss = true;
                 pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
+                pos.z = GameManager.Instance.PlayerPos.z;
                 enemies.Add(Instantiate(bossPrefab, pos, transform.rotation));
                 enemies[0].GetComponent<EnemyStats>().MyRoom = gameObject;
                 enemies[0].SetActive(false);
@@ -114,10 +118,6 @@ public class RoomsBehaviour : MonoBehaviour{
             market.layer = 11;
         }else{
             market.layer = 11;
-           /* if(market.layer == 11){
-                    market.layer = 16;
-            }else{
-            }*/
         }
     }
 
