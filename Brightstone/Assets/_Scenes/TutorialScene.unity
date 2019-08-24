@@ -20015,6 +20015,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 786400178}
+    - target: {fileID: 619709238538826683, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20070,11 +20080,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 786400178}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e817498a42f5e7c4c89c3f6f12462b56, type: 3}
 --- !u!1001 &6276584208199939008

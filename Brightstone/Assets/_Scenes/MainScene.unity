@@ -10601,7 +10601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274867170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 39942457}
@@ -12939,6 +12939,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 786400178}
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12952,7 +12957,7 @@ PrefabInstance:
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
@@ -12994,11 +12999,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 786400178}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e817498a42f5e7c4c89c3f6f12462b56, type: 3}
 --- !u!1 &1599531729
@@ -17710,7 +17710,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 935620c7987b43c4d878c8d2db9f5d4c, type: 3}
   m_Color: {r: 0, g: 0.7735849, b: 0.4911508, a: 1}
   m_FlipX: 0

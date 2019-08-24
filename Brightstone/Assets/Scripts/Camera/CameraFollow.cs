@@ -4,6 +4,7 @@ public class CameraFollow: MonoBehaviour{
 
 	[SerializeField]private float nodeSize = 40;
 	[SerializeField]private Transform target;
+	[SerializeField]private float zCamera = -10;
 
 	private Vector3 newPos;
 	private float maxX;
@@ -23,7 +24,8 @@ public class CameraFollow: MonoBehaviour{
 		offsetX = nodeSize;
 		offsetY = nodeSize;
 		position = new Vector2(0,0);
-         // Calculations assume map is position at the origin
+
+        // Calculations assume map is position at the origin
 		minX = horzExtent - offsetX * 0.5f;
 		maxX = offsetX * 0.5f - horzExtent;
 		minY = vertExtent - offsetY * 0.5f;
@@ -59,7 +61,7 @@ public class CameraFollow: MonoBehaviour{
 	}
      
     private void Update() {
-			newPos =new Vector3(target.position.x,target.position.y, -15 );
+			newPos =new Vector3(target.position.x,target.position.y, zCamera );
 			newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
 			newPos.y = Mathf.Clamp(newPos.y, minY, maxY);	
 			transform.position = newPos;
