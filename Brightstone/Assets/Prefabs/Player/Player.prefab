@@ -53,6 +53,7 @@ MonoBehaviour:
   rotSpeed: 5
   player: {fileID: 6276584208348804366}
   sword: {fileID: 4494476437582870897}
+  combatCamera: {fileID: 0}
 --- !u!114 &786400172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeColor: {r: 1, g: 1, b: 1, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
+  cameraFollow: {fileID: 0}
 --- !u!50 &8318096352524940248
 Rigidbody2D:
   serializedVersion: 4
@@ -222,6 +224,18 @@ PrefabInstance:
     - target: {fileID: 1622788478, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
       propertyPath: offsetPos.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31269897, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -774315649
+      objectReference: {fileID: 0}
+    - target: {fileID: 31269897, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 31269897, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
