@@ -725,17 +725,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You are in Kyoto region, Japan, in the middle of a war due to the lack
-    of a rare, shiny-like-the-moon material, called Brightstone.\r\n\r\nThe Brightstone
-    allows weapon's modifications, such as changes in their appearance, which gives
-    the carrier impossible abilities to do with a regular weapon.\r\n\r\nIt's users
-    tend to be corrupted by the greater power's hunt.\r\n\r\nThe clan's leaders are
-    looking to take the Brightstone's power as they declare war.\r\n\r\nYou are an
-    exiled ninja who is part of a clan known as The Forgotten Ones, a group of men
-    who were expelled of their clans.\r\n\r\nLion, the group's leader, is giving you
-    the task of ending this war once and for all, because it is starting to affect
-    your clan's members lives.\r\n\r\nIn order to finish the war, your goal is to
-    end with the clan's leaders.\r"
+  m_Text: "You are in the Kyoto region, Japan, in the height of a war caused by a
+    rare, shiny-like-the-moon material, called Brightstone.\r\nThis elusive material
+    allows the modification of weapons, changing their appearance, and giving the
+    wielder abilities impossible to achieve with a regular weapon. However, it's users
+    are exposed to corruption by their own hunger for power.\r\nThe leaders of numerous
+    clans wage war on each other, seeking to take all of the Brightstone's power for
+    themselves.\r\nYou are an exiled ninja, as are your fellow clansmen, 'The Forgotten
+    Ones'.\r\nLion, the group\u2019s leader, has charged you with bringing peace to
+    your clan\u2019s life, to defeat the corrupted leaders of other clans, and rid
+    the land of war once and for all.\r"
 --- !u!222 &344853980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1028,7 +1027,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e1db6a048359a1f429c89b420f53e28d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e9828ee43e70c1e4b9218c046d1d0d96, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

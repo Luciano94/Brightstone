@@ -14,7 +14,7 @@ public class SynopsisController : MonoBehaviour{
     }
 
     private void Update(){
-        if (synopsisTxt.anchoredPosition.y < -10.0f)
+        if (synopsisTxt.anchoredPosition.y < -15.0f)
             synopsisTxt.Translate(0.0f, txtSpeed * Time.deltaTime, 0.0f);
     }
 
