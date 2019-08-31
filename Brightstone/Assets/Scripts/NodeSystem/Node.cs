@@ -103,6 +103,7 @@ public class Node{
         }
         setType();
     }
+
     public void setTutorialExits(Node[] nodes){
         exitsTakes = new bool[4]{false,false,false,false};
         for (int i = 0; i < references.Length; i++){
@@ -156,6 +157,15 @@ public class Node{
                 nType = NodeType.R;
             break;
         }
+    }
+
+    public int getCantExits(){
+        int res = 0;
+        for (int i = 0; i < exitsTakes.Length; i++){
+            if(exitsTakes[i])
+                res++;
+        }
+        return res;
     }
 
     private void DefineTwoExitNode(Direction dir1, Direction dir2){

@@ -33,10 +33,10 @@ public class Generate : MonoBehaviour{
 
 
     private void Start() {
-        nodeBoss = Random.Range(5,nodeQ);
+       // nodeBoss = Random.Range(5,nodeQ);
         nodeMarket = Random.Range(0, nodeQ);
-        if(nodeBoss == nodeMarket)
-            nodeBoss++;
+        //if(nodeBoss == nodeMarket)
+        //    nodeBoss++;
         nodes = new List<Node>();
         CreateNode();
         nodeQ++;
@@ -115,9 +115,9 @@ public class Generate : MonoBehaviour{
         if(nodeQ == nodeMarket){
             n.SetBehaviour(NodeBehaviour.Market);
         }else{
-            if(nodeQ == nodeBoss)
-                n.SetBehaviour(NodeBehaviour.Boss);
-            else
+            //if(nodeQ == nodeBoss)
+                //n.SetBehaviour(NodeBehaviour.Boss);
+            //else
                 n.SetBehaviour(NodeBehaviour.Normal);
         }
         nodes.Add(n); 
@@ -195,8 +195,16 @@ public class Generate : MonoBehaviour{
 #endregion
 #region StateTwo
     private void SetExit(){
-        for (int i = 0; i < nodes.Count; i++){   
+        bool haveBoss = false;
+        for (int i = 0; i < nodes.Count; i++){
             nodes[i].setExits(nodes);
+            if(i > 1 && nodes[i].getCantExits() == 1 && !haveBoss){
+                nodes[i].SetBehaviour(NodeBehaviour.Boss);
+                haveBoss = true;
+            }
+        }
+        if(!haveBoss){
+            nodes[nodes.Count].SetBehaviour(NodeBehaviour.Boss);
         }
     }
 #endregion
