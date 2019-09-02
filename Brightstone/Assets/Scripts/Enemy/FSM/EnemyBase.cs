@@ -13,7 +13,7 @@ public abstract class EnemyBase : MonoBehaviour{
     protected float timeLeft = 0.0f;
     protected float timeLeftHit = 0.0f;
     protected float timeLeftParried = 0.0f;
-    protected bool isWaiting = true;
+    protected bool guardState = true;
 
     virtual protected void Awake(){
         enemyMovement   = GetComponent<EnemyMovement>();
@@ -43,6 +43,10 @@ public abstract class EnemyBase : MonoBehaviour{
     public void Parried(){
         timeLeftParried = timeParalyzedForParry;
         OnHit();
+    }
+
+    public void ForceToGuardState(){
+        OnReturnToWait();
     }
 
     protected bool IsOnChaseRange(){
@@ -78,8 +82,16 @@ public abstract class EnemyBase : MonoBehaviour{
 
     }
 
-    public bool IsWaiting(){
-        return isWaiting;
+    virtual protected void OnReturnToWait(){
+
+    }
+
+    virtual protected void OnForceToRelocate(){
+
+    }
+
+    public bool IsInGuardState(){
+        return guardState;
     }
 
     public EnemyType GetEnemyType(){
