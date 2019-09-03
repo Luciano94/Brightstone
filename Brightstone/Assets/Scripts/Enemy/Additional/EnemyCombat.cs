@@ -75,9 +75,8 @@ public class EnemyCombat : MonoBehaviour{
                 if (currentTime > animTime){
                     if (throwableObject)
                     {
-                        Arrow arrow = Instantiate(throwableObject, transform.position + diff.normalized * distFromOrigin, transform.rotation, null).GetComponent<Arrow>();
+                        Arrow arrow = Instantiate(throwableObject, transform.position/* + diff.normalized * distFromOrigin*/, transform.rotation, null).GetComponent<Arrow>();
                         arrow.transform.LookAt(player, Vector3.up);
-                        //arrow.transform.eulerAngles = new Vector3(arrow.transform.eulerAngles.x, 0.0f, arrow.transform.eulerAngles.z);
                         arrow.SetEnemyStats(GetComponent<EnemyStats>());
                     }
                     isAttacking = false;

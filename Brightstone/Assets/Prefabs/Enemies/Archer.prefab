@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de9fae38ebb9b54f8ca9bf46d043311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
   player: {x: 0, y: 0, z: 0}
   sword: {fileID: 4093589057318080765}
   eAnim: {fileID: 4914635166833622913}
