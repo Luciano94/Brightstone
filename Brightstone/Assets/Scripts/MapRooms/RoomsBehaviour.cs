@@ -75,7 +75,6 @@ public class RoomsBehaviour : MonoBehaviour{
                 pos = transform.position;
                 pos.z = GameManager.Instance.PlayerPos.z;
                 market = Instantiate(marketPrefab, pos, transform.rotation);
-                market.transform.position += new Vector3(0,0,-1);
                 if (!GameManager.Instance.isTutorial){
                     isComplete = true;
                     market.layer = 11;
