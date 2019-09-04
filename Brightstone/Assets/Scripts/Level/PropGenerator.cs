@@ -24,10 +24,10 @@ public class PropGenerator : MonoBehaviour
             int index = 0;
             foreach (GameObject p in Props){
                 GameObject go = Instantiate(p);
-                go.transform.parent = transform;
-                Vector3 position = transform.position + pickedPositions[index].position;
+                go.transform.parent = transform.parent;
+                Vector3 position = pickedPositions[index].position;
                 position.z = propZDepth;
-                p.transform.position = position;
+                go.transform.position = position;
                 index++;
                 if (index >= pickedPositions.Count){ index = 0;}
             }
