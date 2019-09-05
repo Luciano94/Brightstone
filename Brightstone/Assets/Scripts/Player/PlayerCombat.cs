@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCombat : MonoBehaviour{
     [SerializeField]private GameObject weapon;
@@ -51,6 +52,8 @@ public class PlayerCombat : MonoBehaviour{
     public float ActualTime{
         get{return actAtkTime;}
     }
+
+    [HideInInspector][SerializeField] UnityEvent onParriedSomeone;
 
     private PlayerStats plStat;
 
@@ -189,6 +192,7 @@ public class PlayerCombat : MonoBehaviour{
 
     public void ParriedSomeone(){
         if (!parriedSomeone){
+            OnParriedSomeone().Invoke();
             parriedSomeone = true;
             RunSaver.currentRun.data.goodParry++;
         }
@@ -216,5 +220,9 @@ public class PlayerCombat : MonoBehaviour{
         isAttacking = false;
         isParrying = false;
         parriedSomeone = false;
+    }
+
+    public UnityEvent OnParriedSomeone(){
+        return onParriedSomeone;
     }
 }
