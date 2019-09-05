@@ -6,7 +6,6 @@ public class PropGenerator : MonoBehaviour
 {
     [SerializeField] private int minProps = 0;
     [SerializeField] private int maxProps = 1;
-    [SerializeField] private float propZDepth = 4;
     [SerializeField] private List<GameObject> Props = new List<GameObject>();
     [SerializeField] private List<Transform> Positions = new List<Transform>();
 
@@ -24,10 +23,10 @@ public class PropGenerator : MonoBehaviour
             int index = 0;
             foreach (GameObject p in Props){
                 GameObject go = Instantiate(p);
-                go.transform.parent = transform.parent;
-                Vector3 position = pickedPositions[index].position;
-                position.z = propZDepth;
-                go.transform.position = position;
+                Vector3 newPosition = pickedPositions[index].position;
+                newPosition.z = go.transform.position.z;
+                //go.transform.parent = transform.parent;
+                go.transform.position = newPosition;
                 index++;
                 if (index >= pickedPositions.Count){ index = 0;}
             }
