@@ -199,6 +199,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   lowHealthPerc: 0.15
+  shadow: {fileID: 3139005742749411362}
   enemyType: 0
   onHit:
     m_PersistentCalls:

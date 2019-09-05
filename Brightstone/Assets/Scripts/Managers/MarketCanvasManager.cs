@@ -94,6 +94,10 @@ public class MarketCanvasManager : MonoBehaviour{
         UIManager.Instance.ExpUpdate();
     }
 
+    private void Update() {
+        UpdateUI();
+    }
+
     public void EnterMarket(){
         confirmButton.interactable = false;
         playerSts = GameManager.Instance.playerSts;
@@ -220,8 +224,9 @@ public class MarketCanvasManager : MonoBehaviour{
         }
     }
     public void Confirm(){
+
         if(canConfirm){
-            confirmButton.interactable = true;
+            confirmButton.interactable = false;
             canConfirm = false;
 
             //updateo el nivel del personaje
@@ -249,7 +254,7 @@ public class MarketCanvasManager : MonoBehaviour{
             attackLevel = newAttackLevel;
             UIManager.Instance.ExpUpdate();
             UIManager.Instance.LifeUpdate();
-            SetStats();
+            //SetStats();
             newLifeLevelTxt.color = Color.white;
             newLifeStatTxt.color = Color.white;
             newAttackLevelTxt.color = Color.white;
@@ -259,6 +264,17 @@ public class MarketCanvasManager : MonoBehaviour{
         }else{
             confirmButton.interactable = false;
         }
+
+      /*  playerSts = GameManager.Instance.playerSts;
+        //InitStats();
+        UpdateUI();
+        if(playerExperience >= requiredExperience){
+            canPlus = true;
+        }
+        canConfirm = false;
+        canMinus = false;
+        UIManager.Instance.ExpUpdate();*/
+
     }
 
     public void LifeLevel(bool operation){
@@ -292,9 +308,9 @@ public class MarketCanvasManager : MonoBehaviour{
             if(newPlayerExperience < newRequiredExperience){
                 canPlus = false;
                 canMinus = true;
-                canConfirm = true;
                 newPlayerExperienceTxt.color = Color.red;
             }
+                canConfirm = true;
         }
         UpdateUI();
     }
@@ -330,9 +346,9 @@ public class MarketCanvasManager : MonoBehaviour{
             if(newPlayerExperience < newRequiredExperience){
                 canPlus = false;
                 canMinus = true;
-                canConfirm = true;
                 newPlayerExperienceTxt.color = Color.red;
             }
+            canConfirm = true;
         }
         UpdateUI();
     }
@@ -356,9 +372,10 @@ public class MarketCanvasManager : MonoBehaviour{
             //Como se calcula la Exp
 
             newRequiredExperience = newRequiredExperience * 2;
-            if(newPlayerExperience < newRequiredExperience)
-            canPlus = false;
-            canMinus = true;
+            if(newPlayerExperience < newRequiredExperience){
+                canPlus = false;
+                canMinus = true;
+            }
             canConfirm = true;
         }
         UpdateUI();

@@ -405,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
@@ -6612,7 +6612,7 @@ PrefabInstance:
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3142141347888250692, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
@@ -9244,7 +9244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985372335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -3, z: 0}
+  m_LocalPosition: {x: 10, y: -3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1964520639}
@@ -11061,7 +11061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199682541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 142.55, y: 0, z: -1}
+  m_LocalPosition: {x: 142.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1987035863}
@@ -15379,7 +15379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 985372336}
   sprDestination: {fileID: 985372337}
-  minDistance: 0.5
+  minDistance: 1.2
   initialTexts:
   - For movement use WASD and the Mouse to aim.
   - Go to the point marked on the screen.
@@ -20111,7 +20111,7 @@ PrefabInstance:
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
