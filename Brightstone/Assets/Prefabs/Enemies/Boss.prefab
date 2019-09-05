@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2570051099553933112}
   m_Layer: 14
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animTime: 0.6
   activeMoment: 0.25
+  throwTime: 0
   weapon: {fileID: 3141483355779995974}
   enemyAnim: {fileID: 5559408988468806604}
 --- !u!114 &3041816709959559500

@@ -19,6 +19,7 @@ public class Enemy : EnemyBase{
         OnHit,
         OnRestitution,
         NoHealth,
+        ForceState,
         Count
     }
 
@@ -27,6 +28,11 @@ public class Enemy : EnemyBase{
     // ===========================================================
     // Inicialization
     // ===========================================================
+
+    protected override void Awake(){
+        base.Awake();
+    }
+
     private void Start(){
         fsm = new EnemyFSM((int)States.Count, (int)Events.Count, (int)States.Wait);
 
@@ -44,11 +50,19 @@ public class Enemy : EnemyBase{
         fsm.SetRelation( (int)States.Wait,     (int)Events.NoHealth,      (int)States.Death    );
 
         fsm.SetRelation( (int)States.Relocate, (int)Events.OnChase,       (int)States.Chase    );
+        fsm.SetRelation( (int)States.Relocate, (int)Events.OnAttack,      (int)States.Attack   );
         fsm.SetRelation( (int)States.Relocate, (int)Events.OnHit,         (int)States.Hurt     );
         fsm.SetRelation( (int)States.Relocate, (int)Events.NoHealth,      (int)States.Death    );
         
         fsm.SetRelation( (int)States.Hurt,     (int)Events.OnRestitution, (int)States.Chase    );
         fsm.SetRelation( (int)States.Hurt,     (int)Events.NoHealth,      (int)States.Death    );
+
+        fsm.SetRelation( (int)States.Attack,   (int)Events.ForceState,    (int)States.Wait     );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.ForceState,    (int)States.Wait     );
+        fsm.SetRelation( (int)States.Relocate, (int)Events.ForceState,    (int)States.Wait     );
+        fsm.SetRelation( (int)States.Hurt,     (int)Events.ForceState,    (int)States.Wait     );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.ForceState,    (int)States.Relocate );
+        fsm.SetRelation( (int)States.Wait,     (int)Events.ForceState,    (int)States.Relocate );
     }
 
     // ===========================================================
@@ -113,10 +127,9 @@ public class Enemy : EnemyBase{
     // Events
     // ===========================================================
     protected override void OnChase(){
-        isWaiting = false;
-        if(fsm.GetState() == (int)States.Wait){
+        if(IsInGuardState()){
             enemyMovement.StartChasing();
-            
+            guardState = false;
         }
         enemyMovement.IsMovingForward = true;
         fsm.SendEvent((int)Events.OnChase);
@@ -145,6 +158,15 @@ public class Enemy : EnemyBase{
 
     protected override void OnNoHealth(){
         fsm.SendEvent((int)Events.NoHealth);
+    }
+
+    protected override void OnReturnToWait(){
+        guardState = true;
+        fsm.SendEvent((int)Events.ForceState);
+    }
+
+    protected override void OnForceToRelocate(){
+        fsm.SendEvent((int)Events.ForceState);
     }
 
     public int GetActualState(){

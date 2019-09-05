@@ -73,24 +73,37 @@ public class EnemyMovement : MonoBehaviour{
 
         transform.Translate(moveDir * speed * speedSurrounding * Time.deltaTime);
 
-        if(player.x > transform.position.x){
-            if (moveDir.x > 0.0f)
-                IsMovingForward = true;
-            else
-                IsMovingForward = false;
-        }
-        else{
-            if (moveDir.x > 0.0f)
-                IsMovingForward = false;
-            else
-                IsMovingForward = true;
-        }
+        CheckForward();
     }
 
     public void Relocate(){
         PrepareVariables();
 
         transform.Translate(-diff.normalized * speed * 0.4f  * Time.deltaTime);
+
+        Rotation();
+    }
+
+    public void RelocateArcher(float minDistanceToMoveBack){
+        PrepareVariables();
+
+        Vector2 dir = diff.normalized;
+
+        if (diff.magnitude < minDistanceToMoveBack){
+            transform.Translate(-dir * speed * Time.deltaTime);
+
+            IsMovingForward = false;
+        }
+        else{
+            int multiplier = 1;
+            if (!movingRight) multiplier = -1;
+
+            moveDir = new Vector2(dir.y * multiplier, dir.x);
+
+            transform.Translate(moveDir * speed * Time.deltaTime);
+
+            CheckForward();
+        }
 
         Rotation();
     }
@@ -136,8 +149,31 @@ public class EnemyMovement : MonoBehaviour{
         StopSurrounding();
     }
 
+    public void RandomizeDirection(){
+        float dir = Mathf.Round(Random.value);
+        if (dir == 0.0f)
+            movingRight = true;
+        else
+            movingRight = false;
+    }
+
     public void SetSpeed(float speed){
         this.speed = speed;
+    }
+
+    private void CheckForward(){
+        if(player.x > transform.position.x){
+            if (moveDir.x > 0.0f)
+                IsMovingForward = true;
+            else
+                IsMovingForward = false;
+        }
+        else{
+            if (moveDir.x > 0.0f)
+                IsMovingForward = false;
+            else
+                IsMovingForward = true;
+        }
     }
 
     public bool IsMovingForward{

@@ -53,18 +53,43 @@ public class EnemyBahaviour : MonoBehaviour{
         UpdateStrategy();
     }
     
+    public void WarriorAddedToChase(GameObject thisEnemy){
+        int index = 0;
+        int countChasing = 0;
+        int indexOfFarest = -1;
+        Vector3 farestDistance = Vector3.zero;
+
+        Vector3 playerPos = GameManager.Instance.PlayerPos;
+
+        foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior]){
+            if (!enemy.IsInGuardState()){
+                countChasing++;
+                Vector3 dist = playerPos - enemy.transform.position;
+                if (dist.magnitude > farestDistance.magnitude){
+                    farestDistance = dist;
+                    indexOfFarest = index;
+                }
+            }
+
+            index++;
+        }
+
+        if (countChasing >= maxWarriorsAtking)
+            enemies[(int)EnemyType.Warrior][indexOfFarest].ForceToGuardState();
+    }
+
     public void UpdateStrategy(){
         if(enemiesLeft > 0){
             int countChasing = 0;
             
             foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior]){
-                if (!enemy.IsWaiting()) countChasing++;
+                if (!enemy.IsInGuardState()) countChasing++;
                 
             }
 
             if (countChasing < maxWarriorsAtking || countChasing == enemies[(int)EnemyType.Warrior].Count)
                 foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior])
-                    if (enemy.IsWaiting() && countChasing < maxWarriorsAtking){
+                    if (enemy.IsInGuardState() && countChasing < maxWarriorsAtking){
                         countChasing++;
                         enemy.Chase();
                     }

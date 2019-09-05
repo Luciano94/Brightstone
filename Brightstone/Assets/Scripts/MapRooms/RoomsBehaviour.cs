@@ -9,7 +9,7 @@ public class RoomsBehaviour : MonoBehaviour{
     [SerializeField]private bool haveBoss = false;
     [SerializeField]private GameObject marketPrefab;
     [SerializeField]private GameObject bossPrefab;
-    [SerializeField]private GameObject enemyPrefab;
+    [SerializeField]private GameObject[] enemyPrefab;
     [SerializeField]private Transform[] enemySpawns;
 
     private Node node;
@@ -65,7 +65,7 @@ public class RoomsBehaviour : MonoBehaviour{
                 for(int i = 0; i < enemiesCant; i++){
                     pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
                     pos.z = GameManager.Instance.PlayerPos.z;
-                    enemies.Add(Instantiate(enemyPrefab, pos, transform.rotation));
+                    enemies.Add(Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], pos, transform.rotation));
                     enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
                     enemies[i].SetActive(false);
                 }

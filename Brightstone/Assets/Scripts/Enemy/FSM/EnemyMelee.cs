@@ -6,7 +6,7 @@ public class EnemyMelee : Enemy{
 
     protected override void Chasing(){
         if (IsOnAttackRange()){
-            enemyCombat.Attack();
+            enemyCombat.Attack(GetEnemyType());
             OnAttackRange();
             return;
         }
@@ -16,6 +16,7 @@ public class EnemyMelee : Enemy{
     
     protected override void Waiting(){
         if (IsOnChaseRange()){
+            EnemyBahaviour.Instance.WarriorAddedToChase(gameObject);
             OnChase();
             return;
         }
@@ -44,7 +45,7 @@ public class EnemyMelee : Enemy{
             return;
         }
 
-        enemyCombat.Attacking();
+        enemyCombat.Attacking(GetEnemyType());
     }
 
     protected override void Hurt(){

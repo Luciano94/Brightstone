@@ -1,57 +1,130 @@
 ﻿using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour{
+    enum AxisDirection{
+        Up,
+        UpRight,
+        Right,
+        DownRight,
+        Down,
+        DownLeft,
+        Left,
+        UpLeft,
+        Count
+    }
+
+
     [Header("Attack")]
     [SerializeField] private float animTime;
     [SerializeField] private float activeMoment;
+    [SerializeField] private float throwTime;
     [SerializeField] private GameObject weapon;
     [SerializeField] private EnemyAnimations enemyAnim;
     private BoxCollider2D weaponColl;
+    private LineRenderer lineRenderer;
     private float currentTime = 0.0f;
     private bool isAttacking = false;
     private bool active = false;
+    private bool throwed = false;
+    private GameObject throwableObject;
+    private float distFromOrigin;
 
     public bool IsAttacking{
         get { return isAttacking; }
     }
 
     public float AnimTime{
-        get{return animTime;}
+        get { return animTime; }
     }
 
-    private Vector2 diff;
+    private Vector3 diff;
     private Vector3 player;
 
     private void Start(){
         weaponColl = weapon.GetComponent<BoxCollider2D>();
+        lineRenderer = GetComponent<LineRenderer>();
+        if (lineRenderer){
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
+        }
+
         player = GameManager.Instance.PlayerPos;
 
-        GetComponent<EnemyStats>().OnHit.AddListener(Hit);
-        GetComponent<EnemyStats>().OnParried.AddListener(Parried);
-        GetComponent<EnemyStats>().OnLowHealth.AddListener(LowHealth);
-        GetComponent<EnemyStats>().OnDeath.AddListener(Death);
+        EnemyStats enemyStats = GetComponent<EnemyStats>();
+
+        enemyStats.OnHit.AddListener(Hit);
+        enemyStats.OnParried.AddListener(Parried);
+        enemyStats.OnLowHealth.AddListener(LowHealth);
+        enemyStats.OnDeath.AddListener(Death);
     }
 
-    public void Attack(){
+    public void Attack(EnemyType type){
         isAttacking = true;
         enemyAnim.SetAttack();
+
+        diff = player - transform.position;
+
+        if (type == EnemyType.Archer){
+            enemyAnim.Set8AxisDirection((int)GetDirection(diff));
+            lineRenderer.enabled = true;
+        }
     }
 
-    public void Attacking(){
+    public void Attacking(EnemyType type){
         currentTime += Time.deltaTime;
-        if(currentTime > activeMoment && !active){
-            weapon.SetActive(true);
-            weaponColl.enabled = true;
-            AudioManager.Instance.EnemyAttack();
-            active = true;
+        switch(type){
+            case EnemyType.Warrior:
+                if(currentTime > activeMoment && !active){
+                    weapon.SetActive(true);
+                    weaponColl.enabled = true;
+                    AudioManager.Instance.EnemyAttack();
+                    active = true;
+                }
+                if(currentTime > animTime){
+                    weapon.SetActive(false);
+                    weaponColl.enabled = false;
+                    isAttacking = false;
+                    currentTime = 0.0f;
+                    active = false;
+                }
+            break;
+
+            case EnemyType.Archer:
+                Vector3[] positions = new Vector3[2];
+                positions[0] = transform.position;
+                positions[1] = player;
+                lineRenderer.SetPositions(positions);
+
+                if (currentTime <= activeMoment){
+                    player = GameManager.Instance.PlayerPos;
+                    diff = player - transform.position;
+
+                    if (currentTime > 0.2f)
+                        enemyAnim.Set8AxisDirection((int)GetDirection(diff));
+                }
+                if (currentTime > activeMoment && !active){
+                    active = true;
+                }
+                if (currentTime > throwTime && !throwed){
+                    if (throwableObject){
+                        Arrow arrow = Instantiate(throwableObject, transform.position, transform.rotation, null).GetComponent<Arrow>();
+                        arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, GetAngle(diff));
+                        arrow.SetValues(GetComponent<EnemyStats>(), diff.normalized);
+                        enemyAnim.Throw();
+                    }
+                    throwed = true;
+                }
+                if (currentTime > animTime){
+                    isAttacking = false;
+                    currentTime = 0.0f;
+                    active = false;
+                    throwed = false;
+
+                    lineRenderer.enabled = false;
+                }
+            break;
         }
-        if(currentTime > animTime){
-            weapon.SetActive(false);
-            weaponColl.enabled = false;
-            isAttacking = false;
-            currentTime = 0.0f;
-            active = false;
-        }
+        
     }
 
     private void Hit(){
@@ -77,6 +150,9 @@ public class EnemyCombat : MonoBehaviour{
     private void ResetValues(){
         currentTime = 0.0f;
         active = false;
+        throwed = false;
+        if (lineRenderer)
+            lineRenderer.enabled = false;
         if (isAttacking){
             isAttacking = false;
             weapon.SetActive(false);
@@ -92,5 +168,44 @@ public class EnemyCombat : MonoBehaviour{
 
     public void Death(){
         enemyAnim.Death();
+    }
+
+    public void HasThrowableObject(GameObject throwableObject, float distFromOrigin){
+        this.throwableObject = throwableObject;
+        this.distFromOrigin = distFromOrigin;
+    }
+
+    private AxisDirection GetDirection(Vector3 distance){
+        float angle = Vector3.SignedAngle(distance, Vector3.up, Vector3.forward);
+        
+        if      (angle >  -22.5f && angle <=   22.5f)
+            return AxisDirection.Up;
+        else if (angle >   22.5f && angle <=   67.5f)
+            return AxisDirection.UpRight;
+        else if (angle >   67.5f && angle <=  112.5f)
+            return AxisDirection.Right;
+        else if (angle >  112.5f && angle <=  157.5f)
+            return AxisDirection.DownRight;
+        else if (angle >  157.5f || angle <= -157.5f)
+            return AxisDirection.Down;
+        else if (angle > -157.5f && angle <= -112.5f)
+            return AxisDirection.DownLeft;
+        else if (angle > -112.5f && angle <=  -67.5f)
+            return AxisDirection.Left;
+        else if (angle >  -67.5f && angle <=  -22.5f)
+            return AxisDirection.UpLeft;
+
+        return AxisDirection.Down;
+    }
+
+    private float GetAngle(Vector3 diff){
+        float angle = Vector3.SignedAngle(diff, Vector3.up, Vector3.forward);
+
+        if (angle >= 0.0f && angle <= 90.0f)
+            return 90.0f - angle;
+        else if (angle > 90.0f && angle <= 180.0f)
+            return 450.0f - angle;
+        else // if (angle < 0.0f && angle >= -180.0f)
+            return 90.0f + Mathf.Abs(angle);
     }
 }
