@@ -7,6 +7,7 @@ public class EnemyStats : MonoBehaviour{
     [SerializeField] Transform numPos;
     [SerializeField] Gradient lifeColor;
     [SerializeField] float lowHealthPerc;
+    [SerializeField] ShadowEffect shadow;
     private Color actualLifeColor;
     private float lifePercent;
     private float currentLife;
@@ -60,6 +61,7 @@ public class EnemyStats : MonoBehaviour{
                         }
                     }
                     OnDeath.Invoke();
+                    shadow.onDeath();
                     Destroy(gameObject);
                 }
             }

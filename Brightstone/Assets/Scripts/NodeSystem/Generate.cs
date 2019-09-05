@@ -204,7 +204,7 @@ public class Generate : MonoBehaviour{
             }
         }
         if(!haveBoss){
-            nodes[nodes.Count].SetBehaviour(NodeBehaviour.Boss);
+            nodes[nodes.Count-1].SetBehaviour(NodeBehaviour.Boss);
         }
     }
 #endregion

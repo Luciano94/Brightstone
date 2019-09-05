@@ -37,4 +37,8 @@ public class ShadowEffect : MonoBehaviour
             Debug.Log("algo no anda bien");
         }
     }
+
+    public void onDeath(){
+        shadowRenderer.color = Color.clear; 
+    }
 }
