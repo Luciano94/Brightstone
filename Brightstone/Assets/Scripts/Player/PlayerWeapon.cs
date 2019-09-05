@@ -9,11 +9,18 @@ public class PlayerWeapon : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.gameObject.layer == ENEMY_LAYER &&
-            GameManager.Instance.PlayerIsAttack){
-            EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
-            enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
-            GameManager.Instance.ShakerController.Shake();
+        if (GameManager.Instance.PlayerIsAttack){
+            switch(collision.tag){
+                case "Enemy":
+                    EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
+                    enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
+                    GameManager.Instance.ShakerController.Shake();
+                break;
+
+                case "Arrow":
+                    Destroy(collision.gameObject);
+                break;
+            }
         }
     }
 }

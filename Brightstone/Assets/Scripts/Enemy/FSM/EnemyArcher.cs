@@ -27,7 +27,7 @@ public class EnemyArcher : Enemy{
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
             enemyMovement.IsMovingForward = false;
-            enemyCombat.Attack();
+            enemyCombat.Attack(GetEnemyType());
             OnAttackRange();
             return;
         }

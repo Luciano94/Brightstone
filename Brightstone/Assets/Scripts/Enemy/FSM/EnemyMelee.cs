@@ -6,7 +6,7 @@ public class EnemyMelee : Enemy{
 
     protected override void Chasing(){
         if (IsOnAttackRange()){
-            enemyCombat.Attack();
+            enemyCombat.Attack(GetEnemyType());
             OnAttackRange();
             return;
         }

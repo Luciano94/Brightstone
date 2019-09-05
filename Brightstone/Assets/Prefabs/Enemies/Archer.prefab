@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 2813292159449229467}
   m_Layer: 14
   m_Name: Archer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de9fae38ebb9b54f8ca9bf46d043311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 6
   player: {x: 0, y: 0, z: 0}
   sword: {fileID: 4093589057318080765}
   eAnim: {fileID: 4914635166833622913}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animTime: 1.5
   activeMoment: 1
+  throwTime: 1.35
   weapon: {fileID: 8767666440214113500}
   enemyAnim: {fileID: 4914635166833622913}
 --- !u!114 &1592394171438056261
@@ -340,8 +341,8 @@ SpriteRenderer:
   m_SortingLayerID: -774315649
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e38df7c48876a2a4abb7063a8ea5d6a8, type: 3}
-  m_Color: {r: 0.5030705, g: 0.8018868, b: 0.57472837, a: 1}
+  m_Sprite: {fileID: 21300002, guid: 99433b2afd418a04a939a37fa83fab25, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -361,7 +362,7 @@ Animator:
   m_GameObject: {fileID: 7715005263628820139}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 25a616197ec901a4a958b4ff2c8ec8a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7c9bd2abd9c5a4f4e8f5ea12a268f5de, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

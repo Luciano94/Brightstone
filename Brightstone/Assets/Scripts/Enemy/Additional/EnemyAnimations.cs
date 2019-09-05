@@ -26,9 +26,17 @@ public class EnemyAnimations : MonoBehaviour{
         anim.SetInteger("Direction", dir);
     }
 
+    public void Set8AxisDirection(float dir){
+        anim.SetFloat("Dir", dir);
+    }
+
     public void SetAttack(){
         anim.SetTrigger("Attack");
         //anim.SetFloat("AnimSpeed", enemyCombat.AnimTime);
+    }
+
+    public void Throw(){
+        anim.SetTrigger("Throw");
     }
 
     public void Idle(){
