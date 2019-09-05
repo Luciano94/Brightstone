@@ -17,13 +17,27 @@ public class TextGenerator : MonoBehaviour{
         }
     }
 
-    [SerializeField] private Image backgroundImg;
+    [Header("Background")]
+    [SerializeField] private Animator anim;
+    
+    [Header("Space Txt")]
+    [SerializeField] private Text pressSpaceTxt;
+    [SerializeField] private float timeToAppear;
+
     private Text text;
-    private Animator anim;
+    private float timeLeft;
 
     private void Awake(){
         text = GetComponent<Text>();
-        anim = backgroundImg.GetComponent<Animator>();
+    }
+
+    private void Update(){
+        if (timeLeft > 0.0f && !pressSpaceTxt.enabled){
+            timeLeft -= Time.deltaTime;
+
+            if (timeLeft <= 0.0f)
+                pressSpaceTxt.enabled = true;
+        }
     }
 
     public void Show(string info){
@@ -32,9 +46,12 @@ public class TextGenerator : MonoBehaviour{
 
     public void Appear(){
         anim.SetTrigger("In");
+        timeLeft = timeToAppear;
     }
 
     public void Hide(){
         anim.SetTrigger("Out");
+        timeLeft = 0.0f;
+        pressSpaceTxt.enabled = false;
     }
 }
