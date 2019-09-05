@@ -21,11 +21,11 @@ public class EnemyCombat : MonoBehaviour{
     [SerializeField] private GameObject weapon;
     [SerializeField] private EnemyAnimations enemyAnim;
     private BoxCollider2D weaponColl;
+    private LineRenderer lineRenderer;
     private float currentTime = 0.0f;
     private bool isAttacking = false;
     private bool active = false;
     private bool throwed = false;
-    private bool drawGizmos = false;
     private GameObject throwableObject;
     private float distFromOrigin;
 
@@ -42,6 +42,12 @@ public class EnemyCombat : MonoBehaviour{
 
     private void Start(){
         weaponColl = weapon.GetComponent<BoxCollider2D>();
+        lineRenderer = GetComponent<LineRenderer>();
+        if (lineRenderer){
+            lineRenderer.startWidth = 0.1f;
+            lineRenderer.endWidth = 0.1f;
+        }
+
         player = GameManager.Instance.PlayerPos;
 
         EnemyStats enemyStats = GetComponent<EnemyStats>();
@@ -58,8 +64,10 @@ public class EnemyCombat : MonoBehaviour{
 
         diff = player - transform.position;
 
-        if (type == EnemyType.Archer)
+        if (type == EnemyType.Archer){
             enemyAnim.Set8AxisDirection((int)GetDirection(diff));
+            lineRenderer.enabled = true;
+        }
     }
 
     public void Attacking(EnemyType type){
@@ -82,8 +90,11 @@ public class EnemyCombat : MonoBehaviour{
             break;
 
             case EnemyType.Archer:
-                drawGizmos = true;
-                
+                Vector3[] positions = new Vector3[2];
+                positions[0] = transform.position;
+                positions[1] = player;
+                lineRenderer.SetPositions(positions);
+
                 if (currentTime <= activeMoment){
                     player = GameManager.Instance.PlayerPos;
                     diff = player - transform.position;
@@ -98,8 +109,6 @@ public class EnemyCombat : MonoBehaviour{
                     if (throwableObject){
                         Arrow arrow = Instantiate(throwableObject, transform.position, transform.rotation, null).GetComponent<Arrow>();
                         arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, GetAngle(diff));
-                        //arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, Vector2.Angle(transform.position, player));
-                        //arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, Vector3.SignedAngle(diff, -Vector3.up, Vector3.forward));
                         arrow.SetValues(GetComponent<EnemyStats>(), diff.normalized);
                         enemyAnim.Throw();
                     }
@@ -110,7 +119,8 @@ public class EnemyCombat : MonoBehaviour{
                     currentTime = 0.0f;
                     active = false;
                     throwed = false;
-                    drawGizmos = false;
+
+                    lineRenderer.enabled = false;
                 }
             break;
         }
@@ -140,6 +150,9 @@ public class EnemyCombat : MonoBehaviour{
     private void ResetValues(){
         currentTime = 0.0f;
         active = false;
+        throwed = false;
+        if (lineRenderer)
+            lineRenderer.enabled = false;
         if (isAttacking){
             isAttacking = false;
             weapon.SetActive(false);
@@ -160,19 +173,6 @@ public class EnemyCombat : MonoBehaviour{
     public void HasThrowableObject(GameObject throwableObject, float distFromOrigin){
         this.throwableObject = throwableObject;
         this.distFromOrigin = distFromOrigin;
-    }
-
-    private void OnDrawGizmos(){
-        if (drawGizmos){
-            RaycastHit hit;
-            Gizmos.color = Color.red;
-            Vector3 pos = transform.position;
-            pos.z = player.z;
-            if (Physics.Raycast(pos, diff, out hit, 15.0f))
-                Gizmos.DrawRay(pos, hit.point);
-            else
-                Gizmos.DrawRay(pos, diff.normalized * 15.0f);
-        }
     }
 
     private AxisDirection GetDirection(Vector3 distance){
