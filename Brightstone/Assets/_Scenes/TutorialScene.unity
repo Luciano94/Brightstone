@@ -1998,6 +1998,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemiesCant
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemyPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4569deca6e8a3c42aff7c6224d6e2c5, type: 3}
 --- !u!1 &137827455
@@ -8166,6 +8182,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemiesCant
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemyPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4569deca6e8a3c42aff7c6224d6e2c5, type: 3}
 --- !u!1 &786400171 stripped
@@ -8367,6 +8399,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: f41039bc2afe60749892deffba8e9544,
+        type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: f41039bc2afe60749892deffba8e9544,
+        type: 3}
+      propertyPath: enemiesCant
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: f41039bc2afe60749892deffba8e9544,
+        type: 3}
+      propertyPath: enemyPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41039bc2afe60749892deffba8e9544, type: 3}
 --- !u!1 &829937510
@@ -12367,9 +12415,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
         type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
       propertyPath: haveMarket
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemiesCant
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988793626787987311, guid: b4569deca6e8a3c42aff7c6224d6e2c5,
+        type: 3}
+      propertyPath: enemyPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4476885487686456383, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4569deca6e8a3c42aff7c6224d6e2c5, type: 3}
 --- !u!1 &1289133628
