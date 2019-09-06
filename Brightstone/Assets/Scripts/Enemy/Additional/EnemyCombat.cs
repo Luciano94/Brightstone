@@ -89,6 +89,24 @@ public class EnemyCombat : MonoBehaviour{
                 }
             break;
 
+            case EnemyType.Boss:
+                if (currentTime > activeMoment && !active)
+                {
+                    weapon.SetActive(true);
+                    weaponColl.enabled = true;
+                    AudioManager.Instance.EnemyAttack();
+                    active = true;
+                }
+                if (currentTime > animTime)
+                {
+                    weapon.SetActive(false);
+                    weaponColl.enabled = false;
+                    isAttacking = false;
+                    currentTime = 0.0f;
+                    active = false;
+                }
+                break;
+
             case EnemyType.Archer:
                 Vector3[] positions = new Vector3[2];
                 positions[0] = transform.position;
