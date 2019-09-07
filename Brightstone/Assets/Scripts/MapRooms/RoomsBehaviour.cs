@@ -55,12 +55,38 @@ public class RoomsBehaviour : MonoBehaviour{
         get{return node.Behaviour;}
     }
 
-    private void setRoom() {
-        enemies = new List<GameObject>();
+    public void setEnemiesRoom(){
+        if(node.Behaviour == NodeBehaviour.Normal){
+            int minEnemies = EnemyDirector.Instance.getMinDifficultValue();
+            int maxEnemies = EnemyDirector.Instance.getMaxDifficultValue();
+            enemiesCant = Random.Range(minEnemies, maxEnemies);
+            enemiesLeft = enemiesCant;
 
+            Debug.Log("[MIN CANT] " + minEnemies);
+            Debug.Log("[MAX CANT] " + maxEnemies);
+            Debug.Log("[ENEMY CANT] " + enemiesCant);
+
+
+            for(int i = 0; i < enemiesCant; i++){
+                pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
+                pos.z = GameManager.Instance.PlayerPos.z;
+                enemies.Add(Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], pos, transform.rotation));
+                enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
+                enemies[i].SetActive(false);
+            }
+            if(EnemyDirector.Instance.roomIndex == 0){
+                EnemyDirector.Instance.startFirstTime();
+            }else{
+                EnemyDirector.Instance.startControlTime(enemiesCant);
+            }
+        }
+    }
+
+    public void setRoom() {
+        enemies = new List<GameObject>();
         switch(node.Behaviour){
             case NodeBehaviour.Normal:
-                enemiesCant = Random.Range(1, enemiesCant);
+               /* enemiesCant = Random.Range(1, enemiesCant);
                 enemiesLeft = enemiesCant;
                 for(int i = 0; i < enemiesCant; i++){
                     pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
@@ -68,7 +94,7 @@ public class RoomsBehaviour : MonoBehaviour{
                     enemies.Add(Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], pos, transform.rotation));
                     enemies[i].GetComponent<EnemyStats>().MyRoom = gameObject;
                     enemies[i].SetActive(false);
-                }
+                }*/
             break;
             case NodeBehaviour.Market:
                 haveMarket = true;
@@ -127,6 +153,11 @@ public class RoomsBehaviour : MonoBehaviour{
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
             AudioManager.Instance.RoomFinished();
+            if(EnemyDirector.Instance.roomIndex == 0){
+                EnemyDirector.Instance.stopFirstTime();
+            }else{
+                EnemyDirector.Instance.stopControlTime();
+            }
         }
     }
 
