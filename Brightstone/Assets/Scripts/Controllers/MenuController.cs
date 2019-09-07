@@ -18,13 +18,15 @@ public class MenuController : MonoBehaviour{
     [SerializeField] Text actualLevelTxt;
 
     [SerializeField] Text tutorialReset;
+    [SerializeField] Animator MenuPanel;
     private int isTutorial;
     private float timeReset = -1.0f;
 
     private void Start(){
         //playButton.Select();
+        MenuPanel.Play("mainMenuIn");
     }
-
+    
     public void Play(){
         SceneManager.LoadScene(synopsisIndex);
     }

@@ -720,6 +720,28 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1288445415}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: mainMenuIn
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1580786357}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: statsMenuOut
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2089,6 +2111,7 @@ GameObject:
   - component: {fileID: 1288445412}
   - component: {fileID: 1288445414}
   - component: {fileID: 1288445413}
+  - component: {fileID: 1288445415}
   m_Layer: 5
   m_Name: MenuPanel
   m_TagString: Untagged
@@ -2115,8 +2138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36100003, y: 0.026777778}
   m_AnchorMax: {x: 0.639, y: 0.647}
-  m_AnchoredPosition: {x: 23, y: -3.3000183}
-  m_SizeDelta: {x: 286, y: -8.5}
+  m_AnchoredPosition: {x: 23, y: -716}
+  m_SizeDelta: {x: 286, y: -8.489999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288445413
 MonoBehaviour:
@@ -2155,6 +2178,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288445411}
   m_CullTransparentMesh: 0
+--- !u!95 &1288445415
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288445411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0ee35f522faa9e44be59de346b81529, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1374751718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +2745,7 @@ GameObject:
   - component: {fileID: 1580786354}
   - component: {fileID: 1580786356}
   - component: {fileID: 1580786355}
+  - component: {fileID: 1580786357}
   m_Layer: 5
   m_Name: StatsMenu
   m_TagString: Untagged
@@ -2731,7 +2774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.036458332, y: 0.042444445}
   m_AnchorMax: {x: 0.9646667, y: 0.9703334}
-  m_AnchoredPosition: {x: -0.99993896, y: -7.0200195}
+  m_AnchoredPosition: {x: -0.99993896, y: 1222}
   m_SizeDelta: {x: 137.99976, y: 77.880005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580786355
@@ -2771,6 +2814,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580786353}
   m_CullTransparentMesh: 0
+--- !u!95 &1580786357
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580786353}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b8977082991f2b40800c38ddc1de9d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1591202705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3191,7 @@ MonoBehaviour:
   roomsDiscoveredTxt: {fileID: 1421494246}
   actualLevelTxt: {fileID: 1898630218}
   tutorialReset: {fileID: 2088400197}
+  MenuPanel: {fileID: 1288445415}
 --- !u!4 &1660168832
 Transform:
   m_ObjectHideFlags: 0
@@ -4319,7 +4382,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1580786353}
         m_MethodName: SetActive
@@ -4341,6 +4404,28 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1288445415}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: mainMenuOut
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1580786357}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: statsMenuIn
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
