@@ -57,16 +57,9 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public void setEnemiesRoom(){
         if(node.Behaviour == NodeBehaviour.Normal){
-            int minEnemies = EnemyDirector.Instance.getMinDifficultValue();
-            int maxEnemies = EnemyDirector.Instance.getMaxDifficultValue();
-            enemiesCant = Random.Range(minEnemies, maxEnemies);
+            enemiesCant = Random.Range(EnemyDirector.Instance.getMinDifficultValue(), 
+                                        EnemyDirector.Instance.getMaxDifficultValue());
             enemiesLeft = enemiesCant;
-
-            Debug.Log("[MIN CANT] " + minEnemies);
-            Debug.Log("[MAX CANT] " + maxEnemies);
-            Debug.Log("[ENEMY CANT] " + enemiesCant);
-
-
             for(int i = 0; i < enemiesCant; i++){
                 pos = enemySpawns[Random.Range(0, enemySpawns.Length)].position;
                 pos.z = GameManager.Instance.PlayerPos.z;

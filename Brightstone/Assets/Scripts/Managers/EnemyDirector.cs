@@ -18,12 +18,12 @@ public class EnemyDirector : MonoBehaviour
     }
 
     private const int MIN_VALUE = 1;
-    private const int MAX_VALUE = 10; 
+    private const int MAX_VALUE = 5; 
 
 
     private int difficultSetting = 0;
-    public int minDifficultSetting;
-    public int maxDifficultSetting;
+    public int minDifficultSetting = MIN_VALUE;
+    public int maxDifficultSetting = MAX_VALUE;
 
     private float oneEnemyTime;
     private float controlTime;
@@ -56,7 +56,7 @@ public class EnemyDirector : MonoBehaviour
         if(roomIndex == 0){
             return 1;
         }
-        if(controlTime > (oneEnemyTime * controlEnemies)){
+        if(controlTime >= (oneEnemyTime * controlEnemies)){
             minDifficultSetting++;
         }else{
             minDifficultSetting --;
@@ -79,6 +79,6 @@ public class EnemyDirector : MonoBehaviour
         }
         maxDifficultSetting = (int)Mathf.Clamp(maxDifficultSetting, MAX_VALUE, difficultSetting*0.5f);
         difficultSetting = Mathf.Clamp(difficultSetting, minDifficultSetting, maxDifficultSetting);
-        return Random.Range(difficultSetting, difficultSetting+maxDifficultSetting);
+        return Random.Range(difficultSetting, roomIndex+maxDifficultSetting);
     }
 }
