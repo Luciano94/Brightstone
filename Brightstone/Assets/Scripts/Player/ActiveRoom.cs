@@ -35,6 +35,7 @@ public class ActiveRoom : MonoBehaviour
             roomsBehaviour.SetColorNode(activeColor);
         if(!roomsBehaviour.Complete){
             RunSaver.currentRun.data.roomsDiscovered++;
+            roomsBehaviour.setEnemiesRoom();
             roomsBehaviour.ActiveEnemies();
             doorManager.CloseDoors();
             AudioManager.Instance.RoomStart();
