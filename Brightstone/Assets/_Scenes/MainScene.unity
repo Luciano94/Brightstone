@@ -5849,7 +5849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674562991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -9193,6 +9193,7 @@ GameObject:
   - component: {fileID: 1133364625}
   - component: {fileID: 1133364624}
   - component: {fileID: 1133364626}
+  - component: {fileID: 1133364627}
   m_Layer: 5
   m_Name: OptionsPanel
   m_TagString: Untagged
@@ -9279,6 +9280,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls: {fileID: 1066239684}
   options: {fileID: 164910573}
+--- !u!95 &1133364627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133364622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e0f723af3a5ab14b8e869b7a3a7dd55, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1143670114
 GameObject:
   m_ObjectHideFlags: 0
