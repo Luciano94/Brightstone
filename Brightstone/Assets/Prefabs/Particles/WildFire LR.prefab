@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 198679442476388764}
   - component: {fileID: 199266017805695016}
   m_Layer: 0
-  m_Name: WildFire
+  m_Name: WildFire LR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956197547661106}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7088187, w: 0.70539075}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.57239, y: 1.6634, z: 4.973233}
   m_Children:
   - {fileID: 4856345040711628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.27801}
 --- !u!198 &198679442476388764
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -285,8 +285,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 3
+      scalar: 10
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -338,8 +338,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 1.5
+      scalar: 0.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -550,8 +550,8 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0
-      minScalar: 0
+      scalar: 1.5707963
+      minScalar: 1.5707963
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -602,8 +602,8 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     maxNumParticles: 600
-    size3D: 0
-    rotation3D: 0
+    size3D: 1
+    rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
