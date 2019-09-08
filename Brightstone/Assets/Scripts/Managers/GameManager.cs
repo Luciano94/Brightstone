@@ -80,6 +80,10 @@ public class GameManager : MonoBehaviour{
         get{return player.transform.position;}
     }
 
+    public void PlayBlood(){
+        playerCombat.PlayBlood();
+    }
+
     public PlayerStats playerSts{
         get{return player.GetComponent<PlayerStats>();}
     }
