@@ -2024,6 +2024,7 @@ GameObject:
   - component: {fileID: 166132892}
   - component: {fileID: 166132891}
   - component: {fileID: 166132890}
+  - component: {fileID: 166132893}
   m_Layer: 5
   m_Name: BossBarEmpty
   m_TagString: Untagged
@@ -2088,6 +2089,25 @@ RectTransform:
   m_AnchoredPosition: {x: 1.2, y: -457}
   m_SizeDelta: {x: 1217.6, y: 88.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &166132893
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166132889}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9713164088fb14438e9ff4d675b82b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &188438942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5628,6 +5648,7 @@ GameObject:
   - component: {fileID: 656810103}
   - component: {fileID: 656810105}
   - component: {fileID: 656810104}
+  - component: {fileID: 656810106}
   m_Layer: 5
   m_Name: MinMapBack
   m_TagString: Untagged
@@ -5690,6 +5711,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656810102}
   m_CullTransparentMesh: 0
+--- !u!95 &656810106
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656810102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8726d0657bd5ced4ba6b34222e24d126, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &661922286
 GameObject:
   m_ObjectHideFlags: 0
@@ -11552,6 +11592,7 @@ GameObject:
   - component: {fileID: 1426453977}
   - component: {fileID: 1426453979}
   - component: {fileID: 1426453978}
+  - component: {fileID: 1426453980}
   m_Layer: 5
   m_Name: StatPanel
   m_TagString: Untagged
@@ -11617,6 +11658,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426453976}
   m_CullTransparentMesh: 0
+--- !u!95 &1426453980
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426453976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77f7f3b4951fd4f43b8a95270eefff9e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1437241468
 GameObject:
   m_ObjectHideFlags: 0
@@ -14757,6 +14817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1782163475}
+  - component: {fileID: 1782163476}
   m_Layer: 5
   m_Name: LifeBar
   m_TagString: Untagged
@@ -14786,6 +14847,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!95 &1782163476
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782163474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43ee271ceda84c34da6505873ec301c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1814517083
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,6 +14877,7 @@ GameObject:
   - component: {fileID: 1814517084}
   - component: {fileID: 1814517086}
   - component: {fileID: 1814517085}
+  - component: {fileID: 1814517087}
   m_Layer: 5
   m_Name: MinMapFront
   m_TagString: Untagged
@@ -14858,6 +14939,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814517083}
   m_CullTransparentMesh: 0
+--- !u!95 &1814517087
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814517083}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8726d0657bd5ced4ba6b34222e24d126, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1827696316
 GameObject:
   m_ObjectHideFlags: 0
