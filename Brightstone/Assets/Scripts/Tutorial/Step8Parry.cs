@@ -9,6 +9,7 @@ public class Step8Parry : Step{
     [SerializeField] private string[] initialTexts;
     [SerializeField] private string[] middleTexts;
     [SerializeField] private Text counterTxt;
+    [SerializeField] private Animator cText;
     
     private PlayerStats playerStats;
     private int textIndex = 0;
@@ -43,7 +44,8 @@ public class Step8Parry : Step{
                     GameManager.Instance.EnablePlayer();
                     textIndex = 0;
                     firstDialogueFinished = true;
-                    counterTxt.enabled = true;
+                    counterTxt.gameObject.SetActive(true);
+                    //counterTxt.enabled = true;
                     counterTxt.text = "Parry count: 0/3";
                 }
             }
@@ -72,7 +74,8 @@ public class Step8Parry : Step{
                 else{
                     TextGenerator.Instance.Hide();
                     GameManager.Instance.EnablePlayer();
-                    counterTxt.enabled = false;
+                    cText.Play("parryTextOut");
+                    //counterTxt.enabled = false;
                 }
             }
             return;
