@@ -20601,6 +20601,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 786400178}
+    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: zCamera
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 619709238538826683, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: m_Enabled
@@ -20619,7 +20624,7 @@ PrefabInstance:
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
