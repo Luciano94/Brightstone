@@ -15724,8 +15724,7 @@ MonoBehaviour:
   initialTexts:
   - Now you are in a special room. Take a look at the minimap, this room has a different
     color.
-  - In this room you can upgrade your attributes spending your experience achieved
-    by killing enemies.
+  - In this room you can upgrade your attributes by spending your experience.
   - Try to get closer to the seller.
   middleTexts:
   - This is the marketplace.
@@ -15738,8 +15737,8 @@ MonoBehaviour:
   - I see you have enough experience to upgrade one attribute. Try to buy the one
     you want.
   finalTexts:
-  - Good job, here is the end of your training. Go to complete your mission.
-  - End the war once and for all.
+  - Good job, this is the end of your training. Go to complete your mission.
+  - End this war, once and for all.
   Market: {fileID: 1677186246}
   nodeExitRight: {fileID: 1420238775}
   lifeArrow: {fileID: 238990674}
@@ -15810,9 +15809,8 @@ MonoBehaviour:
   experience: {fileID: 1426453976}
   expArrow: {fileID: 1039184506}
   initialTexts:
-  - 'Look below the minimap, this is your experience, use it to buy attributes. '
-  - The experience is obtained for defeating enemies. Also you can use it to level
-    up.
+  - 'Look below the minimap, this is your experience. '
+  - The experience is obtained by defeating enemies. You can use it to level up.
   - Advance to the next room.
 --- !u!114 &1668400529
 MonoBehaviour:
@@ -15829,12 +15827,12 @@ MonoBehaviour:
   comboManager: {fileID: 2109171035}
   enemyStats: {fileID: 723008744}
   initialTexts:
-  - As you can see, this attacks have pros and cons. You will have to discover them
+  - As you can see, these attacks have pros and cons. You will have to discover them
     to defeat your enemies.
   - "Also, you can combine those attacks to make what we know as \u201Ccombos\u201D."
   - Try this simple combo (left click x4).
   middleTexts:
-  - Very well..
+  - Very well...
   - As you go on, you will discover better combos for every situation that you encounter.
 --- !u!114 &1668400530
 MonoBehaviour:
@@ -15885,7 +15883,7 @@ MonoBehaviour:
   minimapArrow: {fileID: 33250210}
   initialTexts:
   - In the upper right corner you have a minimap for orientation.
-  - Pay attention to specials rooms. They have a different color in the minimap.
+  - Pay attention to specials rooms. They have different colors in the minimap.
   - Go to the next room.
 --- !u!114 &1668400533
 MonoBehaviour:
@@ -15903,7 +15901,7 @@ MonoBehaviour:
   sprDestination: {fileID: 985372337}
   minDistance: 1.2
   initialTexts:
-  - For movement use WASD and the Mouse to aim.
+  - Use WASD to move, and the Mouse to aim.
   - Go to the point marked on the screen.
 --- !u!114 &1668400534
 MonoBehaviour:
@@ -15920,8 +15918,7 @@ MonoBehaviour:
   timeToStart: 1
   initialTexts:
   - Welcome to your training.
-  - "Here you can warm yourself up. We haven\u2019t had an emergency like this for
-    years."
+  - "Here you can warm up. We haven\u2019t had an emergency like this in years."
 --- !u!114 &1668400535
 MonoBehaviour:
   m_ObjectHideFlags: 0
