@@ -1,6 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+
+public enum WarriorStrategy{
+        Melee11,
+        Melee12,
+        Melee13,
+        Melee14,
+        Melee15,
+        Melee21,
+        Melee22,
+        Melee23,
+        Melee24,
+        Melee25,
+        Melee31,
+        Melee32,
+        Melee33,
+        Melee34,
+        Melee35,
+        Count
+    }
 
 public class EnemyBahaviour : MonoBehaviour{
     private static EnemyBahaviour instance;
@@ -16,17 +34,56 @@ public class EnemyBahaviour : MonoBehaviour{
         }
     }
 
+    [Header("Warrior Variables")]
     [SerializeField] private int maxWarriorsAtking;
+    [SerializeField] private float timePerWarriorAttack = 0.5f;
+    [SerializeField] private float timePerWarriorFastAttack = 0.25f;
+    
+    public WarriorStrategy warriorStrategy;
 
+    private int strategyIndex;
     private List<List<EnemyBase>> enemies;
+    private List<EnemyMelee> warriorsChasers;
+    private float warriorTimeLeft;
     private int enemiesLeft = 0;
-
     private bool enemyAdded = false;
 
-    void Awake(){
+    private void Awake(){
         enemies = new List<List<EnemyBase>>();
         for (int i = 0; i < (int)EnemyType.Count; i++)
             enemies.Add(new List<EnemyBase>());
+
+        warriorsChasers = new List<EnemyMelee>();
+    }
+
+    private void Update(){
+        if (warriorsChasers.Count > 0){
+            if (((int)warriorStrategy + 1) % 5 != 0){
+                warriorTimeLeft -= Time.deltaTime;
+
+                if (warriorTimeLeft <= 0.0f){
+                    if (warriorStrategy == WarriorStrategy.Melee32)
+                        warriorTimeLeft = timePerWarriorFastAttack;
+                    else
+                        warriorTimeLeft = timePerWarriorAttack;
+                    
+                    EnemyMelee warrior = warriorsChasers[0];
+                    warrior.isMyAttackingTurn = true;
+                    warriorsChasers.Remove(warrior);
+                    warriorsChasers.Add(warrior);
+
+                    int index = 0;
+                    foreach (EnemyMelee w in warriorsChasers){
+                        w.chaserIndex = index;
+                        index++;
+                    }
+                }
+            }
+            else{
+                foreach (EnemyBase warrior in warriorsChasers)
+                    warrior.isMyAttackingTurn = true;
+            }
+        }
     }
 
     private void LateUpdate(){
@@ -36,6 +93,7 @@ public class EnemyBahaviour : MonoBehaviour{
         }
     }
 
+#region StrategyManagement
     public void AddEnemyToBehaviour(GameObject enemy){
         enemiesLeft++;
         EnemyBase enemyBase = enemy.GetComponent<EnemyBase>();
@@ -48,12 +106,17 @@ public class EnemyBahaviour : MonoBehaviour{
         EnemyBase enemyBase = thisEnemy.GetComponent<EnemyBase>();
         enemies[(int)enemyBase.GetEnemyType()].Remove(enemyBase);
 
+        EnemyMelee melee = thisEnemy.GetComponent<EnemyMelee>();
+        if (melee) warriorsChasers.Remove(melee);
+
         enemiesLeft--;
 
         UpdateStrategy();
     }
     
     public void WarriorAddedToChase(GameObject thisEnemy){
+        warriorsChasers.Add(thisEnemy.GetComponent<EnemyMelee>());
+
         int index = 0;
         int countChasing = 0;
         int indexOfFarest = -1;
@@ -74,28 +137,52 @@ public class EnemyBahaviour : MonoBehaviour{
             index++;
         }
 
-        if (countChasing >= maxWarriorsAtking)
-            enemies[(int)EnemyType.Warrior][indexOfFarest].ForceToGuardState();
+        if (countChasing >= maxWarriorsAtking){
+            EnemyBase enemy = enemies[(int)EnemyType.Warrior][indexOfFarest];
+            enemy.isMyAttackingTurn = false;
+            enemy.ForceToGuardState();
+            warriorsChasers.Remove(enemy.GetComponent<EnemyMelee>());
+        }
+    }
+
+    public void ChangeStrategy(){
+        //strategyIndex = Random.Range(0, 5);
+        strategyIndex = 4;
+        warriorTimeLeft = 1.0f;
     }
 
     public void UpdateStrategy(){
         if(enemiesLeft > 0){
-            int countChasing = 0;
-            
-            foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior]){
-                if (!enemy.IsInGuardState()) countChasing++;
-                
-            }
-
-            if (countChasing < maxWarriorsAtking || countChasing == enemies[(int)EnemyType.Warrior].Count)
-                foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior])
-                    if (enemy.IsInGuardState() && countChasing < maxWarriorsAtking){
-                        countChasing++;
-                        enemy.Chase();
-                    }
-
-            if (enemies[(int)EnemyType.Boss].Count > 0)
-                enemies[(int)EnemyType.Boss][0].Chase();
+            UpdateWarriorsStrategy();
+            UpdateBossStrategy();
         }
     }
+
+    public void UpdateWarriorsStrategy(){
+        if (enemies[(int)EnemyType.Warrior].Count == 0) return;
+
+        int countChasing = 0;
+            
+        foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior])
+            if (!enemy.IsInGuardState())
+                countChasing++;
+
+        if (countChasing < maxWarriorsAtking || countChasing == enemies[(int)EnemyType.Warrior].Count)
+            foreach (EnemyBase enemy in enemies[(int)EnemyType.Warrior])
+                if (enemy.IsInGuardState() && countChasing < maxWarriorsAtking){
+                    countChasing++;
+                    enemy.Chase();
+                    warriorsChasers.Add(enemy.GetComponent<EnemyMelee>());
+                }
+
+        if (countChasing > 0)
+            warriorStrategy = (WarriorStrategy)(strategyIndex + 10);
+            //warriorStrategy = (WarriorStrategy)(strategyIndex * (countChasing - 1)); // Esto lo va a hacer cuando tenga todas las estrategias establecidas
+    }
+
+    public void UpdateBossStrategy(){
+        if (enemies[(int)EnemyType.Boss].Count > 0)
+                enemies[(int)EnemyType.Boss][0].Chase();
+    }
+#endregion
 }

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour{
-
     [SerializeField] private float speed;
     [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
@@ -34,29 +33,6 @@ public class EnemyMovement : MonoBehaviour{
     public void SurroundPlayer(){
         PrepareVariables();
 
-        // Here i have to move the Enemy around the Player, like making a circle, with a Delta of the distance
-        //  from the Player to the Enemy so that distance is not a perfect circle. Also, the speed of the
-        //  enemies is slower.
-
-        /*timeLeft -= Time.deltaTime;
-
-        if (timeLeft < 0.0f){
-            timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
-            movingRight = Random.value > 0.5f ? true : false;
-        }
-
-        Vector3 inverseDiff = transform.position - player;
-        float radio = inverseDiff.magnitude;
-
-        dir = inverseDiff.normalized;
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-        Vector3 extraPos = ((radio * Mathf.Cos(angle) * Vector3.right) + (radio * Mathf.Sin(angle) * Vector3.up)) * (movingRight ? 1.0f : -1.0f);
-
-        //transform.Translate(extraPos * surroundSpeed * Time.deltaTime);
-        transform.position += extraPos * surroundSpeed * Time.deltaTime;
-        */
-
         timeLeft -= Time.deltaTime;
 
         if (timeLeft < timeWaiting && moveDir != Vector2.zero){
@@ -74,6 +50,54 @@ public class EnemyMovement : MonoBehaviour{
         transform.Translate(moveDir * speed * speedSurrounding * Time.deltaTime);
 
         CheckForward();
+    }
+
+    public void ApplyMovementStrategy(int chaserIndex){
+        PrepareVariables();
+
+        switch(EnemyBahaviour.Instance.warriorStrategy){
+            // 1 enemy
+            case WarriorStrategy.Melee11:
+
+            break;
+            case WarriorStrategy.Melee12:
+
+            break;
+            case WarriorStrategy.Melee13:
+
+            break;
+            case WarriorStrategy.Melee14:
+
+            break;
+
+            // 2 enemies
+            case WarriorStrategy.Melee21:
+
+            break;
+            case WarriorStrategy.Melee22:
+
+            break;
+            case WarriorStrategy.Melee23:
+
+            break;
+            case WarriorStrategy.Melee24:
+
+            break;
+
+            // 3 enemies
+            case WarriorStrategy.Melee31:
+
+            break;
+            case WarriorStrategy.Melee32:
+
+            break;
+            case WarriorStrategy.Melee33:
+
+            break;
+            case WarriorStrategy.Melee34:
+
+            break;
+        }
     }
 
     public void Relocate(){

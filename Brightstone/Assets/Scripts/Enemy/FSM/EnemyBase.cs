@@ -14,6 +14,8 @@ public abstract class EnemyBase : MonoBehaviour{
     protected float timeLeftHit = 0.0f;
     protected float timeLeftParried = 0.0f;
     protected bool guardState = true;
+    
+    public bool isMyAttackingTurn = false;
 
     virtual protected void Awake(){
         enemyMovement   = GetComponent<EnemyMovement>();

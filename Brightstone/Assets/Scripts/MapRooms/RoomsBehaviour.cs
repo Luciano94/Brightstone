@@ -104,7 +104,8 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemy.SetActive(true);
                 EnemyBahaviour.Instance.AddEnemyToBehaviour(enemy);
             }
-            
+            EnemyBahaviour.Instance.ChangeStrategy();
+
             if(enemies[0].GetComponent<EnemyStats>().enemyType == EnemyType.Boss)
                 UIManager.Instance.InitBoss();
         }else{

@@ -11,6 +11,8 @@ public class EnemyArcher : Enemy{
     protected override void Awake(){
         base.Awake();
         enemyCombat.HasThrowableObject(arrow, distFromOrigin);
+
+        isMyAttackingTurn = true;
     }
 
     protected override void Chasing(){

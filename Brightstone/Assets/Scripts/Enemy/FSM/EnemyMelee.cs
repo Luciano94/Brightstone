@@ -4,14 +4,22 @@ public class EnemyMelee : Enemy{
     [Header("OwnVariables")]
     [SerializeField] private float maxDistSurround;
 
-    protected override void Chasing(){
-        if (IsOnAttackRange()){
-            enemyCombat.Attack(GetEnemyType());
-            OnAttackRange();
-            return;
-        }
+    public int chaserIndex;
 
-        enemyMovement.MoveToPlayer();
+    protected override void Chasing(){
+        if (isMyAttackingTurn){
+            if (IsOnAttackRange()){
+                isMyAttackingTurn = false;
+                enemyCombat.Attack(GetEnemyType());
+                OnAttackRange();
+                return;
+            }
+
+            enemyMovement.MoveToPlayer();
+        }
+        else{
+            enemyMovement.ApplyMovementStrategy(chaserIndex);
+        }
     }
     
     protected override void Waiting(){
@@ -21,10 +29,7 @@ public class EnemyMelee : Enemy{
             return;
         }
         
-        if (enemyMovement.DistToPlayer() > maxDistSurround)
-            enemyMovement.MoveToPlayer();
-        else
-            enemyMovement.SurroundPlayer();
+        enemyMovement.SurroundPlayer();
     }
 
     protected override void Relocating(){
