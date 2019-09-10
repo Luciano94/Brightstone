@@ -477,6 +477,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: animTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300433679770175938, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: activeMoment
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1592394171438056261, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
         type: 3}
       propertyPath: atkDmg

@@ -161,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.15, y: 1.15}
   m_EdgeRadius: 0
 --- !u!1001 &1563175809759403425
 PrefabInstance:
@@ -170,11 +170,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6276584207758848109}
     m_Modifications:
-    - target: {fileID: 2870243042395527382, guid: 46fd26a2fe5d4c246a501359d1c7b429,
-        type: 3}
-      propertyPath: m_Name
-      value: HitEffect
-      objectReference: {fileID: 0}
     - target: {fileID: 2864433740175657216, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -229,6 +224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870243042395527382, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
+      propertyPath: m_Name
+      value: HitEffect
       objectReference: {fileID: 0}
     - target: {fileID: 2671014377038200954, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}
@@ -285,21 +285,6 @@ PrefabInstance:
       propertyPath: EmissionModule.enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2671797294579241574, guid: 46fd26a2fe5d4c246a501359d1c7b429,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -774315649
-      objectReference: {fileID: 0}
-    - target: {fileID: 2671797294579241574, guid: 46fd26a2fe5d4c246a501359d1c7b429,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2671797294579241574, guid: 46fd26a2fe5d4c246a501359d1c7b429,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2697459478020109318, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}
       propertyPath: EmissionModule.enabled
@@ -316,6 +301,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2671779750988069760, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671797294579241574, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -774315649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671797294579241574, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671797294579241574, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
