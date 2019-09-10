@@ -18166,5 +18166,20 @@ PrefabInstance:
       propertyPath: combatCamera
       value: 
       objectReference: {fileID: 1212869758}
+    - target: {fileID: 3504043989431197147, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504681965966581447, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521472992990685607, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
