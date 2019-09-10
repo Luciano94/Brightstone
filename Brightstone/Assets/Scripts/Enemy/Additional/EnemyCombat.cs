@@ -67,6 +67,7 @@ public class EnemyCombat : MonoBehaviour{
         if (type == EnemyType.Archer){
             enemyAnim.Set8AxisDirection((int)GetDirection(diff));
             lineRenderer.enabled = true;
+            AudioManager.Instance.ArcherBowPull();
         }
     }
 
@@ -125,6 +126,7 @@ public class EnemyCombat : MonoBehaviour{
                 }
                 if (currentTime > throwTime && !throwed){
                     if (throwableObject){
+                        AudioManager.Instance.ArcherArrowThrow();
                         Arrow arrow = Instantiate(throwableObject, transform.position, transform.rotation, null).GetComponent<Arrow>();
                         arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, GetAngle(diff));
                         arrow.SetValues(GetComponent<EnemyStats>(), diff.normalized);

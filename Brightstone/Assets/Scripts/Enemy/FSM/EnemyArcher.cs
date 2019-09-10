@@ -25,7 +25,7 @@ public class EnemyArcher : Enemy{
 
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0.0f){
+        if (timeLeft <= 0.0f && IsOnAttackRange()){
             enemyMovement.IsMovingForward = false;
             enemyCombat.Attack(GetEnemyType());
             OnAttackRange();
