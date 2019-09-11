@@ -5182,10 +5182,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "                                Producer, Developer.\n                          UI/UX
-    Artist.\n                        2D Artist.\n                           Art Director,
-    3D Artist.\n                          Developer.\n                         Tech
-    Lead, Developer.\n                                Game Designer, Developer."
+  m_Text: "                                 Producer, Developer.\n                           UI/UX
+    Artist.\n                         2D Artist.\n                            Art
+    Director, 3D Artist.\n                           Developer.\n                          Tech
+    Lead, Developer.\n                                 Game Designer, Developer."
 --- !u!222 &2098723830
 CanvasRenderer:
   m_ObjectHideFlags: 0
