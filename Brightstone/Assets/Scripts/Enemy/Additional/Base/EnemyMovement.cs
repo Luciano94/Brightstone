@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour{
         CheckForward();
     }
 
-    public void ApplyMovementStrategy(int chaserIndex){
+    virtual public void ApplyMovementStrategy(int chaserIndex){
         PrepareVariables();
 
         switch(EnemyBahaviour.Instance.warriorStrategy){
@@ -146,7 +146,7 @@ public class EnemyMovement : MonoBehaviour{
         sword.transform.rotation = Quaternion.Euler(0, 0, angle + 90.0f);
     }
 
-    private void PrepareVariables(){
+    protected void PrepareVariables(){
         player = GameManager.Instance.PlayerPos;
         diff = player - transform.position;
 

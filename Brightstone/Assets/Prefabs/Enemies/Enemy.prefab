@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 3142141347888250692}
   - component: {fileID: 5935143177351948023}
   - component: {fileID: 6152008538549597274}
-  - component: {fileID: 5300433679770175938}
+  - component: {fileID: 3685809029904152593}
   - component: {fileID: 1592394171438056261}
   - component: {fileID: 5214262294038708786}
   - component: {fileID: 2813292159449229467}
@@ -117,7 +117,9 @@ MonoBehaviour:
   timeRelocating: 1
   timeParalyzedForHit: 0.2
   timeParalyzedForParry: 2
+  isMyAttackingTurn: 0
   maxDistSurround: 20
+  chaserIndex: 0
 --- !u!114 &6152008538549597274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ MonoBehaviour:
   timeSurrounding: 1.5
   deltaTimeSurrounding: 0.6
   timeWaiting: 1
---- !u!114 &5300433679770175938
+--- !u!114 &3685809029904152593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,12 +149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4476885487686456383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cba4d0535b041f459f045629ef515b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8732e3b7aa6a28d459ade8feba1a5110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animTime: 0.5
   activeMoment: 0.25
-  throwTime: 0
   weapon: {fileID: 8767666440214113500}
   enemyAnim: {fileID: 4914635166833622913}
 --- !u!114 &1592394171438056261
@@ -383,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4147003143787726484}
-  enemyCombat: {fileID: 5300433679770175938}
+  enemyCombat: {fileID: 3685809029904152593}
   hitColor: {r: 1, g: 0.69803923, b: 0.69803923, a: 1}
 --- !u!114 &3139005742749411362
 MonoBehaviour:
@@ -445,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 1592394171438056261}
-  enemyCombat: {fileID: 5300433679770175938}
+  enemyCombat: {fileID: 3685809029904152593}
 --- !u!61 &1486178626
 BoxCollider2D:
   m_ObjectHideFlags: 0

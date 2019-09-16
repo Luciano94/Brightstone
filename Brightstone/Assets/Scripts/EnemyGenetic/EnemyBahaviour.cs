@@ -43,7 +43,7 @@ public class EnemyBahaviour : MonoBehaviour{
 
     private int strategyIndex;
     private List<List<EnemyBase>> enemies;
-    private List<EnemyMelee> warriorsChasers;
+    private List<EnemyWarrior> warriorsChasers;
     private float warriorTimeLeft;
     private int enemiesLeft = 0;
     private bool enemyAdded = false;
@@ -53,7 +53,7 @@ public class EnemyBahaviour : MonoBehaviour{
         for (int i = 0; i < (int)EnemyType.Count; i++)
             enemies.Add(new List<EnemyBase>());
 
-        warriorsChasers = new List<EnemyMelee>();
+        warriorsChasers = new List<EnemyWarrior>();
     }
 
     private void Update(){
@@ -67,13 +67,13 @@ public class EnemyBahaviour : MonoBehaviour{
                     else
                         warriorTimeLeft = timePerWarriorAttack;
                     
-                    EnemyMelee warrior = warriorsChasers[0];
+                    /*EnemyMelee warrior = warriorsChasers[0]; // Estas 4 lineas laguean todo :c
                     warrior.isMyAttackingTurn = true;
                     warriorsChasers.Remove(warrior);
-                    warriorsChasers.Add(warrior);
+                    warriorsChasers.Add(warrior);*/
 
                     int index = 0;
-                    foreach (EnemyMelee w in warriorsChasers){
+                    foreach (EnemyWarrior w in warriorsChasers){
                         w.chaserIndex = index;
                         index++;
                     }
@@ -106,7 +106,7 @@ public class EnemyBahaviour : MonoBehaviour{
         EnemyBase enemyBase = thisEnemy.GetComponent<EnemyBase>();
         enemies[(int)enemyBase.GetEnemyType()].Remove(enemyBase);
 
-        EnemyMelee melee = thisEnemy.GetComponent<EnemyMelee>();
+        EnemyWarrior melee = thisEnemy.GetComponent<EnemyWarrior>();
         if (melee) warriorsChasers.Remove(melee);
 
         enemiesLeft--;
@@ -115,7 +115,7 @@ public class EnemyBahaviour : MonoBehaviour{
     }
     
     public void WarriorAddedToChase(GameObject thisEnemy){
-        warriorsChasers.Add(thisEnemy.GetComponent<EnemyMelee>());
+        warriorsChasers.Add(thisEnemy.GetComponent<EnemyWarrior>());
 
         int index = 0;
         int countChasing = 0;
@@ -141,7 +141,7 @@ public class EnemyBahaviour : MonoBehaviour{
             EnemyBase enemy = enemies[(int)EnemyType.Warrior][indexOfFarest];
             enemy.isMyAttackingTurn = false;
             enemy.ForceToGuardState();
-            warriorsChasers.Remove(enemy.GetComponent<EnemyMelee>());
+            warriorsChasers.Remove(enemy.GetComponent<EnemyWarrior>());
         }
     }
 
@@ -172,7 +172,7 @@ public class EnemyBahaviour : MonoBehaviour{
                 if (enemy.IsInGuardState() && countChasing < maxWarriorsAtking){
                     countChasing++;
                     enemy.Chase();
-                    warriorsChasers.Add(enemy.GetComponent<EnemyMelee>());
+                    warriorsChasers.Add(enemy.GetComponent<EnemyWarrior>());
                 }
 
         if (countChasing > 0)

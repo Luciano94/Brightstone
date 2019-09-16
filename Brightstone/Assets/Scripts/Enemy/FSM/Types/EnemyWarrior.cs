@@ -1,51 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyArcher : Enemy{
-    [Header("OwnVariables")]
-    [SerializeField] private GameObject arrow;
-    [SerializeField] private float distFromOrigin;
-    [SerializeField] private float minDistanceToMoveBack;
+public class EnemyWarrior : Enemy{
+    [Header("Warrior")]
+    [SerializeField] private float maxDistSurround;
 
-    protected override void Awake(){
-        base.Awake();
-        enemyCombat.HasThrowableObject(arrow, distFromOrigin);
-
-        isMyAttackingTurn = true;
-    }
+    public int chaserIndex;
 
     protected override void Chasing(){
-        timeLeft = timeRelocating;
-        OnForceToRelocate();
+        if (isMyAttackingTurn){
+            if (IsOnAttackRange()){
+                isMyAttackingTurn = false;
+                enemyCombat.Attack();
+                OnAttackRange();
+                return;
+            }
+
+            enemyMovement.MoveToPlayer();
+        }
+        else{
+            enemyMovement.ApplyMovementStrategy(chaserIndex);
+        }
     }
     
     protected override void Waiting(){
-        timeLeft = timeRelocating;
-        OnForceToRelocate();
+        if (IsOnChaseRange()){
+            EnemyBahaviour.Instance.WarriorAddedToChase(gameObject);
+            OnChase();
+            return;
+        }
+        
+        enemyMovement.SurroundPlayer();
     }
 
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
             enemyMovement.IsMovingForward = false;
-            enemyCombat.Attack(GetEnemyType());
-            OnAttackRange();
+            OnChase();
             return;
         }
         
-        enemyMovement.RelocateArcher(minDistanceToMoveBack);
+        enemyMovement.Relocate();
     }
 
     protected override void Attacking(){
         if (!enemyCombat.IsAttacking){
             timeLeft = timeRelocating;
-            enemyMovement.RandomizeDirection();
             OnRelocate();
             return;
         }
 
-        enemyCombat.Attacking(GetEnemyType());
+        enemyCombat.Attacking();
     }
 
     protected override void Hurt(){

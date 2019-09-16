@@ -1,56 +1,46 @@
 ﻿using UnityEngine;
 
-public class EnemyMelee : Enemy{
-    [Header("OwnVariables")]
-    [SerializeField] private float maxDistSurround;
+public class EnemyArcher : Enemy{
+    [Header("Archer")]
+    [SerializeField] private float minDistanceToMoveBack;
 
-    public int chaserIndex;
+    protected override void Awake(){
+        base.Awake();
+
+        isMyAttackingTurn = true;
+    }
 
     protected override void Chasing(){
-        if (isMyAttackingTurn){
-            if (IsOnAttackRange()){
-                isMyAttackingTurn = false;
-                enemyCombat.Attack(GetEnemyType());
-                OnAttackRange();
-                return;
-            }
-
-            enemyMovement.MoveToPlayer();
-        }
-        else{
-            enemyMovement.ApplyMovementStrategy(chaserIndex);
-        }
+        timeLeft = timeRelocating;
+        OnForceToRelocate();
     }
     
     protected override void Waiting(){
-        if (IsOnChaseRange()){
-            EnemyBahaviour.Instance.WarriorAddedToChase(gameObject);
-            OnChase();
-            return;
-        }
-        
-        enemyMovement.SurroundPlayer();
+        timeLeft = timeRelocating;
+        OnForceToRelocate();
     }
 
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
             enemyMovement.IsMovingForward = false;
-            OnChase();
+            enemyCombat.Attack();
+            OnAttackRange();
             return;
         }
         
-        enemyMovement.Relocate();
+        enemyMovement.RelocateArcher(minDistanceToMoveBack);
     }
 
     protected override void Attacking(){
         if (!enemyCombat.IsAttacking){
             timeLeft = timeRelocating;
+            enemyMovement.RandomizeDirection();
             OnRelocate();
             return;
         }
 
-        enemyCombat.Attacking(GetEnemyType());
+        enemyCombat.Attacking();
     }
 
     protected override void Hurt(){

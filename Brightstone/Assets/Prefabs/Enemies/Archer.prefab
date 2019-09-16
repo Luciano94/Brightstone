@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 3142141347888250692}
   - component: {fileID: 6393729019969459152}
   - component: {fileID: 6152008538549597274}
-  - component: {fileID: 5300433679770175938}
+  - component: {fileID: 60054238736155625}
   - component: {fileID: 1592394171438056261}
   - component: {fileID: 5214262294038708786}
   - component: {fileID: 2813292159449229467}
@@ -119,8 +119,6 @@ MonoBehaviour:
   timeParalyzedForHit: 0.2
   timeParalyzedForParry: 0
   isMyAttackingTurn: 0
-  arrow: {fileID: 1874162912529544804, guid: fdae18e3fafbae643bd66ecee1488041, type: 3}
-  distFromOrigin: 0.5
   minDistanceToMoveBack: 10
 --- !u!114 &6152008538549597274
 MonoBehaviour:
@@ -142,7 +140,7 @@ MonoBehaviour:
   timeSurrounding: 1.5
   deltaTimeSurrounding: 0.6
   timeWaiting: 1
---- !u!114 &5300433679770175938
+--- !u!114 &60054238736155625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,14 +149,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4476885487686456383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cba4d0535b041f459f045629ef515b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 57c016652d7bcbd48a1ad65219641d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animTime: 1.5
   activeMoment: 1
-  throwTime: 1.35
   weapon: {fileID: 8767666440214113500}
   enemyAnim: {fileID: 4914635166833622913}
+  throwableObject: {fileID: 1874162912529544804, guid: fdae18e3fafbae643bd66ecee1488041,
+    type: 3}
+  distFromOrigin: 0.5
+  throwTime: 1.35
 --- !u!114 &1592394171438056261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4147003143787726484}
-  enemyCombat: {fileID: 5300433679770175938}
+  enemyCombat: {fileID: 60054238736155625}
   hitColor: {r: 1, g: 0.69803923, b: 0.69803923, a: 1}
 --- !u!114 &3139005742749411362
 MonoBehaviour:
@@ -544,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 1592394171438056261}
-  enemyCombat: {fileID: 5300433679770175938}
+  enemyCombat: {fileID: 60054238736155625}
 --- !u!61 &1486178626
 BoxCollider2D:
   m_ObjectHideFlags: 0
