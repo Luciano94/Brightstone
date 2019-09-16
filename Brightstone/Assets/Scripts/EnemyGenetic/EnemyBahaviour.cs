@@ -102,6 +102,13 @@ public class EnemyBahaviour : MonoBehaviour{
         enemyAdded = true;
     }
 
+    public void WarriorOnLowHealth(EnemyWarrior thisEnemy){
+        if (enemies[(int)EnemyType.Warrior].Count <= 3) return;
+
+        thisEnemy.isMyAttackingTurn = false;
+        warriorsChasers.Remove(thisEnemy);
+    }
+
     public void Death(GameObject thisEnemy){
         EnemyBase enemyBase = thisEnemy.GetComponent<EnemyBase>();
         enemies[(int)enemyBase.GetEnemyType()].Remove(enemyBase);

@@ -13,7 +13,7 @@ public class ArcherCombat : EnemyCombat{
     override public void Attack(){
         base.Attack();
 
-        enemyAnim.Set8AxisDirection((int)GetDirection(diff));
+        enemyAnim.Set8AxisDirection((int)Calculations.GetDirection(diff));
         lineRenderer.enabled = true;
     }
 
@@ -30,7 +30,7 @@ public class ArcherCombat : EnemyCombat{
             diff = player - transform.position;
 
             if (currentTime > 0.2f)
-                enemyAnim.Set8AxisDirection((int)GetDirection(diff));
+                enemyAnim.Set8AxisDirection((int)Calculations.GetDirection(diff));
         }
         if (currentTime > activeMoment && !active){
             active = true;
@@ -38,7 +38,7 @@ public class ArcherCombat : EnemyCombat{
         if (currentTime > throwTime && !throwed){
             if (throwableObject){
                 Arrow arrow = Instantiate(throwableObject, transform.position, transform.rotation, null).GetComponent<Arrow>();
-                arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, GetAngle(diff));
+                arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, Calculations.GetAngle(diff));
                 arrow.SetValues(GetComponent<EnemyStats>(), diff.normalized);
                 enemyAnim.Throw();
             }

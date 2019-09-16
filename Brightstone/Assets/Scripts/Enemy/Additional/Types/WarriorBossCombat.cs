@@ -10,15 +10,13 @@ public class WarriorBossCombat : EnemyCombat{
     override public void Attacking(){
         base.Attacking();
 
-        if (currentTime > activeMoment && !active)
-        {
+        if (currentTime > activeMoment && !active){
             weapon.SetActive(true);
             weaponColl.enabled = true;
             AudioManager.Instance.EnemyAttack();
             active = true;
         }
-        if (currentTime > animTime)
-        {
+        if (currentTime > animTime){
             weapon.SetActive(false);
             weaponColl.enabled = false;
             isAttacking = false;

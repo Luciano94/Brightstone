@@ -2,13 +2,13 @@
 
 public class EnemyMovement : MonoBehaviour{
     [SerializeField] private float speed;
-    [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
     [SerializeField] private EnemyAnimations eAnim;
     [SerializeField] private float speedSurrounding;
     [SerializeField] private float timeSurrounding;
     [SerializeField] private float deltaTimeSurrounding;
     [SerializeField] private float timeWaiting;
+    private Vector3 objective;
     private Vector3 diff;
     private Vector2 playerDir;
     private Vector2 moveDir;
@@ -17,21 +17,26 @@ public class EnemyMovement : MonoBehaviour{
     private bool movingRight = false;
 
     private void Start(){
-        player = GameManager.Instance.PlayerPos;
-
         StartSurrounding(); // Temporary here
     }
 
     public void MoveToPlayer(){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
         transform.Translate(diff.normalized * speed * Time.deltaTime);
 
         Rotation();
     }
 
+    public void MoveToPlayerAngle(float angle, float distFromPlayer){
+        Vector3 vForce = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right; // Pensar la posicion con esta info y maybe algo mas
+        PrepareVariables(GameManager.Instance.PlayerPos);
+
+        transform.Translate(diff.normalized * speed * Time.deltaTime);
+    }
+
     public void SurroundPlayer(){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
         timeLeft -= Time.deltaTime;
 
@@ -53,55 +58,11 @@ public class EnemyMovement : MonoBehaviour{
     }
 
     virtual public void ApplyMovementStrategy(int chaserIndex){
-        PrepareVariables();
-
-        switch(EnemyBahaviour.Instance.warriorStrategy){
-            // 1 enemy
-            case WarriorStrategy.Melee11:
-
-            break;
-            case WarriorStrategy.Melee12:
-
-            break;
-            case WarriorStrategy.Melee13:
-
-            break;
-            case WarriorStrategy.Melee14:
-
-            break;
-
-            // 2 enemies
-            case WarriorStrategy.Melee21:
-
-            break;
-            case WarriorStrategy.Melee22:
-
-            break;
-            case WarriorStrategy.Melee23:
-
-            break;
-            case WarriorStrategy.Melee24:
-
-            break;
-
-            // 3 enemies
-            case WarriorStrategy.Melee31:
-
-            break;
-            case WarriorStrategy.Melee32:
-
-            break;
-            case WarriorStrategy.Melee33:
-
-            break;
-            case WarriorStrategy.Melee34:
-
-            break;
-        }
+        PrepareVariables(GameManager.Instance.PlayerPos);
     }
 
     public void Relocate(){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
         transform.Translate(-diff.normalized * speed * 0.4f  * Time.deltaTime);
 
@@ -109,7 +70,7 @@ public class EnemyMovement : MonoBehaviour{
     }
 
     public void RelocateArcher(float minDistanceToMoveBack){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
         Vector2 dir = diff.normalized;
 
@@ -146,11 +107,11 @@ public class EnemyMovement : MonoBehaviour{
         sword.transform.rotation = Quaternion.Euler(0, 0, angle + 90.0f);
     }
 
-    protected void PrepareVariables(){
-        player = GameManager.Instance.PlayerPos;
-        diff = player - transform.position;
+    public void PrepareVariables(Vector3 objective){
+        this.objective = objective;
+        diff = objective - transform.position;
 
-        if(player.x > transform.position.x)
+        if(objective.x > transform.position.x)
             eAnim.SetDirection(0);
         else
             eAnim.SetDirection(1);
@@ -186,7 +147,7 @@ public class EnemyMovement : MonoBehaviour{
     }
 
     private void CheckForward(){
-        if(player.x > transform.position.x){
+        if(objective.x > transform.position.x){
             if (moveDir.x > 0.0f)
                 IsMovingForward = true;
             else

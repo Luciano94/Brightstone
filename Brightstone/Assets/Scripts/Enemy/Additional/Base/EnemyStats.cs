@@ -71,8 +71,10 @@ public class EnemyStats : MonoBehaviour{
     private void LifePercent(float value){
         if (currentLife > 0){
             lifePercent = currentLife / life;
-            if (lifePercent <= lowHealthPerc)
+            if (lifePercent <= lowHealthPerc){
+                // Acá podrías llamar a la función del EnemyBehaviour
                 OnLowHealth.Invoke();
+            }
         }
         else
             lifePercent = 0.01f;

@@ -147,6 +147,7 @@ public class Enemy : EnemyBase{
 
     protected override void OnHit(){
         enemyMovement.IsMovingForward = true;
+        enemyMovement.PrepareVariables(playerPos);
         if(fsm.GetState() == (int)States.Wait)
             enemyMovement.StartChasing();
         fsm.SendEvent((int)Events.OnHit);

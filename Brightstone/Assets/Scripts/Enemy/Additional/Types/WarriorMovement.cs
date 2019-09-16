@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WarriorMovement : EnemyMovement{
     override public void ApplyMovementStrategy(int chaserIndex){
-        PrepareVariables();
+        base.ApplyMovementStrategy(chaserIndex);
 
         switch(EnemyBahaviour.Instance.warriorStrategy){
             // 1 enemy
