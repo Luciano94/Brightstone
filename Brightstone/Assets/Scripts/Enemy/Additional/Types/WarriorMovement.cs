@@ -8,44 +8,47 @@ public class WarriorMovement : EnemyMovement{
 
         switch(EnemyBahaviour.Instance.warriorStrategy){
             // 1 enemy
-            case WarriorStrategy.Melee11:
+            case Strategies.Melee11:
 
             break;
-            case WarriorStrategy.Melee12:
+            case Strategies.Melee12:
 
             break;
-            case WarriorStrategy.Melee13:
+            case Strategies.Melee13:
 
             break;
-            case WarriorStrategy.Melee14:
+            case Strategies.Melee14:
 
             break;
 
             // 2 enemies
-            case WarriorStrategy.Melee21:
+            case Strategies.Melee21:
 
             break;
-            case WarriorStrategy.Melee22:
+            case Strategies.Melee22:
 
             break;
-            case WarriorStrategy.Melee23:
+            case Strategies.Melee23:
 
             break;
-            case WarriorStrategy.Melee24:
+            case Strategies.Melee24:
 
             break;
 
             // 3 enemies
-            case WarriorStrategy.Melee31:
+            case Strategies.Melee31:
 
             break;
-            case WarriorStrategy.Melee32:
+            case Strategies.Melee32:
 
             break;
-            case WarriorStrategy.Melee33:
+            case Strategies.Melee33:
 
             break;
-            case WarriorStrategy.Melee34:
+            case Strategies.Melee34:
+
+            break;
+            default:
 
             break;
         }

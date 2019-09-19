@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+#region "Old Code"
+/*
 public enum WarriorStrategy{
         Melee11,
         Melee12,
@@ -67,10 +68,10 @@ public class EnemyBahaviour : MonoBehaviour{
                     else
                         warriorTimeLeft = timePerWarriorAttack;
                     
-                    /*EnemyMelee warrior = warriorsChasers[0]; // Estas 4 lineas laguean todo :c
-                    warrior.isMyAttackingTurn = true;
-                    warriorsChasers.Remove(warrior);
-                    warriorsChasers.Add(warrior);*/
+                    //EnemyMelee warrior = warriorsChasers[0]; // Estas 4 lineas laguean todo :c
+                    //warrior.isMyAttackingTurn = true;
+                    //warriorsChasers.Remove(warrior);
+                    //warriorsChasers.Add(warrior);
 
                     int index = 0;
                     foreach (EnemyWarrior w in warriorsChasers){
@@ -192,4 +193,64 @@ public class EnemyBahaviour : MonoBehaviour{
                 enemies[(int)EnemyType.Boss][0].Chase();
     }
 #endregion
+}*/
+#endregion
+#region "New code"
+public enum Strategies{
+    None,
+    Melee11,
+    Melee12,
+    Melee13,
+    Melee14,
+    Melee15,
+    Melee21,
+    Melee22,
+    Melee23,
+    Melee24,
+    Melee25,
+    Melee31,
+    Melee32,
+    Melee33,
+    Melee34,
+    Melee35,
+    Count
 }
+
+public class EnemyBahaviour : MonoBehaviour{
+    private static EnemyBahaviour instance;
+
+    public static EnemyBahaviour Instance{
+        get {
+            instance = FindObjectOfType<EnemyBahaviour>();
+            if(instance == null) {
+                GameObject go = new GameObject("Managers");
+                instance = go.AddComponent<EnemyBahaviour>();
+            }
+            return instance;
+        }
+    }
+
+    #region "Placeholders to be deleted"
+    public Strategies warriorStrategy{
+        get{ 
+            Debug.LogError("This is old code that should not be used");
+            return Strategies.None;
+        }
+    }
+    public void WarriorAddedToChase(GameObject go){
+        Debug.LogError("This is old code that should not be used");
+    }
+    public void AddEnemyToBehaviour(GameObject go){
+        Debug.LogError("This is old code that should not be used");
+    }
+    public void ChangeStrategy(){
+        Debug.LogError("This is old code that should not be used");
+    }
+    public void Death(GameObject go){
+        Debug.LogError("This is old code that should not be used");
+    }
+    #endregion
+
+
+}
+#endregion
