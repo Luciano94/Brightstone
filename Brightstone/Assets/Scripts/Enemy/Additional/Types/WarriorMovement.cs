@@ -48,6 +48,9 @@ public class WarriorMovement : EnemyMovement{
             case WarriorStrategy.Melee34:
 
             break;
+            default:
+            
+            break;
         }
     }
 }
