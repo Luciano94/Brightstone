@@ -51,9 +51,6 @@ public class WarriorMovement : EnemyMovement{
             default:
 
             break;
-            default:
-            
-            break;
         }
     }
 }
