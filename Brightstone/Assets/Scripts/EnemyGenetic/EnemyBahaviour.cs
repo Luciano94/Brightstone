@@ -231,6 +231,8 @@ public class EnemyBahaviour : MonoBehaviour{
     }
 
     #region "Placeholders to be deleted"
+    //Code without references should be deleted
+    //Code with references to this code should be reworked to not use it
     public Strategies warriorStrategy{
         get{ 
             Debug.LogError("This is old code that should not be used");
