@@ -28,11 +28,12 @@ public class EnemyMovement : MonoBehaviour{
         Rotation();
     }
 
-    public void MoveToPlayerAngle(float angle, float distFromPlayer){
-        Vector3 vForce = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right; // Pensar la posicion con esta info y maybe algo mas
-        PrepareVariables(GameManager.Instance.PlayerPos);
+    public void MoveToObjective(Vector3 pos){
+        PrepareVariables(pos);
 
         transform.Translate(diff.normalized * speed * Time.deltaTime);
+
+        Rotation();
     }
 
     public void SurroundPlayer(){

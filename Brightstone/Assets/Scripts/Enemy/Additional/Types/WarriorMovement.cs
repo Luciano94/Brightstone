@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WarriorMovement : EnemyMovement{
+    [Header("Strategies vars")]
+    [SerializeField] private float distFromPlayer;
     override public void ApplyMovementStrategy(int chaserIndex){
         base.ApplyMovementStrategy(chaserIndex);
 
@@ -37,7 +39,17 @@ public class WarriorMovement : EnemyMovement{
 
             // 3 enemies
             case Strategies.Melee31:
+                Vector3 playerPos = GameManager.Instance.PlayerPos;
+                Vector3 roomOrigin = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
+                roomOrigin.z = playerPos.z;
+                Vector3 dirPlayerToRoom = (playerPos - roomOrigin).normalized;
 
+                if (chaserIndex == 0)
+                    dirPlayerToRoom = Quaternion.AngleAxis(45.0f, Vector3.forward) * dirPlayerToRoom;
+                else if (chaserIndex == 2)
+                    dirPlayerToRoom = Quaternion.AngleAxis(-45.0f, Vector3.forward) * dirPlayerToRoom;
+
+                MoveToObjective(playerPos + dirPlayerToRoom * distFromPlayer);
             break;
             case Strategies.Melee32:
 
