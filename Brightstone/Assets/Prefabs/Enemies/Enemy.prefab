@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3142141347888250692}
   - component: {fileID: 5935143177351948023}
-  - component: {fileID: 6152008538549597274}
+  - component: {fileID: 2579246797623508674}
   - component: {fileID: 3685809029904152593}
   - component: {fileID: 1592394171438056261}
   - component: {fileID: 5214262294038708786}
@@ -120,7 +120,7 @@ MonoBehaviour:
   isMyAttackingTurn: 0
   maxDistSurround: 20
   chaserIndex: 0
---- !u!114 &6152008538549597274
+--- !u!114 &2579246797623508674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,17 +129,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4476885487686456383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de9fae38ebb9b54f8ca9bf46d043311, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d220a51244562544a4638a94c3b1a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  player: {x: 0, y: 0, z: 0}
   sword: {fileID: 4093589057318080765}
   eAnim: {fileID: 4914635166833622913}
   speedSurrounding: 0.4
   timeSurrounding: 1.5
   deltaTimeSurrounding: 0.6
   timeWaiting: 1
+  distFromPlayer: 2
 --- !u!114 &3685809029904152593
 MonoBehaviour:
   m_ObjectHideFlags: 0
