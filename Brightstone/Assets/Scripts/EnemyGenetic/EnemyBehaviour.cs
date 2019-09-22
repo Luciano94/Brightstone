@@ -325,14 +325,37 @@ public class EnemyBehaviour : MonoBehaviour{
                 turnShouldPass = attackStrategy();
             break;
             case TurnType.HP:
+                turnShouldPass = HPStrategy();
             break;
             default:
+                turnShouldPass = true;
             break;
         }
         if(turnShouldPass){
-            onStrategyExit.Invoke();
+            onStrategyExit();
             InitializeStrategy();
         }
+    }
+
+    private void onEnemyDeath(EnemyBase enemy){
+        if(enemy.GetEnemyType() == EnemyType.Archer){
+            foreach(PerAttackTurn t in enemiesInPerAttackTurn){
+                if(enemy == enemiesInRoom[(int)EnemyType.Archer][t.enemyIndex]){
+                    enemiesInPerAttackTurn.Remove(t);
+                    break;
+                }
+            }
+        } else {
+            for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
+                int index = enemiesInRoom[(int)enemy.GetEnemyType()].IndexOf(enemy);
+                if(enemiesInPerHPTurn[i].enemyType == (int) enemy.GetEnemyType() && 
+                enemiesInPerHPTurn[i].enemyIndex == index){
+                    PerHPTurn t = new PerHPTurn(true);
+                    enemiesInPerHPTurn[i] = t;   
+                }
+            }
+        }
+        enemiesInRoom[(int)enemy.GetEnemyType()].Remove(enemy);
     }
 
     #region "Strategy initializing"
@@ -354,7 +377,8 @@ public class EnemyBehaviour : MonoBehaviour{
     private void FillEnemyList(){
         List<EnemyBase> enemyList = GameManager.Instance.activeRoom.GetRoomsBehaviour().GetEnemies();
         foreach(EnemyBase e in enemyList){
-            enemiesInRoom[(int)e.GetEnemyType()].Add(e); 
+            enemiesInRoom[(int)e.GetEnemyType()].Add(e);
+            e.gameObject.GetComponent<EnemyStats>().onDeathGetEnemyEvent.AddListener(onEnemyDeath);
         }
     }
 
@@ -365,7 +389,7 @@ public class EnemyBehaviour : MonoBehaviour{
                 turn = TurnType.Attack;
             break;
             case EnemyType.Boss:
-                turn = TurnType.None;
+                turn = TurnType.HP;
             break;
             case EnemyType.Lancer:
                 turn = TurnType.HP;
@@ -408,9 +432,12 @@ public class EnemyBehaviour : MonoBehaviour{
             float hPPromedy = HPPromedy();
             List<EnemyBase> enemiesToGetInTurn = GetRandomEnemies(enemiesInPerHPTurn.Length, EnemyType.Warrior); //hardcoded enemy type
             for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
-
+                if(enemiesInPerHPTurn[i].isAssigned){
+                    enemiesInRoom[enemiesInPerHPTurn[i].enemyType][enemiesInPerHPTurn[i].enemyIndex].enemyIndex = -1;
+                }
                 PerHPTurn t;
                 if(enemiesToGetInTurn.Count > i){
+                    enemiesToGetInTurn[i].enemyIndex = i;
                     t.enemyType = (int)enemiesToGetInTurn[i].GetEnemyType();
                     t.enemyIndex = enemiesInRoom[(int)enemiesToGetInTurn[i].GetEnemyType()].IndexOf(enemiesToGetInTurn[i]);
                     float random = Random.Range(-1.0f, 1.0f);
@@ -490,11 +517,12 @@ public class EnemyBehaviour : MonoBehaviour{
         currentStrategy = (Strategies)randomStrategy + enemiesInTurn;
     }
     #endregion
+
     #region "Strategy management"
 
     private void onNoStrategyExit(){}
     [Header("Attack turn timer")]
-    [SerializeField]float timeBetweenAttacks;
+    [SerializeField]float timeBetweenRangedAttacks;
     float attackTimer = 0.0f;
     int subTurn = 0;
     private bool attackStrategy(){
@@ -504,7 +532,7 @@ public class EnemyBehaviour : MonoBehaviour{
         }
         if(!turnShouldPass){
             attackTimer += Time.deltaTime;
-            if(attackTimer >= timeBetweenAttacks){
+            if(attackTimer >= timeBetweenRangedAttacks){
                 attackTimer = 0.0f;
                 if(subTurn >= enemiesInPerAttackTurn.Count){ subTurn = 0; }
 
@@ -527,14 +555,227 @@ public class EnemyBehaviour : MonoBehaviour{
     private bool HPStrategy(){
         bool turnShouldPass = true;
         foreach(PerHPTurn t in enemiesInPerHPTurn){
-            if(t.hPThreshold < enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
+            if(t.isAssigned && t.hPThreshold < enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
                 turnShouldPass = false;
             }
         }
         if(!turnShouldPass){
-            
+            switch(currentStrategy){
+                case Strategies.Melee11:
+                    Melee35();
+                break;
+                case Strategies.Melee12:
+                    Melee35();
+                break;
+                case Strategies.Melee13:
+                    Melee35();
+                break;
+                case Strategies.Melee14:
+                    Melee35();
+                break;
+                case Strategies.Melee15:
+                    Melee35();
+                break;
+                case Strategies.Melee21:
+                    Melee31();
+                break;
+                case Strategies.Melee22:
+                    Melee32();
+                break;
+                case Strategies.Melee23:
+                    Melee33();
+                break;
+                case Strategies.Melee24:
+                    Melee34();
+                break;
+                case Strategies.Melee25:
+                    Melee35();
+                break;
+                case Strategies.Melee31:
+                    Melee31();
+                break;
+                case Strategies.Melee32:
+                    Melee32();
+                break;
+                case Strategies.Melee33:
+                    Melee33();
+                break;
+                case Strategies.Melee34:
+                    Melee34();
+                break;
+                case Strategies.Melee35:
+                    Melee35();
+                break;
+                default:
+                    turnShouldPass = true;
+                    subTurn = 0;
+                    attackTimer = 0.0f;
+                break;
+            } 
+        } else {
+            subTurn = 0;
+            attackTimer = 0.0f;
         }
         return turnShouldPass;
+    }
+
+    #region "Strategy 31"
+    private bool str31TwoFirstAttack = true;
+    private int str31RoundCounter = 0;
+    private float str31Timer = 0.0f;
+    private void Melee31(){
+        onStrategyExit = OnMelee31Exit;
+        str31Timer += Time.deltaTime;
+        if(str31RoundCounter >= 3){
+            if(str31Timer >= 1.0f){
+                str31Timer = 0.0f;
+                str31RoundCounter = 0;
+            }
+        } else if(str31Timer >= 0.3f){
+            str31Timer = 0.0f;
+            if(str31TwoFirstAttack){
+                if(enemiesInPerHPTurn[0].isAssigned){
+                    enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].isMyAttackingTurn=true;
+                }
+                if(enemiesInPerHPTurn[1].isAssigned){
+                    enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].isMyAttackingTurn=true;
+                }
+            } else {
+                if(enemiesInPerHPTurn[2].isAssigned){
+                    enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].isMyAttackingTurn=true;
+            }
+            str31RoundCounter++;
+        }
+        str31TwoFirstAttack = !str31TwoFirstAttack;
+        }
+    }
+    private void OnMelee31Exit(){
+        str31TwoFirstAttack = true;
+        str31RoundCounter = 0;
+        str31Timer = 0.0f;
+        onStrategyExit = onNoStrategyExit;
+    }
+    #endregion
+    #region "Strategy 32"
+    private float str32Timer = 0.0f;
+    private int str32RoundCounter = 0;
+    private void Melee32(){
+        onStrategyExit = OnMelee32Exit;
+        str32Timer += Time.deltaTime;
+        if(str32RoundCounter > 2){
+            if(str32Timer >= 0.5f){
+                str32RoundCounter = 0;
+                str32Timer = 0.0f;
+            }
+        } else {
+            if(str32Timer >= 0.3f){
+                PerHPTurn t = enemiesInPerHPTurn[str32RoundCounter];
+                if(t.isAssigned){
+                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                }
+                str32RoundCounter++;
+                str32Timer = 0.0f;
+            }
+        }
+    }
+    private void OnMelee32Exit(){
+        str32Timer = 0.0f;
+        str32RoundCounter = 0;
+        onStrategyExit = onNoStrategyExit;
+    }
+    #endregion
+    #region "Strategy 33"
+    private int str33AttackCounter = 0;
+    private float str33Timer = 0.0f;
+
+    private void Melee33(){
+        onStrategyExit = OnMelee33Exit;
+        str33Timer += Time.deltaTime;
+        if(str33AttackCounter >= 9){
+            if(str33Timer >= 0.5f){
+                str33AttackCounter = 0;
+                str33Timer = 0.0f;
+            }
+        } else {
+            if(str33Timer >= 0.5f){
+                str33Timer = 0.0f;
+                int attacker = Random.Range(0,3);
+                PerHPTurn t = enemiesInPerHPTurn[attacker];
+                if(t.isAssigned){
+                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                }
+                str33AttackCounter++;
+            }
+        }
+    }
+    private void OnMelee33Exit(){
+        str33Timer = 0.0f;
+        str33AttackCounter = 0;
+        onStrategyExit = onNoStrategyExit;
+    }
+    #endregion
+    #region "Strategy 34"
+    private bool str34ShouldFeint = false;
+    private bool str34Waiting = false;
+    private float str34Timer = 0.0f;
+    private int str34Counter = 0;
+    private float str34AttackTimer = 0.0f;
+    private void Melee34(){
+        onStrategyExit = OnMelee34Exit;
+        str34Timer += Time.deltaTime;
+        if(str34Waiting){
+            if(str34Timer >= 0.5f){
+                str34Waiting = false;
+                str34Timer = 0.0f;
+            }
+        } else {
+            if(str34Timer >= 0.5f){
+                str34Timer = 0.0f;
+                str34ShouldFeint = false;
+                int random = Random.Range(0,2);
+                if(random > 0){str34ShouldFeint = true;}
+            
+                PerHPTurn t = enemiesInPerHPTurn[str34Counter];
+
+                if(t.isAssigned){
+                    if(str34ShouldFeint){ str34AttackTimer = 0.2f;}
+                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                    enemiesInRoom[t.enemyType][t.enemyIndex].feinting = str34ShouldFeint;
+                }
+
+                str34Counter++;
+                if(str34Counter > 2){ str34Counter = 0;}
+            }
+        }
+        if(str34AttackTimer > 0){
+            str34AttackTimer -= Time.deltaTime;
+            PlayerCombat p = GameManager.Instance.playerCombat;
+            if(p.isAttacking || p.isParrying){
+                for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
+                    PerHPTurn t = enemiesInPerHPTurn[i];
+                    if(t.isAssigned && str34Counter -1 != i){
+                        enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                    }
+                }
+            }
+        }
+    }
+    private void OnMelee34Exit(){
+        str34ShouldFeint = false;
+        str34Waiting = false;
+        str34Timer = 0.0f;
+        str34Counter = 0;
+        str34AttackTimer = 0.0f;
+        onStrategyExit = onNoStrategyExit;
+    }
+    #endregion
+    private void Melee35(){
+        for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
+            PerHPTurn t = enemiesInPerHPTurn[i];
+            if(t.isAssigned){
+                enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+            }
+        }
     }
     #endregion
 }

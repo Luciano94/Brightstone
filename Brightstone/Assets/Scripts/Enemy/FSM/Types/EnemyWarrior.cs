@@ -9,6 +9,11 @@ public class EnemyWarrior : Enemy{
     protected override void Chasing(){
         if (isMyAttackingTurn){
             if (IsOnAttackRange()){
+                if(feinting){
+                    feinting = false;
+                    isMyAttackingTurn = false;
+                    return;
+                }
                 isMyAttackingTurn = false;
                 enemyCombat.Attack();
                 OnAttackRange();

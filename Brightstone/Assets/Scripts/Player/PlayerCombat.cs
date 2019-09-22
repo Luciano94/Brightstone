@@ -16,7 +16,7 @@ public class PlayerCombat : MonoBehaviour{
     [SerializeField]private float atckTime;
     public FrameData atkAnim;
     private float actAtkTime;
-    private bool isAttacking;
+    public bool isAttacking {get; private set;}
     private bool isStrong;
 
     [Header("Attack Move")]
@@ -29,7 +29,7 @@ public class PlayerCombat : MonoBehaviour{
     [Header("Parry")]
     [SerializeField]private float parryTime;
     private float actParryTime;
-    private bool isParrying = false;
+    public bool isParrying {get; private set;}
     private bool parriedSomeone = false;
     [SerializeField]private PlayerAnimations plAnim;
 
@@ -62,6 +62,7 @@ public class PlayerCombat : MonoBehaviour{
         pMovement = GetComponent<PlayerMovement>();
         actAtkTime = 0;
         isAttacking = false;
+        isParrying = false;
         atkAnim.State = ActionState.enterFrames;
         rig = GetComponent<Rigidbody2D>();
 

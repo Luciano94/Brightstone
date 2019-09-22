@@ -14,6 +14,8 @@ public abstract class EnemyBase : MonoBehaviour{
     protected float timeLeftHit = 0.0f;
     protected float timeLeftParried = 0.0f;
     protected bool guardState = true;
+    public int enemyIndex = -1;
+    public bool feinting;
     
     public bool isMyAttackingTurn = false;
 
