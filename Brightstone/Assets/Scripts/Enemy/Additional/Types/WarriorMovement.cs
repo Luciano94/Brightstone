@@ -57,17 +57,17 @@ public class WarriorMovement : EnemyMovement{
                     MoveToObjective(objectivePos31);
             break;
             case Strategies.Melee32:
-                Vector3 playerPos = GameManager.Instance.PlayerPos;
-                Vector3 roomOrigin = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
-                roomOrigin.z = playerPos.z;
-                Vector3 dirPlayerToRoom32 = (playerPos - roomOrigin).normalized;
+                Vector3 playerPos32 = GameManager.Instance.PlayerPos;
+                Vector3 roomOrigin32 = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
+                roomOrigin32.z = playerPos32.z;
+                Vector3 dirPlayerToRoom32 = (playerPos32 - roomOrigin32).normalized;
 
                 if (chaserIndex == 0)
                     dirPlayerToRoom32 = Quaternion.AngleAxis(45.0f, Vector3.forward) * dirPlayerToRoom32;
                 else if (chaserIndex == 2)
                     dirPlayerToRoom32 = Quaternion.AngleAxis(-45.0f, Vector3.forward) * dirPlayerToRoom32;
 
-                Vector3 objectivePos32 = playerPos + dirPlayerToRoom32 * distFromPlayer;
+                Vector3 objectivePos32 = playerPos32 + dirPlayerToRoom32 * distFromPlayer;
 
                 if ((objectivePos32 - transform.position).magnitude > 0.1f)
                     MoveToObjective(objectivePos32);
@@ -88,7 +88,20 @@ public class WarriorMovement : EnemyMovement{
 
             break;
             case Strategies.Melee34:
+                Vector3 playerPos34 = GameManager.Instance.PlayerPos;
+                Vector3 roomOrigin34 = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
+                roomOrigin34.z = playerPos34.z;
+                Vector3 dirPlayerToRoom34 = (playerPos34 - roomOrigin34).normalized;
 
+                if (chaserIndex == 1)
+                    dirPlayerToRoom34 = Quaternion.AngleAxis(30.0f, Vector3.forward) * dirPlayerToRoom34;
+                else if (chaserIndex == 2)
+                    dirPlayerToRoom34 = Quaternion.AngleAxis(-30.0f, Vector3.forward) * dirPlayerToRoom34;
+
+                Vector3 objectivePos34 = playerPos34 + dirPlayerToRoom34 * distFromPlayer;
+
+                if ((objectivePos34 - transform.position).magnitude > 0.1f)
+                    MoveToObjective(objectivePos34);
             break;
             default:
 
