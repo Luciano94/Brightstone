@@ -24,7 +24,7 @@ public class EnemyWarrior : Enemy{
     
     protected override void Waiting(){
         if (IsOnChaseRange()){
-            EnemyBahaviour.Instance.WarriorAddedToChase(gameObject);
+            EnemyBehaviour.Instance.WarriorAddedToChase(gameObject);
             OnChase();
             return;
         }

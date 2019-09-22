@@ -8,7 +8,7 @@ public class WarriorMovement : EnemyMovement{
     override public void ApplyMovementStrategy(int chaserIndex){
         base.ApplyMovementStrategy(chaserIndex);
 
-        switch(EnemyBahaviour.Instance.warriorStrategy){
+        switch(EnemyBehaviour.Instance.warriorStrategy){
             // 1 enemy
             case Strategies.Melee11:
 

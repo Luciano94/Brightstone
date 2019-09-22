@@ -102,9 +102,9 @@ public class RoomsBehaviour : MonoBehaviour{
         if(!haveMarket){
             foreach (GameObject enemy in enemies){
                 enemy.SetActive(true);
-                EnemyBahaviour.Instance.AddEnemyToBehaviour(enemy);
+                EnemyBehaviour.Instance.AddEnemyToBehaviour(enemy);
             }
-            EnemyBahaviour.Instance.ChangeStrategy();
+            EnemyBehaviour.Instance.ChangeStrategy();
 
             if(enemies[0].GetComponent<EnemyStats>().enemyType == EnemyType.Boss)
                 UIManager.Instance.InitBoss();
@@ -123,7 +123,7 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public void EnemyDeath(GameObject thisEnemy){
         enemiesCant--;
-        EnemyBahaviour.Instance.Death(thisEnemy);
+        EnemyBehaviour.Instance.Death(thisEnemy);
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
@@ -133,5 +133,14 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public void RoomFinished(){
         isComplete = true;
+    }
+
+    public List<EnemyBase> GetEnemies(){
+        List<EnemyBase> enemyList = new List<EnemyBase>();
+        foreach(GameObject enemy in enemies){
+            EnemyBase e = enemy.GetComponent<EnemyBase>();
+            if(e){ enemyList.Add(e);}
+        }
+        return enemyList;
     }
 }

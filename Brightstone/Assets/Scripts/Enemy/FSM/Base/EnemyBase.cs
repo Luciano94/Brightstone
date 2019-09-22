@@ -99,4 +99,11 @@ public abstract class EnemyBase : MonoBehaviour{
     public EnemyType GetEnemyType(){
         return enemyStats.enemyType;
     }
+
+    public float GetHP(){
+        return enemyStats.Life;
+    }
+    public float GetMaxHP(){
+        return enemyStats.MaxLife();
+    }
 }
