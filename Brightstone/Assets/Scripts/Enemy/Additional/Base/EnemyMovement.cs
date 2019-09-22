@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour{
+    [Header("Common Variables")]
     [SerializeField] private float speed;
     [SerializeField] private GameObject sword;
     [SerializeField] private EnemyAnimations eAnim;
@@ -30,9 +31,10 @@ public class EnemyMovement : MonoBehaviour{
 
     public void MoveToObjective(Vector3 pos){
         PrepareVariables(pos);
+        moveDir = diff.normalized;
+        transform.Translate(moveDir * speed * Time.deltaTime);
 
-        transform.Translate(diff.normalized * speed * Time.deltaTime);
-
+        CheckForward();
         Rotation();
     }
 
@@ -148,7 +150,7 @@ public class EnemyMovement : MonoBehaviour{
     }
 
     private void CheckForward(){
-        if(objective.x > transform.position.x){
+        if(GameManager.Instance.PlayerPos.x > transform.position.x){
             if (moveDir.x > 0.0f)
                 IsMovingForward = true;
             else
