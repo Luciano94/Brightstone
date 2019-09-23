@@ -22,7 +22,6 @@ public class EnemyStats : MonoBehaviour{
 
     [HideInInspector][SerializeField] UnityEvent onHit;
     [HideInInspector][SerializeField] UnityEvent onDeath;
-    [HideInInspector][SerializeField] OnDeathGetEnemy onDeathGetEnemy;
     [HideInInspector][SerializeField] UnityEvent onParried;
     [HideInInspector][SerializeField] UnityEvent onLowHealth;
 
@@ -55,7 +54,7 @@ public class EnemyStats : MonoBehaviour{
                         UIManager.Instance.ExpUpdate();
                         
                     if (!GameManager.Instance.isTutorial){
-                        myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(gameObject);
+                        myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(GetComponent<EnemyBase>());
                         if (enemyType == EnemyType.Boss){
                             RunSaver.currentRun.data.bossesKilled++;
                             GameManager.Instance.PlayerWin();
@@ -64,7 +63,6 @@ public class EnemyStats : MonoBehaviour{
                             RunSaver.currentRun.data.enemiesKilled++;
                         }
                     }
-                    onDeathGetEnemy.Invoke(gameObject.GetComponent<EnemyBase>());
                     OnDeath.Invoke();
                     shadow.onDeath();
                     Destroy(gameObject);
@@ -116,10 +114,6 @@ public class EnemyStats : MonoBehaviour{
 
     public UnityEvent OnDeath{
         get { return onDeath; }
-    }
-
-    public OnDeathGetEnemy onDeathGetEnemyEvent{
-        get {return onDeathGetEnemy;}
     }
 
     public UnityEvent OnParried{

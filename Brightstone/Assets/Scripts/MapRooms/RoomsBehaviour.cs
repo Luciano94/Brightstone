@@ -102,9 +102,10 @@ public class RoomsBehaviour : MonoBehaviour{
         if(!haveMarket){
             foreach (GameObject enemy in enemies){
                 enemy.SetActive(true);
-                EnemyBehaviour.Instance.AddEnemyToBehaviour(enemy);
+                //EnemyBehaviour.Instance.AddEnemyToBehaviour(enemy);
             }
-            EnemyBehaviour.Instance.ChangeStrategy();
+            //EnemyBehaviour.Instance.ChangeStrategy();
+            EnemyBehaviour.Instance.FillEnemyList();
 
             if(enemies[0].GetComponent<EnemyStats>().enemyType == EnemyType.Boss)
                 UIManager.Instance.InitBoss();
@@ -121,9 +122,9 @@ public class RoomsBehaviour : MonoBehaviour{
         }
     }
 
-    public void EnemyDeath(GameObject thisEnemy){
+    public void EnemyDeath(EnemyBase thisEnemy){
         enemiesCant--;
-        EnemyBehaviour.Instance.Death(thisEnemy);
+        EnemyBehaviour.Instance.onEnemyDeath(thisEnemy);
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
@@ -137,10 +138,9 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public List<EnemyBase> GetEnemies(){
         List<EnemyBase> enemyList = new List<EnemyBase>();
-        foreach(GameObject enemy in enemies){
-            EnemyBase e = enemy.GetComponent<EnemyBase>();
-            if(e){ enemyList.Add(e);}
-        }
+        foreach(GameObject enemy in enemies)
+            enemyList.Add(enemy.GetComponent<EnemyBase>());
+
         return enemyList;
     }
 }

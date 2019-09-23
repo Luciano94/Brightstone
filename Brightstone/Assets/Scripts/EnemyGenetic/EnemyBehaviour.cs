@@ -260,28 +260,6 @@ public enum TurnType{
     None
 }
 public class EnemyBehaviour : MonoBehaviour{
-    #region "Placeholders to be deleted"
-    //Code without references should be deleted
-    //Code with references to this code should be reworked to not use it
-    public Strategies warriorStrategy{
-        get{ 
-            Debug.LogError("This variable is old code that should not be used");
-            return Strategies.None;
-        }
-    }
-    public void WarriorAddedToChase(GameObject go){
-        Debug.LogError("This function is old code that should not be used");
-    }
-    public void AddEnemyToBehaviour(GameObject go){
-        Debug.LogError("This function is old code that should not be used");
-    }
-    public void ChangeStrategy(){
-        Debug.LogError("This function is old code that should not be used");
-    }
-    public void Death(GameObject go){
-        Debug.LogError("This function is old code that should not be used");
-    }
-    #endregion
     private static EnemyBehaviour instance;
 
     public static EnemyBehaviour Instance{
@@ -295,12 +273,13 @@ public class EnemyBehaviour : MonoBehaviour{
         }
     }
 
-    public Strategies currentStrategy{ get; private set;}
+    public Strategies currentStrategy;//{ get; private set;}
     private List<List<EnemyBase>> enemiesInRoom;
     private int MaxEnemiesPerTurn = 3;
     List<PerAttackTurn> enemiesInPerAttackTurn;
     PerHPTurn[] enemiesInPerHPTurn;
     TurnType turn = TurnType.None;
+    private int enemiesLeft = 0;
 
     delegate void OnStrategyExit();
     private OnStrategyExit onStrategyExit;
@@ -310,19 +289,17 @@ public class EnemyBehaviour : MonoBehaviour{
         onStrategyExit = onNoStrategyExit;
         ClearLists();
     }
-    void Start(){
-        FillEnemyList();
-    }
 
     void Update(){
-        TurnCounter();
+        if (enemiesLeft > 0)
+            TurnCounter();
     }
 
     private void TurnCounter(){
         bool turnShouldPass = true;
         switch(turn){
             case TurnType.Attack:
-                turnShouldPass = attackStrategy();
+                turnShouldPass = AttackStrategy();
             break;
             case TurnType.HP:
                 turnShouldPass = HPStrategy();
@@ -337,8 +314,10 @@ public class EnemyBehaviour : MonoBehaviour{
         }
     }
 
-    private void onEnemyDeath(EnemyBase enemy){
-        if(enemy.GetEnemyType() == EnemyType.Archer){
+    public void onEnemyDeath(EnemyBase enemy){
+        enemiesLeft--;
+        EnemyType type = enemy.GetEnemyType();
+        if(type == EnemyType.Archer){
             foreach(PerAttackTurn t in enemiesInPerAttackTurn){
                 if(enemy == enemiesInRoom[(int)EnemyType.Archer][t.enemyIndex]){
                     enemiesInPerAttackTurn.Remove(t);
@@ -346,25 +325,23 @@ public class EnemyBehaviour : MonoBehaviour{
                 }
             }
         } else {
+            int index = enemiesInRoom[(int)type].IndexOf(enemy);
             for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
-                int index = enemiesInRoom[(int)enemy.GetEnemyType()].IndexOf(enemy);
-                if(enemiesInPerHPTurn[i].enemyType == (int) enemy.GetEnemyType() && 
+                if(enemiesInPerHPTurn[i].enemyType == (int)type && 
                 enemiesInPerHPTurn[i].enemyIndex == index){
                     PerHPTurn t = new PerHPTurn(true);
                     enemiesInPerHPTurn[i] = t;   
                 }
             }
         }
-        enemiesInRoom[(int)enemy.GetEnemyType()].Remove(enemy);
+        enemiesInRoom[(int)type].Remove(enemy);
     }
 
     #region "Strategy initializing"
     private void ClearLists(){
         enemiesInRoom = new List<List<EnemyBase>>();
-        for(int i = 0; i < (int)EnemyType.Count; i++){
-            List<EnemyBase> l = new List<EnemyBase>();
-            enemiesInRoom.Add(l);
-        }
+        for(int i = 0; i < (int)EnemyType.Count; i++)
+            enemiesInRoom.Add(new List<EnemyBase>());
 
         enemiesInPerHPTurn = new PerHPTurn[MaxEnemiesPerTurn];
         for(int i = 0; i < MaxEnemiesPerTurn; i++){
@@ -374,16 +351,17 @@ public class EnemyBehaviour : MonoBehaviour{
         enemiesInPerAttackTurn = new List<PerAttackTurn>();
     }
 
-    private void FillEnemyList(){
+    public void FillEnemyList(){
         List<EnemyBase> enemyList = GameManager.Instance.activeRoom.GetRoomsBehaviour().GetEnemies();
         foreach(EnemyBase e in enemyList){
             enemiesInRoom[(int)e.GetEnemyType()].Add(e);
-            e.gameObject.GetComponent<EnemyStats>().onDeathGetEnemyEvent.AddListener(onEnemyDeath);
+            enemiesLeft++;
         }
     }
 
     private void InitializeStrategy(){
-        EnemyType pickedEnemyType = PickEnemyType();
+        //EnemyType pickedEnemyType = PickEnemyType();
+        EnemyType pickedEnemyType = EnemyType.Warrior;
         switch(pickedEnemyType){
             case EnemyType.Archer:
                 turn = TurnType.Attack;
@@ -430,7 +408,8 @@ public class EnemyBehaviour : MonoBehaviour{
 
         if(turn == TurnType.HP){
             float hPPromedy = HPPromedy();
-            List<EnemyBase> enemiesToGetInTurn = GetRandomEnemies(enemiesInPerHPTurn.Length, EnemyType.Warrior); //hardcoded enemy type
+            //List<EnemyBase> enemiesToGetInTurn = GetRandomEnemies(enemiesInPerHPTurn.Length, EnemyType.Warrior); //hardcoded enemy type
+            List<EnemyBase> enemiesToGetInTurn = GetEnemies(enemiesInPerHPTurn.Length, EnemyType.Warrior);
             for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
                 if(enemiesInPerHPTurn[i].isAssigned){
                     enemiesInRoom[enemiesInPerHPTurn[i].enemyType][enemiesInPerHPTurn[i].enemyIndex].enemyIndex = -1;
@@ -445,6 +424,7 @@ public class EnemyBehaviour : MonoBehaviour{
                     if(enemiesToGetInTurn[i].GetHP() < t.hPThreshold){
                         t.hPThreshold = 0;
                     }
+                    enemiesToGetInTurn[i].Chase();
                     t.isAssigned = true;
                 } else {
                     t = new PerHPTurn(true);
@@ -505,16 +485,32 @@ public class EnemyBehaviour : MonoBehaviour{
         return enemyList;
     }
 
+    private List<EnemyBase> GetEnemies(int ammount, EnemyType type){
+        List<EnemyBase> enemyList = new List<EnemyBase>();
+        int count = enemiesInRoom[(int)type].Count;
+        if (count > MaxEnemiesPerTurn)
+            count = ammount;
+
+        for(int i = 0; i < count; i++)
+            enemyList.Add(enemiesInRoom[(int)type][i]);
+
+        return enemyList;
+    }
+
     private void PickStrategy(){
         int enemiesInTurn = 0;
         foreach(PerHPTurn t in enemiesInPerHPTurn){
-            if(t.isAssigned){
+            if(t.isAssigned && t.enemyType == (int)EnemyType.Warrior){
                 enemiesInTurn++;
             }
         }
-        if(enemiesInTurn > MaxEnemiesPerTurn){ enemiesInTurn = MaxEnemiesPerTurn;}
+
+        if (enemiesInTurn == 0) return;
+
+        if(enemiesInTurn >= MaxEnemiesPerTurn){ enemiesInTurn = MaxEnemiesPerTurn;}
+        enemiesInTurn--;
         int randomStrategy = Random.Range(0,5);
-        currentStrategy = (Strategies)randomStrategy + enemiesInTurn;
+        currentStrategy = (Strategies)(randomStrategy + enemiesInTurn * 5);
     }
     #endregion
 
@@ -525,7 +521,7 @@ public class EnemyBehaviour : MonoBehaviour{
     [SerializeField]float timeBetweenRangedAttacks;
     float attackTimer = 0.0f;
     int subTurn = 0;
-    private bool attackStrategy(){
+    private bool AttackStrategy(){
         bool turnShouldPass = true;
         foreach(PerAttackTurn t in enemiesInPerAttackTurn){
             if(t.attacksLeft > 0){ turnShouldPass = false;}
@@ -555,7 +551,7 @@ public class EnemyBehaviour : MonoBehaviour{
     private bool HPStrategy(){
         bool turnShouldPass = true;
         foreach(PerHPTurn t in enemiesInPerHPTurn){
-            if(t.isAssigned && t.hPThreshold < enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
+            if(t.isAssigned/*&& t.hPThreshold < enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()*/){
                 turnShouldPass = false;
             }
         }
@@ -624,7 +620,7 @@ public class EnemyBehaviour : MonoBehaviour{
     private int str31RoundCounter = 0;
     private float str31Timer = 0.0f;
     private void Melee31(){
-        onStrategyExit = OnMelee31Exit;
+        //onStrategyExit = OnMelee31Exit;
         str31Timer += Time.deltaTime;
         if(str31RoundCounter >= 3){
             if(str31Timer >= 1.0f){
@@ -660,7 +656,7 @@ public class EnemyBehaviour : MonoBehaviour{
     private float str32Timer = 0.0f;
     private int str32RoundCounter = 0;
     private void Melee32(){
-        onStrategyExit = OnMelee32Exit;
+        //onStrategyExit = OnMelee32Exit;
         str32Timer += Time.deltaTime;
         if(str32RoundCounter > 2){
             if(str32Timer >= 0.5f){
@@ -689,7 +685,7 @@ public class EnemyBehaviour : MonoBehaviour{
     private float str33Timer = 0.0f;
 
     private void Melee33(){
-        onStrategyExit = OnMelee33Exit;
+        //onStrategyExit = OnMelee33Exit;
         str33Timer += Time.deltaTime;
         if(str33AttackCounter >= 9){
             if(str33Timer >= 0.5f){
@@ -721,7 +717,7 @@ public class EnemyBehaviour : MonoBehaviour{
     private int str34Counter = 0;
     private float str34AttackTimer = 0.0f;
     private void Melee34(){
-        onStrategyExit = OnMelee34Exit;
+        //onStrategyExit = OnMelee34Exit;
         str34Timer += Time.deltaTime;
         if(str34Waiting){
             if(str34Timer >= 0.5f){

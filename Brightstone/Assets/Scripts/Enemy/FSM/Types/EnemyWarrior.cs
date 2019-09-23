@@ -4,8 +4,6 @@ public class EnemyWarrior : Enemy{
     [Header("Warrior")]
     [SerializeField] private float maxDistSurround;
 
-    public int chaserIndex;
-
     protected override void Chasing(){
         if (isMyAttackingTurn){
             if (IsOnAttackRange()){
@@ -23,16 +21,16 @@ public class EnemyWarrior : Enemy{
             enemyMovement.MoveToPlayer();
         }
         else{
-            enemyMovement.ApplyMovementStrategy(chaserIndex);
+            enemyMovement.ApplyMovementStrategy(enemyIndex);
         }
     }
     
     protected override void Waiting(){
-        if (IsOnChaseRange()){
+        /*if (IsOnChaseRange()){
             EnemyBehaviour.Instance.WarriorAddedToChase(gameObject);
             OnChase();
             return;
-        }
+        }*/
         
         enemyMovement.SurroundPlayer();
     }
