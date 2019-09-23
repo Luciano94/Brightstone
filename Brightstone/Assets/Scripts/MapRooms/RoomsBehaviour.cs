@@ -138,9 +138,11 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public List<EnemyBase> GetEnemies(){
         List<EnemyBase> enemyList = new List<EnemyBase>();
-        foreach(GameObject enemy in enemies)
-            enemyList.Add(enemy.GetComponent<EnemyBase>());
-
+        foreach(GameObject enemy in enemies){
+            if(enemy != null){
+                enemyList.Add(enemy.GetComponent<EnemyBase>());
+            }
+        }
         return enemyList;
     }
 }
