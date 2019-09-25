@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour{
-    enum AxisDirection{
+    enum Axis8Direction{
         Up,
         UpRight,
         Right,
@@ -13,6 +13,13 @@ public class EnemyCombat : MonoBehaviour{
         Count
     }
 
+    enum Axis4Direction{
+        Up,
+        Right,
+        Down,
+        Left,
+        Count
+    }
 
     [Header("Attack")]
     [SerializeField] private float animTime;
@@ -61,13 +68,17 @@ public class EnemyCombat : MonoBehaviour{
     public void Attack(EnemyType type){
         isAttacking = true;
         enemyAnim.SetAttack();
-
+        
+        player = GameManager.Instance.PlayerPos;
         diff = player - transform.position;
 
         if (type == EnemyType.Archer){
             enemyAnim.Set8AxisDirection((int)GetDirection(diff));
             lineRenderer.enabled = true;
             AudioManager.Instance.ArcherBowPull();
+        }
+        else if (type == EnemyType.Boss){
+            enemyAnim.Set8AxisDirection((int)Get4AxisDirection(diff));
         }
     }
 
@@ -195,27 +206,42 @@ public class EnemyCombat : MonoBehaviour{
         this.distFromOrigin = distFromOrigin;
     }
 
-    private AxisDirection GetDirection(Vector3 distance){
+    private Axis8Direction GetDirection(Vector3 distance){
         float angle = Vector3.SignedAngle(distance, Vector3.up, Vector3.forward);
         
         if      (angle >  -22.5f && angle <=   22.5f)
-            return AxisDirection.Up;
+            return Axis8Direction.Up;
         else if (angle >   22.5f && angle <=   67.5f)
-            return AxisDirection.UpRight;
+            return Axis8Direction.UpRight;
         else if (angle >   67.5f && angle <=  112.5f)
-            return AxisDirection.Right;
+            return Axis8Direction.Right;
         else if (angle >  112.5f && angle <=  157.5f)
-            return AxisDirection.DownRight;
+            return Axis8Direction.DownRight;
         else if (angle >  157.5f || angle <= -157.5f)
-            return AxisDirection.Down;
+            return Axis8Direction.Down;
         else if (angle > -157.5f && angle <= -112.5f)
-            return AxisDirection.DownLeft;
+            return Axis8Direction.DownLeft;
         else if (angle > -112.5f && angle <=  -67.5f)
-            return AxisDirection.Left;
+            return Axis8Direction.Left;
         else if (angle >  -67.5f && angle <=  -22.5f)
-            return AxisDirection.UpLeft;
+            return Axis8Direction.UpLeft;
 
-        return AxisDirection.Down;
+        return Axis8Direction.Down;
+    }
+
+    private Axis4Direction Get4AxisDirection(Vector3 distance){
+        float angle = Vector3.SignedAngle(distance, Vector3.up, Vector3.forward);
+        
+        if      (angle >  -45.0f && angle <=   45.0f)
+            return Axis4Direction.Up;
+        else if (angle >   45.0f && angle <=  135.0f)
+            return Axis4Direction.Right;
+        else if (angle >  135.0f || angle <= -135.0f)
+            return Axis4Direction.Down;
+        else if (angle > -135.0f && angle <=  -45.0f)
+            return Axis4Direction.Left;
+
+        return Axis4Direction.Down;
     }
 
     private float GetAngle(Vector3 diff){
