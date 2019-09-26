@@ -6953,6 +6953,26 @@ PrefabInstance:
       propertyPath: life
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 5214262294038708786, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214262294038708786, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214262294038708786, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147003143787726484, guid: e5771b711ff6d3e4f8c2ee6d2831842d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a38d7b253a3b99d4584603c0cd3f02c5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5771b711ff6d3e4f8c2ee6d2831842d, type: 3}
 --- !u!4 &723008743 stripped
