@@ -36,14 +36,16 @@ public class EnemyWarrior : Enemy{
     }
 
     protected override void Relocating(){
-        timeLeft -= Time.deltaTime;
+        OnChase();
+        
+        /*timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
             enemyMovement.IsMovingForward = false;
             OnChase();
             return;
         }
         
-        enemyMovement.Relocate();
+        enemyMovement.Relocate();*/
     }
 
     protected override void Attacking(){

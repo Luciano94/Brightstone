@@ -663,6 +663,7 @@ public class EnemyBehaviour : MonoBehaviour{
     private bool str31TwoFirstAttack = true;
     private int str31RoundCounter = 0;
     private float str31Timer = 0.0f;
+    public float currentAngleStr31;
     private void Melee31(){
         onStrategyExit = OnMelee31Exit;
         str31Timer += Time.deltaTime;
@@ -670,6 +671,7 @@ public class EnemyBehaviour : MonoBehaviour{
             if(str31Timer >= 1.0f){
                 str31Timer = 0.0f;
                 str31RoundCounter = 0;
+                RandomizeAngleStr31();
             }
         } else if(str31Timer >= 0.3f){
             str31Timer = 0.0f;
@@ -694,6 +696,17 @@ public class EnemyBehaviour : MonoBehaviour{
         str31RoundCounter = 0;
         str31Timer = 0.0f;
         onStrategyExit = onNoStrategyExit;
+    }
+
+    public void RandomizeAngleStr31()
+    {
+        float newAngle = Random.Range(0.0f, 119.0f);
+        currentAngleStr31 += newAngle * newAngle % 2 == 0 ? 1.0f : -1.0f;
+
+        if (currentAngleStr31 >= 360.0f)
+            currentAngleStr31 -= 360.0f;
+        else if (currentAngleStr31 < 0.0f)
+            currentAngleStr31 += 360.0f;
     }
     #endregion
     #region "Strategy 32"

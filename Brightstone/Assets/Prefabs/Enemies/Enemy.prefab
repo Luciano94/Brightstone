@@ -117,9 +117,10 @@ MonoBehaviour:
   timeRelocating: 1
   timeParalyzedForHit: 0.2
   timeParalyzedForParry: 2
+  enemyIndex: -1
+  feinting: 0
   isMyAttackingTurn: 0
   maxDistSurround: 20
-  chaserIndex: 0
 --- !u!114 &2579246797623508674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +140,8 @@ MonoBehaviour:
   timeSurrounding: 1.5
   deltaTimeSurrounding: 0.6
   timeWaiting: 1
-  distFromPlayer: 2
+  distFromPlayer: 4
+  rotationSpeedStr33: 0
 --- !u!114 &3685809029904152593
 MonoBehaviour:
   m_ObjectHideFlags: 0

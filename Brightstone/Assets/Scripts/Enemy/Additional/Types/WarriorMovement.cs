@@ -1,15 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WarriorMovement : EnemyMovement{
     [Header("Strategies Variables")]
     [SerializeField] private float distFromPlayer;
     [SerializeField] private float rotationSpeedStr33;
 
-    private float currentAngleStr31;
-    private float currentAngleStr33;
+    private float angleStr33;
     private int chaserIndex;
+
+    private Vector3 playerPos;
+    private float timeLeftToRefresh = 0;
+
+    const float TIME_PER_REFRESH = 0.1f;
+
+    private void Update()
+    {
+        playerPos = GameManager.Instance.PlayerPos;
+        /*if (timeLeftToRefresh <= 0)
+        {
+            timeLeftToRefresh = TIME_PER_REFRESH;
+            playerPos = GameManager.Instance.PlayerPos;
+        }*/
+    }
 
     override public void ApplyMovementStrategy(int chaserIndex){
         base.ApplyMovementStrategy(chaserIndex);
@@ -64,76 +76,83 @@ public class WarriorMovement : EnemyMovement{
     }
 
     private void Melee31(){
-        Vector3 dirPlayerFwd31 = Vector3.forward;
+        Vector3 obj = new Vector3();
+        
+        float angle = EnemyBehaviour.Instance.currentAngleStr31;
 
         if (chaserIndex == 2)
-            dirPlayerFwd31 = Quaternion.AngleAxis(currentAngleStr31 + 225.0f, Vector3.forward) * dirPlayerFwd31;
+        {
+            obj.x = playerPos.x + Mathf.Cos(angle + 225.0f) * distFromPlayer;
+            obj.y = playerPos.y + Mathf.Sin(angle + 225.0f) * distFromPlayer;
+        }
         else
-            dirPlayerFwd31 = Quaternion.AngleAxis(currentAngleStr31 + chaserIndex * 45.0f, Vector3.forward) * dirPlayerFwd31;
+        {
+            obj.x = playerPos.x + Mathf.Cos(angle + chaserIndex * 45.0f) * distFromPlayer;
+            obj.y = playerPos.y + Mathf.Sin(angle + chaserIndex * 45.0f) * distFromPlayer;
+        }
 
-        Vector3 objectivePos31 = GameManager.Instance.PlayerPos + dirPlayerFwd31 * distFromPlayer;
+        obj.z = playerPos.z;
 
-        if ((objectivePos31 - transform.position).magnitude > 0.1f)
-            MoveToObjective(objectivePos31);
-    }
-
-    public void RandomizeAngleStr31()
-    {
-        float newAngle = Random.Range(0.0f, 119.0f);
-        currentAngleStr31 += newAngle * newAngle % 2 == 0 ? 1.0f : -1.0f;
-
-        if (currentAngleStr31 >= 360.0f)
-            currentAngleStr31 -= 360.0f;
-        else if (currentAngleStr31 < 0.0f)
-            currentAngleStr31 += 360.0f;
+        if ((obj - transform.position).magnitude > 0.1f)
+            MoveToObjective(obj);
     }
 
     private void Melee32(){
-        Vector3 playerPos32 = GameManager.Instance.PlayerPos;
         Vector3 roomOrigin32 = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
-        roomOrigin32.z = playerPos32.z;
-        Vector3 dirPlayerToRoom32 = (playerPos32 - roomOrigin32).normalized;
+        roomOrigin32.z = playerPos.z;
+        float angle = Calculations.GetAngle(playerPos - roomOrigin32);
+        
+        Vector3 obj = new Vector3();
 
-        if (chaserIndex == 0)
-            dirPlayerToRoom32 = Quaternion.AngleAxis(45.0f, Vector3.forward) * dirPlayerToRoom32;
-        else if (chaserIndex == 2)
-            dirPlayerToRoom32 = Quaternion.AngleAxis(-45.0f, Vector3.forward) * dirPlayerToRoom32;
+        obj.x = playerPos.x + Mathf.Cos(angle - 45.0f + chaserIndex * 45.0f) * distFromPlayer;
+        obj.y = playerPos.y + Mathf.Sin(angle - 45.0f + chaserIndex * 45.0f) * distFromPlayer;
+        obj.z = playerPos.z;
 
-        Vector3 objectivePos32 = playerPos32 + dirPlayerToRoom32 * distFromPlayer;
-
-        if ((objectivePos32 - transform.position).magnitude > 0.1f)
-            MoveToObjective(objectivePos32);
+        if ((obj - transform.position).magnitude > 0.1f)
+            MoveToObjective(obj);
     }
 
     private void Melee33(){
-        currentAngleStr33 += rotationSpeedStr33 * Time.deltaTime;
-        if (currentAngleStr33 >= 360.0f)
-            currentAngleStr33 -= 360.0f;
+        angleStr33 += rotationSpeedStr33 * Time.deltaTime;
+        if (angleStr33 >= 360.0f)
+            angleStr33 -= 360.0f;
         
-        Vector3 dirPlayerFwd33 = Vector3.forward;
+        Vector3 obj = new Vector3();
 
-        dirPlayerFwd33 = Quaternion.AngleAxis(currentAngleStr33 + chaserIndex * 120.0f, Vector3.forward) * dirPlayerFwd33;
+        obj.x = playerPos.x + Mathf.Cos(angleStr33 + chaserIndex * 120.0f) * distFromPlayer;
+        obj.y = playerPos.y + Mathf.Sin(angleStr33 + chaserIndex * 120.0f) * distFromPlayer;
+        obj.z = playerPos.z;
 
-        Vector3 objectivePos33 = GameManager.Instance.PlayerPos + dirPlayerFwd33 * distFromPlayer;
-
-        if ((objectivePos33 - transform.position).magnitude > 0.1f)
-            MoveToObjective(objectivePos33);
+        if ((obj - transform.position).magnitude > 0.1f)
+            MoveToObjective(obj);
     }
 
     private void Melee34(){
-        Vector3 playerPos34 = GameManager.Instance.PlayerPos;
         Vector3 roomOrigin34 = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
-        roomOrigin34.z = playerPos34.z;
-        Vector3 dirPlayerToRoom34 = (playerPos34 - roomOrigin34).normalized;
+        roomOrigin34.z = playerPos.z;
+        float angle = Calculations.GetAngle(playerPos - roomOrigin34);
+
+        Vector3 obj = new Vector3();
 
         if (chaserIndex == 1)
-            dirPlayerToRoom34 = Quaternion.AngleAxis(30.0f, Vector3.forward) * dirPlayerToRoom34;
+        {
+            obj.x = playerPos.x + Mathf.Cos(angle + 30.0f) * distFromPlayer;
+            obj.y = playerPos.y + Mathf.Sin(angle + 30.0f) * distFromPlayer;
+        }
         else if (chaserIndex == 2)
-            dirPlayerToRoom34 = Quaternion.AngleAxis(-30.0f, Vector3.forward) * dirPlayerToRoom34;
+        {
+            obj.x = playerPos.x + Mathf.Cos(angle - 30.0f) * distFromPlayer;
+            obj.y = playerPos.y + Mathf.Sin(angle - 30.0f) * distFromPlayer;
+        }
+        else
+        {
+            obj.x = playerPos.x + Mathf.Cos(angle) * distFromPlayer;
+            obj.y = playerPos.y + Mathf.Sin(angle) * distFromPlayer;
+        }
 
-        Vector3 objectivePos34 = playerPos34 + dirPlayerToRoom34 * distFromPlayer;
+        obj.z = playerPos.z;
 
-        if ((objectivePos34 - transform.position).magnitude > 0.1f)
-            MoveToObjective(objectivePos34);
+        if ((obj - transform.position).magnitude > 0.1f)
+            MoveToObjective(obj);
     }
 }
