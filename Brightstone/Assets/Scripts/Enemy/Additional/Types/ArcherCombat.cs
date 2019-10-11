@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ArcherCombat : EnemyCombat{
     [Header("Archer")]
@@ -13,8 +11,9 @@ public class ArcherCombat : EnemyCombat{
     override public void Attack(){
         base.Attack();
 
-        enemyAnim.Set8AxisDirection((int)Calculations.GetDirection(diff));
+        enemyAnim.Set8AxisDirection((int)Calculations.Get8AxisDirection(diff));
         lineRenderer.enabled = true;
+        AudioManager.Instance.ArcherBowPull();
     }
 
     override public void Attacking(){
@@ -30,7 +29,7 @@ public class ArcherCombat : EnemyCombat{
             diff = player - transform.position;
 
             if (currentTime > 0.2f)
-                enemyAnim.Set8AxisDirection((int)Calculations.GetDirection(diff));
+                enemyAnim.Set8AxisDirection((int)Calculations.Get8AxisDirection(diff));
         }
         if (currentTime > activeMoment && !active){
             active = true;

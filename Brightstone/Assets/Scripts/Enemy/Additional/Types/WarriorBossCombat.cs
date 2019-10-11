@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class WarriorBossCombat : EnemyCombat{
+﻿public class WarriorBossCombat : EnemyCombat{
     override public void Attack(){
         base.Attack();
+
+        enemyAnim.Set8AxisDirection((int)Calculations.Get4AxisDirection(diff));
     }
 
     override public void Attacking(){

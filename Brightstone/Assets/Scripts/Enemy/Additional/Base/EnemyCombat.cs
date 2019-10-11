@@ -1,16 +1,24 @@
 ﻿using UnityEngine;
 
-public enum AxisDirection{
-        Up,
-        UpRight,
-        Right,
-        DownRight,
-        Down,
-        DownLeft,
-        Left,
-        UpLeft,
-        Count
-    }
+public enum Axis8Direction{
+    Up,
+    UpRight,
+    Right,
+    DownRight,
+    Down,
+    DownLeft,
+    Left,
+    UpLeft,
+    Count
+}
+
+public enum Axis4Direction{
+    Up,
+    Right,
+    Down,
+    Left,
+    Count
+}
 
 public class EnemyCombat : MonoBehaviour{
     [Header("Attack")]
@@ -59,6 +67,7 @@ public class EnemyCombat : MonoBehaviour{
         isAttacking = true;
         enemyAnim.SetAttack();
 
+        player = GameManager.Instance.PlayerPos;
         diff = player - transform.position;
     }
 
