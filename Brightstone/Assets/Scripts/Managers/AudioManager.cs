@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
     [Header("Enemy")]
     [SerializeField] private AudioSource[] enemyAttack;
     [SerializeField] private AudioSource bossDeath;
+    [SerializeField] private AudioSource bowPull;
+    [SerializeField] private AudioSource arrowThrow;
     private bool enemyIsAttack = false;
 
     [Header("Ingame")]
@@ -72,6 +74,14 @@ public class AudioManager : MonoBehaviour
         int attack = Random.Range(0, enemyAttack.Length);
         
         enemyAttack[attack].Play();
+    }
+
+    public void ArcherBowPull(){
+        bowPull.Play();
+    }
+
+    public void ArcherArrowThrow(){
+        arrowThrow.Play();
     }
 
     public void BossDeath(){

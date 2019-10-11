@@ -49,7 +49,6 @@ public class PlayerStats : MonoBehaviour{
             if(value > 0){
                 currentLife += value;
                 life += value;
-
                 CheckLowHealth();
             }
         }
@@ -61,6 +60,7 @@ public class PlayerStats : MonoBehaviour{
             if(value > 0){
                 currentLife = value;
                 life = value;
+                playerLevel++;
                 CheckLowHealth();
             }
         }
@@ -93,6 +93,7 @@ public class PlayerStats : MonoBehaviour{
         set{
             if(value > 0)
                 atkMult += value;
+                
         }
     }
 
@@ -101,6 +102,7 @@ public class PlayerStats : MonoBehaviour{
         set{
             if(value > 0)
                 atkMult = value;
+                playerLevel++;
         }
 
     }

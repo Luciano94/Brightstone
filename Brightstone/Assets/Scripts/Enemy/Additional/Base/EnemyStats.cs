@@ -109,7 +109,10 @@ public class EnemyStats : MonoBehaviour{
     public float LastDamageRecieved() { return lastDamageRecieved; }
 
     public UnityEvent OnHit{
-        get { return onHit; }
+        get { 
+            GameManager.Instance.PlayBlood();
+            return onHit;
+        }
     }
 
     public UnityEvent OnDeath{

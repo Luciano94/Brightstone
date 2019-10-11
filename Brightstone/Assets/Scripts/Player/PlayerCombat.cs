@@ -14,10 +14,12 @@ public class PlayerCombat : MonoBehaviour{
     Action action = null;
     [SerializeField]private ComboManager cManager;
     [SerializeField]private float atckTime;
+    [SerializeField]private ParticleSystem blood;
     public FrameData atkAnim;
     private float actAtkTime;
     public bool isAttacking {get; private set;}
     private bool isStrong;
+
 
     [Header("Attack Move")]
     [SerializeField]private float speed; 
@@ -32,6 +34,7 @@ public class PlayerCombat : MonoBehaviour{
     public bool isParrying {get; private set;}
     private bool parriedSomeone = false;
     [SerializeField]private PlayerAnimations plAnim;
+    [SerializeField]private ParticleSystem sparks;
 
     public bool IsHit {
         get { return isHit; }
@@ -65,7 +68,6 @@ public class PlayerCombat : MonoBehaviour{
         isParrying = false;
         atkAnim.State = ActionState.enterFrames;
         rig = GetComponent<Rigidbody2D>();
-
         actParryTime = parryTime;
 
         plStat = GameManager.Instance.playerSts;
@@ -224,6 +226,21 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     public UnityEvent OnParriedSomeone(){
+        PlaySparks();
         return onParriedSomeone;
+    }
+
+    private void PlaySparks(){
+        sparks.transform.position = weapon.transform.position;
+       // sparks.transform.rotation = weapon.transform.rotation;
+
+        sparks.Play();
+    }
+
+    public void PlayBlood(){
+        blood.transform.position = weapon.transform.position;
+       // sparks.transform.rotation = weapon.transform.rotation;
+
+        blood.Play();
     }
 }

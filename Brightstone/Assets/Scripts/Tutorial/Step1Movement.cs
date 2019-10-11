@@ -9,7 +9,8 @@ public class Step1Movement : Step{
     private int textIndex = 0;
 
     public override void StepInitialize(){
-        sprDestination.enabled = true;
+        //sprDestination.enabled = true;
+        sprDestination.gameObject.SetActive(true);
         TextGenerator.Instance.Show(initialTexts[textIndex]);
     }
 

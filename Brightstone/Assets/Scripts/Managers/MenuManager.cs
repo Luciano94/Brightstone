@@ -34,7 +34,8 @@ public class MenuManager : MonoBehaviour{
 
     public bool WinMenuCanvas{
         set {
-            Invoke("ActivateWinCanvas", 2.5f);
+            //Invoke("ActivateWinCanvas", 2.5f);
+            ActivateWinCanvas();
         }
     }
 

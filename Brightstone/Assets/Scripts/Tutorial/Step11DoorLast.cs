@@ -3,12 +3,15 @@
 public class Step11DoorLast : Step{
     [SerializeField] private BoxCollider2D finalTrigger;
     [SerializeField] private TriggerAdvisor triggerAdvisor;
-    private ActiveRoom aR;
-    public override void StepInitialize(){
-        aR = GameManager.Instance.activeRoom;
-        aR.GetRoomsBehaviour().RoomFinished();
-        aR.GetNodeExits().OpenDoors();
+    [SerializeField] private GameObject roomL;
+    [SerializeField] private GameObject lastRoomArrow;
 
+    [SerializeField] private NodeExits nodeExits;
+    public override void StepInitialize(){
+
+        nodeExits.CloseDoors();
+        roomL.SetActive(true);
+        lastRoomArrow.SetActive(true);
         triggerAdvisor.OnTrigger.AddListener(OnFinalTrigger);
         finalTrigger.enabled = true;
     }
