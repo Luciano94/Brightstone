@@ -150,9 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d5092c7fd9dac458d8ddc574abfde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 50
-  startDashTime: 0.2
-  isDashing: 0
+  dashChrages: 2
+  actualDashCharges: 2
+  timeBetweenCharges: 2
+  actualTimeBetweenCharges: 0
+  dashSpeed: 100
+  startDashTime: 0.1
 --- !u!61 &786400173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -258,6 +261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671014377038200954, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671014377038200954, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 5
       objectReference: {fileID: 0}
@@ -298,6 +306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2671379704821744486, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671379704821744486, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
       propertyPath: EmissionModule.enabled
       value: 0
       objectReference: {fileID: 0}
@@ -330,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697459478020109318, guid: 46fd26a2fe5d4c246a501359d1c7b429,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2697459478020109318, guid: 46fd26a2fe5d4c246a501359d1c7b429,
         type: 3}

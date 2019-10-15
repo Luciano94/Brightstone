@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
+    [Header("Dash Charges")]
+    public int dashChrages = 2;
+    public int actualDashCharges = 2;
+    public float timeBetweenCharges = 5.0f;
+    public float actualTimeBetweenCharges = 0.0f;
+
+
+    [Header("Dash Parametres")]
     public float dashSpeed;
     public float startDashTime;
     private float dashTime;
@@ -22,11 +30,13 @@ public class PlayerDash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DashCharges();
         if (!isDashing)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) && CanDash())
             {
                 isDashing = true;
+                actualDashCharges--;
             }
         }
         else
@@ -44,5 +54,26 @@ public class PlayerDash : MonoBehaviour
                 playerRB.velocity = dashSpeed * mov;
             }
         }
+    }
+
+    private void DashCharges()
+    {
+        if(actualDashCharges < dashChrages)
+        {
+            if(actualTimeBetweenCharges < timeBetweenCharges)
+            {
+                actualTimeBetweenCharges += Time.deltaTime;
+            }
+            else
+            {
+                actualTimeBetweenCharges = 0.0f;
+                actualDashCharges++;
+            }
+        }
+    }
+
+    private bool CanDash()
+    {
+        return actualDashCharges > 0;
     }
 }
