@@ -366,7 +366,7 @@ public class EnemyBehaviour : MonoBehaviour{
         return turnShouldPass;
     }
     [Header("Attack turn timer")]
-    private float timeBetweenRangedAttacks = 0.3f;
+    private float timeBetweenRangedAttacks = 0.5f;
     float attackTimer = 0.0f;
     int subTurn = 0;
     private bool AttackStrategy(){
@@ -377,16 +377,15 @@ public class EnemyBehaviour : MonoBehaviour{
         if(!turnShouldPass){
             attackTimer += Time.deltaTime;
             if(attackTimer >= timeBetweenRangedAttacks){
-                attackTimer = 0.0f;
                 if(subTurn >= enemiesInPerAttackTurn.Count){ subTurn = 0; }
-
                 if(enemiesInPerAttackTurn[subTurn].isAssigned && enemiesInPerAttackTurn[subTurn].attacksLeft > 0){
+                    attackTimer = 0.0f;
                     PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
                     enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
                     t.attacksLeft--;
                     enemiesInPerAttackTurn[subTurn] = t;
-                    subTurn++;
                 }
+                subTurn++;
             }
         } else {
             subTurn = 0;
