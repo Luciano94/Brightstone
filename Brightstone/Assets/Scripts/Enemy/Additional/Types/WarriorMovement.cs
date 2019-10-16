@@ -12,6 +12,7 @@ public class WarriorMovement : EnemyMovement{
     private float timeLeftToRefresh = 0;
 
     const float TIME_PER_REFRESH = 0.1f;
+    const float DIST_LIMIT = 0.3f;
 
     private void Update()
     {
@@ -93,23 +94,21 @@ public class WarriorMovement : EnemyMovement{
 
         obj.z = playerPos.z;
 
-        if ((obj - transform.position).magnitude > 0.1f)
-            MoveToObjective(obj);
+        MakeMovement(obj);
     }
 
     private void Melee32(){
         Vector3 roomOrigin32 = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
         roomOrigin32.z = playerPos.z;
-        float angle = Calculations.GetAngle(playerPos - roomOrigin32);
+        float angle = Calculations.GetAngle(playerPos - roomOrigin32) - 45.0f;
         
         Vector3 obj = new Vector3();
 
-        obj.x = playerPos.x + Mathf.Cos(angle - 45.0f + chaserIndex * 45.0f) * distFromPlayer;
-        obj.y = playerPos.y + Mathf.Sin(angle - 45.0f + chaserIndex * 45.0f) * distFromPlayer;
+        obj.x = playerPos.x + Mathf.Cos(angle + chaserIndex * 45.0f) * distFromPlayer;
+        obj.y = playerPos.y + Mathf.Sin(angle + chaserIndex * 45.0f) * distFromPlayer;
         obj.z = playerPos.z;
 
-        if ((obj - transform.position).magnitude > 0.1f)
-            MoveToObjective(obj);
+        MakeMovement(obj);
     }
 
     private void Melee33(){
@@ -123,8 +122,7 @@ public class WarriorMovement : EnemyMovement{
         obj.y = playerPos.y + Mathf.Sin(angleStr33 + chaserIndex * 120.0f) * distFromPlayer;
         obj.z = playerPos.z;
 
-        if ((obj - transform.position).magnitude > 0.1f)
-            MoveToObjective(obj);
+        MakeMovement(obj);
     }
 
     private void Melee34(){
@@ -152,7 +150,16 @@ public class WarriorMovement : EnemyMovement{
 
         obj.z = playerPos.z;
 
-        if ((obj - transform.position).magnitude > 0.1f)
+        MakeMovement(obj);
+    }
+
+    void MakeMovement(Vector3 obj){
+        if ((obj - transform.position).magnitude > DIST_LIMIT){
+            eAnim.Move();
             MoveToObjective(obj);
+        }
+        else{
+            eAnim.Idle();
+        }
     }
 }

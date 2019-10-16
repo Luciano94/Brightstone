@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistanceToChase: 8
   minDistanceToAttack: 1.8
-  timeRelocating: 1
+  timeRelocating: 0.6
   timeParalyzedForHit: 0.2
   timeParalyzedForParry: 2
   enemyIndex: -1
@@ -133,12 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d220a51244562544a4638a94c3b1a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   sword: {fileID: 4093589057318080765}
   eAnim: {fileID: 4914635166833622913}
   speedSurrounding: 0.4
   timeSurrounding: 1.5
-  deltaTimeSurrounding: 0.6
+  deltaTimeSurrounding: 0.75
   timeWaiting: 1
   distFromPlayer: 4
   rotationSpeedStr33: 0

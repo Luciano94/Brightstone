@@ -36,21 +36,21 @@ public class EnemyWarrior : Enemy{
     }
 
     protected override void Relocating(){
-        OnChase();
-        
-        /*timeLeft -= Time.deltaTime;
+        timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
             enemyMovement.IsMovingForward = false;
             OnChase();
             return;
         }
-        
-        enemyMovement.Relocate();*/
+    
+        enemyMovement.Relocate();
     }
 
     protected override void Attacking(){
         if (!enemyCombat.IsAttacking){
-            timeLeft = timeRelocating;
+            Strategies str = EnemyBehaviour.Instance.currentStrategy;
+            if (str < Strategies.Melee21 || str == Strategies.Melee25 || str == Strategies.Melee35)
+                timeLeft = timeRelocating;
             OnRelocate();
             return;
         }

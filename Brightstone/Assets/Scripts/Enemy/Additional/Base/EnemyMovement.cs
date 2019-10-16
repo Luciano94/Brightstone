@@ -4,7 +4,7 @@ public class EnemyMovement : MonoBehaviour{
     [Header("Common Variables")]
     [SerializeField] private float speed;
     [SerializeField] private GameObject sword;
-    [SerializeField] private EnemyAnimations eAnim;
+    [SerializeField] protected EnemyAnimations eAnim;
     [SerializeField] private float speedSurrounding;
     [SerializeField] private float timeSurrounding;
     [SerializeField] private float deltaTimeSurrounding;
@@ -17,13 +17,17 @@ public class EnemyMovement : MonoBehaviour{
     private bool movingForward = false;
     private bool movingRight = false;
 
+    const float DELTA_SPEED = 0.3f;
+
     private void Start(){
         StartSurrounding(); // Temporary here
+        speed += Random.Range(-DELTA_SPEED, DELTA_SPEED);
     }
 
     public void MoveToPlayer(){
         PrepareVariables(GameManager.Instance.PlayerPos);
 
+        eAnim.Move();
         transform.Translate(diff.normalized * speed * Time.deltaTime);
 
         Rotation();
@@ -69,6 +73,8 @@ public class EnemyMovement : MonoBehaviour{
 
         transform.Translate(-diff.normalized * speed * 0.4f  * Time.deltaTime);
 
+        moveDir = -diff.normalized;
+        CheckForward();
         Rotation();
     }
 
@@ -114,7 +120,7 @@ public class EnemyMovement : MonoBehaviour{
         this.objective = objective;
         diff = objective - transform.position;
 
-        if(objective.x > transform.position.x)
+        if(GameManager.Instance.PlayerPos.x > transform.position.x)
             eAnim.SetDirection(0);
         else
             eAnim.SetDirection(1);
