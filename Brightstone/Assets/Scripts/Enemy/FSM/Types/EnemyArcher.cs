@@ -4,12 +4,6 @@ public class EnemyArcher : Enemy{
     [Header("Archer")]
     [SerializeField] private float minDistanceToMoveBack;
 
-    protected override void Awake(){
-        base.Awake();
-
-        isMyAttackingTurn = true;
-    }
-
     protected override void Chasing(){
         timeLeft = timeRelocating;
         OnForceToRelocate();
@@ -22,7 +16,8 @@ public class EnemyArcher : Enemy{
 
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0.0f && IsOnAttackRange()){
+
+        if (isMyAttackingTurn && timeLeft <= 0.0f && IsOnAttackRange()){
             enemyMovement.IsMovingForward = false;
             enemyCombat.Attack();
             OnAttackRange();
