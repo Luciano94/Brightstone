@@ -16282,7 +16282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7a524797d4cc5488712bc8a59c2267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenRangedAttacks: 0.3
+  currentStrategy: 0
+  currentAngleStr31: 0
 --- !u!82 &1896201172
 AudioSource:
   m_ObjectHideFlags: 0
