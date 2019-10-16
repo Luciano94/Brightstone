@@ -129,7 +129,6 @@ public class EnemyBehaviour : MonoBehaviour{
             int deadEnemyIndex = -1;
             for(int i = 0; i < enemiesInPerAttackTurn.Count; i++){
                 PerAttackTurn t = enemiesInPerAttackTurn[i];
-                //Debug.Log((t.enemyIndex +1) + " out of " + enemiesInPerAttackTurn.Count);
                 if(enemy == enemiesInRoom[(int)type][t.enemyIndex]){
                     deadEnemyIndex = t.enemyIndex;
                     PerAttackTurn newTurn = new PerAttackTurn(false,t.enemyType,t.enemyIndex,t.attacksLeft);
@@ -238,11 +237,11 @@ public class EnemyBehaviour : MonoBehaviour{
             PerHPTurn hp = new PerHPTurn(true);
             enemiesInPerHPTurn[i] = hp;
         }
+
         //Fill lists
         if(turn == TurnType.HP){
             float hPPromedy = HPPromedy();
             List<EnemyBase> enemiesToGetInTurn = GetRandomEnemies(enemiesInPerHPTurn.Length, EnemyType.Warrior); //hardcoded enemy type
-            //List<EnemyBase> enemiesToGetInTurn = GetEnemies(enemiesInPerHPTurn.Length, EnemyType.Warrior);
             for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
                 
                 PerHPTurn t;
@@ -250,11 +249,13 @@ public class EnemyBehaviour : MonoBehaviour{
                     enemiesToGetInTurn[i].enemyIndex = i;
                     t.enemyType = (int)enemiesToGetInTurn[i].GetEnemyType();
                     t.enemyIndex = enemiesInRoom[(int)enemiesToGetInTurn[i].GetEnemyType()].IndexOf(enemiesToGetInTurn[i]);
-                    float random = Random.Range(-1.0f, 1.0f);
+                    
+                    float random = Random.Range(-1.0f, 0.0f);
                     t.hPThreshold = hPPromedy + (enemiesToGetInTurn[i].GetMaxHP()/ 5 * random);
-                    if(enemiesToGetInTurn[i].GetHP() < t.hPThreshold){
-                        t.hPThreshold = 0;
-                    }
+                    
+                    //if(enemiesToGetInTurn[i].GetHP() < t.hPThreshold){ t.hPThreshold = 0; }
+                    if(enemiesToGetInTurn[i].GetHP() <= 50){ t.hPThreshold = 0; }
+
                     enemiesToGetInTurn[i].Chase();
                     t.isAssigned = true;
                 } else {
@@ -396,10 +397,10 @@ public class EnemyBehaviour : MonoBehaviour{
     }
     
     private bool HPStrategy(){
-        bool turnShouldPass = true;
+        bool turnShouldPass = false;
         foreach(PerHPTurn t in enemiesInPerHPTurn){
-            if(t.isAssigned && t.hPThreshold < enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
-                turnShouldPass = false;
+            if(t.isAssigned && t.hPThreshold >= enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
+                turnShouldPass = true;
             }
         }
         if(!turnShouldPass){
