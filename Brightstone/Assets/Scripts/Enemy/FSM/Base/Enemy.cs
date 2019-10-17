@@ -19,7 +19,8 @@ public class Enemy : EnemyBase{
         OnHit,
         OnRestitution,
         NoHealth,
-        ForceState,
+        ForceWtState,
+        ForceRctState,
         Count
     }
 
@@ -40,29 +41,28 @@ public class Enemy : EnemyBase{
         fsm.SetRelation( (int)States.Attack,   (int)Events.OnAttackStop,  (int)States.Relocate );
         fsm.SetRelation( (int)States.Attack,   (int)Events.OnHit,         (int)States.Hurt     );
         fsm.SetRelation( (int)States.Attack,   (int)Events.NoHealth,      (int)States.Death    );
+        fsm.SetRelation( (int)States.Attack,   (int)Events.ForceWtState,  (int)States.Wait     );
 
         fsm.SetRelation( (int)States.Chase,    (int)Events.OnAttack,      (int)States.Attack   );
         fsm.SetRelation( (int)States.Chase,    (int)Events.OnHit,         (int)States.Hurt     );
         fsm.SetRelation( (int)States.Chase,    (int)Events.NoHealth,      (int)States.Death    );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.ForceWtState,  (int)States.Wait     );
+        fsm.SetRelation( (int)States.Chase,    (int)Events.ForceRctState, (int)States.Relocate );
 
         fsm.SetRelation( (int)States.Wait,     (int)Events.OnChase,       (int)States.Chase    );
         fsm.SetRelation( (int)States.Wait,     (int)Events.OnHit,         (int)States.Hurt     );
         fsm.SetRelation( (int)States.Wait,     (int)Events.NoHealth,      (int)States.Death    );
+        fsm.SetRelation( (int)States.Wait,     (int)Events.ForceRctState, (int)States.Relocate );
 
         fsm.SetRelation( (int)States.Relocate, (int)Events.OnChase,       (int)States.Chase    );
         fsm.SetRelation( (int)States.Relocate, (int)Events.OnAttack,      (int)States.Attack   );
         fsm.SetRelation( (int)States.Relocate, (int)Events.OnHit,         (int)States.Hurt     );
         fsm.SetRelation( (int)States.Relocate, (int)Events.NoHealth,      (int)States.Death    );
+        fsm.SetRelation( (int)States.Relocate, (int)Events.ForceWtState,  (int)States.Wait     );
         
         fsm.SetRelation( (int)States.Hurt,     (int)Events.OnRestitution, (int)States.Chase    );
         fsm.SetRelation( (int)States.Hurt,     (int)Events.NoHealth,      (int)States.Death    );
-
-        fsm.SetRelation( (int)States.Attack,   (int)Events.ForceState,    (int)States.Wait     );
-        fsm.SetRelation( (int)States.Chase,    (int)Events.ForceState,    (int)States.Wait     );
-        fsm.SetRelation( (int)States.Relocate, (int)Events.ForceState,    (int)States.Wait     );
-        fsm.SetRelation( (int)States.Hurt,     (int)Events.ForceState,    (int)States.Wait     );
-        fsm.SetRelation( (int)States.Chase,    (int)Events.ForceState,    (int)States.Relocate );
-        fsm.SetRelation( (int)States.Wait,     (int)Events.ForceState,    (int)States.Relocate );
+        fsm.SetRelation( (int)States.Hurt,     (int)Events.ForceWtState,  (int)States.Wait     );
     }
 
     // ===========================================================
@@ -142,7 +142,10 @@ public class Enemy : EnemyBase{
 
     protected override void OnRelocate(){
         enemyMovement.IsMovingForward = false;
-        fsm.SendEvent((int)Events.OnAttackStop);
+        if (chasing)
+            fsm.SendEvent((int)Events.OnAttackStop);
+        else
+            fsm.SendEvent((int)Events.ForceWtState);
     }
 
     protected override void OnHit(){
@@ -163,11 +166,11 @@ public class Enemy : EnemyBase{
 
     protected override void OnReturnToWait(){
         guardState = true;
-        fsm.SendEvent((int)Events.ForceState);
+        fsm.SendEvent((int)Events.ForceWtState);
     }
 
     protected override void OnForceToRelocate(){
-        fsm.SendEvent((int)Events.ForceState);
+        fsm.SendEvent((int)Events.ForceRctState);
     }
 
     public int GetActualState(){

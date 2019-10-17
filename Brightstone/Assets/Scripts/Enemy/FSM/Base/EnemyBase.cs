@@ -13,6 +13,7 @@ public abstract class EnemyBase : MonoBehaviour{
     protected float timeLeft = 0.0f;
     protected float timeLeftHit = 0.0f;
     protected float timeLeftParried = 0.0f;
+    protected bool chasing = false;
     protected bool guardState = true;
     public int enemyIndex = -1;
     public bool feinting;
@@ -36,6 +37,7 @@ public abstract class EnemyBase : MonoBehaviour{
     abstract protected void OnUpdate();
 
     public void Chase(){
+        chasing = true;
         OnChase();
     }
 
@@ -50,7 +52,9 @@ public abstract class EnemyBase : MonoBehaviour{
     }
 
     public void ForceToGuardState(){
-        OnReturnToWait();
+        chasing = false;
+        timeLeft = timeRelocating * 2.0f;
+        OnRelocate();
     }
 
     protected bool IsOnChaseRange(){

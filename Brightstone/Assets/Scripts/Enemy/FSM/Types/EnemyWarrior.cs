@@ -32,14 +32,17 @@ public class EnemyWarrior : Enemy{
             return;
         }*/
         
-        enemyMovement.SurroundPlayer();
+        enemyMovement.RandomCircleMovement();
     }
 
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
             enemyMovement.IsMovingForward = false;
-            OnChase();
+            if (chasing)
+                OnChase();
+            else
+                OnReturnToWait();
             return;
         }
     
@@ -63,7 +66,10 @@ public class EnemyWarrior : Enemy{
         timeLeftParried -= Time.deltaTime;
         if (timeLeftHit <= 0.0f && timeLeftParried <= 0.0f){
             enemyCombat.Restitute();
-            OnRestitution();
+            if (chasing)
+                OnRestitution();
+            else
+                OnReturnToWait();
             return;
         }
 

@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour{
         Rotation();
     }
 
-    public void SurroundPlayer(){
+    public void RandomCircleMovement(){
         PrepareVariables(GameManager.Instance.PlayerPos);
 
         timeLeft -= Time.deltaTime;
@@ -70,8 +70,9 @@ public class EnemyMovement : MonoBehaviour{
 
     public void Relocate(){
         PrepareVariables(GameManager.Instance.PlayerPos);
+        eAnim.Move();
 
-        transform.Translate(-diff.normalized * speed * 0.4f  * Time.deltaTime);
+        transform.Translate(-diff.normalized * speed * 0.55f  * Time.deltaTime);
 
         moveDir = -diff.normalized;
         CheckForward();
