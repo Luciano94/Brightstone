@@ -102,6 +102,7 @@ public class EnemyBehaviour : MonoBehaviour{
 
     private void TurnCounter(){
         bool turnShouldPass = true;
+        Debug.Log(turn.ToString());
         switch(turn){
             case TurnType.Attack:
                 turnShouldPass = AttackStrategy();
@@ -117,6 +118,7 @@ public class EnemyBehaviour : MonoBehaviour{
             break;
         }
         if(turnShouldPass){
+            Debug.Log("Turn pass");
             onStrategyExit();
             InitializeStrategy();
         }
@@ -397,12 +399,18 @@ public class EnemyBehaviour : MonoBehaviour{
     }
     
     private bool HPStrategy(){
-        bool turnShouldPass = false;
+        bool turnShouldPass = true;
+        bool isOneUnderThreshold = false;
         foreach(PerHPTurn t in enemiesInPerHPTurn){
-            if(t.isAssigned && t.hPThreshold >= enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
-                turnShouldPass = true;
+            if(t.isAssigned){
+                turnShouldPass = false;
+                if(t.hPThreshold >= enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
+                    isOneUnderThreshold = true;
+                }
             }
         }
+        if(isOneUnderThreshold){ turnShouldPass = true;}
+        
         if(!turnShouldPass){
             switch(currentStrategy){
                 case Strategies.Melee11:
