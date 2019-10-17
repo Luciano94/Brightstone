@@ -16,6 +16,12 @@ public class PlayerDash : MonoBehaviour
     public float startDashTime;
     private float dashTime;
 
+    [Header("Dash HUD")]
+    public GameObject[] dashChargesHud;
+
+    [Header("Dash Particles")]
+    public TrailRenderer dashParticles;
+
     private Rigidbody2D playerRB;
 
     private Vector2 mov;
@@ -25,17 +31,26 @@ public class PlayerDash : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        dashParticles.Clear();
+        dashParticles.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         DashCharges();
+        HandlerDashUI();
+
         if (!isDashing)
         {
+            mov.x = Input.GetAxis("Horizontal");
+            mov.y = Input.GetAxis("Vertical");
+            mov = mov.normalized;
             if (Input.GetKeyDown(KeyCode.LeftShift) && CanDash())
             {
                 isDashing = true;
+                dashParticles.Clear();
+                dashParticles.enabled = true;
                 actualDashCharges--;
             }
         }
@@ -46,10 +61,12 @@ public class PlayerDash : MonoBehaviour
                 isDashing = false;
                 dashTime = startDashTime;
                 playerRB.velocity = Vector2.zero;
+                dashParticles.enabled = false;
+                dashParticles.Clear();
+
             }
             else
             {
-                mov = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
                 dashTime -= Time.deltaTime;
                 playerRB.velocity = dashSpeed * mov;
             }
@@ -72,8 +89,29 @@ public class PlayerDash : MonoBehaviour
         }
     }
 
+    private void HandlerDashUI()
+    {
+        switch (actualDashCharges)
+        {
+            case 0:
+                dashChargesHud[0].SetActive(false);
+                dashChargesHud[1].SetActive(false);
+                break;
+            case 1:
+                dashChargesHud[0].SetActive(true);
+                dashChargesHud[1].SetActive(false);
+                break;
+            case 2:
+                dashChargesHud[0].SetActive(true);
+                dashChargesHud[1].SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
     private bool CanDash()
     {
-        return actualDashCharges > 0;
+        return (actualDashCharges > 0 && mov != Vector2.zero);
     }
 }
