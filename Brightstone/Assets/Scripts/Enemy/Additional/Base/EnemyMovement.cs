@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour{
-
+    [Header("Common Variables")]
     [SerializeField] private float speed;
-    [SerializeField] private Vector3 player;
     [SerializeField] private GameObject sword;
-    [SerializeField] private EnemyAnimations eAnim;
+    [SerializeField] protected EnemyAnimations eAnim;
     [SerializeField] private float speedSurrounding;
     [SerializeField] private float timeSurrounding;
     [SerializeField] private float deltaTimeSurrounding;
     [SerializeField] private float timeWaiting;
+    private Vector3 objective;
     private Vector3 diff;
     private Vector2 playerDir;
     private Vector2 moveDir;
@@ -17,45 +17,33 @@ public class EnemyMovement : MonoBehaviour{
     private bool movingForward = false;
     private bool movingRight = false;
 
-    private void Start(){
-        player = GameManager.Instance.PlayerPos;
+    const float DELTA_SPEED = 0.3f;
 
+    private void Start(){
         StartSurrounding(); // Temporary here
+        speed += Random.Range(-DELTA_SPEED, DELTA_SPEED);
     }
 
     public void MoveToPlayer(){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
+        eAnim.Move();
         transform.Translate(diff.normalized * speed * Time.deltaTime);
 
         Rotation();
     }
 
-    public void SurroundPlayer(){
-        PrepareVariables();
+    public void MoveToObjective(Vector3 pos){
+        PrepareVariables(pos);
+        moveDir = diff.normalized;
+        transform.Translate(moveDir * speed * Time.deltaTime);
 
-        // Here i have to move the Enemy around the Player, like making a circle, with a Delta of the distance
-        //  from the Player to the Enemy so that distance is not a perfect circle. Also, the speed of the
-        //  enemies is slower.
+        CheckForward();
+        Rotation();
+    }
 
-        /*timeLeft -= Time.deltaTime;
-
-        if (timeLeft < 0.0f){
-            timeLeft = timeSurrounding + Random.Range(-deltaTimeSurrounding, deltaTimeSurrounding);
-            movingRight = Random.value > 0.5f ? true : false;
-        }
-
-        Vector3 inverseDiff = transform.position - player;
-        float radio = inverseDiff.magnitude;
-
-        dir = inverseDiff.normalized;
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-        Vector3 extraPos = ((radio * Mathf.Cos(angle) * Vector3.right) + (radio * Mathf.Sin(angle) * Vector3.up)) * (movingRight ? 1.0f : -1.0f);
-
-        //transform.Translate(extraPos * surroundSpeed * Time.deltaTime);
-        transform.position += extraPos * surroundSpeed * Time.deltaTime;
-        */
+    public void RandomCircleMovement(){
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
         timeLeft -= Time.deltaTime;
 
@@ -76,16 +64,23 @@ public class EnemyMovement : MonoBehaviour{
         CheckForward();
     }
 
+    virtual public void ApplyMovementStrategy(int chaserIndex){
+        PrepareVariables(GameManager.Instance.PlayerPos);
+    }
+
     public void Relocate(){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
+        eAnim.Move();
 
-        transform.Translate(-diff.normalized * speed * 0.4f  * Time.deltaTime);
+        transform.Translate(-diff.normalized * speed * 0.55f  * Time.deltaTime);
 
+        moveDir = -diff.normalized;
+        CheckForward();
         Rotation();
     }
 
     public void RelocateArcher(float minDistanceToMoveBack){
-        PrepareVariables();
+        PrepareVariables(GameManager.Instance.PlayerPos);
 
         Vector2 dir = diff.normalized;
 
@@ -122,11 +117,11 @@ public class EnemyMovement : MonoBehaviour{
         sword.transform.rotation = Quaternion.Euler(0, 0, angle + 90.0f);
     }
 
-    private void PrepareVariables(){
-        player = GameManager.Instance.PlayerPos;
-        diff = player - transform.position;
+    public void PrepareVariables(Vector3 objective){
+        this.objective = objective;
+        diff = objective - transform.position;
 
-        if(player.x > transform.position.x)
+        if(GameManager.Instance.PlayerPos.x > transform.position.x)
             eAnim.SetDirection(0);
         else
             eAnim.SetDirection(1);
@@ -162,7 +157,7 @@ public class EnemyMovement : MonoBehaviour{
     }
 
     private void CheckForward(){
-        if(player.x > transform.position.x){
+        if(GameManager.Instance.PlayerPos.x > transform.position.x){
             if (moveDir.x > 0.0f)
                 IsMovingForward = true;
             else

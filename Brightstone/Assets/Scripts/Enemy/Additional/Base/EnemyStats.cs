@@ -17,6 +17,9 @@ public class EnemyStats : MonoBehaviour{
     private MonoBehaviour[] movSet; 
     public EnemyType enemyType;
 
+    public class OnDeathGetEnemy : UnityEvent<EnemyBase>{};
+
+
     [HideInInspector][SerializeField] UnityEvent onHit;
     [HideInInspector][SerializeField] UnityEvent onDeath;
     [HideInInspector][SerializeField] UnityEvent onParried;
@@ -51,7 +54,7 @@ public class EnemyStats : MonoBehaviour{
                         UIManager.Instance.ExpUpdate();
                         
                     if (!GameManager.Instance.isTutorial){
-                        myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(gameObject);
+                        myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(GetComponent<EnemyBase>());
                         if (enemyType == EnemyType.Boss){
                             RunSaver.currentRun.data.bossesKilled++;
                             GameManager.Instance.PlayerWin();
@@ -71,8 +74,10 @@ public class EnemyStats : MonoBehaviour{
     private void LifePercent(float value){
         if (currentLife > 0){
             lifePercent = currentLife / life;
-            if (lifePercent <= lowHealthPerc)
+            if (lifePercent <= lowHealthPerc){
+                // Acá podrías llamar a la función del EnemyBehaviour
                 OnLowHealth.Invoke();
+            }
         }
         else
             lifePercent = 0.01f;
