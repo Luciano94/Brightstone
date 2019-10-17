@@ -20,6 +20,7 @@ public class EnemyArcher : Enemy{
         if (isMyAttackingTurn && timeLeft <= 0.0f && IsOnAttackRange()){
             enemyMovement.IsMovingForward = false;
             enemyCombat.Attack();
+            isMyAttackingTurn = false;
             OnAttackRange();
             return;
         }
