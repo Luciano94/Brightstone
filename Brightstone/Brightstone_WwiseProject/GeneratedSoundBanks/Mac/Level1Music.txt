@@ -1,0 +1,47 @@
+Event	ID	Name			Wwise Object Path	Notes
+	122911785	LevelEnter			\Default Work Unit\Level 1\General\LevelEnter	
+	667982098	PlayerRespawn			\Default Work Unit\Level 1\Player\PlayerRespawn	
+	905671766	MapMusic			\Default Work Unit\Level 1\General\MapMusic	
+	1391803776	RoomNewEnter			\Default Work Unit\Level 1\General\RoomNewEnter	
+	1656947812	PlayerDeath			\Default Work Unit\Level 1\Player\PlayerDeath	
+	1974576135	RoomClear			\Default Work Unit\Level 1\General\RoomClear	
+	3803289968	LevelClear			\Default Work Unit\Level 1\General\LevelClear	
+	4149955699	RoomBossEnter			\Default Work Unit\Level 1\General\RoomBossEnter	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1063701865	Stage			\Default Work Unit\Stage	
+
+Switch	ID	Name	Switch Group			Notes
+	2395677314	Common	Stage			
+	2540243936	Finale	Stage			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1307264345	Stance			\Default Work Unit\Stance	
+
+State	ID	Name	State Group			Notes
+	0	None	Stance			
+	579523862	Explore	Stance			
+	2764240573	Combat	Stance			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1063810301	RoomsCleared			\Default Work Unit\RoomsCleared	
+	3657907122	PlayerHP			\Default Work Unit\PlayerHP	
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	623259296	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\HeavyBreath\Cut\Silence\Wwise Silence	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	132279201	StartFire	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\StartFire_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Map\StartFire		705664
+	141212606	DroneG-8va_92bpm_1M_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Drone\DroneG-8va_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone Clean\DroneG-8va_92bpm_1M_0P		2185888
+	161662147	PlayerDeath	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Player_Death_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerDeath		416204
+	199228151	CombatStem_92bpm_MixSig_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\CombatStem_92bpm_MixSig_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\Combat\CombatStem_92bpm_MixSig_0P\CombatStem_92bpm_MixSig_0P		10469020
+	243199650	scared breath 12	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\scared breath 12_7F99865D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\HeavyBreath\scared breath 12		203780
+	293284878	DroneA_92bpm_1M_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Drone\DroneA_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone\DroneA_92bpm_1M_0P		2185888
+	306863937	DroneG_92bpm_1M_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Drone\DroneG_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone Clean\DroneG_92bpm_1M_0P		2185888
+	351713597	ThreeTaiko	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Taiko_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Map\ThreeTaiko		882064
+	810524022	DroneAb_92bpm_1M_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Drone\DroneAb_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone\DroneAb_92bpm_1M_0P		2185888
+	828804855	Introstem_92bpm_13-8_4M_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Introstem_92bpm_13-8_4M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\Combat\Introstem_92bpm_13-8_4M_0P\Introstem_92bpm_13-8_4M_0P		3738972
+	835927797	DroneD_92bpm_1M_0P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Drone\DroneD_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone\DroneD_92bpm_1M_0P		2185888
+	845695726	scared breath 12_04 (reemplazar)	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\scared breath 12_5A3E35C8.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\HeavyBreath\Cut\scared breath 12_04 (reemplazar)		45500
+	1054884445	Combat_80ppm_4-4_1-16P	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Combat_80ppm_4-4_1-16P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\Boss\Combat_80ppm_4-4_1-16P\Combat_80ppm_4-4_1-16P		3802352
+

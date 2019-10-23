@@ -16,6 +16,10 @@ public class PlayerStats : MonoBehaviour{
 
     [HideInInspector][SerializeField] UnityEvent onHit;
 
+    private void Start(){
+        SoundManager.Instance.PlayerRespawn();
+    }
+
     public int Defense{
         get{return 20;}
     }
@@ -67,6 +71,7 @@ public class PlayerStats : MonoBehaviour{
     }
 
     private void CheckLowHealth(){
+        SoundManager.Instance.PlayerHP(currentLife / life);
         if (currentLife / life < 0.3f)
             isLowHealth = true;
         else

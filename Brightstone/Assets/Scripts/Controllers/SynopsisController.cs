@@ -11,6 +11,7 @@ public class SynopsisController : MonoBehaviour{
 
     private void Start(){
         //skipBtn.Select();
+        SoundManager.Instance.SynopsisOpen();
     }
 
     private void Update(){
@@ -19,6 +20,7 @@ public class SynopsisController : MonoBehaviour{
     }
 
     public void StartRun(){
+        SoundManager.Instance.StopSounds();
         SceneManager.LoadScene(loadingIndex);
     }
 }

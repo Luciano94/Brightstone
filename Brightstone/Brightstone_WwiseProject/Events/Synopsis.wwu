@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{698D856A-7761-4335-B61C-E5190F25495F}" SchemaVersion="94" RootDocumentID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}">
+	<Events>
+		<WorkUnit Name="Synopsis" ID="{698D856A-7761-4335-B61C-E5190F25495F}" OwnerID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="SynopsisOpen" ID="{1DD7880A-46DB-4667-B904-53252875F0AD}">
+					<ChildrenList>
+						<Action Name="" ID="{30F6B81F-0C7D-4343-8303-9CEA87EEF67E}" ShortID="37792276">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{57BAC4B0-D35B-4E09-8F0A-52BC45652143}" ShortID="463759017">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Synopsis" ID="{5AD24F6D-6848-4232-BB27-69713AF4C937}" WorkUnitID="{13B655B3-8F48-48FF-891B-57CAF533CEAC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" SchemaVersion="94" RootDocumentID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}">
+	<Events>
+		<WorkUnit Name="Enemy" ID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" OwnerID="{E49D8D28-54F3-446D-A991-A6328235968E}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="EnemyMeleeSwordAttack" ID="{13E79E2C-F8EF-4AA3-A1EF-5FD942D37A4F}">
+					<ChildrenList>
+						<Action Name="" ID="{C17D8A00-436D-4ECD-B04F-C02EF8C99E66}" ShortID="914237681">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MeleeSwordAttack" ID="{C050A0A5-97C4-4F14-8310-3DA9246145C3}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="EnemyArcherTightBow" ID="{9F3AE7D0-5B12-4540-9CA7-750F6F331649}">
+					<ChildrenList>
+						<Action Name="" ID="{E6CBD62B-F627-4471-AFF9-BC941460331C}" ShortID="432299277">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BowTight" ID="{2820FE63-44A5-4E7A-B87E-229CAFF360E5}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="EnemyArcherReleaseBow" ID="{CC5EEC46-AF04-4B38-A328-81C316498DDA}">
+					<ChildrenList>
+						<Action Name="" ID="{C51AC090-C5A1-446D-B5F1-CA527EE0F272}" ShortID="476751162">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BowRelease" ID="{8FBEEBD6-FE83-4A8A-8E67-6DF63E9F5FCF}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="EnemyArcherDeath" ID="{BA69BC3C-801C-41DE-A364-15532E307576}">
+					<ChildrenList>
+						<Action Name="" ID="{B246A094-EEAB-4923-99FA-01ED654DC6C8}" ShortID="34533510">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="EnemyMeleeSwordAttackHit" ID="{77301C94-E7DC-4C71-B3E8-B6B7BE54EC10}">
+					<ChildrenList>
+						<Action Name="" ID="{B61F7AD8-CB47-4D87-BD73-37C31BA731ED}" ShortID="563742892">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="EnemyMeleeDeath" ID="{762CCDAC-E48F-40DC-B2DA-BC822179BC1F}">
+					<ChildrenList>
+						<Action Name="" ID="{9AA42032-013A-43AA-84D8-23EFC388C4E9}" ShortID="2681463">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BossDeath" ID="{13D024BA-593C-4733-BCF2-481348221D14}">
+					<ChildrenList>
+						<Action Name="" ID="{1CDBF300-B9F8-443C-9B82-E3A44BE0C387}" ShortID="347351265">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossScream" ID="{F3282A4F-BD1A-4595-AC5A-C60249F0A731}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BossSwordAttack" ID="{B2C1B83D-A34B-434F-BC82-0459652F652A}">
+					<ChildrenList>
+						<Action Name="" ID="{CF15CAC9-1036-4C19-819F-799AF1E915F2}" ShortID="554889023">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossSwordAttack" ID="{7FE52884-7563-40E3-A89D-DFBE96A1EF5B}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BossSwordAttackHit" ID="{9ED6A057-35D2-4143-ABE2-699571F24E49}">
+					<ChildrenList>
+						<Action Name="" ID="{88E69393-4DC6-4069-9F2A-9C8031D8F42E}" ShortID="1037415920">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

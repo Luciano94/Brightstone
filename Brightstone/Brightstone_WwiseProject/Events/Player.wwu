@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" SchemaVersion="94" RootDocumentID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}">
+	<Events>
+		<WorkUnit Name="Player" ID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" OwnerID="{E49D8D28-54F3-446D-A991-A6328235968E}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="PlayerAttackHeavy" ID="{D38EEE45-C6D6-4CBE-B093-6AB7EF119F92}">
+					<ChildrenList>
+						<Action Name="" ID="{E600EA8C-DF75-47B9-AB6C-3FA814A3AFF3}" ShortID="1037417797">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackHeavy" ID="{14F2CCEF-027E-4DF6-B8D9-A9401EC2B12C}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackHeavyHit" ID="{35ABEA38-BF4A-412C-8763-E17925A7A002}">
+					<ChildrenList>
+						<Action Name="" ID="{7EA9E20C-4171-4D71-8290-0E30820652BA}" ShortID="886295524">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackLight" ID="{86854D8F-11F5-47FC-8254-C233DA9745CF}">
+					<ChildrenList>
+						<Action Name="" ID="{00E8E8BB-613C-49AC-947A-5468855C835E}" ShortID="429604087">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackLight" ID="{7C6053B9-E920-4469-9185-943A2CA75385}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackLightHit" ID="{E97C5B9D-2968-48B4-B1D9-71537F3DA321}">
+					<ChildrenList>
+						<Action Name="" ID="{0FEAB690-5BB9-4E8E-B7F1-3D88C0B84EA2}" ShortID="187076106">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerDamaged" ID="{F9BA0457-4FAA-43A5-A022-525405CB16A4}">
+					<ChildrenList>
+						<Action Name="" ID="{C483BAA1-BE2F-4C30-9E63-61A74A16566C}" ShortID="414986960">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerDeath" ID="{E5D3B09B-8A77-4A31-95D3-DB1947B83C67}">
+					<ChildrenList>
+						<Action Name="" ID="{A2AA81AB-8441-42A2-B462-F36AAE6BF6E2}" ShortID="139782530">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9F19BCF4-C8EA-422B-A0FD-84F4A5DE12D7}" ShortID="858373379">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0832AAE8-6060-4F4B-9F76-2EA9F2DC5188}" ShortID="338288023">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerDeath" ID="{ADFA9BBA-319E-4598-8DEE-00A0B0670A00}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{012AB515-9741-450D-915E-4A32E67A3AF1}" ShortID="485220386">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerDeath" ID="{ADFA9BBA-319E-4598-8DEE-00A0B0670A00}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{11D7CA3B-DA90-427C-B949-33BA798181E5}" ShortID="409926300">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerParry" ID="{799D83B4-D0EB-4E50-91F2-636F5DD3AD67}">
+					<ChildrenList>
+						<Action Name="" ID="{7C7E152D-DD27-4A28-91A2-A7C6E9A523B9}" ShortID="548177792">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerParryHit" ID="{454F48E8-6B3C-4827-BEDB-81C29AB0A56E}">
+					<ChildrenList>
+						<Action Name="" ID="{2A6D79DF-0A99-4992-97B8-B6BD094BFC1B}" ShortID="319906740">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerParryHit" ID="{B41CC2A8-2AF2-4189-9259-317F39822C3F}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerRespawn" ID="{ECA6A6CC-9404-4325-A60A-5A975B3B013B}">
+					<ChildrenList>
+						<Action Name="" ID="{60F8B360-28D7-4F83-9A1F-4D0B736B820A}" ShortID="189296600">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{61DFCEA5-6CCE-45D9-A29F-F18E9D0364EC}" ShortID="1015138622">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4525A43B-D2E1-4C10-B5E6-750784190113}" ShortID="43122553">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{48329F99-3BA2-46F6-9D20-84C11A013446}" ShortID="15973297">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

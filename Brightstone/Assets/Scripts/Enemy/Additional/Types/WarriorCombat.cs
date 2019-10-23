@@ -13,7 +13,8 @@ public class WarriorCombat : EnemyCombat{
         if(currentTime > activeMoment && !active){
             weapon.SetActive(true);
             weaponColl.enabled = true;
-            AudioManager.Instance.EnemyAttack();
+            //AudioManager.Instance.EnemyAttack();
+            SoundManager.Instance.EnemyMeleeSwordAttack(gameObject);
             active = true;
         }
         if(currentTime > animTime){

@@ -1,0 +1,799 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cf66f5ee76562479456310c47b77c8, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: ad8241c2b978994fa8ea8e8f74ce1dd3
+    GuidInternal: 
+    m_lastTime: -8586323636753967967
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: b814c665a7c1b34999f3481aee659b0e
+    GuidInternal: 
+    m_lastTime: -8586302670751729075
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: bb1ef2048ac69b4e80b19e82dc7d0f3c
+    GuidInternal: 
+    m_lastTime: -8586321763237379193
+    List: []
+  - PhysicalPath: SoundBanks\Main.wwu
+    ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
+    guid: 14ab29a0355db14aba2233d66358ad72
+    GuidInternal: 
+    m_lastTime: -8586304528931203134
+    List:
+    - name: Level1
+      guid: 62b4613584d64041b1d7232e58ed92c7
+      id: 2678230382
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 12
+      - ElementName: Level1
+        ObjectType: 7
+      Path: Default Work Unit\Main\Level1
+  - PhysicalPath: SoundBanks\Music.wwu
+    ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
+    guid: 26c2e0a2ad68834a9d717f539c706795
+    GuidInternal: 
+    m_lastTime: -8586302662699242594
+    List:
+    - name: Level1Music
+      guid: 5f9015679f669546a979909b22431f03
+      id: 447814771
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Level1Music
+        ObjectType: 7
+      Path: Default Work Unit\Music\Level1Music
+    - name: MainMenu
+      guid: e508adfea8e0464c8340e975fed70a9c
+      id: 3604647259
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: MainMenu
+        ObjectType: 7
+      Path: Default Work Unit\Music\MainMenu
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 36c975ea6045fc43a297f0d4bbe2e39f
+    GuidInternal: 
+    m_lastTime: -8586302673538772119
+    List: []
+  - PhysicalPath: Events\Enemy.wwu
+    ParentPhysicalPath: Events\Level 1.wwu
+    guid: 96b8f4d569f46e4c98b3d6a2ed1ba32c
+    GuidInternal: 
+    m_lastTime: -8586302705947803055
+    List:
+    - name: BossDeath
+      guid: ba24d0133c593347bcf2481348221d14
+      id: 1481017468
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: BossDeath
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\BossDeath
+      maxAttenuation: 0
+      maxDuration: 3300000
+      minDuration: 3300000
+    - name: BossSwordAttack
+      guid: 3db8c1b24ba34f43bc820459652f652a
+      id: 1787276729
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: BossSwordAttack
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\BossSwordAttack
+      maxAttenuation: 0
+      maxDuration: 674835
+      minDuration: 567466
+    - name: BossSwordAttackHit
+      guid: 57a0d69ed2354341abe2699571f24e49
+      id: 2645155380
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: BossSwordAttackHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\BossSwordAttackHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: EnemyArcherDeath
+      guid: 3cbc69ba1c80de41a36415532e307576
+      id: 2377230056
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: EnemyArcherDeath
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\EnemyArcherDeath
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: EnemyArcherReleaseBow
+      guid: 46ec5ecc04af384ba32881c316498dda
+      id: 1108892891
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: EnemyArcherReleaseBow
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\EnemyArcherReleaseBow
+      maxAttenuation: 0
+      maxDuration: 566500
+      minDuration: 449631
+    - name: EnemyArcherTightBow
+      guid: d0e73a9f125b40459ca7750f6f331649
+      id: 852912510
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: EnemyArcherTightBow
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\EnemyArcherTightBow
+      maxAttenuation: 0
+      maxDuration: 311999
+      minDuration: 247633
+    - name: EnemyMeleeDeath
+      guid: accd2c768fe4dc40b2dabc822179bc1f
+      id: 1998821965
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: EnemyMeleeDeath
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\EnemyMeleeDeath
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: EnemyMeleeSwordAttack
+      guid: 2c9ee713eff8a34aa1ef5fd942d37a4f
+      id: 2564847700
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: EnemyMeleeSwordAttack
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\EnemyMeleeSwordAttack
+      maxAttenuation: 0
+      maxDuration: 510998
+      minDuration: 341315
+    - name: EnemyMeleeSwordAttackHit
+      guid: 941c3077dce7714cb3e8b6b7be54ec10
+      id: 3667500475
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: EnemyMeleeSwordAttackHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\EnemyMeleeSwordAttackHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\General.wwu
+    ParentPhysicalPath: Events\Level 1.wwu
+    guid: 0530032992570c4b92ec17a849b7dfae
+    GuidInternal: 
+    m_lastTime: -8586302673058240295
+    List:
+    - name: ArrowHit
+      guid: f19f11a8d3216443bbcd4f5c8aa03850
+      id: 2212241627
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: ArrowHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\ArrowHit
+      maxAttenuation: 0
+      maxDuration: 671281
+      minDuration: 598043
+    - name: LevelClear
+      guid: 9cbfc9465d27114d86bd81f02da10c14
+      id: 3803289968
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: LevelClear
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\LevelClear
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: LevelEnter
+      guid: 46d9ad7d32a2594495f6f454f4d939dc
+      id: 122911785
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: LevelEnter
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\LevelEnter
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MapMusic
+      guid: 8b5575f42d9765458d9325cafd26ac5b
+      id: 905671766
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: MapMusic
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\MapMusic
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: RoomBossEnter
+      guid: 8ca6fcf116aa6e4b94112019ae950b38
+      id: 4149955699
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: RoomBossEnter
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\RoomBossEnter
+      maxAttenuation: 0
+      maxDuration: 4000000
+      minDuration: 4000000
+    - name: RoomClear
+      guid: 22ae11175384fd4c936432808f98b7e2
+      id: 1974576135
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: RoomClear
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\RoomClear
+      maxAttenuation: 0
+      maxDuration: 5000000
+      minDuration: 5000000
+    - name: RoomNewEnter
+      guid: 6ff484670a76b948a5fb686642185785
+      id: 1391803776
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: RoomNewEnter
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\RoomNewEnter
+      maxAttenuation: 0
+      maxDuration: 4000000
+      minDuration: 4000000
+  - PhysicalPath: Events\Level 1.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: 288d9de4f3546d44a991a6328235968e
+    GuidInternal: 
+    m_lastTime: -8586304530391066331
+    List: []
+  - PhysicalPath: Events\Main Menu.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: f7517a353017fa4ab57bfa812502efcf
+    GuidInternal: 
+    m_lastTime: -8586303644846040392
+    List:
+    - name: MenuItemClick
+      guid: 68570bc8d10f1647b5a879a3ee254e34
+      id: 3345932315
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main Menu
+        ObjectType: 12
+      - ElementName: MenuItemClick
+        ObjectType: 3
+      Path: Default Work Unit\Main Menu\MenuItemClick
+      maxAttenuation: 0
+      maxDuration: 1320205
+      minDuration: 1320205
+    - name: MenuItemHover
+      guid: 1bca4cab492a7d43b6cd1e58a9b0bb03
+      id: 1220050629
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main Menu
+        ObjectType: 12
+      - ElementName: MenuItemHover
+        ObjectType: 3
+      Path: Default Work Unit\Main Menu\MenuItemHover
+      maxAttenuation: 0
+      maxDuration: 3000000
+      minDuration: 3000000
+    - name: MenuOpen
+      guid: 558646bf9ec4604484d1bcb9c2905867
+      id: 48824776
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main Menu
+        ObjectType: 12
+      - ElementName: MenuOpen
+        ObjectType: 3
+      Path: Default Work Unit\Main Menu\MenuOpen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Player.wwu
+    ParentPhysicalPath: Events\Level 1.wwu
+    guid: 5d7a2c9e7911f3419b9a4fffb92d5afc
+    GuidInternal: 
+    m_lastTime: -8586302673538802110
+    List:
+    - name: PlayerAttackHeavy
+      guid: 45ee8ed3d6c6be4cb0936ab7ef119f92
+      id: 3914790867
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerAttackHeavy
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerAttackHeavy
+      maxAttenuation: 0
+      maxDuration: 480928
+      minDuration: 421489
+    - name: PlayerAttackHeavyHit
+      guid: 38eaab354abf2c418763e17925a7a002
+      id: 1687189050
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerAttackHeavyHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerAttackHeavyHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayerAttackLight
+      guid: 8f4d8586f511fc478254c233da9745cf
+      id: 231747402
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerAttackLight
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerAttackLight
+      maxAttenuation: 0
+      maxDuration: 473342
+      minDuration: 221603
+    - name: PlayerAttackLightHit
+      guid: 9d5b7ce96829b448b1d971537f3da321
+      id: 3179880165
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerAttackLightHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerAttackLightHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayerDamaged
+      guid: 5704baf9aa4fa543a022525405cb16a4
+      id: 4055688079
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerDamaged
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerDamaged
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayerDeath
+      guid: 9bb0d3e5778a314a95d3db1947b83c67
+      id: 1656947812
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerDeath
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerDeath
+      maxAttenuation: 0
+      maxDuration: 2359070
+      minDuration: 2359070
+    - name: PlayerParry
+      guid: b4839d79ebd0504e91f2636f5dd3ad67
+      id: 878262600
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerParry
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerParry
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayerParryHit
+      guid: e8484f453c6b2748bedb81c29ab0a56e
+      id: 410952847
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerParryHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerParryHit
+      maxAttenuation: 0
+      maxDuration: 2201634
+      minDuration: 1961433
+    - name: PlayerRespawn
+      guid: cca6a6ec04942543a60a5a975b3b013b
+      id: 667982098
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerRespawn
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerRespawn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Synopsis.wwu
+    ParentPhysicalPath: Events\Default Work Unit.wwu
+    guid: 6a858d6961773543b61ce5190f25495f
+    GuidInternal: 
+    m_lastTime: -8586302673538702012
+    List:
+    - name: SynopsisOpen
+      guid: 0a88d71ddb466746b90453252875f0ad
+      id: 3349720163
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Synopsis
+        ObjectType: 12
+      - ElementName: SynopsisOpen
+        ObjectType: 3
+      Path: Default Work Unit\Synopsis\SynopsisOpen
+      maxAttenuation: 0
+      maxDuration: 53696144
+      minDuration: 53696144
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: f0c1bca2a5f04f45be9cc3d681b484d5
+    GuidInternal: 
+    m_lastTime: -8586304505335342630
+    List:
+    - name: BossHP
+      guid: 2e46467507cf6841be5c190c3fda92ee
+      id: 1624904154
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BossHP
+        ObjectType: 13
+      Path: Default Work Unit\BossHP
+    - name: PlayerHP
+      guid: d2c1bbf547ed7d48bd4520387dd58974
+      id: 3657907122
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayerHP
+        ObjectType: 13
+      Path: Default Work Unit\PlayerHP
+    - name: RoomsCleared
+      guid: 925c613d1014b947b65e6484bc7317ee
+      id: 1063810301
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RoomsCleared
+        ObjectType: 13
+      Path: Default Work Unit\RoomsCleared
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: a4ce803c444d3b4cb304267510edd8a5
+    GuidInternal: 
+    m_lastTime: -8586304537200783564
+    List:
+    - name: PlayerLife
+      guid: 4f2180e80a4870468ad5de88dce5daa4
+      id: 444815956
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayerLife
+        ObjectType: 9
+      Path: Default Work Unit\PlayerLife
+      values:
+      - name: Alive
+        guid: a2677f80861379448e572254955e7969
+        id: 655265632
+        PathAndIcons:
+        - ElementName: Alive
+          ObjectType: 8
+      - name: Dead
+        guid: 383e77a8be9e1c4ba6001a37c954f1b3
+        id: 2044049779
+        PathAndIcons:
+        - ElementName: Dead
+          ObjectType: 8
+      - name: None
+        guid: 30644df6570ca248b00d0049247ca2b7
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Stance
+      guid: 58e7b228b2e13a4f8eaa8e7bddba8994
+      id: 1307264345
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stance
+        ObjectType: 9
+      Path: Default Work Unit\Stance
+      values:
+      - name: Combat
+        guid: fb9398cca0d35f40ac3f7d134d4d7b70
+        id: 2764240573
+        PathAndIcons:
+        - ElementName: Combat
+          ObjectType: 8
+      - name: Explore
+        guid: 0097d179326f2044842f76d9979b57e2
+        id: 579523862
+        PathAndIcons:
+        - ElementName: Explore
+          ObjectType: 8
+      - name: None
+        guid: b26cdaad0a500d4385ed440a88a93702
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 3bbddb8cc69e5245a6555283c02cff6a
+    GuidInternal: 
+    m_lastTime: -8586304537201063773
+    List:
+    - name: BossHealth
+      guid: 5be863198231e7418f491b364dc2d837
+      id: 131068444
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BossHealth
+        ObjectType: 11
+      Path: Default Work Unit\BossHealth
+      values:
+      - name: BadlyInjured
+        guid: f26d8dfad161604a8cd140d5343835a5
+        id: 17165122
+        PathAndIcons:
+        - ElementName: BadlyInjured
+          ObjectType: 10
+      - name: FleshWound
+        guid: d8db7e7616e9ab4bb83bbede358a1386
+        id: 720847562
+        PathAndIcons:
+        - ElementName: FleshWound
+          ObjectType: 10
+      - name: Healthy
+        guid: 7412921de5aae84cb0c0c73e258318fe
+        id: 2874639328
+        PathAndIcons:
+        - ElementName: Healthy
+          ObjectType: 10
+      - name: NearlyDead
+        guid: 7cc6e43d38c0fe44a2e39d0dc7eaa9f5
+        id: 841236080
+        PathAndIcons:
+        - ElementName: NearlyDead
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: PlayerHealth
+      guid: 1d0da1ee70af7c4494aa5f6e492f3ed2
+      id: 151362964
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayerHealth
+        ObjectType: 11
+      Path: Default Work Unit\PlayerHealth
+      values:
+      - name: BadlyInjured
+        guid: 4cb14ff8a264c740b30301ed32091f72
+        id: 17165122
+        PathAndIcons:
+        - ElementName: BadlyInjured
+          ObjectType: 10
+      - name: FleshWound
+        guid: b7f8adc3909c83429fff66ff1fa7638d
+        id: 720847562
+        PathAndIcons:
+        - ElementName: FleshWound
+          ObjectType: 10
+      - name: Healthy
+        guid: 7fe01455d7f50e4aa8f36ef3b203c42e
+        id: 2874639328
+        PathAndIcons:
+        - ElementName: Healthy
+          ObjectType: 10
+      - name: NearlyDead
+        guid: 31dbf6aa567c5f44a34e0e96582e8b48
+        id: 841236080
+        PathAndIcons:
+        - ElementName: NearlyDead
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Stage
+      guid: 18d73fd628889d48933563725de4e4c6
+      id: 1063701865
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stage
+        ObjectType: 11
+      Path: Default Work Unit\Stage
+      values:
+      - name: Common
+        guid: d7abffd4336851458913dc26f4bcfbe6
+        id: 2395677314
+        PathAndIcons:
+        - ElementName: Common
+          ObjectType: 10
+      - name: Finale
+        guid: 5d429efda5024341807606a348cbd9c1
+        id: 2540243936
+        PathAndIcons:
+        - ElementName: Finale
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 9298ad969a164a43be2e5a54d7d3fabf
+    GuidInternal: 
+    m_lastTime: -8586323636754227848
+    List: []
+  ExpandedItems:
+  - /Brightstone_WwiseProject
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

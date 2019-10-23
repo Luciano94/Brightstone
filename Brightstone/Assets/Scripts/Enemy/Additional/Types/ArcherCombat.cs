@@ -13,7 +13,8 @@ public class ArcherCombat : EnemyCombat{
 
         enemyAnim.Set8AxisDirection((int)Calculations.Get8AxisDirection(diff));
         lineRenderer.enabled = true;
-        AudioManager.Instance.ArcherBowPull();
+        SoundManager.Instance.EnemyArcherTightBow(gameObject);
+        //AudioManager.Instance.ArcherBowPull();
     }
 
     override public void Attacking(){
@@ -40,6 +41,7 @@ public class ArcherCombat : EnemyCombat{
                 arrow.transform.GetChild(0).Rotate(0.0f, 0.0f, Calculations.GetAngle(diff));
                 arrow.SetValues(GetComponent<EnemyStats>(), diff.normalized);
                 enemyAnim.Throw();
+                SoundManager.Instance.EnemyArcherReleaseBow(gameObject);
             }
             throwed = true;
         }

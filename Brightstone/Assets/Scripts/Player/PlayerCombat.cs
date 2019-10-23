@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour{
 
     [Header("Attack")]
     Action action = null;
+    [HideInInspector] public Actions actualAttackAction = Actions.Blank;
     [SerializeField]private ComboManager cManager;
     [SerializeField]private float atckTime;
     [SerializeField]private ParticleSystem blood;
@@ -74,7 +75,9 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Start(){
-        GetComponent<PlayerStats>().OnHit.AddListener(Hit);
+        PlayerStats ps =  GetComponent<PlayerStats>();
+        ps.OnHit.AddListener(Hit);
+        ps.OnHit.AddListener(SoundManager.Instance.PlayerDamaged);
     }
 
     public void StartAction(Action _action, float animToRun){
@@ -130,10 +133,12 @@ public class PlayerCombat : MonoBehaviour{
         if(!MenuManager.Instance.StartMenu){
           if(Input.GetButtonDown("Xattack")){
                 cManager.ManageAction(Actions.X);
+                actualAttackAction = Actions.X;
                 isStrong = false;
             }
             if(Input.GetButtonDown("Yattack")){
                 cManager.ManageAction(Actions.Y);
+                actualAttackAction = Actions.Y;
                 isStrong = true;
             }
         }
@@ -182,6 +187,7 @@ public class PlayerCombat : MonoBehaviour{
                 weapon.SetActive(true);
                 weaponColl.enabled = true;
                 plAnim.SetParryTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
+                SoundManager.Instance.PlayerParry();
             }
         }
         if(isParrying && actParryTime >= parryTime){
@@ -227,6 +233,7 @@ public class PlayerCombat : MonoBehaviour{
 
     public UnityEvent OnParriedSomeone(){
         PlaySparks();
+        SoundManager.Instance.PlayerParryHit();
         return onParriedSomeone;
     }
 

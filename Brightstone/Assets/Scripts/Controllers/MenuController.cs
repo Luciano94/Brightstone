@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour{
     private void Start(){
         //playButton.Select();
         MenuPanel.Play("mainMenuIn");
+        SoundManager.Instance.MenuOpen();
     }
     
     public void Play(){

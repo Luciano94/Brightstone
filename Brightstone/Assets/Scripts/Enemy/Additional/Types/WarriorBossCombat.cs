@@ -11,7 +11,8 @@
         if (currentTime > activeMoment && !active){
             weapon.SetActive(true);
             weaponColl.enabled = true;
-            AudioManager.Instance.EnemyAttack();
+            //AudioManager.Instance.EnemyAttack();
+            SoundManager.Instance.BossSwordAttack(gameObject);
             active = true;
         }
         if (currentTime > animTime){

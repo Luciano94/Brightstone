@@ -24,12 +24,14 @@ public class ExperienceTest : MonoBehaviour
             if(Input.GetButtonUp("Yattack")){
                 
                 expMrk.LifeUp();
-                AudioManager.Instance.MenuHit();
+                //AudioManager.Instance.MenuHit();
+                SoundManager.Instance.MenuItemClick();
             }
             if(Input.GetButtonUp("Xattack")){
                 
                 expMrk.AtkUp();
-                AudioManager.Instance.MenuHit();
+                //AudioManager.Instance.MenuHit();
+                SoundManager.Instance.MenuItemClick();
             }
         }
     }

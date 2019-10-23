@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour{
         }else{
             PlayerPrefs.GetInt("XP", 0);
         }
+
+        SoundManager.Instance.LevelEnter();
     }
 
     private void Update(){
@@ -151,7 +153,8 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayerDeath(){
-        AudioManager.Instance.PlayerDeath();
+        SoundManager.Instance.PlayerDeath();
+
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
 
@@ -163,13 +166,12 @@ public class GameManager : MonoBehaviour{
         player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
         player.SetActive(false);
 
-        AudioManager.Instance.StopTheme();
+        //AudioManager.Instance.StopTheme();
         UIManager.Instance.RunFinished();
         MenuManager.Instance.LoseMenuCanvas = true;
     }
 
     public void PlayerWin(){
-        AudioManager.Instance.BossDeath();
 
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
@@ -183,7 +185,7 @@ public class GameManager : MonoBehaviour{
         playerCombat.enabled = false;
         playerSts.enabled = false;
 
-        AudioManager.Instance.StopTheme();
+        //AudioManager.Instance.StopTheme();
         MenuManager.Instance.WinMenuCanvas = true;
 
         DisablePlayer();

@@ -10,13 +10,14 @@ public class ArrowTrigger : MonoBehaviour{
             case "Player":
                 if(!gM.PlayerIsParry){
                     enemyStats.Hit();
-                    AudioManager.Instance.EnemyAttack();
+                    //AudioManager.Instance.EnemyAttack();
+                    SoundManager.Instance.ArrowHit(gameObject);
                     gM.playerSts.Life = enemyStats.AtkDmg;
                     gM.SetEnemyHitFrom(transform.position);
                     gM.ShakerController.Shake(1.2f, 1.2f, 0.1f, 0.2f);
                     UIManager.Instance.LifeUpdate();
                 }else{
-                    AudioManager.Instance.PlayerParry();
+                    //AudioManager.Instance.PlayerParry();
                     gM.playerCombat.ParriedSomeone();
                     gM.ZoomWhenParrying.ReduceSize();
                 }

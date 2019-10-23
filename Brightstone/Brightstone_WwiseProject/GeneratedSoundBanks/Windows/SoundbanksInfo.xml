@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="447814771" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music\Level1Music</ObjectPath>
+			<ShortName>Level1Music</ShortName>
+			<Path>Level1Music.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3803289968" Name="LevelClear" ObjectPath="\Events\Default Work Unit\Level 1\General\LevelClear" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="122911785" Name="LevelEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\LevelEnter" DurationType="Infinite"/>
+				<Event Id="905671766" Name="MapMusic" ObjectPath="\Events\Default Work Unit\Level 1\General\MapMusic" DurationType="Infinite"/>
+				<Event Id="1656947812" Name="PlayerDeath" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDeath" DurationType="OneShot" DurationMin="2.359070" DurationMax="2.359070"/>
+				<Event Id="667982098" Name="PlayerRespawn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerRespawn" DurationType="Infinite"/>
+				<Event Id="4149955699" Name="RoomBossEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomBossEnter" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000"/>
+				<Event Id="1974576135" Name="RoomClear" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomClear" DurationType="OneShot" DurationMin="5.000000" DurationMax="5.000000"/>
+				<Event Id="1391803776" Name="RoomNewEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomNewEnter" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="132279201" Language="SFX">
+					<ShortName>StartFire.wav</ShortName>
+					<Path>SFX\StartFire_10C4C929.wem</Path>
+				</File>
+				<File Id="141212606" Language="SFX">
+					<ShortName>Drone\DroneG-8va_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneG-8va_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="161662147" Language="SFX">
+					<ShortName>Player_Death.wav</ShortName>
+					<Path>SFX\Player_Death_10C4C929.wem</Path>
+				</File>
+				<File Id="199228151" Language="SFX">
+					<ShortName>CombatStem_92bpm_MixSig_0P.wav</ShortName>
+					<Path>SFX\CombatStem_92bpm_MixSig_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="243199650" Language="SFX">
+					<ShortName>scared breath 12.wav</ShortName>
+					<Path>SFX\scared breath 12_7F99865D.wem</Path>
+				</File>
+				<File Id="293284878" Language="SFX">
+					<ShortName>Drone\DroneA_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneA_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="306863937" Language="SFX">
+					<ShortName>Drone\DroneG_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneG_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="351713597" Language="SFX">
+					<ShortName>Taiko.wav</ShortName>
+					<Path>SFX\Taiko_10C4C929.wem</Path>
+				</File>
+				<File Id="810524022" Language="SFX">
+					<ShortName>Drone\DroneAb_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneAb_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="828804855" Language="SFX">
+					<ShortName>Introstem_92bpm_13-8_4M_0P.wav</ShortName>
+					<Path>SFX\Introstem_92bpm_13-8_4M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="835927797" Language="SFX">
+					<ShortName>Drone\DroneD_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneD_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="845695726" Language="SFX">
+					<ShortName>scared breath 12.wav</ShortName>
+					<Path>SFX\scared breath 12_5A3E35C8.wem</Path>
+				</File>
+				<File Id="1054884445" Language="SFX">
+					<ShortName>Combat_80ppm_4-4_1-16P.wav</ShortName>
+					<Path>SFX\Combat_80ppm_4-4_1-16P_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2678230382" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main\Level1</ObjectPath>
+			<ShortName>Level1</ShortName>
+			<Path>Level1.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2212241627" Name="ArrowHit" ObjectPath="\Events\Default Work Unit\Level 1\General\ArrowHit" DurationType="OneShot" DurationMin="0.598043" DurationMax="0.671281"/>
+				<Event Id="1481017468" Name="BossDeath" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\BossDeath" DurationType="OneShot" DurationMin="3.300000" DurationMax="3.300000"/>
+				<Event Id="1787276729" Name="BossSwordAttack" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\BossSwordAttack" DurationType="OneShot" DurationMin="0.567466" DurationMax="0.674835"/>
+				<Event Id="1108892891" Name="EnemyArcherReleaseBow" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\EnemyArcherReleaseBow" DurationType="OneShot" DurationMin="0.449631" DurationMax="0.566500"/>
+				<Event Id="852912510" Name="EnemyArcherTightBow" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\EnemyArcherTightBow" DurationType="OneShot" DurationMin="0.247633" DurationMax="0.311999"/>
+				<Event Id="2564847700" Name="EnemyMeleeSwordAttack" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\EnemyMeleeSwordAttack" DurationType="OneShot" DurationMin="0.341315" DurationMax="0.510998"/>
+				<Event Id="3914790867" Name="PlayerAttackHeavy" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackHeavy" DurationType="OneShot" DurationMin="0.421489" DurationMax="0.480928"/>
+				<Event Id="231747402" Name="PlayerAttackLight" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackLight" DurationType="OneShot" DurationMin="0.221603" DurationMax="0.473342"/>
+				<Event Id="1656947812" Name="PlayerDeath" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDeath" DurationType="OneShot" DurationMin="2.359070" DurationMax="2.359070"/>
+				<Event Id="410952847" Name="PlayerParryHit" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerParryHit" DurationType="OneShot" DurationMin="1.961433" DurationMax="2.201634"/>
+				<Event Id="667982098" Name="PlayerRespawn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerRespawn" DurationType="Infinite"/>
+				<Event Id="4149955699" Name="RoomBossEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomBossEnter" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000"/>
+				<Event Id="1974576135" Name="RoomClear" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomClear" DurationType="OneShot" DurationMin="5.000000" DurationMax="5.000000"/>
+				<Event Id="1391803776" Name="RoomNewEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomNewEnter" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="39096638" Language="SFX">
+					<ShortName>Fast Action Swish_HW 05.wav</ShortName>
+					<Path>SFX\Fast Action Swish_HW 05_0FF7B6FF.wem</Path>
+				</File>
+				<File Id="95295155" Language="SFX">
+					<ShortName>Fast Action Swish_HW 05.wav</ShortName>
+					<Path>SFX\Fast Action Swish_HW 05_35F081CE.wem</Path>
+				</File>
+				<File Id="105129647" Language="SFX">
+					<ShortName>Fast Action Swish_HW 05.wav</ShortName>
+					<Path>SFX\Fast Action Swish_HW 05_00D685C2.wem</Path>
+				</File>
+				<File Id="132279201" Language="SFX">
+					<ShortName>StartFire.wav</ShortName>
+					<Path>SFX\StartFire_10C4C929.wem</Path>
+				</File>
+				<File Id="141212606" Language="SFX">
+					<ShortName>Drone\DroneG-8va_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneG-8va_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="161662147" Language="SFX">
+					<ShortName>Player_Death.wav</ShortName>
+					<Path>SFX\Player_Death_10C4C929.wem</Path>
+				</File>
+				<File Id="199228151" Language="SFX">
+					<ShortName>CombatStem_92bpm_MixSig_0P.wav</ShortName>
+					<Path>SFX\CombatStem_92bpm_MixSig_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="235818575" Language="SFX">
+					<ShortName>Fast Action Swish_HW 05.wav</ShortName>
+					<Path>SFX\Fast Action Swish_HW 05_FB2E39BA.wem</Path>
+				</File>
+				<File Id="293284878" Language="SFX">
+					<ShortName>Drone\DroneA_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneA_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="306863937" Language="SFX">
+					<ShortName>Drone\DroneG_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneG_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="319793680" Language="SFX">
+					<ShortName>BossScream.wav</ShortName>
+					<Path>SFX\BossScream_10C4C929.wem</Path>
+				</File>
+				<File Id="351713597" Language="SFX">
+					<ShortName>Taiko.wav</ShortName>
+					<Path>SFX\Taiko_10C4C929.wem</Path>
+				</File>
+				<File Id="457148846" Language="SFX">
+					<ShortName>Whoosh_Rod_Pole_022 48000.wav</ShortName>
+					<Path>SFX\Whoosh_Rod_Pole_022 48000_10C4C929.wem</Path>
+				</File>
+				<File Id="665658802" Language="SFX">
+					<ShortName>Bow Pull.wav</ShortName>
+					<Path>SFX\Bow Pull_10C4C929.wem</Path>
+				</File>
+				<File Id="704732684" Language="SFX">
+					<ShortName>Fast Action Swish_HW 05.wav</ShortName>
+					<Path>SFX\Fast Action Swish_HW 05_FE436B79.wem</Path>
+				</File>
+				<File Id="810524022" Language="SFX">
+					<ShortName>Drone\DroneAb_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneAb_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="828804855" Language="SFX">
+					<ShortName>Introstem_92bpm_13-8_4M_0P.wav</ShortName>
+					<Path>SFX\Introstem_92bpm_13-8_4M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="835927797" Language="SFX">
+					<ShortName>Drone\DroneD_92bpm_1M_0P.wav</ShortName>
+					<Path>SFX\Drone\DroneD_92bpm_1M_0P_D79FB2B7.wem</Path>
+				</File>
+				<File Id="863462329" Language="SFX">
+					<ShortName>Parry.wav</ShortName>
+					<Path>SFX\Parry_D1B599A0.wem</Path>
+				</File>
+				<File Id="883326382" Language="SFX">
+					<ShortName>bullet_impact_ice_06.wav</ShortName>
+					<Path>SFX\bullet_impact_ice_06_10C4C929.wem</Path>
+				</File>
+				<File Id="961964107" Language="SFX">
+					<ShortName>Arrow Throw.wav</ShortName>
+					<Path>SFX\Arrow Throw_10C4C929.wem</Path>
+				</File>
+				<File Id="987255469" Language="SFX">
+					<ShortName>sfx_Swing1.wav</ShortName>
+					<Path>SFX\sfx_Swing1_10C4C929.wem</Path>
+				</File>
+				<File Id="988170954" Language="SFX">
+					<ShortName>sfx_Swing2.wav</ShortName>
+					<Path>SFX\sfx_Swing2_10C4C929.wem</Path>
+				</File>
+				<File Id="1054884445" Language="SFX">
+					<ShortName>Combat_80ppm_4-4_1-16P.wav</ShortName>
+					<Path>SFX\Combat_80ppm_4-4_1-16P_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3604647259" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music\MainMenu</ObjectPath>
+			<ShortName>MainMenu</ShortName>
+			<Path>MainMenu.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3345932315" Name="MenuItemClick" ObjectPath="\Events\Default Work Unit\Main Menu\MenuItemClick" DurationType="OneShot" DurationMin="1.320205" DurationMax="1.320205"/>
+				<Event Id="1220050629" Name="MenuItemHover" ObjectPath="\Events\Default Work Unit\Main Menu\MenuItemHover" DurationType="OneShot" DurationMin="3.000000" DurationMax="3.000000"/>
+				<Event Id="48824776" Name="MenuOpen" ObjectPath="\Events\Default Work Unit\Main Menu\MenuOpen" DurationType="Infinite"/>
+				<Event Id="3349720163" Name="SynopsisOpen" ObjectPath="\Events\Default Work Unit\Synopsis\SynopsisOpen" DurationType="OneShot" DurationMin="53.696144" DurationMax="53.696144"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="215339274" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Gtr_Counter_A.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Gtr_Counter_A_9B96ECC7.wem</Path>
+				</File>
+				<File Id="273683141" Language="SFX">
+					<ShortName>MainTitle_Main_80ppm_4-4_8M_P2B.wav</ShortName>
+					<Path>SFX\MainTitle_Main_80ppm_4-4_8M_P2B_9B96ECC7.wem</Path>
+				</File>
+				<File Id="280837918" Language="SFX">
+					<ShortName>Select.wav</ShortName>
+					<Path>SFX\Select_E2411CD4.wem</Path>
+				</File>
+				<File Id="299016176" Language="SFX">
+					<ShortName>Press 2.wav</ShortName>
+					<Path>SFX\Press 2_10C4C929.wem</Path>
+				</File>
+				<File Id="399722359" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_VcSolo_B.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_VcSolo_B_9B96ECC7.wem</Path>
+				</File>
+				<File Id="404432268" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Flute_A.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Flute_A_9B96ECC7.wem</Path>
+				</File>
+				<File Id="469190864" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_BassLine.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_BassLine_9B96ECC7.wem</Path>
+				</File>
+				<File Id="484524430" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_Vla.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_Vla_9B96ECC7.wem</Path>
+				</File>
+				<File Id="520244105" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Taiko.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Taiko_9B96ECC7.wem</Path>
+				</File>
+				<File Id="544123858" Language="SFX">
+					<ShortName>Press.wav</ShortName>
+					<Path>SFX\Press_10C4C929.wem</Path>
+				</File>
+				<File Id="544842073" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_ShakFX4.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_ShakFX4_9B96ECC7.wem</Path>
+				</File>
+				<File Id="546922273" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Piano_Chords.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Piano_Chords_9B96ECC7.wem</Path>
+				</File>
+				<File Id="554769943" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_BTbn.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_BTbn_9B96ECC7.wem</Path>
+				</File>
+				<File Id="585338568" Language="SFX">
+					<ShortName>Synopsis.wav</ShortName>
+					<Path>SFX\Synopsis_10C4C929.wem</Path>
+				</File>
+				<File Id="592502147" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_VcSolo_A.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_VcSolo_A_9B96ECC7.wem</Path>
+				</File>
+				<File Id="611199118" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_ShakFX1.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_ShakFX1_9B96ECC7.wem</Path>
+				</File>
+				<File Id="647367650" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Flute_B.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Flute_B_9B96ECC7.wem</Path>
+				</File>
+				<File Id="757337680" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Koto_CounterA.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Koto_CounterA_9B96ECC7.wem</Path>
+				</File>
+				<File Id="780132554" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_Vln2.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_Vln2_9B96ECC7.wem</Path>
+				</File>
+				<File Id="845933489" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_Stem.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_Stem_9B96ECC7.wem</Path>
+				</File>
+				<File Id="849008698" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_ShakFX3.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_ShakFX3_9B96ECC7.wem</Path>
+				</File>
+				<File Id="875313837" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_ShakFX2.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_ShakFX2_9B96ECC7.wem</Path>
+				</File>
+				<File Id="882312506" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_BTbn_A.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_BTbn_A_9B96ECC7.wem</Path>
+				</File>
+				<File Id="956847733" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Gtr_Chords.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Gtr_Chords_9B96ECC7.wem</Path>
+				</File>
+				<File Id="961508936" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Vln1_Note.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Vln1_Note_9B96ECC7.wem</Path>
+				</File>
+				<File Id="972721274" Language="SFX">
+					<ShortName>MainMenu_74ppm_4-4_1MP_Koto_B.wav</ShortName>
+					<Path>SFX\MainMenu_74ppm_4-4_1MP_Koto_B_9B96ECC7.wem</Path>
+				</File>
+				<File Id="974856407" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_HnB.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_HnB_9B96ECC7.wem</Path>
+				</File>
+				<File Id="1025386855" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_Gtr.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_Gtr_9B96ECC7.wem</Path>
+				</File>
+				<File Id="1039148467" Language="SFX">
+					<ShortName>MainMenu_Tsn_74ppm_4-4_ShakFX5.wav</ShortName>
+					<Path>SFX\MainMenu_Tsn_74ppm_4-4_ShakFX5_9B96ECC7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

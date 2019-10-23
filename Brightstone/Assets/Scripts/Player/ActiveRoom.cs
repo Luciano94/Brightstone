@@ -20,6 +20,15 @@ public class ActiveRoom : MonoBehaviour
             }
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
+
+            if(!roomsBehaviour.Complete){
+                if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Boss){
+                    SoundManager.Instance.RoomBossEnter();
+                } else {
+                    SoundManager.Instance.RoomNewEnter();
+                }
+            }
+
             doorManager = activeRoom.GetComponent<NodeExits>();
             cameraFollow.ResetXY(activeRoom.transform.position);
             if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Tutorial){
@@ -38,7 +47,6 @@ public class ActiveRoom : MonoBehaviour
             roomsBehaviour.setEnemiesRoom();
             roomsBehaviour.ActiveEnemies();
             doorManager.CloseDoors();
-            AudioManager.Instance.RoomStart();
         }
         ChangeLayer(9);
     }

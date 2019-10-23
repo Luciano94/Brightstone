@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}" SchemaVersion="94" RootDocumentID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}">
+	<Events>
+		<WorkUnit Name="Main Menu" ID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}" OwnerID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="MenuItemHover" ID="{AB4CCA1B-2A49-437D-B6CD-1E58A9B0BB03}">
+					<ChildrenList>
+						<Action Name="" ID="{AD8F416F-6CA6-413B-8918-447E767A83CC}" ShortID="454466398">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HoverButton" ID="{B84CB67D-449F-4E60-B725-0AA04402A1A7}" WorkUnitID="{9A0BC1A8-0433-40A4-AC44-9FB56BE93706}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MenuItemClick" ID="{C80B5768-0FD1-4716-B5A8-79A3EE254E34}">
+					<ChildrenList>
+						<Action Name="" ID="{41D417D7-BC4D-452E-AA6C-F140199EB057}" ShortID="276961038">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ClickButton" ID="{7B581813-42D1-4534-BB0E-4BE31E3B9433}" WorkUnitID="{9A0BC1A8-0433-40A4-AC44-9FB56BE93706}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MenuOpen" ID="{BF468655-C49E-4460-84D1-BCB9C2905867}">
+					<ChildrenList>
+						<Action Name="" ID="{18BFCFD5-B5B4-4D3A-ADC7-549D6FEA93E5}" ShortID="236810019">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{F9EF9EA1-1F1D-46C3-94D3-BF26303C3A79}" ShortID="408519997">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Menu" ID="{AB78229D-E045-42F5-84B6-85D999BB06AC}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

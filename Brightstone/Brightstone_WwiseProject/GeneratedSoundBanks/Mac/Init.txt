@@ -1,0 +1,39 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	131068444	BossHealth			\Default Work Unit\BossHealth	
+	151362964	PlayerHealth			\Default Work Unit\PlayerHealth	
+	1063701865	Stage			\Default Work Unit\Stage	
+
+Switch	ID	Name	Switch Group			Notes
+	17165122	BadlyInjured	BossHealth			
+	720847562	FleshWound	BossHealth			
+	841236080	NearlyDead	BossHealth			
+	2874639328	Healthy	BossHealth			
+	17165122	BadlyInjured	PlayerHealth			
+	720847562	FleshWound	PlayerHealth			
+	841236080	NearlyDead	PlayerHealth			
+	2874639328	Healthy	PlayerHealth			
+	2395677314	Common	Stage			
+	2540243936	Finale	Stage			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	444815956	PlayerLife			\Default Work Unit\PlayerLife	
+	1307264345	Stance			\Default Work Unit\Stance	
+
+State	ID	Name	State Group			Notes
+	0	None	PlayerLife			
+	655265632	Alive	PlayerLife			
+	2044049779	Dead	PlayerLife			
+	0	None	Stance			
+	579523862	Explore	Stance			
+	2764240573	Combat	Stance			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

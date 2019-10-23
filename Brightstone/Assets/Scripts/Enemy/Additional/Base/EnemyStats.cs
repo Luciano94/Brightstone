@@ -63,6 +63,19 @@ public class EnemyStats : MonoBehaviour{
                             RunSaver.currentRun.data.enemiesKilled++;
                         }
                     }
+
+                    switch(enemyType){
+                        case EnemyType.Archer:
+                            SoundManager.Instance.EnemyArcherDeath(gameObject);
+                        break;
+                        case EnemyType.Boss:
+                            SoundManager.Instance.BossDeath(gameObject);
+                        break;
+                        default:
+                            SoundManager.Instance.EnemyMeleeDeath(gameObject);
+                        break;
+                    }
+
                     OnDeath.Invoke();
                     shadow.onDeath();
                     Destroy(gameObject);
@@ -74,13 +87,16 @@ public class EnemyStats : MonoBehaviour{
     private void LifePercent(float value){
         if (currentLife > 0){
             lifePercent = currentLife / life;
-            if (lifePercent <= lowHealthPerc){
-                // Acá podrías llamar a la función del EnemyBehaviour
+
+            if (lifePercent <= lowHealthPerc)
                 OnLowHealth.Invoke();
-            }
+
+            if(enemyType == EnemyType.Boss)
+                SoundManager.Instance.BossHP(lifePercent);
         }
         else
             lifePercent = 0.01f;
+            
         actualLifeColor =  lifeColor.Evaluate(lifePercent);
     }
 

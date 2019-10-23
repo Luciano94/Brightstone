@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}" SchemaVersion="94">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="BossHP" ID="{7546462E-CF07-4168-BE5C-190C3FDA92EE}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="9"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

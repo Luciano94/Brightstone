@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DF695226-21E7-4875-88E0-410546575010}" SchemaVersion="94">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{DF695226-21E7-4875-88E0-410546575010}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="MainMenu" ID="{C37B0B12-AC8B-4FE0-BEFE-72B53F96D86F}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="MenuItemClick" ID="{C80B5768-0FD1-4716-B5A8-79A3EE254E34}" WorkUnitID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SynopsisOpen" ID="{1DD7880A-46DB-4667-B904-53252875F0AD}" WorkUnitID="{698D856A-7761-4335-B61C-E5190F25495F}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MenuItemHover" ID="{AB4CCA1B-2A49-437D-B6CD-1E58A9B0BB03}" WorkUnitID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MenuOpen" ID="{BF468655-C49E-4460-84D1-BCB9C2905867}" WorkUnitID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="BossHP" ID="{7546462E-CF07-4168-BE5C-190C3FDA92EE}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
+						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
+						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
+						<CurrentSwitchRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Combat" ID="{6FD1A4EA-5F8A-4FE7-89C1-26AE24A24E06}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="PlayerAttackLight" ID="{86854D8F-11F5-47FC-8254-C233DA9745CF}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyMeleeSwordAttack" ID="{13E79E2C-F8EF-4AA3-A1EF-5FD942D37A4F}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyArcherTightBow" ID="{9F3AE7D0-5B12-4540-9CA7-750F6F331649}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BossSwordAttack" ID="{B2C1B83D-A34B-434F-BC82-0459652F652A}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerAttackHeavy" ID="{D38EEE45-C6D6-4CBE-B093-6AB7EF119F92}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyArcherReleaseBow" ID="{CC5EEC46-AF04-4B38-A328-81C316498DDA}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BossDeath" ID="{13D024BA-593C-4733-BCF2-481348221D14}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerParryHit" ID="{454F48E8-6B3C-4827-BEDB-81C29AB0A56E}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="ArrowHit" ID="{A8119FF1-21D3-4364-BBCD-4F5C8AA03850}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="BossHP" ID="{7546462E-CF07-4168-BE5C-190C3FDA92EE}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
+						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
+						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
+						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Lvl1Music" ID="{CFC6D09A-6645-4D8A-876A-34D655E0D82E}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerDeath" ID="{E5D3B09B-8A77-4A31-95D3-DB1947B83C67}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="LevelClear" ID="{46C9BF9C-275D-4D11-86BD-81F02DA10C14}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerRespawn" ID="{ECA6A6CC-9404-4325-A60A-5A975B3B013B}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BossDeath" ID="{13D024BA-593C-4733-BCF2-481348221D14}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RoomBossEnter" ID="{F1FCA68C-AA16-4B6E-9411-2019AE950B38}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MenuOpen" ID="{BF468655-C49E-4460-84D1-BCB9C2905867}" WorkUnitID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="BossHP" ID="{7546462E-CF07-4168-BE5C-190C3FDA92EE}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
+						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
+						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
+						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

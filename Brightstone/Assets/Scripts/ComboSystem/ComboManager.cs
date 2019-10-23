@@ -46,7 +46,17 @@ public class ComboManager : MonoBehaviour{
                 currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
             //se pone play a la accion
                 currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
-                AudioManager.Instance.PlayerAttack();
+                //AudioManager.Instance.PlayerAttack();
+                switch(actionNumber){
+                    case Actions.X:
+                        SoundManager.Instance.PlayerAttackLight();
+                    break;
+                    case Actions.Y:
+                        SoundManager.Instance.PlayerAttackHeavy();
+                    break;
+                    default:
+                    break;
+                }
             }
             //se inicializa el combo index
             comboIndex = 1;
@@ -69,10 +79,22 @@ public class ComboManager : MonoBehaviour{
                             break;
                         }
                     }
-                    if(found)
+                    if(found){
                         //se pone play a esa accion.
                         currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
-                        AudioManager.Instance.PlayerAttack();
+                        //AudioManager.Instance.PlayerAttack();
+                        switch(actionNumber){
+                            case Actions.X:
+                                SoundManager.Instance.PlayerAttackLight();
+                            break;
+                            case Actions.Y:
+                                SoundManager.Instance.PlayerAttackHeavy();
+                            break;
+                            default:
+                            break;
+                        }
+                    }
+                        
                     //se quitan los que no coinciden.
                     for (int i = 0; i < activeCombos.Count; i++){
                         if(comboIndex == Combos[activeCombos[i]].combo.Count ||

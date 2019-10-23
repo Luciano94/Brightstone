@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E49D8D28-54F3-446D-A991-A6328235968E}" SchemaVersion="94" RootDocumentID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}">
+	<Events>
+		<WorkUnit Name="Level 1" ID="{E49D8D28-54F3-446D-A991-A6328235968E}" OwnerID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="Player" ID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" PersistMode="Reference"/>
+				<WorkUnit Name="Enemy" ID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" PersistMode="Reference"/>
+				<WorkUnit Name="General" ID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
