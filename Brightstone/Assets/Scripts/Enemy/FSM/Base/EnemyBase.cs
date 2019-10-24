@@ -112,4 +112,17 @@ public abstract class EnemyBase : MonoBehaviour{
     public float GetMaxHP(){
         return enemyStats.MaxLife();
     }
+
+    protected bool isInvokingAttack = false;
+    public void InvokeAttackingTurn(float time = 0.0f){
+        if(!isInvokingAttack){
+            isInvokingAttack = true;
+            Invoke("SetAttackingTurnTrue", time);
+            Debug.Log(gameObject + " attacking in " + time + " seconds");
+        }
+        
+    }
+    private void SetAttackingTurnTrue(){
+        isMyAttackingTurn = true;
+    }
 }

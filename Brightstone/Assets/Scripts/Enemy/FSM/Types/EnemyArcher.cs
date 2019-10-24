@@ -21,6 +21,7 @@ public class EnemyArcher : Enemy{
             enemyMovement.IsMovingForward = false;
             enemyCombat.Attack();
             isMyAttackingTurn = false;
+            isInvokingAttack = false;
             OnAttackRange();
             return;
         }

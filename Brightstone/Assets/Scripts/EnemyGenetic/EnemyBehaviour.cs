@@ -89,6 +89,9 @@ public class EnemyBehaviour : MonoBehaviour{
     delegate void OnStrategyExit();
     private OnStrategyExit onStrategyExit;
 
+    [Header("Tuning")]
+    [SerializeField] float attackDelta;
+
     void Awake(){
         currentStrategy = Strategies.None;
         onStrategyExit = onNoStrategyExit;
@@ -386,7 +389,8 @@ public class EnemyBehaviour : MonoBehaviour{
                 if(enemiesInPerAttackTurn[subTurn].isAssigned && enemiesInPerAttackTurn[subTurn].attacksLeft > 0){
                     attackTimer = 0.0f;
                     PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                     t.attacksLeft--;
                     enemiesInPerAttackTurn[subTurn] = t;
                 }
@@ -490,18 +494,21 @@ public class EnemyBehaviour : MonoBehaviour{
         } else if(str31Timer >= 0.3f){
             str31Timer = 0.0f;
             if(str31TwoFirstAttack){
-                if(enemiesInPerHPTurn[0].isAssigned){
-                    enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].isMyAttackingTurn=true;
+                if(enemiesInPerHPTurn[0].isAssigned && !enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].InvokeAttackingTurn(delta);
                 }
-                if(enemiesInPerHPTurn[1].isAssigned){
-                    enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].isMyAttackingTurn=true;
+                if(enemiesInPerHPTurn[1].isAssigned && !enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].InvokeAttackingTurn(delta);
                 }
             } else {
-                if(enemiesInPerHPTurn[2].isAssigned){
-                    enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].isMyAttackingTurn=true;
-            }
+                if(enemiesInPerHPTurn[2].isAssigned && !enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].InvokeAttackingTurn(delta);
+                }
             str31RoundCounter++;
-        }
+            }
         str31TwoFirstAttack = !str31TwoFirstAttack;
         }
     }
@@ -537,8 +544,9 @@ public class EnemyBehaviour : MonoBehaviour{
         } else {
             if(str32Timer >= 0.3f){
                 PerHPTurn t = enemiesInPerHPTurn[str32RoundCounter];
-                if(t.isAssigned){
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
                 str32RoundCounter++;
                 str32Timer = 0.0f;
@@ -568,8 +576,9 @@ public class EnemyBehaviour : MonoBehaviour{
                 str33Timer = 0.0f;
                 int attacker = Random.Range(0,3);
                 PerHPTurn t = enemiesInPerHPTurn[attacker];
-                if(t.isAssigned){
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
                 str33AttackCounter++;
             }
@@ -604,10 +613,11 @@ public class EnemyBehaviour : MonoBehaviour{
             
                 PerHPTurn t = enemiesInPerHPTurn[str34Counter];
 
-                if(t.isAssigned){
+                if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
                     if(str34ShouldFeint){ str34AttackTimer = 0.2f;}
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
                     enemiesInRoom[t.enemyType][t.enemyIndex].feinting = str34ShouldFeint;
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
 
                 str34Counter++;
@@ -620,8 +630,9 @@ public class EnemyBehaviour : MonoBehaviour{
             if(p.isAttacking || p.isParrying){
                 for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
                     PerHPTurn t = enemiesInPerHPTurn[i];
-                    if(t.isAssigned && str34Counter -1 != i){
-                        enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                    if(t.isAssigned && str34Counter -1 != i && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                        float delta = Random.Range(0.0f, attackDelta);
+                        enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                     }
                 }
             }
@@ -639,8 +650,9 @@ public class EnemyBehaviour : MonoBehaviour{
     private void Melee35(){
         for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
             PerHPTurn t = enemiesInPerHPTurn[i];
-            if(t.isAssigned){
-                enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+            if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                float delta = Random.Range(0.0f, attackDelta);
+                enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
             }
         }
     }

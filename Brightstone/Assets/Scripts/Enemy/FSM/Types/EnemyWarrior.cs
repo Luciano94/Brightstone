@@ -10,9 +10,11 @@ public class EnemyWarrior : Enemy{
                 if(feinting){
                     feinting = false;
                     isMyAttackingTurn = false;
+                    isInvokingAttack = false;
                     return;
                 }
                 isMyAttackingTurn = false;
+                isInvokingAttack = false;
                 enemyCombat.Attack();
                 OnAttackRange();
                 return;
