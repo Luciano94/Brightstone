@@ -14,8 +14,7 @@ public class WarriorMovement : EnemyMovement{
     const float TIME_PER_REFRESH = 0.1f;
     const float DIST_LIMIT = 0.3f;
 
-    private void Update()
-    {
+    private void Update(){
         playerPos = GameManager.Instance.PlayerPos;
         /*if (timeLeftToRefresh <= 0)
         {
