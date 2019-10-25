@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour{
     [SerializeField] private float deltaTimeSurrounding;
     [SerializeField] private float timeWaiting;
     private Vector3 objective;
+    private Vector3 tempObj = Vector3.zero;
     private Vector3 diff;
     private Vector2 playerDir;
     private Vector2 moveDir;
@@ -82,22 +83,46 @@ public class EnemyMovement : MonoBehaviour{
     public void RelocateArcher(float minDistanceToMoveBack){
         PrepareVariables(GameManager.Instance.PlayerPos);
 
-        Vector2 dir = diff.normalized;
+        Vector3 roomCenterPosition = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
+        roomCenterPosition.z = transform.position.z;
+        Vector2 diffToCenter = roomCenterPosition - transform.position;
 
-        if (diff.magnitude < minDistanceToMoveBack){
-            transform.Translate(-dir * speed * Time.deltaTime);
+        if (tempObj != Vector3.zero)
+        {
+            Vector3 objDiff = tempObj - transform.position;
 
-            IsMovingForward = false;
+            transform.Translate(objDiff.normalized * speed * Time.deltaTime);
+
+            if (objDiff.magnitude < 0.2f)
+                tempObj = Vector3.zero;
         }
         else{
-            int multiplier = 1;
-            if (!movingRight) multiplier = -1;
+            if (diffToCenter.magnitude > 14.0f){
+                float angle = Calculations.GetAngle(diffToCenter) + Random.Range(20.0f, 40.0f) * (movingRight ? 1 : -1);
+                float distFromOrigin = 8.0f;
 
-            moveDir = new Vector2(dir.y * multiplier, dir.x);
+                tempObj.x = roomCenterPosition.x + Mathf.Cos(angle) * distFromOrigin;
+                tempObj.y = roomCenterPosition.y + Mathf.Sin(angle) * distFromOrigin;
+                tempObj.z = transform.position.z;
+            }
+            else{
+                Vector2 dir = diff.normalized;
 
-            transform.Translate(moveDir * speed * Time.deltaTime);
+                if (diff.magnitude < minDistanceToMoveBack){
+                    transform.Translate(-dir * speed * Time.deltaTime);
 
-            CheckForward();
+                    IsMovingForward = false;
+                }
+                else{
+                    int multiplier = movingRight ? 1 : -1;
+
+                    moveDir = new Vector2(dir.y * multiplier, dir.x);
+
+                    transform.Translate(moveDir * speed * Time.deltaTime);
+
+                    CheckForward();
+                }
+            }
         }
 
         Rotation();
