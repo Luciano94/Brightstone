@@ -118,7 +118,7 @@ public abstract class EnemyBase : MonoBehaviour{
         if(!isInvokingAttack){
             isInvokingAttack = true;
             Invoke("SetAttackingTurnTrue", time);
-            Debug.Log(gameObject + " attacking in " + time + " seconds");
+            //Debug.Log(gameObject + " attacking in " + time + " seconds");
         }
         
     }
