@@ -8,7 +8,6 @@ public class Action : MonoBehaviour {
     [SerializeField] private float totalTime;
     [SerializeField] private PlayerCombat playerCombat;
     public Stands standToplay;
-    public bool needAStand;
     //float drag;
     //float stunt;
     private FrameData fData;

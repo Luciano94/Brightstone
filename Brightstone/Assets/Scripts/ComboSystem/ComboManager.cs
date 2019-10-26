@@ -73,14 +73,15 @@ public class ComboManager : MonoBehaviour{
                 if (currentAction.Fdata.State == ActionState.activeFrames) {
                     //coincide la action con la del comboindex
                     for (int i = 0; i < activeCombos.Count; i++) {
-                        if ((int)actionNumber == Combos[activeCombos[0]].combo[comboIndex] &&
-                            actions[Combos[activeCombos[0]].combo[comboIndex]].needAStand  &&
-                            actualStand == actions[Combos[activeCombos[0]].combo[comboIndex]].standToplay)
+                        if ((int)actionNumber == Combos[activeCombos[0]].combo[comboIndex])
                         {
-                            currentAction.StopAction();
-                            currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
-                            found = true;
-                            break;
+                            if (actualStand == actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay) {
+                                actualStand = actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay;
+                                currentAction.StopAction();
+                                currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
+                                found = true;
+                                break;
+                            }
                         }
                     }
                     if(found){
