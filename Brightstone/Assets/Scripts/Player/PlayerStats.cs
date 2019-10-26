@@ -9,7 +9,8 @@ public class PlayerStats : MonoBehaviour{
     [SerializeField] int lostExpPercent = 40;
     private float atkDmg = 0.0f;
     private float experience = 0;
-    private int playerLevel = 1;
+    public float experienceToNextLevel;
+    private int playerLevel = 0;
     private bool isLowHealth = false;
     private bool godMode = false;
     public bool IsLowHealth { get { return isLowHealth; } private set { isLowHealth = value; } }
@@ -18,6 +19,7 @@ public class PlayerStats : MonoBehaviour{
 
     private void Start(){
         SoundManager.Instance.PlayerRespawn();
+        experienceToNextLevel = 100;
     }
 
     public int Defense{
@@ -64,8 +66,10 @@ public class PlayerStats : MonoBehaviour{
             if(value > 0){
                 currentLife = value;
                 life = value;
-                playerLevel++;
+                playerLevel--;
                 CheckLowHealth();
+                UIManager.Instance.ExpUpdate();
+                UIManager.Instance.UpdateFillBar(life);
             }
         }
     }
@@ -107,7 +111,8 @@ public class PlayerStats : MonoBehaviour{
         set{
             if(value > 0)
                 atkMult = value;
-                playerLevel++;
+                playerLevel--;
+                UIManager.Instance.ExpUpdate();
         }
 
     }
@@ -117,7 +122,13 @@ public class PlayerStats : MonoBehaviour{
         set{
             if(value > 0){
                 experience += value;
+                if(experience >= experienceToNextLevel){
+                    playerLevel++;
+                    experience -= experienceToNextLevel;
+                    experienceToNextLevel *= 2;
+                }
                 RunSaver.currentRun.data.expObtained += (uint)value;
+                UIManager.Instance.ExpUpdate();
             }
             else 
                 if(experience + value < 0)
