@@ -14959,7 +14959,7 @@ MonoBehaviour:
   currentStrategy: 0
   attackDelta: 4.15
   timeBetweenRangedAttacks: 0.5
-  rangeAttackDelta: 3
+  rangeAttackDelta: 5
   currentAngleStr31: 0
 --- !u!1 &1903297076
 GameObject:

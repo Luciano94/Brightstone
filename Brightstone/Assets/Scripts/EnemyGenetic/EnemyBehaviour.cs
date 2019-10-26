@@ -100,11 +100,12 @@ public class EnemyBehaviour : MonoBehaviour{
     }
 
     private void TurnCounter(){
-        bool turnShouldPass = true;
+        
         if(enemiesInRoom[(int)EnemyType.Archer].Count > 0){
             AttackStrategy();
         }
-        
+
+        bool turnShouldPass = true;
         switch(turn){
             case TurnType.HP:
                 turnShouldPass = HPStrategy();
@@ -370,29 +371,25 @@ public class EnemyBehaviour : MonoBehaviour{
     [SerializeField] float rangeAttackDelta = 0.0f;
     float attackTimer = 0.0f;
     int subTurn = 0;
-    private bool AttackStrategy(){
-        bool attackEnemiesLeft = false;
-        foreach(PerAttackTurn t in enemiesInPerAttackTurn){
-            if(t.isAssigned){ attackEnemiesLeft = true;}
-        }
-        if(attackEnemiesLeft){
+    private void AttackStrategy(){
+        if(enemiesInPerAttackTurn.Count > 0){
             attackTimer += Time.deltaTime;
             if(attackTimer >= timeBetweenRangedAttacks){
-                if(subTurn >= enemiesInPerAttackTurn.Count){ subTurn = 0; }
-                    PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
-                    if(t.isAssigned){
-                        attackTimer = 0.0f;
-                        float delta = Random.Range(0.0f, rangeAttackDelta);
-                        enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
-                    }
+                if(subTurn >= enemiesInPerAttackTurn.Count){
+                    subTurn = 0;
+                }
+                PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
+                if(t.isAssigned){
+                    attackTimer = 0.0f;
+                    float delta = Random.Range(0.0f, rangeAttackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
+                }
                 subTurn++;
             }
         } else {
             subTurn = 0;
             attackTimer = 0.0f;
         }
-
-        return attackEnemiesLeft;
     }
     
     private bool HPStrategy(){
