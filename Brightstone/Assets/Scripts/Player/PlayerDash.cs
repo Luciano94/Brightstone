@@ -46,7 +46,7 @@ public class PlayerDash : MonoBehaviour
             mov.x = Input.GetAxis("Horizontal");
             mov.y = Input.GetAxis("Vertical");
             mov = mov.normalized;
-            if (Input.GetKeyDown(KeyCode.LeftShift) && CanDash())
+            if (Input.GetButtonDown("Dash") && CanDash())
             {
                 isDashing = true;
                 dashParticles.Clear();

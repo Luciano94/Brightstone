@@ -8,6 +8,15 @@ struct Combo
     public List<int> combo;
 }
 
+public enum Stands
+{
+    Thrust,
+    Beatdown,
+    Shuriken,
+    Zone,
+    None
+}
+
 public class ComboManager : MonoBehaviour{
     [SerializeField]private List<Combo> Combos;
     private int comboIndex; //posicion del combo en ese momento
@@ -15,6 +24,7 @@ public class ComboManager : MonoBehaviour{
     private Action currentAction; //estado de la accion que se esta ejecutando en ese momento
     [SerializeField]private Action[] actions; //acciones posibles
     private bool found = false;
+    public Stands actualStand { get; private set; }
 
     private void Awake() {
         activeCombos = new List<int>();
@@ -46,17 +56,8 @@ public class ComboManager : MonoBehaviour{
                 currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
             //se pone play a la accion
                 currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
-                //AudioManager.Instance.PlayerAttack();
-                switch(actionNumber){
-                    case Actions.X:
-                        SoundManager.Instance.PlayerAttackLight();
-                    break;
-                    case Actions.Y:
-                        SoundManager.Instance.PlayerAttackHeavy();
-                    break;
-                    default:
-                    break;
-                }
+
+                HandlerAction(actionNumber);
             }
             //se inicializa el combo index
             comboIndex = 1;
@@ -69,10 +70,13 @@ public class ComboManager : MonoBehaviour{
             }else{
                 found = false;
                 //si esta en el tiempo de encadenar
-                if(currentAction.Fdata.State == ActionState.activeFrames){
+                if (currentAction.Fdata.State == ActionState.activeFrames) {
                     //coincide la action con la del comboindex
-                    for (int i = 0; i < activeCombos.Count; i++){
-                        if((int)actionNumber == Combos[activeCombos[0]].combo[comboIndex]){
+                    for (int i = 0; i < activeCombos.Count; i++) {
+                        if ((int)actionNumber == Combos[activeCombos[0]].combo[comboIndex] &&
+                            actions[Combos[activeCombos[0]].combo[comboIndex]].needAStand  &&
+                            actualStand == actions[Combos[activeCombos[0]].combo[comboIndex]].standToplay)
+                        {
                             currentAction.StopAction();
                             currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
                             found = true;
@@ -82,17 +86,8 @@ public class ComboManager : MonoBehaviour{
                     if(found){
                         //se pone play a esa accion.
                         currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
-                        //AudioManager.Instance.PlayerAttack();
-                        switch(actionNumber){
-                            case Actions.X:
-                                SoundManager.Instance.PlayerAttackLight();
-                            break;
-                            case Actions.Y:
-                                SoundManager.Instance.PlayerAttackHeavy();
-                            break;
-                            default:
-                            break;
-                        }
+                        //se setea la siguiente action
+                        HandlerAction(actionNumber);
                     }
                         
                     //se quitan los que no coinciden.
@@ -129,6 +124,34 @@ public class ComboManager : MonoBehaviour{
     public int ActualComboIndex(){
         return comboIndex;
     }
+
+    private void HandlerAction(Actions actionNumber) {
+        switch (actionNumber)
+        {
+            case Actions.X:
+                SoundManager.Instance.PlayerAttackLight();
+                actualStand = Stands.Beatdown;
+                break;
+            case Actions.Y:
+                SoundManager.Instance.PlayerAttackHeavy();
+                actualStand = Stands.Thrust;
+                break;
+            case Actions.A:
+                SoundManager.Instance.PlayerAttackHeavy();
+                actualStand = Stands.Zone;
+                break;
+            case Actions.B:
+                SoundManager.Instance.PlayerAttackHeavy();
+                actualStand = Stands.Shuriken;
+                break;
+            case Actions.RB:
+                SoundManager.Instance.PlayerAttackHeavy();
+                break;
+            default:
+                break;
+        }
+    }
+
 }
 
     /* 

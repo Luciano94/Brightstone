@@ -131,7 +131,7 @@ public class PlayerCombat : MonoBehaviour{
 
     private void Attack(){
         if(!MenuManager.Instance.StartMenu){
-          if(Input.GetButtonDown("Xattack")){
+            if(Input.GetButtonDown("Xattack")){
                 cManager.ManageAction(Actions.X);
                 actualAttackAction = Actions.X;
                 isStrong = false;
@@ -139,6 +139,24 @@ public class PlayerCombat : MonoBehaviour{
             if(Input.GetButtonDown("Yattack")){
                 cManager.ManageAction(Actions.Y);
                 actualAttackAction = Actions.Y;
+                isStrong = true;
+            }
+            if (Input.GetButtonDown("Battack"))
+            {
+                cManager.ManageAction(Actions.B);
+                actualAttackAction = Actions.B;
+                isStrong = true;
+            }
+            if (Input.GetButtonDown("Aattack"))
+            {
+                cManager.ManageAction(Actions.A);
+                actualAttackAction = Actions.A;
+                isStrong = true;
+            }
+            if (Input.GetButtonDown("RBattack"))
+            {
+                cManager.ManageAction(Actions.RB);
+                actualAttackAction = Actions.RB;
                 isStrong = true;
             }
         }
