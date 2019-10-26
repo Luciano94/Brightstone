@@ -9932,7 +9932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.157, y: 0.63414884}
   m_AnchorMax: {x: 0.293, y: 0.7157856}
-  m_AnchoredPosition: {x: -3.176941, y: -0.5}
+  m_AnchoredPosition: {x: -3.1769104, y: -0.5}
   m_SizeDelta: {x: 4, y: -3.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199164578
@@ -12083,7 +12083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.157, y: 0.43600002}
   m_AnchorMax: {x: 0.293, y: 0.5124464}
-  m_AnchoredPosition: {x: -3.176941, y: 1}
+  m_AnchoredPosition: {x: -3.1769104, y: 1}
   m_SizeDelta: {x: 4, y: 1.1000061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1458158072
@@ -12205,7 +12205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.157, y: 0.339372}
   m_AnchorMax: {x: 0.29560244, y: 0.41737202}
-  m_AnchoredPosition: {x: -2.500061, y: 0}
+  m_AnchoredPosition: {x: -2.5000305, y: 0}
   m_SizeDelta: {x: -1, y: -0.8999939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460136285
@@ -18435,7 +18435,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2109171033}
   - component: {fileID: 2109171035}
+  - component: {fileID: 2109171038}
   - component: {fileID: 2109171034}
+  - component: {fileID: 2109171037}
   - component: {fileID: 2109171036}
   m_Layer: 0
   m_Name: Actions
@@ -18470,11 +18472,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: X Beatdown (p2)
   anim: {fileID: 0}
   dmg: 15
-  totalTime: 0.5
+  totalTime: 1
   playerCombat: {fileID: 786400176}
+  standToplay: 1
+  needAStand: 1
 --- !u!114 &2109171035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18488,12 +18492,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combos:
-  - combo: 00000000000000000000000000000000
-  - combo: 0100000001000000
+  - combo: 0000000000000000000000000100000001000000020000000300000002000000
+  - combo: 040000000400000005000000050000000600000007000000
   activeCombos: 
   actions:
+  - {fileID: 2109171038}
   - {fileID: 2109171034}
+  - {fileID: 2109171038}
+  - {fileID: 2109171034}
+  - {fileID: 2109171037}
   - {fileID: 2109171036}
+  - {fileID: 2109171036}
+  - {fileID: 2109171037}
 --- !u!114 &2109171036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18506,11 +18516,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: A Zone (p2)
   anim: {fileID: 0}
-  dmg: 40
-  totalTime: 0.95
-  playerCombat: {fileID: 786400176}
+  dmg: 15
+  totalTime: 1
+  playerCombat: {fileID: 0}
+  standToplay: 3
+  needAStand: 1
+--- !u!114 &2109171037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109171032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: RB Zone (p1)
+  anim: {fileID: 0}
+  dmg: 15
+  totalTime: 1
+  playerCombat: {fileID: 0}
+  standToplay: 3
+  needAStand: 1
+--- !u!114 &2109171038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109171032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: RB Beatdown (p1)
+  anim: {fileID: 0}
+  dmg: 15
+  totalTime: 1
+  playerCombat: {fileID: 0}
+  standToplay: 1
+  needAStand: 1
 --- !u!1 &2126348686
 GameObject:
   m_ObjectHideFlags: 0
