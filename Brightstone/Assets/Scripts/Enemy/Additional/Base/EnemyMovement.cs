@@ -36,6 +36,8 @@ public class EnemyMovement : MonoBehaviour{
 
     public void MoveToObjective(Vector3 pos){
         PrepareVariables(pos);
+        eAnim.Move();
+
         moveDir = diff.normalized;
         transform.Translate(moveDir * speed * Time.deltaTime);
 
@@ -174,6 +176,10 @@ public class EnemyMovement : MonoBehaviour{
             movingRight = true;
         else
             movingRight = false;
+    }
+
+    public void SetIdle(){
+        eAnim.Idle();
     }
 
     public void SetSpeed(float speed){

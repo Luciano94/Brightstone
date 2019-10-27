@@ -40,6 +40,7 @@ public class EnemyWarrior : Enemy{
     protected override void Relocating(){
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0.0f){
+            enemyMovement.SetIdle();
             enemyMovement.IsMovingForward = false;
             if (chasing)
                 OnChase();
@@ -80,4 +81,8 @@ public class EnemyWarrior : Enemy{
         else
             enemyMovement.MoveByParried();
     }
+
+    private void OnEnable(){
+        enemyMovement.SetIdle();
+    } 
 }
