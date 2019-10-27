@@ -56,9 +56,10 @@ MonoBehaviour:
   timeRelocating: 0
   timeParalyzedForHit: 0.1
   timeParalyzedForParry: 1.5
+  enemyIndex: -1
+  feinting: 0
   isMyAttackingTurn: 0
   maxDistSurround: 0
-  chaserIndex: 0
 --- !u!114 &7224402883067919772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +73,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  player: {x: 0, y: 0, z: 0}
   sword: {fileID: 3141483356609875278}
   eAnim: {fileID: 5559408988468806604}
   speedSurrounding: 0.4
@@ -93,7 +93,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animTime: 1
   activeMoment: 0.5
-  throwTime: 0
   weapon: {fileID: 3141483355779995974}
   enemyAnim: {fileID: 5559408988468806604}
 --- !u!114 &3041816709959559500
@@ -176,7 +175,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 80
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
