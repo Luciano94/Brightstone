@@ -123,37 +123,35 @@ public class PlayerCombat : MonoBehaviour{
                 }
             }
         }
-        if(!isParrying)
+       // if(!isParrying)
             Attack();
-        if(!isAttacking)
-            Parry();
+       // if(!isAttacking)
+            //Parry();
     }
 
     private void Attack(){
         if(!MenuManager.Instance.StartMenu){
-            if(Input.GetButtonDown("Xattack")){
+            if(InputManager.Instance.GetActionBeatdown()){
                 cManager.ManageAction(Actions.X);
                 actualAttackAction = Actions.X;
                 isStrong = false;
             }
-            if(Input.GetButtonDown("Yattack")){
+            if(InputManager.Instance.GetActionThrust()){
                 cManager.ManageAction(Actions.Y);
                 actualAttackAction = Actions.Y;
                 isStrong = true;
             }
-            if (Input.GetButtonDown("Battack"))
-            {
+            if (InputManager.Instance.GetActionShuriken()){
                 cManager.ManageAction(Actions.B);
                 actualAttackAction = Actions.B;
                 isStrong = true;
             }
-            if (Input.GetButtonDown("Aattack"))
-            {
+            if (InputManager.Instance.GetActionZone()){
                 cManager.ManageAction(Actions.A);
                 actualAttackAction = Actions.A;
                 isStrong = true;
             }
-            if (Input.GetButtonDown("RBattack"))
+            if (InputManager.Instance.GetActionSimpleAttack())
             {
                 cManager.ManageAction(Actions.RB);
                 actualAttackAction = Actions.RB;

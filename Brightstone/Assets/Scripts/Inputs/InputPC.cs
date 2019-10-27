@@ -28,4 +28,32 @@ public class InputPC : IInput{
     public bool GetPassButton(){
         return Input.GetButtonDown("Pass");
     }
+
+        public bool GetActionZone(){
+        return Input.GetButtonDown("Aattack");
+    }
+
+    
+    public bool GetActionShuriken(){
+        return Input.GetButtonDown("Battack");
+    }
+
+    
+    public bool GetActionBeatdown(){
+        return Input.GetButtonDown("Xattack");
+    }
+
+    
+    public bool GetActionThrust(){
+        return Input.GetButtonDown("Yattack");
+    }
+
+    
+    public bool GetActionDash(){
+        return Input.GetButtonDown("Dash");
+    }
+
+    public bool GetActionSimpleAttack(){
+        return Input.GetButtonDown("RBattack");
+    }
 }

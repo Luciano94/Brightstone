@@ -30,6 +30,7 @@ public class ComboManager : MonoBehaviour{
         activeCombos = new List<int>();
         comboIndex = 0;
         currentAction = null;
+        actualStand = Stands.Beatdown;
     }
 
 
@@ -57,7 +58,7 @@ public class ComboManager : MonoBehaviour{
             //se pone play a la accion
                 currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
 
-                HandlerAction(actionNumber);
+                HandlerAction(currentAction.actionName);
             }
             //se inicializa el combo index
             comboIndex = 1;
@@ -79,6 +80,7 @@ public class ComboManager : MonoBehaviour{
                                 actualStand = actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay;
                                 currentAction.StopAction();
                                 currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
+                                actualStand = currentAction.standToPlay;
                                 found = true;
                                 break;
                             }
@@ -88,7 +90,7 @@ public class ComboManager : MonoBehaviour{
                         //se pone play a esa accion.
                         currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
                         //se setea la siguiente action
-                        HandlerAction(actionNumber);
+                        HandlerAction(currentAction.actionName);
                     }
                         
                     //se quitan los que no coinciden.

@@ -18478,6 +18478,7 @@ MonoBehaviour:
   totalTime: 1
   playerCombat: {fileID: 786400176}
   standToPlay: 0
+  actionName: 0
 --- !u!114 &2109171035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18519,8 +18520,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   dmg: 15
   totalTime: 1
-  playerCombat: {fileID: 0}
+  playerCombat: {fileID: 786400176}
   standToPlay: 0
+  actionName: 2
 --- !u!114 &2109171037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18537,8 +18539,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   dmg: 15
   totalTime: 1
-  playerCombat: {fileID: 0}
+  playerCombat: {fileID: 786400176}
   standToPlay: 0
+  actionName: 4
 --- !u!114 &2109171038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18555,8 +18558,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   dmg: 15
   totalTime: 1
-  playerCombat: {fileID: 0}
+  playerCombat: {fileID: 786400176}
   standToPlay: 0
+  actionName: 4
 --- !u!1 &2126348686
 GameObject:
   m_ObjectHideFlags: 0
