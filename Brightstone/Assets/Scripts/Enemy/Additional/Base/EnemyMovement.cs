@@ -87,8 +87,7 @@ public class EnemyMovement : MonoBehaviour{
         roomCenterPosition.z = transform.position.z;
         Vector2 diffToCenter = roomCenterPosition - transform.position;
 
-        if (tempObj != Vector3.zero)
-        {
+        if (tempObj != Vector3.zero){
             Vector3 objDiff = tempObj - transform.position;
 
             transform.Translate(objDiff.normalized * speed * Time.deltaTime);

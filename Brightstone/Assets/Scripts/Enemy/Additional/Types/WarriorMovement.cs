@@ -10,8 +10,10 @@ public class WarriorMovement : EnemyMovement{
 
     private Vector3 playerPos;
     private float timeLeftToRefresh = 0;
+    private float reactionTimeLeft = -1.0f;
 
-    const float TIME_PER_REFRESH = 0.1f;
+    const float TIME_REACTION = 0.1f;
+    const float DELTA_TIME_REACTION = 0.07f;
     const float DIST_LIMIT = 0.3f;
 
     private void Update(){
@@ -154,11 +156,17 @@ public class WarriorMovement : EnemyMovement{
 
     void MakeMovement(Vector3 obj){
         if ((obj - transform.position).magnitude > DIST_LIMIT){
-            eAnim.Move();
-            MoveToObjective(obj);
+            if (reactionTimeLeft > 0.0f)
+                reactionTimeLeft -= Time.deltaTime;
+            else{
+                eAnim.Move();
+                MoveToObjective(obj);
+            }
         }
         else{
             eAnim.Idle();
+            if (reactionTimeLeft <= 0.0f)
+                reactionTimeLeft = TIME_REACTION + Random.Range(-DELTA_TIME_REACTION, DELTA_TIME_REACTION);
         }
     }
 }

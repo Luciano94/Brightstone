@@ -14957,7 +14957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStrategy: 0
-  attackDelta: 4.15
+  attackDelta: 2
   timeBetweenRangedAttacks: 0.5
   rangeAttackDelta: 5
   currentAngleStr31: 0
