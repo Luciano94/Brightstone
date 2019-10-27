@@ -23,19 +23,16 @@ public struct PerAttackTurn{
 	public bool isAssigned;
 	public int enemyType;
 	public int enemyIndex;
-	public int attacksLeft;
 
     public PerAttackTurn(bool ignore = true){
         isAssigned = false;
         enemyType = -1;
         enemyIndex = -1;
-        attacksLeft = -1;
     }
-    public PerAttackTurn(bool Assigned, int EnemyType, int EnemyIndex, int AttackCounter){
+    public PerAttackTurn(bool Assigned, int EnemyType, int EnemyIndex){
         isAssigned = Assigned;
         enemyType = EnemyType;
         enemyIndex = EnemyIndex;
-        attacksLeft = AttackCounter;
     }
 }
 public struct PerHPTurn{
@@ -58,8 +55,7 @@ public struct PerHPTurn{
 
 }
 public enum TurnType{
-    Attack = 0,
-    HP,
+    HP = 0,
     Boss,
     Count,
     None
@@ -89,6 +85,9 @@ public class EnemyBehaviour : MonoBehaviour{
     delegate void OnStrategyExit();
     private OnStrategyExit onStrategyExit;
 
+    [Header("Tuning")]
+    [SerializeField] float attackDelta;
+
     void Awake(){
         currentStrategy = Strategies.None;
         onStrategyExit = onNoStrategyExit;
@@ -101,12 +100,13 @@ public class EnemyBehaviour : MonoBehaviour{
     }
 
     private void TurnCounter(){
-        bool turnShouldPass = true;
         
+        if(enemiesInRoom[(int)EnemyType.Archer].Count > 0){
+            AttackStrategy();
+        }
+
+        bool turnShouldPass = true;
         switch(turn){
-            case TurnType.Attack:
-                turnShouldPass = AttackStrategy();
-            break;
             case TurnType.HP:
                 turnShouldPass = HPStrategy();
             break;
@@ -132,7 +132,7 @@ public class EnemyBehaviour : MonoBehaviour{
                 PerAttackTurn t = enemiesInPerAttackTurn[i];
                 if(enemy == enemiesInRoom[(int)type][t.enemyIndex]){
                     deadEnemyIndex = t.enemyIndex;
-                    PerAttackTurn newTurn = new PerAttackTurn(false, t.enemyType, t.enemyIndex, t.attacksLeft);
+                    PerAttackTurn newTurn = new PerAttackTurn(false, t.enemyType, t.enemyIndex);
                     enemiesInPerAttackTurn[enemiesInPerAttackTurn.IndexOf(t)] = newTurn;
                     i = enemiesInPerAttackTurn.Count;
                 }
@@ -141,7 +141,7 @@ public class EnemyBehaviour : MonoBehaviour{
                 for(int i = 0; i < enemiesInPerAttackTurn.Count; i++){
                     PerAttackTurn t = enemiesInPerAttackTurn[i];
                     if(t.isAssigned && t.enemyIndex > deadEnemyIndex){
-                        PerAttackTurn newTurn = new PerAttackTurn(t.isAssigned, t.enemyType, t.enemyIndex - 1, t.attacksLeft);
+                        PerAttackTurn newTurn = new PerAttackTurn(t.isAssigned, t.enemyType, t.enemyIndex - 1);
                         enemiesInPerAttackTurn[enemiesInPerAttackTurn.IndexOf(t)] = newTurn;
                     }
                 }
@@ -189,9 +189,6 @@ public class EnemyBehaviour : MonoBehaviour{
         EnemyType pickedEnemyType = PickEnemyType();
         
         switch(pickedEnemyType){
-            case EnemyType.Archer:
-                turn = TurnType.Attack;
-            break;
             case EnemyType.Boss:
                 turn = TurnType.Boss;
             break;
@@ -218,7 +215,9 @@ public class EnemyBehaviour : MonoBehaviour{
         //Picks a random EnemyType for a turn
         List<EnemyType> enemyTypesInRoom = new List<EnemyType>();
         foreach(List<EnemyBase> list in enemiesInRoom){
-            if (list.Count > 0) {enemyTypesInRoom.Add(list[0].GetEnemyType());}
+            if (list.Count > 0 && list[0].GetEnemyType() != EnemyType.Archer) {
+                enemyTypesInRoom.Add(list[0].GetEnemyType());
+            }
         }
         EnemyType pick = EnemyType.Count; //value used as error check
         if(enemyTypesInRoom.Count > 0){
@@ -256,8 +255,6 @@ public class EnemyBehaviour : MonoBehaviour{
                     
                     float random = Random.Range(-1.0f, 0.0f);
                     t.hPThreshold = hPPromedy + (enemiesToGetInTurn[i].GetMaxHP()/ 5 * random);
-                    
-                    //if(enemiesToGetInTurn[i].GetHP() < t.hPThreshold){ t.hPThreshold = 0; }
                     if(enemiesToGetInTurn[i].GetHP() <= 50){ t.hPThreshold = 0; }
 
                     enemiesToGetInTurn[i].Chase();
@@ -268,25 +265,24 @@ public class EnemyBehaviour : MonoBehaviour{
 
                 enemiesInPerHPTurn[i] = t;
 
-            }
-        } else if (turn == TurnType.Attack){
-            int randomAttackAmmount = Random.Range(1, 4);
-            foreach(EnemyBase e in enemiesInRoom[(int)EnemyType.Archer]){
-                if(e.GetHP() > 0){
-                    PerAttackTurn t;
-                    t.attacksLeft = randomAttackAmmount;
-                    t.enemyType = (int)e.GetEnemyType();
-                    t.enemyIndex = enemiesInRoom[(int)e.GetEnemyType()].IndexOf(e);
-                    t.isAssigned = true;
-                    enemiesInPerAttackTurn.Add(t);
-                }
-            }
+            }            
         } else if (turn == TurnType.Boss){
             int index = 0;
             foreach(EnemyBase e in enemiesInRoom[(int)EnemyType.Boss]){
                 e.enemyIndex = index;
                 e.Chase();
                 index++;
+            }
+        }
+        if(enemiesInRoom[(int)EnemyType.Archer].Count > 0){
+            foreach(EnemyBase e in enemiesInRoom[(int)EnemyType.Archer]){
+                if(e.GetHP() > 0){
+                    PerAttackTurn t;
+                    t.enemyType = (int)e.GetEnemyType();
+                    t.enemyIndex = enemiesInRoom[(int)e.GetEnemyType()].IndexOf(e);
+                    t.isAssigned = true;
+                    enemiesInPerAttackTurn.Add(t);
+                }
             }
         }
     }
@@ -371,24 +367,22 @@ public class EnemyBehaviour : MonoBehaviour{
         return turnShouldPass;
     }
     [Header("Attack turn timer")]
-    private float timeBetweenRangedAttacks = 0.5f;
+    [SerializeField] float timeBetweenRangedAttacks = 0.5f;
+    [SerializeField] float rangeAttackDelta = 0.0f;
     float attackTimer = 0.0f;
     int subTurn = 0;
-    private bool AttackStrategy(){
-        bool turnShouldPass = true;
-        foreach(PerAttackTurn t in enemiesInPerAttackTurn){
-            if(t.isAssigned && t.attacksLeft > 0){ turnShouldPass = false;}
-        }
-        if(!turnShouldPass){
+    private void AttackStrategy(){
+        if(enemiesInPerAttackTurn.Count > 0){
             attackTimer += Time.deltaTime;
             if(attackTimer >= timeBetweenRangedAttacks){
-                if(subTurn >= enemiesInPerAttackTurn.Count){ subTurn = 0; }
-                if(enemiesInPerAttackTurn[subTurn].isAssigned && enemiesInPerAttackTurn[subTurn].attacksLeft > 0){
+                if(subTurn >= enemiesInPerAttackTurn.Count){
+                    subTurn = 0;
+                }
+                PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
+                if(t.isAssigned){
                     attackTimer = 0.0f;
-                    PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
-                    t.attacksLeft--;
-                    enemiesInPerAttackTurn[subTurn] = t;
+                    float delta = Random.Range(0.0f, rangeAttackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
                 subTurn++;
             }
@@ -396,8 +390,6 @@ public class EnemyBehaviour : MonoBehaviour{
             subTurn = 0;
             attackTimer = 0.0f;
         }
-
-        return turnShouldPass;
     }
     
     private bool HPStrategy(){
@@ -490,18 +482,21 @@ public class EnemyBehaviour : MonoBehaviour{
         } else if(str31Timer >= 0.3f){
             str31Timer = 0.0f;
             if(str31TwoFirstAttack){
-                if(enemiesInPerHPTurn[0].isAssigned){
-                    enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].isMyAttackingTurn=true;
+                if(enemiesInPerHPTurn[0].isAssigned && !enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[enemiesInPerHPTurn[0].enemyType][enemiesInPerHPTurn[0].enemyIndex].InvokeAttackingTurn(delta);
                 }
-                if(enemiesInPerHPTurn[1].isAssigned){
-                    enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].isMyAttackingTurn=true;
+                if(enemiesInPerHPTurn[1].isAssigned && !enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[enemiesInPerHPTurn[1].enemyType][enemiesInPerHPTurn[1].enemyIndex].InvokeAttackingTurn(delta);
                 }
             } else {
-                if(enemiesInPerHPTurn[2].isAssigned){
-                    enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].isMyAttackingTurn=true;
-            }
+                if(enemiesInPerHPTurn[2].isAssigned && !enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[enemiesInPerHPTurn[2].enemyType][enemiesInPerHPTurn[2].enemyIndex].InvokeAttackingTurn(delta);
+                }
             str31RoundCounter++;
-        }
+            }
         str31TwoFirstAttack = !str31TwoFirstAttack;
         }
     }
@@ -537,8 +532,9 @@ public class EnemyBehaviour : MonoBehaviour{
         } else {
             if(str32Timer >= 0.3f){
                 PerHPTurn t = enemiesInPerHPTurn[str32RoundCounter];
-                if(t.isAssigned){
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
                 str32RoundCounter++;
                 str32Timer = 0.0f;
@@ -568,8 +564,9 @@ public class EnemyBehaviour : MonoBehaviour{
                 str33Timer = 0.0f;
                 int attacker = Random.Range(0,3);
                 PerHPTurn t = enemiesInPerHPTurn[attacker];
-                if(t.isAssigned){
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
                 str33AttackCounter++;
             }
@@ -604,10 +601,11 @@ public class EnemyBehaviour : MonoBehaviour{
             
                 PerHPTurn t = enemiesInPerHPTurn[str34Counter];
 
-                if(t.isAssigned){
+                if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
                     if(str34ShouldFeint){ str34AttackTimer = 0.2f;}
-                    enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
                     enemiesInRoom[t.enemyType][t.enemyIndex].feinting = str34ShouldFeint;
+                    float delta = Random.Range(0.0f, attackDelta);
+                    enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
 
                 str34Counter++;
@@ -620,8 +618,9 @@ public class EnemyBehaviour : MonoBehaviour{
             if(p.isAttacking || p.isParrying){
                 for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
                     PerHPTurn t = enemiesInPerHPTurn[i];
-                    if(t.isAssigned && str34Counter -1 != i){
-                        enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+                    if(t.isAssigned && str34Counter -1 != i && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                        float delta = Random.Range(0.0f, attackDelta);
+                        enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                     }
                 }
             }
@@ -639,8 +638,9 @@ public class EnemyBehaviour : MonoBehaviour{
     private void Melee35(){
         for(int i = 0; i < enemiesInPerHPTurn.Length; i++){
             PerHPTurn t = enemiesInPerHPTurn[i];
-            if(t.isAssigned){
-                enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn = true;
+            if(t.isAssigned && !enemiesInRoom[t.enemyType][t.enemyIndex].isMyAttackingTurn){
+                float delta = Random.Range(0.0f, attackDelta);
+                enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
             }
         }
     }
