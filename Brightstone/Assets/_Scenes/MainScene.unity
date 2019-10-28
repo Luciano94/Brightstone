@@ -14801,6 +14801,7 @@ GameObject:
   - component: {fileID: 1896201155}
   - component: {fileID: 1896201156}
   - component: {fileID: 1896201158}
+  - component: {fileID: 1896201160}
   - component: {fileID: 1896201159}
   - component: {fileID: 1896201171}
   - component: {fileID: 1896201169}
@@ -14914,6 +14915,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enePercents: []
+--- !u!114 &1896201160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896201154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23004d4f3bea53346be00a62e80eaf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1896201169
 MonoBehaviour:
   m_ObjectHideFlags: 0
