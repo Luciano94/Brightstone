@@ -33,6 +33,7 @@ public class ShadowEffect : MonoBehaviour
         if(shadow != null){
             shadowRenderer.sprite = _renderer.sprite;
             shadow.transform.position = shadow.transform.parent.position + offsetPos;
+            shadowRenderer.sortingOrder = _renderer.sortingOrder - 1;
         }else{
             Debug.Log("algo no anda bien");
         }
