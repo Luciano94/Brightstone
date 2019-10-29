@@ -19,8 +19,8 @@ public class PlayerAnimations : MonoBehaviour{
         anim.SetFloat("Dir", (float)dir);
     }
 
-    public void SetParryTrigger(int dir){
-        anim.SetTrigger("Parry");
+    public void SetDashTrigger(int dir){
+        anim.SetTrigger("Dash");
         anim.SetFloat("Dir", (float)dir);
     }
 

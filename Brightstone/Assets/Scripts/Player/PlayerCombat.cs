@@ -193,8 +193,12 @@ public class PlayerCombat : MonoBehaviour{
         }
     }
 
+    public void Dash(){
+        plAnim.SetDashTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
+    }
+
     private void Parry(){
-        if(Input.GetButtonDown("Parry")){
+        /*if(Input.GetButtonDown("Parry")){
             if (GameManager.Instance.isTutorial)
                 if (!GameManager.Instance.IsReadyToParry())
                     return;
@@ -204,10 +208,10 @@ public class PlayerCombat : MonoBehaviour{
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
                 weaponColl.enabled = true;
-                plAnim.SetParryTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
+                plAnim.SetDashTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
                 SoundManager.Instance.PlayerParry();
             }
-        }
+        }*/
         if(isParrying && actParryTime >= parryTime){
             weapon.SetActive(false);
             weaponColl.enabled = false;
