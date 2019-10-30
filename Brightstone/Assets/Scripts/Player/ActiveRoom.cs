@@ -47,6 +47,8 @@ public class ActiveRoom : MonoBehaviour
             roomsBehaviour.setEnemiesRoom();
             roomsBehaviour.ActiveEnemies();
             doorManager.CloseDoors();
+        }else{
+            doorManager.OpenDoors();
         }
         ChangeLayer(9);
     }
