@@ -13,7 +13,8 @@ public enum Direction
 public class Exit{
     private Direction pos;
     private bool active;
-    private GameObject door;
+    private BoxCollider2D door;
+    
 
     public bool DoorState{
         get{return active;}
@@ -27,13 +28,15 @@ public class Exit{
         pos = _pos;
     }
 
-    public void SetDoor(GameObject dr){
+    public void SetDoor(BoxCollider2D dr){
         door = dr;
     }
 
     public void OpenCloseDoor(bool key){
+        
         active = key;
-        door.SetActive(key);
+        door.enabled = key;
+        
     }
 
 }

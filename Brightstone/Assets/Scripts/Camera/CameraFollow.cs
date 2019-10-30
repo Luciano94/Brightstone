@@ -22,7 +22,7 @@ public class CameraFollow: MonoBehaviour{
         vertExtent = Camera.main.orthographicSize;    
         horzExtent = vertExtent * Screen.width / Screen.height;
 		offsetX = nodeSize;
-		offsetY = nodeSize;
+		offsetY = nodeSize + 3;
 		position = new Vector2(0,0);
 
         // Calculations assume map is position at the origin

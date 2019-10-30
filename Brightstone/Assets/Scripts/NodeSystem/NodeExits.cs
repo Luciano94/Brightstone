@@ -7,19 +7,20 @@ public class NodeExits : MonoBehaviour{
     [SerializeField]GameObject doorD;
     [SerializeField]GameObject doorR;
     [SerializeField]GameObject doorL;
+    [SerializeField]private List<Animator> doorAnimators;
     private List<Exit> exits; 
 
-    public GameObject GetDoor(Direction dir){
+    public BoxCollider2D GetDoor(Direction dir){
         switch (dir)
         {
             case Direction.Up:
-                return doorU;
+                return doorU.GetComponent<BoxCollider2D>();
             case Direction.Down:
-                return doorD;
+                return doorD.GetComponent<BoxCollider2D>();
             case Direction.Right:
-                return doorR;
+                return doorR.GetComponent<BoxCollider2D>();
             default:
-                return doorL;
+                return doorL.GetComponent<BoxCollider2D>();
         }
     }
 
@@ -30,12 +31,14 @@ public class NodeExits : MonoBehaviour{
     public void OpenDoors(){
         for (int i = 0; i < exits.Count; i++){
             exits[i].OpenCloseDoor(false);
+            doorAnimators[i].SetTrigger("OpenTrigger");
         }
     }
 
     public void CloseDoors(){
         for (int i = 0; i < exits.Count; i++){
             exits[i].OpenCloseDoor(true);
+            doorAnimators[i].SetTrigger("CloseTrigger");
         }
     }
     
