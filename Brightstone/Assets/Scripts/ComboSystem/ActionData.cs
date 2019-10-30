@@ -8,8 +8,8 @@ public enum ActionState{
 public enum Actions{
     X = 0,
     Y,
-    A,
     B,
+    A,
     RB,
     Blank,
 }

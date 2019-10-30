@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -10,8 +9,8 @@ struct Combo
 
 public enum Stands
 {
-    Thrust,
     Beatdown,
+    Thrust,
     Shuriken,
     Zone,
     None
@@ -45,6 +44,23 @@ public class ComboManager : MonoBehaviour{
 
     public void ManageAction(Actions actionNumber){
         if(currentAction == null){
+            if (actionNumber != Actions.RB){
+                /* Tmb podría haber otro SFX para cuando intentas cambiar de tipo de ataque por el mismo que ya tenes */
+                
+                switch(actionNumber){
+                    case Actions.X:
+                        actualStand = Stands.Beatdown;
+                    break;
+
+                    case Actions.A:
+                        actualStand = Stands.Zone;
+                    break;
+                }
+                /* aca se efecturia un SFX por el cambio de tipo de ataque */
+
+                return;
+            }
+
             comboIndex = 0;
             //inicializa el arreglo de combos;
             for (int i = 0; i < Combos.Count; i++){
@@ -58,7 +74,7 @@ public class ComboManager : MonoBehaviour{
             //se pone play a la accion
                 currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
 
-                HandlerAction(currentAction.actionName);
+                HandleAction(currentAction.actionName);
             }
             //se inicializa el combo index
             comboIndex = 1;
@@ -90,7 +106,7 @@ public class ComboManager : MonoBehaviour{
                         //se pone play a esa accion.
                         currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
                         //se setea la siguiente action
-                        HandlerAction(currentAction.actionName);
+                        HandleAction(currentAction.actionName);
                     }
                         
                     //se quitan los que no coinciden.
@@ -128,11 +144,11 @@ public class ComboManager : MonoBehaviour{
         return comboIndex;
     }
 
-    private void HandlerAction(Actions actionNumber) {
+    private void HandleAction(Actions actionNumber) {
         switch (actionNumber)
         {
             case Actions.X:
-                SoundManager.Instance.PlayerAttackLight();
+                SoundManager.Instance.PlayerAttackHeavy();
                 actualStand = Stands.Beatdown;
                 break;
             case Actions.Y:
@@ -148,7 +164,7 @@ public class ComboManager : MonoBehaviour{
                 actualStand = Stands.Shuriken;
                 break;
             case Actions.RB:
-                SoundManager.Instance.PlayerAttackHeavy();
+                SoundManager.Instance.PlayerAttackLight();
                 break;
             default:
                 break;

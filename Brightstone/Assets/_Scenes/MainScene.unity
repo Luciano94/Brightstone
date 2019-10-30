@@ -18474,8 +18474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: X Beatdown (p2)
   anim: {fileID: 0}
-  dmg: 15
-  totalTime: 1
+  dmg: 20
+  totalTime: 0.5
   playerCombat: {fileID: 786400176}
   standToPlay: 0
   actionName: 0
@@ -18492,7 +18492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combos:
-  - combo: 0000000000000000000000000100000001000000020000000300000002000000
+  - combo: 040000000400000004000000000000000000000000000000040000000000000004000000
   - combo: 040000000400000005000000050000000600000007000000
   activeCombos: 
   actions:
@@ -18521,7 +18521,7 @@ MonoBehaviour:
   dmg: 15
   totalTime: 1
   playerCombat: {fileID: 786400176}
-  standToPlay: 0
+  standToPlay: 1
   actionName: 2
 --- !u!114 &2109171037
 MonoBehaviour:
@@ -18530,7 +18530,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109171032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
   m_Name: 
@@ -18540,7 +18540,7 @@ MonoBehaviour:
   dmg: 15
   totalTime: 1
   playerCombat: {fileID: 786400176}
-  standToPlay: 0
+  standToPlay: 4
   actionName: 4
 --- !u!114 &2109171038
 MonoBehaviour:
@@ -18557,9 +18557,9 @@ MonoBehaviour:
   name: RB Beatdown (p1)
   anim: {fileID: 0}
   dmg: 15
-  totalTime: 1
+  totalTime: 0.4
   playerCombat: {fileID: 786400176}
-  standToPlay: 0
+  standToPlay: 4
   actionName: 4
 --- !u!1 &2126348686
 GameObject:

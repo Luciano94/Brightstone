@@ -15,15 +15,21 @@ public class PlayerMovement : MonoBehaviour{
     private Vector2 rot;
     private Vector2 mov;
     private Vector3 diffFromEnemy;
+
+    private PlayerCombat playerCombat;
+
+    private void Start(){
+        playerCombat = GetComponent<PlayerCombat>();
+    }
+
     private void Update(){
 
-        if(GetComponent<PlayerCombat>().IsHit){
+        if(playerCombat.IsHit){
             MoveByHit();
             return;
         }
         
-        if(!GetComponent<PlayerCombat>().isAttack &&
-            !GetComponent<PlayerCombat>().isParry){
+        if(!playerCombat.isAttack){
             Movement();
             Rotation();
         }
