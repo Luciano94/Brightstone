@@ -4091,7 +4091,7 @@ MonoBehaviour:
   name: X Beatdown (p2)
   anim: {fileID: 0}
   dmg: 20
-  totalTime: 1
+  totalTime: 0.5
   playerCombat: {fileID: 786400176}
   standToPlay: 0
   actionName: 0
@@ -4401,7 +4401,7 @@ MonoBehaviour:
   name: RB Beatdown (p1)
   anim: {fileID: 0}
   dmg: 15
-  totalTime: 1
+  totalTime: 0.5
   playerCombat: {fileID: 786400176}
   standToPlay: 0
   actionName: 4
@@ -15781,6 +15781,7 @@ MonoBehaviour:
   expObtainedTxt: {fileID: 565384713}
   timeTxt: {fileID: 1174267649}
   godMode: {fileID: 1303826693}
+  pauseCamvas: {fileID: 737330611}
 --- !u!114 &1896201159
 MonoBehaviour:
   m_ObjectHideFlags: 0
