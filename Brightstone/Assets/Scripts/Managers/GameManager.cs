@@ -62,7 +62,10 @@ public class GameManager : MonoBehaviour{
         _playerMovement = player.GetComponent<PlayerMovement>();
         _playerAnimations = player.GetComponent<PlayerAnimations>();
 
-        SoundManager.Instance.LevelEnter();
+        if (PlayerPrefs.GetInt("PlayerDeathInBossRoom") == 1)
+            PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
+        else
+            SoundManager.Instance.LevelEnter();
     }
 
     private void Update(){
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour{
     }
 
     public void ExitToMainMenu(){
+        PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
         SceneManager.LoadScene(mainMenuIndex);
     }
 
@@ -191,6 +195,8 @@ public class GameManager : MonoBehaviour{
         //player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
         //player.SetActive(false);
 
+        if (!_activeRoom.GetRoomsBehaviour().HaveBoss)
+            PlayerPrefs.SetInt("PlayerDeathInBossRoom", 1);
         EnemyBehaviour.Instance.OnPlayerDeath();
         playerAlive = false;
 

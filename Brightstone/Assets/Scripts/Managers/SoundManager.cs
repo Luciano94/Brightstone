@@ -34,6 +34,9 @@ public class SoundManager : MonoBehaviour
     public void PlayerAttackLightHit(){ //El ataque ligero de jugador golpea a un enemigo
         //AkSoundEngine.PostEvent("PlayerAttackLightHit", GameManager.Instance.playerSts.gameObject);
     }
+    public void PlayerAttackLight2(){ //El jugador usa un ataque ligero
+        AkSoundEngine.PostEvent("PlayerAttackLight2", GameManager.Instance.playerSts.gameObject);
+    }
     public void PlayerAttackHeavy(){ //El jugador usa un ataque pesado
         AkSoundEngine.PostEvent("PlayerAttackHeavy", GameManager.Instance.playerSts.gameObject);
     }
@@ -44,7 +47,7 @@ public class SoundManager : MonoBehaviour
         //AkSoundEngine.PostEvent("PlayerDamaged", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerDeath(){ //El jugador muere
-        LevelClear();
+        //LevelClear();
         AkSoundEngine.PostEvent("PlayerDeath", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerRespawn(){ //El jugador revive
