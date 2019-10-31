@@ -9,7 +9,7 @@ struct Combo
 
 public enum Stands
 {
-    Beatdown,
+    Beatdown = 0,
     Thrust,
     Shuriken,
     Zone,
@@ -33,7 +33,7 @@ public class ComboManager : MonoBehaviour{
     }
 
 
-    private void Update() {
+    private void Update() { 	
         if(currentAction != null && 
         !currentAction.IsActive){
             comboIndex = 0;
@@ -64,15 +64,18 @@ public class ComboManager : MonoBehaviour{
             comboIndex = 0;
             //inicializa el arreglo de combos;
             for (int i = 0; i < Combos.Count; i++){
-                if(Combos[i].combo[0] == (int)actionNumber){                    
-                    activeCombos.Add(i);
+                if(Combos[i].combo[comboIndex] < actions.Length){
+                    if(actions[Combos[i].combo[comboIndex]].actionName == actionNumber){   
+                        activeCombos.Add(i);
+                    }
                 }
             }
             //se busca la accion
-            if(activeCombos.Count > 0){
+            if(activeCombos.Count > 0){              
                 currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
-            //se pone play a la accion
-                currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
+
+                //se pone play a la accion
+                currentAction.StartAction((int)actualStand + Combos[activeCombos[0]].combo[comboIndex] * 0.1f);
 
                 HandleAction(currentAction.actionName);
             }
@@ -81,16 +84,18 @@ public class ComboManager : MonoBehaviour{
         }else{    
             if(activeCombos.Count > 0 && 
             comboIndex >= Combos[activeCombos[0]].combo.Count){
+
                 comboIndex = 0;
                 activeCombos.Clear();
                 found = false;
+
             }else{
                 found = false;
                 //si esta en el tiempo de encadenar
                 if (currentAction.Fdata.State == ActionState.activeFrames) {
                     //coincide la action con la del comboindex
                     for (int i = 0; i < activeCombos.Count; i++) {
-                        if ((int)actionNumber == Combos[activeCombos[0]].combo[comboIndex])
+                        if (actionNumber == actions[Combos[activeCombos[0]].combo[comboIndex]].actionName)
                         {
                             if (actualStand == actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay) {
                                 actualStand = actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay;
@@ -104,7 +109,7 @@ public class ComboManager : MonoBehaviour{
                     }
                     if(found){
                         //se pone play a esa accion.
-                        currentAction.StartAction(activeCombos[0] + comboIndex * 0.1f);
+                        currentAction.StartAction((int)actualStand +( Combos[activeCombos[0]].combo[comboIndex] * 0.1f));
                         //se setea la siguiente action
                         HandleAction(currentAction.actionName);
                     }
@@ -112,7 +117,7 @@ public class ComboManager : MonoBehaviour{
                     //se quitan los que no coinciden.
                     for (int i = 0; i < activeCombos.Count; i++){
                         if(comboIndex == Combos[activeCombos[i]].combo.Count ||
-                            Combos[activeCombos[i]].combo[comboIndex] != (int)actionNumber){               
+                            actions[Combos[activeCombos[i]].combo[comboIndex]].actionName != actionNumber){               
                             activeCombos.RemoveAt(i);
                         }
                     }
