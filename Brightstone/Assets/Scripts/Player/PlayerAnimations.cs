@@ -28,8 +28,11 @@ public class PlayerAnimations : MonoBehaviour{
         anim.SetFloat("Dir", (float)dir);
     }
 
-    public void Death(){
+    public void Death(int dir){
         anim.SetTrigger("Death");
+        anim.SetFloat("Dir", (float)dir);
+
+        SoundManager.Instance.PlayerDeath();
 
         EntityOrderManager.Instance.OnEntityDeath(GetComponent<SpriteRenderer>());
 

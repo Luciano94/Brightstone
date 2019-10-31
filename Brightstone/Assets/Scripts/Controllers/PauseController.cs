@@ -14,11 +14,10 @@ public class PauseController : MonoBehaviour{
     }
 
     private void Update(){
-        if(InputManager.Instance.GetPauseButton() && !GameManager.Instance.isTutorial){
+        if(InputManager.Instance.GetPauseButton()){
             pauseState = !pauseState;
             MenuManager.Instance.StartMenu = pauseState;
             
-
             if (!pauseState && optionsPanel.gameObject.activeSelf)
                 optionsPanel.DesactivateThis();
 

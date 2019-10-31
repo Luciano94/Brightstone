@@ -15,6 +15,7 @@
 						<State Name="None" ID="{F64D6430-0C57-48A2-B00D-0049247CA2B7}"/>
 						<State Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
 						<State Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}"/>
+						<State Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

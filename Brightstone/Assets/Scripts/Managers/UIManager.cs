@@ -257,10 +257,10 @@ public class UIManager : MonoBehaviour{
     }
 
     public void ShowPause(){
-        pauseCamvas.SetActive(true);
+        //pauseCamvas.SetActive(true);
     }
 
     public void UnshowPause(){
-        pauseCamvas.SetActive(false);
+        //pauseCamvas.SetActive(false);
     }
 }

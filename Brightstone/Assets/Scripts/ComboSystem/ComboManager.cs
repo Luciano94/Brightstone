@@ -45,19 +45,20 @@ public class ComboManager : MonoBehaviour{
     public void ManageAction(Actions actionNumber){
         if(currentAction == null){
             if (actionNumber != Actions.RB){
-                /* Tmb podría haber otro SFX para cuando intentas cambiar de tipo de ataque por el mismo que ya tenes */
-                
-                switch(actionNumber){
-                    case Actions.X:
-                        actualStand = Stands.Beatdown;
-                    break;
+                if ((int)actionNumber == (int)actualStand)
+                    SoundManager.Instance.SelectAttSame();
+                else
+                    switch(actionNumber){
+                        case Actions.X:
+                            actualStand = Stands.Beatdown;
+                            SoundManager.Instance.SelectAttX();
+                        break;
 
-                    case Actions.A:
-                        actualStand = Stands.Zone;
-                    break;
-                }
-                /* aca se efecturia un SFX por el cambio de tipo de ataque */
-
+                        case Actions.A:
+                            actualStand = Stands.Zone;
+                            SoundManager.Instance.SelectAttA();
+                        break;
+                    }
                 return;
             }
 

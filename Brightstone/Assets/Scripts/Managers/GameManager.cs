@@ -164,8 +164,6 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayerDeath(){
-        SoundManager.Instance.PlayerDeath();
-
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
 
@@ -183,7 +181,6 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayerWin(){
-
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
 

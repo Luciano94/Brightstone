@@ -102,22 +102,20 @@
 				</Event>
 				<Event Name="LevelClear" ID="{46C9BF9C-275D-4D11-86BD-81F02DA10C14}">
 					<ChildrenList>
-						<Action Name="" ID="{A9EF356D-B6C6-4527-9888-EA094BA2D6EF}" ShortID="217474068">
+						<Action Name="" ID="{764DF6AC-2FC9-4E8B-AB09-9F20E6AD8744}" ShortID="870760435">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="12"/>
-								<Property Name="FadeTime" Type="Real64" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-96"/>
+								<Property Name="ActionType" Type="int16" Value="22"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+									<ObjectRef Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{9C781480-1158-43BD-B730-35E01480B8C2}" ShortID="281284736">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="3"/>
-								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="Delay" Type="Real64" Value="5"/>
 							</PropertyList>
 							<ReferenceList/>
 						</Action>
@@ -165,16 +163,6 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{EBA8941B-42F7-4AD9-8891-66C09BC5D077}" ShortID="221988437">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="12"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

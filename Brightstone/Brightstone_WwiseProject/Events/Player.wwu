@@ -70,18 +70,6 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{9F19BCF4-C8EA-422B-A0FD-84F4A5DE12D7}" ShortID="858373379">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="12"/>
-								<Property Name="FadeTime" Type="Real64" Value="1"/>
-								<Property Name="Volume" Type="Real64" Value="-96"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{0832AAE8-6060-4F4B-9F76-2EA9F2DC5188}" ShortID="338288023">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -95,13 +83,6 @@
 									<ObjectRef Name="PlayerDeath" ID="{ADFA9BBA-319E-4598-8DEE-00A0B0670A00}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{11D7CA3B-DA90-427C-B949-33BA798181E5}" ShortID="409926300">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-								<Property Name="Delay" Type="Real64" Value="1"/>
-							</PropertyList>
-							<ReferenceList/>
 						</Action>
 					</ChildrenList>
 				</Event>
@@ -149,20 +130,47 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{4525A43B-D2E1-4C10-B5E6-750784190113}" ShortID="43122553">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="12"/>
-							</PropertyList>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerDash" ID="{7BEAD0D3-30EF-4CAF-A8F5-38DEE718CA26}">
+					<ChildrenList>
+						<Action Name="" ID="{B36BEB2A-0EB3-49AA-847E-5D701C502A18}" ShortID="70168942">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+									<ObjectRef Name="Dash" ID="{93D65E36-C491-4656-B4D5-676351EA62FF}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{48329F99-3BA2-46F6-9D20-84C11A013446}" ShortID="15973297">
+					</ChildrenList>
+				</Event>
+				<Event Name="SelectAttX" ID="{E59FEE0B-959F-4857-957A-E812D4DD6D95}">
+					<ChildrenList>
+						<Action Name="" ID="{6C603D43-DEE2-47C7-B02D-2037835B1BE8}" ShortID="424324428">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+									<ObjectRef Name="SelectX" ID="{93CFC3B1-313E-45F6-8953-59984FF4E4C6}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SelectAttA" ID="{A18B5358-237A-47EA-B846-6834606276AF}">
+					<ChildrenList>
+						<Action Name="" ID="{F092DEE3-8590-49A8-A286-CFBD0CE77BDC}" ShortID="47830704">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectA" ID="{C6674F08-34FD-4960-8021-510334D3BFB5}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SelectAttSame" ID="{5DF25E88-F05E-4038-BCA8-7F432DF7BC86}">
+					<ChildrenList>
+						<Action Name="" ID="{16CC5D24-FF61-4C7E-9062-85291256AA3C}" ShortID="286000611">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectSame" ID="{ADDF9412-5506-43FF-B1AA-3C29ADEB7D02}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

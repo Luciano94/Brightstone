@@ -17,27 +17,27 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: ad8241c2b978994fa8ea8e8f74ce1dd3
     GuidInternal: 
-    m_lastTime: -8586323636753967967
+    m_lastTime: -8586297630974775808
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: b814c665a7c1b34999f3481aee659b0e
     GuidInternal: 
-    m_lastTime: -8586302670751729075
+    m_lastTime: -8586290688453624459
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb1ef2048ac69b4e80b19e82dc7d0f3c
     GuidInternal: 
-    m_lastTime: -8586321763237379193
+    m_lastTime: -8586297630974775808
     List: []
   - PhysicalPath: SoundBanks\Main.wwu
     ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
     guid: 14ab29a0355db14aba2233d66358ad72
     GuidInternal: 
-    m_lastTime: -8586297524226576969
+    m_lastTime: -8586290688453554488
     List:
     - name: Level1
       guid: 62b4613584d64041b1d7232e58ed92c7
@@ -83,13 +83,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 36c975ea6045fc43a297f0d4bbe2e39f
     GuidInternal: 
-    m_lastTime: -8586302673538772119
+    m_lastTime: -8586297630974775808
     List: []
   - PhysicalPath: Events\Enemy.wwu
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 96b8f4d569f46e4c98b3d6a2ed1ba32c
     GuidInternal: 
-    m_lastTime: -8586302647460048982
+    m_lastTime: -8586297630974775808
     List:
     - name: BossDeath
       guid: ba24d0133c593347bcf2481348221d14
@@ -239,7 +239,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 0530032992570c4b92ec17a849b7dfae
     GuidInternal: 
-    m_lastTime: -8586300828893983871
+    m_lastTime: -8586291344043447693
     List:
     - name: ArrowHit
       guid: f19f11a8d3216443bbcd4f5c8aa03850
@@ -357,13 +357,13 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Default Work Unit.wwu
     guid: 288d9de4f3546d44a991a6328235968e
     GuidInternal: 
-    m_lastTime: -8586304530391066331
+    m_lastTime: -8586297630974775808
     List: []
   - PhysicalPath: Events\Main Menu.wwu
     ParentPhysicalPath: Events\Default Work Unit.wwu
     guid: f7517a353017fa4ab57bfa812502efcf
     GuidInternal: 
-    m_lastTime: -8586303644846040392
+    m_lastTime: -8586297630974775808
     List:
     - name: MenuItemClick
       guid: 68570bc8d10f1647b5a879a3ee254e34
@@ -377,8 +377,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Main Menu\MenuItemClick
       maxAttenuation: 0
-      maxDuration: 1320205
-      minDuration: 1320205
+      maxDuration: 1306362
+      minDuration: 978666
     - name: MenuItemHover
       guid: 1bca4cab492a7d43b6cd1e58a9b0bb03
       id: 1220050629
@@ -391,8 +391,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Main Menu\MenuItemHover
       maxAttenuation: 0
-      maxDuration: 3000000
-      minDuration: 3000000
+      maxDuration: 2340196
+      minDuration: 1770482
     - name: MenuOpen
       guid: 558646bf9ec4604484d1bcb9c2905867
       id: 48824776
@@ -411,7 +411,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 5d7a2c9e7911f3419b9a4fffb92d5afc
     GuidInternal: 
-    m_lastTime: -8586302647460078972
+    m_lastTime: -8586290688453514498
     List:
     - name: PlayerAttackHeavy
       guid: 45ee8ed3d6c6be4cb0936ab7ef119f92
@@ -493,6 +493,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayerDash
+      guid: d3d0ea7bef30af4ca8f538dee718ca26
+      id: 2525052962
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerDash
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerDash
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: PlayerDeath
       guid: 9bb0d3e5778a314a95d3db1947b83c67
       id: 1656947812
@@ -507,8 +523,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerDeath
       maxAttenuation: 0
-      maxDuration: 2359070
-      minDuration: 2359070
+      maxDuration: 2400306
+      minDuration: 2291912
     - name: PlayerParry
       guid: b4839d79ebd0504e91f2636f5dd3ad67
       id: 878262600
@@ -555,13 +571,61 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerRespawn
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
+    - name: SelectAttA
+      guid: 58538ba17a23ea47b8466834606276af
+      id: 4283005579
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: SelectAttA
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\SelectAttA
+      maxAttenuation: 0
+      maxDuration: 223983
+      minDuration: 223983
+    - name: SelectAttSame
+      guid: 885ef25d5ef03840bca87f432df7bc86
+      id: 1298389756
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: SelectAttSame
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\SelectAttSame
+      maxAttenuation: 0
+      maxDuration: 1918440
+      minDuration: 1918440
+    - name: SelectAttX
+      guid: 0bee9fe59f955748957ae812d4dd6d95
+      id: 4283005586
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: SelectAttX
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\SelectAttX
+      maxAttenuation: 0
+      maxDuration: 271018
+      minDuration: 271018
   - PhysicalPath: Events\Synopsis.wwu
     ParentPhysicalPath: Events\Default Work Unit.wwu
     guid: 6a858d6961773543b61ce5190f25495f
     GuidInternal: 
-    m_lastTime: -8586302673538702012
+    m_lastTime: -8586297630974775808
     List:
     - name: SynopsisOpen
       guid: 0a88d71ddb466746b90453252875f0ad
@@ -582,7 +646,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f0c1bca2a5f04f45be9cc3d681b484d5
     GuidInternal: 
-    m_lastTime: -8586304505335342630
+    m_lastTime: -8586297630974775808
     List:
     - name: BossHP
       guid: 2e46467507cf6841be5c190c3fda92ee
@@ -616,7 +680,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a4ce803c444d3b4cb304267510edd8a5
     GuidInternal: 
-    m_lastTime: -8586304537200783564
+    m_lastTime: -8586291344043487655
     List:
     - name: PlayerLife
       guid: 4f2180e80a4870468ad5de88dce5daa4
@@ -645,6 +709,12 @@ MonoBehaviour:
         id: 748895195
         PathAndIcons:
         - ElementName: None
+          ObjectType: 8
+      - name: Victory
+        guid: e67b5748b446ed41b2e41bfee335c5cb
+        id: 2716678721
+        PathAndIcons:
+        - ElementName: Victory
           ObjectType: 8
       ValueGuids: []
       ValueIcons: []
@@ -685,7 +755,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 3bbddb8cc69e5245a6555283c02cff6a
     GuidInternal: 
-    m_lastTime: -8586304537201063773
+    m_lastTime: -8586292126975523694
     List:
     - name: BossHealth
       guid: 5be863198231e7418f491b364dc2d837
@@ -761,6 +831,37 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Progress
+      guid: c5b4cd9c410ad3449a69f12adfb2695b
+      id: 308635872
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Progress
+        ObjectType: 11
+      Path: Default Work Unit\Progress
+      values:
+      - name: OneThird
+        guid: 3dbcb9443c1ea144bb0e1080528b1100
+        id: 3319853618
+        PathAndIcons:
+        - ElementName: OneThird
+          ObjectType: 10
+      - name: ThreeThirds
+        guid: 55eaed2457098a4581997192805ad975
+        id: 517778677
+        PathAndIcons:
+        - ElementName: ThreeThirds
+          ObjectType: 10
+      - name: TwoThirds
+        guid: 627ad213ffba804ca9f9071719471ae5
+        id: 1304826179
+        PathAndIcons:
+        - ElementName: TwoThirds
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Stage
       guid: 18d73fd628889d48933563725de4e4c6
       id: 1063701865
@@ -791,7 +892,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 9298ad969a164a43be2e5a54d7d3fabf
     GuidInternal: 
-    m_lastTime: -8586323636754227848
+    m_lastTime: -8586297630974775808
     List: []
   ExpandedItems:
   - /Brightstone_WwiseProject

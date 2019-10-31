@@ -4,57 +4,41 @@ Event	ID	Name			Wwise Object Path	Notes
 	667982098	PlayerRespawn			\Default Work Unit\Level 1\Player\PlayerRespawn	
 	852912510	EnemyArcherTightBow			\Default Work Unit\Level 1\Enemy\EnemyArcherTightBow	
 	1108892891	EnemyArcherReleaseBow			\Default Work Unit\Level 1\Enemy\EnemyArcherReleaseBow	
+	1298389756	SelectAttSame			\Default Work Unit\Level 1\Player\SelectAttSame	
 	1391803776	RoomNewEnter			\Default Work Unit\Level 1\General\RoomNewEnter	
 	1481017468	BossDeath			\Default Work Unit\Level 1\Enemy\BossDeath	
 	1656947812	PlayerDeath			\Default Work Unit\Level 1\Player\PlayerDeath	
 	1787276729	BossSwordAttack			\Default Work Unit\Level 1\Enemy\BossSwordAttack	
 	1974576135	RoomClear			\Default Work Unit\Level 1\General\RoomClear	
 	2212241627	ArrowHit			\Default Work Unit\Level 1\General\ArrowHit	
+	2525052962	PlayerDash			\Default Work Unit\Level 1\Player\PlayerDash	
 	2564847700	EnemyMeleeSwordAttack			\Default Work Unit\Level 1\Enemy\EnemyMeleeSwordAttack	
 	3914790867	PlayerAttackHeavy			\Default Work Unit\Level 1\Player\PlayerAttackHeavy	
 	4149955699	RoomBossEnter			\Default Work Unit\Level 1\General\RoomBossEnter	
+	4283005579	SelectAttA			\Default Work Unit\Level 1\Player\SelectAttA	
+	4283005586	SelectAttX			\Default Work Unit\Level 1\Player\SelectAttX	
 
-Switch Group	ID	Name			Wwise Object Path	Notes
-	1063701865	Stage			\Default Work Unit\Stage	
-
-Switch	ID	Name	Switch Group			Notes
-	2395677314	Common	Stage			
-	2540243936	Finale	Stage			
-
-State Group	ID	Name			Wwise Object Path	Notes
-	1307264345	Stance			\Default Work Unit\Stance	
-
-State	ID	Name	State Group			Notes
-	0	None	Stance			
-	579523862	Explore	Stance			
-	2764240573	Combat	Stance			
-
-Game Parameter	ID	Name			Wwise Object Path	Notes
-	1063810301	RoomsCleared			\Default Work Unit\RoomsCleared	
+Effect plug-ins	ID	Name	Type				Notes
+	2995775460	Room_Small	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	39096638	Fast Action Swish_HW 05 05	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_0FF7B6FF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 05		47876
-	95295155	Fast Action Swish_HW 05 01	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_35F081CE.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackHeavy\Fast Action Swish_HW 05 01		87220
-	105129647	Fast Action Swish_HW 05 02	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_00D685C2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 02		90944
-	132279201	StartFire	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\StartFire_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Map\StartFire		705664
-	141212606	DroneG-8va_92bpm_1M_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Drone\DroneG-8va_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone Clean\DroneG-8va_92bpm_1M_0P		2185888
-	161662147	PlayerDeath	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Player_Death_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerDeath		416204
-	199228151	CombatStem_92bpm_MixSig_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\CombatStem_92bpm_MixSig_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\Combat\CombatStem_92bpm_MixSig_0P\CombatStem_92bpm_MixSig_0P		10469020
-	235818575	Fast Action Swish_HW 05 04	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_FB2E39BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 04		82504
-	293284878	DroneA_92bpm_1M_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Drone\DroneA_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone\DroneA_92bpm_1M_0P		2185888
-	306863937	DroneG_92bpm_1M_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Drone\DroneG_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone Clean\DroneG_92bpm_1M_0P		2185888
-	319793680	BossScream	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\BossScream_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossScream		582184
-	351713597	ThreeTaiko	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Taiko_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Map\ThreeTaiko		882064
-	457148846	BossSwordAttackHeavy	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Whoosh_Rod_Pole_022 48000_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossSwordAttack\BossSwordAttackHeavy		176040
-	665658802	BowTight	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Bow Pull_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BowTight		24580
-	704732684	Fast Action Swish_HW 05 03	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_FE436B79.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackHeavy\Fast Action Swish_HW 05 03		85800
-	810524022	DroneAb_92bpm_1M_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Drone\DroneAb_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone\DroneAb_92bpm_1M_0P		2185888
-	828804855	Introstem_92bpm_13-8_4M_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Introstem_92bpm_13-8_4M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\Combat\Introstem_92bpm_13-8_4M_0P\Introstem_92bpm_13-8_4M_0P		3738972
-	835927797	DroneD_92bpm_1M_0P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Drone\DroneD_92bpm_1M_0P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\PreBoss\Drone\DroneD_92bpm_1M_0P		2185888
-	863462329	Parry 1	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Parry_D1B599A0.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerParryHit\Parry 1		274680
-	883326382	ArrowHit	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\bullet_impact_ice_06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\ArrowHit		153336
-	961964107	BowRelease	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Arrow Throw_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BowRelease		89092
-	987255469	sfx_Swing1	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\sfx_Swing1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\MeleeSwordAttack\sfx_Swing1		30168
-	988170954	sfx_Swing2	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\sfx_Swing2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\MeleeSwordAttack\sfx_Swing2		45134
-	1054884445	Combat_80ppm_4-4_1-16P	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Combat_80ppm_4-4_1-16P_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Level 1\Boss\Combat_80ppm_4-4_1-16P\Combat_80ppm_4-4_1-16P		3802352
+	39096638	Fast Action Swish_HW 05 05	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_6834E64F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 05		3552
+	94429121	SelectA	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08_5917123F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\SelectA		12194
+	95295155	Fast Action Swish_HW 05 01	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_6DCBCFBE.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackHeavy\Fast Action Swish_HW 05 01		5241
+	105129647	Fast Action Swish_HW 05 02	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_89C14A12.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 02		5054
+	132279201	StartFire	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\StartFire_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Map\StartFire		40294
+	161662147	PlayerDeath	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Player_Death_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerDeath		27241
+	235818575	Fast Action Swish_HW 05 04	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_8D65838A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 04		4521
+	294602468	SelectX	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\foley_soldier_gear_equipment_metal_cloth_heavy_movement_light_08_41EB133A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\SelectX		12194
+	319793680	BossScream	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\BossScream_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossScream		30457
+	351713597	ThreeTaiko	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Taiko_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Map\ThreeTaiko		25732
+	409313674	SelectSame	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\button_002_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\SelectSame		2680
+	457148846	BossSwordAttackHeavy	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Whoosh_Rod_Pole_022 48000_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossSwordAttack\BossSwordAttackHeavy		14269
+	665658802	BowTight	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Bow Pull_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BowTight		4672
+	704732684	Fast Action Swish_HW 05 03	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_09A61629.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackHeavy\Fast Action Swish_HW 05 03		4907
+	863462329	Parry 1	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Parry_E44AB410.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerParryHit\Parry 1		22200
+	883326382	ArrowHit	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\bullet_impact_ice_06_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\ArrowHit		17171
+	961964107	BowRelease	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Arrow Throw_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BowRelease		7796
+	987255469	sfx_Swing1	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\sfx_Swing1_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\MeleeSwordAttack\sfx_Swing1		3232
+	988170954	sfx_Swing2	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\sfx_Swing2_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\MeleeSwordAttack\sfx_Swing2		3226
 

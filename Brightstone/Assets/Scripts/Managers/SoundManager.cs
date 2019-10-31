@@ -100,7 +100,7 @@ public class SoundManager : MonoBehaviour
         AkSoundEngine.PostEvent("LevelEnter", gameObject);
     }
     public void LevelClear(){ //Se termina el nivel
-        AkSoundEngine.StopAll();
+        //AkSoundEngine.StopAll();
         AkSoundEngine.PostEvent("LevelClear", gameObject);
     }
     public void PlayerHP(float playerHPPercentage){ //Hay un cambio en el porcentaje de vida del jugador
@@ -118,6 +118,18 @@ public class SoundManager : MonoBehaviour
     public void MenuOpen(){ //Se abre la escena de menú principal
         AkSoundEngine.StopAll();
         AkSoundEngine.PostEvent("MenuOpen", gameObject);
+    }
+    public void PlayerDash(){ //El jugador ejecuta el Dash
+        AkSoundEngine.PostEvent("PlayerDash", GameManager.Instance.playerSts.gameObject);
+    }
+    public void SelectAttX(){ //El jugador selecctiona el ataque Beatdown
+        AkSoundEngine.PostEvent("SelectAttX", gameObject);
+    }
+    public void SelectAttA(){ //El jugador selecctiona el ataque Zone
+        AkSoundEngine.PostEvent("SelectAttA", gameObject);
+    }
+    public void SelectAttSame(){ //El jugador selecctiona el ataque ya seleccionado
+        AkSoundEngine.PostEvent("SelectAttSame", gameObject);
     }
     public void SynopsisOpen(){ //Se abre la escena de menú principal
         AkSoundEngine.StopAll();
