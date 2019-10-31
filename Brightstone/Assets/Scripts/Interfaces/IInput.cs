@@ -8,4 +8,10 @@
     bool GetPauseButton();
     bool GetRestartButton();
     bool GetPassButton();
+    bool GetActionZone();
+    bool GetActionShuriken();
+    bool GetActionBeatdown();
+    bool GetActionThrust();
+    bool GetActionDash();
+    bool GetActionSimpleAttack();
 }

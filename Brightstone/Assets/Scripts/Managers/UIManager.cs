@@ -64,6 +64,10 @@ public class UIManager : MonoBehaviour{
     [Header("Cheatcodes")]
     [SerializeField] private GameObject godMode;
 
+    [Header("Pause Canvas")]
+    [SerializeField] private GameObject pauseCamvas;
+
+
     public GameObject TextPopupPrefab{
         get{return textPopupPrefab;}
     }
@@ -250,5 +254,13 @@ public class UIManager : MonoBehaviour{
 
     public void RestartButton(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ShowPause(){
+        pauseCamvas.SetActive(true);
+    }
+
+    public void UnshowPause(){
+        pauseCamvas.SetActive(false);
     }
 }

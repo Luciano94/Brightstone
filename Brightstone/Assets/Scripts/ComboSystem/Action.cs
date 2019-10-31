@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
-public class Action :MonoBehaviour{
-    
-    [SerializeField]private new string  name;
-    [SerializeField]private Animation anim;
-    [SerializeField]private float dmg;
-    [SerializeField]private float totalTime;
-    [SerializeField]private PlayerCombat playerCombat;
+public class Action : MonoBehaviour {
+
+    [SerializeField] private new string name;
+    [SerializeField] private Animation anim;
+    [SerializeField] private float dmg;
+    [SerializeField] private float totalTime;
+    [SerializeField] private PlayerCombat playerCombat;
+    public Stands standToPlay;
+    public Actions actionName;
     //float drag;
     //float stunt;
     private FrameData fData;

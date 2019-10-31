@@ -7,7 +7,10 @@ public enum ActionState{
 
 public enum Actions{
     X = 0,
-    Y=1,
+    Y,
+    B,
+    A,
+    RB,
     Blank,
 }
 

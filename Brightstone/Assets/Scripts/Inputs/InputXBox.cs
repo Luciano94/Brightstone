@@ -7,6 +7,35 @@ public class InputXBox : IInput{
     public float GetHorizontalAxis(){
         return Input.GetAxis("Horizontal");
     }
+
+    public bool GetActionZone(){
+        return Input.GetButtonDown("Aattack");
+    }
+
+    
+    public bool GetActionShuriken(){
+        return Input.GetButtonDown("Battack");
+    }
+
+    
+    public bool GetActionBeatdown(){
+        return Input.GetButtonDown("Xattack");
+    }
+
+    
+    public bool GetActionThrust(){
+        return Input.GetButtonDown("Yattack");
+    }
+
+    
+    public bool GetActionDash(){
+        return Input.GetButtonDown("Dash");
+    }
+
+    public bool GetActionSimpleAttack(){
+        return Input.GetButtonDown("RBattack");
+    }
+
     public bool GetBasicAttackButton(){
         return Input.GetButtonDown("Fire1");
     }

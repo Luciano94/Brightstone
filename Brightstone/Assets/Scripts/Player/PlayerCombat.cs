@@ -123,22 +123,38 @@ public class PlayerCombat : MonoBehaviour{
                 }
             }
         }
-        if(!isParrying)
+       // if(!isParrying)
             Attack();
-        if(!isAttacking)
-            Parry();
+       // if(!isAttacking)
+            //Parry();
     }
 
     private void Attack(){
         if(!MenuManager.Instance.StartMenu){
-          if(Input.GetButtonDown("Xattack")){
+            if(InputManager.Instance.GetActionBeatdown()){
                 cManager.ManageAction(Actions.X);
                 actualAttackAction = Actions.X;
                 isStrong = false;
             }
-            if(Input.GetButtonDown("Yattack")){
+            if(InputManager.Instance.GetActionThrust()){
                 cManager.ManageAction(Actions.Y);
                 actualAttackAction = Actions.Y;
+                isStrong = true;
+            }
+            if (InputManager.Instance.GetActionShuriken()){
+                cManager.ManageAction(Actions.B);
+                actualAttackAction = Actions.B;
+                isStrong = true;
+            }
+            if (InputManager.Instance.GetActionZone()){
+                cManager.ManageAction(Actions.A);
+                actualAttackAction = Actions.A;
+                isStrong = true;
+            }
+            if (InputManager.Instance.GetActionSimpleAttack())
+            {
+                cManager.ManageAction(Actions.RB);
+                actualAttackAction = Actions.RB;
                 isStrong = true;
             }
         }
@@ -175,8 +191,12 @@ public class PlayerCombat : MonoBehaviour{
         }
     }
 
+    public void Dash(){
+        plAnim.SetDashTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
+    }
+
     private void Parry(){
-        if(Input.GetButtonDown("Parry")){
+        /*if(Input.GetButtonDown("Parry")){
             if (GameManager.Instance.isTutorial)
                 if (!GameManager.Instance.IsReadyToParry())
                     return;
@@ -186,10 +206,10 @@ public class PlayerCombat : MonoBehaviour{
                 actParryTime = 0.0f;
                 weapon.SetActive(true);
                 weaponColl.enabled = true;
-                plAnim.SetParryTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
+                plAnim.SetDashTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
                 SoundManager.Instance.PlayerParry();
             }
-        }
+        }*/
         if(isParrying && actParryTime >= parryTime){
             weapon.SetActive(false);
             weaponColl.enabled = false;

@@ -14,7 +14,7 @@ public class PauseController : MonoBehaviour{
     }
 
     private void Update(){
-        if(Input.GetButtonDown("Pause") && !GameManager.Instance.isTutorial){
+        if(InputManager.Instance.GetPauseButton() && !GameManager.Instance.isTutorial){
             pauseState = !pauseState;
             MenuManager.Instance.StartMenu = pauseState;
             
