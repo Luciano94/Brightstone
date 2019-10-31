@@ -12870,6 +12870,11 @@ PrefabInstance:
       propertyPath: field of view
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 619709236898097333, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 619709236898097332, guid: e817498a42f5e7c4c89c3f6f12462b56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e817498a42f5e7c4c89c3f6f12462b56, type: 3}
@@ -16784,7 +16789,7 @@ PrefabInstance:
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.828
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6276584207758848109, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
