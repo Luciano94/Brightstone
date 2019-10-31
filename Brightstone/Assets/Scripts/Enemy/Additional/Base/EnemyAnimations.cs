@@ -13,6 +13,8 @@ public class EnemyAnimations : MonoBehaviour{
 
     private void Start(){
         sprRenderer = GetComponent<SpriteRenderer>();
+
+        EntityOrderManager.Instance.AddEntity(sprRenderer);
     }
 
     private void Update(){
@@ -84,7 +86,8 @@ public class EnemyAnimations : MonoBehaviour{
 
         sprRenderer.color = new Color(1.0f, 1.0f, 1.0f);
         sprRenderer.sortingLayerName = "Top";
-        sprRenderer.sortingOrder = 0;
+        
+        EntityOrderManager.Instance.OnEntityDeath(sprRenderer);
 
         float dir = anim.GetInteger("Direction");
         anim.SetFloat("Dir", dir);

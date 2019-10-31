@@ -119,11 +119,9 @@ public class RoomsBehaviour : MonoBehaviour{
 
     public void ActiveEnemies(){
         if(!haveMarket){
-            foreach (GameObject enemy in enemies){
+            foreach (GameObject enemy in enemies)
                 enemy.SetActive(true);
-                //EnemyBehaviour.Instance.AddEnemyToBehaviour(enemy);
-            }
-            //EnemyBehaviour.Instance.ChangeStrategy();
+            
             EnemyBehaviour.Instance.FillEnemyList();
 
             if(enemies[0].GetComponent<EnemyStats>().enemyType == EnemyType.Boss)

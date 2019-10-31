@@ -8,6 +8,10 @@ public class PlayerAnimations : MonoBehaviour{
 		anim = GetComponent<Animator>();
 	}
 
+    private void Start(){
+        EntityOrderManager.Instance.AddEntity(GetComponent<SpriteRenderer>());
+    }
+
 	void Update(){
         anim.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
         anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
@@ -26,6 +30,8 @@ public class PlayerAnimations : MonoBehaviour{
 
     public void Death(){
         anim.SetTrigger("Death");
+
+        EntityOrderManager.Instance.OnEntityDeath(GetComponent<SpriteRenderer>());
 
         enabled = false;
     }
