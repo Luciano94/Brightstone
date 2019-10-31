@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PropGenerator : MonoBehaviour
 {
+    private const bool PROP_GENERATOR_IS_ON = false;
+#if PROP_GENERATOR_IS_ON
     [SerializeField] private int minProps = 0;
     [SerializeField] private int maxProps = 1;
     [SerializeField] private List<GameObject> Props = new List<GameObject>();
     [SerializeField] private List<Transform> Positions = new List<Transform>();
-
-    
     void Start()
     {
         if (minProps < 0){ minProps = 0;}
@@ -58,5 +58,6 @@ public class PropGenerator : MonoBehaviour
             }
         }
         return randomList;
-    } 
+    }
+#endif
 }
