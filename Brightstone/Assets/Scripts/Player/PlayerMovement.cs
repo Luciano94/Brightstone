@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour{
             return;
         }
         
-        if(!playerCombat.isAttack){
+        if(!playerCombat.isAttack && GameManager.Instance.IsConnected){
             Movement();
             Rotation();
         }
@@ -41,8 +41,8 @@ public class PlayerMovement : MonoBehaviour{
 
     private void Rotation(){
         if(GameManager.Instance.IsConnected){
-            rotH = Input.GetAxis("Horizontal");
-            rotV = Input.GetAxis("Vertical") * -1;
+            rotH = InputManager.Instance.GetHorizontalAxis();
+            rotV = InputManager.Instance.GetVerticalAxis() * -1;
         }else{
             rot = combatCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             rot = rot.normalized;
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     private void Movement(){
-        mov = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        mov = new Vector2(InputManager.Instance.GetHorizontalAxis(),InputManager.Instance.GetVerticalAxis()).normalized;
         mov *= (speed * Time.deltaTime);
         
         transform.Translate(mov);

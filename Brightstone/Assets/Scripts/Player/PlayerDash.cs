@@ -35,10 +35,10 @@ public class PlayerDash : MonoBehaviour{
         HandlerDashUI();
 
         if (!isDashing){
-            mov.x = Input.GetAxis("Horizontal");
-            mov.y = Input.GetAxis("Vertical");
+            mov.x = InputManager.Instance.GetHorizontalAxis();
+            mov.y = InputManager.Instance.GetVerticalAxis();
             mov = mov.normalized;
-            if (Input.GetButtonDown("Dash") && CanDash()){
+            if (InputManager.Instance.GetActionDash() && CanDash()){
                 isDashing = true;
                 dashParticles.Clear();
                 dashParticles.enabled = true;
