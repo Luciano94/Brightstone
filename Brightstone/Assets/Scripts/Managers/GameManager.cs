@@ -46,21 +46,22 @@ public class GameManager : MonoBehaviour{
     private void Awake(){
         DetectDevice();
         RunSaver.NewRun();
-        if(isTutorial){
-            player.SetActive(false);
-        }
-        if(!PlayerPrefs.HasKey("XP")){
-            PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
-        }else{
-            PlayerPrefs.GetInt("XP", 0);
-        }
 
         _activeRoom = player.GetComponent<ActiveRoom>();
         _playerDash = player.GetComponent<PlayerDash>();
         _playerStats = player.GetComponent<PlayerStats>();
         _playerCombat = player.GetComponent<PlayerCombat>();
         _playerMovement = player.GetComponent<PlayerMovement>();
-        _playerAnimations = player.GetComponent<PlayerAnimations>();
+        _playerAnimations = player.GetComponentInChildren<PlayerAnimations>();
+
+        if (isTutorial){
+            player.SetActive(false);
+        }
+        if(!PlayerPrefs.HasKey("XP")){
+            PlayerPrefs.SetInt("XP",(int)_playerStats.Experience);
+        }else{
+            PlayerPrefs.GetInt("XP", 0);
+        }
 
         if (PlayerPrefs.GetInt("PlayerDeathInBossRoom") == 1)
             PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour{
         DetectDevice();
         RunSaver.currentRun.data.time += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.H) && !isConnected){
+        if (Input.GetKeyDown(KeyCode.H)){
             playerSts.ChangeGodModeState();
             UIManager.Instance.ChangeGodModeState();
         }
@@ -218,8 +219,6 @@ public class GameManager : MonoBehaviour{
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
         
-        _playerAnimations.enabled = false;
-        _playerCombat.enabled = false;
         _playerStats.enabled = false;
         _playerDash.enabled = false;
 
@@ -230,15 +229,15 @@ public class GameManager : MonoBehaviour{
     }
 
     public void EnablePlayer(){
-        playerMovement.enabled = true;
-        playerCombat.enabled = true;
-        playerAnimations.enabled = true;
+        _playerMovement.enabled = true;
+        _playerCombat.enabled = true;
+        _playerAnimations.enabled = true;
     }
 
     public void DisablePlayer(){
-        playerMovement.enabled = false;
-        playerCombat.enabled = false;
-        player.GetComponentInChildren<PlayerAnimations>().Idle();
-        playerAnimations.enabled = false;
+        _playerMovement.enabled = false;
+        _playerCombat.enabled = false;
+        _playerAnimations.Idle();
+        _playerAnimations.enabled = false;
     }
 }
