@@ -12,8 +12,6 @@ public class HistoryDataManager{
     public struct Data{
         public List<float> runTimers;
         public float bestTime;
-        public uint timesParried;
-        public uint goodParry;
         public uint enemiesKilled;
         public uint bossesKilled;
         public uint totalExp;

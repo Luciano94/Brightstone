@@ -223,7 +223,6 @@ public class PlayerCombat : MonoBehaviour{
         if (!parriedSomeone){
             OnParriedSomeone().Invoke();
             parriedSomeone = true;
-            RunSaver.currentRun.data.goodParry++;
         }
     }
 

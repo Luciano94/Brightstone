@@ -42,8 +42,6 @@ public static class RunSaver{
             else
                 historyData.data.totalDeaths++;
 
-            historyData.data.timesParried += currentRun.data.timesParried;
-            historyData.data.goodParry += currentRun.data.goodParry;
             historyData.data.enemiesKilled += currentRun.data.enemiesKilled;
             historyData.data.bossesKilled += currentRun.data.bossesKilled;
             historyData.data.totalExp += currentRun.data.expObtained;
@@ -130,8 +128,6 @@ public static class RunSaver{
     private static void FillDefaultRunData(){
         currentRun.data.damageDealt = 0;
         currentRun.data.damageRecieved = 0;
-        currentRun.data.timesParried = 0;
-        currentRun.data.goodParry = 0;
         currentRun.data.enemiesKilled = 0;
         currentRun.data.bossesKilled = 0;
         currentRun.data.expObtained = 0;
@@ -147,8 +143,6 @@ public static class RunSaver{
     private static void FillDefaultHistoryData(){
         historyData.data.runTimers = new List<float>();
         historyData.data.bestTime = float.MaxValue;
-        historyData.data.timesParried = 0;
-        historyData.data.goodParry = 0;
         historyData.data.enemiesKilled = 0;
         historyData.data.bossesKilled = 0;
         historyData.data.totalExp = 0;

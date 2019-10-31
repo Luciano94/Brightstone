@@ -8,8 +8,6 @@ public class RunDataManager{
     public struct Data{
         public uint damageDealt;
         public uint damageRecieved;
-        public uint timesParried;
-        public uint goodParry;
         public uint enemiesKilled;
         public uint bossesKilled;
         public uint expObtained;
