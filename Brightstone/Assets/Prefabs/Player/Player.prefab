@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 4555218928698328546}
+  actualAttackAction: 5
   cManager: {fileID: 0}
   atckTime: 0.5
   blood: {fileID: 3504043989431197147}
@@ -718,6 +719,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 31269897, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 902c3a83a1f31694fa0144db575d7168,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a0c6a4c28e7b0b4eb35fc86b0210790, type: 3}
 --- !u!1 &6276584208348804366 stripped

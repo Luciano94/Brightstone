@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour{
     }
 
     private void Awake(){
+        DetectDevice();
         RunSaver.NewRun();
         if(isTutorial){
             player.SetActive(false);
@@ -49,14 +50,14 @@ public class GameManager : MonoBehaviour{
     }
 
     private void Update(){
+        DetectDevice();
         RunSaver.currentRun.data.time += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.H)){
+        if (Input.GetKeyDown(KeyCode.H) && !isConnected){
             playerSts.ChangeGodModeState();
             UIManager.Instance.ChangeGodModeState();
         }
 
-        DetectDevice();
     }
 
     public void ExitToMainMenu(){
@@ -65,13 +66,23 @@ public class GameManager : MonoBehaviour{
 
     private void DetectDevice(){
         if (Input.GetJoystickNames().Length > 0){
-            if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10)
+            if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10){
                 isConnected = true;
-            else
+                UIManager.Instance.UnshowPause();
+                Time.timeScale = 1.0f;
+            }
+            else{
                 isConnected = false;
+                UIManager.Instance.ShowPause();
+                Time.timeScale = 0.0f;
+            }
         }
-        else
+        else{
             isConnected = false;
+            UIManager.Instance.ShowPause();
+            Time.timeScale = 0.0f;
+        }
+
     }
 
     public bool IsConnected{

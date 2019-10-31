@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour{
         if (Instance == this){
             //DontDestroyOnLoad(gameObject);
 
-            input = new InputPC();
+            input = new InputXBox();
         }
     }
 
@@ -21,6 +21,12 @@ public class InputManager : MonoBehaviour{
     public bool GetActionButton()       { return input.GetActionButton();       }
     public bool GetRestartButton()      { return input.GetRestartButton();      }
     public bool GetPassButton()         { return input.GetPassButton();         }
+    public bool GetActionZone()         {return input.GetActionZone();          }
+    public bool GetActionShuriken()     {return input.GetActionShuriken();      }
+    public bool GetActionBeatdown()     {return input.GetActionBeatdown();      }    
+    public bool GetActionThrust()       {return input.GetActionThrust();        }
+    public bool GetActionDash()         {return input.GetActionDash();          }
+    public bool GetActionSimpleAttack() {return input.GetActionSimpleAttack();  }
 
     static public InputManager Instance{
         get{

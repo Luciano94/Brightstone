@@ -4403,6 +4403,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444188770}
   m_CullTransparentMesh: 0
+--- !u!1 &448669771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448669772}
+  - component: {fileID: 448669773}
+  m_Layer: 0
+  m_Name: BeatdownX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &448669772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448669771}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109171033}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448669773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448669771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: X Beatdown (p2)
+  anim: {fileID: 0}
+  dmg: 20
+  totalTime: 0.5
+  playerCombat: {fileID: 786400176}
+  standToPlay: 0
+  actionName: 0
 --- !u!1 &450588664
 GameObject:
   m_ObjectHideFlags: 0
@@ -4663,6 +4713,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &528453588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528453589}
+  - component: {fileID: 528453590}
+  m_Layer: 0
+  m_Name: BeatdownRB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528453589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528453588}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109171033}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528453590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528453588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: RB Beatdown (p1)
+  anim: {fileID: 0}
+  dmg: 15
+  totalTime: 0.5
+  playerCombat: {fileID: 786400176}
+  standToPlay: 0
+  actionName: 4
 --- !u!1 &551853571
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,6 +7890,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797633909}
   m_CullTransparentMesh: 0
+--- !u!1 &823348297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823348298}
+  - component: {fileID: 823348299}
+  m_Layer: 0
+  m_Name: ZoneA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &823348298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823348297}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109171033}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823348299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823348297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: A Zone (p2)
+  anim: {fileID: 0}
+  dmg: 15
+  totalTime: 1
+  playerCombat: {fileID: 786400176}
+  standToPlay: 3
+  actionName: 2
 --- !u!1 &829937510
 GameObject:
   m_ObjectHideFlags: 0
@@ -16305,6 +16455,7 @@ MonoBehaviour:
   expObtainedTxt: {fileID: 565384713}
   timeTxt: {fileID: 1174267649}
   godMode: {fileID: 1303826693}
+  pauseCamvas: {fileID: 737330611}
 --- !u!114 &1896201159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18821,6 +18972,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070269971}
   m_CullTransparentMesh: 0
+--- !u!1 &2076354804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2076354805}
+  - component: {fileID: 2076354806}
+  m_Layer: 0
+  m_Name: ZoneRB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2076354805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076354804}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109171033}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076354806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076354804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: RB Zone (p1)
+  anim: {fileID: 0}
+  dmg: 15
+  totalTime: 1
+  playerCombat: {fileID: 786400176}
+  standToPlay: 3
+  actionName: 4
 --- !u!1 &2079569531
 GameObject:
   m_ObjectHideFlags: 0
@@ -19146,8 +19347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2109171033}
   - component: {fileID: 2109171035}
-  - component: {fileID: 2109171034}
-  - component: {fileID: 2109171036}
   m_Layer: 0
   m_Name: Actions
   m_TagString: Untagged
@@ -19165,27 +19364,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 528453589}
+  - {fileID: 448669772}
+  - {fileID: 2076354805}
+  - {fileID: 823348298}
   m_Father: {fileID: 1903297077}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2109171034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109171032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  anim: {fileID: 0}
-  dmg: 15
-  totalTime: 0.5
-  playerCombat: {fileID: 786400176}
 --- !u!114 &2109171035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19199,29 +19385,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combos:
-  - combo: 00000000000000000000000000000000
-  - combo: 0100000001000000
+  - combo: 000000000000000000000000010000000200000003000000040000000500000006000000
+  - combo: 0a0000000a0000000a0000000a0000000a0000000a000000
   activeCombos: 
   actions:
-  - {fileID: 2109171034}
-  - {fileID: 2109171036}
---- !u!114 &2109171036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109171032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  anim: {fileID: 0}
-  dmg: 40
-  totalTime: 0.95
-  playerCombat: {fileID: 786400176}
+  - {fileID: 528453590}
+  - {fileID: 448669773}
+  - {fileID: 448669773}
+  - {fileID: 448669773}
+  - {fileID: 528453590}
+  - {fileID: 448669773}
+  - {fileID: 528453590}
 --- !u!1 &2126348686
 GameObject:
   m_ObjectHideFlags: 0
