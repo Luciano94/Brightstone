@@ -4091,7 +4091,7 @@ MonoBehaviour:
   name: X Beatdown (p2)
   anim: {fileID: 0}
   dmg: 20
-  totalTime: 1
+  totalTime: 0.75
   playerCombat: {fileID: 786400176}
   standToPlay: 0
   actionName: 0
@@ -4401,7 +4401,7 @@ MonoBehaviour:
   name: RB Beatdown (p1)
   anim: {fileID: 0}
   dmg: 15
-  totalTime: 1
+  totalTime: 0.75
   playerCombat: {fileID: 786400176}
   standToPlay: 0
   actionName: 4
@@ -7577,11 +7577,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: A Zone (p2)
   anim: {fileID: 0}
-  dmg: 15
-  totalTime: 1
+  dmg: 20
+  totalTime: 0.75
   playerCombat: {fileID: 786400176}
   standToPlay: 3
-  actionName: 2
+  actionName: 3
 --- !u!1 &829937510
 GameObject:
   m_ObjectHideFlags: 0
@@ -18306,7 +18306,7 @@ MonoBehaviour:
   name: RB Zone (p1)
   anim: {fileID: 0}
   dmg: 15
-  totalTime: 1
+  totalTime: 0.75
   playerCombat: {fileID: 786400176}
   standToPlay: 3
   actionName: 4
@@ -18674,7 +18674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Combos:
   - combo: 000000000000000000000000010000000200000003000000040000000500000006000000
-  - combo: 0a0000000a0000000a0000000a0000000a0000000a000000
+  - combo: 0b0000000c0000000d0000000e0000000f0000001000000011000000
   activeCombos: 
   actions:
   - {fileID: 528453590}
@@ -18684,6 +18684,17 @@ MonoBehaviour:
   - {fileID: 528453590}
   - {fileID: 448669773}
   - {fileID: 528453590}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2076354806}
+  - {fileID: 2076354806}
+  - {fileID: 823348299}
+  - {fileID: 823348299}
+  - {fileID: 823348299}
+  - {fileID: 2076354806}
+  - {fileID: 823348299}
 --- !u!1 &2126348686
 GameObject:
   m_ObjectHideFlags: 0

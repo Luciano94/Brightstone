@@ -75,7 +75,8 @@ public class ComboManager : MonoBehaviour{
                 currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
 
                 //se pone play a la accion
-                currentAction.StartAction((int)actualStand + Combos[activeCombos[0]].combo[comboIndex] * 0.1f);
+                int comboIndexValue = Combos[activeCombos[0]].combo[comboIndex];
+                currentAction.StartAction((int)actualStand + (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f));
 
                 HandleAction(currentAction.actionName);
             }
@@ -94,22 +95,25 @@ public class ComboManager : MonoBehaviour{
                 //si esta en el tiempo de encadenar
                 if (currentAction.Fdata.State == ActionState.activeFrames) {
                     //coincide la action con la del comboindex
+                    int index = 0;
                     for (int i = 0; i < activeCombos.Count; i++) {
-                        if (actionNumber == actions[Combos[activeCombos[0]].combo[comboIndex]].actionName)
+                        if (actionNumber == actions[Combos[activeCombos[i]].combo[comboIndex]].actionName)
                         {
-                            if (actualStand == actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay) {
-                                actualStand = actions[Combos[activeCombos[0]].combo[comboIndex]].standToPlay;
+                            if (actualStand == actions[Combos[activeCombos[i]].combo[comboIndex]].standToPlay) {
+                                actualStand = actions[Combos[activeCombos[i]].combo[comboIndex]].standToPlay;
                                 currentAction.StopAction();
-                                currentAction = actions[Combos[activeCombos[0]].combo[comboIndex]];
+                                currentAction = actions[Combos[activeCombos[i]].combo[comboIndex]];
                                 actualStand = currentAction.standToPlay;
                                 found = true;
+                                index = i;
                                 break;
                             }
                         }
                     }
                     if(found){
                         //se pone play a esa accion.
-                        currentAction.StartAction((int)actualStand +( Combos[activeCombos[0]].combo[comboIndex] * 0.1f));
+                        int comboIndexValue = Combos[activeCombos[index]].combo[comboIndex];
+                        currentAction.StartAction((int)actualStand + (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f));
                         //se setea la siguiente action
                         HandleAction(currentAction.actionName);
                     }
