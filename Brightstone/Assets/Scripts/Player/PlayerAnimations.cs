@@ -28,9 +28,9 @@ public class PlayerAnimations : MonoBehaviour{
         anim.SetFloat("Dir", (float)dir);
     }
 
-    public void Death(int dir){
+    public void Death(){
         anim.SetTrigger("Death");
-        anim.SetFloat("Dir", (float)dir);
+        anim.SetFloat("Dir", Input.GetAxis("Horizontal"));
 
         SoundManager.Instance.PlayerDeath();
 

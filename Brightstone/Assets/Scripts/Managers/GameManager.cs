@@ -23,11 +23,20 @@ public class GameManager : MonoBehaviour{
     private bool isConnected;
     private const int mainMenuIndex = 0;
 
+    /* Player and Boss components */
+    private ActiveRoom _activeRoom;
+    private PlayerDash _playerDash;
+    private PlayerStats _playerStats;
+    private PlayerCombat _playerCombat;
+    private PlayerMovement _playerMovement;
+    private PlayerAnimations _playerAnimations;
+
     public bool isTutorial = false;
     private bool playerOn = false;
     public EventManager eventManager;
     public GameObject tutorialMarket;
     public bool tutorialMarketComplete = false;
+    public bool playerAlive = true;
 
     public bool PlayerOn{
         set{player.SetActive(value);
@@ -45,6 +54,13 @@ public class GameManager : MonoBehaviour{
         }else{
             PlayerPrefs.GetInt("XP", 0);
         }
+
+        _activeRoom = player.GetComponent<ActiveRoom>();
+        _playerDash = player.GetComponent<PlayerDash>();
+        _playerStats = player.GetComponent<PlayerStats>();
+        _playerCombat = player.GetComponent<PlayerCombat>();
+        _playerMovement = player.GetComponent<PlayerMovement>();
+        _playerAnimations = player.GetComponent<PlayerAnimations>();
 
         SoundManager.Instance.LevelEnter();
     }
@@ -94,31 +110,31 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayBlood(){
-        playerCombat.PlayBlood();
+        _playerCombat.PlayBlood();
     }
 
     public PlayerStats playerSts{
-        get{return player.GetComponent<PlayerStats>();}
+        get{return _playerStats;}
     }
 
     public PlayerCombat playerCombat{
-        get{return player.GetComponent<PlayerCombat>();}
+        get{return _playerCombat;}
     }
 
     public PlayerMovement playerMovement{
-        get{return player.GetComponent<PlayerMovement>();}
+        get{return _playerMovement;}
     }
     
     public PlayerAnimations playerAnimations{
-        get{return player.GetComponentInChildren<PlayerAnimations>();}
+        get{return _playerAnimations;}
     }
 
     public ActiveRoom activeRoom{
-        get{return player.GetComponent<ActiveRoom>();}
+        get{return _activeRoom;}
     }
 
     public void SetEnemyHitFrom(Vector3 enemyPos){
-        player.GetComponent<PlayerMovement>().SetEnemyPos(enemyPos);
+        _playerMovement.SetEnemyPos(enemyPos);
     }
 
     public GameObject SetBoss{
@@ -133,11 +149,11 @@ public class GameManager : MonoBehaviour{
     }
 
     public bool PlayerIsParry{
-        get{ return player.GetComponent<PlayerCombat>().isParry; }
+        get{ return _playerCombat.isParry; }
     }
     
     public bool PlayerIsAttack{
-        get{ return player.GetComponent<PlayerCombat>().isAttack; }
+        get{ return _playerCombat.isAttack; }
     }
 
     public ShakerController ShakerController{
@@ -172,11 +188,18 @@ public class GameManager : MonoBehaviour{
         RunSaver.Save();
 
         // Temp
-        player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
-        player.SetActive(false);
+        //player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
+        //player.SetActive(false);
+
+        EnemyBehaviour.Instance.OnPlayerDeath();
+        playerAlive = false;
+
+        _playerCombat.enabled = false;
+        _playerMovement.enabled = false;
+        _playerStats.enabled = false;
+        _playerDash.enabled = false;
 
         //AudioManager.Instance.StopTheme();
-        UIManager.Instance.RunFinished();
         MenuManager.Instance.LoseMenuCanvas = true;
     }
 
@@ -189,9 +212,10 @@ public class GameManager : MonoBehaviour{
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
         
-        playerAnimations.enabled = false;
-        playerCombat.enabled = false;
-        playerSts.enabled = false;
+        _playerAnimations.enabled = false;
+        _playerCombat.enabled = false;
+        _playerStats.enabled = false;
+        _playerDash.enabled = false;
 
         //AudioManager.Instance.StopTheme();
         MenuManager.Instance.WinMenuCanvas = true;

@@ -95,7 +95,7 @@ public class EnemyBehaviour : MonoBehaviour{
     }
 
     void Update(){
-        if (enemiesLeft > 0)
+        if (enemiesLeft > 0 && GameManager.Instance.playerAlive)
             TurnCounter();
     }
 
@@ -161,6 +161,16 @@ public class EnemyBehaviour : MonoBehaviour{
             }
         }
         enemiesInRoom[(int)type].Remove(enemy);
+    }
+
+    public void OnPlayerDeath(){
+        for (int i = 0; i < enemiesInRoom.Count; i++)
+        {
+            for (int j = 0; j < enemiesInRoom[i].Count; j++)
+            {
+                enemiesInRoom[i][j].isMyAttackingTurn = false;
+            }
+        }
     }
 
     #region "Strategy initializing"
