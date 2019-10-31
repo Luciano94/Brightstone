@@ -101,6 +101,12 @@ public class MarketCanvasManager : MonoBehaviour{
 
     private void Update() {
         UpdateUI();
+        if(InputManager.Instance.GetActionZone()){
+            AttackLevel(true);
+        }
+        if(InputManager.Instance.GetActionShuriken()){
+            LifeLevel(true);
+        }
     }
 
     public void EnterMarket(){
