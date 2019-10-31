@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class MarketCanvasManager : MonoBehaviour{
 
-    [Header("Player Level")]
     private int playerLevel;
+    [Header("Player Level")]
     [SerializeField]private Text playerLevelTxt;
     private int newPlayerLevel;
     [SerializeField]private Text newPlayerLevelTxt;
 
-    [Header("Player Experience")]
     private int playerExperience;
+    [Header("Player Experience")]
     [SerializeField]private Text playerExperienceTxt;
     private int newPlayerExperience;
     private int oldLevelrequiredExp;
@@ -22,26 +22,26 @@ public class MarketCanvasManager : MonoBehaviour{
     private int newRequiredExperience;
     [SerializeField]private Text newRequiredExperienceTxt;
 
-    [Header("Player Life")]
     private int lifeLevel;
+    [Header("Player Life")]
     [SerializeField]private Text lifeLevelTxt;
     private int newLifeLevel;
     [SerializeField]private Text newLifeLevelTxt;
 
-    [Header("Player Attack")]
     private int attackLevel;
+    [Header("Player Attack")]
     [SerializeField]private Text attackLevelTxt;
     private int newAttackLevel;
     [SerializeField]private Text newAttackLevelTxt;
 
-    [Header("Player Defense")]
     private int defenseLevel;
+    [Header("Player Defense")]
     [SerializeField]private Text defenseLevelTxt;
     private int newDefenseLevel;
     [SerializeField]private Text newDefenseLevelTxt;
 
-    [Header("Life Stat")]
     private int lifeStat;
+    [Header("Life Stat")]
     [SerializeField]private Text lifeStatTxt;
     private int newLifeStat;
     [SerializeField]private Text newLifeStatTxt;
@@ -61,13 +61,18 @@ public class MarketCanvasManager : MonoBehaviour{
     [SerializeField]private Button minusLife;
     [SerializeField]private Button plusAttack;
     [SerializeField]private Button minusAttack;
-    [SerializeField]private Button confirmButton;
+  //  [SerializeField]private Button confirmButton;
 
 
     private PlayerStats playerSts;
     private bool canPlus;
     private bool canMinus;
     private bool canConfirm;
+
+    [Header("New UI")]
+    public Button plusLifeButton;
+    public Button plusAttackButton;
+    public GameObject marketGO;
 
     private static MarketCanvasManager instance;
 
@@ -96,10 +101,25 @@ public class MarketCanvasManager : MonoBehaviour{
 
     private void Update() {
         UpdateUI();
+        if(InputManager.Instance.GetActionZone()){
+            AttackLevel(true);
+        }
+        if(InputManager.Instance.GetActionShuriken()){
+            LifeLevel(true);
+        }
     }
 
     public void EnterMarket(){
-        confirmButton.interactable = false;
+        if(playerSts.PlayerLevel == 0)
+        {
+            plusLifeButton.interactable = false;
+            plusAttackButton.interactable = false;
+        }else
+        {
+            plusLifeButton.interactable = true;
+            plusAttackButton.interactable = true;
+        }
+       /*// confirmButton.interactable = false;
         playerSts = GameManager.Instance.playerSts;
         UpdateStats();
         UpdateUI();
@@ -114,7 +134,7 @@ public class MarketCanvasManager : MonoBehaviour{
         canMinus = false;
         UIManager.Instance.ExpUpdate();
 
-        plusLife.Select();
+        plusLife.Select();*/
     }
 
     private void InitStats(){
@@ -226,7 +246,7 @@ public class MarketCanvasManager : MonoBehaviour{
     public void Confirm(){
 
         if(canConfirm){
-            confirmButton.interactable = false;
+           // confirmButton.interactable = false;
             canConfirm = false;
 
             //updateo el nivel del personaje
@@ -262,7 +282,7 @@ public class MarketCanvasManager : MonoBehaviour{
 
             GameManager.Instance.tutorialMarketComplete = true;
         }else{
-            confirmButton.interactable = false;
+           // confirmButton.interactable = false;
         }
 
       /*  playerSts = GameManager.Instance.playerSts;
@@ -278,7 +298,12 @@ public class MarketCanvasManager : MonoBehaviour{
     }
 
     public void LifeLevel(bool operation){
-        if(!operation && canMinus && newLifeLevel > lifeLevel){
+        if(playerSts.PlayerLevel > 0)
+        {
+            playerSts.setLifeStat = playerSts.MaxLife() + 50;
+            marketGO.SetActive(false);
+        }
+       /* if(!operation && canMinus && newLifeLevel > lifeLevel){
             newPlayerExperience += oldLevelrequiredExp;
             newPlayerLevel--;
             newLifeLevel--;
@@ -312,11 +337,16 @@ public class MarketCanvasManager : MonoBehaviour{
             }
                 canConfirm = true;
         }
-        UpdateUI();
+        UpdateUI();*/
     }
 
     public void AttackLevel(bool operation){
-        if(!operation && canMinus && newAttackLevel > attackLevel){
+        if(playerSts.PlayerLevel > 0)
+        {
+            playerSts.setAtkMult += 0.5f;
+            marketGO.SetActive(false);
+        }
+        /*if(!operation && canMinus && newAttackLevel > attackLevel){
             newPlayerExperience += oldLevelrequiredExp;
             newPlayerLevel--;
             newAttackLevel--;
@@ -350,7 +380,7 @@ public class MarketCanvasManager : MonoBehaviour{
             }
             canConfirm = true;
         }
-        UpdateUI();
+        UpdateUI();*/
     }
 
     public void DefenseLevel(bool operation){
