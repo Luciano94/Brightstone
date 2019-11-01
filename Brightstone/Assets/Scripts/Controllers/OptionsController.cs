@@ -6,7 +6,7 @@ public class OptionsController : MonoBehaviour{
     [SerializeField] private Button options;
 
     private void Update(){
-        if (Input.GetKeyDown("joystick button 1"))
+        if (InputManager.Instance.GetPauseButton())
             DesactivateThis();
     }
 

@@ -95,7 +95,7 @@ public class EnemyBehaviour : MonoBehaviour{
     }
 
     void Update(){
-        if (enemiesLeft > 0)
+        if (enemiesLeft > 0 && GameManager.Instance.playerAlive)
             TurnCounter();
     }
 
@@ -161,6 +161,16 @@ public class EnemyBehaviour : MonoBehaviour{
             }
         }
         enemiesInRoom[(int)type].Remove(enemy);
+    }
+
+    public void OnPlayerDeath(){
+        for (int i = 0; i < enemiesInRoom.Count; i++)
+        {
+            for (int j = 0; j < enemiesInRoom[i].Count; j++)
+            {
+                enemiesInRoom[i][j].isMyAttackingTurn = false;
+            }
+        }
     }
 
     #region "Strategy initializing"
@@ -253,9 +263,13 @@ public class EnemyBehaviour : MonoBehaviour{
                     t.enemyType = (int)enemiesToGetInTurn[i].GetEnemyType();
                     t.enemyIndex = enemiesInRoom[(int)enemiesToGetInTurn[i].GetEnemyType()].IndexOf(enemiesToGetInTurn[i]);
                     
-                    float random = Random.Range(-1.0f, 0.0f);
-                    t.hPThreshold = hPPromedy + (enemiesToGetInTurn[i].GetMaxHP()/ 5 * random);
-                    if(enemiesToGetInTurn[i].GetHP() <= 50){ t.hPThreshold = 0; }
+                    
+                    if (enemiesToGetInTurn[i].GetHP() <= 50) {
+                        t.hPThreshold = 0;
+                    } else {
+                        float random = Random.Range(-1.0f, 0.0f);
+                        t.hPThreshold = enemiesToGetInTurn[i].GetHP() + (enemiesToGetInTurn[i].GetMaxHP() * 0.2f * random);
+                    }
 
                     enemiesToGetInTurn[i].Chase();
                     t.isAssigned = true;
@@ -398,7 +412,7 @@ public class EnemyBehaviour : MonoBehaviour{
         foreach(PerHPTurn t in enemiesInPerHPTurn){
             if(t.isAssigned){
                 turnShouldPass = false;
-                if(t.hPThreshold >= enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
+                if(t.hPThreshold > enemiesInRoom[t.enemyType][t.enemyIndex].GetHP()){
                     isOneUnderThreshold = true;
                 }
             }

@@ -23,11 +23,20 @@ public class GameManager : MonoBehaviour{
     private bool isConnected;
     private const int mainMenuIndex = 0;
 
+    /* Player and Boss components */
+    private ActiveRoom _activeRoom;
+    private PlayerDash _playerDash;
+    private PlayerStats _playerStats;
+    private PlayerCombat _playerCombat;
+    private PlayerMovement _playerMovement;
+    private PlayerAnimations _playerAnimations;
+
     public bool isTutorial = false;
     private bool playerOn = false;
     public EventManager eventManager;
     public GameObject tutorialMarket;
     public bool tutorialMarketComplete = false;
+    public bool playerAlive = true;
 
     public bool PlayerOn{
         set{player.SetActive(value);
@@ -37,23 +46,34 @@ public class GameManager : MonoBehaviour{
     private void Awake(){
         DetectDevice();
         RunSaver.NewRun();
-        if(isTutorial){
+
+        _activeRoom = player.GetComponent<ActiveRoom>();
+        _playerDash = player.GetComponent<PlayerDash>();
+        _playerStats = player.GetComponent<PlayerStats>();
+        _playerCombat = player.GetComponent<PlayerCombat>();
+        _playerMovement = player.GetComponent<PlayerMovement>();
+        _playerAnimations = player.GetComponentInChildren<PlayerAnimations>();
+
+        if (isTutorial){
             player.SetActive(false);
         }
         if(!PlayerPrefs.HasKey("XP")){
-            PlayerPrefs.SetInt("XP",(int)playerSts.Experience);
+            PlayerPrefs.SetInt("XP",(int)_playerStats.Experience);
         }else{
             PlayerPrefs.GetInt("XP", 0);
         }
 
-        SoundManager.Instance.LevelEnter();
+        if (PlayerPrefs.GetInt("PlayerDeathInBossRoom") == 1)
+            PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
+        else
+            SoundManager.Instance.LevelEnter();
     }
 
     private void Update(){
         DetectDevice();
         RunSaver.currentRun.data.time += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.H) && !isConnected){
+        if (Input.GetKeyDown(KeyCode.H)){
             playerSts.ChangeGodModeState();
             UIManager.Instance.ChangeGodModeState();
         }
@@ -61,6 +81,7 @@ public class GameManager : MonoBehaviour{
     }
 
     public void ExitToMainMenu(){
+        PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
         SceneManager.LoadScene(mainMenuIndex);
     }
 
@@ -94,31 +115,31 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayBlood(){
-        playerCombat.PlayBlood();
+        _playerCombat.PlayBlood();
     }
 
     public PlayerStats playerSts{
-        get{return player.GetComponent<PlayerStats>();}
+        get{return _playerStats;}
     }
 
     public PlayerCombat playerCombat{
-        get{return player.GetComponent<PlayerCombat>();}
+        get{return _playerCombat;}
     }
 
     public PlayerMovement playerMovement{
-        get{return player.GetComponent<PlayerMovement>();}
+        get{return _playerMovement;}
     }
     
     public PlayerAnimations playerAnimations{
-        get{return player.GetComponentInChildren<PlayerAnimations>();}
+        get{return _playerAnimations;}
     }
 
     public ActiveRoom activeRoom{
-        get{return player.GetComponent<ActiveRoom>();}
+        get{return _activeRoom;}
     }
 
     public void SetEnemyHitFrom(Vector3 enemyPos){
-        player.GetComponent<PlayerMovement>().SetEnemyPos(enemyPos);
+        _playerMovement.SetEnemyPos(enemyPos);
     }
 
     public GameObject SetBoss{
@@ -133,11 +154,11 @@ public class GameManager : MonoBehaviour{
     }
 
     public bool PlayerIsParry{
-        get{ return player.GetComponent<PlayerCombat>().isParry; }
+        get{ return _playerCombat.isParry; }
     }
     
     public bool PlayerIsAttack{
-        get{ return player.GetComponent<PlayerCombat>().isAttack; }
+        get{ return _playerCombat.isAttack; }
     }
 
     public ShakerController ShakerController{
@@ -164,8 +185,6 @@ public class GameManager : MonoBehaviour{
     }
 
     public void PlayerDeath(){
-        SoundManager.Instance.PlayerDeath();
-
         PlayerPrefs.SetInt("XP", (int)playerSts.Death());
         PlayerPrefs.Save();
 
@@ -174,16 +193,24 @@ public class GameManager : MonoBehaviour{
         RunSaver.Save();
 
         // Temp
-        player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
-        player.SetActive(false);
+        //player.transform.position = new Vector3(600.0f, 600.0f, 10.0f);
+        //player.SetActive(false);
+
+        if (!_activeRoom.GetRoomsBehaviour().HaveBoss)
+            PlayerPrefs.SetInt("PlayerDeathInBossRoom", 1);
+        EnemyBehaviour.Instance.OnPlayerDeath();
+        playerAlive = false;
+
+        _playerCombat.enabled = false;
+        _playerMovement.enabled = false;
+        _playerStats.enabled = false;
+        _playerDash.enabled = false;
 
         //AudioManager.Instance.StopTheme();
-        UIManager.Instance.RunFinished();
         MenuManager.Instance.LoseMenuCanvas = true;
     }
 
     public void PlayerWin(){
-
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();
 
@@ -192,9 +219,8 @@ public class GameManager : MonoBehaviour{
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
         
-        playerAnimations.enabled = false;
-        playerCombat.enabled = false;
-        playerSts.enabled = false;
+        _playerStats.enabled = false;
+        _playerDash.enabled = false;
 
         //AudioManager.Instance.StopTheme();
         MenuManager.Instance.WinMenuCanvas = true;
@@ -203,15 +229,15 @@ public class GameManager : MonoBehaviour{
     }
 
     public void EnablePlayer(){
-        playerMovement.enabled = true;
-        playerCombat.enabled = true;
-        playerAnimations.enabled = true;
+        _playerMovement.enabled = true;
+        _playerCombat.enabled = true;
+        _playerAnimations.enabled = true;
     }
 
     public void DisablePlayer(){
-        playerMovement.enabled = false;
-        playerCombat.enabled = false;
-        player.GetComponentInChildren<PlayerAnimations>().Idle();
-        playerAnimations.enabled = false;
+        _playerMovement.enabled = false;
+        _playerCombat.enabled = false;
+        _playerAnimations.Idle();
+        _playerAnimations.enabled = false;
     }
 }

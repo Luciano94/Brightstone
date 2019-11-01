@@ -39,6 +39,15 @@ public static class Calculations{
         return Axis4Direction.Down;
     }
 
+    public static Axis2Direction Get2AxisDirection(Vector3 distance){
+        float angle = Vector3.SignedAngle(distance, Vector3.up, Vector3.forward);
+        
+        if (angle >= 0.0f && angle < 180.0f)
+            return Axis2Direction.Right;
+        else
+            return Axis2Direction.Left;
+    }
+
     public static float GetAngle(Vector3 diff){
         float angle = Vector3.SignedAngle(diff, Vector3.up, Vector3.forward);
 

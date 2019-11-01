@@ -27,12 +27,17 @@ namespace AK
         static const AkUniqueID MENUOPEN = 48824776U;
         static const AkUniqueID PLAYERATTACKHEAVY = 3914790867U;
         static const AkUniqueID PLAYERATTACKLIGHT = 231747402U;
+        static const AkUniqueID PLAYERATTACKLIGHT2 = 146436428U;
+        static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERDEATH = 1656947812U;
         static const AkUniqueID PLAYERPARRYHIT = 410952847U;
         static const AkUniqueID PLAYERRESPAWN = 667982098U;
         static const AkUniqueID ROOMBOSSENTER = 4149955699U;
         static const AkUniqueID ROOMCLEAR = 1974576135U;
         static const AkUniqueID ROOMNEWENTER = 1391803776U;
+        static const AkUniqueID SELECTATTA = 4283005579U;
+        static const AkUniqueID SELECTATTSAME = 1298389756U;
+        static const AkUniqueID SELECTATTX = 4283005586U;
         static const AkUniqueID SYNOPSISOPEN = 3349720163U;
     } // namespace EVENTS
 
@@ -46,6 +51,7 @@ namespace AK
             {
                 static const AkUniqueID ALIVE = 655265632U;
                 static const AkUniqueID DEAD = 2044049779U;
+                static const AkUniqueID VICTORY = 2716678721U;
             } // namespace STATE
         } // namespace PLAYERLIFE
 
@@ -90,6 +96,18 @@ namespace AK
             } // namespace SWITCH
         } // namespace PLAYERHEALTH
 
+        namespace PROGRESS
+        {
+            static const AkUniqueID GROUP = 308635872U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ONETHIRD = 3319853618U;
+                static const AkUniqueID THREETHIRDS = 517778677U;
+                static const AkUniqueID TWOTHIRDS = 1304826179U;
+            } // namespace SWITCH
+        } // namespace PROGRESS
+
         namespace STAGE
         {
             static const AkUniqueID GROUP = 1063701865U;
@@ -120,6 +138,10 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID BOSS = 1560169506U;
+        static const AkUniqueID COMBAT = 2764240573U;
+        static const AkUniqueID LVL1 = 141331490U;
+        static const AkUniqueID MAINMENU = 3604647259U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;

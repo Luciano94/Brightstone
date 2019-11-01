@@ -2701,8 +2701,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Abecasis, Alejandro - \nArgento, Gisela -\nBrizuela, Enzo -\nIbarra, Santiago
-    - \nMugetti, Tom\xE1s -\nNovak, Luciano - \nRuiz Torres, Matias -"
+  m_Text: "Abecasis, Alejandro - \nArgento, Gisela -\nBrizuela, Enzo -\nMugetti, Tom\xE1s
+    -\nNovak, Luciano - \nRuiz Torres, Matias -\nSchweizer, Juan -"
 --- !u!222 &1578902192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4558,9 +4558,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "                                 Producer, Developer.\n                           UI/UX
-    Artist.\n                         2D Artist.\n                            Art
-    Director, 3D Artist.\n                           Developer.\n                          Tech
-    Lead, Developer.\n                                 Game Designer, Developer."
+    Artist.\n                         2D Artist.\n                           Developer.\n
+    \                         Tech Lead, Developer.\n                                 Game
+    Designer, Developer.\n                            Sound Designer"
 --- !u!222 &2098723830
 CanvasRenderer:
   m_ObjectHideFlags: 0

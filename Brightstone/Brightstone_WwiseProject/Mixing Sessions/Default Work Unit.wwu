@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{59816B2C-8AC1-4503-BB92-1B427DADA981}" SchemaVersion="94">
 	<MixingSessions>
-		<WorkUnit Name="Default Work Unit" ID="{59816B2C-8AC1-4503-BB92-1B427DADA981}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{59816B2C-8AC1-4503-BB92-1B427DADA981}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="Music" ID="{8412CBB0-0FB2-4240-91FE-56D3492DE696}">
+					<ObjectList>
+						<ObjectRef Name="Lvl1" ID="{4132B021-0908-4D78-ADC6-651C318E00FB}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						<ObjectRef Name="Combat" ID="{14A3D9A9-E97E-4EA5-B528-04DA4B6BA877}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						<ObjectRef Name="Boss" ID="{05B1062F-2AF8-42D7-8508-98B55EAEAE7D}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						<ObjectRef Name="Music" ID="{7BA262B0-D822-44C7-AF31-46A1DB9DF945}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
 	</MixingSessions>
 </WwiseDocument>

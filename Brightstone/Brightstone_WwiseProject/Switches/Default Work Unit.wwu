@@ -124,6 +124,46 @@
 						</Curve>
 					</SwitchOnRTPC>
 				</SwitchGroup>
+				<SwitchGroup Name="Progress" ID="{9CCDB4C5-0A41-44D3-9A69-F12ADFB2695B}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
+						<Switch Name="TwoThirds" ID="{13D27A62-BAFF-4C80-A9F9-071719471AE5}"/>
+						<Switch Name="ThreeThirds" ID="{24EDEA55-0957-458A-8199-7192805AD975}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+						<Curve Name="" ID="{AEDE545B-F939-4BB7-87D1-961D0E18B93F}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>6</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>9</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
