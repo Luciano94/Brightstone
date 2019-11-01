@@ -47,6 +47,11 @@ public class UIManager : MonoBehaviour{
     [SerializeField] private Image bossHpFillBar;
     [SerializeField] private GameObject bossHPBar;
 
+    [Header("Experience FillBar")]
+    [SerializeField]private Transform experienceEmptyFillBar;
+    [SerializeField]private Transform experienceActualFillBar;
+
+
     [Header("PostProcess")]
     [SerializeField] private float smoothnessLimit;
 
@@ -76,6 +81,7 @@ public class UIManager : MonoBehaviour{
         gameM = GameManager.Instance;
         timeLeft = timeToDownHp;
         loadingPanel.SetActive(true);
+        experienceActualFillBar.localScale = new Vector3(0.0f, 1.0f);
     }
 
     private void Start(){
@@ -116,7 +122,9 @@ public class UIManager : MonoBehaviour{
     }
 
     public void ExpUpdate(){
-        expTxt.text = gameM.playerSts.Experience.ToString();
+        expTxt.text = gameM.playerSts.PlayerLevel.ToString();
+        float value = gameM.playerSts.Experience / gameM.playerSts.experienceToNextLevel;
+        experienceActualFillBar.localScale = new Vector3(value, 1.0f);
     }
 
     public void LifeUpdate(){
