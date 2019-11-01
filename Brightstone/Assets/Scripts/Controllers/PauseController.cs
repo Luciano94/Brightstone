@@ -5,6 +5,7 @@ public class PauseController : MonoBehaviour{
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private OptionsController optionsPanel;
     [SerializeField] private Button firstOption;
+    [SerializeField] private Button controlButton;
 
     private Animator pauseAnim;
     private bool pauseState = false;
@@ -22,10 +23,11 @@ public class PauseController : MonoBehaviour{
                 optionsPanel.DesactivateThis();
 
             if (pauseState){
-                //firstOption.Select();
+                firstOption.Select();
                 pauseAnim.SetTrigger("In");
             }
             else{
+                controlButton.Select();
                 pauseAnim.SetTrigger("Out");
             }
         }

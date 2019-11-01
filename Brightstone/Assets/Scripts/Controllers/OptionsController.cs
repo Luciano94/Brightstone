@@ -14,7 +14,7 @@ public class OptionsController : MonoBehaviour{
         if (controls.activeSelf)
             controls.SetActive(false);
 
-        //options.Select();
+        options.Select();
 
         gameObject.SetActive(false);
     }

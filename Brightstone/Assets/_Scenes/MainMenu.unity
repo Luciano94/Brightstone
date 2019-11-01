@@ -791,6 +791,17 @@ MonoBehaviour:
           m_StringArgument: statsMenuOut
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1660168831}
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &645345142
@@ -3248,6 +3259,8 @@ MonoBehaviour:
   actualLevelTxt: {fileID: 1898630218}
   tutorialReset: {fileID: 2088400197}
   MenuPanel: {fileID: 1288445415}
+  statsButton: {fileID: 2061893758}
+  backButton: {fileID: 645345141}
 --- !u!4 &1660168832
 Transform:
   m_ObjectHideFlags: 0

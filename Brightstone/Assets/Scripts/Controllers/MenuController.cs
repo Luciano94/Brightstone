@@ -18,11 +18,16 @@ public class MenuController : MonoBehaviour{
 
     [SerializeField] Text tutorialReset;
     [SerializeField] Animator MenuPanel;
+
+    [Header("Stats")]
+    [SerializeField] Button statsButton;
+    [SerializeField] Button backButton;
+
     private int isTutorial;
     private float timeReset = -1.0f;
 
     private void Start(){
-        //playButton.Select();
+        playButton.Select();
         MenuPanel.Play("mainMenuIn");
         SoundManager.Instance.MenuOpen();
     }
@@ -52,12 +57,18 @@ public class MenuController : MonoBehaviour{
         RunSaver.LoadHistory();
 
         FillDataInTexts();
+
+        backButton.Select();
     }
 
     public void ResetStats(){
         RunSaver.ResetHistory();
 
         FillDataInTexts();
+    }
+
+    public void BackToMenu(){
+        statsButton.Select();
     }
 
     private void FillDataInTexts(){

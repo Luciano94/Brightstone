@@ -411,7 +411,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 5d7a2c9e7911f3419b9a4fffb92d5afc
     GuidInternal: 
-    m_lastTime: -8586290453514272411
+    m_lastTime: -8586290416595868087
     List:
     - name: PlayerAttackHeavy
       guid: 45ee8ed3d6c6be4cb0936ab7ef119f92
@@ -459,8 +459,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackLight
       maxAttenuation: 0
-      maxDuration: 406741
-      minDuration: 342027
+      maxDuration: 510255
+      minDuration: 238884
     - name: PlayerAttackLight2
       guid: d3294ab808fc764e829ea8350fdb6a2d
       id: 146436428
@@ -475,8 +475,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackLight2
       maxAttenuation: 0
-      maxDuration: 510255
-      minDuration: 238884
+      maxDuration: 406741
+      minDuration: 342027
     - name: PlayerAttackLightHit
       guid: 9d5b7ce96829b448b1d971537f3da321
       id: 3179880165

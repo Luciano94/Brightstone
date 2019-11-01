@@ -6731,6 +6731,7 @@ MonoBehaviour:
   pausePanel: {fileID: 124925859}
   optionsPanel: {fileID: 1133364626}
   firstOption: {fileID: 164910573}
+  controlButton: {fileID: 1460136285}
 --- !u!1 &737789086
 GameObject:
   m_ObjectHideFlags: 0
