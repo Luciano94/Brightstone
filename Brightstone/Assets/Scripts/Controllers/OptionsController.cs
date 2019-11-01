@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour{
     [SerializeField] private GameObject controls;
+    [SerializeField] private Button controlsButton;
     [SerializeField] private Button options;
 
     private void Update(){
@@ -20,6 +21,10 @@ public class OptionsController : MonoBehaviour{
     }
 
     public void ActivateControls(){
-        controls.SetActive(true);
+        controls.SetActive(!controls.activeSelf);
+    }
+
+    private void OnEnable(){
+        controlsButton.Select();
     }
 }
