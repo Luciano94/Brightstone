@@ -22,6 +22,7 @@ public class ComboManager : MonoBehaviour{
     [SerializeField]private List<int> activeCombos;//array con los combos que estan ejecutandose
     private Action currentAction; //estado de la accion que se esta ejecutando en ese momento
     [SerializeField]private Action[] actions; //acciones posibles
+    [SerializeField]private StandsManager standsManager;
     private bool found = false;
     public Stands actualStand { get; private set; }
 
@@ -30,6 +31,7 @@ public class ComboManager : MonoBehaviour{
         comboIndex = 0;
         currentAction = null;
         actualStand = Stands.Beatdown;
+        standsManager.ActivateStand(actualStand);
     }
 
 
@@ -44,8 +46,8 @@ public class ComboManager : MonoBehaviour{
 
     public void ManageAction(Actions actionNumber){
         if(currentAction == null){
-            if (actionNumber != Actions.RB){
-                /* Tmb podría haber otro SFX para cuando intentas cambiar de tipo de ataque por el mismo que ya tenes */
+            /*if (actionNumber != Actions.RB){
+                /* Tmb podría haber otro SFX para cuando intentas cambiar de tipo de ataque por el mismo que ya tenes 
                 
                 switch(actionNumber){
                     case Actions.X:
@@ -56,10 +58,10 @@ public class ComboManager : MonoBehaviour{
                         actualStand = Stands.Zone;
                     break;
                 }
-                /* aca se efecturia un SFX por el cambio de tipo de ataque */
+                /* aca se efecturia un SFX por el cambio de tipo de ataque 
 
                 return;
-            }
+            }*/
 
             comboIndex = 0;
             //inicializa el arreglo de combos;
@@ -99,15 +101,16 @@ public class ComboManager : MonoBehaviour{
                     for (int i = 0; i < activeCombos.Count; i++) {
                         if (actionNumber == actions[Combos[activeCombos[i]].combo[comboIndex]].actionName)
                         {
-                            if (actualStand == actions[Combos[activeCombos[i]].combo[comboIndex]].standToPlay) {
-                                actualStand = actions[Combos[activeCombos[i]].combo[comboIndex]].standToPlay;
+                            //if (actualStand == actions[Combos[activeCombos[i]].combo[comboIndex]].standToPlay) {
+                            //    actualStand = actions[Combos[activeCombos[i]].combo[comboIndex]].standToPlay;
                                 currentAction.StopAction();
                                 currentAction = actions[Combos[activeCombos[i]].combo[comboIndex]];
-                                actualStand = currentAction.standToPlay;
+                                //actualStand = currentAction.standToPlay;
+                                HandleAction(currentAction.actionName);
                                 found = true;
                                 index = i;
                                 break;
-                            }
+                            //}
                         }
                     }
                     if(found){
@@ -115,7 +118,7 @@ public class ComboManager : MonoBehaviour{
                         int comboIndexValue = Combos[activeCombos[index]].combo[comboIndex];
                         currentAction.StartAction((int)actualStand + (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f));
                         //se setea la siguiente action
-                        HandleAction(currentAction.actionName);
+                        //HandleAction(currentAction.actionName);
                     }
                         
                     //se quitan los que no coinciden.
@@ -178,6 +181,7 @@ public class ComboManager : MonoBehaviour{
             default:
                 break;
         }
+        standsManager.ActivateStand(actualStand);
     }
 
 }

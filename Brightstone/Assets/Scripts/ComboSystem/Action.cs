@@ -21,7 +21,7 @@ public class Action : MonoBehaviour {
 
     private void Awake() {
         fData.enterFrames = ((20 * totalTime)/ 100);
-        fData.activeFrames = ((30 * totalTime) / 100);
+        fData.activeFrames = ((50 * totalTime) / 100);
         fData.exitFrames = totalTime;
     }
 
