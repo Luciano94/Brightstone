@@ -4573,7 +4573,7 @@ MonoBehaviour:
   m_Text: "                                 Producer, Developer.\n                           UI/UX
     Artist.\n                         2D Artist.\n                           Co-Game
     Designer, Developer.\n                          Tech Lead, Developer.\n                                 Game
-    Designer, Developer.\n                            Sound Designer"
+    Designer, Developer.\n                            Sound Designer."
 --- !u!222 &2098723830
 CanvasRenderer:
   m_ObjectHideFlags: 0

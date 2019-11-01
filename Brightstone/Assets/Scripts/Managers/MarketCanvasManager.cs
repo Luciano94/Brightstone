@@ -300,6 +300,7 @@ public class MarketCanvasManager : MonoBehaviour{
     public void LifeLevel(bool operation){
         if(playerSts.PlayerLevel > 0)
         {
+            SoundManager.Instance.MenuItemHover();
             playerSts.setLifeStat = playerSts.MaxLife() + 50;
             marketGO.SetActive(false);
         }
@@ -343,6 +344,7 @@ public class MarketCanvasManager : MonoBehaviour{
     public void AttackLevel(bool operation){
         if(playerSts.PlayerLevel > 0)
         {
+            SoundManager.Instance.MenuItemHover();
             playerSts.setAtkMult += 0.5f;
             marketGO.SetActive(false);
         }
