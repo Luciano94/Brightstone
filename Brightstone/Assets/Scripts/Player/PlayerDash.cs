@@ -44,6 +44,7 @@ public class PlayerDash : MonoBehaviour{
                 dashParticles.enabled = true;
                 actualDashCharges--;
                 playerCombat.Dash();
+                SoundManager.Instance.PlayerDash();
             }
         }
         else{

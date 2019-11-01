@@ -36,8 +36,11 @@ public class PlayerStats : MonoBehaviour{
 
                 CheckLowHealth();
                 
-                if(currentLife <= 0)
+                if(currentLife <= 0){
+                    GetComponent<PlayerCombat>().Death();
                     GameManager.Instance.PlayerDeath();
+                }
+                    
                 else
                     OnHit.Invoke();
             }
