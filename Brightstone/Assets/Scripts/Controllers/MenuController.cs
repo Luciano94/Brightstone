@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour{
     [SerializeField] Button playButton;
     [SerializeField] Text runTimeAvgTxt;
     [SerializeField] Text bestTimeTxt;
-    [SerializeField] Text parryPercTxt;
     [SerializeField] Text enemiesKilledTxt;
     [SerializeField] Text bossesKilledTxt;
     [SerializeField] Text totalExpTxt;
@@ -71,13 +70,6 @@ public class MenuController : MonoBehaviour{
         }
         else
             bestTimeTxt.text = "-";
-
-        if (data.timesParried > 0){
-            float parryPerc = (float)data.goodParry / (float)data.timesParried * 100;
-            parryPercTxt.text = parryPerc.ToString("00") + "%";
-        }
-        else
-            parryPercTxt.text = "0%";
 
         enemiesKilledTxt.text = "" + data.enemiesKilled;
         bossesKilledTxt.text = "" + data.bossesKilled;
