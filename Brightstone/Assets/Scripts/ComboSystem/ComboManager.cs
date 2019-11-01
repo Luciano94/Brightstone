@@ -165,13 +165,13 @@ public class ComboManager : MonoBehaviour{
                 SoundManager.Instance.PlayerAttackHeavy();
                 actualStand = Stands.Thrust;
                 break;
-            case Actions.A:
-                SoundManager.Instance.PlayerAttackHeavy();
-                actualStand = Stands.Zone;
-                break;
             case Actions.B:
                 SoundManager.Instance.PlayerAttackHeavy();
                 actualStand = Stands.Shuriken;
+                break;
+            case Actions.A:
+                SoundManager.Instance.PlayerAttackLight();
+                actualStand = Stands.Zone;
                 break;
             case Actions.RB:
                 SoundManager.Instance.PlayerAttackLight();

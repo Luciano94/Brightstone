@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID MENUOPEN = 48824776U;
         static const AkUniqueID PLAYERATTACKHEAVY = 3914790867U;
         static const AkUniqueID PLAYERATTACKLIGHT = 231747402U;
+        static const AkUniqueID PLAYERATTACKLIGHT2 = 146436428U;
         static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERDEATH = 1656947812U;
         static const AkUniqueID PLAYERPARRYHIT = 410952847U;
@@ -137,6 +138,10 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID BOSS = 1560169506U;
+        static const AkUniqueID COMBAT = 2764240573U;
+        static const AkUniqueID LVL1 = 141331490U;
+        static const AkUniqueID MAINMENU = 3604647259U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;

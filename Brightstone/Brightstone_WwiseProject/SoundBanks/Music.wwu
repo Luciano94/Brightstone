@@ -33,7 +33,6 @@
 						<ObjectRef Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="MapMusic" ID="{F475558B-972D-4565-8D93-25CAFD26AC5B}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="PlayerDeath" ID="{E5D3B09B-8A77-4A31-95D3-DB1947B83C67}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomBossEnter" ID="{F1FCA68C-AA16-4B6E-9411-2019AE950B38}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="LevelClear" ID="{46C9BF9C-275D-4D11-86BD-81F02DA10C14}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>

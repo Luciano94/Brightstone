@@ -30,6 +30,7 @@
 						<ObjectRef Name="PlayerDash" ID="{7BEAD0D3-30EF-4CAF-A8F5-38DEE718CA26}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackHeavy" ID="{D38EEE45-C6D6-4CBE-B093-6AB7EF119F92}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerAttackLight2" ID="{B84A29D3-FC08-4E76-829E-A8350FDB6A2D}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

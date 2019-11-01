@@ -30,7 +30,7 @@
 						<Action Name="" ID="{00E8E8BB-613C-49AC-947A-5468855C835E}" ShortID="429604087">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="AttackLight" ID="{7C6053B9-E920-4469-9185-943A2CA75385}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+									<ObjectRef Name="AttackA" ID="{7C6053B9-E920-4469-9185-943A2CA75385}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -77,10 +77,10 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{012AB515-9741-450D-915E-4A32E67A3AF1}" ShortID="485220386">
+						<Action Name="" ID="{CEAC1B9C-544B-45EF-A906-46151429BF52}" ShortID="965109">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="PlayerDeath" ID="{ADFA9BBA-319E-4598-8DEE-00A0B0670A00}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+									<ObjectRef Name="PlayerDeath_01" ID="{110FB941-3D76-4930-A22F-361C9C93AEC4}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -137,7 +137,7 @@
 						<Action Name="" ID="{B36BEB2A-0EB3-49AA-847E-5D701C502A18}" ShortID="70168942">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Dash" ID="{93D65E36-C491-4656-B4D5-676351EA62FF}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+									<ObjectRef Name="Dash" ID="{6C869272-9AD6-412E-BD80-2A37A1FA96A0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -171,6 +171,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="SelectSame" ID="{ADDF9412-5506-43FF-B1AA-3C29ADEB7D02}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackLight2" ID="{B84A29D3-FC08-4E76-829E-A8350FDB6A2D}">
+					<ChildrenList>
+						<Action Name="" ID="{64895ABE-25EF-456B-985C-88520CFBC425}" ShortID="637161335">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackX" ID="{FF752ED2-A145-4DA5-9FC1-6FA9B279F673}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

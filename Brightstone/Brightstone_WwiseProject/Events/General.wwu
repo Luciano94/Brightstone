@@ -27,6 +27,13 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{7D3FE6EE-1F24-43BC-8AD2-68EDD2A58196}" ShortID="1003496697">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="StartFire" ID="{257E786A-8EF4-489E-8CC8-3B8EDB739206}" WorkUnitID="{0C354141-45D9-4443-869A-5303252CEE2A}"/>
@@ -48,6 +55,13 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{4EE9165A-4B27-4080-9D33-9CCF977315CC}" ShortID="189045961">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="ThreeTaiko" ID="{EB0CDF02-A1C8-49D3-BDEF-9B9252E93FEB}" WorkUnitID="{0C354141-45D9-4443-869A-5303252CEE2A}"/>
@@ -71,6 +85,13 @@
 				<Event Name="RoomBossEnter" ID="{F1FCA68C-AA16-4B6E-9411-2019AE950B38}">
 					<ChildrenList>
 						<Action Name="" ID="{29A595E6-B2B4-40F1-8B2D-C4F28B0DADE3}" ShortID="224927730">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="StartFire" ID="{257E786A-8EF4-489E-8CC8-3B8EDB739206}" WorkUnitID="{0C354141-45D9-4443-869A-5303252CEE2A}"/>
@@ -140,6 +161,13 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{6BE0CBE3-5836-49D3-92DA-BA2D94835689}" ShortID="143611768">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="HeavyBreath" ID="{E9C3B54E-3B43-493A-AA24-2FA8C3A0356E}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
