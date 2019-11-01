@@ -12,20 +12,25 @@
 						</Property>
 					</PropertyList>
 					<ObjectInclusionList>
+						<ObjectRef Name="SelectAttSame" ID="{5DF25E88-F05E-4038-BCA8-7F432DF7BC86}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerRespawn" ID="{ECA6A6CC-9404-4325-A60A-5A975B3B013B}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BossSwordAttack" ID="{B2C1B83D-A34B-434F-BC82-0459652F652A}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="ArrowHit" ID="{A8119FF1-21D3-4364-BBCD-4F5C8AA03850}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EnemyArcherTightBow" ID="{9F3AE7D0-5B12-4540-9CA7-750F6F331649}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BossDeath" ID="{13D024BA-593C-4733-BCF2-481348221D14}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="SelectAttA" ID="{A18B5358-237A-47EA-B846-6834606276AF}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackLight" ID="{86854D8F-11F5-47FC-8254-C233DA9745CF}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerParryHit" ID="{454F48E8-6B3C-4827-BEDB-81C29AB0A56E}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="SelectAttX" ID="{E59FEE0B-959F-4857-957A-E812D4DD6D95}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerDeath" ID="{E5D3B09B-8A77-4A31-95D3-DB1947B83C67}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EnemyMeleeSwordAttack" ID="{13E79E2C-F8EF-4AA3-A1EF-5FD942D37A4F}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EnemyArcherReleaseBow" ID="{CC5EEC46-AF04-4B38-A328-81C316498DDA}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomBossEnter" ID="{F1FCA68C-AA16-4B6E-9411-2019AE950B38}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerDash" ID="{7BEAD0D3-30EF-4CAF-A8F5-38DEE718CA26}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackHeavy" ID="{D38EEE45-C6D6-4CBE-B093-6AB7EF119F92}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerAttackLight2" ID="{B84A29D3-FC08-4E76-829E-A8350FDB6A2D}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

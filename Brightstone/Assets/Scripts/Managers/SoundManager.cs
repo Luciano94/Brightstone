@@ -34,6 +34,9 @@ public class SoundManager : MonoBehaviour
     public void PlayerAttackLightHit(){ //El ataque ligero de jugador golpea a un enemigo
         //AkSoundEngine.PostEvent("PlayerAttackLightHit", GameManager.Instance.playerSts.gameObject);
     }
+    public void PlayerAttackLight2(){ //El jugador usa un ataque ligero
+        AkSoundEngine.PostEvent("PlayerAttackLight2", GameManager.Instance.playerSts.gameObject);
+    }
     public void PlayerAttackHeavy(){ //El jugador usa un ataque pesado
         AkSoundEngine.PostEvent("PlayerAttackHeavy", GameManager.Instance.playerSts.gameObject);
     }
@@ -44,7 +47,7 @@ public class SoundManager : MonoBehaviour
         //AkSoundEngine.PostEvent("PlayerDamaged", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerDeath(){ //El jugador muere
-        LevelClear();
+        //LevelClear();
         AkSoundEngine.PostEvent("PlayerDeath", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerRespawn(){ //El jugador revive
@@ -100,7 +103,7 @@ public class SoundManager : MonoBehaviour
         AkSoundEngine.PostEvent("LevelEnter", gameObject);
     }
     public void LevelClear(){ //Se termina el nivel
-        AkSoundEngine.StopAll();
+        //AkSoundEngine.StopAll();
         AkSoundEngine.PostEvent("LevelClear", gameObject);
     }
     public void PlayerHP(float playerHPPercentage){ //Hay un cambio en el porcentaje de vida del jugador
@@ -118,6 +121,18 @@ public class SoundManager : MonoBehaviour
     public void MenuOpen(){ //Se abre la escena de menú principal
         AkSoundEngine.StopAll();
         AkSoundEngine.PostEvent("MenuOpen", gameObject);
+    }
+    public void PlayerDash(){ //El jugador ejecuta el Dash
+        AkSoundEngine.PostEvent("PlayerDash", GameManager.Instance.playerSts.gameObject);
+    }
+    public void SelectAttX(){ //El jugador selecctiona el ataque Beatdown
+        AkSoundEngine.PostEvent("SelectAttX", gameObject);
+    }
+    public void SelectAttA(){ //El jugador selecctiona el ataque Zone
+        AkSoundEngine.PostEvent("SelectAttA", gameObject);
+    }
+    public void SelectAttSame(){ //El jugador selecctiona el ataque ya seleccionado
+        AkSoundEngine.PostEvent("SelectAttSame", gameObject);
     }
     public void SynopsisOpen(){ //Se abre la escena de menú principal
         AkSoundEngine.StopAll();

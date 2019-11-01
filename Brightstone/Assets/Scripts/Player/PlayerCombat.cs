@@ -241,6 +241,10 @@ public class PlayerCombat : MonoBehaviour{
         Invoke("TurnOffCA", 0.05f);
     }
 
+    public void Death(){
+        plAnim.Death();
+    }
+
     public void TurnOffCA(){
         FilterManager.SetChromaticAberration(false);
     }

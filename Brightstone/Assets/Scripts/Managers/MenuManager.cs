@@ -40,14 +40,19 @@ public class MenuManager : MonoBehaviour{
 
     public bool LoseMenuCanvas{
         set {
-            loseMenuCanvas.SetActive(value);
-            Invoke("ActivateStateUI", timeToActivateStateUi);
+            Invoke("ActivateLoseCanvas", 2f);
         }
     }
 
     private void ActivateWinCanvas(){
         UIManager.Instance.RunFinished();
         winMenuCanvas.SetActive(true);
+        Invoke("ActivateStateUI", timeToActivateStateUi);
+    }
+
+    private void ActivateLoseCanvas(){
+        UIManager.Instance.RunFinished();
+        loseMenuCanvas.SetActive(true);
         Invoke("ActivateStateUI", timeToActivateStateUi);
     }
 

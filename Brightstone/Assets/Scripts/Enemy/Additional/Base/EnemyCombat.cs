@@ -19,6 +19,11 @@ public enum Axis4Direction{
     Left,
     Count
 }
+public enum Axis2Direction{
+    Right,
+    Left,
+    Count
+}
 
 public class EnemyCombat : MonoBehaviour{
     [Header("Attack")]

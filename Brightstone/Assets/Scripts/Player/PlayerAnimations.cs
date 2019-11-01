@@ -30,6 +30,9 @@ public class PlayerAnimations : MonoBehaviour{
 
     public void Death(){
         anim.SetTrigger("Death");
+        anim.SetFloat("Dir", Input.GetAxis("Horizontal"));
+
+        SoundManager.Instance.PlayerDeath();
 
         EntityOrderManager.Instance.OnEntityDeath(GetComponent<SpriteRenderer>());
 

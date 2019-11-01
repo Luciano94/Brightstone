@@ -47,7 +47,8 @@
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
-						<CurrentSwitchRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}"/>
+						<CurrentSwitchRef Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
+						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Combat" ID="{6FD1A4EA-5F8A-4FE7-89C1-26AE24A24E06}">
@@ -73,6 +74,10 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="EnemyArcherReleaseBow" ID="{CC5EEC46-AF04-4B38-A328-81C316498DDA}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
 							<Position X="1" Y="2"/>
 						</Module>
@@ -85,7 +90,7 @@
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<ObjectRef Name="SelectX" ID="{93CFC3B1-313E-45F6-8953-59984FF4E4C6}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
@@ -93,8 +98,20 @@
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Dash" ID="{6C869272-9AD6-412E-BD80-2A37A1FA96A0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SelectA" ID="{C6674F08-34FD-4960-8021-510334D3BFB5}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SelectSame" ID="{ADDF9412-5506-43FF-B1AA-3C29ADEB7D02}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+							<Position X="3" Y="2"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -118,7 +135,8 @@
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
-						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
+						<CurrentSwitchRef Name="ThreeThirds" ID="{24EDEA55-0957-458A-8199-7192805AD975}"/>
+						<CurrentSwitchRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Lvl1Music" ID="{CFC6D09A-6645-4D8A-876A-34D655E0D82E}">
@@ -167,7 +185,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
-							<Value>0</Value>
+							<Value>1.5</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
@@ -176,11 +194,12 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
-						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
+						<CurrentStateRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
+						<CurrentSwitchRef Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
 						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>

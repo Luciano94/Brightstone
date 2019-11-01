@@ -15,12 +15,34 @@
 					<ChildrenList>
 						<Sound Name="Select" ID="{83D6DEEB-7FBC-463E-B70B-4C5A810F3D3D}" ShortID="587416115">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>17</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Lowpass" Type="int16">
 									<ValueList>
-										<Value>25</Value>
+										<Value>58</Value>
 									</ValueList>
 								</Property>
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2CC02D76-6F21-4AB6-8C87-6D37B1462D45}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="500"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -57,8 +79,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="Select" ID="{F130D97D-F1F2-447B-B910-A267A2101011}" ShortID="280837918">
 									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.011865524060646"/>
 										<Property Name="FadeOutDuration" Type="Real64" Value="0.575342465753425"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.013843111404087"/>
 										<Property Name="TrimEnd" Type="Real64" Value="1.32020547945206"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -73,10 +97,36 @@
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="HoverButton" ID="{B84CB67D-449F-4E60-B725-0AA04402A1A7}" ShortID="883656703">
 					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>14</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>630</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2AD03DE4-8441-4CD5-913A-F815B521AD46}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>4</Value>
+								<Value>-6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -97,10 +147,12 @@
 							<Custom>
 								<Effect Name="Wwise_RoomVerb_(Custom)" ID="{CA335F81-27C7-4C7C-BF29-30464EE1823D}" ShortID="910064734" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
-										<Property Name="DecayTime" Type="Real32" Value="2.1"/>
+										<Property Name="DecayTime" Type="Real32" Value="0.7"/>
 										<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+										<Property Name="HFDamping" Type="Real32" Value="4.95"/>
 										<Property Name="PreDelay" Type="Real32" Value="0"/>
 										<Property Name="ReverbLevel" Type="Real32" Value="-18"/>
+										<Property Name="RoomShape" Type="Real32" Value="73"/>
 									</PropertyList>
 								</Effect>
 							</Custom>
@@ -143,6 +195,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Press 2" ID="{1E287644-1B6D-4B45-A81B-9FE903BE0A38}" ShortID="47403816">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="7.91034937376401E-03"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.140408701384311"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Press 2.wav</AudioFile>
 									<ConvertedFileIDList>
