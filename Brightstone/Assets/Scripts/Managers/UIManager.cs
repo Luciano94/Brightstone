@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour{
     //[SerializeField] private Text lifeTxt;
     [SerializeField] private Text atkTxt;
     [SerializeField] private Text mrkTxt;
+    [SerializeField] private Text runTimeTxt;
 
     [Header("Market Texts")]
     [SerializeField] private Text requiredTxt;
@@ -118,6 +119,16 @@ public class UIManager : MonoBehaviour{
             FilterManager.SetVignetteSmoothness(Mathf.PingPong(Time.time * 0.2f, smoothnessLimit));
         }
 
+        TimeUpdate();
+    }
+
+    void TimeUpdate(){
+        float timePassed = GameManager.Instance.timePassed;
+
+        string minutes = Mathf.Floor(timePassed * 0.0167f).ToString("00");
+        string seconds = Mathf.Floor(timePassed % 60).ToString("00");
+
+        runTimeTxt.text = minutes + ":" + seconds;
     }
 
     public void ExpUpdate(){
