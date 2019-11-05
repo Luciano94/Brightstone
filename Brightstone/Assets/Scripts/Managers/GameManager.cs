@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour{
     public GameObject tutorialMarket;
     public bool tutorialMarketComplete = false;
     public bool playerAlive = true;
+    public float timePassed = 0;
 
     public bool PlayerOn{
         set{player.SetActive(value);
@@ -71,13 +72,13 @@ public class GameManager : MonoBehaviour{
 
     private void Update(){
         DetectDevice();
-        RunSaver.currentRun.data.time += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.H)){
             playerSts.ChangeGodModeState();
             UIManager.Instance.ChangeGodModeState();
         }
 
+        timePassed += Time.deltaTime;
     }
 
     public void ExitToMainMenu(){
@@ -189,6 +190,7 @@ public class GameManager : MonoBehaviour{
         PlayerPrefs.Save();
 
         RunSaver.currentRun.data.level = (ushort)playerSts.PlayerLevel;
+        RunSaver.currentRun.data.time = timePassed;
         RunSaver.currentRun.data.runFinished = true;
         RunSaver.Save();
 
@@ -215,6 +217,7 @@ public class GameManager : MonoBehaviour{
         PlayerPrefs.Save();
 
         RunSaver.currentRun.data.level = (ushort)playerSts.PlayerLevel;
+        RunSaver.currentRun.data.time = timePassed;
         RunSaver.currentRun.data.runFinished = true;
         RunSaver.currentRun.data.win = true;
         RunSaver.Save();
