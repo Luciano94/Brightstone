@@ -31,8 +31,9 @@ public class PlayerMovement : MonoBehaviour{
         
         if(!playerCombat.isAttack && GameManager.Instance.IsConnected){
             Movement();
-            Rotation();
         }
+        
+        Rotation();
     }
 
     public Vector3 GetRotation{
