@@ -155,7 +155,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.ComboMasterStudios.Brightstone
   buildNumber:
-    Standalone: 14
+    Standalone: 15
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
