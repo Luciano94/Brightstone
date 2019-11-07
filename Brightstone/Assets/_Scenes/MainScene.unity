@@ -4780,7 +4780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: X Beatdown (p2)
   anim: {fileID: 0}
-  dmg: 20
+  dmg: 15
   totalTime: 0.5
   playerCombat: {fileID: 786400176}
   standToPlay: 0
@@ -8345,7 +8345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: A Zone (p2)
   anim: {fileID: 0}
-  dmg: 20
+  dmg: 12
   totalTime: 0.5
   playerCombat: {fileID: 786400176}
   standToPlay: 3
