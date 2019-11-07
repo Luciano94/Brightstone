@@ -605,7 +605,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 24b256ff053a3f04d9bcf76947685e96, type: 3}
+    m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 1
@@ -617,16 +617,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You are in the Kyoto region, Japan, in the height of a war caused by a
-    rare, shiny-like-the-moon material, called Brightstone.\r\nThis elusive material
-    allows the modification of weapons, changing their appearance, and giving the
-    wielder abilities impossible to achieve with a regular weapon. However, its users
-    are exposed to corruption by their own hunger for power.\r\nThe leaders of numerous
-    clans wage war on each other, seeking to take all of the Brightstone's power for
-    themselves.\r\nYou are an exiled ninja, as are your fellow clansmen, 'The Forgotten
-    Ones'.\r\nLion, the group\u2019s leader, has charged you with bringing peace to
-    your clan\u2019s life, to defeat the corrupted leaders of other clans, and rid
-    the land of war once and for all.\r"
+  m_Text: "YOU ARE IN THE KYOTO REGION, JAPAN, IN THE HEIGHT OF A WAR CAUSED BY A
+    RARE, SHINY-LIKE-THE-MOON MATERIAL, CALLED BRIGHTSTONE.\r\nTHIS ELUSIVE MATERIAL
+    ALLOWS THE MODIFICATION OF WEAPONS, CHANGING THEIR APPEARANCE, AND GIVING THE
+    WIELDER ABILITIES IMPOSSIBLE TO ACHIEVE WITH A REGULAR WEAPON. HOWEVER, ITS USERS
+    ARE EXPOSED TO CORRUPTION BY THEIR OWN HUNGER FOR POWER.\r\nTHE LEADERS OF NUMEROUS
+    CLANS WAGE WAR ON EACH OTHER, SEEKING TO TAKE ALL OF THE BRIGHTSTONE'S POWER FOR
+    THEMSELVES.\r\nYOU ARE AN EXILED NINJA, AS ARE YOUR FELLOW CLANSMEN, 'THE FORGOTTEN
+    ONES'.\r\nLION, THE GROUP\u2019S LEADER, HAS CHARGED YOU WITH BRINGING PEACE TO
+    YOUR CLAN\u2019S LIFE, TO DEFEAT THE CORRUPTED LEADERS OF OTHER CLANS, AND RID
+    THE LAND OF WAR ONCE AND FOR ALL."
 --- !u!222 &344853980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -851,8 +851,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: cf1810ff21c517344810a19cccf3b8e4, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
+    m_FontSize: 24
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
@@ -863,7 +863,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Skip
+  m_Text: SKIP
 --- !u!222 &1119219863
 CanvasRenderer:
   m_ObjectHideFlags: 0
