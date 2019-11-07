@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 public class PlayerCombat : MonoBehaviour{
     [SerializeField]private GameObject weapon;
-    private BoxCollider2D weaponColl;
+    private BoxCollider2D boxWeapColl;
+    private CircleCollider2D cirWeapColl;
     
     private bool isHit = false;
     private float timeParalized = 0.15f;
@@ -11,7 +12,7 @@ public class PlayerCombat : MonoBehaviour{
     private PlayerMovement pMovement;
 
     [Header("Attack")]
-    Action action = null;
+    ActionInfo actionInfo;
     [HideInInspector] public Actions actualAttackAction = Actions.Blank;
     [SerializeField]private ComboManager cManager;
     [SerializeField]private float atckTime;
@@ -62,7 +63,8 @@ public class PlayerCombat : MonoBehaviour{
     private PlayerStats plStat;
 
     private void Awake() {
-        weaponColl = weapon.GetComponent<BoxCollider2D>();
+        boxWeapColl = weapon.GetComponent<BoxCollider2D>();
+        cirWeapColl = weapon.GetComponent<CircleCollider2D>();
         pMovement = GetComponent<PlayerMovement>();
         actAtkTime = 0;
         isAttacking = false;
@@ -70,6 +72,7 @@ public class PlayerCombat : MonoBehaviour{
         atkAnim.State = ActionState.enterFrames;
         rig = GetComponent<Rigidbody2D>();
         actParryTime = parryTime;
+        actionInfo.action = null;
 
         plStat = GameManager.Instance.playerSts;
     }
@@ -80,16 +83,16 @@ public class PlayerCombat : MonoBehaviour{
         ps.OnHit.AddListener(SoundManager.Instance.PlayerDamaged);
     }
 
-    public void StartAction(Action _action, float animToRun){
-        action=_action;
-        plStat.AtkDmg = action.Damage;
+    public void StartAction(ActionInfo _actionInfo, float animToRun){
+        actionInfo=_actionInfo;
+        plStat.AtkDmg = actionInfo.action.Damage;
         isAttacking = true;
 
         plAnim.SetAttackTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z), animToRun);
     }
 
     public void StopAction(){
-        action = null;
+        actionInfo.action = null;
         needMove = false;
         isAttacking = false;
     }
@@ -107,10 +110,10 @@ public class PlayerCombat : MonoBehaviour{
             else return;
         }
 
-        if(action != null){
+        if(actionInfo.action != null){
             if(!isParrying && isAttacking){
                 AttackMove();
-                switch (action.Fdata.State){
+                switch (actionInfo.action.Fdata.State){
                     case ActionState.enterFrames:
                         EnterState();
                     break;
@@ -165,18 +168,36 @@ public class PlayerCombat : MonoBehaviour{
             needMove = true;
         }
         weapon.SetActive(false);
-        weaponColl.enabled = false;
+        boxWeapColl.enabled = false;
+        cirWeapColl.enabled = false;
     }
 
     private void ActiveState(){
         weapon.SetActive(true);
-        weaponColl.enabled = true;
+
+        if (actionInfo.action != null){
+
+            switch(actionInfo.colType){
+                case ColliderType.Box:
+                    boxWeapColl.enabled = true;
+                    boxWeapColl.offset = actionInfo.offset;
+                    boxWeapColl.size = actionInfo.size;
+                break;
+
+                case ColliderType.Circle:
+                    cirWeapColl.enabled = true;
+                    cirWeapColl.offset = actionInfo.offset;
+                    cirWeapColl.radius = actionInfo.radius;
+                break;
+            }
+        }
     }
 
     private void ExitState(){
         weapon.SetActive(false);
-        weaponColl.enabled = false;
-        action = null;
+        boxWeapColl.enabled = false;
+        cirWeapColl.enabled = false;
+        actionInfo.action = null;
         needMove = false;
         isAttacking = false;
     }
@@ -212,7 +233,8 @@ public class PlayerCombat : MonoBehaviour{
         }*/
         if(isParrying && actParryTime >= parryTime){
             weapon.SetActive(false);
-            weaponColl.enabled = false;
+            boxWeapColl.enabled = false;
+            cirWeapColl.enabled = false;
             isParrying = false;
             parriedSomeone = false;
         }else
@@ -228,8 +250,8 @@ public class PlayerCombat : MonoBehaviour{
 
     private void Hit(){
         FilterManager.SetChromaticAberration(true);
-        if (action)
-            action.StopAction();
+        if (actionInfo.action)
+            actionInfo.action.StopAction();
         currentTime = 0.0f;
         isAttacking = false;
         isParrying = false;

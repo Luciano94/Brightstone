@@ -25,17 +25,17 @@ public class Action : MonoBehaviour {
         fData.exitFrames = totalTime;
     }
 
-    public void StartAction(float index){
+    public void StartAction(ActionInfo actionInfo, float index){
         isActive = true;
         actualTime = 0.0f;
         fData.State = ActionState.enterFrames;
-        playerCombat.StartAction(this, index);
+        playerCombat.StartAction(actionInfo, index);
     }
 
-    public void ResetAction(int index){
+    public void ResetAction(ActionInfo actionInfo, int index){
         actualTime = 0.0f;
         fData.State = ActionState.enterFrames;
-        playerCombat.StartAction(this, index);
+        playerCombat.StartAction(actionInfo, index);
     }
 
     public void StopAction(){
