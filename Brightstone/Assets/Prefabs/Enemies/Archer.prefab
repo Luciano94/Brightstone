@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fee5b615ce55543bdeeece77a9f2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 200
+  life: 180
   atkDmg: 20
   numPos: {fileID: 4998499608362035148}
   lifeColor:
