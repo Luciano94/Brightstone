@@ -168,7 +168,7 @@ public class UIManager : MonoBehaviour{
         //Orange bar
         playerHitHpFillBar.rectTransform.sizeDelta = new Vector2(
             value * sizePerLifePoint,
-            playerEmptyFillBar.rectTransform.rect.height
+            playerHitHpFillBar.rectTransform.rect.height
         );
 
         //Grey bar

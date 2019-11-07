@@ -110,6 +110,7 @@ public class MarketCanvasManager : MonoBehaviour{
     }
 
     public void EnterMarket(){
+        playerSts = GameManager.Instance.playerSts;
         if(playerSts.PlayerLevel == 0)
         {
             plusLifeButton.interactable = false;
@@ -201,7 +202,7 @@ public class MarketCanvasManager : MonoBehaviour{
     }
 
     private void UpdateText(){
-        playerLevelTxt.text = playerLevel.ToString();
+      /*  playerLevelTxt.text = playerLevel.ToString();
         playerExperienceTxt.text = playerExperience.ToString();
         requiredExperienceTxt.text = requiredExperience.ToString();
         lifeLevelTxt.text = lifeLevel.ToString();
@@ -221,7 +222,7 @@ public class MarketCanvasManager : MonoBehaviour{
         
         newPlayerLevelTxt.text = newPlayerLevel.ToString();
         newRequiredExperienceTxt.text = newRequiredExperience.ToString();
-        newPlayerExperienceTxt.text = newPlayerExperience.ToString();
+        newPlayerExperienceTxt.text = newPlayerExperience.ToString();*/
     }
 
     private void UpdateButtons(){

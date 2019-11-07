@@ -11,7 +11,7 @@ public class StandsManager : MonoBehaviour
 
 
     public void ActivateStand(Stands stand){
-        switch (stand)
+      /*  switch (stand)
         {
             case Stands.Beatdown:
                 shurikenStand.ToggleStand(false);
@@ -38,7 +38,7 @@ public class StandsManager : MonoBehaviour
                 zoneStand.ToggleStand(false);
                 beatdownStand.ToggleStand(false);
             break;
-        }
+        }*/
     }
 
 }
