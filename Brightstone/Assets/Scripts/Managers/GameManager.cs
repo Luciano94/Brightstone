@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour{
             PlayerPrefs.GetInt("XP", 0);
         }
 
+        
+    }
+
+    private void Start(){
         if (PlayerPrefs.GetInt("PlayerDeathInBossRoom") == 1)
             PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
         else
