@@ -14,7 +14,7 @@ public class ArrowTrigger : MonoBehaviour{
                     SoundManager.Instance.ArrowHit(gameObject);
                     gM.playerSts.Life = enemyStats.AtkDmg;
                     gM.SetEnemyHitFrom(transform.position);
-                    gM.ShakerController.Shake(1.2f, 1.2f, 0.1f, 0.2f);
+                    gM.ShakerController.Shake(1.1f, 1.1f, 0.1f, 0.22f);
                     UIManager.Instance.LifeUpdate();
                 }else{
                     //AudioManager.Instance.PlayerParry();
