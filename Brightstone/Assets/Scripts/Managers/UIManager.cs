@@ -51,6 +51,7 @@ public class UIManager : MonoBehaviour{
     [Header("Experience FillBar")]
     [SerializeField]private Transform experienceEmptyFillBar;
     [SerializeField]private Transform experienceActualFillBar;
+    [SerializeField] private Animator expAnimator;
 
 
     [Header("PostProcess")]
@@ -135,6 +136,7 @@ public class UIManager : MonoBehaviour{
         expTxt.text = gameM.playerSts.PlayerLevel.ToString();
         float value = gameM.playerSts.Experience / gameM.playerSts.experienceToNextLevel;
         experienceActualFillBar.localScale = new Vector3(value, 1.0f);
+        expAnimator.SetTrigger("ExpGained");
     }
 
     public void LifeUpdate(){

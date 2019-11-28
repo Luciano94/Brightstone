@@ -11071,7 +11071,7 @@ RectTransform:
   - {fileID: 2132500734}
   - {fileID: 1793019434}
   m_Father: {fileID: 1814517084}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -14947,6 +14947,7 @@ GameObject:
   - component: {fileID: 1542439342}
   - component: {fileID: 1542439344}
   - component: {fileID: 1542439343}
+  - component: {fileID: 1542439345}
   m_Layer: 5
   m_Name: LifeBarFull
   m_TagString: Untagged
@@ -15010,6 +15011,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542439341}
   m_CullTransparentMesh: 0
+--- !u!95 &1542439345
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542439341}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56cc68a45d9656a4d8c3aa76c75bacf7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1577002551
 GameObject:
   m_ObjectHideFlags: 0
@@ -17141,6 +17161,7 @@ RectTransform:
   - {fileID: 661922287}
   - {fileID: 2046088076}
   - {fileID: 311746470}
+  - {fileID: 1926459218}
   m_Father: {fileID: 1600578409}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17329,7 +17350,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1926459218}
   - {fileID: 1099206257}
   m_Father: {fileID: 1600578409}
   m_RootOrder: 3
@@ -17894,6 +17914,7 @@ MonoBehaviour:
   bossHPBar: {fileID: 166132889}
   experienceEmptyFillBar: {fileID: 900224520}
   experienceActualFillBar: {fileID: 1542439342}
+  expAnimator: {fileID: 1542439345}
   smoothnessLimit: 0.1
   statsHolder: {fileID: 829937510}
   damageDealtTxt: {fileID: 293563200}
@@ -18272,12 +18293,12 @@ RectTransform:
   - {fileID: 900224520}
   - {fileID: 1542439342}
   - {fileID: 1938389458}
-  m_Father: {fileID: 1814517084}
-  m_RootOrder: 0
+  m_Father: {fileID: 1782163475}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0.0000014305, y: -77}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1933307291
@@ -18922,6 +18943,7 @@ GameObject:
   - component: {fileID: 2046088076}
   - component: {fileID: 2046088078}
   - component: {fileID: 2046088077}
+  - component: {fileID: 2046088079}
   m_Layer: 5
   m_Name: LifeBarFull
   m_TagString: Untagged
@@ -18985,6 +19007,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046088075}
   m_CullTransparentMesh: 0
+--- !u!95 &2046088079
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046088075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56cc68a45d9656a4d8c3aa76c75bacf7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2052553313
 GameObject:
   m_ObjectHideFlags: 0
