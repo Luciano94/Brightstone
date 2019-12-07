@@ -13,8 +13,14 @@ public class PlayerAnimations : MonoBehaviour{
     }
 
 	void Update(){
-        anim.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
-        anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
+        if (InputManager.Instance.IsConnected){
+            anim.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
+            anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));
+        }
+        else{
+            anim.SetFloat("VerticalSpeed", Input.GetAxis("VerticalMouse"));
+            anim.SetFloat("HorizontalSpeed", Input.GetAxis("HorizontalMouse"));
+        }
 	}
 
     public void SetAttackTrigger(int dir, float animIndex){

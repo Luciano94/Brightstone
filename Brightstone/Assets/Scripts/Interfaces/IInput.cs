@@ -1,4 +1,5 @@
 ﻿interface IInput{
+    bool IsJoystick();
     float GetVerticalAxis();
     float GetHorizontalAxis();
     bool GetBasicAttackButton();

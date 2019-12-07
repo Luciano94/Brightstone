@@ -20,19 +20,17 @@ public class ExperienceTest : MonoBehaviour
     }
 
     private void LevelUp(){
-        if (GameManager.Instance.IsConnected){
-            if(Input.GetButtonUp("Yattack")){
-                
-                expMrk.LifeUp();
-                //AudioManager.Instance.MenuHit();
-                SoundManager.Instance.MenuItemClick();
-            }
-            if(Input.GetButtonUp("Xattack")){
-                
-                expMrk.AtkUp();
-                //AudioManager.Instance.MenuHit();
-                SoundManager.Instance.MenuItemClick();
-            }
+        if(Input.GetButtonUp("Yattack") || Input.GetButtonUp("Z")){
+            
+            expMrk.LifeUp();
+            //AudioManager.Instance.MenuHit();
+            SoundManager.Instance.MenuItemClick();
+        }
+        if(Input.GetButtonUp("Xattack") || Input.GetButtonUp("X")){
+            
+            expMrk.AtkUp();
+            //AudioManager.Instance.MenuHit();
+            SoundManager.Instance.MenuItemClick();
         }
     }
 
