@@ -16,7 +16,7 @@ public class PlayerWeapon : MonoBehaviour{
                 case "Enemy":
                     EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
                     enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult;
-                    GameManager.Instance.ShakerController.Shake();
+                    GameManager.Instance.ShakerController.Shake(1.6f, 1.6f, 0.1f, 0.24f);
 
                     switch(playerCombat.actualAttackAction){
                         case Actions.X:
