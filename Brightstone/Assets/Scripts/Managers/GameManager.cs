@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour{
     [SerializeField] private ShakerController shakerController;
     [SerializeField] private ZoomWhenParrying zoomWhenParrying;
 
-    private bool isConnected;
     private const int mainMenuIndex = 0;
 
     /* Player and Boss components */
@@ -45,7 +44,6 @@ public class GameManager : MonoBehaviour{
     }
 
     private void Awake(){
-        DetectDevice();
         RunSaver.NewRun();
 
         _activeRoom = player.GetComponent<ActiveRoom>();
@@ -75,8 +73,6 @@ public class GameManager : MonoBehaviour{
     }
 
     private void Update(){
-        DetectDevice();
-
         if (Input.GetKeyDown(KeyCode.H)){
             playerSts.ChangeGodModeState();
             UIManager.Instance.ChangeGodModeState();
@@ -88,31 +84,6 @@ public class GameManager : MonoBehaviour{
     public void ExitToMainMenu(){
         PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
         SceneManager.LoadScene(mainMenuIndex);
-    }
-
-    private void DetectDevice(){
-        if (Input.GetJoystickNames().Length > 0){
-            if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10){
-                isConnected = true;
-                UIManager.Instance.UnshowPause();
-                //Time.timeScale = 1.0f;
-            }
-            else{
-                isConnected = false;
-                UIManager.Instance.ShowPause();
-                //Time.timeScale = 0.0f;
-            }
-        }
-        else{
-            isConnected = false;
-            UIManager.Instance.ShowPause();
-            //Time.timeScale = 0.0f;
-        }
-
-    }
-
-    public bool IsConnected{
-        get{return isConnected;}
     }
 
     public Vector3 PlayerPos{

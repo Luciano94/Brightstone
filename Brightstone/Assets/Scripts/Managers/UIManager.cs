@@ -203,7 +203,7 @@ public class UIManager : MonoBehaviour{
             MarketCanvasManager.Instance.EnterMarket();
         }
        // requiredTxt.text = ExperienceMarket.Instance.Required;
-        if (!gameM.IsConnected){
+        if (!InputManager.Instance.IsConnected){
             mAttackTxt.text = "\n  Attack\n   +0,25";
             mLifeTxt.text =  "\n     Life\n     +50";
         }

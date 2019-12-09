@@ -27,8 +27,6 @@ public class MenuController : MonoBehaviour{
     private float timeReset = -1.0f;
 
     private void Start(){
-        Cursor.visible = false;
-
         playButton.Select();
         MenuPanel.Play("mainMenuIn");
         SoundManager.Instance.MenuOpen();

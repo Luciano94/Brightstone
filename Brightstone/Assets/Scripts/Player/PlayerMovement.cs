@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour{
             return;
         }
         
-        if(!playerCombat.isAttack && GameManager.Instance.IsConnected){
+        if(!playerCombat.isAttack){
             Movement();
         }
         
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     private void Rotation(){
-        if(GameManager.Instance.IsConnected){
+        /*if(InputManager.Instance.IsConnected){
             rotH = InputManager.Instance.GetHorizontalAxis();
             rotV = InputManager.Instance.GetVerticalAxis() * -1;
         }else{
@@ -50,7 +50,10 @@ public class PlayerMovement : MonoBehaviour{
             rot.y *= -1;
             rotH = rot.x;
             rotV = rot.y;
-        }
+        }*/
+
+        rotH = InputManager.Instance.GetHorizontalAxis();
+        rotV = InputManager.Instance.GetVerticalAxis() * -1;
 
         if(rotH != 0 || rotV != 0){
             var angle = Mathf.Atan2(rotH, rotV) * Mathf.Rad2Deg;
