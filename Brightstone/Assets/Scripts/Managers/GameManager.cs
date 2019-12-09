@@ -95,18 +95,18 @@ public class GameManager : MonoBehaviour{
             if(Input.GetJoystickNames().Length == 1 && Input.GetJoystickNames()[0].Length > 10){
                 isConnected = true;
                 UIManager.Instance.UnshowPause();
-                Time.timeScale = 1.0f;
+                //Time.timeScale = 1.0f;
             }
             else{
                 isConnected = false;
                 UIManager.Instance.ShowPause();
-                Time.timeScale = 0.0f;
+                //Time.timeScale = 0.0f;
             }
         }
         else{
             isConnected = false;
             UIManager.Instance.ShowPause();
-            Time.timeScale = 0.0f;
+            //Time.timeScale = 0.0f;
         }
 
     }

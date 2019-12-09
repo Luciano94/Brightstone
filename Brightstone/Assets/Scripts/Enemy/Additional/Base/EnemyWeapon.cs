@@ -27,6 +27,7 @@ public class EnemyWeapon : MonoBehaviour{
                 gM.playerSts.Life = enemyStats.AtkDmg;
                 gM.SetEnemyHitFrom(transform.position);
                 gM.ShakerController.Shake(1.2f, 1.2f, 0.1f, 0.2f);
+                TimeScaleModifier.Instance.ReduceTimeScale();
                 UIManager.Instance.LifeUpdate();
             }else{
                 //AudioManager.Instance.PlayerParry();
