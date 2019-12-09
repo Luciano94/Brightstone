@@ -15184,6 +15184,16 @@ PrefabInstance:
       propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 619709236898097328, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 619709236898097328, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: m_ShowToolkit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 619709236898097332, guid: e817498a42f5e7c4c89c3f6f12462b56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e817498a42f5e7c4c89c3f6f12462b56, type: 3}
@@ -17803,6 +17813,7 @@ GameObject:
   - component: {fileID: 1896201171}
   - component: {fileID: 1896201169}
   - component: {fileID: 1896201170}
+  - component: {fileID: 1896201161}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -17929,6 +17940,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23004d4f3bea53346be00a62e80eaf41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1896201161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896201154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f66fde33366c94439abd493a7097d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framesReduced: 3
+  timeScaleReducedTo: 0.3
 --- !u!114 &1896201169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19556,45 +19581,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combos:
-  - combo: 000000000000000000000000010000000200000003000000040000000500000006000000
+  - combo: 0000000001000000020000000300000004000000
   - combo: 0b0000000c0000000d0000000e0000000f0000001000000011000000
-  - combo: 0000000000000000000000000b0000000c0000000d000000010000000200000003000000
   activeCombos: 
   actions:
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0.05, y: 0}
-    size: {x: 2.9, y: 2.2}
+    offset: {x: 0, y: 0.25}
+    size: {x: 3.2, y: 2.6}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: -1.5, y: 0.25}
-    size: {x: 2, y: 2.1}
+    offset: {x: 0, y: 0}
+    size: {x: 2.7, y: 3.4}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: -0.1, y: -0.5}
-    size: {x: 1.9, y: 2.2}
+    offset: {x: 0.15, y: 0}
+    size: {x: 3.8, y: 3.4}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 1.5, y: 0.2}
-    size: {x: 2, y: 2}
+    offset: {x: 0, y: 1.25}
+    size: {x: 3.6, y: 4}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0, y: 1}
-    size: {x: 1, y: 0.5}
+    offset: {x: 0.1, y: -0.25}
+    size: {x: 3.8, y: 3.5}
     radius: 0
-  - action: {fileID: 448669773}
+  - action: {fileID: 0}
     colType: 0
-    offset: {x: 0, y: -0.2}
-    size: {x: 3.7, y: 1.5}
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
     radius: 0
-  - action: {fileID: 448669773}
+  - action: {fileID: 0}
     colType: 0
-    offset: {x: 0, y: -1}
-    size: {x: 2.1, y: 1.2}
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
     radius: 0
   - action: {fileID: 0}
     colType: 0
@@ -19618,39 +19642,39 @@ MonoBehaviour:
     radius: 0
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0.3, y: 2.7}
+    offset: {x: 0.3, y: 2.6}
     size: {x: 0, y: 0}
-    radius: 1.5
+    radius: 1.9
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 1.4}
-    size: {x: 0, y: 0}
-    radius: 1.6
-  - action: {fileID: 823348299}
-    colType: 1
-    offset: {x: 0, y: 0.7}
-    size: {x: 0, y: 0}
-    radius: 1.6
-  - action: {fileID: 823348299}
-    colType: 1
-    offset: {x: 0, y: 2}
+    offset: {x: 0, y: 1.95}
     size: {x: 0, y: 0}
     radius: 2.4
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0.5, y: 2}
+    offset: {x: 0, y: 0.7}
     size: {x: 0, y: 0}
-    radius: 1.7
+    radius: 1.9
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0.2, y: 2}
+    offset: {x: 0, y: 2}
     size: {x: 0, y: 0}
-    radius: 2.5
+    radius: 2.65
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0.15, y: 1.6}
+    offset: {x: 0.7, y: 2.15}
     size: {x: 0, y: 0}
-    radius: 2.2
+    radius: 2
+  - action: {fileID: 823348299}
+    colType: 1
+    offset: {x: 0, y: 2.5}
+    size: {x: 0, y: 0}
+    radius: 2.4
+  - action: {fileID: 823348299}
+    colType: 1
+    offset: {x: 0, y: 1.9}
+    size: {x: 0, y: 0}
+    radius: 3
   standsManager: {fileID: 1099206258}
 --- !u!1 &2126348686
 GameObject:
@@ -19938,27 +19962,42 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 902c3a83a1f31694fa0144db575d7168,
+      objectReference: {fileID: 21300004, guid: e3f1a37be28e4b44dab9be8163d58c84,
         type: 3}
+    - target: {fileID: 4555218929497752118, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555218929497752118, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555218929497752118, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.1
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.y
-      value: -1
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
@@ -19973,17 +20012,17 @@ PrefabInstance:
     - target: {fileID: 3289503426535534086, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Radius
-      value: 2.2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3289503426535534086, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.y
-      value: 1.6
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 3289503426535534086, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.15
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
