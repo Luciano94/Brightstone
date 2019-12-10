@@ -4764,7 +4764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2109171033}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &448669773
 MonoBehaviour:
@@ -13656,6 +13656,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345387693}
   m_CullTransparentMesh: 0
+--- !u!1 &1350134423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350134424}
+  - component: {fileID: 1350134425}
+  m_Layer: 0
+  m_Name: ShurikenB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1350134424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350134423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109171033}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350134425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350134423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: B Shuriken (p2)
+  anim: {fileID: 0}
+  dmg: 11
+  totalTime: 0.5
+  playerCombat: {fileID: 786400176}
+  standToPlay: 2
+  actionName: 2
 --- !u!1 &1367350926
 GameObject:
   m_ObjectHideFlags: 0
@@ -18936,6 +18986,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044057476}
   m_CullTransparentMesh: 0
+--- !u!1 &2044676891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2044676892}
+  - component: {fileID: 2044676893}
+  m_Layer: 0
+  m_Name: ThrustY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2044676892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044676891}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109171033}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2044676893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044676891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae8de8f379471d44ac4bb35f02c3c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Y Thrust (p2)
+  anim: {fileID: 0}
+  dmg: 11
+  totalTime: 0.5
+  playerCombat: {fileID: 786400176}
+  standToPlay: 1
+  actionName: 1
 --- !u!1 &2046088075
 GameObject:
   m_ObjectHideFlags: 0
@@ -19197,7 +19297,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2109171033}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2076354806
 MonoBehaviour:
@@ -19562,9 +19662,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 528453589}
-  - {fileID: 448669772}
   - {fileID: 2076354805}
+  - {fileID: 448669772}
   - {fileID: 823348298}
+  - {fileID: 2044676892}
+  - {fileID: 1350134424}
   m_Father: {fileID: 1903297077}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19582,7 +19684,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Combos:
   - combo: 0000000001000000020000000300000004000000
+  - combo: 0500000006000000070000000800000009000000
   - combo: 0b0000000c0000000d0000000e0000000f0000001000000011000000
+  - combo: 15000000160000001700000018000000
+  - combo: 0000000001000000190000001a0000001b0000001c000000
+  - combo: 0b0000000c0000000d0000001f00000020000000210000002200000023000000
   activeCombos: 
   actions:
   - action: {fileID: 448669773}
@@ -19610,27 +19716,27 @@ MonoBehaviour:
     offset: {x: 0.1, y: -0.25}
     size: {x: 3.8, y: 3.5}
     radius: 0
-  - action: {fileID: 0}
+  - action: {fileID: 2044676893}
     colType: 0
     offset: {x: 0, y: 0}
     size: {x: 0, y: 0}
     radius: 0
-  - action: {fileID: 0}
+  - action: {fileID: 2044676893}
     colType: 0
     offset: {x: 0, y: 0}
     size: {x: 0, y: 0}
     radius: 0
-  - action: {fileID: 0}
+  - action: {fileID: 2044676893}
     colType: 0
     offset: {x: 0, y: 0}
     size: {x: 0, y: 0}
     radius: 0
-  - action: {fileID: 0}
+  - action: {fileID: 2044676893}
     colType: 0
     offset: {x: 0, y: 0}
     size: {x: 0, y: 0}
     radius: 0
-  - action: {fileID: 0}
+  - action: {fileID: 2044676893}
     colType: 0
     offset: {x: 0, y: 0}
     size: {x: 0, y: 0}
@@ -19675,6 +19781,96 @@ MonoBehaviour:
     offset: {x: 0, y: 1.9}
     size: {x: 0, y: 0}
     radius: 3
+  - action: {fileID: 0}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 0}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 0}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 1350134425}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 1350134425}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 1350134425}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 1350134425}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 823348299}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 823348299}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 823348299}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 823348299}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 0}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 0}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 448669773}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 448669773}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 448669773}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 448669773}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
+  - action: {fileID: 448669773}
+    colType: 1
+    offset: {x: 0, y: 0}
+    size: {x: 0, y: 0}
+    radius: 0
   standsManager: {fileID: 1099206258}
 --- !u!1 &2126348686
 GameObject:

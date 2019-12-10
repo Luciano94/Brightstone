@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-public enum ActionState{
+﻿public enum ActionState{
     enterFrames = 0,
     activeFrames,
     exitFrames,
@@ -10,7 +9,6 @@ public enum Actions{
     Y,
     B,
     A,
-    RB,
     Blank,
 }
 
@@ -20,4 +18,3 @@ public struct FrameData{
     public float exitFrames;
     public ActionState State;
 }
-

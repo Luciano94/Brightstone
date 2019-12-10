@@ -154,12 +154,6 @@ public class PlayerCombat : MonoBehaviour{
                 actualAttackAction = Actions.A;
                 isStrong = true;
             }
-            if (InputManager.Instance.GetActionSimpleAttack())
-            {
-                cManager.ManageAction(Actions.RB);
-                actualAttackAction = Actions.RB;
-                isStrong = true;
-            }
         }
     }
 

@@ -26,6 +26,7 @@ public enum Stands
     Thrust,
     Shuriken,
     Zone,
+    Count,
     None
 }
 
@@ -37,45 +38,31 @@ public class ComboManager : MonoBehaviour{
     [SerializeField]private List<ActionInfo> actions; //acciones posibles
     [SerializeField]private StandsManager standsManager;
     private bool found = false;
+    private bool isCombination = false;
     public Stands actualStand { get; private set; }
+    private Stands lastStand;
 
     private void Awake() {
         activeCombos = new List<int>();
         comboIndex = 0;
         currentActionInfo.action = null;
-        actualStand = Stands.Beatdown;
+        actualStand = lastStand = Stands.Beatdown;
         standsManager.ActivateStand(actualStand);
     }
 
 
-    private void Update() { 	
+    private void Update() {
         if(currentActionInfo.action != null && 
         !currentActionInfo.action.IsActive){
             comboIndex = 0;
             activeCombos.Clear();
+            isCombination = false;
             currentActionInfo.action = null;
         }
     }
 
     public void ManageAction(Actions actionNumber){
         if(currentActionInfo.action == null){
-            /*if (actionNumber != Actions.RB){
-                /* Tmb podría haber otro SFX para cuando intentas cambiar de tipo de ataque por el mismo que ya tenes 
-                
-                switch(actionNumber){
-                    case Actions.X:
-                        actualStand = Stands.Beatdown;
-                    break;
-
-                    case Actions.A:
-                        actualStand = Stands.Zone;
-                    break;
-                }
-                /* aca se efecturia un SFX por el cambio de tipo de ataque 
-
-                return;
-            }*/
-
             comboIndex = 0;
             //inicializa el arreglo de combos;
             for (int i = 0; i < Combos.Count; i++){
@@ -86,18 +73,23 @@ public class ComboManager : MonoBehaviour{
                 }
             }
             //se busca la accion
-            if(activeCombos.Count > 0){              
+            if(activeCombos.Count > 0){
                 currentActionInfo = actions[Combos[activeCombos[0]].combo[comboIndex]];
+
+                HandleAction(currentActionInfo.action.actionName);
 
                 //se pone play a la accion
                 int comboIndexValue = Combos[activeCombos[0]].combo[comboIndex];
-                currentActionInfo.action.StartAction(currentActionInfo, (int)actualStand + (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f));
-
-                HandleAction(currentActionInfo.action.actionName);
+                float finalIndex = (int)actualStand +
+                                    (CheckIfIsCombination(currentActionInfo.action.standToPlay) ? (int)Stands.Count : 0) +
+                                    (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f);
+                
+                currentActionInfo.action.StartAction(currentActionInfo, finalIndex);
             }
+            
             //se inicializa el combo index
             comboIndex = 1;
-        }else{    
+        }else{
             if(activeCombos.Count > 0 && 
             comboIndex >= Combos[activeCombos[0]].combo.Count){
 
@@ -129,7 +121,11 @@ public class ComboManager : MonoBehaviour{
                     if(found){
                         //se pone play a esa accion.
                         int comboIndexValue = Combos[activeCombos[index]].combo[comboIndex];
-                        currentActionInfo.action.StartAction(currentActionInfo, (int)actualStand + (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f));
+                        float finalIndex = (int)actualStand +
+                                           (CheckIfIsCombination(currentActionInfo.action.standToPlay) ? (int)Stands.Count : 0) +
+                                           (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f);
+                        
+                        currentActionInfo.action.StartAction(currentActionInfo, finalIndex);
                         //se setea la siguiente action
                         //HandleAction(currentAction.actionName);
                     }
@@ -153,6 +149,13 @@ public class ComboManager : MonoBehaviour{
         }
     }
 
+    private bool CheckIfIsCombination(Stands standToPlay){
+        if (!isCombination && lastStand != standToPlay && comboIndex > 0)
+            isCombination = true;
+        
+        return isCombination;
+    }
+
     public void AddCombo(List<int> newCombo){
         Combo combo;
         combo.combo = newCombo;
@@ -170,6 +173,8 @@ public class ComboManager : MonoBehaviour{
     }
 
     private void HandleAction(Actions actionNumber) {
+        lastStand = actualStand;
+
         switch (actionNumber)
         {
             case Actions.X:
@@ -188,9 +193,6 @@ public class ComboManager : MonoBehaviour{
             case Actions.A:
                 SoundManager.Instance.PlayerAttackLight();
                 actualStand = Stands.Zone;
-                break;
-            case Actions.RB:
-                SoundManager.Instance.PlayerAttackLight();
                 break;
             default:
                 break;
