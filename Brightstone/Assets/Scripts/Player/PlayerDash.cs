@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerDash : MonoBehaviour{
     [Header("Dash Charges")]
@@ -13,7 +14,10 @@ public class PlayerDash : MonoBehaviour{
     private float dashTime;
 
     [Header("Dash HUD")]
-    public GameObject[] dashChargesHud;
+    public Image[] dashChargesHud;
+    public Sprite dash;
+    public Sprite dashEmpty;
+
 
     [Header("Dash Particles")]
     public TrailRenderer dashParticles;
@@ -77,16 +81,16 @@ public class PlayerDash : MonoBehaviour{
     private void HandlerDashUI(){
         switch (actualDashCharges){
             case 0:
-                dashChargesHud[0].SetActive(false);
-                dashChargesHud[1].SetActive(false);
+                dashChargesHud[0].sprite = dashEmpty;
+                dashChargesHud[1].sprite = dashEmpty;
                 break;
             case 1:
-                dashChargesHud[0].SetActive(true);
-                dashChargesHud[1].SetActive(false);
+                dashChargesHud[0].sprite = dash;
+                dashChargesHud[1].sprite = dashEmpty;
                 break;
             case 2:
-                dashChargesHud[0].SetActive(true);
-                dashChargesHud[1].SetActive(true);
+                dashChargesHud[0].sprite = dash;
+                dashChargesHud[1].sprite = dash;
                 break;
             default:
                 break;

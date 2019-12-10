@@ -21,8 +21,6 @@ public class UIManager : MonoBehaviour{
     [SerializeField] private GameObject loadingPanel;
 
     [Header("UI Texts")]
-    [SerializeField] private Text expTxt;
-    //[SerializeField] private Text lifeTxt;
     [SerializeField] private Text atkTxt;
     [SerializeField] private Text mrkTxt;
     [SerializeField] private Text runTimeTxt;
@@ -90,7 +88,6 @@ public class UIManager : MonoBehaviour{
         hpPercentage = hpHitPercentage = actualHp / maxHp;
         playerHitHpFillBar.fillAmount = playerHpFillBar.fillAmount = hpPercentage;
         //lifeTxt.text = actualHp + " / " + maxHp;
-        expTxt.text = gameM.playerSts.Experience.ToString();
 
         playerHpFillBar.color = normalLifeColorBar;
         playerHitHpFillBar.color = hitLifeColorBar;
@@ -132,7 +129,7 @@ public class UIManager : MonoBehaviour{
     }
 
     public void ExpUpdate(){
-        expTxt.text = gameM.playerSts.PlayerLevel.ToString();
+
         float value = gameM.playerSts.Experience / gameM.playerSts.experienceToNextLevel;
         experienceActualFillBar.localScale = new Vector3(value, 1.0f);
     }

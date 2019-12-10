@@ -282,7 +282,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5254902, g: 0, b: 0, a: 1}
@@ -291,10 +291,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 35c5527adba4f434897179acf658144b,
+    m_HighlightedSprite: {fileID: 21300000, guid: 3347d2c63d7836940b033b51dbf33552,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: fc2a4ad0f32adcd4b92c637ac8efa021, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 837eb4af75f1c554ca9ed293b379ecd6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: b6b8088c313e0074cae2500312c9f85a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: e7d21d91c17dd9746a843373da5a7e8c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -342,14 +342,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.11764706, b: 0.11764706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bd541e3c11da99c49853d4441825d785, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34acb6fba24d3554d9e8660ed634a51c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
