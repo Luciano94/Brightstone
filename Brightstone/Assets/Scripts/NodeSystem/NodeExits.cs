@@ -7,7 +7,7 @@ public class NodeExits : MonoBehaviour{
     [SerializeField]GameObject doorD;
     [SerializeField]GameObject doorR;
     [SerializeField]GameObject doorL;
-    [SerializeField]private List<Animator> doorAnimators;
+    //[SerializeField]private List<Animator> doorAnimators;
     private List<Exit> exits; 
 
     public BoxCollider2D GetDoor(Direction dir){
@@ -31,14 +31,14 @@ public class NodeExits : MonoBehaviour{
     public void OpenDoors(){
         for (int i = 0; i < exits.Count; i++){
             exits[i].OpenCloseDoor(false);
-            doorAnimators[i].SetTrigger("OpenTrigger");
+            //doorAnimators[i].SetTrigger("OpenTrigger");
         }
     }
 
     public void CloseDoors(){
         for (int i = 0; i < exits.Count; i++){
             exits[i].OpenCloseDoor(true);
-            doorAnimators[i].SetTrigger("CloseTrigger");
+            //doorAnimators[i].SetTrigger("CloseTrigger");
         }
     }
     
