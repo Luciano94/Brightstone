@@ -30,7 +30,7 @@ public enum NodeType{
 
 public class Node{
     List<Exit> exits;
-    int nodeSize;
+    Vector2Int nodeSize;
     bool[] exitsTakes;
     Vector3 position;
     Vector3[] references;
@@ -46,7 +46,7 @@ public class Node{
         get{return nBehaviour;}
     }
 
-    public Node(Vector3 pos, int nSize){
+    public Node(Vector3 pos, Vector2Int nSize){
         position = pos;
         nodeSize = nSize;
         CreateReference();
@@ -54,7 +54,7 @@ public class Node{
         nBehaviour = NodeBehaviour.Normal;
     }
 
-    public Node(GameObject _node,Vector3 pos, int nSize){
+    public Node(GameObject _node,Vector3 pos, Vector2Int nSize){
         position = pos;
         nodeSize = nSize;
         CreateReference();
@@ -66,16 +66,16 @@ public class Node{
     private void CreateReference(){
         Vector3 pos = position;
         references = new Vector3[4];
-        pos.y += nodeSize;
+        pos.y += nodeSize.y;
         references[0] = pos;
         pos = position;
-        pos.y -= nodeSize;
+        pos.y -= nodeSize.y;
         references[1] = pos;
         pos = position;
-        pos.x += nodeSize;
+        pos.x += nodeSize.x;
         references[2] = pos;
         pos = position;
-        pos.x -= nodeSize;
+        pos.x -= nodeSize.x;
         references[3] = pos;
     }
 

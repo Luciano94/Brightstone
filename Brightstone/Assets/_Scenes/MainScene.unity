@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57f52daba9493343a0ee9ebabe7bb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeSize: 40
+  nodeSize: 0
   playerTracker: {fileID: 2100548701}
 --- !u!1 &85372913
 GameObject:
@@ -11105,7 +11105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preGeneratedRooms: []
-  nodeSize: 41
+  nodeSize: {x: 54, y: 23}
   nodeQuantity: 10
   head: {fileID: 1274867171}
   marketColor: {r: 0.85882354, g: 0.6431373, b: 0.08627451, a: 1}
@@ -15081,6 +15081,16 @@ PrefabInstance:
         type: 3}
       propertyPath: zCamera
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: nodeSize.x
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
+        type: 3}
+      propertyPath: nodeSize.y
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}

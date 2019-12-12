@@ -10,7 +10,7 @@ public class Generate : MonoBehaviour{
     [SerializeField]List<Node> nodes;
 
     [Header("Logic Generation")]
-    [SerializeField]int nodeSize = 40;
+    [SerializeField]Vector2Int nodeSize;
     [SerializeField]int nodeQuantity = 30;
     int nodeMult;
     int nodeQ = -1;
@@ -42,7 +42,8 @@ public class Generate : MonoBehaviour{
         nodeQ++;
         nextPos = head.transform.position;
         state = 0;
-        nodeMult = nodeSize / 10;
+        //nodeMult = nodeSize / 10;
+        nodeMult = 4;
         if(GameManager.Instance.isTutorial)
             PreChargeNodes();
     }
@@ -130,25 +131,25 @@ public class Generate : MonoBehaviour{
         switch (newPos){
             case 0:
                 if(exits[0]){
-                    pos.x += nodeSize;
+                    pos.x += nodeSize.x;
                     return pos;
                 }
             break;
             case 1:
                 if(exits[1]){
-                    pos.x -= nodeSize;
+                    pos.x -= nodeSize.x;
                     return pos;
                 }
             break;
             case 2:
                 if(exits[2]){
-                    pos.y += nodeSize;
+                    pos.y += nodeSize.y;
                     return pos;
                 }
             break;
             case 3:
                 if(exits[3]){
-                    pos.y -= nodeSize;
+                    pos.y -= nodeSize.y;
                     return pos;
                 }
             break;
@@ -164,19 +165,19 @@ public class Generate : MonoBehaviour{
             pos = head.transform.position;
             switch (i){
                 case 0:
-                    pos.x += nodeSize;
+                    pos.x += nodeSize.x;
                     exits[0] = canGo(pos);
                 break;
                 case 1:
-                    pos.x -= nodeSize;
+                    pos.x -= nodeSize.x;
                     exits[1] = canGo(pos);
                 break;
                 case 2:
-                    pos.y += nodeSize;
+                    pos.y += nodeSize.y;
                     exits[2] = canGo(pos);
                 break;
                 case 3:
-                    pos.y -= nodeSize;
+                    pos.y -= nodeSize.y;
                     exits[3] = canGo(pos);
                 break;
             }

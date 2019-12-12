@@ -2,7 +2,7 @@
 
 public class CameraFollow: MonoBehaviour{
 
-	[SerializeField]private float nodeSize = 40;
+	[SerializeField]private Vector2 nodeSize;
 	[SerializeField]private Transform target;
 	[SerializeField]private float zCamera = -10;
 
@@ -21,8 +21,8 @@ public class CameraFollow: MonoBehaviour{
     private void Start() {
         vertExtent = Camera.main.orthographicSize;    
         horzExtent = vertExtent * Screen.width / Screen.height;
-		offsetX = nodeSize;
-		offsetY = nodeSize + 3;
+		offsetX = nodeSize.x;
+		offsetY = nodeSize.y + 3;
 		position = new Vector2(0,0);
 
         // Calculations assume map is position at the origin
@@ -34,29 +34,39 @@ public class CameraFollow: MonoBehaviour{
     }
 
 	public void ResetXY(Vector3 pos){
-		if(position.x == pos.x){
-			nodeSize = position.y - pos.y; 
+		/*if(position.x == pos.x){
+			nodeSize.y = position.y - pos.y; 
 		}else{
-			nodeSize = position.x - pos.x;
+			nodeSize.x = position.x - pos.x;
 		}
-		if(nodeSize < 0){
+		if(nodeSize.x < 0 && nodeSize.y < 0){
 			nodeSize*=-1;
-		}
+		}*/
+
+		nodeSize.x = position.x - pos.x;
+		nodeSize.y = position.y - pos.y;
+
+		if (nodeSize.x < 0)
+			nodeSize.x *= -1;
+		if (nodeSize.y < 0)
+			nodeSize.y *= -1;
+
 		position = pos;
 		if(minX > pos.x){
-			minX -= nodeSize;
-			maxX -= nodeSize;
+			minX -= nodeSize.x;
+			maxX -= nodeSize.x;
 		}else if(maxX < pos.x){
-			minX += nodeSize;
-			maxX += nodeSize;
+			minX += nodeSize.x;
+			maxX += nodeSize.x;
 		}
 		if(minY > pos.y){
-			minY -= nodeSize;
-			maxY -= nodeSize;
+			minY -= nodeSize.y;
+			maxY -= nodeSize.y;
 		}else if(maxY < pos.y){
-			minY += nodeSize;
-			maxY += nodeSize;
+			minY += nodeSize.y;
+			maxY += nodeSize.y;
 		}
+		
 		
 	}
      
