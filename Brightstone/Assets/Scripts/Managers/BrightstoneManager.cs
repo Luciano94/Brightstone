@@ -45,8 +45,8 @@ public class BrightstoneManager : MonoBehaviour{
     }
 
     private void Update(){
-        if (gM.activeRoom.GetRoomsBehaviour().Complete)
-            MakeParticlesMovement();
+        //if (gM.activeRoom.GetRoomsBehaviour().Complete)
+        //    MakeParticlesMovement();
     }
 
     private void MakeParticlesMovement(){

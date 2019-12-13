@@ -308,6 +308,9 @@ MonoBehaviour:
   doorD: {fileID: 5014526295193295828}
   doorR: {fileID: 1493480196602599459}
   doorL: {fileID: 8837728665457753847}
+  doorAnimators:
+  - {fileID: 2019083607624330245}
+  - {fileID: 4669269336801225819}
 --- !u!114 &4988793626787987311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,6 +1776,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1883739334673281010}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &4669269336801225819 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6550750953040544681, guid: a12c9b5e9be96b943bd9cb14cb5d88c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1883739334673281010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3293396684848733456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1922,6 +1931,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c2dd81bb625a643873f4a59c7603e7, type: 3}
+--- !u!95 &2019083607624330245 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3296164497731704541, guid: b1c2dd81bb625a643873f4a59c7603e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3583578816478345944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7339852740149205083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6081839578821108355, guid: b1c2dd81bb625a643873f4a59c7603e7,

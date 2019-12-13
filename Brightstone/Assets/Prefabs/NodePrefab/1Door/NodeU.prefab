@@ -308,7 +308,7 @@ MonoBehaviour:
   doorR: {fileID: 1493480196602599459}
   doorL: {fileID: 8837728665457753847}
   doorAnimators:
-  - {fileID: 0}
+  - {fileID: 1436664181574381585}
 --- !u!114 &4988793626787987311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,6 +1783,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a12c9b5e9be96b943bd9cb14cb5d88c3, type: 3}
+--- !u!95 &1436664181574381585 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6550750953040544681, guid: a12c9b5e9be96b943bd9cb14cb5d88c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5267240409390396344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7649736204258296911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2535999049296705527, guid: a12c9b5e9be96b943bd9cb14cb5d88c3,

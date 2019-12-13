@@ -308,6 +308,10 @@ MonoBehaviour:
   doorD: {fileID: 5014526295193295828}
   doorR: {fileID: 1493480196602599459}
   doorL: {fileID: 8837728665457753847}
+  doorAnimators:
+  - {fileID: 4053096271111092558}
+  - {fileID: 2835135346898515114}
+  - {fileID: 3176872373339905497}
 --- !u!114 &4988793626787987311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1768,6 +1772,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c2dd81bb625a643873f4a59c7603e7, type: 3}
+--- !u!95 &4053096271111092558 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3296164497731704541, guid: b1c2dd81bb625a643873f4a59c7603e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1549565582691807123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4748519620888956176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6081839578821108355, guid: b1c2dd81bb625a643873f4a59c7603e7,
@@ -1923,6 +1933,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46d218bdc08250142b03dfc1c478d91d, type: 3}
+--- !u!95 &3176872373339905497 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7128959615493834333, guid: 46d218bdc08250142b03dfc1c478d91d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5690758174507850628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6183398777570404743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1960888853948264963, guid: 46d218bdc08250142b03dfc1c478d91d,
@@ -2143,6 +2159,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a12c9b5e9be96b943bd9cb14cb5d88c3, type: 3}
+--- !u!95 &2835135346898515114 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6550750953040544681, guid: a12c9b5e9be96b943bd9cb14cb5d88c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 9056912416612464387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6809777341473767668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2535999049296705527, guid: a12c9b5e9be96b943bd9cb14cb5d88c3,

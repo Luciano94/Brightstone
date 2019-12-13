@@ -308,6 +308,10 @@ MonoBehaviour:
   doorD: {fileID: 5014526295193295828}
   doorR: {fileID: 1493480196602599459}
   doorL: {fileID: 8837728665457753847}
+  doorAnimators:
+  - {fileID: 2019083607624330245}
+  - {fileID: 7678796758132468748}
+  - {fileID: 2347449717015138374}
 --- !u!114 &4988793626787987311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1843,6 +1847,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c2dd81bb625a643873f4a59c7603e7, type: 3}
+--- !u!95 &2019083607624330245 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3296164497731704541, guid: b1c2dd81bb625a643873f4a59c7603e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3583578816478345944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7339852740149205083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6081839578821108355, guid: b1c2dd81bb625a643873f4a59c7603e7,
@@ -1923,6 +1933,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46d218bdc08250142b03dfc1c478d91d, type: 3}
+--- !u!95 &2347449717015138374 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7128959615493834333, guid: 46d218bdc08250142b03dfc1c478d91d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4790976693736756763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6434111073858692120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1960888853948264963, guid: 46d218bdc08250142b03dfc1c478d91d,
@@ -2003,6 +2019,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e3e35b7e0baf3d4f9de688827a0bb46, type: 3}
+--- !u!95 &7678796758132468748 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 690950064681121070, guid: 7e3e35b7e0baf3d4f9de688827a0bb46,
+    type: 3}
+  m_PrefabInstance: {fileID: 7135443006210038050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1389866318558025810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8092937290652811632, guid: 7e3e35b7e0baf3d4f9de688827a0bb46,

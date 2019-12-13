@@ -32,6 +32,7 @@ public class NodeExits : MonoBehaviour{
         for (int i = 0; i < exits.Count; i++){
             exits[i].OpenCloseDoor(false);
             doorAnimators[i].SetTrigger("OpenTrigger");
+            Debug.Log("Opening");
         }
     }
 
@@ -39,6 +40,7 @@ public class NodeExits : MonoBehaviour{
         for (int i = 0; i < exits.Count; i++){
             exits[i].OpenCloseDoor(true);
             doorAnimators[i].SetTrigger("CloseTrigger");
+            Debug.Log("Closing");
         }
     }
     
