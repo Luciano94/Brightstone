@@ -66,6 +66,7 @@ public class EnemyStats : MonoBehaviour{
 
                     switch(enemyType){
                         case EnemyType.Archer:
+                            
                             SoundManager.Instance.EnemyArcherDeath(gameObject);
                         break;
                         case EnemyType.Boss:
