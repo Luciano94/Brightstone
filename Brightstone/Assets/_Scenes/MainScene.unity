@@ -17948,6 +17948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brightstoneParticles: {fileID: 2853793051058669794, guid: db0e22bde9159f945ab24e14efd3dc37,
     type: 3}
+  movSpeed: 4
+  minDist: 1
   brightstonesData:
   - name: CombatBeatdown
     color:
