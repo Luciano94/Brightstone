@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1960888853948264963}
   - component: {fileID: 7511922250994388031}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: doorD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5782173550748680234}
   - component: {fileID: 6208672182774832414}
   - component: {fileID: 7128959615493834333}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Grille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7635964897488165158}
   - component: {fileID: 8519253450108312545}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: UpDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

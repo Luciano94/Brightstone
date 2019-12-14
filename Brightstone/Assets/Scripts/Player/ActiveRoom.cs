@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActiveRoom : MonoBehaviour
 {
-    [SerializeField]private Color activeColor;
-    [SerializeField]private Color normalColor;
-    [SerializeField]private CameraFollow cameraFollow;
+    [SerializeField] private Color activeColor;
+    [SerializeField] private Color normalColor;
+    [SerializeField] private CameraFollow cameraFollow;
+    [SerializeField] private float distToTP;
     private Transform activeRoom = null;
     private RoomsBehaviour roomsBehaviour;
     private NodeExits doorManager;
@@ -21,7 +20,10 @@ public class ActiveRoom : MonoBehaviour
             activeRoom = other.gameObject.GetComponent<RoomReference>().thePadre;
             roomsBehaviour = activeRoom.GetComponent<RoomsBehaviour>();
 
+            UpdatePosition();
+            
             if(!roomsBehaviour.Complete){
+
                 if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Boss){
                     SoundManager.Instance.RoomBossEnter();
                 } else {
@@ -36,6 +38,30 @@ public class ActiveRoom : MonoBehaviour
             }else{
                 HandleNormalRooms(other);
             }
+        }
+    }
+
+    private void UpdatePosition(){
+
+        Axis4Direction dir = Calculations.Get4AxisDirection(roomsBehaviour.transform.position - transform.position);
+
+        switch (dir)
+        {
+            case Axis4Direction.Up:
+                transform.Translate(0.0f, distToTP, 0.0f);
+            break;
+            
+            case Axis4Direction.Right:
+                transform.Translate(distToTP, 0.0f, 0.0f);
+            break;
+
+            case Axis4Direction.Down:
+                transform.Translate(0.0f, -distToTP, 0.0f);
+            break;
+
+            case Axis4Direction.Left:
+                transform.Translate(-distToTP, 0.0f, 0.0f);
+            break;
         }
     }
 
@@ -62,16 +88,16 @@ public class ActiveRoom : MonoBehaviour
 
     private void ChangeLayer(int layer){
         foreach (Transform child in activeRoom){
-            if(child.gameObject.layer != layer)
-                child.gameObject.layer = layer;
-                foreach (Transform childofChild in child){
-                    if(childofChild.gameObject.layer != layer)
-                        childofChild.gameObject.layer = layer;
-                }
+            child.gameObject.layer = layer;
+            ChangeChildLayer(child, layer);
         }
-        if(roomsBehaviour.HaveMarket){
-            roomsBehaviour.SwitchMarket();
-        }
+    }
+
+    private void ChangeChildLayer(Transform child, int layer){
+        child.gameObject.layer = layer;
+
+        for (int i = 0; i < child.transform.childCount; i++)
+            ChangeChildLayer(child.transform.GetChild(i), layer);
     }
 
     public NodeExits GetNodeExits(){

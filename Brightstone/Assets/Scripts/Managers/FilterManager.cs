@@ -43,4 +43,8 @@ public class FilterManager : MonoBehaviour
     public static void SetVignetteSmoothness(float value){
         cV.smoothness.value = minSmoothValue + value;
     }
+
+    public static void SetVignetteColor(ColorParameter value){
+        cV.color = value;
+    }
 }

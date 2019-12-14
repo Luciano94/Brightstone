@@ -70,6 +70,8 @@ public class UIManager : MonoBehaviour{
     [Header("Pause Canvas")]
     [SerializeField] private GameObject pauseCamvas;
 
+    [Header("Death Screen")]
+    [SerializeField] private Image deathScreen;
 
     public GameObject TextPopupPrefab{
         get{return textPopupPrefab;}
@@ -112,11 +114,17 @@ public class UIManager : MonoBehaviour{
                 timeLeft -= Time.deltaTime;
         }
 
-        if (gameM.playerSts.IsLowHealth){
-            FilterManager.SetVignetteSmoothness(Mathf.PingPong(Time.time * 0.2f, smoothnessLimit));
-        }
+        if (gameM.playerAlive){
 
-        TimeUpdate();
+            if (gameM.playerSts.IsLowHealth){
+                FilterManager.SetVignetteSmoothness(Mathf.PingPong(Time.time * 0.2f, smoothnessLimit));
+            }
+
+            TimeUpdate();
+        }
+        else{
+            //deathScreen.color
+        }
     }
 
     void TimeUpdate(){
