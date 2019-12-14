@@ -15,7 +15,6 @@ public class Generate : MonoBehaviour{
     int nodeMult;
     int nodeQ = -1;
     int nodeBoss = 0;
-    int nodeMarket = 0;
     Vector3 nextPos;
     Vector3 nullVec = new Vector3(-1,-1,-1);
 
@@ -34,11 +33,12 @@ public class Generate : MonoBehaviour{
 
     private void Start() {
        // nodeBoss = Random.Range(5,nodeQ);
-        nodeMarket = Random.Range(0, nodeQ);
         //if(nodeBoss == nodeMarket)
         //    nodeBoss++;
         nodes = new List<Node>();
         CreateNode();
+        nodes[0].SetBehaviour(NodeBehaviour.FirstRoom);
+        GameManager.Instance.setPlayerPos(nodes[0].Position);
         nodeQ++;
         nextPos = head.transform.position;
         state = 0;
@@ -84,7 +84,12 @@ public class Generate : MonoBehaviour{
             {
                 case 0:
                     if(nodeQ < nodeQuantity){
-                        nextPos = GetNewPosition();
+                        if(nodeQ > 5)
+                            nextPos = GetNewPosition();
+                        else{
+                            nextPos = head.transform.position;
+                            nextPos.x += nodeSize.x;
+                        }
                         if(nextPos != nullVec){
                             head.transform.position = nextPos;
                             CreateNode();
@@ -113,41 +118,29 @@ public class Generate : MonoBehaviour{
 #region StateOne
     private void CreateNode(){
         Node n = new Node(head.transform.position, nodeSize);
-        if(nodeQ == nodeMarket){
-            n.SetBehaviour(NodeBehaviour.Market);
-        }else{
-            //if(nodeQ == nodeBoss)
-                //n.SetBehaviour(NodeBehaviour.Boss);
-            //else
-                n.SetBehaviour(NodeBehaviour.Normal);
-        }
+        if(nodeQ > 0)
+            n.SetBehaviour(NodeBehaviour.Normal);
         nodes.Add(n); 
     }
 
     private Vector3 GetNewPosition(){
         Vector3 pos= head.transform.position;
         GetAvailablePos();
-        int newPos = Random.Range(0,4);
+        int newPos = Random.Range(0,3);
         switch (newPos){
             case 0:
-                if(exits[0]){
+            if(exits[0]){
                     pos.x += nodeSize.x;
                     return pos;
                 }
             break;
             case 1:
-                if(exits[1]){
-                    pos.x -= nodeSize.x;
-                    return pos;
-                }
-            break;
-            case 2:
                 if(exits[2]){
                     pos.y += nodeSize.y;
                     return pos;
                 }
             break;
-            case 3:
+            case 2:
                 if(exits[3]){
                     pos.y -= nodeSize.y;
                     return pos;
@@ -198,8 +191,9 @@ public class Generate : MonoBehaviour{
     private void SetExit(){
         bool haveBoss = false;
         for (int i = 0; i < nodes.Count; i++){
-            nodes[i].setExits(nodes);
-            if(i > 1 && nodes[i].getCantExits() == 1 && !haveBoss){
+            nodes[i].setExits(nodes);        
+            if(nodes[i].Behaviour != NodeBehaviour.FirstRoom &&
+             nodes[i].getCantExits() == 1 && !haveBoss){
                 nodes[i].SetBehaviour(NodeBehaviour.Boss);
                 haveBoss = true;
             }
@@ -231,6 +225,11 @@ public class Generate : MonoBehaviour{
                     bossColor);
                 break;
                 case NodeBehaviour.Market:
+                    go.GetComponent<RoomsBehaviour>().SetMapNode(
+                    mapNode.GetComponent<RenderReference>().node, 
+                    marketColor);
+                break;
+                case NodeBehaviour.FirstRoom:
                     go.GetComponent<RoomsBehaviour>().SetMapNode(
                     mapNode.GetComponent<RenderReference>().node, 
                     marketColor);

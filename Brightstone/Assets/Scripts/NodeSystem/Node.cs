@@ -7,6 +7,7 @@ public enum NodeBehaviour{
     Boss,
     MediumBoss,
     Market,
+    FirstRoom,
     Tutorial,
 }
 
@@ -93,12 +94,30 @@ public class Node{
 
     public void setExits(List<Node> nodes){
         exitsTakes = new bool[4]{false,false,false,false};
+
+        for (int i = 0; i < references.Length; i++){
+            for (int j = 0; j < nodes.Count; j++){
+               if(references[i] == nodes[j].Position ){
+                   exitsTakes[i] = true;
+                   exits.Add(new Exit((Direction)i));
+               }
+            }
+        }
+        setType();
+    }
+
+    public void setExitsWhitNDoors(List<Node> nodes, int cant){
+        exitsTakes = new bool[4]{false,false,false,false};
+        int actualCant = 0;
         for (int i = 0; i < references.Length; i++){
             for (int j = 0; j < nodes.Count; j++){
                if(references[i] == nodes[j].Position){
                    exitsTakes[i] = true;
                    exits.Add(new Exit((Direction)i));
-               } 
+                   actualCant++;
+               }
+               if(actualCant == cant)
+                    break;
             }
         }
         setType();
@@ -221,6 +240,9 @@ public class Node{
                 return true;
             case NodeBehaviour.MediumBoss:
                 nBehaviour = NodeBehaviour.MediumBoss;
+                return true;
+            case NodeBehaviour.FirstRoom:
+                nBehaviour = NodeBehaviour.FirstRoom;
                 return true;
             case NodeBehaviour.Market:
                 nBehaviour = NodeBehaviour.Market;

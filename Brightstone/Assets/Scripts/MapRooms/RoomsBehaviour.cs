@@ -114,6 +114,9 @@ public class RoomsBehaviour : MonoBehaviour{
             case NodeBehaviour.Tutorial:
                 //isComplete = true;
             break;
+            case NodeBehaviour.FirstRoom:
+                isComplete = true;
+            break;
         }
     }
 
