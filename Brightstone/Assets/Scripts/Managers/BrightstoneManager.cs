@@ -23,6 +23,11 @@ public class BrightstoneManager : MonoBehaviour{
         public float sizeOnStart;
     }
 
+    public struct ActiveBrightstone{
+        public Transform transform;
+        public BrightstoneTypes type;
+    }
+
     public enum BrightstoneTypes{
         CombatBeatdown,
         CombatThrust,
@@ -32,12 +37,13 @@ public class BrightstoneManager : MonoBehaviour{
         Count,
     }
 
-    [SerializeField] private GameObject brightstoneParticles;
+    [SerializeField] private GameObject brightstoneParticlesGO;
     [SerializeField] private float movSpeed;
     [SerializeField] private float minDist;
+    [SerializeField] private float givenExperience;
     [SerializeField] private BrightstoneData[] brightstonesData;
 
-    private List<Transform> particles = new List<Transform>();
+    private HashSet<ActiveBrightstone> particles = new HashSet<ActiveBrightstone>();
     private GameManager gM;
 
     private void Start(){
@@ -45,19 +51,34 @@ public class BrightstoneManager : MonoBehaviour{
     }
 
     private void Update(){
-        //if (gM.activeRoom.GetRoomsBehaviour().Complete)
-        //    MakeParticlesMovement();
+        if (particles.Count > 0 && gM.activeRoom.GetRoomsBehaviour().Complete)
+            MakeParticlesMovement();
     }
 
     private void MakeParticlesMovement(){
-        foreach (Transform particle in particles){
-            Vector3 diff = particle.position - gM.PlayerPos;
+        foreach (ActiveBrightstone particle in particles){
+            Vector3 diff = gM.PlayerPos - particle.transform.position;
 
-            particle.position += diff.normalized * movSpeed * Time.deltaTime;
+            particle.transform.position += diff.normalized * movSpeed * Time.deltaTime;
 
             if (diff.magnitude < minDist){
-                particle.GetComponent<ParticleSystem>().Stop();
+                particle.transform.GetComponent<ParticleSystem>().Stop();
+                particle.transform.GetComponent<Autodestroy>().enabled = true;
                 particles.Remove(particle);
+                
+                switch(particle.type){
+                    case BrightstoneTypes.Experience:
+                        GameManager.Instance.playerSts.AddExperience(givenExperience);
+                        
+                    break;
+
+                    default:
+
+                    break;
+                }
+
+                return;
+
                 // Here i have to make a call to someone telling to:
                 //  - Increment experience.
                 //  - Increment the combo of an attack.
@@ -82,8 +103,9 @@ public class BrightstoneManager : MonoBehaviour{
             }
         }
 
-        GameObject particle = Instantiate(brightstoneParticles, locationToSpawn, transform.rotation);
-        particles.Add(particle.transform);
+        GameObject particle = Instantiate(brightstoneParticlesGO, locationToSpawn, transform.rotation);
+
+        particles.Add(new ActiveBrightstone() { transform = particle.transform, type = bType });
         var main = particle.GetComponent<ParticleSystem>().main;
 
         main.startSize = brightstonesData[(int)bType].sizeOnStart;

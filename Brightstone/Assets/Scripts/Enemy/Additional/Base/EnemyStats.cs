@@ -50,9 +50,6 @@ public class EnemyStats : MonoBehaviour{
                     OnHit.Invoke();
                 }
                 else{
-                        GameManager.Instance.playerSts.Experience = experience;
-                        UIManager.Instance.ExpUpdate();
-                        
                     if (!GameManager.Instance.isTutorial){
                         myRoom.GetComponent<RoomsBehaviour>().EnemyDeath(GetComponent<EnemyBase>());
                         if (enemyType == EnemyType.Boss){
@@ -76,6 +73,8 @@ public class EnemyStats : MonoBehaviour{
                             SoundManager.Instance.EnemyMeleeDeath(gameObject);
                         break;
                     }
+
+                    BrightstoneManager.Instance.OnEnemyDeath(enemyType, transform.position);
 
                     OnDeath.Invoke();
                     shadow.onDeath();

@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour{
     [SerializeField] int lostExpPercent = 40;
     private float atkDmg = 0.0f;
     private float experience = 0;
+    private float experienceToAdd = 0;
     public float experienceToNextLevel;
     private int playerLevel = 0;
     private bool isLowHealth = false;
@@ -20,6 +21,13 @@ public class PlayerStats : MonoBehaviour{
     private void Start(){
         SoundManager.Instance.PlayerRespawn();
         experienceToNextLevel = 100;
+    }
+
+    private void Update(){
+        if (experienceToAdd > 0 /* && No esta en pantalla de mejora*/){
+            Experience = 1;
+            experienceToAdd--;
+        }
     }
 
     public int Defense{
@@ -118,6 +126,10 @@ public class PlayerStats : MonoBehaviour{
                 UIManager.Instance.ExpUpdate();
         }
 
+    }
+
+    public void AddExperience(float experienceToAdd){
+        this.experienceToAdd += experienceToAdd;
     }
 
     public float Experience{

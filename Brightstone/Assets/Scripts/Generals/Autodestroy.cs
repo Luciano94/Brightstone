@@ -3,6 +3,10 @@
 public class Autodestroy : MonoBehaviour{
     public float timeToDestroy;
 
+    public Autodestroy(float timeToDestroy){
+        this.timeToDestroy = timeToDestroy;
+    }
+
     private void Update(){
         timeToDestroy -= Time.deltaTime;
 

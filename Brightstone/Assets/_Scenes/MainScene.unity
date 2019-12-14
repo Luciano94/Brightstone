@@ -17946,10 +17946,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68667be8b2a32bd41b0a9110f73556ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brightstoneParticles: {fileID: 2853793051058669794, guid: db0e22bde9159f945ab24e14efd3dc37,
+  brightstoneParticlesGO: {fileID: 2853793051058669794, guid: db0e22bde9159f945ab24e14efd3dc37,
     type: 3}
   movSpeed: 4
   minDist: 1
+  givenExperience: 100
   brightstonesData:
   - name: CombatBeatdown
     color:
