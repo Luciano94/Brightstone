@@ -22,21 +22,22 @@ public class ActiveRoom : MonoBehaviour
 
             UpdatePosition();
             
-            if(!roomsBehaviour.Complete){
-
-                if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Boss){
-                    SoundManager.Instance.RoomBossEnter();
-                } else {
-                    SoundManager.Instance.RoomNewEnter();
-                }
-            }
-
             doorManager = activeRoom.GetComponent<NodeExits>();
             cameraFollow.ResetXY(activeRoom.transform.position);
             if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Tutorial){
                 HandleTutorialRooms(other);
             }else{
                 HandleNormalRooms(other);
+            }
+
+            if(!roomsBehaviour.Complete){
+                doorManager.CloseDoors();
+                
+                if(roomsBehaviour.NodeBehaviour == NodeBehaviour.Boss){
+                    SoundManager.Instance.RoomBossEnter();
+                } else {
+                    SoundManager.Instance.RoomNewEnter();
+                }
             }
         }
     }
@@ -72,17 +73,14 @@ public class ActiveRoom : MonoBehaviour
             RunSaver.currentRun.data.roomsDiscovered++;
             roomsBehaviour.setEnemiesRoom();
             roomsBehaviour.ActiveEnemies();
-            doorManager.CloseDoors();
-        }else{
-            doorManager.OpenDoors();
         }
+
         ChangeLayer(9);
     }
 
     private void HandleTutorialRooms(Collider2D other){
         if(!roomsBehaviour.HaveBoss && !roomsBehaviour.HaveMarket)
             roomsBehaviour.SetColorNode(activeColor);
-            //doorManager.CloseDoors();
             ChangeLayer(9);
     }
 
