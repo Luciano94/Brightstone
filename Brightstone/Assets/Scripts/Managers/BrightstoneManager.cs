@@ -45,16 +45,20 @@ public class BrightstoneManager : MonoBehaviour{
     private HashSet<ActiveBrightstone> particles = new HashSet<ActiveBrightstone>();
     private bool movingToPlayer = false;
     private GameManager gM;
+    private RoomsBehaviour rB;
 
     private void Start(){
         gM = GameManager.Instance;
     }
 
     private void Update(){
-        if (!movingToPlayer && gM.activeRoom.GetRoomsBehaviour().Complete && particles.Count > 0){
-            movingToPlayer = true;
-            StopYAxisMovement();
-        }
+        rB = gM.activeRoom.GetRoomsBehaviour();
+
+        if (rB)
+            if (rB.Complete && !movingToPlayer && particles.Count > 0){
+                movingToPlayer = true;
+                StopYAxisMovement();
+            }
 
         if (movingToPlayer)
             MakeParticlesMovement();
