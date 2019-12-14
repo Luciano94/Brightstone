@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour{
     [SerializeField] private ShakerController shakerController;
     [SerializeField] private ZoomWhenParrying zoomWhenParrying;
 
+    private Vector3 initPos;
+
     private const int mainMenuIndex = 0;
 
     /* Player and Boss components */
@@ -186,6 +188,20 @@ public class GameManager : MonoBehaviour{
         //AudioManager.Instance.StopTheme();
         UIManager.Instance.RunDeathAnimations();
         MenuManager.Instance.LoseMenuCanvas = true;
+    }
+
+
+    public void setPlayerPos(Vector3 Nodepos){
+        player.transform.position = Nodepos;
+        Debug.Log("setPlayerPos");
+    }
+
+    public void PauseGame(bool pause){
+        if(pause){
+            Time.timeScale = 0;
+        }else{
+            Time.timeScale = 1;
+        }
     }
 
     public void PlayerWin(){

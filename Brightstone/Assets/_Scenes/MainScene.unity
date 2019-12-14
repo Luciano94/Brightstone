@@ -15191,7 +15191,7 @@ PrefabInstance:
     - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: zCamera
-      value: -10
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 619709238413673003, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}

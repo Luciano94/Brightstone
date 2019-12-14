@@ -229,6 +229,7 @@ public class UIManager : MonoBehaviour{
         else{
             market.SetActive(true);
             MarketCanvasManager.Instance.EnterMarket();
+            GameManager.Instance.PauseGame(true);
         }
        // requiredTxt.text = ExperienceMarket.Instance.Required;
         if (!InputManager.Instance.IsConnected){
@@ -247,6 +248,7 @@ public class UIManager : MonoBehaviour{
 
     public void ExitMarket(){
         market.SetActive(false);
+        GameManager.Instance.PauseGame(false);
     }
 
     public void BossDamaged(){
