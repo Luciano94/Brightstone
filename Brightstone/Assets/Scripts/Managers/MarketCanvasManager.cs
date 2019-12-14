@@ -120,6 +120,7 @@ public class MarketCanvasManager : MonoBehaviour{
             plusLifeButton.interactable = true;
             plusAttackButton.interactable = true;
         }
+       //GameManager.Instance.PauseGame(true);
        /*// confirmButton.interactable = false;
         playerSts = GameManager.Instance.playerSts;
         UpdateStats();
@@ -304,6 +305,7 @@ public class MarketCanvasManager : MonoBehaviour{
             SoundManager.Instance.MenuItemHover();
             playerSts.setLifeStat = playerSts.MaxLife() + 50;
             marketGO.SetActive(false);
+            GameManager.Instance.PauseGame(false);
         }
        /* if(!operation && canMinus && newLifeLevel > lifeLevel){
             newPlayerExperience += oldLevelrequiredExp;
@@ -348,6 +350,8 @@ public class MarketCanvasManager : MonoBehaviour{
             SoundManager.Instance.MenuItemHover();
             playerSts.setAtkMult += 0.5f;
             marketGO.SetActive(false);
+            GameManager.Instance.PauseGame(false);
+
         }
         /*if(!operation && canMinus && newAttackLevel > attackLevel){
             newPlayerExperience += oldLevelrequiredExp;

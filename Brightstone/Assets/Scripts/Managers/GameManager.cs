@@ -195,6 +195,14 @@ public class GameManager : MonoBehaviour{
         Debug.Log("setPlayerPos");
     }
 
+    public void PauseGame(bool pause){
+        if(pause){
+            Time.timeScale = 0;
+        }else{
+            Time.timeScale = 1;
+        }
+    }
+
     public void PlayerWin(){
         PlayerPrefs.SetInt("XP", (int)playerSts.Experience);
         PlayerPrefs.Save();

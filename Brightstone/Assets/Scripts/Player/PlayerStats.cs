@@ -25,8 +25,8 @@ public class PlayerStats : MonoBehaviour{
 
     private void Update(){
         if (experienceToAdd > 0 /* && No esta en pantalla de mejora*/){
-            Experience = 1;
-            experienceToAdd--;
+            Experience = 2;
+            experienceToAdd-=2;
         }
     }
 
@@ -141,6 +141,7 @@ public class PlayerStats : MonoBehaviour{
                     playerLevel++;
                     experience -= experienceToNextLevel;
                     experienceToNextLevel *= 2;
+                    UIManager.Instance.EnterMarket();
                 }
                 RunSaver.currentRun.data.expObtained += (uint)value;
                 UIManager.Instance.ExpUpdate();
