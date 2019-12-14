@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class BrightstoneManager : MonoBehaviour{
@@ -44,6 +43,7 @@ public class BrightstoneManager : MonoBehaviour{
     [SerializeField] private BrightstoneData[] brightstonesData;
 
     private HashSet<ActiveBrightstone> particles = new HashSet<ActiveBrightstone>();
+    private bool movingToPlayer = false;
     private GameManager gM;
 
     private void Start(){
@@ -51,8 +51,20 @@ public class BrightstoneManager : MonoBehaviour{
     }
 
     private void Update(){
-        if (particles.Count > 0 && gM.activeRoom.GetRoomsBehaviour().Complete)
+        if (!movingToPlayer && gM.activeRoom.GetRoomsBehaviour().Complete && particles.Count > 0){
+            movingToPlayer = true;
+            StopYAxisMovement();
+        }
+
+        if (movingToPlayer)
             MakeParticlesMovement();
+    }
+
+    private void StopYAxisMovement(){
+        foreach (ActiveBrightstone particle in particles){
+            ParticleSystem.VelocityOverLifetimeModule lOLTM = particle.transform.GetComponent<ParticleSystem>().velocityOverLifetime;
+            lOLTM.enabled = false;
+        }
     }
 
     private void MakeParticlesMovement(){
@@ -76,6 +88,9 @@ public class BrightstoneManager : MonoBehaviour{
 
                     break;
                 }
+
+                if (particles.Count == 0)
+                    movingToPlayer = false;
 
                 return;
 
