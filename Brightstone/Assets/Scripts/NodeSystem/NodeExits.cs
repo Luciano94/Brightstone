@@ -41,5 +41,4 @@ public class NodeExits : MonoBehaviour{
             doorAnimators[i].SetTrigger("CloseTrigger");
         }
     }
-    
 }
