@@ -9,6 +9,9 @@ public class PoolManager : MonoBehaviour
     [SerializeField]private GameObject[] nodeR;
     [SerializeField]private GameObject[] nodeU;
     [SerializeField]private GameObject[] nodeD;
+    [SerializeField]private GameObject[] nodeHUB;
+
+
     [Header("Two Exit")]
     [SerializeField]private GameObject[] nodeLR;
     [SerializeField]private GameObject[] nodeUD;
@@ -35,6 +38,12 @@ public class PoolManager : MonoBehaviour
             return instance;
         }
     }
+
+    public GameObject DrawHUBNode(Vector3 pos, List<Exit> exits){
+        GameObject go = Instantiate(nodeHUB[Random.Range(0,nodeHUB.Length)], pos, Quaternion.identity);
+        return go;
+    }
+
 
     public GameObject DrawExitsNode(NodeType nType, Vector3 pos, List<Exit> exits){
         GameObject[] node;

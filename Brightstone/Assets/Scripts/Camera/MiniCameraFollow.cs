@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MiniCameraFollow : MonoBehaviour{
 
-	[SerializeField]private int nodeSize;
+	[SerializeField]private float nodeSize;
 	[SerializeField]private Transform playerTracker;
 	private Vector3 pos;
 
 	private void Start() {
-		nodeSize = 4;
+		nodeSize = 4.8f;
 	}
 
 	void Update () {

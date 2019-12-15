@@ -189,12 +189,6 @@ public class GameManager : MonoBehaviour{
         MenuManager.Instance.LoseMenuCanvas = true;
     }
 
-
-    public void setPlayerPos(Vector3 Nodepos){
-        player.transform.position = Nodepos;
-        Debug.Log("setPlayerPos");
-    }
-
     public void PauseGame(bool pause){
         if(pause){
             Time.timeScale = 0;

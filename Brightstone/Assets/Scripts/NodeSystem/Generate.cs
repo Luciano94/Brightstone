@@ -8,11 +8,12 @@ public class Generate : MonoBehaviour{
     [SerializeField] GameObject[] preGeneratedRooms;
     private Node[] preGeneratedNodes;
     [SerializeField]List<Node> nodes;
+    Node firstNode = null;
 
     [Header("Logic Generation")]
     [SerializeField]Vector2Int nodeSize;
     [SerializeField]int nodeQuantity = 30;
-    int nodeMult;
+    float nodeMult;
     int nodeQ = -1;
     int nodeBoss = 0;
     Vector3 nextPos;
@@ -37,13 +38,11 @@ public class Generate : MonoBehaviour{
         //    nodeBoss++;
         nodes = new List<Node>();
         CreateNode();
-        nodes[0].SetBehaviour(NodeBehaviour.FirstRoom);
-        GameManager.Instance.setPlayerPos(nodes[0].Position);
         nodeQ++;
         nextPos = head.transform.position;
         state = 0;
         //nodeMult = nodeSize / 10;
-        nodeMult = 4;
+        nodeMult = 4.8f;
         if(GameManager.Instance.isTutorial)
             PreChargeNodes();
     }
@@ -84,7 +83,7 @@ public class Generate : MonoBehaviour{
             {
                 case 0:
                     if(nodeQ < nodeQuantity){
-                        if(nodeQ > 5)
+                        if(nodeQ > 3)
                             nextPos = GetNewPosition();
                         else{
                             nextPos = head.transform.position;
@@ -96,7 +95,7 @@ public class Generate : MonoBehaviour{
                             nodeQ ++;   
                         }
                         else{
-                            int node = Random.Range(0, nodeQ);
+                            int node = Random.Range(2, nodes.Count-1);
                             head.transform.position = nodes[node].Position;
                         }
                     }else{
@@ -118,8 +117,13 @@ public class Generate : MonoBehaviour{
 #region StateOne
     private void CreateNode(){
         Node n = new Node(head.transform.position, nodeSize);
-        if(nodeQ > 0)
-            n.SetBehaviour(NodeBehaviour.Normal);
+        n.SetBehaviour(NodeBehaviour.Normal);
+
+        if(firstNode == null){
+            firstNode = n;
+            n.SetBehaviour(NodeBehaviour.FirstRoom);
+        }
+
         nodes.Add(n); 
     }
 
@@ -202,15 +206,27 @@ public class Generate : MonoBehaviour{
             nodes[nodes.Count-1].SetBehaviour(NodeBehaviour.Boss);
         }
     }
+
 #endregion
 #region StateThree
     private void Draw(){
         for (int i = 0; i < nodes.Count; i++){
-            GameObject go =  DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, 
-                                        nodes[i].Position, nodes[i].ExitsDoors);
+            GameObject go;
+            GameObject mapNode;
+            if(nodes[i].Behaviour == NodeBehaviour.FirstRoom){
+                go =  DrawNodes.Instance.DrawHUBNode(nodes[i].Position, nodes[i].ExitsDoors);
+            }else{
+                go =  DrawNodes.Instance.DrawExitsNode(nodes[i].NodeType, 
+                                            nodes[i].Position, nodes[i].ExitsDoors);
+            }
+            
             nodes[i].setNode(go);
-            GameObject mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType,
-                                 nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+            if(nodes[i].Behaviour == NodeBehaviour.FirstRoom){
+                mapNode = PoolManager.Instance.DrawHUBNode(nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+            }else{
+                mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType,
+                                    nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+            }
             RoomsBehaviour room = go.GetComponent<RoomsBehaviour>();
             switch (room.NodeBehaviour)
             {
