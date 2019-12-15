@@ -47,6 +47,10 @@ public class EntityOrderManager : MonoBehaviour{
         entities.Add(spriteRenderer);
     }
 
+    public void RemoveEntity(SpriteRenderer spriteRenderer){
+        entities.Remove(spriteRenderer);
+    }
+
     public void OnEntityDeath(SpriteRenderer spriteRenderer){
         entities.Remove(spriteRenderer);
 
