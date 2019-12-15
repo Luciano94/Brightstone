@@ -17,17 +17,21 @@ public class SoundManager : MonoBehaviour
     private void Awake(){
         DontDestroyOnLoad(gameObject);
         GameObject go = Instantiate(Resources.Load ("SoundBankLoader")) as GameObject;
-       // SceneManager.sceneLoaded += OnLoadScene;
     }
-    /*void OnLoadScene(Scene scene, LoadSceneMode mode){
-        mainCamera = Camera.current.gameObject;
-    }*/
     
     public void StopSounds(){
         AkSoundEngine.StopAll();
     }
 
+
+    /* Base Wwise event function, to copy-paste, do not use as is
+    public void Foo(){ 
+        AkSoundEngine.PostEvent("", gameObject);
+    }
+    */
+
     //SFX
+    //Old player attacks, deprecated
     public void PlayerAttackLight(){ //El jugador usa un ataque ligero
         AkSoundEngine.PostEvent("PlayerAttackLight", GameManager.Instance.playerSts.gameObject);
     }
@@ -42,6 +46,56 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayerAttackHeavyHit(){ //El ataque pesado del jugador golpea a un enemigo
         //AkSoundEngine.PostEvent("PlayerAttackHeavyHit", GameManager.Instance.playerSts.gameObject);
+    }
+
+    //new player attack sounds
+    public void PlayerAttackA(){ //El jugador realiza el ataque correspondiente al botón "A"
+        AkSoundEngine.PostEvent("PlayerAttackA", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerAttackAx7(){ //El jugador completó el combo de 7 ataques seguidos de "A" satisfactoriamente
+        AkSoundEngine.PostEvent("PlayerAttackAx7", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerAttackX(){ //El jugador realiza el ataque correspondiente al botón "X"
+        AkSoundEngine.PostEvent("PlayerAttackX", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerAttackXx5(){ //El jugador completó el combo de 5 ataques seguidos de "X" satisfactoriamente
+        AkSoundEngine.PostEvent("PlayerAttackXx5", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerAttackY(){ //El jugador realiza el ataque correspondiente al botón "Y"
+        AkSoundEngine.PostEvent("PlayerAttackY", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerAttackYx5(){ //El jugador completó el combo de 5 ataques seguidos de "Y" satisfactoriamente
+        AkSoundEngine.PostEvent("PlayerAttackYx5", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerAttackB(){ //El jugador realiza el ataque correspondiente al botón "B"
+        AkSoundEngine.PostEvent("PlayerAttackB", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboA1(){ //El jugador realiza el 1er ataque rojo del combo XXAAAA
+        AkSoundEngine.PostEvent("PlayerComboA1", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboA2(){ //El jugador realiza el 2do ataque rojo del combo XXAAAA
+        AkSoundEngine.PostEvent("PlayerComboA2", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboA3(){ //El jugador realiza el 3er ataque rojo del combo XXAAAA
+        AkSoundEngine.PostEvent("PlayerComboA3", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboA4(){ //El jugador realiza el 4to y último ataque rojo del combo XXAAAA
+        AkSoundEngine.PostEvent("PlayerComboA4", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboB1(){ //El jugador realiza el 1er ataque rojo del combo AAAXXXXX
+        AkSoundEngine.PostEvent("PlayerComboB1", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboB2(){ //El jugador realiza el 2do ataque rojo del combo AAAXXXXX
+        AkSoundEngine.PostEvent("PlayerComboB2", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboB3(){ //El jugador realiza el 3er ataque rojo del combo AAAXXXXX
+        AkSoundEngine.PostEvent("PlayerComboB3", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboB4(){ //El jugador realiza el 4to ataque rojo del combo AAAXXXXX
+        AkSoundEngine.PostEvent("PlayerComboB4", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerComboB5(){ //El jugador realiza el 5to ataque rojo del combo AAAXXXXX
+        AkSoundEngine.PostEvent("PlayerComboB5", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerDamaged(){ //El jugador recibe daño
         //AkSoundEngine.PostEvent("PlayerDamaged", GameManager.Instance.playerSts.gameObject);
@@ -87,6 +141,9 @@ public class SoundManager : MonoBehaviour
         LevelClear();
         AkSoundEngine.PostEvent("BossDeath", boss);
     }
+    public void iBossDeath(GameObject boss){ //El boss intermedio muere
+        AkSoundEngine.PostEvent("BossDeath", boss);
+    }
     public void ArrowHit(GameObject arrow){ //Una flecha golpea a alguien
         AkSoundEngine.PostEvent("ArrowHit", arrow);
     }
@@ -94,9 +151,14 @@ public class SoundManager : MonoBehaviour
         AkSoundEngine.PostEvent("RoomNewEnter", gameObject);
     }
     public void RoomClear(){ //No quedan más enemigos en la habitacion
+        /*Necesito que cuando el jugador termina el tutorial, se gatille este evento 
+        (cuando se va del room o, preferentemente, antes)*/
         AkSoundEngine.PostEvent("RoomClear", gameObject);
     }
     public void RoomBossEnter(){ //Se entra a un boss room
+        AkSoundEngine.PostEvent("RoomBossEnter", gameObject);
+    }
+    public void RoomiBossEnter(){ //El jugador entra al cuarto del boss intermedio
         AkSoundEngine.PostEvent("RoomBossEnter", gameObject);
     }
     public void LevelEnter(){ //Inicio de un nivel
@@ -138,32 +200,4 @@ public class SoundManager : MonoBehaviour
         AkSoundEngine.StopAll();
         AkSoundEngine.PostEvent("SynopsisOpen", gameObject);
     }
-
-    // Music (turned out this were not events)
-    /*public void MainMenu(){
-        AkSoundEngine.PostEvent("Main Menu", gameObject);
-    }
-    public void Synopsis(){
-        AkSoundEngine.PostEvent("Synopsis", gameObject);
-    }
-    public void Tutorial(){
-        AkSoundEngine.PostEvent("Tutorial", gameObject);
-    }
-    public void Combat(){
-        AkSoundEngine.PostEvent("Combat", gameObject);
-    }
-    public void Explore(){
-        AkSoundEngine.PostEvent("Explore", gameObject);
-    }
-    public void Boss(){
-        AkSoundEngine.PostEvent("Boss", gameObject);
-    }
-    public void Victory(){
-        LevelClear();
-        AkSoundEngine.PostEvent("Victory", gameObject);
-    }
-    public void Death(){
-        LevelClear();
-        AkSoundEngine.PostEvent("Death", gameObject);
-    }*/
 }

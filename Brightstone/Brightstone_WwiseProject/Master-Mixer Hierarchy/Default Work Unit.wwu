@@ -12,9 +12,9 @@
 					<ChildrenList>
 						<Bus Name="Music" ID="{7BA262B0-D822-44C7-AF31-46A1DB9DF945}">
 							<PropertyList>
-								<Property Name="BusVolume" Type="Real64">
+								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-11</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -26,7 +26,6 @@
 							<ChildrenList>
 								<Bus Name="MainMenu" ID="{2FE7706A-BFE3-4FA2-86AB-8B838987E117}"/>
 								<Bus Name="Lvl1" ID="{4132B021-0908-4D78-ADC6-651C318E00FB}">
-									<ReferenceList/>
 									<ChildrenList>
 										<Bus Name="Combat" ID="{14A3D9A9-E97E-4EA5-B528-04DA4B6BA877}"/>
 										<Bus Name="Boss" ID="{05B1062F-2AF8-42D7-8508-98B55EAEAE7D}"/>

@@ -39,6 +39,10 @@
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
 							<Value>100</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}"/>
+							<Value>60</Value>
+						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
@@ -49,6 +53,7 @@
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
 						<CurrentSwitchRef Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
 						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
+						<CurrentSwitchRef Name="Shanobi" ID="{FD8ADEF4-E834-49F4-A640-4CF4FD271B6D}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Combat" ID="{6FD1A4EA-5F8A-4FE7-89C1-26AE24A24E06}">
@@ -121,22 +126,29 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
-							<Value>0</Value>
+							<Value>8.7</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
 							<Value>100</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}"/>
+							<Value>60</Value>
+						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
+						<CurrentStateRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}"/>
+						<CurrentStateRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}"/>
 						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
 						<CurrentSwitchRef Name="ThreeThirds" ID="{24EDEA55-0957-458A-8199-7192805AD975}"/>
+						<CurrentSwitchRef Name="Nine" ID="{FA118D6B-8451-42D4-95F5-C9C09A16018C}"/>
 						<CurrentSwitchRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}"/>
+						<CurrentSwitchRef Name="Shanobi" ID="{FD8ADEF4-E834-49F4-A640-4CF4FD271B6D}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Lvl1Music" ID="{CFC6D09A-6645-4D8A-876A-34D655E0D82E}">
@@ -174,8 +186,16 @@
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="MenuOpen" ID="{BF468655-C49E-4460-84D1-BCB9C2905867}" WorkUnitID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}"/>
-							<Position X="3" Y="2"/>
+							<ObjectRef Name="RoomiBossEnter" ID="{9DFC0176-F1FA-4801-9481-E6C77E70619B}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BossSwordAttack" ID="{7FE52884-7563-40E3-A89D-DFBE96A1EF5B}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+							<Position X="4" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -185,22 +205,29 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
-							<Value>1.5</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
 							<Value>100</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}"/>
+							<Value>60</Value>
+						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
-						<CurrentStateRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}"/>
+						<CurrentStateRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}"/>
+						<CurrentStateRef Name="fBoss" ID="{7FEA0865-C3C5-4EA0-BBEA-6B835574CA79}"/>
+						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
 						<CurrentSwitchRef Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
+						<CurrentSwitchRef Name="Nine" ID="{FA118D6B-8451-42D4-95F5-C9C09A16018C}"/>
 						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
+						<CurrentSwitchRef Name="Shanobi" ID="{FD8ADEF4-E834-49F4-A640-4CF4FD271B6D}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

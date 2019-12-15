@@ -18,6 +18,14 @@
 						<State Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="Enemy" ID="{7FCCA962-81FE-473D-8304-82FBF2F2441B}">
+					<ChildrenList>
+						<State Name="None" ID="{6EFDA0B9-2823-458F-AA4E-A2C1620CC342}"/>
+						<State Name="fBoss" ID="{7FEA0865-C3C5-4EA0-BBEA-6B835574CA79}"/>
+						<State Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}"/>
+						<State Name="iBoss" ID="{4CC1A980-0650-4CD7-8336-28867763DD00}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

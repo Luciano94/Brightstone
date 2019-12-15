@@ -78,6 +78,16 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{0463311C-94B7-40E5-A741-13565EE12B96}" ShortID="924986681">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="BossSwordAttack" ID="{B2C1B83D-A34B-434F-BC82-0459652F652A}">

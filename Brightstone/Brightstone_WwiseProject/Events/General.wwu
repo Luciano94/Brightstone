@@ -40,6 +40,28 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{7387597A-3263-4F1F-B4FE-333522A7381F}" ShortID="463407010">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="60"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{75E87A9C-43FE-4B8D-9966-0400531C2ED2}" ShortID="1072510199">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}">
@@ -72,6 +94,7 @@
 							<PropertyList>
 								<Property Name="AbsoluteOrRelative" Type="int16" Value="1"/>
 								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Delay" Type="Real64" Value="2"/>
 								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -84,6 +107,17 @@
 				</Event>
 				<Event Name="RoomBossEnter" ID="{F1FCA68C-AA16-4B6E-9411-2019AE950B38}">
 					<ChildrenList>
+						<Action Name="" ID="{FBADE777-A045-41F5-AE25-7873823B1D05}" ShortID="957539386">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="9"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{29A595E6-B2B4-40F1-8B2D-C4F28B0DADE3}" ShortID="224927730">
 							<PropertyList>
 								<Property Name="Inclusion" Type="bool">
@@ -98,14 +132,23 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{FBADE777-A045-41F5-AE25-7873823B1D05}" ShortID="957539386">
+						<Action Name="" ID="{071ACFB0-CDAA-40AC-870E-051E6F4D5A51}" ShortID="790998059">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="38"/>
-								<Property Name="GameParameterValue" Type="Real64" Value="9"/>
+								<Property Name="ActionType" Type="int16" Value="22"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+									<ObjectRef Name="fBoss" ID="{7FEA0865-C3C5-4EA0-BBEA-6B835574CA79}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{217D44B7-977B-4310-877A-6F4476F83480}" ShortID="834363091">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}" WorkUnitID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -149,6 +192,16 @@
 								<Property Name="ActionType" Type="int16" Value="3"/>
 							</PropertyList>
 							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{7406D359-40BF-400F-BFA2-4F515662DAAE}" ShortID="222232094">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{55C8B921-A8BB-4947-AE30-821F8DD75148}" ShortID="200940800">
 							<PropertyList>
@@ -201,7 +254,65 @@
 						<Action Name="" ID="{3B393732-76CF-4A8B-87AC-13F46288DB76}" ShortID="742969119">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Level 1" ID="{8F7525A3-9A73-48F3-B0C6-4D295C0FF219}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+									<ObjectRef Name="Level 1v2" ID="{A2C61052-AA98-4D69-8FD8-B7F97C085B5C}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="RoomiBossEnter" ID="{9DFC0176-F1FA-4801-9481-E6C77E70619B}">
+					<ChildrenList>
+						<Action Name="" ID="{38FFFBFD-5A57-4219-A0C6-45227FDF0471}" ShortID="752693528">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="iBoss" ID="{4CC1A980-0650-4CD7-8336-28867763DD00}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D63C63FD-BC25-4759-9B23-E5B59CAF1A6D}" ShortID="101101962">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}">
+					<ChildrenList>
+						<Action Name="" ID="{C4CC26B7-5FB7-44D9-8B16-143FE7BC084C}" ShortID="899745964">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{34CE91F7-B920-4902-B65F-05B61C650D77}" ShortID="293440077">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}" WorkUnitID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AE72CAA3-B2F5-4CA6-9CC2-F1203AEC34A6}" ShortID="1051729394">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

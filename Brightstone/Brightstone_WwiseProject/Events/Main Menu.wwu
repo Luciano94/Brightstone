@@ -33,6 +33,16 @@
 							</PropertyList>
 							<ReferenceList/>
 						</Action>
+						<Action Name="" ID="{171840CB-9D11-4C16-9F85-A8EF45CC2141}" ShortID="793148431">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{F9EF9EA1-1F1D-46C3-94D3-BF26303C3A79}" ShortID="408519997">
 							<ReferenceList>
 								<Reference Name="Target">

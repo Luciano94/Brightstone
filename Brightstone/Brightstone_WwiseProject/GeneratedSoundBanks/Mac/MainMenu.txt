@@ -9,13 +9,12 @@ Effect plug-ins	ID	Name	Type				Notes
 	148307965	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
 	386284830	Wwise_Gain_(Custom)	Wwise Gain			
 	910064734	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
-	3442768367	Hall_Large_Dark	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	215339274	MainMenu_74ppm_4-4_1MP_Gtr_Counter_A	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\MainMenu_74ppm_4-4_1MP_Gtr_Counter_A_9B96ECC7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Menu\ExtA\MainMenu_74ppm_4-4_1MP_Gtr_Counter_A		487643
 	273683141	MainTitle_Main_80ppm_4-4_8M_P2B	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\MainTitle_Main_80ppm_4-4_8M_P2B_9B96ECC7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Menu\MainTitle_Main_80ppm_4-4_8M_P2B\MainTitle_Main_80ppm_4-4_8M_P2B		468024
-	280837918	Select	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Select_E1A2BE44.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Main Menu\ClickButton\Select		230508
-	299016176	Press 2	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Press 2_862BCF9A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Main Menu\HoverButton\Press 2		504496
+	280837918	Select	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Select_E2411CD4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Main Menu\ClickButton\Select		232948
+	299016176	Press 2	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Press 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Main Menu\HoverButton\Press 2		529264
 	399722359	MainMenu_74ppm_4-4_1MP_Koto_B	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\MainMenu_74ppm_4-4_1MP_VcSolo_B_9B96ECC7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Menu\ExtB\MainMenu_74ppm_4-4_1MP_Koto_B		444030
 	404432268	MainMenu_74ppm_4-4_1MP_BTbn_A	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\MainMenu_74ppm_4-4_1MP_Flute_A_9B96ECC7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Menu\ExtA\MainMenu_74ppm_4-4_1MP_BTbn_A		467598
 	469190864	MainMenu_74ppm_4-4_1MP_BassLine	C:\Users\Usuario\Desktop\6to Cuatrimestre\Produccion de Videojuegos\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\MainMenu_74ppm_4-4_1MP_BassLine_9B96ECC7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Menu\ExtA\MainMenu_74ppm_4-4_1MP_BassLine		434074

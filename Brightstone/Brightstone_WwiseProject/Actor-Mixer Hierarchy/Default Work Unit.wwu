@@ -27,6 +27,32 @@
 						<WorkUnit Name="Main Menu" ID="{9A0BC1A8-0433-40A4-AC44-9FB56BE93706}" PersistMode="Reference"/>
 						<WorkUnit Name="Player" ID="{65608CFD-93A4-4C12-A062-E72EA559CA14}" PersistMode="Reference"/>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="PlayerLife" ID="{E880214F-480A-4670-8AD5-DE88DCE5DAA4}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}"/>
+								<CustomState Name="" ID="{793C5EB6-9638-431F-A2BB-24D05B63ADC5}" ShortID="730514815"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
+								<CustomState Name="" ID="{83664BBF-1ED1-4467-91DD-CE24B6FD7D9F}" ShortID="80097621"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}"/>
+								<CustomState Name="" ID="{A26BE604-8C33-4D88-B164-58E3AA0782E4}" ShortID="813474113">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="65"/>
+										<Property Name="Volume" Type="Real64" Value="-13"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 				</ActorMixer>
 				<ActorMixer Name="Voice" ID="{3B225EF4-16ED-44CE-B467-EB467E6B46FB}" ShortID="985325028">
 					<ReferenceList>
