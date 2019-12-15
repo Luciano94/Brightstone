@@ -20,18 +20,19 @@ public class PlayerDash : MonoBehaviour{
 
 
     [Header("Dash Particles")]
-    public TrailRenderer dashParticles;
-
     private Rigidbody2D playerRB;
     private PlayerCombat playerCombat;
     private Vector2 mov;
     private bool isDashing = false;
+    [SerializeField] private GhostTrail ghost;
 
     void Start(){
         playerRB = GetComponent<Rigidbody2D>();
         playerCombat = GetComponent<PlayerCombat>();
-        dashParticles.Clear();
-        dashParticles.enabled = false;
+        dashTime = startDashTime;
+        //dashParticles.Clear();
+        //dashParticles.transform.position = transform.position;
+        //dashParticles.enabled = false;
     }
 
     void Update(){
@@ -44,20 +45,20 @@ public class PlayerDash : MonoBehaviour{
             mov = mov.normalized;
             if (InputManager.Instance.GetActionDash() && CanDash()){
                 isDashing = true;
-                dashParticles.Clear();
-                dashParticles.enabled = true;
-                actualDashCharges--;
+                ghost.ShowGhost();
+                FilterManager.SetChromaticAberration(true);
+                GameManager.Instance.ShakerController.Shake(1.5f, 1.5f, 0.1f, 0.2f);
                 playerCombat.Dash();
                 SoundManager.Instance.PlayerDash();
+                actualDashCharges--;
             }
         }
         else{
             if(dashTime <= 0){
                 isDashing = false;
+                FilterManager.SetChromaticAberration(false);
                 dashTime = startDashTime;
                 playerRB.velocity = Vector2.zero;
-                dashParticles.enabled = false;
-                dashParticles.Clear();
             }
             else{
                 dashTime -= Time.deltaTime;

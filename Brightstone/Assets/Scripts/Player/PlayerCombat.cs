@@ -73,7 +73,7 @@ public class PlayerCombat : MonoBehaviour{
         rig = GetComponent<Rigidbody2D>();
         actParryTime = parryTime;
         actionInfo.action = null;
-
+        blood.gameObject.SetActive(false);
         plStat = GameManager.Instance.playerSts;
     }
 
@@ -211,20 +211,6 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Parry(){
-        /*if(Input.GetButtonDown("Parry")){
-            if (GameManager.Instance.isTutorial)
-                if (!GameManager.Instance.IsReadyToParry())
-                    return;
-            if(!isParrying){
-                RunSaver.currentRun.data.timesParried++;
-                isParrying = true;
-                actParryTime = 0.0f;
-                weapon.SetActive(true);
-                weaponColl.enabled = true;
-                plAnim.SetDashTrigger(GameManager.GetDirection(weapon.transform.eulerAngles.z));
-                SoundManager.Instance.PlayerParry();
-            }
-        }*/
         if(isParrying && actParryTime >= parryTime){
             weapon.SetActive(false);
             boxWeapColl.enabled = false;
@@ -284,9 +270,5 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     public void PlayBlood(){
-        blood.transform.position = weapon.transform.position;
-       // sparks.transform.rotation = weapon.transform.rotation;
-
-        blood.Play();
     }
 }
