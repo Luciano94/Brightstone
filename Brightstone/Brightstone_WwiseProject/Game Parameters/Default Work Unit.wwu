@@ -19,6 +19,16 @@
 						<Property Name="Max" Type="Real64" Value="9"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}">
+					<PropertyList>
+						<Property Name="FilterTimeDown" Type="Real64" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="60"/>
+						<Property Name="Max" Type="Real64" Value="60"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="1"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

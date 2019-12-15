@@ -28,8 +28,8 @@
 				</Property>
 				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
 					<ValueList>
-						<Value Platform="Mac">15</Value>
-						<Value Platform="Windows">15</Value>
+						<Value Platform="Mac">255</Value>
+						<Value Platform="Windows">255</Value>
 					</ValueList>
 				</Property>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
