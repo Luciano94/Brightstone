@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour{
     [SerializeField] private GameObject stateUI;
     [SerializeField] private Button buttonToSelect;
     [SerializeField] private float timeToActivateStateUi;
+    [SerializeField] private float timeToRestartGame;
 
     private bool startMenu = false;
 
@@ -40,7 +41,7 @@ public class MenuManager : MonoBehaviour{
 
     public bool LoseMenuCanvas{
         set {
-            Invoke("ActivateLoseCanvas", 2f);
+            Invoke("ActivateLoseCanvas", 2.5f);
         }
     }
 
@@ -51,13 +52,16 @@ public class MenuManager : MonoBehaviour{
     }
 
     private void ActivateLoseCanvas(){
-        UIManager.Instance.RunFinished();
-        loseMenuCanvas.SetActive(true);
-        Invoke("ActivateStateUI", timeToActivateStateUi);
+        UIManager.Instance.YouDieTextAppear();
+        Invoke("RestartGame", timeToRestartGame);
     }
 
     private void ActivateStateUI(){
         stateUI.SetActive(true);
         buttonToSelect.Select();
+    }
+
+    private void RestartGame(){
+        UIManager.Instance.RestartButton();
     }
 }

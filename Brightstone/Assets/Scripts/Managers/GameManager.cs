@@ -186,6 +186,7 @@ public class GameManager : MonoBehaviour{
         _playerDash.enabled = false;
 
         //AudioManager.Instance.StopTheme();
+        UIManager.Instance.RunDeathAnimations();
         MenuManager.Instance.LoseMenuCanvas = true;
     }
 

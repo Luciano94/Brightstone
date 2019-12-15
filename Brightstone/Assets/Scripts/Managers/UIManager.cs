@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour{
     private static UIManager instance;
@@ -18,7 +19,8 @@ public class UIManager : MonoBehaviour{
     [Header("Popup text")]
     [SerializeField] private GameObject textPopupPrefab;
     [Header("LoadingScreen")]
-    [SerializeField] private GameObject loadingPanel;
+    [SerializeField] private Image loadingPanel;
+    private bool generating = true;
 
     [Header("UI Texts")]
     [SerializeField] private Text atkTxt;
@@ -70,8 +72,12 @@ public class UIManager : MonoBehaviour{
     [Header("Pause Canvas")]
     [SerializeField] private GameObject pauseCamvas;
 
-    [Header("Death Screen")]
-    [SerializeField] private Image deathScreen;
+    [Header("Death Anims")]
+    [SerializeField] private Animator[] animsToRun;
+    [SerializeField] private TextMeshProUGUI youDieTxt;
+    
+    private bool appearDieText = false;
+    private bool reduceAlpha = false;
 
     public GameObject TextPopupPrefab{
         get{return textPopupPrefab;}
@@ -80,7 +86,7 @@ public class UIManager : MonoBehaviour{
     private void Awake(){
         gameM = GameManager.Instance;
         timeLeft = timeToDownHp;
-        loadingPanel.SetActive(true);
+        loadingPanel.enabled = true;
         experienceActualFillBar.localScale = new Vector3(0.0f, 1.0f);
     }
 
@@ -98,10 +104,12 @@ public class UIManager : MonoBehaviour{
     }
 
     public void LoadingFinish(){
-        loadingPanel.SetActive(false);
+        generating = false;
     }
 
     private void Update(){
+        DisappearingLoadingPanel();
+
         if (hpHitPercentage > hpPercentage){
             if(timeLeft <= 0){
                 hpHitPercentage -= Time.deltaTime * 0.5f;
@@ -122,8 +130,23 @@ public class UIManager : MonoBehaviour{
 
             TimeUpdate();
         }
-        else{
-            //deathScreen.color
+        else if (appearDieText){
+            if (!reduceAlpha)
+                youDieTxt.alpha += Time.deltaTime;
+            else
+                youDieTxt.alpha -= Time.deltaTime;
+        }
+    }
+
+    void DisappearingLoadingPanel(){
+        if (!generating && loadingPanel.color.a > 0.0f){
+            Color color = loadingPanel.color;
+            color.a -= Time.deltaTime;
+            if (color.a <= 0.0f){
+                loadingPanel.enabled = false;
+                return;
+            }
+            loadingPanel.color = color;
         }
     }
 
@@ -280,5 +303,20 @@ public class UIManager : MonoBehaviour{
 
     public void UnshowPause(){
         //pauseCamvas.SetActive(false);
+    }
+
+    public void RunDeathAnimations(){
+        foreach (Animator anim in animsToRun)
+            anim.SetTrigger("RunAnim");
+    }
+
+    public void YouDieTextAppear(){
+        appearDieText = true;
+        youDieTxt.enabled = true;
+        Invoke("ReduceAlpha", 1.5f);
+    }
+
+    public void ReduceAlpha(){
+        reduceAlpha = true;
     }
 }
