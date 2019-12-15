@@ -20134,53 +20134,53 @@ MonoBehaviour:
   actions:
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0, y: 0.25}
-    size: {x: 3.2, y: 2.6}
+    offset: {x: 0.09, y: -0.75}
+    size: {x: 3.9, y: 4.3}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0, y: 0}
-    size: {x: 2.7, y: 3.4}
+    offset: {x: -0.2, y: -1.5}
+    size: {x: 4.5, y: 5.6}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0.15, y: 0}
-    size: {x: 3.8, y: 3.4}
+    offset: {x: 0.15, y: -1.5}
+    size: {x: 6.3, y: 5.6}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0, y: 1.25}
-    size: {x: 3.6, y: 4}
+    offset: {x: 0.15, y: -0.09}
+    size: {x: 6, y: 6.4}
     radius: 0
   - action: {fileID: 448669773}
     colType: 0
-    offset: {x: 0.1, y: -0.25}
-    size: {x: 3.8, y: 3.5}
+    offset: {x: 0.1, y: -2.1}
+    size: {x: 6, y: 5.1}
     radius: 0
   - action: {fileID: 2044676893}
     colType: 0
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    offset: {x: 0.5, y: -0.4}
+    size: {x: 5.5, y: 4}
     radius: 0
   - action: {fileID: 2044676893}
     colType: 0
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    offset: {x: 0.1, y: -2.2}
+    size: {x: 3.4, y: 6.5}
     radius: 0
   - action: {fileID: 2044676893}
     colType: 0
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    offset: {x: 0.1, y: -2.6}
+    size: {x: 3.7, y: 7.5}
     radius: 0
   - action: {fileID: 2044676893}
     colType: 0
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    offset: {x: -1.8, y: 2.45}
+    size: {x: 4, y: 4.5}
     radius: 0
   - action: {fileID: 2044676893}
     colType: 0
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    offset: {x: 0.1, y: -3}
+    size: {x: 4.5, y: 11.3}
     radius: 0
   - action: {fileID: 0}
     colType: 0
@@ -20189,39 +20189,39 @@ MonoBehaviour:
     radius: 0
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0.3, y: 2.6}
+    offset: {x: 0, y: 2.7}
     size: {x: 0, y: 0}
-    radius: 1.9
+    radius: 3.8
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 1.95}
+    offset: {x: 0, y: 1.8}
     size: {x: 0, y: 0}
-    radius: 2.4
+    radius: 4.4
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 0.7}
+    offset: {x: 0, y: -0.3}
     size: {x: 0, y: 0}
-    radius: 1.9
+    radius: 3.8
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 2}
+    offset: {x: 0, y: 1.75}
     size: {x: 0, y: 0}
-    radius: 2.65
+    radius: 5.5
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0.7, y: 2.15}
+    offset: {x: 0, y: 1.75}
     size: {x: 0, y: 0}
-    radius: 2
+    radius: 5.2
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 2.5}
+    offset: {x: 0, y: 2.6}
     size: {x: 0, y: 0}
-    radius: 2.4
+    radius: 4.2
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 1.9}
+    offset: {x: 0, y: 1.8}
     size: {x: 0, y: 0}
-    radius: 3
+    radius: 5.1
   - action: {fileID: 0}
     colType: 1
     offset: {x: 0, y: 0}
@@ -20240,43 +20240,43 @@ MonoBehaviour:
   - action: {fileID: 1350134425}
     colType: 1
     offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    size: {x: 0.01, y: 0.01}
     radius: 0
   - action: {fileID: 1350134425}
     colType: 1
     offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    size: {x: 0.01, y: 0.01}
     radius: 0
   - action: {fileID: 1350134425}
     colType: 1
     offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    size: {x: 0.01, y: 0.01}
     radius: 0
   - action: {fileID: 1350134425}
     colType: 1
     offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+    size: {x: 0.01, y: 0.01}
     radius: 0
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: 0.5, y: -1.5}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 5
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: 1.1, y: 3}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 6
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: -1.5, y: 3.3}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 5.8
   - action: {fileID: 823348299}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: -2.3, y: -1.3}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 4
   - action: {fileID: 0}
     colType: 1
     offset: {x: 0, y: 0}
@@ -20289,29 +20289,29 @@ MonoBehaviour:
     radius: 0
   - action: {fileID: 448669773}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: 1, y: 2}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 5.6
   - action: {fileID: 448669773}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: -1.8, y: 2}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 5.2
   - action: {fileID: 448669773}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: 1, y: -1}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 4
   - action: {fileID: 448669773}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: -1, y: -1}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 4
   - action: {fileID: 448669773}
     colType: 1
-    offset: {x: 0, y: 0}
+    offset: {x: 0, y: -0.2}
     size: {x: 0, y: 0}
-    radius: 0
+    radius: 3.9
   standsManager: {fileID: 1099206258}
 --- !u!1 &2126348686
 GameObject:
@@ -20582,7 +20582,7 @@ PrefabInstance:
       objectReference: {fileID: 873411683}
     - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
       propertyPath: distToTP
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6276584207758848108, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
@@ -20615,7 +20615,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300004, guid: e3f1a37be28e4b44dab9be8163d58c84,
+      objectReference: {fileID: 21300004, guid: 3d22c26e1f5ce7248bb9a6a71c5de551,
         type: 3}
     - target: {fileID: 4555218929497752118, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
@@ -20635,22 +20635,22 @@ PrefabInstance:
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Size.x
-      value: 3.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Size.y
-      value: 3.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4555218928409165244, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
@@ -20665,16 +20665,29 @@ PrefabInstance:
     - target: {fileID: 3289503426535534086, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Radius
-      value: 3
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 3289503426535534086, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.y
-      value: 1.9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3289503426535534086, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: m_Offset.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400173, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400173, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555218928698328546, guid: ffdd525add8a97447bd10942bf690db1,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
