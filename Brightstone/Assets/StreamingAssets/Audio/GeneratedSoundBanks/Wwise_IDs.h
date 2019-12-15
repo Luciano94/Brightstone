@@ -19,21 +19,39 @@ namespace AK
         static const AkUniqueID ENEMYARCHERRELEASEBOW = 1108892891U;
         static const AkUniqueID ENEMYARCHERTIGHTBOW = 852912510U;
         static const AkUniqueID ENEMYMELEESWORDATTACK = 2564847700U;
+        static const AkUniqueID IBOSSDEATH = 3845220853U;
         static const AkUniqueID LEVELCLEAR = 3803289968U;
         static const AkUniqueID LEVELENTER = 122911785U;
         static const AkUniqueID MAPMUSIC = 905671766U;
         static const AkUniqueID MENUITEMCLICK = 3345932315U;
         static const AkUniqueID MENUITEMHOVER = 1220050629U;
         static const AkUniqueID MENUOPEN = 48824776U;
+        static const AkUniqueID PLAYERATTACKA = 3417697019U;
+        static const AkUniqueID PLAYERATTACKAX7 = 2408535852U;
+        static const AkUniqueID PLAYERATTACKB = 3417697016U;
         static const AkUniqueID PLAYERATTACKHEAVY = 3914790867U;
         static const AkUniqueID PLAYERATTACKLIGHT = 231747402U;
         static const AkUniqueID PLAYERATTACKLIGHT2 = 146436428U;
+        static const AkUniqueID PLAYERATTACKX = 3417696994U;
+        static const AkUniqueID PLAYERATTACKXX5 = 2572221999U;
+        static const AkUniqueID PLAYERATTACKY = 3417696995U;
+        static const AkUniqueID PLAYERATTACKYX5 = 2404592838U;
+        static const AkUniqueID PLAYERCOMBOA1 = 2487527450U;
+        static const AkUniqueID PLAYERCOMBOA2 = 2487527449U;
+        static const AkUniqueID PLAYERCOMBOA3 = 2487527448U;
+        static const AkUniqueID PLAYERCOMBOA4 = 2487527455U;
+        static const AkUniqueID PLAYERCOMBOB1 = 2504305039U;
+        static const AkUniqueID PLAYERCOMBOB2 = 2504305036U;
+        static const AkUniqueID PLAYERCOMBOB3 = 2504305037U;
+        static const AkUniqueID PLAYERCOMBOB4 = 2504305034U;
+        static const AkUniqueID PLAYERCOMBOB5 = 2504305035U;
         static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERDEATH = 1656947812U;
         static const AkUniqueID PLAYERPARRYHIT = 410952847U;
         static const AkUniqueID PLAYERRESPAWN = 667982098U;
         static const AkUniqueID ROOMBOSSENTER = 4149955699U;
         static const AkUniqueID ROOMCLEAR = 1974576135U;
+        static const AkUniqueID ROOMIBOSSENTER = 1109341308U;
         static const AkUniqueID ROOMNEWENTER = 1391803776U;
         static const AkUniqueID SELECTATTA = 4283005579U;
         static const AkUniqueID SELECTATTSAME = 1298389756U;
@@ -43,6 +61,18 @@ namespace AK
 
     namespace STATES
     {
+        namespace ENEMY
+        {
+            static const AkUniqueID GROUP = 2299321487U;
+
+            namespace STATE
+            {
+                static const AkUniqueID COMMON = 2395677314U;
+                static const AkUniqueID FBOSS = 904752142U;
+                static const AkUniqueID IBOSS = 1085158233U;
+            } // namespace STATE
+        } // namespace ENEMY
+
         namespace PLAYERLIFE
         {
             static const AkUniqueID GROUP = 444815956U;
@@ -70,6 +100,17 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace ACTIVITY
+        {
+            static const AkUniqueID GROUP = 3896685706U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID SHANOBI = 2976179643U;
+                static const AkUniqueID TOURIST = 2308696681U;
+            } // namespace SWITCH
+        } // namespace ACTIVITY
+
         namespace BOSSHEALTH
         {
             static const AkUniqueID GROUP = 131068444U;
@@ -108,6 +149,25 @@ namespace AK
             } // namespace SWITCH
         } // namespace PROGRESS
 
+        namespace PROGRESSDOT
+        {
+            static const AkUniqueID GROUP = 1956911405U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CERO = 3786252812U;
+                static const AkUniqueID EIGHT = 1715921918U;
+                static const AkUniqueID FIVE = 2611770117U;
+                static const AkUniqueID FOUR = 2863728729U;
+                static const AkUniqueID NINE = 1285484693U;
+                static const AkUniqueID ONE = 1064933119U;
+                static const AkUniqueID SEVEN = 274470240U;
+                static const AkUniqueID SIX = 577793775U;
+                static const AkUniqueID THREE = 912956111U;
+                static const AkUniqueID TWO = 678209053U;
+            } // namespace SWITCH
+        } // namespace PROGRESSDOT
+
         namespace STAGE
         {
             static const AkUniqueID GROUP = 1063701865U;
@@ -116,6 +176,7 @@ namespace AK
             {
                 static const AkUniqueID COMMON = 2395677314U;
                 static const AkUniqueID FINALE = 2540243936U;
+                static const AkUniqueID IBOSS = 1085158233U;
             } // namespace SWITCH
         } // namespace STAGE
 
@@ -124,6 +185,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BOSSHP = 1624904154U;
+        static const AkUniqueID EXPLORETIMER = 1033151537U;
         static const AkUniqueID PLAYERHP = 3657907122U;
         static const AkUniqueID ROOMSCLEARED = 1063810301U;
     } // namespace GAME_PARAMETERS

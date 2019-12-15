@@ -1,7 +1,10 @@
 Switch Group	ID	Name			Wwise Object Path	Notes
 	131068444	BossHealth			\Default Work Unit\BossHealth	
 	151362964	PlayerHealth			\Default Work Unit\PlayerHealth	
+	308635872	Progress			\Default Work Unit\Progress	
 	1063701865	Stage			\Default Work Unit\Stage	
+	1956911405	ProgressDot			\Default Work Unit\ProgressDot	
+	3896685706	Activity			\Default Work Unit\Activity	
 
 Switch	ID	Name	Switch Group			Notes
 	17165122	BadlyInjured	BossHealth			
@@ -12,24 +15,50 @@ Switch	ID	Name	Switch Group			Notes
 	720847562	FleshWound	PlayerHealth			
 	841236080	NearlyDead	PlayerHealth			
 	2874639328	Healthy	PlayerHealth			
+	517778677	ThreeThirds	Progress			
+	1304826179	TwoThirds	Progress			
+	3319853618	OneThird	Progress			
+	1085158233	iBoss	Stage			
 	2395677314	Common	Stage			
 	2540243936	Finale	Stage			
+	274470240	Seven	ProgressDot			
+	577793775	Six	ProgressDot			
+	678209053	Two	ProgressDot			
+	912956111	Three	ProgressDot			
+	1064933119	One	ProgressDot			
+	1285484693	Nine	ProgressDot			
+	1715921918	Eight	ProgressDot			
+	2611770117	Five	ProgressDot			
+	2863728729	Four	ProgressDot			
+	3786252812	Cero	ProgressDot			
+	2308696681	Tourist	Activity			
+	2976179643	Shanobi	Activity			
 
 State Group	ID	Name			Wwise Object Path	Notes
 	444815956	PlayerLife			\Default Work Unit\PlayerLife	
 	1307264345	Stance			\Default Work Unit\Stance	
+	2299321487	Enemy			\Default Work Unit\Enemy	
 
 State	ID	Name	State Group			Notes
 	0	None	PlayerLife			
 	655265632	Alive	PlayerLife			
 	2044049779	Dead	PlayerLife			
+	2716678721	Victory	PlayerLife			
 	0	None	Stance			
 	579523862	Explore	Stance			
 	2764240573	Combat	Stance			
+	0	None	Enemy			
+	904752142	fBoss	Enemy			
+	1085158233	iBoss	Enemy			
+	2395677314	Common	Enemy			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	141331490	Lvl1			\Default Work Unit\Master Audio Bus\Music\Lvl1	
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1560169506	Boss			\Default Work Unit\Master Audio Bus\Music\Lvl1\Boss	
+	2764240573	Combat			\Default Work Unit\Master Audio Bus\Music\Lvl1\Combat	
 	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
+	3604647259	MainMenu			\Default Work Unit\Master Audio Bus\Music\MainMenu	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 

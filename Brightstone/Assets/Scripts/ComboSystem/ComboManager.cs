@@ -77,14 +77,17 @@ public class ComboManager : MonoBehaviour{
                 currentActionInfo = actions[Combos[activeCombos[0]].combo[comboIndex]];
 
                 HandleAction(currentActionInfo.action.actionName);
+                CheckIfIsCombination(currentActionInfo.action.standToPlay);
 
                 //se pone play a la accion
                 int comboIndexValue = Combos[activeCombos[0]].combo[comboIndex];
                 float finalIndex = (int)actualStand +
-                                    (CheckIfIsCombination(currentActionInfo.action.standToPlay) ? (int)Stands.Count : 0) +
+                                    (isCombination ? (int)Stands.Count : 0) +
                                     (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f);
                 
                 currentActionInfo.action.StartAction(currentActionInfo, finalIndex);
+
+                ManageSound(currentActionInfo.action.actionName, comboIndexValue);
             }
             
             //se inicializa el combo index
@@ -112,6 +115,7 @@ public class ComboManager : MonoBehaviour{
                                 currentActionInfo = actions[Combos[activeCombos[i]].combo[comboIndex]];
                                 //actualStand = currentAction.standToPlay;
                                 HandleAction(currentActionInfo.action.actionName);
+                                CheckIfIsCombination(currentActionInfo.action.standToPlay);
                                 found = true;
                                 index = i;
                                 break;
@@ -122,12 +126,12 @@ public class ComboManager : MonoBehaviour{
                         //se pone play a esa accion.
                         int comboIndexValue = Combos[activeCombos[index]].combo[comboIndex];
                         float finalIndex = (int)actualStand +
-                                           (CheckIfIsCombination(currentActionInfo.action.standToPlay) ? (int)Stands.Count : 0) +
+                                           (isCombination ? (int)Stands.Count : 0) +
                                            (comboIndexValue <= 9 ? comboIndexValue * 0.1f : comboIndexValue * 0.01f);
                         
                         currentActionInfo.action.StartAction(currentActionInfo, finalIndex);
-                        //se setea la siguiente action
-                        //HandleAction(currentAction.actionName);
+                        
+                        ManageSound(currentActionInfo.action.actionName, comboIndexValue);
                     }
                         
                     //se quitan los que no coinciden.
@@ -172,173 +176,74 @@ public class ComboManager : MonoBehaviour{
         return comboIndex;
     }
 
-    private void HandleAction(Actions actionNumber) {
+    private void HandleAction(Actions actionNumber){
         lastStand = actualStand;
 
-        switch (actionNumber)
-        {
+        switch (actionNumber){
             case Actions.X:
-                SoundManager.Instance.PlayerAttackHeavy();
                 actualStand = Stands.Beatdown;
                 break;
             case Actions.Y:
-                SoundManager.Instance.PlayerAttackHeavy();
                 actualStand = Stands.Thrust;
                 break;
             case Actions.B:
-                SoundManager.Instance.PlayerAttackHeavy();
                 actualStand = Stands.Shuriken;
                 break;
-
             case Actions.A:
-                SoundManager.Instance.PlayerAttackLight();
                 actualStand = Stands.Zone;
-                break;
-            default:
                 break;
         }
         standsManager.ActivateStand(actualStand);
     }
 
+    private void ManageSound(Actions actionNumber, int comboIndex){
+        switch (actionNumber){
+            case Actions.X:
+                if (!isCombination){
+                    if (comboIndex < 4)
+                        SoundManager.Instance.PlayerAttackX();
+                    else
+                        SoundManager.Instance.PlayerAttackXx5();
+                }
+                else if (comboIndex == 31)
+                    SoundManager.Instance.PlayerComboB1();
+                else if (comboIndex == 32)
+                    SoundManager.Instance.PlayerComboB2();
+                else if (comboIndex == 33)
+                    SoundManager.Instance.PlayerComboB3();
+                else if (comboIndex == 34)
+                    SoundManager.Instance.PlayerComboB4();
+                else if (comboIndex == 35)
+                    SoundManager.Instance.PlayerComboB5();
+                break;
+            case Actions.Y:
+                if (!isCombination){
+                    if (comboIndex < 9)
+                        SoundManager.Instance.PlayerAttackY();
+                    else
+                        SoundManager.Instance.PlayerAttackYx5();
+                }
+                break;
+            case Actions.B:
+                if (!isCombination)
+                    SoundManager.Instance.PlayerAttackB();
+                break;
+            case Actions.A:
+                if (!isCombination){
+                    if (comboIndex < 17)
+                        SoundManager.Instance.PlayerAttackA();
+                    else
+                        SoundManager.Instance.PlayerAttackAx7();
+                }
+                else if (comboIndex == 25)
+                    SoundManager.Instance.PlayerComboA1();
+                else if (comboIndex == 26)
+                    SoundManager.Instance.PlayerComboA2();
+                else if (comboIndex == 27)
+                    SoundManager.Instance.PlayerComboA3();
+                else if (comboIndex == 28)
+                    SoundManager.Instance.PlayerComboA4();
+                break;
+        }
+    }
 }
-
-    /* 
-    
-    
-
-    private void Update() {
-        if(activeCombos.Count > 0 && 
-            comboIndex < comboMatrix.GetLength(1)){
-            ManageCombo();
-        }else{
-            activeCombos.Clear();
-            currentAction = null;
-            comboIndex = 0;
-        }
-    }
-
-    public void ManageCombo(){
-        if(currentAction == null){
-            currentAction = actions[comboMatrix[activeCombos[0],0]];
-        }else{
-            Debug.Log(comboIndex + "    " + currentAction.State);
-            if(!currentAction.isActive){
-                currentAction.StartAction();
-            }else{
-                if(currentAction.CanChain()){
-                    currentAction = actions[comboMatrix[activeCombos[0],comboIndex]];
-                    currentAction.ResetAction();
-                    comboIndex++;
-                }
-                else{
-                    currentAction.StopAction();
-                    activeCombos.Clear();
-                    currentAction = null;
-                    comboIndex = 0;
-                }
-            }
-        }
-    }
-
-    public void ManageAction(Actions actionNumber){
-        if(currentAction == null){
-            for (int i = 0; i < comboMatrix.GetLength(0); i++){
-                if(comboMatrix[i,0] == (int)actionNumber){                    
-                    activeCombos.Add(i);
-                }
-            }
-        }else{
-            for (int i = 0; i < comboMatrix.GetLength(0); i++){
-                if(comboMatrix[i,comboIndex] != (int)actionNumber &&
-                    currentAction.State == ActionState.activeFrames){                   
-                    activeCombos.RemoveAt(i);
-                }
-            }
-        }
-    
-    
-    
-    
-    
-    
-    
-    public void ManageAction(Actions actionNumber){
-            if(activeCombos.Count > 0){
-                for (int i = 0; i < comboMatrix.GetLength(0); i++){
-                    if(comboMatrix[i,comboIndex] != (int)actionNumber &&
-                        currentAction.State == ActionState.activeFrames){                   
-                        activeCombos.RemoveAt(i);
-                    }
-                }
-            }else{
-                for (int i = 0; i < comboMatrix.GetLength(0); i++){
-                    if(comboMatrix[i,0] == (int)actionNumber){                    
-                        activeCombos.Add(i);
-                    }
-                }
-            }
-        ManageCombo();
-    }
-
-    private void Update() {
-        if(currentAction.isActive){
-            ManageCombo();
-        }
-    }
-
-    private void ManageCombo(){
-        if(activeCombos.Count>0){
-            if(currentAction.CanChain()){
-                currentAction.StopAction();
-            }
-            else{
-                currentAction.StartAction();
-            }
-            currentAction = actions[comboMatrix[activeCombos[0], comboIndex]];
-            comboIndex++;
-        }
-        if(comboIndex >= comboMatrix.GetLength(1)){
-            activeCombos.Clear();
-            comboIndex = 0;
-        }
-    }*/
-
-      /*  
-        if(activeCombos.Count>0){
-            if(currentAction.CanChain()){
-                currentAction.StopAction();
-            }
-            else{
-                currentAction.StartAction();
-            }
-            currentAction = actions[comboMatrix[activeCombos[0], comboIndex]];
-            comboIndex++;
-        }
-        if(comboIndex >= comboMatrix.GetLength(1)){
-            activeCombos.Clear();
-            comboIndex = 0;
-        }
-      
-      
-      
-      
-      
-      
-      if(activeCombos.Count > 0 && currentAction.State != ActionState.exitFrames){ //&& currentAction.CanChain()){
-           Debug.Log(comboIndex);
-            if(activeCombos[0] < actions.Length || currentAction.CanChain()){
-                currentAction = actions[comboMatrix[activeCombos[0], comboIndex]];
-                currentAction.StartAction();
-                if(comboIndex+1 == comboMatrix.GetLength(1)){
-                    activeCombos.Clear();
-                    comboIndex = 0;
-                }else{
-                    comboIndex ++;
-                }
-            }
-        }else{
-            activeCombos.Clear();
-            comboIndex = 0;
-            currentAction = actions[0];
-            Debug.Log("asd");
-        }*/
