@@ -68,6 +68,7 @@ public class RoomsBehaviour : MonoBehaviour{
                 enemies[i].SetActive(false);
             }
             if(EnemyDirector.Instance.roomIndex == 0){
+                SoundManager.Instance.RoomClear();
                 EnemyDirector.Instance.startFirstTime();
             }else{
                 EnemyDirector.Instance.startControlTime(enemiesCant);
@@ -148,7 +149,6 @@ public class RoomsBehaviour : MonoBehaviour{
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
-            //AudioManager.Instance.RoomFinished();
             SoundManager.Instance.RoomClear();
             if(EnemyDirector.Instance.roomIndex == 0){
                 EnemyDirector.Instance.stopFirstTime();
