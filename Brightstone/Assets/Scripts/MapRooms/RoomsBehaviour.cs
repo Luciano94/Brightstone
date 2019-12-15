@@ -149,7 +149,7 @@ public class RoomsBehaviour : MonoBehaviour{
         if(enemiesCant <= 0){
             GetComponent<NodeExits>().OpenDoors();
             isComplete = true;
-            //SoundManager.Instance.RoomClear();
+            SoundManager.Instance.RoomClear();
             if(EnemyDirector.Instance.roomIndex == 0){
                 EnemyDirector.Instance.stopFirstTime();
             }else{
