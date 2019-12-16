@@ -293,10 +293,6 @@ public class UIManager : MonoBehaviour{
         godMode.SetActive(!godMode.activeSelf);
     }
 
-    public void RestartButton(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void ShowPause(){
         //pauseCamvas.SetActive(true);
     }

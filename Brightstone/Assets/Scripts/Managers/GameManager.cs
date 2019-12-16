@@ -85,6 +85,10 @@ public class GameManager : MonoBehaviour{
         timePassed += Time.deltaTime;
     }
 
+    public void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void ExitToMainMenu(){
         PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
         SceneManager.LoadScene(mainMenuIndex);

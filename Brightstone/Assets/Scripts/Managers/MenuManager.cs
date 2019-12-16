@@ -62,6 +62,6 @@ public class MenuManager : MonoBehaviour{
     }
 
     private void RestartGame(){
-        UIManager.Instance.RestartButton();
+        GameManager.Instance.Restart();
     }
 }
