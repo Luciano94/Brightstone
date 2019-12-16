@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour{
     private PlayerMovement _playerMovement;
     private PlayerAnimations _playerAnimations;
 
+    public float comboMult = 1.0f;
+
     public bool isTutorial = false;
     private bool playerOn = false;
     public EventManager eventManager;
