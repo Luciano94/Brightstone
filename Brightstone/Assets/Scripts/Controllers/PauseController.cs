@@ -7,6 +7,9 @@ public class PauseController : MonoBehaviour{
     [SerializeField] private Button firstOption;
     [SerializeField] private Button controlButton;
 
+    [Header("New Pause")]
+    [SerializeField]private GameObject pauseMenu;
+
     private Animator pauseAnim;
     private bool pauseState = false;
     
@@ -15,21 +18,15 @@ public class PauseController : MonoBehaviour{
     }
 
     private void Update(){
-        if(InputManager.Instance.GetPauseButton()){
+        if (InputManager.Instance.GetPauseButton()){
             pauseState = !pauseState;
-            MenuManager.Instance.StartMenu = pauseState;
-            
-            if (!pauseState && optionsPanel.gameObject.activeSelf)
-                optionsPanel.DesactivateThis();
+            pauseMenu.SetActive(pauseState);
+            GameManager.Instance.PauseGame(pauseState);
 
-            if (pauseState){
-                firstOption.Select();
-                pauseAnim.SetTrigger("In");
-            }
-            else{
-                controlButton.Select();
-                pauseAnim.SetTrigger("Out");
-            }
         }
+    }
+
+    private void SwitchPause(){
+        GameManager.Instance.PauseGame(pauseState);
     }
 }

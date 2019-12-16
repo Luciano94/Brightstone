@@ -6,9 +6,19 @@ public class OptionsController : MonoBehaviour{
     [SerializeField] private Button controlsButton;
     [SerializeField] private Button options;
 
+    private bool paused = false;
+
     private void Update(){
-        if (InputManager.Instance.GetPauseButton())
-            DesactivateThis();
+        if (InputManager.Instance.GetPauseButton()){
+            paused = !paused;
+            if(paused){
+                DesactivateThis();
+            }else{
+                controlsButton.Select();
+                ActivateControls();
+            }
+
+        }
     }
 
     public void DesactivateThis(){
