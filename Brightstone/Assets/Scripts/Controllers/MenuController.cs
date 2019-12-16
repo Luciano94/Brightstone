@@ -91,7 +91,9 @@ public class MenuController : MonoBehaviour{
         optionsBackButton.Select();
     }
 
-    public void Credits() {
+    public void Credits(){
+        reduceAlpha = true;
+
         creditsBackButton.Select();
     }
 
@@ -108,6 +110,8 @@ public class MenuController : MonoBehaviour{
     }
 
     public void BackToCredits(){
+        reduceAlpha = false;
+
         creditsButton.Select();
     }
 
