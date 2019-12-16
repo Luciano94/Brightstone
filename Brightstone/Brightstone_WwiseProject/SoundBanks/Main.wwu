@@ -22,9 +22,11 @@
 						<ObjectRef Name="PlayerRespawn" ID="{ECA6A6CC-9404-4325-A60A-5A975B3B013B}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BossSwordAttack" ID="{B2C1B83D-A34B-434F-BC82-0459652F652A}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="ArrowHit" ID="{A8119FF1-21D3-4364-BBCD-4F5C8AA03850}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerDamaged" ID="{F9BA0457-4FAA-43A5-A022-525405CB16A4}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB3" ID="{67998566-4E1D-43C6-B3E4-B2046EFFBB5A}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EnemyArcherTightBow" ID="{9F3AE7D0-5B12-4540-9CA7-750F6F331649}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboA3" ID="{3602E166-9705-458F-9398-2817EAAFB3CF}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerShurikenHit" ID="{4501BD4F-FC30-45AC-B092-A4FBFFFE00AD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboA2" ID="{7985BA66-3452-45CF-960D-D59A7CFA757F}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackA" ID="{365BA1F5-6A1B-4689-9D43-6D0016D525BB}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BossDeath" ID="{13D024BA-593C-4733-BCF2-481348221D14}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
@@ -34,7 +36,9 @@
 						<ObjectRef Name="PlayerParryHit" ID="{454F48E8-6B3C-4827-BEDB-81C29AB0A56E}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackAx7" ID="{1E07DFA2-FBDF-4850-A6AC-BAF84207D3C3}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="SelectAttX" ID="{E59FEE0B-959F-4857-957A-E812D4DD6D95}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerAttackLightHit" ID="{E97C5B9D-2968-48B4-B1D9-71537F3DA321}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomNewEnter" ID="{6784F46F-760A-48B9-A5FB-686642185785}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerLvlUp" ID="{C9B82D18-6CB3-4A29-9E96-DF133D80E3FB}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerDeath" ID="{E5D3B09B-8A77-4A31-95D3-DB1947B83C67}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackX" ID="{5CEB4410-7E4C-4A4E-B18C-DCC062BA1841}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EnemyMeleeSwordAttack" ID="{13E79E2C-F8EF-4AA3-A1EF-5FD942D37A4F}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
@@ -46,6 +50,7 @@
 						<ObjectRef Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB1" ID="{16C5D5AF-D8E6-4DD3-86CD-9CE22165F26C}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackLight2" ID="{B84A29D3-FC08-4E76-829E-A8350FDB6A2D}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerGetsSoul" ID="{DFC35E38-043E-4F90-BADE-DED41A4482AD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB5" ID="{C225548A-F5C4-4FA9-85E2-D2AFF4F4AFCD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

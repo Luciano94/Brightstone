@@ -3438,6 +3438,116 @@
 								</MusicCue>
 							</CueList>
 						</MusicSegment>
+						<MusicSegment Name="mainManuPianosoloCue" ID="{A42D37C0-1300-42DD-A53B-F339C495EF9B}" ShortID="1015078447">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="70500"/>
+								<Property Name="Tempo" Type="Real64" Value="80"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<Custom CreatedFrom="{6D1B890C-9826-4384-BF07-C15223E9FB56}">
+										<Conversion Name="Default Conversion Settings (Custom)" ID="{9351B054-912F-495E-B511-266013D10956}">
+											<PropertyList>
+												<Property Name="Channels" Type="int32">
+													<ValueList>
+														<Value Platform="Mac">4</Value>
+														<Value Platform="Windows">4</Value>
+													</ValueList>
+												</Property>
+												<Property Name="LRMix" Type="Real64">
+													<ValueList>
+														<Value Platform="Mac">0</Value>
+														<Value Platform="Windows">0</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxSampleRate" Type="int32">
+													<ValueList>
+														<Value Platform="Mac">0</Value>
+														<Value Platform="Windows">0</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MinSampleRate" Type="int32">
+													<ValueList>
+														<Value Platform="Mac">0</Value>
+														<Value Platform="Windows">0</Value>
+													</ValueList>
+												</Property>
+												<Property Name="SampleRate" Type="int32">
+													<ValueList>
+														<Value Platform="Mac">0</Value>
+														<Value Platform="Windows">0</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ConversionPluginInfoList>
+												<ConversionPluginInfo Platform="Mac">
+													<ConversionPlugin Name="" ID="{77DC919C-BEFE-468C-AFCD-622EFEDE3E83}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+												</ConversionPluginInfo>
+												<ConversionPluginInfo Platform="Windows">
+													<ConversionPlugin Name="" ID="{531ED10D-C66E-4986-98DD-D3BC6EB2E3E0}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+												</ConversionPluginInfo>
+											</ConversionPluginInfoList>
+										</Conversion>
+									</Custom>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{7BA262B0-D822-44C7-AF31-46A1DB9DF945}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="mainManuPianosoloCue" ID="{85FA1A3B-8359-4670-973F-74F424ECC01B}" ShortID="464087984">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="mainManuPianosoloCue" ID="{CAC7F92B-F571-4F32-97F4-B90A42A265A5}" ShortID="65595492">
+											<Language>SFX</Language>
+											<AudioFile>mainManuPianosoloCue.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="666452966"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{CDEA159C-F7C6-4954-8C07-0E81A00A06FC}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{AECF8DCE-DA97-48C0-9392-5476E2063F6A}">
+											<ClipList>
+												<MusicClip Name="mainManuPianosoloCue" ID="{B639658E-B4DE-461E-9876-03132A457A78}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="70500"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1673.13915857605"/>
+													</PropertyList>
+													<AudioSourceRef Name="mainManuPianosoloCue" ID="{CAC7F92B-F571-4F32-97F4-B90A42A265A5}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{F9A18916-4CE3-442C-A12D-D163D289D533}">
+									<PropertyList>
+										<Property Name="TimeMs" Type="Real64" Value="2387.18580387277"/>
+									</PropertyList>
+								</MusicCue>
+								<MusicCue Name="Exit Cue" ID="{15BBB7CD-9157-450E-9323-F9FC84AF928D}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="67528.2530208026"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
 					</ChildrenList>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{3F32BEE7-0A99-4BCD-8E45-DF6E7D860922}">
@@ -3458,108 +3568,128 @@
 								<Property Name="LoopCount" Type="int16" Value="0"/>
 							</PropertyList>
 							<ChildrenList>
-								<MusicPlaylistItem Name="" ID="{3332D62C-694A-497E-B717-46512535A721}" ShortID="971879511">
-									<PropertyList>
-										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-									</PropertyList>
-									<SegmentRef Name="MainTitle_Main_80ppm_4-4_8M_P2B" ID="{6460531B-B53D-4714-B95B-C3C202B3DFB5}"/>
-								</MusicPlaylistItem>
 								<MusicPlaylistItem Name="" ID="{4B07B976-56B6-4E56-A24A-A33C01F650A3}" ShortID="1021771664">
 									<PropertyList>
 										<Property Name="LoopCount" Type="int16" Value="2"/>
 									</PropertyList>
 									<ChildrenList>
-										<MusicPlaylistItem Name="" ID="{2E1B230B-82FA-4CFE-9A5D-A6DE66D33BAA}" ShortID="764067210">
+										<MusicPlaylistItem Name="" ID="{3332D62C-694A-497E-B717-46512535A721}" ShortID="971879511">
 											<PropertyList>
-												<Property Name="LoopCount" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{C4FB29DE-E9C1-436A-900B-CB1AD9970EC6}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
 												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 											</PropertyList>
-											<SegmentRef Name="ExtA" ID="{C7FF8D3A-1304-463F-A6C8-ECF502E4C677}"/>
+											<SegmentRef Name="MainTitle_Main_80ppm_4-4_8M_P2B" ID="{6460531B-B53D-4714-B95B-C3C202B3DFB5}"/>
 										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{19915114-F58A-463F-A088-769901998893}" ShortID="898894038">
+										<MusicPlaylistItem Name="" ID="{DA9BF20D-93A5-4900-8248-2DD43CDC1F39}" ShortID="6443726">
 											<PropertyList>
-												<Property Name="LoopCount" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{A729C01D-2FBD-4BD0-9417-F96B10A49199}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="1"/>
-																	<Property Name="Min" Type="Real64" Value="-1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+												<Property Name="LoopCount" Type="int16" Value="2"/>
 											</PropertyList>
-											<SegmentRef Name="Tsn" ID="{D47387CB-8098-45BD-A580-3BDE0EED5D89}"/>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{2E1B230B-82FA-4CFE-9A5D-A6DE66D33BAA}" ShortID="764067210">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{C4FB29DE-E9C1-436A-900B-CB1AD9970EC6}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="1"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="ExtA" ID="{C7FF8D3A-1304-463F-A6C8-ECF502E4C677}"/>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{19915114-F58A-463F-A088-769901998893}" ShortID="898894038">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{A729C01D-2FBD-4BD0-9417-F96B10A49199}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="1"/>
+																			<Property Name="Min" Type="Real64" Value="-1"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Tsn" ID="{D47387CB-8098-45BD-A580-3BDE0EED5D89}"/>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{7B7C392B-6764-401E-BA7D-8146A9D6E2B5}" ShortID="224105951">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{3A67F3CD-C173-4EEA-A413-9D3E2210EDCC}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="1"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="ExtB" ID="{F0304622-3F03-48AA-B60B-9AC801BB81EF}"/>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{BD8083AB-0DCA-46AC-A2DF-0B5A954E9EDC}" ShortID="930038338">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{9A43F3ED-5C0E-4338-8380-6FE8C335E4DF}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Min" Type="Real64" Value="-1"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Ext_Accomp" ID="{B64EF23D-9FF0-4BC1-A591-89FE46A3C90C}"/>
+												</MusicPlaylistItem>
+												<MusicPlaylistItem Name="" ID="{F21AB841-762D-47CA-86E4-63329F528531}" ShortID="375546494">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{BA7C22D2-EBF5-4FDE-A518-E7109FFD1AC7}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="1"/>
+																			<Property Name="Min" Type="Real64" Value="-1"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="Tsn" ID="{D47387CB-8098-45BD-A580-3BDE0EED5D89}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
 										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{7B7C392B-6764-401E-BA7D-8146A9D6E2B5}" ShortID="224105951">
+										<MusicPlaylistItem Name="" ID="{750FA3BF-599D-4B80-8418-B3127212AFE1}" ShortID="76138045">
 											<PropertyList>
-												<Property Name="LoopCount" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{3A67F3CD-C173-4EEA-A413-9D3E2210EDCC}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+												<Property Name="PlayMode" Type="int16" Value="1"/>
 											</PropertyList>
-											<SegmentRef Name="ExtB" ID="{F0304622-3F03-48AA-B60B-9AC801BB81EF}"/>
-										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{BD8083AB-0DCA-46AC-A2DF-0B5A954E9EDC}" ShortID="930038338">
-											<PropertyList>
-												<Property Name="LoopCount" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{9A43F3ED-5C0E-4338-8380-6FE8C335E4DF}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Min" Type="Real64" Value="-1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-											</PropertyList>
-											<SegmentRef Name="Ext_Accomp" ID="{B64EF23D-9FF0-4BC1-A591-89FE46A3C90C}"/>
-										</MusicPlaylistItem>
-										<MusicPlaylistItem Name="" ID="{F21AB841-762D-47CA-86E4-63329F528531}" ShortID="375546494">
-											<PropertyList>
-												<Property Name="LoopCount" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{BA7C22D2-EBF5-4FDE-A518-E7109FFD1AC7}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="1"/>
-																	<Property Name="Min" Type="Real64" Value="-1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-											</PropertyList>
-											<SegmentRef Name="Tsn" ID="{D47387CB-8098-45BD-A580-3BDE0EED5D89}"/>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{6EDA23FA-7625-4633-888A-CD00483CE562}" ShortID="1067468341">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="mainManuPianosoloCue" ID="{A42D37C0-1300-42DD-A53B-F339C495EF9B}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
 										</MusicPlaylistItem>
 									</ChildrenList>
 								</MusicPlaylistItem>
@@ -28292,12 +28422,12 @@
 																				<PointList>
 																					<Point>
 																						<XPos>0</XPos>
-																						<YPos>-0</YPos>
+																						<YPos>0</YPos>
 																						<Flags>5</Flags>
 																					</Point>
 																					<Point>
 																						<XPos>9.9375</XPos>
-																						<YPos>-0</YPos>
+																						<YPos>0</YPos>
 																						<Flags>37</Flags>
 																					</Point>
 																				</PointList>
@@ -34212,13 +34342,13 @@
 															<ChildrenList>
 																<MusicPlaylistItem Name="" ID="{E1C9D00C-32A4-422D-A2B3-58D4DCD62C9E}" ShortID="279855170">
 																	<PropertyList>
-																		<Property Name="LoopCount" Type="int16" Value="2">
+																		<Property Name="LoopCount" Type="int16">
 																			<ModifierList>
 																				<ModifierInfo>
 																					<Modifier Name="" ID="{CDD3BC4F-F642-41B0-AFC1-11DF7F3F2D67}">
 																						<PropertyList>
 																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Min" Type="Real64" Value="-1"/>
+																							<Property Name="Max" Type="Real64" Value="1"/>
 																						</PropertyList>
 																					</Modifier>
 																				</ModifierInfo>
@@ -34305,13 +34435,13 @@
 																</MusicPlaylistItem>
 															</ChildrenList>
 														</MusicPlaylistItem>
+														<MusicPlaylistItem Name="" ID="{B2C47202-9DBD-4A08-9896-42945F3FFAF3}" ShortID="1020023756">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<SegmentRef Name="Combat" ID="{6B7180B1-EF67-4E16-A00B-9C28924B7EC1}"/>
+														</MusicPlaylistItem>
 													</ChildrenList>
-												</MusicPlaylistItem>
-												<MusicPlaylistItem Name="" ID="{B2C47202-9DBD-4A08-9896-42945F3FFAF3}" ShortID="1020023756">
-													<PropertyList>
-														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-													</PropertyList>
-													<SegmentRef Name="Combat" ID="{6B7180B1-EF67-4E16-A00B-9C28924B7EC1}"/>
 												</MusicPlaylistItem>
 											</ChildrenList>
 										</MusicPlaylistItem>
@@ -35198,12 +35328,12 @@
 																				<PointList>
 																					<Point>
 																						<XPos>0</XPos>
-																						<YPos>-0</YPos>
+																						<YPos>0</YPos>
 																						<Flags>5</Flags>
 																					</Point>
 																					<Point>
 																						<XPos>9.9375</XPos>
-																						<YPos>-0</YPos>
+																						<YPos>0</YPos>
 																						<Flags>37</Flags>
 																					</Point>
 																				</PointList>
@@ -45869,7 +45999,6 @@
 											<ChildrenList>
 												<MusicTrack Name="Brass_210bpm_4-4_8M_0MP" ID="{83B25F69-0A37-4A33-841F-C7DC3D554662}" ShortID="208049733">
 													<PropertyList>
-														<Property Name="MusicTrackType" Type="int16" Value="1"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>3</Value>
@@ -45893,13 +46022,6 @@
 															<AudioFile>Bridge2\Brass_210bpm_4-4_8M_0MP.wav</AudioFile>
 															<ConvertedFileIDList>
 																<File ID="1014163281"/>
-															</ConvertedFileIDList>
-														</AudioFileSource>
-														<AudioFileSource Name="HiStrings_210bpm_4-4_8M_0MP" ID="{FB8C147C-5BFF-4FCF-B058-8F35556C7FF0}" ShortID="45901236">
-															<Language>SFX</Language>
-															<AudioFile>Bridge2\HiStrings_210bpm_4-4_8M_0MP.wav</AudioFile>
-															<ConvertedFileIDList>
-																<File ID="79134816"/>
 															</ConvertedFileIDList>
 														</AudioFileSource>
 													</ChildrenList>
@@ -45955,38 +46077,6 @@
 																	<ObjectRef Name="TwoThirds" ID="{13D27A62-BAFF-4C80-A9F9-071719471AE5}" WorkUnitID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}"/>
 																</Reference>
 															</ReferenceList>
-														</MusicTrackSequence>
-														<MusicTrackSequence Name="" ID="{D36348BA-9ED6-4086-AC82-94D917F0C1FB}">
-															<ClipList>
-																<MusicClip Name="HiStrings_210bpm_4-4_8M_0MP" ID="{04336315-B637-4A29-BEEB-B4BF0D6454C2}">
-																	<PropertyList>
-																		<Property Name="EndTrimOffset" Type="Real64" Value="11428.5714285714"/>
-																		<Property Name="FadeInMode" Type="int16" Value="0"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="936.970257358609"/>
-																	</PropertyList>
-																	<AudioSourceRef Name="HiStrings_210bpm_4-4_8M_0MP" ID="{FB8C147C-5BFF-4FCF-B058-8F35556C7FF0}"/>
-																</MusicClip>
-															</ClipList>
-														</MusicTrackSequence>
-														<MusicTrackSequence Name="" ID="{BC307BB7-887F-4F25-B940-FA8054941652}">
-															<ClipList>
-																<MusicClip Name="Brass_210bpm_4-4_8M_0MP" ID="{BE55572C-0058-4F53-AEA5-60BECC87E606}">
-																	<PropertyList>
-																		<Property Name="EndTrimOffset" Type="Real64" Value="11428.5714285714"/>
-																		<Property Name="FadeInMode" Type="int16" Value="0"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="973.955925412238"/>
-																	</PropertyList>
-																	<AudioSourceRef Name="Brass_210bpm_4-4_8M_0MP" ID="{BE57C89F-5E63-4DE0-9329-D0F1B950E8D6}"/>
-																</MusicClip>
-																<MusicClip Name="HiStrings_210bpm_4-4_8M_0MP" ID="{915477A9-B509-41A0-9A79-CF155DBCBCD3}">
-																	<PropertyList>
-																		<Property Name="EndTrimOffset" Type="Real64" Value="11428.5714285714"/>
-																		<Property Name="FadeInMode" Type="int16" Value="0"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="936.970257358609"/>
-																	</PropertyList>
-																	<AudioSourceRef Name="HiStrings_210bpm_4-4_8M_0MP" ID="{FB8C147C-5BFF-4FCF-B058-8F35556C7FF0}"/>
-																</MusicClip>
-															</ClipList>
 														</MusicTrackSequence>
 													</SequenceList>
 												</MusicTrack>
@@ -50278,7 +50368,6 @@
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{4B2F138B-367A-4C19-978F-51355F95EA96}">
 																				<PropertyList>
-																					<Property Name="Enabled" Type="bool" Value="True"/>
 																					<Property Name="Max" Type="Real64" Value="1"/>
 																				</PropertyList>
 																			</Modifier>
@@ -74405,6 +74494,11 @@
 												<Property Name="Tempo" Type="Real64" Value="92"/>
 												<Property Name="TimeSignatureLower" Type="int16" Value="8"/>
 												<Property Name="TimeSignatureUpper" Type="int16" Value="13"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -74623,6 +74717,11 @@
 												<Property Name="Tempo" Type="Real64" Value="92"/>
 												<Property Name="TimeSignatureLower" Type="int16" Value="8"/>
 												<Property Name="TimeSignatureUpper" Type="int16" Value="13"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -74834,6 +74933,11 @@
 												<Property Name="Tempo" Type="Real64" Value="92"/>
 												<Property Name="TimeSignatureLower" Type="int16" Value="8"/>
 												<Property Name="TimeSignatureUpper" Type="int16" Value="13"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -74845,6 +74949,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<MusicTrack Name="BossB_92bpm_13-8_2M_0P" ID="{47B52FC1-E83C-48EC-A104-A6414E4E8419}" ShortID="111290045">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
@@ -75307,6 +75418,11 @@
 												<Property Name="Tempo" Type="Real64" Value="92"/>
 												<Property Name="TimeSignatureLower" Type="int16" Value="8"/>
 												<Property Name="TimeSignatureUpper" Type="int16" Value="29"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -75474,6 +75590,11 @@
 												<Property Name="Tempo" Type="Real64" Value="92"/>
 												<Property Name="TimeSignatureLower" Type="int16" Value="16"/>
 												<Property Name="TimeSignatureUpper" Type="int16" Value="31"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -75542,6 +75663,11 @@
 												<Property Name="Tempo" Type="Real64" Value="92"/>
 												<Property Name="TimeSignatureLower" Type="int16" Value="8"/>
 												<Property Name="TimeSignatureUpper" Type="int16" Value="13"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -75686,6 +75812,11 @@
 										<MusicSegment Name="BossF" ID="{3277A495-BA51-4B98-9340-366E490E9905}" ShortID="360569873">
 											<PropertyList>
 												<Property Name="EndPosition" Type="Real64" Value="10597.8379177758"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -75912,6 +76043,11 @@
 											<PropertyList>
 												<Property Name="EndPosition" Type="Real64" Value="6195.65217391304"/>
 												<Property Name="Tempo" Type="Real64" Value="92"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>8</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -76082,6 +76218,11 @@
 											<PropertyList>
 												<Property Name="EndPosition" Type="Real64" Value="10434.7845804989"/>
 												<Property Name="Tempo" Type="Real64" Value="92"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">

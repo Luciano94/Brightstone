@@ -110,6 +110,8 @@ public class MarketCanvasManager : MonoBehaviour{
     }
 
     public void EnterMarket(){
+        GameManager.Instance.marketOpen = true;
+
         playerSts = GameManager.Instance.playerSts;
         if(playerSts.PlayerLevel == 0)
         {
@@ -246,7 +248,6 @@ public class MarketCanvasManager : MonoBehaviour{
         }
     }
     public void Confirm(){
-
         if(canConfirm){
            // confirmButton.interactable = false;
             canConfirm = false;
@@ -282,7 +283,8 @@ public class MarketCanvasManager : MonoBehaviour{
             newAttackLevelTxt.color = Color.white;
             newAttackStatTxt.color = Color.white;
 
-            GameManager.Instance.tutorialMarketComplete = true;
+            //GameManager.Instance.tutorialMarketComplete = true;
+            GameManager.Instance.marketOpen = false;
         }else{
            // confirmButton.interactable = false;
         }
@@ -306,6 +308,7 @@ public class MarketCanvasManager : MonoBehaviour{
             playerSts.setLifeStat = playerSts.MaxLife() + 50;
             marketGO.SetActive(false);
             GameManager.Instance.PauseGame(false);
+            GameManager.Instance.marketOpen = false;
         }
        /* if(!operation && canMinus && newLifeLevel > lifeLevel){
             newPlayerExperience += oldLevelrequiredExp;
@@ -351,7 +354,7 @@ public class MarketCanvasManager : MonoBehaviour{
             playerSts.setAtkMult += 0.5f;
             marketGO.SetActive(false);
             GameManager.Instance.PauseGame(false);
-
+            GameManager.Instance.marketOpen = false;
         }
         /*if(!operation && canMinus && newAttackLevel > attackLevel){
             newPlayerExperience += oldLevelrequiredExp;

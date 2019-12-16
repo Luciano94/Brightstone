@@ -1723,7 +1723,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1660168831}
-        m_MethodName: BackToOptions
+        m_MethodName: BackToCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3931,7 +3931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07374673, y: 0.066}
   m_AnchorMax: {x: 0.92456335, y: 0.81844383}
-  m_AnchoredPosition: {x: -1.5, y: 3.9500427}
+  m_AnchoredPosition: {x: -1.5, y: 3.9500732}
   m_SizeDelta: {x: -2.5, y: 4.1000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1345019491
@@ -4556,7 +4556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.42287502, y: 0.61277777}
-  m_AnchoredPosition: {x: 4.380066, y: -266}
+  m_AnchoredPosition: {x: 4.380005, y: -266}
   m_SizeDelta: {x: 6.999939, y: -0.48995972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1519736837

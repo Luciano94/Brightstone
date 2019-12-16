@@ -133,7 +133,7 @@ public class PlayerCombat : MonoBehaviour{
     }
 
     private void Attack(){
-        if(!MenuManager.Instance.StartMenu){
+        if(!GameManager.Instance.pause){
             if(InputManager.Instance.GetActionBeatdown()){
                 cManager.ManageAction(Actions.X);
                 actualAttackAction = Actions.X;

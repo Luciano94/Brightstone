@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
     guid: 14ab29a0355db14aba2233d66358ad72
     GuidInternal: 
-    m_lastTime: -8586251906787186336
+    m_lastTime: -8586251052861956868
     List:
     - name: Level1
       guid: 62b4613584d64041b1d7232e58ed92c7
@@ -54,7 +54,7 @@ MonoBehaviour:
     ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
     guid: 26c2e0a2ad68834a9d717f539c706795
     GuidInternal: 
-    m_lastTime: -8586251906787166363
+    m_lastTime: -8586251449973716576
     List:
     - name: Level1Music
       guid: 5f9015679f669546a979909b22431f03
@@ -443,7 +443,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 5d7a2c9e7911f3419b9a4fffb92d5afc
     GuidInternal: 
-    m_lastTime: -8586251906799319153
+    m_lastTime: -8586251054989569025
     List:
     - name: PlayerAttackA
       guid: f5a15b361b6a89469d436d0016d525bb
@@ -571,8 +571,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackLightHit
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1500720
+      minDuration: 1027745
     - name: PlayerAttackX
       guid: 1044eb5c4c7e4e4ab18cdcc062ba1841
       id: 3417696994
@@ -603,8 +603,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackXx5
       maxAttenuation: 0
-      maxDuration: 705638
-      minDuration: 512678
+      maxDuration: 1059463
+      minDuration: 917004
     - name: PlayerAttackY
       guid: 24f04b9f49c33f41881f0dcbe6f22bda
       id: 3417696995
@@ -795,8 +795,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerDamaged
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1090508
+      minDuration: 745061
     - name: PlayerDash
       guid: d3d0ea7bef30af4ca8f538dee718ca26
       id: 2525052962
@@ -811,8 +811,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerDash
       maxAttenuation: 0
-      maxDuration: 271017
-      minDuration: 203033
+      maxDuration: 289544
+      minDuration: 216913
     - name: PlayerDeath
       guid: 9bb0d3e5778a314a95d3db1947b83c67
       id: 1656947812
@@ -829,6 +829,38 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 5087039
       minDuration: 4857316
+    - name: PlayerGetsSoul
+      guid: 385ec3df3e04904fbadeded41a4482ad
+      id: 2506589132
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerGetsSoul
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerGetsSoul
+      maxAttenuation: 0
+      maxDuration: 923794
+      minDuration: 712343
+    - name: PlayerLvlUp
+      guid: 182db8c9b36c294a9e96df133d80e3fb
+      id: 3526874771
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerLvlUp
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerLvlUp
+      maxAttenuation: 0
+      maxDuration: 750169
+      minDuration: 750169
     - name: PlayerParry
       guid: b4839d79ebd0504e91f2636f5dd3ad67
       id: 878262600
@@ -875,8 +907,24 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerRespawn
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 7430093
+      minDuration: 7430093
+    - name: PlayerShurikenHit
+      guid: 4fbd014530fcac45b092a4fbfffe00ad
+      id: 3382292410
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerShurikenHit
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerShurikenHit
+      maxAttenuation: 0
+      maxDuration: 804281
+      minDuration: 568712
     - name: SelectAttA
       guid: 58538ba17a23ea47b8466834606276af
       id: 4283005579
@@ -950,7 +998,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: f0c1bca2a5f04f45be9cc3d681b484d5
     GuidInternal: 
-    m_lastTime: -8586251906799309150
+    m_lastTime: -8586251083653844677
     List:
     - name: BossHP
       guid: 2e46467507cf6841be5c190c3fda92ee
@@ -979,6 +1027,15 @@ MonoBehaviour:
       - ElementName: PlayerHP
         ObjectType: 13
       Path: Default Work Unit\PlayerHP
+    - name: PlayerXP
+      guid: 81c49fa4cabb5b488072adc41cc5c27c
+      id: 3389465314
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayerXP
+        ObjectType: 13
+      Path: Default Work Unit\PlayerXP
     - name: RoomsCleared
       guid: 925c613d1014b947b65e6484bc7317ee
       id: 1063810301

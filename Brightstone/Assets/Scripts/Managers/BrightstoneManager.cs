@@ -96,6 +96,8 @@ public class BrightstoneManager : MonoBehaviour{
                 if (particles.Count == 0)
                     movingToPlayer = false;
 
+                SoundManager.Instance.PlayerGetsSoul();
+
                 return;
 
                 // Here i have to make a call to someone telling to:

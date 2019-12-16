@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour{
     [SerializeField] private GameObject levelBoss;
     [SerializeField] private ShakerController shakerController;
     [SerializeField] private ZoomWhenParrying zoomWhenParrying;
+    [SerializeField] private PauseController pauseController;
 
     private Vector3 initPos;
 
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour{
     public bool tutorialMarketComplete = false;
     public bool playerAlive = true;
     public float timePassed = 0;
+    public bool pause = false;
+    public bool marketOpen = false;
 
     public bool PlayerOn{
         set{player.SetActive(value);
@@ -66,7 +69,9 @@ public class GameManager : MonoBehaviour{
             PlayerPrefs.GetInt("XP", 0);
         }
 
-        
+        DisablePlayer();
+        pauseController.enabled = false;
+        Invoke("EnablePlayer", 3.5f);
     }
 
     private void Start(){
@@ -186,17 +191,18 @@ public class GameManager : MonoBehaviour{
         EnemyBehaviour.Instance.OnPlayerDeath();
         playerAlive = false;
 
-        _playerCombat.enabled = false;
-        _playerMovement.enabled = false;
         _playerStats.enabled = false;
-        _playerDash.enabled = false;
 
-        //AudioManager.Instance.StopTheme();
+        DisablePlayer();
+
+        pauseController.enabled = false;
+
         UIManager.Instance.RunDeathAnimations();
         MenuManager.Instance.LoseMenuCanvas = true;
     }
 
     public void PauseGame(bool pause){
+        this.pause = pause;
         if(pause){
             Time.timeScale = 0;
         }else{
@@ -215,24 +221,27 @@ public class GameManager : MonoBehaviour{
         RunSaver.Save();
         
         _playerStats.enabled = false;
-        _playerDash.enabled = false;
-
-        //AudioManager.Instance.StopTheme();
-        MenuManager.Instance.WinMenuCanvas = true;
 
         DisablePlayer();
+
+        pauseController.enabled = false;
+        
+        MenuManager.Instance.WinMenuCanvas = true;
     }
 
     public void EnablePlayer(){
         _playerMovement.enabled = true;
+        _playerDash.enabled = true;
         _playerCombat.enabled = true;
         _playerAnimations.enabled = true;
+
+        pauseController.enabled = true;
     }
 
     public void DisablePlayer(){
         _playerMovement.enabled = false;
+        _playerDash.enabled = false;
         _playerCombat.enabled = false;
-        _playerAnimations.Idle();
         _playerAnimations.enabled = false;
     }
 }

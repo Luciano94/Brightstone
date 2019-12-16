@@ -32,6 +32,7 @@ namespace AK
         static const AkUniqueID PLAYERATTACKHEAVY = 3914790867U;
         static const AkUniqueID PLAYERATTACKLIGHT = 231747402U;
         static const AkUniqueID PLAYERATTACKLIGHT2 = 146436428U;
+        static const AkUniqueID PLAYERATTACKLIGHTHIT = 3179880165U;
         static const AkUniqueID PLAYERATTACKX = 3417696994U;
         static const AkUniqueID PLAYERATTACKXX5 = 2572221999U;
         static const AkUniqueID PLAYERATTACKY = 3417696995U;
@@ -45,10 +46,14 @@ namespace AK
         static const AkUniqueID PLAYERCOMBOB3 = 2504305037U;
         static const AkUniqueID PLAYERCOMBOB4 = 2504305034U;
         static const AkUniqueID PLAYERCOMBOB5 = 2504305035U;
+        static const AkUniqueID PLAYERDAMAGED = 4055688079U;
         static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERDEATH = 1656947812U;
+        static const AkUniqueID PLAYERGETSSOUL = 2506589132U;
+        static const AkUniqueID PLAYERLVLUP = 3526874771U;
         static const AkUniqueID PLAYERPARRYHIT = 410952847U;
         static const AkUniqueID PLAYERRESPAWN = 667982098U;
+        static const AkUniqueID PLAYERSHURIKENHIT = 3382292410U;
         static const AkUniqueID ROOMBOSSENTER = 4149955699U;
         static const AkUniqueID ROOMCLEAR = 1974576135U;
         static const AkUniqueID ROOMIBOSSENTER = 1109341308U;
@@ -187,6 +192,7 @@ namespace AK
         static const AkUniqueID BOSSHP = 1624904154U;
         static const AkUniqueID EXPLORETIMER = 1033151537U;
         static const AkUniqueID PLAYERHP = 3657907122U;
+        static const AkUniqueID PLAYERXP = 3389465314U;
         static const AkUniqueID ROOMSCLEARED = 1063810301U;
     } // namespace GAME_PARAMETERS
 
