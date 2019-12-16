@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour{
     }
 
     public void ExitToMainMenu(){
+        Time.timeScale = 1.0f;
         PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
         SceneManager.LoadScene(mainMenuIndex);
     }

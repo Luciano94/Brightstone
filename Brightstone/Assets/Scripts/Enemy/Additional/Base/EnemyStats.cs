@@ -47,7 +47,7 @@ public class EnemyStats : MonoBehaviour{
                 if(GameManager.Instance.comboMult == 1)
                     DamagePopup.Create(numPos.position, (int)value, 8, Color.white);
                 else if(GameManager.Instance.comboMult == 1.5f)
-                    DamagePopup.Create(numPos.position, (int)value, 12, Color.blue);
+                    DamagePopup.Create(numPos.position, (int)value, 12, Color.yellow);
 
                 else if(GameManager.Instance.comboMult == 2.0f)
                     DamagePopup.Create(numPos.position, (int)value, 15, Color.red);
