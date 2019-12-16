@@ -26,6 +26,7 @@ public class MenuController : MonoBehaviour{
     [SerializeField] Button creditsButton;
     [SerializeField] Button backButton;
     [SerializeField] Button optionsBackButton;
+    [SerializeField] Button creditsBackButton;
 
     [Header("Sprites")]
     [SerializeField] SpriteRenderer brightstoneImg;
@@ -88,6 +89,10 @@ public class MenuController : MonoBehaviour{
 
     public void Options(){
         optionsBackButton.Select();
+    }
+
+    public void Credits() {
+        creditsBackButton.Select();
     }
 
     public void ResetStats(){
