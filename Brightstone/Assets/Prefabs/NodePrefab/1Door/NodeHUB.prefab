@@ -1639,6 +1639,7 @@ GameObject:
   - component: {fileID: 1387649847785503305}
   - component: {fileID: 2892567728328221436}
   - component: {fileID: 2899139599728288155}
+  - component: {fileID: 3624107582940608517}
   - component: {fileID: 3080619618909812688}
   m_Layer: 15
   m_Name: Red Hair Boy
@@ -1737,6 +1738,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &3624107582940608517
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037517895957518349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bb814eeb6e37ed4a9e5ff70ff0a9982, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3080619618909812688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2618,8 +2638,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2136427057757482878}
   - component: {fileID: 7325559250633307832}
-  - component: {fileID: 6841209045564296926}
   - component: {fileID: 3242205604194988915}
+  - component: {fileID: 6841209045564296926}
   - component: {fileID: 369695997311368398}
   m_Layer: 15
   m_Name: Leader
@@ -2692,25 +2712,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6841209045564296926
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4239216669034455893}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec66da1a099caac429228ce553426e29, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &3242205604194988915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2737,6 +2738,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 3}
   m_EdgeRadius: 0
+--- !u!95 &6841209045564296926
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239216669034455893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec66da1a099caac429228ce553426e29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &369695997311368398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4572,6 +4592,7 @@ GameObject:
   - component: {fileID: 2838291842654350957}
   - component: {fileID: 6008034404482145813}
   - component: {fileID: 4461866175817196263}
+  - component: {fileID: 5026452095626348825}
   - component: {fileID: 5311768648333843661}
   m_Layer: 15
   m_Name: Blue Hair Girl
@@ -4670,6 +4691,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.5, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &5026452095626348825
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9184759778489188926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 746baeb2d8bbf8a46a05154559dd912b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5311768648333843661
 MonoBehaviour:
   m_ObjectHideFlags: 0
