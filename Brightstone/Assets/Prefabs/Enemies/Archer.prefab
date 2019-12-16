@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 180
-  atkDmg: 20
+  atkDmg: 35
   numPos: {fileID: 4998499608362035148}
   lifeColor:
     serializedVersion: 2

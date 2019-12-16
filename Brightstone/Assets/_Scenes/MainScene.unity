@@ -17855,7 +17855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brightstoneParticlesGO: {fileID: 2853793051058669794, guid: db0e22bde9159f945ab24e14efd3dc37,
     type: 3}
-  movSpeed: 8
+  movSpeed: 12
   minDist: 1
   givenExperience: 100
   brightstonesData:
@@ -18038,9 +18038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09d059f0800e6c4cb0a5aa82684b502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMenuCanvas: {fileID: 0}
   winMenuCanvas: {fileID: 1850017215}
-  loseMenuCanvas: {fileID: 1030141165}
   stateUI: {fileID: 1073534366}
   buttonToSelect: {fileID: 69029110}
   timeToActivateStateUi: 1

@@ -15,9 +15,7 @@ public class MenuManager : MonoBehaviour{
         }
     }
 
-    [SerializeField] private GameObject startMenuCanvas;
     [SerializeField] private GameObject winMenuCanvas;
-    [SerializeField] private GameObject loseMenuCanvas;
     [SerializeField] private GameObject stateUI;
     [SerializeField] private Button buttonToSelect;
     [SerializeField] private float timeToActivateStateUi;

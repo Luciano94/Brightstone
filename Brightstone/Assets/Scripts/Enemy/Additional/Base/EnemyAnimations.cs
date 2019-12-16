@@ -88,10 +88,12 @@ public class EnemyAnimations : MonoBehaviour{
     public void Death(){
         isDeath = true;
 
-        sprRenderer.color = new Color(1.0f, 1.0f, 1.0f);
-        sprRenderer.sortingLayerName = "Top";
-        
-        EntityOrderManager.Instance.OnEntityDeath(sprRenderer);
+        if (enemyCombat.GetComponent<EnemyStats>().enemyType != EnemyType.Boss){
+            sprRenderer.color = new Color(1.0f, 1.0f, 1.0f);
+            sprRenderer.sortingLayerName = "Top";
+            
+            EntityOrderManager.Instance.OnEntityDeath(sprRenderer);
+        }
 
         float dir = anim.GetInteger("Direction");
         anim.SetFloat("Dir", dir);
