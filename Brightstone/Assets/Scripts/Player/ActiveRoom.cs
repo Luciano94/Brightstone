@@ -11,7 +11,7 @@ public class ActiveRoom : MonoBehaviour
     private NodeExits doorManager;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.layer == 15){
+        if(other.gameObject.layer == 15 && other.name == "Floor"){
             if(activeRoom != null){
                 if(!roomsBehaviour.HaveMarket && !roomsBehaviour.HaveBoss)
                     roomsBehaviour.SetColorNode(normalColor);
