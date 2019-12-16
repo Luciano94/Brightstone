@@ -13,7 +13,7 @@ public class Generate : MonoBehaviour{
     [Header("Logic Generation")]
     [SerializeField]Vector2Int nodeSize;
     [SerializeField]int nodeQuantity = 30;
-    float nodeMult;
+    public Vector2 nodeMult;
     int nodeQ = -1;
     int nodeBoss = 0;
     Vector3 nextPos;
@@ -42,7 +42,8 @@ public class Generate : MonoBehaviour{
         nextPos = head.transform.position;
         state = 0;
         //nodeMult = nodeSize / 10;
-        nodeMult = 4.8f;
+        nodeMult.x = (float)nodeSize.x / 10.11f;
+        nodeMult.y = (float)nodeSize.y / 5f;
         if(GameManager.Instance.isTutorial)
             PreChargeNodes();
     }
@@ -66,8 +67,12 @@ public class Generate : MonoBehaviour{
            // Debug.Log(preGeneratedNodes[i].ExitsDoors.Count);
             preGeneratedRooms[i].GetComponent<NodeExits>().SetExits = preGeneratedNodes[i].ExitsDoors;
             preGeneratedNodes[i].setNode(preGeneratedRooms[i]);
+            Vector3 mapPosition = new Vector3(preGeneratedNodes[i].Position.x / nodeMult.x,
+                                            preGeneratedNodes[i].Position.y / nodeMult.y,
+                                            preGeneratedNodes[i].Position.z);
+
             GameObject mapNode = PoolManager.Instance.DrawExitsNode(preGeneratedNodes[i].NodeType,
-                                    preGeneratedNodes[i].Position / nodeMult, preGeneratedNodes[i].ExitsDoors );
+                                    mapPosition, preGeneratedNodes[i].ExitsDoors );
             RoomsBehaviour room = preGeneratedRooms[i].GetComponent<RoomsBehaviour>();
             room.SetMapNode(mapNode.GetComponent<RenderReference>().node, normalColor);
             if(i == preGeneratedNodes.Length-1)
@@ -221,11 +226,14 @@ public class Generate : MonoBehaviour{
             }
             
             nodes[i].setNode(go);
+            Vector3 mapPosition = new Vector3(go.transform.position.x / nodeMult.x,
+                                go.transform.position.y / nodeMult.y,
+                                go.transform.position.z);
             if(nodes[i].Behaviour == NodeBehaviour.FirstRoom){
-                mapNode = PoolManager.Instance.DrawHUBNode(nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+                mapNode = PoolManager.Instance.DrawHUBNode(mapPosition, nodes[i].ExitsDoors );
             }else{
                 mapNode = PoolManager.Instance.DrawExitsNode(nodes[i].NodeType,
-                                    nodes[i].Position / nodeMult, nodes[i].ExitsDoors );
+                                    mapPosition, nodes[i].ExitsDoors );
             }
             RoomsBehaviour room = go.GetComponent<RoomsBehaviour>();
             switch (room.NodeBehaviour)

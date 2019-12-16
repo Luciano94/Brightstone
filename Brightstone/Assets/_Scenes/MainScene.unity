@@ -11045,11 +11045,12 @@ MonoBehaviour:
   preGeneratedRooms: []
   nodeSize: {x: 50, y: 26}
   nodeQuantity: 10
+  nodeMult: {x: 0, y: 0}
   head: {fileID: 1274867171}
-  marketColor: {r: 0.85882354, g: 0.6431373, b: 0.08627451, a: 1}
-  bossColor: {r: 1, g: 0.16651759, b: 0, a: 1}
-  normalColor: {r: 1, g: 0.93072075, b: 0.7028302, a: 1}
-  miniBossColor: {r: 1, g: 0.23722267, b: 0, a: 1}
+  marketColor: {r: 0.4117647, g: 0.17422685, b: 0, a: 0.5019608}
+  bossColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+  normalColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  miniBossColor: {r: 1, g: 0.5019608, b: 0, a: 0.5019608}
 --- !u!114 &1143670119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20443,6 +20444,30 @@ PrefabInstance:
       propertyPath: cameraFollow
       value: 
       objectReference: {fileID: 873411683}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: activeColor.r
+      value: 0.89554906
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: activeColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: activeColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: normalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: normalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786400179, guid: ffdd525add8a97447bd10942bf690db1, type: 3}
+      propertyPath: normalColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6276584207758848108, guid: ffdd525add8a97447bd10942bf690db1,
         type: 3}
       propertyPath: combatCamera
