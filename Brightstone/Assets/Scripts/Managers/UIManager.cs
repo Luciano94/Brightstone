@@ -162,6 +162,7 @@ public class UIManager : MonoBehaviour{
     public void ExpUpdate(){
 
         float value = gameM.playerSts.Experience / gameM.playerSts.experienceToNextLevel;
+        SoundManager.Instance.PlayerXP(value);
         experienceActualFillBar.localScale = new Vector3(value, 1.0f);
     }
 
@@ -220,26 +221,9 @@ public class UIManager : MonoBehaviour{
     }
 
     public void EnterMarket(){
-        if(gameM.isTutorial){
-            if(!gameM.tutorialMarketComplete){
-                market.SetActive(true);
-                 MarketCanvasManager.Instance.EnterMarket();
-            }
-        }
-        else{
-            market.SetActive(true);
-            MarketCanvasManager.Instance.EnterMarket();
-            GameManager.Instance.PauseGame(true);
-        }
-       // requiredTxt.text = ExperienceMarket.Instance.Required;
-        if (!InputManager.Instance.IsConnected){
-            mAttackTxt.text = "\n  Attack\n   +0,25";
-            mLifeTxt.text =  "\n     Life\n     +50";
-        }
-        else{
-            mAttackTxt.text =  "Press X\n  Attack\n   +0,25";
-            mLifeTxt.text =  " Press Y\n     Life\n     +50";
-        }
+        market.SetActive(true);
+        MarketCanvasManager.Instance.EnterMarket();
+        GameManager.Instance.PauseGame(true);
     }
 
     public void MarketUpdate(){

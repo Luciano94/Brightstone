@@ -52,6 +52,9 @@ public class PlayerMovement : MonoBehaviour{
             rotV = rot.y;
         }*/
 
+        if (GameManager.Instance.pause)
+            return;
+
         rotH = InputManager.Instance.GetHorizontalAxis();
         rotV = InputManager.Instance.GetVerticalAxis() * -1;
 
@@ -63,6 +66,9 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     private void Movement(){
+        if (GameManager.Instance.pause)
+            return;
+        
         mov = new Vector2(InputManager.Instance.GetHorizontalAxis(),InputManager.Instance.GetVerticalAxis()).normalized;
         mov *= (speed * Time.deltaTime);
         

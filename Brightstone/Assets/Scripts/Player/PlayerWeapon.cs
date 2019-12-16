@@ -17,17 +17,7 @@ public class PlayerWeapon : MonoBehaviour{
                     EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
                     enemyStats.Life = playerStats.AtkDmg * playerStats.AtkMult * GameManager.Instance.comboMult;
                     GameManager.Instance.ShakerController.Shake(1.6f, 1.6f, 0.1f, 0.24f);
-
-                    switch(playerCombat.actualAttackAction){
-                        case Actions.X:
-                            SoundManager.Instance.PlayerAttackLightHit();
-                        break;
-                        case Actions.Y:
-                            SoundManager.Instance.PlayerAttackHeavyHit();
-                        break;
-                        default:
-                        break;
-                    }
+                    SoundManager.Instance.PlayerAttackLightHit();
                 break;
 
                 case "Arrow":

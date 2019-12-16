@@ -30,7 +30,6 @@
 					</PropertyList>
 					<ObjectInclusionList>
 						<ObjectRef Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="PlayerRespawn" ID="{ECA6A6CC-9404-4325-A60A-5A975B3B013B}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="MapMusic" ID="{F475558B-972D-4565-8D93-25CAFD26AC5B}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomiBossEnter" ID="{9DFC0176-F1FA-4801-9481-E6C77E70619B}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>

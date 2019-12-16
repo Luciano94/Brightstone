@@ -29,6 +29,11 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="0"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="PlayerXP" ID="{A49FC481-BBCA-485B-8072-ADC41CC5C27C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

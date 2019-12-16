@@ -19,15 +19,19 @@ public class PlayerStats : MonoBehaviour{
     [HideInInspector][SerializeField] UnityEvent onHit;
 
     private void Start(){
-        SoundManager.Instance.PlayerRespawn();
         experienceToNextLevel = 100;
+        Invoke("PlayerRespawn", 1.0f);
     }
 
     private void Update(){
-        if (experienceToAdd > 0 /* && No esta en pantalla de mejora*/){
+        if (experienceToAdd > 0 && !GameManager.Instance.pause){
             Experience = 2;
-            experienceToAdd-=2;
+            experienceToAdd -= 2;
         }
+    }
+
+    private void PlayerRespawn(){
+        SoundManager.Instance.PlayerRespawn();
     }
 
     public int Defense{
@@ -141,6 +145,7 @@ public class PlayerStats : MonoBehaviour{
                     playerLevel++;
                     experience -= experienceToNextLevel;
                     experienceToNextLevel *= 2;
+                    SoundManager.Instance.PlayerLvlUp();
                     UIManager.Instance.EnterMarket();
                 }
                 RunSaver.currentRun.data.expObtained += (uint)value;

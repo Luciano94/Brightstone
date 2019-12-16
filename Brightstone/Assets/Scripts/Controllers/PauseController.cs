@@ -6,7 +6,7 @@ public class PauseController : MonoBehaviour{
     private bool pauseState = false;
     
     private void Update(){
-        if (InputManager.Instance.GetPauseButton()){
+        if (InputManager.Instance.GetPauseButton() && !GameManager.Instance.marketOpen){
             pauseState = !pauseState;
             GameManager.Instance.PauseGame(pauseState);
             

@@ -13,6 +13,9 @@ public class PlayerAnimations : MonoBehaviour{
     }
 
 	void Update(){
+        if (GameManager.Instance.pause)
+            return;
+
         if (InputManager.Instance.IsConnected){
             anim.SetFloat("VerticalSpeed", Input.GetAxis("Vertical"));
             anim.SetFloat("HorizontalSpeed", Input.GetAxis("Horizontal"));

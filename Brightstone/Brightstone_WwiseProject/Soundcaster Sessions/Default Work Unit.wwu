@@ -129,6 +129,10 @@
 							<Value>8.7</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="PlayerXP" ID="{A49FC481-BBCA-485B-8072-ADC41CC5C27C}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
 							<Value>100</Value>
 						</RTPCValue>
@@ -217,7 +221,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}"/>
+						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
 						<CurrentStateRef Name="fBoss" ID="{7FEA0865-C3C5-4EA0-BBEA-6B835574CA79}"/>
 						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
 					</CurrentStateList>

@@ -20,7 +20,6 @@
 				<Event Id="3803289968" Name="LevelClear" ObjectPath="\Events\Default Work Unit\Level 1\General\LevelClear" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="122911785" Name="LevelEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\LevelEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="905671766" Name="MapMusic" ObjectPath="\Events\Default Work Unit\Level 1\General\MapMusic" DurationType="Infinite"/>
-				<Event Id="667982098" Name="PlayerRespawn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerRespawn" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="4149955699" Name="RoomBossEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomBossEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1974576135" Name="RoomClear" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomClear" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1109341308" Name="RoomiBossEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomiBossEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -395,8 +394,9 @@
 				<Event Id="3914790867" Name="PlayerAttackHeavy" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackHeavy" DurationType="OneShot" DurationMin="0.334536" DurationMax="0.404411"/>
 				<Event Id="231747402" Name="PlayerAttackLight" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackLight" DurationType="OneShot" DurationMin="0.238884" DurationMax="0.510255"/>
 				<Event Id="146436428" Name="PlayerAttackLight2" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackLight2" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3179880165" Name="PlayerAttackLightHit" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackLightHit" DurationType="OneShot" DurationMin="1.027745" DurationMax="1.500720"/>
 				<Event Id="3417696994" Name="PlayerAttackX" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackX" DurationType="OneShot" DurationMin="0.186529" DurationMax="0.284402"/>
-				<Event Id="2572221999" Name="PlayerAttackXx5" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackXx5" DurationType="OneShot" DurationMin="0.512678" DurationMax="0.705638"/>
+				<Event Id="2572221999" Name="PlayerAttackXx5" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackXx5" DurationType="OneShot" DurationMin="0.917004" DurationMax="1.059463"/>
 				<Event Id="3417696995" Name="PlayerAttackY" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackY" DurationType="OneShot" DurationMin="0.334536" DurationMax="0.404411"/>
 				<Event Id="2404592838" Name="PlayerAttackYx5" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerAttackYx5" DurationType="OneShot" DurationMin="0.512678" DurationMax="0.705638"/>
 				<Event Id="2487527450" Name="PlayerComboA1" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerComboA1" DurationType="OneShot" DurationMin="0.576030" DurationMax="0.576030"/>
@@ -408,10 +408,14 @@
 				<Event Id="2504305037" Name="PlayerComboB3" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerComboB3" DurationType="OneShot" DurationMin="0.224399" DurationMax="0.304815"/>
 				<Event Id="2504305034" Name="PlayerComboB4" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerComboB4" DurationType="OneShot" DurationMin="0.224399" DurationMax="0.304815"/>
 				<Event Id="2504305035" Name="PlayerComboB5" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerComboB5" DurationType="OneShot" DurationMin="0.341469" DurationMax="0.417976"/>
-				<Event Id="2525052962" Name="PlayerDash" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDash" DurationType="OneShot" DurationMin="0.203033" DurationMax="0.271017"/>
+				<Event Id="4055688079" Name="PlayerDamaged" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDamaged" DurationType="OneShot" DurationMin="0.745061" DurationMax="1.090508"/>
+				<Event Id="2525052962" Name="PlayerDash" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDash" DurationType="OneShot" DurationMin="0.216913" DurationMax="0.289544"/>
 				<Event Id="1656947812" Name="PlayerDeath" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDeath" DurationType="OneShot" DurationMin="4.857316" DurationMax="5.087039"/>
+				<Event Id="2506589132" Name="PlayerGetsSoul" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerGetsSoul" DurationType="OneShot" DurationMin="0.712343" DurationMax="0.923794"/>
+				<Event Id="3526874771" Name="PlayerLvlUp" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerLvlUp" DurationType="OneShot" DurationMin="0.750169" DurationMax="0.750169"/>
 				<Event Id="410952847" Name="PlayerParryHit" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerParryHit" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="667982098" Name="PlayerRespawn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerRespawn" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="667982098" Name="PlayerRespawn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerRespawn" DurationType="OneShot" DurationMin="7.430093" DurationMax="7.430093"/>
+				<Event Id="3382292410" Name="PlayerShurikenHit" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerShurikenHit" DurationType="OneShot" DurationMin="0.568712" DurationMax="0.804281"/>
 				<Event Id="4149955699" Name="RoomBossEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomBossEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1974576135" Name="RoomClear" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomClear" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1391803776" Name="RoomNewEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomNewEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -428,9 +432,13 @@
 					<ShortName>Fast Action Swish_HW 05.wav</ShortName>
 					<Path>SFX\Fast Action Swish_HW 05_0FF7B6FF.wem</Path>
 				</File>
+				<File Id="42324233" Language="SFX">
+					<ShortName>PM_BB_CLEAN_CHOPS_12.wav</ShortName>
+					<Path>SFX\PM_BB_CLEAN_CHOPS_12_10C4C929.wem</Path>
+				</File>
 				<File Id="49573110" Language="SFX">
 					<ShortName>Whoosh,Sound Design,Airy,Full,Forceful,Soft.wav</ShortName>
-					<Path>SFX\Whoosh,Sound Design,Airy,Full,Forceful,Soft_A7177379.wem</Path>
+					<Path>SFX\Whoosh,Sound Design,Airy,Full,Forceful,Soft_6FCFC36A.wem</Path>
 				</File>
 				<File Id="50915452" Language="SFX">
 					<ShortName>Whoosh,Sound Design,Whip By,Airy to Whine,High.wav</ShortName>
@@ -476,6 +484,10 @@
 					<ShortName>Attach ah.wav</ShortName>
 					<Path>SFX\Attach ah_116D5E9D.wem</Path>
 				</File>
+				<File Id="281058694" Language="SFX">
+					<ShortName>pain3.wav</ShortName>
+					<Path>SFX\pain3_10C4C929.wem</Path>
+				</File>
 				<File Id="319793680" Language="SFX">
 					<ShortName>BossScream.wav</ShortName>
 					<Path>SFX\BossScream_10C4C929.wem</Path>
@@ -488,13 +500,25 @@
 					<ShortName>Whoosh,Sound Design,Whip By,Airy to Whine,High.wav</ShortName>
 					<Path>SFX\Whoosh,Sound Design,Whip By,Airy to Whine,High_6DB42026.wem</Path>
 				</File>
+				<File Id="409068163" Language="SFX">
+					<ShortName>zapsplat_sound_design_etheral_breathing_fantasy_spooky.wav</ShortName>
+					<Path>SFX\zapsplat_sound_design_etheral_breathing_fantasy_spooky_FE460F2F_6FA70B69.wem</Path>
+				</File>
 				<File Id="457148846" Language="SFX">
 					<ShortName>Whoosh_Rod_Pole_022 48000.wav</ShortName>
 					<Path>SFX\Whoosh_Rod_Pole_022 48000_10C4C929.wem</Path>
 				</File>
+				<File Id="577594711" Language="SFX">
+					<ShortName>skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116.wav</ShortName>
+					<Path>SFX\skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116_A8A202D3_B3E0116E.wem</Path>
+				</File>
 				<File Id="595154972" Language="SFX">
 					<ShortName>various male voices.wav</ShortName>
 					<Path>SFX\various male voices_012393D9.wem</Path>
+				</File>
+				<File Id="652555619" Language="SFX">
+					<ShortName>jah.wav</ShortName>
+					<Path>SFX\jah_10C4C929.wem</Path>
 				</File>
 				<File Id="665658802" Language="SFX">
 					<ShortName>Bow Pull.wav</ShortName>
@@ -516,9 +540,29 @@
 					<ShortName>Whoosh,Sound Design,Whip By,Airy to Whine,High.wav</ShortName>
 					<Path>SFX\Whoosh,Sound Design,Whip By,Airy to Whine,High_38EACE73.wem</Path>
 				</File>
+				<File Id="905339316" Language="SFX">
+					<ShortName>zapsplat_sound_design_etheral_breathing_fantasy_spooky.wav</ShortName>
+					<Path>SFX\zapsplat_sound_design_etheral_breathing_fantasy_spooky_75724E61.wem</Path>
+				</File>
+				<File Id="907080819" Language="SFX">
+					<ShortName>zapsplat_warfare_throwing_star_throw_spin_hit_person_squelch_blood_20926.wav</ShortName>
+					<Path>SFX\zapsplat_warfare_throwing_star_throw_spin_hit_person_squelch_blood_20926_3C8FA09C.wem</Path>
+				</File>
 				<File Id="911587019" Language="SFX">
 					<ShortName>warfare_weapon_shuriken_flying_star_throw_kung_fu_001.wav</ShortName>
 					<Path>SFX\warfare_weapon_shuriken_flying_star_throw_kung_fu_001_10C4C929.wem</Path>
+				</File>
+				<File Id="916392274" Language="SFX">
+					<ShortName>PM_BB_CLEAN_CHOPS_45.wav</ShortName>
+					<Path>SFX\PM_BB_CLEAN_CHOPS_45_10C4C929.wem</Path>
+				</File>
+				<File Id="931050785" Language="SFX">
+					<ShortName>Texture_2.wav</ShortName>
+					<Path>SFX\Texture_2_9F7E998C_41A19A46.wem</Path>
+				</File>
+				<File Id="933208533" Language="SFX">
+					<ShortName>Ilmarinen,blacksmith,forge,handgrinder,blade,gritty,scrape,slow,shudder,buzz,wide.wav</ShortName>
+					<Path>SFX\Ilmarinen,blacksmith,forge,handgrinder,blade,gritty,scrape,slow,shudder,buzz,wide_10C4C929_2EC6114D.wem</Path>
 				</File>
 				<File Id="956945742" Language="SFX">
 					<ShortName>Bluezone_BC0251_heavy_metal_impact_large_tank_01_03.wav</ShortName>
@@ -540,9 +584,17 @@
 					<ShortName>sfx_Swing2.wav</ShortName>
 					<Path>SFX\sfx_Swing2_10C4C929.wem</Path>
 				</File>
+				<File Id="993404172" Language="SFX">
+					<ShortName>PM_BB_CLEAN_STABS_15.wav</ShortName>
+					<Path>SFX\PM_BB_CLEAN_STABS_15_10C4C929.wem</Path>
+				</File>
 				<File Id="1010118877" Language="SFX">
 					<ShortName>Whoosh_Swing_Fishing Pole_Full_Fienup_CLASSIC_001.wav</ShortName>
 					<Path>SFX\Whoosh_Swing_Fishing Pole_Full_Fienup_CLASSIC_001_0E5A4CB5.wem</Path>
+				</File>
+				<File Id="1019237422" Language="SFX">
+					<ShortName>pain4.wav</ShortName>
+					<Path>SFX\pain4_10C4C929.wem</Path>
 				</File>
 				<File Id="1035438314" Language="SFX">
 					<ShortName>yah multi.wav</ShortName>
@@ -624,6 +676,10 @@
 				<File Id="611199118" Language="SFX">
 					<ShortName>MainMenu_Tsn_74ppm_4-4_ShakFX1.wav</ShortName>
 					<Path>SFX\MainMenu_Tsn_74ppm_4-4_ShakFX1_9B96ECC7.wem</Path>
+				</File>
+				<File Id="666452966" Language="SFX">
+					<ShortName>mainManuPianosoloCue.wav</ShortName>
+					<Path>SFX\mainManuPianosoloCue_9B96ECC7.wem</Path>
 				</File>
 				<File Id="757337680" Language="SFX">
 					<ShortName>MainMenu_74ppm_4-4_1MP_Koto_CounterA.wav</ShortName>

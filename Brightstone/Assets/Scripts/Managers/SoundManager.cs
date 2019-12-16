@@ -36,7 +36,7 @@ public class SoundManager : MonoBehaviour
         AkSoundEngine.PostEvent("PlayerAttackLight", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerAttackLightHit(){ //El ataque ligero de jugador golpea a un enemigo
-        //AkSoundEngine.PostEvent("PlayerAttackLightHit", GameManager.Instance.playerSts.gameObject);
+        AkSoundEngine.PostEvent("PlayerAttackLightHit", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerAttackLight2(){ //El jugador usa un ataque ligero
         AkSoundEngine.PostEvent("PlayerAttackLight2", GameManager.Instance.playerSts.gameObject);
@@ -97,12 +97,26 @@ public class SoundManager : MonoBehaviour
     public void PlayerComboB5(){ //El jugador realiza el 5to ataque rojo del combo AAAXXXXX
         AkSoundEngine.PostEvent("PlayerComboB5", GameManager.Instance.playerSts.gameObject);
     }
+    public void PlayerShurikenHit(GameObject enemy){ //El jugador golpea un enemigo con un shuriken
+        AkSoundEngine.PostEvent("PlayerShurikenHit", enemy);
+    }
+    public void PlayerGetsSoul(){ //El jugador absorbe un cúmulo de esencia de Brightstone
+        AkSoundEngine.PostEvent("PlayerGetsSoul", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerXP(float porcCompleted){ //Hay un cambio en el porcentaje de XP del jugador
+        AkSoundEngine.SetRTPCValue("PlayerXP", porcCompleted * 100);
+    }
+    public void PlayerLvlUp(){ //La barra de experiencia de nivel se completa
+        AkSoundEngine.PostEvent("PlayerLvlUp", GameManager.Instance.playerSts.gameObject);
+    }
     public void PlayerDamaged(){ //El jugador recibe daño
-        //AkSoundEngine.PostEvent("PlayerDamaged", GameManager.Instance.playerSts.gameObject);
+        AkSoundEngine.PostEvent("PlayerDamaged", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerDeath(){ //El jugador muere
-        //LevelClear();
         AkSoundEngine.PostEvent("PlayerDeath", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PostMortem(){ //El cuerpo del jugador se deshace
+        AkSoundEngine.PostEvent("PostMortem", GameManager.Instance.playerSts.gameObject);
     }
     public void PlayerRespawn(){ //El jugador revive
         AkSoundEngine.PostEvent("PlayerRespawn", GameManager.Instance.playerSts.gameObject);

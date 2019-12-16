@@ -53,6 +53,7 @@ public class MenuManager : MonoBehaviour{
 
     private void ActivateLoseCanvas(){
         UIManager.Instance.YouDieTextAppear();
+        SoundManager.Instance.PostMortem();
         Invoke("RestartGame", timeToRestartGame);
     }
 

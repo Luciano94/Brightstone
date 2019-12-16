@@ -43,7 +43,7 @@ public class PlayerDash : MonoBehaviour{
             mov.x = InputManager.Instance.GetHorizontalAxis();
             mov.y = InputManager.Instance.GetVerticalAxis();
             mov = mov.normalized;
-            if (InputManager.Instance.GetActionDash() && CanDash()){
+            if (InputManager.Instance.GetActionDash() && CanDash() && !GameManager.Instance.pause){
                 isDashing = true;
                 ghost.ShowGhost();
                 FilterManager.SetChromaticAberration(true);
