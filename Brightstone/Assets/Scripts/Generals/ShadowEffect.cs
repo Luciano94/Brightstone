@@ -5,10 +5,12 @@ public class ShadowEffect : MonoBehaviour
 {
     [SerializeField]private Vector3 offsetPos = new Vector3(-0.1f,-0.1f);
     [SerializeField]private Quaternion offsetRot = Quaternion.identity;
+    [SerializeField]private Vector3 defaultScale = new Vector3(1,2,1);
     [SerializeField]private Material shadowMaterial;
 
     private GameObject shadow;
     private SpriteRenderer _renderer;
+    public Sprite shadowSprite;
     private SpriteRenderer shadowRenderer;
 
 
@@ -16,13 +18,18 @@ public class ShadowEffect : MonoBehaviour
         shadow = new GameObject("Shadow");
         shadow.transform.parent = transform;
         shadow.layer = gameObject.layer;
+        shadow.transform.localScale = defaultScale;
 
         shadow.transform.position = offsetPos;
         shadow.transform.rotation = offsetRot;
 
         _renderer = GetComponent<SpriteRenderer>();
         shadowRenderer = shadow.AddComponent<SpriteRenderer>();
-        shadowRenderer.sprite = _renderer.sprite;
+        if(shadowSprite != null){
+            shadowRenderer.sprite = shadowSprite;
+        }else{
+            shadowRenderer.sprite = _renderer.sprite;
+        }
         shadowRenderer.material = shadowMaterial;
 
         shadowRenderer.sortingLayerName = _renderer.sortingLayerName;
@@ -31,7 +38,11 @@ public class ShadowEffect : MonoBehaviour
 
     private void LateUpdate() {
         if(shadow != null){
-            shadowRenderer.sprite = _renderer.sprite;
+            if(shadowSprite != null){
+                shadowRenderer.sprite = shadowSprite;
+            }else{
+                shadowRenderer.sprite = _renderer.sprite;
+            }
             shadow.transform.position = shadow.transform.parent.position + offsetPos;
             shadowRenderer.sortingOrder = _renderer.sortingOrder - 1;
         }else{
@@ -40,6 +51,6 @@ public class ShadowEffect : MonoBehaviour
     }
 
     public void onDeath(){
-        shadowRenderer.color = Color.clear; 
+        //shadowRenderer.color = Color.clear; 
     }
 }

@@ -459,9 +459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5353e494562e0746a3c3f213c9633c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetPos: {x: 0.55, y: 0, z: 0}
-  offsetRot: {x: 0, y: 0, z: -0.16, w: 1}
+  offsetPos: {x: 0, y: -2, z: 0}
+  offsetRot: {x: 0, y: 0, z: 0, w: 1}
+  defaultScale: {x: 1, y: 2, z: 1}
   shadowMaterial: {fileID: 2100000, guid: 77b8afeef98d7584c85d9f5e2f201a5e, type: 2}
+  shadowSprite: {fileID: 21300000, guid: 9416d94ecf852824d90ef81b8d82560d, type: 3}
 --- !u!114 &4262598167113487542
 MonoBehaviour:
   m_ObjectHideFlags: 0
