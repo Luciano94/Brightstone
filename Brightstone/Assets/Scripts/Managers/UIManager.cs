@@ -74,10 +74,9 @@ public class UIManager : MonoBehaviour{
 
     [Header("Death Anims")]
     [SerializeField] private Animator[] animsToRun;
-    [SerializeField] private TextMeshProUGUI youDieTxt;
+    [SerializeField] private Image youDieImg;
     
-    private bool appearDieText = false;
-    private bool reduceAlpha = false;
+    private bool appearDieImage = false;
 
     public GameObject TextPopupPrefab{
         get{return textPopupPrefab;}
@@ -130,11 +129,10 @@ public class UIManager : MonoBehaviour{
 
             TimeUpdate();
         }
-        else if (appearDieText){
-            if (!reduceAlpha)
-                youDieTxt.alpha += Time.deltaTime;
-            else
-                youDieTxt.alpha -= Time.deltaTime;
+        else if (appearDieImage){
+            Color tempC = youDieImg.color;
+            tempC.a += Time.deltaTime;
+            youDieImg.color = tempC;
         }
     }
 
@@ -290,13 +288,15 @@ public class UIManager : MonoBehaviour{
             anim.SetTrigger("RunAnim");
     }
 
-    public void YouDieTextAppear(){
-        appearDieText = true;
-        youDieTxt.enabled = true;
-        Invoke("ReduceAlpha", 1.5f);
+    public void YouDieImgAppear(){
+        appearDieImage = true;
+        youDieImg.enabled = true;
+        Invoke("RunKanjiAnim", 1.5f);
     }
 
-    public void ReduceAlpha(){
-        reduceAlpha = true;
+    public void RunKanjiAnim(){
+        Animator anim = youDieImg.GetComponent<Animator>();
+
+        anim.SetTrigger("Run");
     }
 }
