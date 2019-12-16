@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour{
-    const int synopsisIndex = 1;
+    const int loadingSceneIndex = 2;
 
     [SerializeField] Button playButton;
     [SerializeField] Text runTimeAvgTxt;
@@ -31,9 +31,7 @@ public class MenuController : MonoBehaviour{
     [Header("Sprites")]
     [SerializeField] SpriteRenderer brightstoneImg;
 
-    private int isTutorial;
     private bool reduceAlpha = false;
-    private float timeReset = -1.0f;
 
     private void Start(){
         playButton.Select();
@@ -42,17 +40,11 @@ public class MenuController : MonoBehaviour{
     }
     
     public void Play(){
-        SceneManager.LoadScene(synopsisIndex);
+        SceneManager.LoadScene(loadingSceneIndex);
     }
 
     private void Update() {
         CheckBrightstoneAlpha();
-
-        if(Input.GetKeyDown(KeyCode.X)){
-            PlayerPrefs.DeleteKey("isTutorial");
-            timeReset = 2.0f;
-        }
-        ShowTutorialReset();
     }
 
     private void CheckBrightstoneAlpha(){
@@ -65,15 +57,6 @@ public class MenuController : MonoBehaviour{
             Color tempC = brightstoneImg.color;
             tempC.a += Time.deltaTime;
             brightstoneImg.color = tempC;
-        }
-    }
-
-    private void ShowTutorialReset(){
-        if(timeReset > 0){
-            timeReset -= Time.deltaTime;
-            tutorialReset.enabled = true;
-        }else{
-            tutorialReset.enabled = false;
         }
     }
 
