@@ -37,6 +37,11 @@ public class ComboManager : MonoBehaviour{
     private ActionInfo currentActionInfo; //estado de la accion que se esta ejecutando en ese momento
     [SerializeField]private List<ActionInfo> actions; //acciones posibles
     [SerializeField]private StandsManager standsManager;
+
+    [Header("Combo mult")]
+    private float simpleComboMult = 1.5f;
+    private float complexComboMult = 2.0f;
+
     private bool found = false;
     private bool isCombination = false;
     public Stands actualStand { get; private set; }
@@ -58,6 +63,7 @@ public class ComboManager : MonoBehaviour{
             activeCombos.Clear();
             isCombination = false;
             currentActionInfo.action = null;
+            GameManager.Instance.comboMult = 1;
         }
     }
 
@@ -202,8 +208,10 @@ public class ComboManager : MonoBehaviour{
                 if (!isCombination){
                     if (comboIndex < 4)
                         SoundManager.Instance.PlayerAttackX();
-                    else
+                    else{
                         SoundManager.Instance.PlayerAttackXx5();
+                        GameManager.Instance.comboMult = simpleComboMult;
+                    }
                 }
                 else if (comboIndex == 31)
                     SoundManager.Instance.PlayerComboB1();
@@ -213,15 +221,20 @@ public class ComboManager : MonoBehaviour{
                     SoundManager.Instance.PlayerComboB3();
                 else if (comboIndex == 34)
                     SoundManager.Instance.PlayerComboB4();
-                else if (comboIndex == 35)
+                else if (comboIndex == 35){
                     SoundManager.Instance.PlayerComboB5();
+                    GameManager.Instance.comboMult = complexComboMult;
+
+                }
                 break;
             case Actions.Y:
                 if (!isCombination){
                     if (comboIndex < 9)
                         SoundManager.Instance.PlayerAttackY();
-                    else
+                    else{
                         SoundManager.Instance.PlayerAttackYx5();
+                        GameManager.Instance.comboMult = simpleComboMult;
+                    }
                 }
                 break;
             case Actions.B:
@@ -232,8 +245,10 @@ public class ComboManager : MonoBehaviour{
                 if (!isCombination){
                     if (comboIndex < 17)
                         SoundManager.Instance.PlayerAttackA();
-                    else
+                    else{
                         SoundManager.Instance.PlayerAttackAx7();
+                        GameManager.Instance.comboMult = simpleComboMult;
+                    }
                 }
                 else if (comboIndex == 25)
                     SoundManager.Instance.PlayerComboA1();
@@ -241,8 +256,10 @@ public class ComboManager : MonoBehaviour{
                     SoundManager.Instance.PlayerComboA2();
                 else if (comboIndex == 27)
                     SoundManager.Instance.PlayerComboA3();
-                else if (comboIndex == 28)
+                else if (comboIndex == 28){
                     SoundManager.Instance.PlayerComboA4();
+                    GameManager.Instance.comboMult = complexComboMult;
+                }
                 break;
         }
     }

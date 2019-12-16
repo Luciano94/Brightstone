@@ -12,7 +12,7 @@ public class ArcherCombat : EnemyCombat{
         base.Attack();
 
         enemyAnim.Set8AxisDirection((int)Calculations.Get8AxisDirection(diff));
-        lineRenderer.enabled = true;
+        //lineRenderer.enabled = true;
         SoundManager.Instance.EnemyArcherTightBow(gameObject);
         //AudioManager.Instance.ArcherBowPull();
     }
@@ -23,7 +23,7 @@ public class ArcherCombat : EnemyCombat{
         Vector3[] positions = new Vector3[2];
         positions[0] = transform.position;
         positions[1] = player;
-        lineRenderer.SetPositions(positions);
+       // lineRenderer.SetPositions(positions);
 
         if (currentTime <= activeMoment){
             player = GameManager.Instance.PlayerPos;
@@ -51,7 +51,7 @@ public class ArcherCombat : EnemyCombat{
             active = false;
             throwed = false;
 
-            lineRenderer.enabled = false;
+            //lineRenderer.enabled = false;
         }
     }
 
