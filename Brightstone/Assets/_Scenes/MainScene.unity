@@ -19091,6 +19091,26 @@ PrefabInstance:
       propertyPath: VelocityModule.z.scalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 198480165391366748, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198480165391366748, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 198480165391366748, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.104129605
+      objectReference: {fileID: 0}
+    - target: {fileID: 198480165391366748, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.104129605
+      objectReference: {fileID: 0}
     - target: {fileID: 114244257004913778, guid: 0f31c94b4ef46ad45acf720ebf37b286,
         type: 3}
       propertyPath: decalSizeMin
@@ -19100,6 +19120,36 @@ PrefabInstance:
         type: 3}
       propertyPath: decalSizeMax
       value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766744120958270, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: particleColorGradient.key0.r
+      value: 0.3490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766744120958270, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: particleColorGradient.key0.g
+      value: 0.060920257
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766744120958270, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: particleColorGradient.key0.b
+      value: 0.060920257
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766744120958270, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: particleColorGradient.key1.r
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766744120958270, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: particleColorGradient.key1.g
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766744120958270, guid: 0f31c94b4ef46ad45acf720ebf37b286,
+        type: 3}
+      propertyPath: particleColorGradient.key1.b
+      value: 0.003921569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f31c94b4ef46ad45acf720ebf37b286, type: 3}
