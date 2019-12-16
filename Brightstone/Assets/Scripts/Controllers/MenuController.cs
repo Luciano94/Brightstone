@@ -18,12 +18,20 @@ public class MenuController : MonoBehaviour{
 
     [SerializeField] Text tutorialReset;
     [SerializeField] Animator MenuPanel;
+    [SerializeField] Animator OptionsPanel;
 
-    [Header("Stats")]
+    [Header("Buttons")]
     [SerializeField] Button statsButton;
+    [SerializeField] Button optionsButton;
+    [SerializeField] Button creditsButton;
     [SerializeField] Button backButton;
+    [SerializeField] Button optionsBackButton;
+
+    [Header("Sprites")]
+    [SerializeField] SpriteRenderer brightstoneImg;
 
     private int isTutorial;
+    private bool reduceAlpha = false;
     private float timeReset = -1.0f;
 
     private void Start(){
@@ -37,11 +45,26 @@ public class MenuController : MonoBehaviour{
     }
 
     private void Update() {
+        CheckBrightstoneAlpha();
+
         if(Input.GetKeyDown(KeyCode.X)){
             PlayerPrefs.DeleteKey("isTutorial");
             timeReset = 2.0f;
         }
         ShowTutorialReset();
+    }
+
+    private void CheckBrightstoneAlpha(){
+        if (reduceAlpha && brightstoneImg.color.a >= 0.1f){
+            Color tempC = brightstoneImg.color;
+            tempC.a -= Time.deltaTime;
+            brightstoneImg.color = tempC;
+        }
+        else if (!reduceAlpha && brightstoneImg.color.a < 1.0f){
+            Color tempC = brightstoneImg.color;
+            tempC.a += Time.deltaTime;
+            brightstoneImg.color = tempC;
+        }
     }
 
     private void ShowTutorialReset(){
@@ -54,11 +77,17 @@ public class MenuController : MonoBehaviour{
     }
 
     public void Stats(){
+        reduceAlpha = true;
+
         RunSaver.LoadHistory();
 
         FillDataInTexts();
 
         backButton.Select();
+    }
+
+    public void Options(){
+        optionsBackButton.Select();
     }
 
     public void ResetStats(){
@@ -67,8 +96,18 @@ public class MenuController : MonoBehaviour{
         FillDataInTexts();
     }
 
-    public void BackToMenu(){
+    public void BackToOptions(){
+        reduceAlpha = false;
+
         statsButton.Select();
+    }
+
+    public void BackToCredits(){
+        creditsButton.Select();
+    }
+
+    public void BackToMenu(){
+        optionsButton.Select();
     }
 
     private void FillDataInTexts(){
