@@ -5,6 +5,7 @@ public class EnemyAnimations : MonoBehaviour{
     [SerializeField] private EnemyCombat enemyCombat;
     [SerializeField] private Color hitColor;
 
+    private ChangeParticlePosition changeParticlePosition;
     private SpriteRenderer sprRenderer;
     private float speed = 1.0f;
     private bool isHit = false;
@@ -12,6 +13,7 @@ public class EnemyAnimations : MonoBehaviour{
     private bool isLowHealth = false;
 
     private void Start(){
+        changeParticlePosition = GetComponent<ChangeParticlePosition>();
         sprRenderer = GetComponent<SpriteRenderer>();
 
         EntityOrderManager.Instance.AddEntity(sprRenderer);
@@ -69,6 +71,8 @@ public class EnemyAnimations : MonoBehaviour{
         isHit = true;
         sprRenderer.color = hitColor;
         anim.SetTrigger("Hit");
+
+        changeParticlePosition.Splash();
     }
 
     public void Restore(){
