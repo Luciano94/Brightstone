@@ -11,7 +11,7 @@ public class ActiveRoom : MonoBehaviour
     private NodeExits doorManager;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.layer == 15){
+        if(other.gameObject.layer == 15 && other.name == "Floor"){
             if(activeRoom != null){
                 if(!roomsBehaviour.HaveMarket && !roomsBehaviour.HaveBoss)
                     roomsBehaviour.SetColorNode(normalColor);
@@ -49,7 +49,7 @@ public class ActiveRoom : MonoBehaviour
         switch (dir)
         {
             case Axis4Direction.Up:
-                transform.Translate(0.0f, distToTP, 0.0f);
+                transform.Translate(0.0f, distToTP + 0.5f, 0.0f);
             break;
             
             case Axis4Direction.Right:
@@ -57,7 +57,7 @@ public class ActiveRoom : MonoBehaviour
             break;
 
             case Axis4Direction.Down:
-                transform.Translate(0.0f, -distToTP, 0.0f);
+                transform.Translate(0.0f, -distToTP - 0.5f, 0.0f);
             break;
 
             case Axis4Direction.Left:
