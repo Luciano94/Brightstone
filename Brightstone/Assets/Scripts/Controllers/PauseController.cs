@@ -1,28 +1,17 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour{
-    [SerializeField] private GameObject pausePanel;
-    [SerializeField] private OptionsController optionsPanel;
-    [SerializeField] private Button firstOption;
-    [SerializeField] private Button controlButton;
+    [SerializeField] OptionsController oC;
 
-    [Header("New Pause")]
-    [SerializeField]private GameObject pauseMenu;
-
-    private Animator pauseAnim;
     private bool pauseState = false;
     
-    private void Awake(){
-        pauseAnim = pausePanel.GetComponent<Animator>();
-    }
-
     private void Update(){
         if (InputManager.Instance.GetPauseButton()){
             pauseState = !pauseState;
-            pauseMenu.SetActive(pauseState);
             GameManager.Instance.PauseGame(pauseState);
-
+            
+            oC.gameObject.SetActive(pauseState);
+            oC.ChangeState(pauseState);
         }
     }
 
