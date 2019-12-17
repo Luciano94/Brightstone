@@ -1772,7 +1772,8 @@ MonoBehaviour:
   textCanvas: {fileID: 6317387286353343733}
   textMesh: {fileID: 6137896207463974074}
   textsToShow:
-  - '...'
+  - So... Came back from the dead again? Huh...
+  - "it must be weird\u2026"
   iconCanvas: {fileID: 3223617706385166446}
 --- !u!1 &3223617706385166446
 GameObject:
@@ -2772,7 +2773,9 @@ MonoBehaviour:
   textCanvas: {fileID: 5408943478096834105}
   textMesh: {fileID: 8135383674955159636}
   textsToShow:
-  - FERNANFLOW
+  - If you are here it seems that you have been defeated and resurrected again with
+    the power of the brightstone. Determination will lead you to victory, don't give
+    up!
   iconCanvas: {fileID: 6204233898880025455}
 --- !u!1 &4540223756002476526
 GameObject:
@@ -4725,7 +4728,8 @@ MonoBehaviour:
   textCanvas: {fileID: 7512499085254263047}
   textMesh: {fileID: 5662201996248075314}
   textsToShow:
-  - '...'
+  - The master says that you are our only hope, because... you know... you can't die...
+  - I don't like being here doing nothing while you have all the fun just for you!
   iconCanvas: {fileID: 1818608428662169708}
 --- !u!1001 &4489625193291572940
 PrefabInstance:
