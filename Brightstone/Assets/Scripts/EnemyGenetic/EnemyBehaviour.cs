@@ -383,6 +383,8 @@ public class EnemyBehaviour : MonoBehaviour{
     [Header("Attack turn timer")]
     [SerializeField] float timeBetweenRangedAttacks = 0.5f;
     [SerializeField] float rangeAttackDelta = 0.0f;
+    [SerializeField] float rangeFirstAttackDelta = 1.0f;
+    bool isFirstTime = true;
     float attackTimer = 0.0f;
     int subTurn = 0;
     private void AttackStrategy(){
@@ -395,7 +397,13 @@ public class EnemyBehaviour : MonoBehaviour{
                 PerAttackTurn t = enemiesInPerAttackTurn[subTurn];
                 if(t.isAssigned){
                     attackTimer = 0.0f;
-                    float delta = Random.Range(0.0f, rangeAttackDelta);
+                    float delta;
+                    if (isFirstTime)
+                        delta = Random.Range(0.0f, rangeAttackDelta);
+                    else{
+                        isFirstTime = false;
+                        delta = Random.Range(0.0f, rangeFirstAttackDelta);
+                    }
                     enemiesInRoom[t.enemyType][t.enemyIndex].InvokeAttackingTurn(delta);
                 }
                 subTurn++;

@@ -77,8 +77,8 @@ public class GameManager : MonoBehaviour{
     private void Start(){
         if (PlayerPrefs.GetInt("PlayerDeathInBossRoom") == 1)
             PlayerPrefs.SetInt("PlayerDeathInBossRoom", 0);
-        else
-            SoundManager.Instance.LevelEnter();
+
+        SoundManager.Instance.LevelEnter();
     }
 
     private void Update(){
