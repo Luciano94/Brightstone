@@ -72,9 +72,23 @@
 				<Event Name="BossDeath" ID="{13D024BA-593C-4733-BCF2-481348221D14}">
 					<ChildrenList>
 						<Action Name="" ID="{1CDBF300-B9F8-443C-9B82-E3A44BE0C387}" ShortID="347351265">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="BossScream" ID="{F3282A4F-BD1A-4595-AC5A-C60249F0A731}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DA85478B-F09F-4E8E-B8A0-F48251BA5D75}" ShortID="655267828">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="spirit2" ID="{DD771A50-CE6D-4A34-940B-0E19ECFAD020}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -85,6 +99,34 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BC584648-C155-4E47-BD59-795DED7633FD}" ShortID="696157640">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BossScream_01" ID="{92CD7193-0B8C-4C05-AD9B-9B92223D09E0}" WorkUnitID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2155C95E-840F-4CFB-B5E0-82B72C76EEE8}" ShortID="319207366">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="souls juan" ID="{D37BA2B1-9129-40B6-A00A-1204ED021A35}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C4ECA4C9-4C4D-40C5-AD46-8ACA63484D8D}" ShortID="1057510765">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="souls juan 2" ID="{59B9133F-8BC0-4174-8624-DA6591938EB0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -107,6 +149,40 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}">
+					<ChildrenList>
+						<Action Name="" ID="{C4CC26B7-5FB7-44D9-8B16-143FE7BC084C}" ShortID="899745964">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{34CE91F7-B920-4902-B65F-05B61C650D77}" ShortID="293440077">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="23"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}" WorkUnitID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AE72CAA3-B2F5-4CA6-9CC2-F1203AEC34A6}" ShortID="1051729394">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -16,7 +16,7 @@
 			<ShortName>Level1Music</ShortName>
 			<Path>Level1Music.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3845220853" Name="iBossDeath" ObjectPath="\Events\Default Work Unit\Level 1\General\iBossDeath" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3845220853" Name="iBossDeath" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\iBossDeath" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3803289968" Name="LevelClear" ObjectPath="\Events\Default Work Unit\Level 1\General\LevelClear" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="122911785" Name="LevelEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\LevelEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="905671766" Name="MapMusic" ObjectPath="\Events\Default Work Unit\Level 1\General\MapMusic" DurationType="Infinite"/>
@@ -383,7 +383,7 @@
 			<Path>Level1.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2212241627" Name="ArrowHit" ObjectPath="\Events\Default Work Unit\Level 1\General\ArrowHit" DurationType="OneShot" DurationMin="0.598043" DurationMax="0.671281"/>
-				<Event Id="1481017468" Name="BossDeath" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\BossDeath" DurationType="OneShot" DurationMin="3.300000" DurationMax="3.300000"/>
+				<Event Id="1481017468" Name="BossDeath" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\BossDeath" DurationType="OneShot" DurationMin="7.752621" DurationMax="7.752621"/>
 				<Event Id="1787276729" Name="BossSwordAttack" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\BossSwordAttack" DurationType="OneShot" DurationMin="0.567466" DurationMax="0.674835"/>
 				<Event Id="1108892891" Name="EnemyArcherReleaseBow" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\EnemyArcherReleaseBow" DurationType="OneShot" DurationMin="0.449631" DurationMax="0.566500"/>
 				<Event Id="852912510" Name="EnemyArcherTightBow" ObjectPath="\Events\Default Work Unit\Level 1\Enemy\EnemyArcherTightBow" DurationType="OneShot" DurationMin="0.247633" DurationMax="0.311999"/>
@@ -503,10 +503,6 @@
 					<ShortName>zapsplat_nature_fireball_pass_by_designed_001_32190.wav</ShortName>
 					<Path>SFX\zapsplat_nature_fireball_pass_by_designed_001_32190_6C3AF9C8_094B26A9.wem</Path>
 				</File>
-				<File Id="319793680" Language="SFX">
-					<ShortName>BossScream.wav</ShortName>
-					<Path>SFX\BossScream_6296B0F9.wem</Path>
-				</File>
 				<File Id="378429629" Language="SFX">
 					<ShortName>yah multi.wav</ShortName>
 					<Path>SFX\yah multi_AB8B643E.wem</Path>
@@ -526,6 +522,10 @@
 				<File Id="520976957" Language="SFX">
 					<ShortName>Attach ah.wav</ShortName>
 					<Path>SFX\Attach ah_2E01061D.wem</Path>
+				</File>
+				<File Id="523401666" Language="SFX">
+					<ShortName>6Monsters_TwinHead_Death_03.wav</ShortName>
+					<Path>SFX\6Monsters_TwinHead_Death_03_6296B0F9_8C54DD70.wem</Path>
 				</File>
 				<File Id="577594711" Language="SFX">
 					<ShortName>skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116.wav</ShortName>
@@ -611,9 +611,17 @@
 					<ShortName>yah multi.wav</ShortName>
 					<Path>SFX\yah multi_FD65CA58.wem</Path>
 				</File>
+				<File Id="1037596060" Language="SFX">
+					<ShortName>skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1).wav</ShortName>
+					<Path>SFX\skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)_43C6BE07.wem</Path>
+				</File>
 				<File Id="1045780643" Language="SFX">
 					<ShortName>Whoosh,Sound Design,Whip By,Airy to Whine,High.wav</ShortName>
 					<Path>SFX\Whoosh,Sound Design,Whip By,Airy to Whine,High_3DBF54F0.wem</Path>
+				</File>
+				<File Id="1054141879" Language="SFX">
+					<ShortName>souls.wav</ShortName>
+					<Path>SFX\souls_B8ECA860_3D176155.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

@@ -7598,6 +7598,309 @@
 								<ActiveSource Name="zapsplat_sound_design_etheral_breathing_fantasy_spooky" ID="{609550DD-9458-4311-AEF2-07A763FC9947}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="spirit2" ID="{DD771A50-CE6D-4A34-940B-0E19ECFAD020}" ShortID="610318050">
+							<PropertyList>
+								<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>49</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{84398A15-61F5-4460-B107-6099CA13731D}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1170FC9D-7C88-4B68-9DD6-A178AE1DCB90}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BB0EF8E0-837C-4E66-B56E-81DFA4C362AF}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="300"/>
+													<Property Name="Min" Type="Real64" Value="-300"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="Effect0">
+									<Custom CreatedFrom="{2AFD6FB0-C906-4683-A377-FEEEF72967B0}">
+										<Effect Name="High_Impact_(Custom)" ID="{F2CF3057-4958-40BE-A110-4A2C42C7525C}" ShortID="376630879" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<PropertyList>
+												<Property Name="AttackTime" Type="Real32" Value="0.04"/>
+												<Property Name="OutputGain" Type="Real32" Value="5.7"/>
+												<Property Name="Ratio" Type="Real32" Value="12"/>
+												<Property Name="ReleaseTime" Type="Real32" Value="0.5"/>
+												<Property Name="Threshold" Type="Real32" Value="-36.5"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)" ID="{3269D5DB-9CC5-4CFF-BB19-325C61A2BB53}" ShortID="1037596060">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.427983822236871"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.34850111239288"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.52239959624258"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1).wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)" ID="{3269D5DB-9CC5-4CFF-BB19-325C61A2BB53}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="spirit" ID="{83DD79B9-B730-412A-8A21-98D43202DD24}" ShortID="1058931654">
+							<PropertyList>
+								<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+								<Property Name="Highpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A11F1673-E15F-4297-A476-15045A5756FF}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D3B32A44-C8D2-4001-9EAB-1461592BD5F3}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-30</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DCE364B6-1EF7-41CB-B737-6729BEDDB3B6}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="300"/>
+													<Property Name="Min" Type="Real64" Value="-300"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RenderEffect0" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="RenderEffect1" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Hall_Large_Dark" ID="{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1">
+									<Custom CreatedFrom="{2AFD6FB0-C906-4683-A377-FEEEF72967B0}">
+										<Effect Name="High_Impact_(Custom)" ID="{0C80F90C-2F3C-43D6-928E-38E579DF3EB1}" ShortID="913688207" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<PropertyList>
+												<Property Name="AttackTime" Type="Real32" Value="0.04"/>
+												<Property Name="OutputGain" Type="Real32" Value="5.7"/>
+												<Property Name="Ratio" Type="Real32" Value="12"/>
+												<Property Name="ReleaseTime" Type="Real32" Value="0.5"/>
+												<Property Name="Threshold" Type="Real32" Value="-36.5"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)" ID="{4D86A83F-A447-4E6C-89B5-F19AC313031C}" ShortID="855491819">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="4.89124368270731E-02"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.34850111239288"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.293474620962426"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.49583094374863"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1).wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)" ID="{4D86A83F-A447-4E6C-89B5-F19AC313031C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="souls juan" ID="{D37BA2B1-9129-40B6-A00A-1204ED021A35}" ShortID="476857755">
+							<PropertyList>
+								<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>36</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>31</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="RenderEffect0" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="RenderEffect1" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+									<ObjectRef Name="Space_Dreaming" ID="{4FF7C4B2-37B0-4DFF-8E8A-1420102AE2DD}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="Effect1">
+									<Custom>
+										<Effect Name="Wwise_Parametric_EQ_(Custom)" ID="{BFE9C5AB-B8B6-4271-99F6-B522333401C5}" ShortID="653476196" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+											<PropertyList>
+												<Property Name="FrequencyBand1" Type="Real32" Value="376"/>
+												<Property Name="GainBand1" Type="Real32" Value="-6.5"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="souls" ID="{A9D643B7-0965-43FD-96FA-7093368A46E5}" ShortID="310973071">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.101100961588766"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.476618818918471"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.433289835380428"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.66473248758963"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>souls.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="1054141879"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="souls" ID="{A9D643B7-0965-43FD-96FA-7093368A46E5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="souls juan 2" ID="{59B9133F-8BC0-4174-8624-DA6591938EB0}" ShortID="728039566">
+							<PropertyList>
+								<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>42</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="RenderEffect0" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-11</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Space_Dreaming" ID="{4FF7C4B2-37B0-4DFF-8E8A-1420102AE2DD}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="souls" ID="{CC920917-3DBB-4034-A0FE-80266D6C9077}" ShortID="1054141879">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.137208447870468"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.202201923177531"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="7.1565037810334"/>
+										<Property Name="TrimEnd" Type="Real64" Value="10.1534251424147"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>souls.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="310973071"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="souls" ID="{CC920917-3DBB-4034-A0FE-80266D6C9077}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Sound Name="PostMortem" ID="{F35F8724-67BE-4E53-9172-478618FD8172}" ShortID="685410748">

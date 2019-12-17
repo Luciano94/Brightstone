@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: b814c665a7c1b34999f3481aee659b0e
     GuidInternal: 
-    m_lastTime: -8586250605361555602
+    m_lastTime: -8586250173958413094
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -54,7 +54,7 @@ MonoBehaviour:
     ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
     guid: 26c2e0a2ad68834a9d717f539c706795
     GuidInternal: 
-    m_lastTime: -8586250605363120402
+    m_lastTime: -8586250215055016378
     List:
     - name: Level1Music
       guid: 5f9015679f669546a979909b22431f03
@@ -89,7 +89,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 96b8f4d569f46e4c98b3d6a2ed1ba32c
     GuidInternal: 
-    m_lastTime: -8586250605361185490
+    m_lastTime: -8586250173958173174
     List:
     - name: BossDeath
       guid: ba24d0133c593347bcf2481348221d14
@@ -105,8 +105,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Enemy\BossDeath
       maxAttenuation: 0
-      maxDuration: 3.3
-      minDuration: 3.3
+      maxDuration: 7.752621
+      minDuration: 7.752621
     - name: BossSwordAttack
       guid: 3db8c1b24ba34f43bc820459652f652a
       id: 1787276729
@@ -235,11 +235,27 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: iBossDeath
+      guid: 96984bea92f089419bcbbe10ddc6cd27
+      id: 3845220853
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Enemy
+        ObjectType: 12
+      - ElementName: iBossDeath
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Enemy\iBossDeath
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\General.wwu
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 0530032992570c4b92ec17a849b7dfae
     GuidInternal: 
-    m_lastTime: -8586250605360860256
+    m_lastTime: -8586250215054926535
     List:
     - name: ArrowHit
       guid: f19f11a8d3216443bbcd4f5c8aa03850
@@ -257,22 +273,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.671281
       minDuration: 0.598043
-    - name: iBossDeath
-      guid: 96984bea92f089419bcbbe10ddc6cd27
-      id: 3845220853
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Level 1
-        ObjectType: 12
-      - ElementName: General
-        ObjectType: 12
-      - ElementName: iBossDeath
-        ObjectType: 3
-      Path: Default Work Unit\Level 1\General\iBossDeath
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: LevelClear
       guid: 9cbfc9465d27114d86bd81f02da10c14
       id: 3803289968

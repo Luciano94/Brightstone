@@ -267,6 +267,18 @@
 				</Event>
 				<Event Name="MapMusic" ID="{F475558B-972D-4565-8D93-25CAFD26AC5B}">
 					<ChildrenList>
+						<Action Name="" ID="{A8F5CFB1-9AED-45F7-93DE-BF8BD8F94999}" ShortID="485362414">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Menu" ID="{AB78229D-E045-42F5-84B6-85D999BB06AC}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{38968C17-64DC-41F3-8185-7FB12A529E34}" ShortID="80996367">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="12"/>
@@ -299,6 +311,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{F876240E-0EAA-464D-9AAC-53138CEAE33B}" ShortID="340388789">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Menu" ID="{AB78229D-E045-42F5-84B6-85D999BB06AC}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="RoomiBossEnter" ID="{9DFC0176-F1FA-4801-9481-E6C77E70619B}">
@@ -320,40 +343,6 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}">
-					<ChildrenList>
-						<Action Name="" ID="{C4CC26B7-5FB7-44D9-8B16-143FE7BC084C}" ShortID="899745964">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="22"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{34CE91F7-B920-4902-B65F-05B61C650D77}" ShortID="293440077">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="23"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}" WorkUnitID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{AE72CAA3-B2F5-4CA6-9CC2-F1203AEC34A6}" ShortID="1051729394">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="22"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
