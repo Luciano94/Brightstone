@@ -88,6 +88,9 @@ public class EnemyCombat : MonoBehaviour{
     }
 
     private void Hit(){
+        if (enemyStats.enemyType == EnemyType.Boss)
+            return;
+
         ResetValues();
         enemyAnim.Hit();
 

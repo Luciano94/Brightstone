@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistanceToChase: 40
-  minDistanceToAttack: 3.2
+  minDistanceToAttack: 3
   timeRelocating: 0
   timeParalyzedForHit: 0
   timeParalyzedForParry: 0.2
@@ -92,13 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35d6cf9b1336e842b67786784077572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animTime: 1
-  activeMoment: 0.5
+  animTime: 1.1
+  activeMoment: 0.6
   weapon: {fileID: 3141483355779995974}
   enemyAnim: {fileID: 5559408988468806604}
   circleCollider: {fileID: 7314659783427757007}
-  secondAnimTime: 2
-  secondActiveMoment: 1.5
+  secondAnimTime: 2.1
+  secondActiveMoment: 1.6
 --- !u!114 &3041816709959559500
 MonoBehaviour:
   m_ObjectHideFlags: 0

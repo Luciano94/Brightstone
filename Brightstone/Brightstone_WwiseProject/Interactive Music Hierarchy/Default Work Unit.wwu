@@ -14670,7 +14670,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-13</Value>
+								<Value>-12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -14705,6 +14705,11 @@
 								<MusicPlaylistContainer Name="1" ID="{443605A1-3036-4E96-8339-E0C5A62896F4}" ShortID="814062990">
 									<PropertyList>
 										<Property Name="Tempo" Type="Real64" Value="80"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -26919,6 +26924,11 @@
 								<MusicPlaylistContainer Name="0" ID="{80B5472B-1FA1-4FE3-8620-7C376396CB67}" ShortID="491740601">
 									<PropertyList>
 										<Property Name="Tempo" Type="Real64" Value="210"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">

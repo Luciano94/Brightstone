@@ -42,6 +42,8 @@ public abstract class EnemyBase : MonoBehaviour{
     }
 
     public void Hit(){
+        if (enemyStats.enemyType == EnemyType.Boss)
+            return;
         timeLeftHit = timeParalyzedForHit;
         OnHit();
     }
