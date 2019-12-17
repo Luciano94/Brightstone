@@ -467,6 +467,13 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{96E229F7-7455-41AD-B8F1-B2BDF91076E7}" ShortID="294611041">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PlayerXP" ID="{B557440B-6775-4ECB-AE3A-F0E1F8D50DB3}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>

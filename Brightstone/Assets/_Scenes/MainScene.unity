@@ -5805,7 +5805,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -140}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396896198
 MonoBehaviour:
@@ -5829,7 +5829,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -8682,7 +8682,7 @@ GameObject:
   - component: {fileID: 632664380}
   - component: {fileID: 632664379}
   m_Layer: 5
-  m_Name: Normal Attack
+  m_Name: Beatdown Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8705,7 +8705,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -380}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632664379
 MonoBehaviour:
@@ -8729,7 +8729,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -8740,7 +8740,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NORMAL ATK
+  m_Text: BEATDOWN ATK
 --- !u!222 &632664380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10639,7 +10639,7 @@ GameObject:
   - component: {fileID: 797633912}
   - component: {fileID: 797633911}
   m_Layer: 5
-  m_Name: Strong Attack
+  m_Name: Zone Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10697,7 +10697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Y
+  m_Text: A
 --- !u!222 &797633912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13320,7 +13320,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -200}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030736125
 MonoBehaviour:
@@ -13344,7 +13344,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -16053,7 +16053,7 @@ GameObject:
   - component: {fileID: 1235201860}
   - component: {fileID: 1235201859}
   m_Layer: 5
-  m_Name: Normal Attack
+  m_Name: Beatdown Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17730,7 +17730,7 @@ GameObject:
   - component: {fileID: 1407377316}
   - component: {fileID: 1407377315}
   m_Layer: 5
-  m_Name: Parry
+  m_Name: Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17753,7 +17753,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -500}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407377315
 MonoBehaviour:
@@ -17777,7 +17777,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -17788,7 +17788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PARRY
+  m_Text: DASH
 --- !u!222 &1407377316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17888,7 +17888,7 @@ GameObject:
   - component: {fileID: 1423596791}
   - component: {fileID: 1423596790}
   m_Layer: 5
-  m_Name: Parry
+  m_Name: Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17946,9 +17946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'LB
-
-'
+  m_Text: LT
 --- !u!222 &1423596791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21732,7 +21730,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -320}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746489449
 MonoBehaviour:
@@ -21756,7 +21754,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -23556,7 +23554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brightstoneParticlesGO: {fileID: 2853793051058669794, guid: db0e22bde9159f945ab24e14efd3dc37,
     type: 3}
-  movSpeed: 12
+  movSpeed: 16
   minDist: 1
   givenExperience: 100
   brightstonesData:
@@ -23989,7 +23987,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -80}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920621889
 MonoBehaviour:
@@ -24013,7 +24011,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -24800,7 +24798,7 @@ GameObject:
   - component: {fileID: 2020347388}
   - component: {fileID: 2020347387}
   m_Layer: 5
-  m_Name: Strong Attack
+  m_Name: Zone Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24823,7 +24821,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -440}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020347387
 MonoBehaviour:
@@ -24847,7 +24845,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -24858,7 +24856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: STRONG ATK
+  m_Text: ZONE ATK
 --- !u!222 &2020347388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25609,7 +25607,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -260}
-  m_SizeDelta: {x: 380, y: 45}
+  m_SizeDelta: {x: 380, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2079569533
 MonoBehaviour:
@@ -25633,7 +25631,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 13fa981916ff0ca4bbbd69508af55ac4, type: 3}
-    m_FontSize: 35
+    m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3

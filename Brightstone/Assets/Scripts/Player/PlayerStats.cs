@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour{
-    
+public class PlayerStats : MonoBehaviour {
+
     private float currentLife = 100;
     [SerializeField] float life = 100.0f;
     [SerializeField] float atkMult = 1.0f;
     [SerializeField] int lostExpPercent = 40;
+    [SerializeField] BoxCollider2D footTrigger;
     private float atkDmg = 0.0f;
     private float experience = 0;
     private float experienceToAdd = 0;
@@ -23,10 +24,10 @@ public class PlayerStats : MonoBehaviour{
         Invoke("PlayerRespawn", 1.0f);
     }
 
-    private void Update(){
+    private void FixedUpdate(){
         if (experienceToAdd > 0 && !GameManager.Instance.pause){
-            Experience = 2;
-            experienceToAdd -= 2;
+            Experience = 3 + playerLevel;
+            experienceToAdd -= 3 + playerLevel;
         }
     }
 
@@ -49,10 +50,10 @@ public class PlayerStats : MonoBehaviour{
                 CheckLowHealth();
                 
                 if(currentLife <= 0){
+                    footTrigger.enabled = false;
                     GetComponent<PlayerCombat>().Death();
                     GameManager.Instance.PlayerDeath();
                 }
-                    
                 else
                     OnHit.Invoke();
             }

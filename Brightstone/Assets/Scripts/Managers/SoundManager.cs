@@ -103,6 +103,12 @@ public class SoundManager : MonoBehaviour
     public void PlayerGetsSoul(){ //El jugador absorbe un cúmulo de esencia de Brightstone
         AkSoundEngine.PostEvent("PlayerGetsSoul", GameManager.Instance.playerSts.gameObject);
     }
+    public void PlayerXPNoteOn(){ //La barra de XP del jugador comienza a subir
+        //AkSoundEngine.PostEvent("PlayerXPNoteOn", GameManager.Instance.playerSts.gameObject);
+    }
+    public void PlayerXPNoteOff(){ //La barra de XP del jugador deja de subir
+        //AkSoundEngine.PostEvent("PlayerXPNoteOff", GameManager.Instance.playerSts.gameObject);
+    }
     public void PlayerXP(float porcCompleted){ //Hay un cambio en el porcentaje de XP del jugador
         AkSoundEngine.SetRTPCValue("PlayerXP", porcCompleted * 100);
     }

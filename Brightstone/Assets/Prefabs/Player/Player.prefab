@@ -172,6 +172,7 @@ MonoBehaviour:
   life: 100
   atkMult: 1
   lostExpPercent: 40
+  footTrigger: {fileID: 3354996225036238875}
   experienceToNextLevel: 0
   onHit:
     m_PersistentCalls:
