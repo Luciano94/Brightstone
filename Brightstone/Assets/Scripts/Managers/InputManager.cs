@@ -11,20 +11,21 @@ public class InputManager : MonoBehaviour{
             DetectDevice();
             
             Cursor.visible = false;
-            input = new InputPC();
+            //input = new InputPC();
+            input = new InputXBox();
         }
     }
 
     void Update(){
         DetectDevice();
 
-        if (input.IsJoystick() && !isConnected){
+        /*if (input.IsJoystick() && !isConnected){
             Cursor.visible = true;
             input = new InputPC();
         } else if (!input.IsJoystick() && isConnected){
             Cursor.visible = false;
             input = new InputXBox();
-        }
+        }*/
 
         // Quizas tengamos que hacer un #if unity editor == true que sea de esta manera
         // Si es la build, que solo se pueda jugar con Joystick

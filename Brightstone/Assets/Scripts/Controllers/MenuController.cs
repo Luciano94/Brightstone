@@ -43,7 +43,9 @@ public class MenuController : MonoBehaviour{
         SceneManager.LoadScene(loadingSceneIndex);
     }
 
-    private void Update() {
+    private void Update(){
+        if (Cursor.visible)
+            Cursor.visible = false;
         CheckBrightstoneAlpha();
     }
 
