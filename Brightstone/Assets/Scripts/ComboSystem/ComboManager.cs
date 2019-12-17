@@ -30,6 +30,16 @@ public enum Stands
     None
 }
 
+public enum ComboNames{
+    Beatdown = 0,
+    Thrust = 1,
+    Zone = 2,
+    Shuriken = 3,
+    BeatdownZone = 4,
+    ZoneBeatdown = 5,
+    count = 6
+}
+
 public class ComboManager : MonoBehaviour{
     [SerializeField]private List<Combo> Combos;
     private int comboIndex; //posicion del combo en ese momento
@@ -47,14 +57,31 @@ public class ComboManager : MonoBehaviour{
     public Stands actualStand { get; private set; }
     private Stands lastStand;
 
+    [Header("AdquiredCombos")]
+    [SerializeField]private ComboNames[] initCombos;
+    private bool[] isAdquired;
+
     private void Awake() {
         activeCombos = new List<int>();
         comboIndex = 0;
         currentActionInfo.action = null;
         actualStand = lastStand = Stands.Beatdown;
         standsManager.ActivateStand(actualStand);
+
+        FillInitCombos();
     }
 
+    private void FillInitCombos(){
+        isAdquired = new bool[(int)ComboNames.count];
+
+        for (int i = 0; i < initCombos.Length; i++){
+            isAdquired[(int)initCombos[i]] = true;
+        }
+    }
+
+    public void unlockNewCombo(ComboNames name){
+        isAdquired[(int)name] = true;
+    }
 
     private void Update() {
         if(currentActionInfo.action != null && 
@@ -73,8 +100,9 @@ public class ComboManager : MonoBehaviour{
             //inicializa el arreglo de combos;
             for (int i = 0; i < Combos.Count; i++){
                 if(Combos[i].combo[comboIndex] < actions.Count){
-                    if(actions[Combos[i].combo[comboIndex]].action.actionName == actionNumber){   
-                        activeCombos.Add(i);
+                    if(actions[Combos[i].combo[comboIndex]].action.actionName == actionNumber){
+                        if(isAdquired[i])   
+                            activeCombos.Add(i);
                     }
                 }
             }
