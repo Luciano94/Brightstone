@@ -23712,7 +23712,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    sizeOnStart: 1.5
+    sizeOnStart: 2
 --- !u!114 &1896201169
 MonoBehaviour:
   m_ObjectHideFlags: 0
