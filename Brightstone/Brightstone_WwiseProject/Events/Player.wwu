@@ -493,6 +493,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="PlayerXPNoteOn" ID="{41CA1699-F6F5-408A-9D52-AD6F7A4E1B35}">
+					<ChildrenList>
+						<Action Name="" ID="{B47FCF29-61DC-4D05-8591-B42BE990E524}" ShortID="74050941">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerXPTone" ID="{5F5F2247-70A2-4CC9-B606-6CCEBE5586F0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerXPNoteOff" ID="{74F5F5EC-62E6-4E4A-8204-DE129D9C0C54}">
+					<ChildrenList>
+						<Action Name="" ID="{FFB239DC-50EA-414C-9CFF-2EB287DA819D}" ShortID="614046638">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerXPTone" ID="{5F5F2247-70A2-4CC9-B606-6CCEBE5586F0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

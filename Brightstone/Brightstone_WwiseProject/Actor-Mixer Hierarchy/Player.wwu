@@ -7496,11 +7496,6 @@
 										<Value>56</Value>
 									</ValueList>
 								</Property>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
 								<Property Name="Lowpass" Type="int16">
 									<ValueList>
 										<Value>26</Value>
@@ -7682,6 +7677,11 @@
 								<Value>32</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Lowpass" Type="int16">
 							<ValueList>
 								<Value>32</Value>
@@ -7806,7 +7806,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-5</Value>
+								<Value>1</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -7953,6 +7953,89 @@
 						<ItemRef Name="skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116" ID="{6097FDCE-FC55-413F-8BE8-AB1CC0FD47DD}"/>
 					</Playlist>
 				</RandomSequenceContainer>
+				<Sound Name="PlayerXPTone" ID="{5F5F2247-70A2-4CC9-B606-6CCEBE5586F0}" ShortID="153421803">
+					<PropertyList>
+						<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>62</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideEffect" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<RTPCList>
+								<RTPC Name="" ID="{8D3A82FE-AF16-40F5-919D-A62D527AEE53}" ShortID="848829067">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="PlayerXP" ID="{A49FC481-BBCA-485B-8072-ADC41CC5C27C}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{BAB40BA3-9093-4928-B3B8-6BBF70759466}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-1327</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>2361</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Hall_Large_TooBright" ID="{5F144EE3-081F-4BEC-ABCF-F88E111FECAE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="Wwise Synth One" ID="{B6A25CE9-2667-442E-A50A-FA4EF653DB10}" ShortID="742774955" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+							<PropertyList>
+								<Property Name="BaseFrequency" Type="Real32" Value="392"/>
+								<Property Name="FmAmount" Type="Real32" Value="21.1"/>
+								<Property Name="NoiseLevel" Type="Real32" Value="-19"/>
+								<Property Name="NoiseShape" Type="int32" Value="1"/>
+								<Property Name="Osc1Level" Type="Real32" Value="-96"/>
+								<Property Name="OutputLevel" Type="Real32" Value="4"/>
+							</PropertyList>
+							<Language>SFX</Language>
+						</SourcePlugin>
+						<SourcePlugin Name="Wwise Sine" ID="{8CE13E6E-4F5A-4D96-8FA9-C5798A75F12F}" ShortID="640640516" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+							<PropertyList>
+								<Property Name="SineDuration" Type="Real32" Value="5"/>
+								<Property Name="SineFrequency" Type="Real32" Value="392"/>
+							</PropertyList>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Wwise Synth One" ID="{B6A25CE9-2667-442E-A50A-FA4EF653DB10}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

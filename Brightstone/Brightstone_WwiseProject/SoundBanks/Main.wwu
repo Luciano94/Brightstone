@@ -15,6 +15,7 @@
 						<ObjectRef Name="PlayerAttackXx5" ID="{931189DA-8C79-4009-8A63-376D0A4E74F2}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="SelectAttSame" ID="{5DF25E88-F05E-4038-BCA8-7F432DF7BC86}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB4" ID="{F11EE7CF-1927-4048-A4B9-173A5C981646}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerXPNoteOn" ID="{41CA1699-F6F5-408A-9D52-AD6F7A4E1B35}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB2" ID="{09C4074F-F7CD-40F9-9FAC-FD4151CF73DC}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackYx5" ID="{433507AC-415D-40FC-9665-F4007AD4322A}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackY" ID="{9F4BF024-C349-413F-881F-0DCBE6F22BDA}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
@@ -50,6 +51,7 @@
 						<ObjectRef Name="PlayerAttackHeavy" ID="{D38EEE45-C6D6-4CBE-B093-6AB7EF119F92}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="RoomClear" ID="{1711AE22-8453-4CFD-9364-32808F98B7E2}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB1" ID="{16C5D5AF-D8E6-4DD3-86CD-9CE22165F26C}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PlayerXPNoteOff" ID="{74F5F5EC-62E6-4E4A-8204-DE129D9C0C54}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerAttackLight2" ID="{B84A29D3-FC08-4E76-829E-A8350FDB6A2D}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerGetsSoul" ID="{DFC35E38-043E-4F90-BADE-DED41A4482AD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB5" ID="{C225548A-F5C4-4FA9-85E2-D2AFF4F4AFCD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
