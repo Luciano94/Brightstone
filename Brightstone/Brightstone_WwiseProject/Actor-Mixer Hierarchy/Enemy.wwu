@@ -95,16 +95,40 @@
 				</Sound>
 				<Sound Name="BossScream" ID="{F3282A4F-BD1A-4595-AC5A-C60249F0A731}" ShortID="275857212">
 					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>25</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideEffect" Type="bool" Value="True"/>
 						<Property Name="OverridePriority" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-430</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Priority" Type="int16">
 							<ValueList>
 								<Value>95</Value>
+							</ValueList>
+						</Property>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-22</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
@@ -115,9 +139,26 @@
 							<Language>SFX</Language>
 							<AudioFile>BossScream.wav</AudioFile>
 						</AudioFileSource>
+						<AudioFileSource Name="Creature_Alien_Death_01" ID="{F2444AC7-58BA-4B91-AFFD-56CA8CA487C3}" ShortID="309404536">
+							<Language>SFX</Language>
+							<AudioFile>Creature_Alien_Death_01.wav</AudioFile>
+						</AudioFileSource>
+						<AudioFileSource Name="voice_male_b_death_low_09" ID="{FE07E420-9C94-40E5-B57E-375C868FE77B}" ShortID="309837521">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.124614370468029"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.96817402768622"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>voice_male_b_death_low_09.wav</AudioFile>
+						</AudioFileSource>
+						<AudioFileSource Name="Monster_Pain_Death_121" ID="{441756C2-5657-4F0F-A970-35275FFEA307}" ShortID="1034672471">
+							<Language>SFX</Language>
+							<AudioFile>Monster_Pain_Death_121.wav</AudioFile>
+						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="BossScream" ID="{E473515F-2814-4CD0-ACE6-E731968A3BA9}" Platform="Linked"/>
+						<ActiveSource Name="Monster_Pain_Death_121" ID="{441756C2-5657-4F0F-A970-35275FFEA307}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="MeleeSwordAttack" ID="{C050A0A5-97C4-4F14-8310-3DA9246145C3}" ShortID="944982541">
@@ -329,6 +370,96 @@
 						</Reference>
 					</ReferenceList>
 				</RandomSequenceContainer>
+				<Sound Name="BossScream_01" ID="{92CD7193-0B8C-4C05-AD9B-9B92223D09E0}" ShortID="909583432">
+					<PropertyList>
+						<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>34</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>35</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideEffect" Type="bool" Value="True"/>
+						<Property Name="OverridePriority" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>350</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>95</Value>
+							</ValueList>
+						</Property>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BossScream" ID="{883ECAD6-8CE6-4DB7-BE99-E408666C0004}" ShortID="168130732">
+							<Language>SFX</Language>
+							<AudioFile>BossScream.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="319793680"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="Creature_Alien_Death_01" ID="{1811F47E-F0FD-4F45-BE95-6C012507623B}" ShortID="540397368">
+							<Language>SFX</Language>
+							<AudioFile>Creature_Alien_Death_01.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="309404536"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="voice_male_b_death_low_09" ID="{1AA6FD9F-A28E-44DA-BCCF-ECFD7B0097AE}" ShortID="549349547">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.124614370468029"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.96817402768622"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>voice_male_b_death_low_09.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="309837521"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="Monster_Pain_Death_121" ID="{0B1B9AF8-70F8-4BEA-8C36-FDBC79F42BCB}" ShortID="796439760">
+							<Language>SFX</Language>
+							<AudioFile>Monster_Pain_Death_121.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File ID="1034672471"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="6Monsters_TwinHead_Death_03" ID="{3FF4F0B0-5D8C-4E3E-9B6A-00C9B074E044}" ShortID="523401666">
+							<Language>SFX</Language>
+							<AudioFile>6Monsters_TwinHead_Death_03.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="6Monsters_TwinHead_Death_03" ID="{3FF4F0B0-5D8C-4E3E-9B6A-00C9B074E044}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

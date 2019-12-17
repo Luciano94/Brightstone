@@ -59,6 +59,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3389465314	PlayerXP			\Default Work Unit\PlayerXP	
 
 Effect plug-ins	ID	Name	Type				Notes
+	376630879	High_Impact_(Custom)	Wwise Compressor			
 	396788532	High_Impact_(Custom)	Wwise Compressor			
 	1038187804	Dash_rev_(Custom)	Wwise RoomVerb			
 	2995775460	Room_Small	Wwise RoomVerb			
@@ -88,12 +89,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	235818575	Fast Action Swish_HW 05 04	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Fast Action Swish_HW 05_8D65838A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackA\Fast Action Swish_HW 05 04		4521
 	257412576	pain3	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\pain3_85F53827.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerDamaged\pain3		5697
 	279205761	PostMortem	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\zapsplat_nature_fireball_pass_by_designed_001_32190_6C3AF9C8_094B26A9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PostMortem		56169
-	319793680	BossScream	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\BossScream_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossScream		30457
 	378429629	yah2_01	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\yah multi_AB8B643E.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\Voice\Sequence yah\yah2_01\yah2_01		3905
 	396198768	ComboXA2	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Whoosh,Sound Design,Whip By,Airy to Whine,High_46DB58F6.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\ComboA\ComboA_step\ComboA2\ComboXA2		2228
 	409068163	getSoul	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\zapsplat_sound_design_etheral_breathing_fantasy_spooky_74D2F4C1_6FA70B69.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\Soul\getSoul		39201
 	457148846	BossSwordAttackHeavy	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Whoosh_Rod_Pole_022 48000_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossSwordAttack\BossSwordAttackHeavy		14269
 	520976957	ComboA	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Attach ah_2E01061D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackAx7\ComboA		4407
+	523401666	BossScream_01	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\6Monsters_TwinHead_Death_03_6296B0F9_8C54DD70.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BossScream_01		33270
 	577594711	skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116_6402E223_B3E0116E.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\Respawn\skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116		97910
 	595154972	huhh	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\various male voices_9D812849.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackYx5\huhh		5503
 	665658802	BowTight	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Bow Pull_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Enemy\BowTight		4672
@@ -115,5 +116,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	993404172	PM_BB_CLEAN_STABS_15	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\PM_BB_CLEAN_STABS_15_3612F402.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\PlayerAttackLightHit\PM_BB_CLEAN_STABS_15		6907
 	1010118877	Whoosh_Swing_Fishing Pole_Full_Fienup_CLASSIC_001	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Whoosh_Swing_Fishing Pole_Full_Fienup_CLASSIC_001_52305425.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackXred\Whoosh_Swing_Fishing Pole_Full_Fienup_CLASSIC_001		4590
 	1035438314	yah2_01	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\yah multi_FD65CA58.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\Voice\Sequence yah\yah2_03\yah2_01		6458
+	1037596060	spirit2	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)_43C6BE07.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\Soul\spirit2		100112
 	1045780643	ComboXA4	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\Whoosh,Sound Design,Whip By,Airy to Whine,High_3DBF54F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\ComboA\ComboA_step\ComboA3\ComboXA4		3925
+	1054141879	souls juan	C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Mac\SFX\souls_B8ECA860_3D176155.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\Soul\souls juan		90187
 

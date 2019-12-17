@@ -1283,7 +1283,7 @@
 								</Effect>
 								<Effect Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
-										<Property Name="DecayTime" Type="Real32" Value="0.4"/>
+										<Property Name="DecayTime" Type="Real32" Value="2"/>
 										<Property Name="Density" Type="Real32" Value="55"/>
 										<Property Name="Diffusion" Type="Real32" Value="49"/>
 										<Property Name="DryLevel" Type="Real32" Value="-1.3"/>

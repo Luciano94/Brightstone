@@ -198,7 +198,7 @@
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+							<ObjectRef Name="iBossDeath" ID="{EA4B9896-F092-4189-9BCB-BE10DDC6CD27}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}"/>
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
@@ -231,7 +231,7 @@
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
 						<CurrentStateRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}"/>
-						<CurrentStateRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}"/>
+						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
