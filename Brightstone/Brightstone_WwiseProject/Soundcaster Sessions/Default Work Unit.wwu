@@ -118,6 +118,10 @@
 							<ObjectRef Name="SelectSame" ID="{ADDF9412-5506-43FF-B1AA-3C29ADEB7D02}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 							<Position X="3" Y="2"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="PlayerGetsSoul" ID="{DFC35E38-043E-4F90-BADE-DED41A4482AD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}"/>
+							<Position X="3" Y="4"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -212,6 +216,10 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="PlayerXP" ID="{A49FC481-BBCA-485B-8072-ADC41CC5C27C}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
 							<Value>100</Value>
 						</RTPCValue>
@@ -222,14 +230,14 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
-						<CurrentStateRef Name="fBoss" ID="{7FEA0865-C3C5-4EA0-BBEA-6B835574CA79}"/>
-						<CurrentStateRef Name="Combat" ID="{CC9893FB-D3A0-405F-AC3F-7D134D4D7B70}"/>
+						<CurrentStateRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}"/>
+						<CurrentStateRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
 						<CurrentSwitchRef Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
 						<CurrentSwitchRef Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
-						<CurrentSwitchRef Name="Nine" ID="{FA118D6B-8451-42D4-95F5-C9C09A16018C}"/>
+						<CurrentSwitchRef Name="Cero" ID="{AC1FEA4F-C7E3-44DB-988B-6A2BDE515210}"/>
 						<CurrentSwitchRef Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
 						<CurrentSwitchRef Name="Shanobi" ID="{FD8ADEF4-E834-49F4-A640-4CF4FD271B6D}"/>
 					</CurrentSwitchList>

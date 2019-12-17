@@ -25,6 +25,7 @@
 						<ObjectRef Name="PlayerDamaged" ID="{F9BA0457-4FAA-43A5-A022-525405CB16A4}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboB3" ID="{67998566-4E1D-43C6-B3E4-B2046EFFBB5A}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="EnemyArcherTightBow" ID="{9F3AE7D0-5B12-4540-9CA7-750F6F331649}" WorkUnitID="{D5F4B896-F469-4C6E-98B3-D6A2ED1BA32C}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="PostMortem" ID="{9D622689-8F2D-4574-8316-4C00FD40FF6C}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboA3" ID="{3602E166-9705-458F-9398-2817EAAFB3CF}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerShurikenHit" ID="{4501BD4F-FC30-45AC-B092-A4FBFFFE00AD}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="PlayerComboA2" ID="{7985BA66-3452-45CF-960D-D59A7CFA757F}" WorkUnitID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" Filter="7" Origin="Manual"/>

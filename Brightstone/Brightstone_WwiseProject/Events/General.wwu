@@ -94,7 +94,6 @@
 							<PropertyList>
 								<Property Name="AbsoluteOrRelative" Type="int16" Value="1"/>
 								<Property Name="ActionType" Type="int16" Value="38"/>
-								<Property Name="Delay" Type="Real64" Value="2"/>
 								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -187,12 +186,6 @@
 				</Event>
 				<Event Name="LevelEnter" ID="{7DADD946-A232-4459-95F6-F454F4D939DC}">
 					<ChildrenList>
-						<Action Name="" ID="{391E3833-1942-476F-AF5F-B4C5C2E2270A}" ShortID="796544838">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-							</PropertyList>
-							<ReferenceList/>
-						</Action>
 						<Action Name="" ID="{7406D359-40BF-400F-BFA2-4F515662DAAE}" ShortID="222232094">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="22"/>
@@ -227,13 +220,15 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{5DED4E04-FE9E-4FB4-AFAE-3F8C3FAF3FFC}" ShortID="858442303">
+						<Action Name="" ID="{FF01C82F-FD32-48D9-876A-98548E40DA06}" ShortID="696354732">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="41"/>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MapMusic" ID="{F475558B-972D-4565-8D93-25CAFD26AC5B}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+									<ObjectRef Name="Main Menu" ID="{AB78229D-E045-42F5-84B6-85D999BB06AC}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -247,11 +242,57 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{5DED4E04-FE9E-4FB4-AFAE-3F8C3FAF3FFC}" ShortID="858442303">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MapMusic" ID="{F475558B-972D-4565-8D93-25CAFD26AC5B}" WorkUnitID="{29033005-5792-4B0C-92EC-17A849B7DFAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2858A503-A4E6-467F-B670-E987AE1B59F7}" ShortID="143850674">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Menu" ID="{AB78229D-E045-42F5-84B6-85D999BB06AC}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="MapMusic" ID="{F475558B-972D-4565-8D93-25CAFD26AC5B}">
 					<ChildrenList>
+						<Action Name="" ID="{38968C17-64DC-41F3-8185-7FB12A529E34}" ShortID="80996367">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="Volume" Type="Real64" Value="-80"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level 1v2" ID="{A2C61052-AA98-4D69-8FD8-B7F97C085B5C}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{3B393732-76CF-4A8B-87AC-13F46288DB76}" ShortID="742969119">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level 1v2" ID="{A2C61052-AA98-4D69-8FD8-B7F97C085B5C}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A7CA873A-B841-4F2B-BD57-2E6CC33EAF5D}" ShortID="920617066">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Level 1v2" ID="{A2C61052-AA98-4D69-8FD8-B7F97C085B5C}" WorkUnitID="{7F65CCCE-95B7-4610-9F47-1A384805B346}"/>
@@ -313,6 +354,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PostMortem" ID="{9D622689-8F2D-4574-8316-4C00FD40FF6C}">
+					<ChildrenList>
+						<Action Name="" ID="{D3B2265F-2218-4D89-950A-1E7CE7D37849}" ShortID="963708548">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PostMortem" ID="{F35F8724-67BE-4E53-9172-478618FD8172}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
