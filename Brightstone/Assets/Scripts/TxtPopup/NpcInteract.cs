@@ -37,8 +37,6 @@ public class NpcInteract : MonoBehaviour
                 ShowText();
             }
         }
-
-        Debug.LogWarning("ICON = " + iconShown + "  TEXT = " + textIsShowed);
     }
 
     private void ShowText(){
@@ -51,7 +49,6 @@ public class NpcInteract : MonoBehaviour
     }
 
     private void DetectPlayer(){
-        Debug.LogWarning(Vector3.Distance(transform.position, gameManager.PlayerPos));
         if(Vector3.Distance(transform.position, gameManager.PlayerPos) <= 5.0f){
             if(!textIsShowed){
                 iconCanvas.SetActive(true);
