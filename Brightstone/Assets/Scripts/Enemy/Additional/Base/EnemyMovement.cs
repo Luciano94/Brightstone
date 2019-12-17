@@ -87,7 +87,8 @@ public class EnemyMovement : MonoBehaviour{
 
         Vector3 roomCenterPosition = GameManager.Instance.activeRoom.GetRoomsBehaviour().transform.position;
         roomCenterPosition.z = transform.position.z;
-        Vector2 diffToCenter = roomCenterPosition - transform.position;
+        float diffToCenterX = roomCenterPosition.x - transform.position.x;
+        float diffToCenterY = roomCenterPosition.y - transform.position.y;
 
         if (tempObj != Vector3.zero){
             Vector3 objDiff = tempObj - transform.position;
@@ -98,8 +99,8 @@ public class EnemyMovement : MonoBehaviour{
                 tempObj = Vector3.zero;
         }
         else{
-            if (diffToCenter.magnitude > 14.0f){
-                float angle = Calculations.GetAngle(diffToCenter) + Random.Range(20.0f, 40.0f) * (movingRight ? 1 : -1);
+            if (Mathf.Abs(diffToCenterX) > 23.0f || Mathf.Abs(diffToCenterY) > 8.5f){
+                float angle = Calculations.GetAngle(roomCenterPosition - transform.position) + Random.Range(20.0f, 40.0f) * (movingRight ? 1 : -1);
                 float distFromOrigin = 8.0f;
 
                 tempObj.x = roomCenterPosition.x + Mathf.Cos(angle) * distFromOrigin;

@@ -23554,7 +23554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brightstoneParticlesGO: {fileID: 2853793051058669794, guid: db0e22bde9159f945ab24e14efd3dc37,
     type: 3}
-  movSpeed: 16
+  movSpeed: 18
   minDist: 1
   givenExperience: 100
   brightstonesData:
