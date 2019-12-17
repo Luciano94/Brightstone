@@ -45,7 +45,8 @@ public class EnemyCombat : MonoBehaviour{
         get { return animTime; }
     }
 
-
+    protected EnemyStats enemyStats;
+    protected int whichAttack;
     protected Vector3 diff;
 
     protected Vector3 player;
@@ -60,7 +61,7 @@ public class EnemyCombat : MonoBehaviour{
 
         player = GameManager.Instance.PlayerPos;
 
-        EnemyStats enemyStats = GetComponent<EnemyStats>();
+        enemyStats = GetComponent<EnemyStats>();
 
         enemyStats.OnHit.AddListener(Hit);
         enemyStats.OnParried.AddListener(Parried);
@@ -70,7 +71,13 @@ public class EnemyCombat : MonoBehaviour{
 
     virtual public void Attack(){
         isAttacking = true;
-        enemyAnim.SetAttack();
+
+        if (enemyStats.enemyType != EnemyType.Boss)
+            enemyAnim.SetAttack();
+        else{
+            whichAttack = Random.Range(0, 2);
+            enemyAnim.SetAttack((float)whichAttack);
+        }
 
         player = GameManager.Instance.PlayerPos;
         diff = player - transform.position;

@@ -39,6 +39,12 @@ public class EnemyAnimations : MonoBehaviour{
         //anim.SetFloat("AnimSpeed", enemyCombat.AnimTime);
     }
 
+    public void SetAttack(float attack){
+        anim.SetFloat("WhichAttack", attack);
+        anim.SetTrigger("Attack");
+        //anim.SetFloat("AnimSpeed", enemyCombat.AnimTime);
+    }
+
     public void Throw(){
         anim.SetTrigger("Throw");
     }
