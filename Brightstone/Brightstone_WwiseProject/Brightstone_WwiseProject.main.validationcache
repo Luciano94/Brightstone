@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="94">
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1576373286" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Enemy.wwu" DateLow="1576091997" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Main Menu.wwu" DateLow="1572474719" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Map.wwu" DateLow="1576373286" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Player.wwu" DateLow="1576516963" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Brightstone_WwiseProject.main.wsettings" DateLow="1576529021" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Brightstone_WwiseProject.wproj" DateLow="1572571309" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1576367187" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1576093072" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Effects\Factory Effects.wwu" DateLow="1576501265" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Enemy.wwu" DateLow="1576366226" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\General.wwu" DateLow="1576518282" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Level 1.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Main Menu.wwu" DateLow="1576373286" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Enemy.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Main Menu.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Map.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Player.wwu" DateLow="1576548562" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Brightstone_WwiseProject.main.wsettings" DateLow="1576548619" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Brightstone_WwiseProject.wproj" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Effects\Factory Effects.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Enemy.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\General.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Level 1.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Main Menu.wwu" DateLow="1576546349" DateHigh="0"/>
 	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Main Scene.wwu" DateLow="1569426799" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Player.wwu" DateLow="1576516963" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Synopsis.wwu" DateLow="1576188990" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1576498520" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1576518282" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1572651616" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1572559585" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Queries\Factory Queries.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\SoundBanks\Main.wwu" DateLow="1576501599" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\SoundBanks\Music.wwu" DateLow="1576461888" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1576518282" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\States\Default Work Unit.wwu" DateLow="1576364672" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1576358913" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
-	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1571843788" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Player.wwu" DateLow="1576546970" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Events\Synopsis.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Queries\Factory Queries.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\SoundBanks\Main.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\SoundBanks\Music.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1576548562" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\States\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
+	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1576546349" DateHigh="0"/>
 	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone_WwiseIntegrationTemp\Brightstone_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1569243176" DateHigh="0"/>
 	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone_WwiseIntegrationTemp\Brightstone_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1569243176" DateHigh="0"/>
 	<ValidationCacheItem File="F:\GAMES\Brightstone-Development\Brightstone_WwiseIntegrationTemp\Brightstone_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1569243176" DateHigh="0"/>

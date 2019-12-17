@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\tmuge\Desktop\Brightstone\Brightstone\Brightstone_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -411,11 +411,13 @@
 				<Event Id="4055688079" Name="PlayerDamaged" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDamaged" DurationType="OneShot" DurationMin="0.424454" DurationMax="1.090508"/>
 				<Event Id="2525052962" Name="PlayerDash" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDash" DurationType="OneShot" DurationMin="0.284376" DurationMax="0.379596"/>
 				<Event Id="1656947812" Name="PlayerDeath" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerDeath" DurationType="OneShot" DurationMin="4.857316" DurationMax="5.087039"/>
-				<Event Id="2506589132" Name="PlayerGetsSoul" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerGetsSoul" DurationType="OneShot" DurationMin="0.668168" DurationMax="0.668168"/>
+				<Event Id="2506589132" Name="PlayerGetsSoul" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerGetsSoul" DurationType="OneShot" DurationMin="0.417229" DurationMax="0.541079"/>
 				<Event Id="3526874771" Name="PlayerLvlUp" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerLvlUp" DurationType="OneShot" DurationMin="2.142838" DurationMax="3.030430"/>
 				<Event Id="410952847" Name="PlayerParryHit" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerParryHit" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="667982098" Name="PlayerRespawn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerRespawn" DurationType="OneShot" DurationMin="7.430093" DurationMax="7.430093"/>
 				<Event Id="3382292410" Name="PlayerShurikenHit" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerShurikenHit" DurationType="OneShot" DurationMin="0.568712" DurationMax="0.804281"/>
+				<Event Id="2853668869" Name="PlayerXPNoteOff" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerXPNoteOff" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3620593657" Name="PlayerXPNoteOn" ObjectPath="\Events\Default Work Unit\Level 1\Player\PlayerXPNoteOn" DurationType="Unknown"/>
 				<Event Id="2334676971" Name="PostMortem" ObjectPath="\Events\Default Work Unit\Level 1\General\PostMortem" DurationType="OneShot" DurationMin="3.824843" DurationMax="3.824843"/>
 				<Event Id="4149955699" Name="RoomBossEnter" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomBossEnter" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1974576135" Name="RoomClear" ObjectPath="\Events\Default Work Unit\Level 1\General\RoomClear" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -435,11 +437,11 @@
 				</File>
 				<File Id="42324233" Language="SFX">
 					<ShortName>PM_BB_CLEAN_CHOPS_12.wav</ShortName>
-					<Path>SFX\PM_BB_CLEAN_CHOPS_12_5EE5790F.wem</Path>
+					<Path>SFX\PM_BB_CLEAN_CHOPS_12_F135F357.wem</Path>
 				</File>
 				<File Id="49573110" Language="SFX">
 					<ShortName>Whoosh,Sound Design,Airy,Full,Forceful,Soft.wav</ShortName>
-					<Path>SFX\Whoosh,Sound Design,Airy,Full,Forceful,Soft_8F44BF79.wem</Path>
+					<Path>SFX\Whoosh,Sound Design,Airy,Full,Forceful,Soft_CEF0218C.wem</Path>
 				</File>
 				<File Id="50915452" Language="SFX">
 					<ShortName>Whoosh,Sound Design,Whip By,Airy to Whine,High.wav</ShortName>
@@ -467,11 +469,11 @@
 				</File>
 				<File Id="113666214" Language="SFX">
 					<ShortName>pain various2.wav</ShortName>
-					<Path>SFX\pain various2_4556F946.wem</Path>
+					<Path>SFX\pain various2_F8C87037.wem</Path>
 				</File>
 				<File Id="113957357" Language="SFX">
 					<ShortName>pain various2.wav</ShortName>
-					<Path>SFX\pain various2_897F4B2F.wem</Path>
+					<Path>SFX\pain various2_E83420DF.wem</Path>
 				</File>
 				<File Id="131469222" Language="SFX">
 					<ShortName>skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1).wav</ShortName>
@@ -495,7 +497,7 @@
 				</File>
 				<File Id="257412576" Language="SFX">
 					<ShortName>pain3.wav</ShortName>
-					<Path>SFX\pain3_E8818432.wem</Path>
+					<Path>SFX\pain3_85F53827.wem</Path>
 				</File>
 				<File Id="279205761" Language="SFX">
 					<ShortName>zapsplat_nature_fireball_pass_by_designed_001_32190.wav</ShortName>
@@ -513,13 +515,17 @@
 					<ShortName>Whoosh,Sound Design,Whip By,Airy to Whine,High.wav</ShortName>
 					<Path>SFX\Whoosh,Sound Design,Whip By,Airy to Whine,High_46DB58F6.wem</Path>
 				</File>
+				<File Id="409068163" Language="SFX">
+					<ShortName>zapsplat_sound_design_etheral_breathing_fantasy_spooky.wav</ShortName>
+					<Path>SFX\zapsplat_sound_design_etheral_breathing_fantasy_spooky_74D2F4C1_6FA70B69.wem</Path>
+				</File>
 				<File Id="457148846" Language="SFX">
 					<ShortName>Whoosh_Rod_Pole_022 48000.wav</ShortName>
 					<Path>SFX\Whoosh_Rod_Pole_022 48000_6296B0F9.wem</Path>
 				</File>
 				<File Id="520976957" Language="SFX">
 					<ShortName>Attach ah.wav</ShortName>
-					<Path>SFX\Attach ah_BE8764AE.wem</Path>
+					<Path>SFX\Attach ah_2E01061D.wem</Path>
 				</File>
 				<File Id="577594711" Language="SFX">
 					<ShortName>skyclad_sound_breath_exhale_soft_low_ascend_into_sigh_reverb_ghostly_eerie_001_116.wav</ShortName>
@@ -539,7 +545,7 @@
 				</File>
 				<File Id="741872716" Language="SFX">
 					<ShortName>jah.wav</ShortName>
-					<Path>SFX\jah_B02E2232.wem</Path>
+					<Path>SFX\jah_61388065.wem</Path>
 				</File>
 				<File Id="873531311" Language="SFX">
 					<ShortName>various male voices.wav</ShortName>
@@ -567,15 +573,11 @@
 				</File>
 				<File Id="916392274" Language="SFX">
 					<ShortName>PM_BB_CLEAN_CHOPS_45.wav</ShortName>
-					<Path>SFX\PM_BB_CLEAN_CHOPS_45_FA1C8BBB.wem</Path>
+					<Path>SFX\PM_BB_CLEAN_CHOPS_45_4129F71F.wem</Path>
 				</File>
 				<File Id="931050785" Language="SFX">
 					<ShortName>Texture_2.wav</ShortName>
-					<Path>SFX\Texture_2_81B5E54C_41A19A46.wem</Path>
-				</File>
-				<File Id="933208533" Language="SFX">
-					<ShortName>Ilmarinen,blacksmith,forge,handgrinder,blade,gritty,scrape,slow,shudder,buzz,wide.wav</ShortName>
-					<Path>SFX\Ilmarinen,blacksmith,forge,handgrinder,blade,gritty,scrape,slow,shudder,buzz,wide_6296B0F9_2EC6114D.wem</Path>
+					<Path>SFX\Texture_2_B9138BDB_41A19A46.wem</Path>
 				</File>
 				<File Id="956945742" Language="SFX">
 					<ShortName>Bluezone_BC0251_heavy_metal_impact_large_tank_01_03.wav</ShortName>
@@ -599,7 +601,7 @@
 				</File>
 				<File Id="993404172" Language="SFX">
 					<ShortName>PM_BB_CLEAN_STABS_15.wav</ShortName>
-					<Path>SFX\PM_BB_CLEAN_STABS_15_64B8A9EC.wem</Path>
+					<Path>SFX\PM_BB_CLEAN_STABS_15_3612F402.wem</Path>
 				</File>
 				<File Id="1010118877" Language="SFX">
 					<ShortName>Whoosh_Swing_Fishing Pole_Full_Fienup_CLASSIC_001.wav</ShortName>

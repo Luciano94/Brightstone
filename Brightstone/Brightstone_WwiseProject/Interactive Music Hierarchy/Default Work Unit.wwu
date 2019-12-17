@@ -50,7 +50,7 @@
 									</PropertyList>
 									<ConversionPluginInfoList>
 										<ConversionPluginInfo Platform="Mac">
-											<ConversionPlugin Name="" ID="{B2E87DC0-A66C-44D0-AB37-BD3FA69C9C1A}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+											<ConversionPlugin Name="" ID="{CC188D72-F7E2-4703-8BB3-59284CF6A26A}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
 										</ConversionPluginInfo>
 										<ConversionPluginInfo Platform="Windows">
 											<ConversionPlugin Name="" ID="{1FEE8144-4A9C-4705-A5D3-FB13303CF696}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
@@ -3481,7 +3481,7 @@
 											</PropertyList>
 											<ConversionPluginInfoList>
 												<ConversionPluginInfo Platform="Mac">
-													<ConversionPlugin Name="" ID="{77DC919C-BEFE-468C-AFCD-622EFEDE3E83}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
+													<ConversionPlugin Name="" ID="{590B9E71-761C-4C86-B5BF-970B9F6CEA9A}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
 												</ConversionPluginInfo>
 												<ConversionPluginInfo Platform="Windows">
 													<ConversionPlugin Name="" ID="{531ED10D-C66E-4986-98DD-D3BC6EB2E3E0}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
@@ -27587,7 +27587,6 @@
 															<PropertyList>
 																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<ReferenceList/>
 															<TransitionInfo/>
 														</MusicTransition>
 													</TransitionList>
@@ -28449,7 +28448,6 @@
 															<PropertyList>
 																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<ReferenceList/>
 															<TransitionInfo/>
 														</MusicTransition>
 													</TransitionList>
@@ -28647,7 +28645,6 @@
 															<PropertyList>
 																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
-															<ReferenceList/>
 															<TransitionInfo/>
 														</MusicTransition>
 													</TransitionList>

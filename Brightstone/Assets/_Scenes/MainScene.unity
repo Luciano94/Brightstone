@@ -19960,7 +19960,7 @@ PrefabInstance:
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 619709238413672980, guid: e817498a42f5e7c4c89c3f6f12462b56,
         type: 3}
@@ -26256,6 +26256,7 @@ MonoBehaviour:
     size: {x: 0, y: 0}
     radius: 3.65
   standsManager: {fileID: 1099206258}
+  initCombos: 00000000020000000400000005000000
 --- !u!1 &2126348686
 GameObject:
   m_ObjectHideFlags: 0

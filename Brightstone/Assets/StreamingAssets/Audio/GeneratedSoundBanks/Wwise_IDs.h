@@ -54,6 +54,9 @@ namespace AK
         static const AkUniqueID PLAYERPARRYHIT = 410952847U;
         static const AkUniqueID PLAYERRESPAWN = 667982098U;
         static const AkUniqueID PLAYERSHURIKENHIT = 3382292410U;
+        static const AkUniqueID PLAYERXPNOTEOFF = 2853668869U;
+        static const AkUniqueID PLAYERXPNOTEON = 3620593657U;
+        static const AkUniqueID POSTMORTEM = 2334676971U;
         static const AkUniqueID ROOMBOSSENTER = 4149955699U;
         static const AkUniqueID ROOMCLEAR = 1974576135U;
         static const AkUniqueID ROOMIBOSSENTER = 1109341308U;

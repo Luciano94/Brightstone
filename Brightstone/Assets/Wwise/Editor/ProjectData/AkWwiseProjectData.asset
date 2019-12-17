@@ -17,27 +17,27 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: ad8241c2b978994fa8ea8e8f74ce1dd3
     GuidInternal: 
-    m_lastTime: -8586297630974775808
+    m_lastTime: -8586250605361702959
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: b814c665a7c1b34999f3481aee659b0e
     GuidInternal: 
-    m_lastTime: -8586251906793540015
+    m_lastTime: -8586250605361555602
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb1ef2048ac69b4e80b19e82dc7d0f3c
     GuidInternal: 
-    m_lastTime: -8586297630974775808
+    m_lastTime: -8586250605363740074
     List: []
   - PhysicalPath: SoundBanks\Main.wwu
     ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
     guid: 14ab29a0355db14aba2233d66358ad72
     GuidInternal: 
-    m_lastTime: -8586251052861956868
+    m_lastTime: -8586250579031136966
     List:
     - name: Level1
       guid: 62b4613584d64041b1d7232e58ed92c7
@@ -54,7 +54,7 @@ MonoBehaviour:
     ParentPhysicalPath: SoundBanks\Default Work Unit.wwu
     guid: 26c2e0a2ad68834a9d717f539c706795
     GuidInternal: 
-    m_lastTime: -8586251449973716576
+    m_lastTime: -8586250605363120402
     List:
     - name: Level1Music
       guid: 5f9015679f669546a979909b22431f03
@@ -83,13 +83,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 36c975ea6045fc43a297f0d4bbe2e39f
     GuidInternal: 
-    m_lastTime: -8586297630974775808
+    m_lastTime: -8586250605360774997
     List: []
   - PhysicalPath: Events\Enemy.wwu
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 96b8f4d569f46e4c98b3d6a2ed1ba32c
     GuidInternal: 
-    m_lastTime: -8586251906799339127
+    m_lastTime: -8586250605361185490
     List:
     - name: BossDeath
       guid: ba24d0133c593347bcf2481348221d14
@@ -105,8 +105,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Enemy\BossDeath
       maxAttenuation: 0
-      maxDuration: 3300000
-      minDuration: 3300000
+      maxDuration: 3.3
+      minDuration: 3.3
     - name: BossSwordAttack
       guid: 3db8c1b24ba34f43bc820459652f652a
       id: 1787276729
@@ -121,8 +121,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Enemy\BossSwordAttack
       maxAttenuation: 0
-      maxDuration: 674835
-      minDuration: 567466
+      maxDuration: 0.674835
+      minDuration: 0.567466
     - name: BossSwordAttackHit
       guid: 57a0d69ed2354341abe2699571f24e49
       id: 2645155380
@@ -169,8 +169,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Enemy\EnemyArcherReleaseBow
       maxAttenuation: 0
-      maxDuration: 566500
-      minDuration: 449631
+      maxDuration: 0.5665
+      minDuration: 0.449631
     - name: EnemyArcherTightBow
       guid: d0e73a9f125b40459ca7750f6f331649
       id: 852912510
@@ -185,8 +185,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Enemy\EnemyArcherTightBow
       maxAttenuation: 0
-      maxDuration: 311999
-      minDuration: 247633
+      maxDuration: 0.311999
+      minDuration: 0.247633
     - name: EnemyMeleeDeath
       guid: accd2c768fe4dc40b2dabc822179bc1f
       id: 1998821965
@@ -217,8 +217,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Enemy\EnemyMeleeSwordAttack
       maxAttenuation: 0
-      maxDuration: 510998
-      minDuration: 341315
+      maxDuration: 0.510998
+      minDuration: 0.341315
     - name: EnemyMeleeSwordAttackHit
       guid: 941c3077dce7714cb3e8b6b7be54ec10
       id: 3667500475
@@ -239,7 +239,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 0530032992570c4b92ec17a849b7dfae
     GuidInternal: 
-    m_lastTime: -8586251906799329132
+    m_lastTime: -8586250605360860256
     List:
     - name: ArrowHit
       guid: f19f11a8d3216443bbcd4f5c8aa03850
@@ -255,8 +255,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\General\ArrowHit
       maxAttenuation: 0
-      maxDuration: 671281
-      minDuration: 598043
+      maxDuration: 0.671281
+      minDuration: 0.598043
     - name: iBossDeath
       guid: 96984bea92f089419bcbbe10ddc6cd27
       id: 3845220853
@@ -321,6 +321,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PostMortem
+      guid: 8926629d2d8f744583164c00fd40ff6c
+      id: 2334676971
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: General
+        ObjectType: 12
+      - ElementName: PostMortem
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\General\PostMortem
+      maxAttenuation: 0
+      maxDuration: 3.824843
+      minDuration: 3.824843
     - name: RoomBossEnter
       guid: 8ca6fcf116aa6e4b94112019ae950b38
       id: 4149955699
@@ -389,13 +405,13 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Default Work Unit.wwu
     guid: 288d9de4f3546d44a991a6328235968e
     GuidInternal: 
-    m_lastTime: -8586297630974775808
+    m_lastTime: -8586250605361091208
     List: []
   - PhysicalPath: Events\Main Menu.wwu
     ParentPhysicalPath: Events\Default Work Unit.wwu
     guid: f7517a353017fa4ab57bfa812502efcf
     GuidInternal: 
-    m_lastTime: -8586251906799319153
+    m_lastTime: -8586250605360715045
     List:
     - name: MenuItemClick
       guid: 68570bc8d10f1647b5a879a3ee254e34
@@ -409,8 +425,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Main Menu\MenuItemClick
       maxAttenuation: 0
-      maxDuration: 1306362
-      minDuration: 978666
+      maxDuration: 1.306362
+      minDuration: 0.978666
     - name: MenuItemHover
       guid: 1bca4cab492a7d43b6cd1e58a9b0bb03
       id: 1220050629
@@ -423,8 +439,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Main Menu\MenuItemHover
       maxAttenuation: 0
-      maxDuration: 2340196
-      minDuration: 1770482
+      maxDuration: 2.340196
+      minDuration: 1.770482
     - name: MenuOpen
       guid: 558646bf9ec4604484d1bcb9c2905867
       id: 48824776
@@ -443,7 +459,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Level 1.wwu
     guid: 5d7a2c9e7911f3419b9a4fffb92d5afc
     GuidInternal: 
-    m_lastTime: -8586251054989569025
+    m_lastTime: -8586250599150992316
     List:
     - name: PlayerAttackA
       guid: f5a15b361b6a89469d436d0016d525bb
@@ -459,8 +475,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackA
       maxAttenuation: 0
-      maxDuration: 510255
-      minDuration: 238884
+      maxDuration: 0.510255
+      minDuration: 0.238884
     - name: PlayerAttackAx7
       guid: a2df071edffb5048a6acbaf84207d3c3
       id: 2408535852
@@ -475,8 +491,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackAx7
       maxAttenuation: 0
-      maxDuration: 504239
-      minDuration: 442785
+      maxDuration: 0.484448
+      minDuration: 0.425406
     - name: PlayerAttackB
       guid: a0b524317e36ec42ba70bd3461b89ea1
       id: 3417697016
@@ -491,8 +507,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackB
       maxAttenuation: 0
-      maxDuration: 669299
-      minDuration: 366228
+      maxDuration: 0.669299
+      minDuration: 0.366228
     - name: PlayerAttackHeavy
       guid: 45ee8ed3d6c6be4cb0936ab7ef119f92
       id: 3914790867
@@ -507,8 +523,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackHeavy
       maxAttenuation: 0
-      maxDuration: 404411
-      minDuration: 334536
+      maxDuration: 0.404411
+      minDuration: 0.334536
     - name: PlayerAttackHeavyHit
       guid: 38eaab354abf2c418763e17925a7a002
       id: 1687189050
@@ -539,8 +555,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackLight
       maxAttenuation: 0
-      maxDuration: 510255
-      minDuration: 238884
+      maxDuration: 0.510255
+      minDuration: 0.238884
     - name: PlayerAttackLight2
       guid: d3294ab808fc764e829ea8350fdb6a2d
       id: 146436428
@@ -571,8 +587,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackLightHit
       maxAttenuation: 0
-      maxDuration: 1500720
-      minDuration: 1027745
+      maxDuration: 1.560893
+      minDuration: 1.055132
     - name: PlayerAttackX
       guid: 1044eb5c4c7e4e4ab18cdcc062ba1841
       id: 3417696994
@@ -587,8 +603,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackX
       maxAttenuation: 0
-      maxDuration: 284402
-      minDuration: 186529
+      maxDuration: 0.284402
+      minDuration: 0.186529
     - name: PlayerAttackXx5
       guid: da891193798c09408a63376d0a4e74f2
       id: 2572221999
@@ -603,8 +619,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackXx5
       maxAttenuation: 0
-      maxDuration: 1059463
-      minDuration: 917004
+      maxDuration: 0.280754
+      minDuration: 0.243003
     - name: PlayerAttackY
       guid: 24f04b9f49c33f41881f0dcbe6f22bda
       id: 3417696995
@@ -619,8 +635,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackY
       maxAttenuation: 0
-      maxDuration: 404411
-      minDuration: 334536
+      maxDuration: 0.404411
+      minDuration: 0.334536
     - name: PlayerAttackYx5
       guid: ac0735435d41fc409665f4007ad4322a
       id: 2404592838
@@ -635,8 +651,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerAttackYx5
       maxAttenuation: 0
-      maxDuration: 705638
-      minDuration: 512678
+      maxDuration: 0.705638
+      minDuration: 0.512678
     - name: PlayerComboA1
       guid: aec7b0f3be29be47804e3da4f4ec062c
       id: 2487527450
@@ -651,8 +667,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboA1
       maxAttenuation: 0
-      maxDuration: 576030
-      minDuration: 576030
+      maxDuration: 0.57603
+      minDuration: 0.57603
     - name: PlayerComboA2
       guid: 66ba85795234cf45960dd59a7cfa757f
       id: 2487527449
@@ -667,8 +683,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboA2
       maxAttenuation: 0
-      maxDuration: 624716
-      minDuration: 624716
+      maxDuration: 0.624716
+      minDuration: 0.624716
     - name: PlayerComboA3
       guid: 66e1023605978f4593982817eaafb3cf
       id: 2487527448
@@ -683,8 +699,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboA3
       maxAttenuation: 0
-      maxDuration: 607705
-      minDuration: 607705
+      maxDuration: 0.607705
+      minDuration: 0.607705
     - name: PlayerComboA4
       guid: a8d2b70338c1504ca6a2942f5ad9e92f
       id: 2487527455
@@ -699,8 +715,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboA4
       maxAttenuation: 0
-      maxDuration: 718244
-      minDuration: 718244
+      maxDuration: 0.718244
+      minDuration: 0.718244
     - name: PlayerComboB1
       guid: afd5c516e6d8d34d86cd9ce22165f26c
       id: 2504305039
@@ -715,8 +731,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboB1
       maxAttenuation: 0
-      maxDuration: 304815
-      minDuration: 224399
+      maxDuration: 0.304815
+      minDuration: 0.224399
     - name: PlayerComboB2
       guid: 4f07c409cdf7f9409facfd4151cf73dc
       id: 2504305036
@@ -731,8 +747,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboB2
       maxAttenuation: 0
-      maxDuration: 304815
-      minDuration: 224399
+      maxDuration: 0.304815
+      minDuration: 0.224399
     - name: PlayerComboB3
       guid: 668599671d4ec643b3e4b2046effbb5a
       id: 2504305037
@@ -747,8 +763,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboB3
       maxAttenuation: 0
-      maxDuration: 304815
-      minDuration: 224399
+      maxDuration: 0.304815
+      minDuration: 0.224399
     - name: PlayerComboB4
       guid: cfe71ef127194840a4b9173a5c981646
       id: 2504305034
@@ -763,8 +779,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboB4
       maxAttenuation: 0
-      maxDuration: 304815
-      minDuration: 224399
+      maxDuration: 0.304815
+      minDuration: 0.224399
     - name: PlayerComboB5
       guid: 8a5425c2c4f5a94f85e2d2aff4f4afcd
       id: 2504305035
@@ -779,8 +795,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerComboB5
       maxAttenuation: 0
-      maxDuration: 417976
-      minDuration: 341469
+      maxDuration: 0.417976
+      minDuration: 0.341469
     - name: PlayerDamaged
       guid: 5704baf9aa4fa543a022525405cb16a4
       id: 4055688079
@@ -795,8 +811,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerDamaged
       maxAttenuation: 0
-      maxDuration: 1090508
-      minDuration: 745061
+      maxDuration: 1.090508
+      minDuration: 0.424454
     - name: PlayerDash
       guid: d3d0ea7bef30af4ca8f538dee718ca26
       id: 2525052962
@@ -811,8 +827,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerDash
       maxAttenuation: 0
-      maxDuration: 289544
-      minDuration: 216913
+      maxDuration: 0.379596
+      minDuration: 0.284376
     - name: PlayerDeath
       guid: 9bb0d3e5778a314a95d3db1947b83c67
       id: 1656947812
@@ -827,8 +843,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerDeath
       maxAttenuation: 0
-      maxDuration: 5087039
-      minDuration: 4857316
+      maxDuration: 5.087039
+      minDuration: 4.857316
     - name: PlayerGetsSoul
       guid: 385ec3df3e04904fbadeded41a4482ad
       id: 2506589132
@@ -843,8 +859,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerGetsSoul
       maxAttenuation: 0
-      maxDuration: 923794
-      minDuration: 712343
+      maxDuration: 0.541079
+      minDuration: 0.417229
     - name: PlayerLvlUp
       guid: 182db8c9b36c294a9e96df133d80e3fb
       id: 3526874771
@@ -859,8 +875,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerLvlUp
       maxAttenuation: 0
-      maxDuration: 750169
-      minDuration: 750169
+      maxDuration: 3.03043
+      minDuration: 2.142838
     - name: PlayerParry
       guid: b4839d79ebd0504e91f2636f5dd3ad67
       id: 878262600
@@ -907,8 +923,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerRespawn
       maxAttenuation: 0
-      maxDuration: 7430093
-      minDuration: 7430093
+      maxDuration: 7.430093
+      minDuration: 7.430093
     - name: PlayerShurikenHit
       guid: 4fbd014530fcac45b092a4fbfffe00ad
       id: 3382292410
@@ -923,8 +939,40 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Level 1\Player\PlayerShurikenHit
       maxAttenuation: 0
-      maxDuration: 804281
-      minDuration: 568712
+      maxDuration: 0.804281
+      minDuration: 0.568712
+    - name: PlayerXPNoteOff
+      guid: ecf5f574e6624a4e8204de129d9c0c54
+      id: 2853668869
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerXPNoteOff
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerXPNoteOff
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: PlayerXPNoteOn
+      guid: 9916ca41f5f68a409d52ad6f7a4e1b35
+      id: 3620593657
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level 1
+        ObjectType: 12
+      - ElementName: Player
+        ObjectType: 12
+      - ElementName: PlayerXPNoteOn
+        ObjectType: 3
+      Path: Default Work Unit\Level 1\Player\PlayerXPNoteOn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: SelectAttA
       guid: 58538ba17a23ea47b8466834606276af
       id: 4283005579
@@ -977,7 +1025,7 @@ MonoBehaviour:
     ParentPhysicalPath: Events\Default Work Unit.wwu
     guid: 6a858d6961773543b61ce5190f25495f
     GuidInternal: 
-    m_lastTime: -8586251906799309150
+    m_lastTime: -8586250605361031128
     List:
     - name: SynopsisOpen
       guid: 0a88d71ddb466746b90453252875f0ad
@@ -991,14 +1039,14 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Synopsis\SynopsisOpen
       maxAttenuation: 0
-      maxDuration: 56696144
-      minDuration: 56696144
+      maxDuration: 56.696144
+      minDuration: 56.696144
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: f0c1bca2a5f04f45be9cc3d681b484d5
     GuidInternal: 
-    m_lastTime: -8586251083653844677
+    m_lastTime: -8586250605362130589
     List:
     - name: BossHP
       guid: 2e46467507cf6841be5c190c3fda92ee
@@ -1050,7 +1098,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a4ce803c444d3b4cb304267510edd8a5
     GuidInternal: 
-    m_lastTime: -8586251906787146385
+    m_lastTime: -8586250605360910101
     List:
     - name: Enemy
       guid: 62a9cc7ffe813d47830482fbf2f2441b
@@ -1162,7 +1210,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 3bbddb8cc69e5245a6555283c02cff6a
     GuidInternal: 
-    m_lastTime: -8586251906787136394
+    m_lastTime: -8586250605360971250
     List:
     - name: Activity
       guid: b9657fb4114a194c8544d490bace00f4
@@ -1403,7 +1451,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 9298ad969a164a43be2e5a54d7d3fabf
     GuidInternal: 
-    m_lastTime: -8586297630974775808
+    m_lastTime: -8586250605362180704
     List: []
   ExpandedItems:
   - /Brightstone_WwiseProject

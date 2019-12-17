@@ -217,7 +217,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="PlayerXP" ID="{A49FC481-BBCA-485B-8072-ADC41CC5C27C}"/>
-							<Value>0</Value>
+							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
