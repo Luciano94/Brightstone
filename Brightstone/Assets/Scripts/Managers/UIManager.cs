@@ -296,6 +296,7 @@ public class UIManager : MonoBehaviour{
 
     public void RunKanjiAnim(){
         Animator anim = youDieImg.GetComponent<Animator>();
+        SoundManager.Instance.PostMortem();
 
         anim.SetTrigger("Run");
     }

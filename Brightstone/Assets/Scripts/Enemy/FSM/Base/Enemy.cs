@@ -149,6 +149,9 @@ public class Enemy : EnemyBase{
     }
 
     protected override void OnHit(){
+        if (enemyStats.enemyType == EnemyType.Boss)
+            return;
+
         enemyMovement.IsMovingForward = true;
         enemyMovement.PrepareVariables(playerPos);
         if(fsm.GetState() == (int)States.Wait)

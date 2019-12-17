@@ -55,8 +55,8 @@ MonoBehaviour:
   minDistanceToChase: 40
   minDistanceToAttack: 3.2
   timeRelocating: 0
-  timeParalyzedForHit: 0.1
-  timeParalyzedForParry: 1.5
+  timeParalyzedForHit: 0
+  timeParalyzedForParry: 0.2
   enemyIndex: -1
   feinting: 0
   isMyAttackingTurn: 0
