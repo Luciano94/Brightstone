@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistanceToChase: 40
-  minDistanceToAttack: 3
+  minDistanceToAttack: 3.2
   timeRelocating: 0
   timeParalyzedForHit: 0.1
   timeParalyzedForParry: 1.5
