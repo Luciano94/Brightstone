@@ -3,32 +3,32 @@
 	<Platform GUID="{91718346-02A5-443C-BCA5-79732E5C68B3}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="2405799485" Timestamp="1576507882"/>
-				<File Name="Level1" Hash="508936456" Timestamp="1576507868"/>
-				<File Name="Level1Music" Hash="3238340867" Timestamp="-1"/>
-				<File Name="MainMenu" Hash="537979757" Timestamp="1576507882"/>
+				<File Name="Init" Hash="2821339659" Timestamp="1571857657"/>
+				<File Name="Level1" Hash="2701489120" Timestamp="1571857656"/>
+				<File Name="Level1Music" Hash="3074979745" Timestamp="1571857657"/>
+				<File Name="MainMenu" Hash="3448829121" Timestamp="1571857657"/>
 				<File Name="MainScene" Hash="368531230" Timestamp="1569382153"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1688073598" Timestamp="1576509154"/>
+				<File Name="" Hash="3180335654" Timestamp="1571857657"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{8A9DF881-5B17-45CE-8930-446D9EA26387}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Init" Hash="2546955703" Timestamp="1576501590"/>
-				<File Name="Level1" Hash="1833244148" Timestamp="1576501590"/>
-				<File Name="Level1Music" Hash="724976204" Timestamp="1576461885"/>
-				<File Name="MainMenu" Hash="3643402777" Timestamp="1576501590"/>
+				<File Name="Init" Hash="3446793360" Timestamp="1576541661"/>
+				<File Name="Level1" Hash="1365679699" Timestamp="1576541423"/>
+				<File Name="Level1Music" Hash="2342022123" Timestamp="1576541661"/>
+				<File Name="MainMenu" Hash="2787947504" Timestamp="1576541661"/>
 				<File Name="MainScene" Hash="642641627" Timestamp="1570670796"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1844406257" Timestamp="1576507883"/>
+				<File Name="" Hash="3370813705" Timestamp="1576541661"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

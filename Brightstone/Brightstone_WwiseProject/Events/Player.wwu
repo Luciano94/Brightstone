@@ -462,7 +462,7 @@
 						<Action Name="" ID="{C83CB23C-DE8C-4547-B212-0597C579B166}" ShortID="341497455">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="zapsplat_sound_design_etheral_breathing_fantasy_spooky" ID="{C062B082-6D1D-49D8-BF23-78F62418761B}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+									<ObjectRef Name="getSoul" ID="{C062B082-6D1D-49D8-BF23-78F62418761B}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -481,6 +481,13 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="PlayerXPLvlUp" ID="{B0125424-8842-4921-A178-0D99DF967DF3}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{88ED65AB-8067-499C-87C7-0BFD144E5F63}" ShortID="172748046">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)" ID="{0EF5CAFC-12C7-449E-A53A-B8EC55D018F6}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
