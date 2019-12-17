@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9A0BC1A8-0433-40A4-AC44-9FB56BE93706}" SchemaVersion="94" RootDocumentID="{13B655B3-8F48-48FF-891B-57CAF533CEAC}">
+	<AudioObjects>
+		<WorkUnit Name="Main Menu" ID="{9A0BC1A8-0433-40A4-AC44-9FB56BE93706}" OwnerID="{7A7C6E6A-641E-4422-A2E0-4FCAF9234A00}" PersistMode="Nested">
+			<ChildrenList>
+				<RandomSequenceContainer Name="ClickButton" ID="{7B581813-42D1-4534-BB0E-4BE31E3B9433}" ShortID="465302137">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Select" ID="{83D6DEEB-7FBC-463E-B70B-4C5A810F3D3D}" ShortID="587416115">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>17</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>58</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2CC02D76-6F21-4AB6-8C87-6D37B1462D45}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="500"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="Effect0">
+									<Custom>
+										<Effect Name="Wwise_Gain_(Custom)" ID="{B4FECF4C-FE39-435E-A1CB-439AC49F3CD1}" ShortID="73757431" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+											<PropertyList>
+												<Property Name="FullBandGain" Type="Real32" Value="24"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+								<Reference Name="Effect1">
+									<Custom>
+										<Effect Name="Wwise_RoomVerb_(Custom)" ID="{CDA2C43A-0219-4D35-A396-C5FD97CD1A9E}" ShortID="148307965" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<PropertyList>
+												<Property Name="DecayTime" Type="Real32" Value="3.2"/>
+												<Property Name="Density" Type="Real32" Value="100"/>
+												<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+												<Property Name="HFDamping" Type="Real32" Value="0.5"/>
+												<Property Name="PreDelay" Type="Real32" Value="0"/>
+												<Property Name="ReverbLevel" Type="Real32" Value="-24"/>
+												<Property Name="RoomShape" Type="Real32" Value="39"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Select" ID="{F130D97D-F1F2-447B-B910-A267A2101011}" ShortID="280837918">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.011865524060646"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.575342465753425"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.013843111404087"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.32020547945206"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Select.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Select" ID="{F130D97D-F1F2-447B-B910-A267A2101011}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="HoverButton" ID="{B84CB67D-449F-4E60-B725-0AA04402A1A7}" ShortID="883656703">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>14</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
+						<Property Name="OverrideEffect" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>630</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2AD03DE4-8441-4CD5-913A-F815B521AD46}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise_Gain_(Custom)" ID="{6A408BDF-F092-42A8-9B65-78ED321104E7}" ShortID="386284830" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<PropertyList>
+										<Property Name="FullBandGain" Type="Real32" Value="24"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="Effect1">
+							<Custom>
+								<Effect Name="Wwise_RoomVerb_(Custom)" ID="{CA335F81-27C7-4C7C-BF29-30464EE1823D}" ShortID="910064734" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<PropertyList>
+										<Property Name="DecayTime" Type="Real32" Value="0.7"/>
+										<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+										<Property Name="HFDamping" Type="Real32" Value="4.95"/>
+										<Property Name="PreDelay" Type="Real32" Value="0"/>
+										<Property Name="ReverbLevel" Type="Real32" Value="-18"/>
+										<Property Name="RoomShape" Type="Real32" Value="73"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Press 1" ID="{0783288A-9799-4227-B36E-0C6F0539CFCF}" ShortID="585944586">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Press" ID="{4E455415-46D2-451B-A3D4-C5461545E639}" ShortID="162718072">
+									<Language>SFX</Language>
+									<AudioFile>Press.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="544123858"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Press" ID="{4E455415-46D2-451B-A3D4-C5461545E639}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Press 2" ID="{506E6A57-ECA3-445F-941E-B04A9F4BB7CD}" ShortID="579100749">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Press 2" ID="{1E287644-1B6D-4B45-A81B-9FE903BE0A38}" ShortID="47403816">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="7.91034937376401E-03"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.140408701384311"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Press 2.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="299016176"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Press 2" ID="{1E287644-1B6D-4B45-A81B-9FE903BE0A38}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

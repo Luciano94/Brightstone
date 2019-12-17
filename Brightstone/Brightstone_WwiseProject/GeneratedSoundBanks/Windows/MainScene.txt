@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	231747402	PlayerAttackLight			\Default Work Unit\Main Scene\Player\PlayerAttackLight	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	39096638	Fast Action Swish_HW 05 05	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_0FF7B6FF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 05		47876
+	105129647	Fast Action Swish_HW 05 02	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_00D685C2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 02		90944
+	235818575	Fast Action Swish_HW 05 04	F:\GAMES\Brightstone-Development\Brightstone\Brightstone_WwiseProject\.cache\Windows\SFX\Fast Action Swish_HW 05_FB2E39BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Player\AttackLight\Fast Action Swish_HW 05 04		82504
+

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}" SchemaVersion="94">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{8CDBBD3B-9EC6-4552-A655-5283C02CFF6A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="PlayerHealth" ID="{EEA10D1D-AF70-447C-94AA-5F6E492F3ED2}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Healthy" ID="{5514E07F-F5D7-4A0E-A8F3-6EF3B203C42E}"/>
+						<Switch Name="FleshWound" ID="{C3ADF8B7-9C90-4283-9FFF-66FF1FA7638D}"/>
+						<Switch Name="BadlyInjured" ID="{F84FB14C-64A2-40C7-B303-01ED32091F72}"/>
+						<Switch Name="NearlyDead" ID="{AAF6DB31-7C56-445F-A34E-0E96582E8B48}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="PlayerHP" ID="{F5BBC1D2-ED47-487D-BD45-20387DD58974}"/>
+						<Curve Name="" ID="{1DABDE1C-7FCC-4688-9437-B920380B50DB}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>4</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>20</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>50</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>80</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="BossHealth" ID="{1963E85B-3182-41E7-8F49-1B364DC2D837}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Healthy" ID="{1D921274-AAE5-4CE8-B0C0-C73E258318FE}"/>
+						<Switch Name="FleshWound" ID="{767EDBD8-E916-4BAB-B83B-BEDE358A1386}"/>
+						<Switch Name="BadlyInjured" ID="{FA8D6DF2-61D1-4A60-8CD1-40D5343835A5}"/>
+						<Switch Name="NearlyDead" ID="{3DE4C67C-C038-44FE-A2E3-9D0DC7EAA9F5}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="BossHP" ID="{7546462E-CF07-4168-BE5C-190C3FDA92EE}"/>
+						<Curve Name="" ID="{6D66FC5D-15F8-4671-AAEE-16803F22D169}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>4</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>20</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>50</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>80</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="Stage" ID="{D63FD718-8828-489D-9335-63725DE4E4C6}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Common" ID="{D4FFABD7-6833-4551-8913-DC26F4BCFBE6}"/>
+						<Switch Name="Finale" ID="{FD9E425D-02A5-4143-8076-06A348CBD9C1}"/>
+						<Switch Name="iBoss" ID="{7CE748B3-53C0-4419-9636-15FB9243B4B9}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+						<Curve Name="" ID="{A85ED7E3-B1DD-4AC2-8EAF-63EAF8F9C5F8}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>9</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="Progress" ID="{9CCDB4C5-0A41-44D3-9A69-F12ADFB2695B}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="OneThird" ID="{44B9BC3D-1E3C-44A1-BB0E-1080528B1100}"/>
+						<Switch Name="TwoThirds" ID="{13D27A62-BAFF-4C80-A9F9-071719471AE5}"/>
+						<Switch Name="ThreeThirds" ID="{24EDEA55-0957-458A-8199-7192805AD975}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+						<Curve Name="" ID="{AEDE545B-F939-4BB7-87D1-961D0E18B93F}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>6</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>9</XPos>
+									<YPos>3</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="Activity" ID="{B47F65B9-4A11-4C19-8544-D490BACE00F4}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Shanobi" ID="{FD8ADEF4-E834-49F4-A640-4CF4FD271B6D}"/>
+						<Switch Name="Tourist" ID="{5C0755A8-BD73-4593-B41A-019E6674AB2F}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="ExploreTimer" ID="{BA759023-BC72-4926-96FA-06D153456973}"/>
+						<Curve Name="" ID="{0DAC229E-201B-4AED-9EA4-68D8DC73135A}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>2</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>60</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="ProgressDot" ID="{9DC187A8-CCEC-4809-B3C7-25B4ADBCED8A}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Cero" ID="{AC1FEA4F-C7E3-44DB-988B-6A2BDE515210}"/>
+						<Switch Name="One" ID="{E7F07B02-E27E-4B91-AA79-9ADFE476E157}"/>
+						<Switch Name="Two" ID="{41E836EF-E759-4B9E-B7EB-BA4BE5C8094F}"/>
+						<Switch Name="Three" ID="{72A324D7-9BFE-4246-A8E5-11B0960341C7}"/>
+						<Switch Name="Four" ID="{6451EE86-0C58-4F9C-AB60-37DAF0B011E6}"/>
+						<Switch Name="Five" ID="{791DE295-0AF1-41DF-B838-E87A52CC03A4}"/>
+						<Switch Name="Six" ID="{D1AA3B08-2E08-409A-8889-A1689FAC9FC5}"/>
+						<Switch Name="Seven" ID="{4CCBC81B-7FB5-4211-8DAF-08CB1126D811}"/>
+						<Switch Name="Eight" ID="{E917F056-4F62-41F0-9207-32B8E78593B5}"/>
+						<Switch Name="Nine" ID="{FA118D6B-8451-42D4-95F5-C9C09A16018C}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}"/>
+						<Curve Name="" ID="{DBC25EF6-E70B-4C2D-AE7F-A2FE5463E45A}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
+									<YPos>4</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>4</XPos>
+									<YPos>5</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>5</XPos>
+									<YPos>6</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>6</XPos>
+									<YPos>7</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>7</XPos>
+									<YPos>8</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>8</XPos>
+									<YPos>9</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>9</XPos>
+									<YPos>10</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Arrow
+  - Enemy
+  - Wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - MiniMap
+  - Map
+  - Player
+  - Market
+  - PlayerWeapon
+  - EnemyWeapon
+  - Enemy
+  - MapHide
+  - ObjHide
+  - EnemyHide
+  - PostProcessing
+  - PopUp
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 3609244217
+    locked: 0
+  - name: Player
+    uniqueID: 3520651647
+    locked: 0
+  - name: Walls
+    uniqueID: 3288033329
+    locked: 0

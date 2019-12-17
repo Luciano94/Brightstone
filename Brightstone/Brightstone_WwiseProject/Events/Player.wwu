@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" SchemaVersion="94" RootDocumentID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}">
+	<Events>
+		<WorkUnit Name="Player" ID="{9E2C7A5D-1179-41F3-9B9A-4FFFB92D5AFC}" OwnerID="{E49D8D28-54F3-446D-A991-A6328235968E}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="PlayerAttackHeavy" ID="{D38EEE45-C6D6-4CBE-B093-6AB7EF119F92}">
+					<ChildrenList>
+						<Action Name="" ID="{E600EA8C-DF75-47B9-AB6C-3FA814A3AFF3}" ShortID="1037417797">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackY" ID="{D5016600-0144-4D25-A906-62EC1177D110}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackHeavyHit" ID="{35ABEA38-BF4A-412C-8763-E17925A7A002}">
+					<ChildrenList>
+						<Action Name="" ID="{7EA9E20C-4171-4D71-8290-0E30820652BA}" ShortID="886295524">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackLight" ID="{86854D8F-11F5-47FC-8254-C233DA9745CF}">
+					<ChildrenList>
+						<Action Name="" ID="{00E8E8BB-613C-49AC-947A-5468855C835E}" ShortID="429604087">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackA" ID="{7C6053B9-E920-4469-9185-943A2CA75385}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackLightHit" ID="{E97C5B9D-2968-48B4-B1D9-71537F3DA321}">
+					<ChildrenList>
+						<Action Name="" ID="{0FEAB690-5BB9-4E8E-B7F1-3D88C0B84EA2}" ShortID="187076106">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerAttackLightHit" ID="{40707B69-676E-45E9-89D3-E675903579CF}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerDamaged" ID="{F9BA0457-4FAA-43A5-A022-525405CB16A4}">
+					<ChildrenList>
+						<Action Name="" ID="{C483BAA1-BE2F-4C30-9E63-61A74A16566C}" ShortID="414986960">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerDamaged" ID="{0E35AC91-9934-4DCF-8D64-808B983FFDFC}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerDeath" ID="{E5D3B09B-8A77-4A31-95D3-DB1947B83C67}">
+					<ChildrenList>
+						<Action Name="" ID="{A2AA81AB-8441-42A2-B462-F36AAE6BF6E2}" ShortID="139782530">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0832AAE8-6060-4F4B-9F76-2EA9F2DC5188}" ShortID="338288023">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerDeath" ID="{ADFA9BBA-319E-4598-8DEE-00A0B0670A00}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{CEAC1B9C-544B-45EF-A906-46151429BF52}" ShortID="965109">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerDeath_01" ID="{110FB941-3D76-4930-A22F-361C9C93AEC4}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerParry" ID="{799D83B4-D0EB-4E50-91F2-636F5DD3AD67}">
+					<ChildrenList>
+						<Action Name="" ID="{7C7E152D-DD27-4A28-91A2-A7C6E9A523B9}" ShortID="548177792">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Missing" ID="{96B59B82-E50D-4F31-8E84-D3AB15C2B710}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerParryHit" ID="{454F48E8-6B3C-4827-BEDB-81C29AB0A56E}">
+					<ChildrenList>
+						<Action Name="" ID="{2A6D79DF-0A99-4992-97B8-B6BD094BFC1B}" ShortID="319906740">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerParryHit" ID="{B41CC2A8-2AF2-4189-9259-317F39822C3F}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerRespawn" ID="{ECA6A6CC-9404-4325-A60A-5A975B3B013B}">
+					<ChildrenList>
+						<Action Name="" ID="{950D06C0-63B6-41A2-8493-AA56D8C101EC}" ShortID="89964652">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Common" ID="{6869292D-4FE8-4C28-ABD0-BA84644F36B1}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{61DFCEA5-6CCE-45D9-A29F-F18E9D0364EC}" ShortID="1015138622">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RoomsCleared" ID="{3D615C92-1410-47B9-B65E-6484BC7317EE}" WorkUnitID="{A2BCC1F0-F0A5-454F-BE9C-C3D681B484D5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{83F185A8-1E36-40D5-927E-F269ABADB6C1}" ShortID="1019455322">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Explore" ID="{79D19700-6F32-4420-842F-76D9979B57E2}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{60F8B360-28D7-4F83-9A1F-4D0B736B820A}" ShortID="189296600">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}" WorkUnitID="{3C80CEA4-4D44-4C3B-B304-267510EDD8A5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3DFE747D-4BB1-48C1-BBE5-FAAFA43BD74C}" ShortID="699548433">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Respawn" ID="{EA8BDE34-5EB2-4EB9-937D-F05C46BECBC3}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerDash" ID="{7BEAD0D3-30EF-4CAF-A8F5-38DEE718CA26}">
+					<ChildrenList>
+						<Action Name="" ID="{B36BEB2A-0EB3-49AA-847E-5D701C502A18}" ShortID="70168942">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dash" ID="{6C869272-9AD6-412E-BD80-2A37A1FA96A0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SelectAttX" ID="{E59FEE0B-959F-4857-957A-E812D4DD6D95}">
+					<ChildrenList>
+						<Action Name="" ID="{6C603D43-DEE2-47C7-B02D-2037835B1BE8}" ShortID="424324428">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectX" ID="{93CFC3B1-313E-45F6-8953-59984FF4E4C6}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SelectAttA" ID="{A18B5358-237A-47EA-B846-6834606276AF}">
+					<ChildrenList>
+						<Action Name="" ID="{F092DEE3-8590-49A8-A286-CFBD0CE77BDC}" ShortID="47830704">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectA" ID="{C6674F08-34FD-4960-8021-510334D3BFB5}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SelectAttSame" ID="{5DF25E88-F05E-4038-BCA8-7F432DF7BC86}">
+					<ChildrenList>
+						<Action Name="" ID="{16CC5D24-FF61-4C7E-9062-85291256AA3C}" ShortID="286000611">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectSame" ID="{ADDF9412-5506-43FF-B1AA-3C29ADEB7D02}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackLight2" ID="{B84A29D3-FC08-4E76-829E-A8350FDB6A2D}">
+					<ChildrenList>
+						<Action Name="" ID="{64895ABE-25EF-456B-985C-88520CFBC425}" ShortID="637161335">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackMulti" ID="{FF752ED2-A145-4DA5-9FC1-6FA9B279F673}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackA" ID="{365BA1F5-6A1B-4689-9D43-6D0016D525BB}">
+					<ChildrenList>
+						<Action Name="" ID="{E888532D-3E99-47A5-BC58-F1531B954158}" ShortID="752101277">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackA" ID="{7C6053B9-E920-4469-9185-943A2CA75385}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackX" ID="{5CEB4410-7E4C-4A4E-B18C-DCC062BA1841}">
+					<ChildrenList>
+						<Action Name="" ID="{97E32BBE-5411-488A-B84C-D7A055AB5621}" ShortID="764282618">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackX" ID="{14F2CCEF-027E-4DF6-B8D9-A9401EC2B12C}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackY" ID="{9F4BF024-C349-413F-881F-0DCBE6F22BDA}">
+					<ChildrenList>
+						<Action Name="" ID="{F08E76FA-A1DD-402E-BA4F-6149945ABB55}" ShortID="263400906">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackY" ID="{D5016600-0144-4D25-A906-62EC1177D110}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackB" ID="{3124B5A0-367E-42EC-BA70-BD3461B89EA1}">
+					<ChildrenList>
+						<Action Name="" ID="{63DFE13D-30C4-439A-81CB-10E1A69C1B30}" ShortID="398371868">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shuriken" ID="{FD0F2167-9E94-4C32-8DE3-9423576A9D4A}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboA1" ID="{F3B0C7AE-29BE-47BE-804E-3DA4F4EC062C}">
+					<ChildrenList>
+						<Action Name="" ID="{550A375C-1E50-4FAA-A3EE-5760AE61174D}" ShortID="318921677">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ComboA1" ID="{2224C556-218D-430C-B1FB-382C612C8229}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboA2" ID="{7985BA66-3452-45CF-960D-D59A7CFA757F}">
+					<ChildrenList>
+						<Action Name="" ID="{855615A1-3A57-408C-B954-0C8AB855332E}" ShortID="563168913">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ComboA2" ID="{7BB59A39-09A5-4F34-85BB-46B0102C5CF8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E84EBF6C-BD96-4D7F-9160-7819066926C6}" ShortID="520012478">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="yah2_01" ID="{FD374215-ADF3-4ECB-BAF6-F3056B18ABE0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboA3" ID="{3602E166-9705-458F-9398-2817EAAFB3CF}">
+					<ChildrenList>
+						<Action Name="" ID="{96FDC489-85D0-4A74-868B-72348E75715D}" ShortID="745520329">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ComboA3" ID="{E20C46D4-CBFA-4314-9B16-D846F32137A8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9A1E9819-29B3-4707-AEC7-381AB2466EFD}" ShortID="111411016">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="yah2_02" ID="{73369A39-FC36-4E21-8E21-0303035329DE}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboA4" ID="{03B7D2A8-C138-4C50-A6A2-942F5AD9E92F}">
+					<ChildrenList>
+						<Action Name="" ID="{2D3CFEE4-58AC-4E58-B56F-66B69375ACC6}" ShortID="454462060">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ComboA4" ID="{908F0A2E-2DEA-46B9-A49D-879176FB56A3}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4F80FBB5-E2AE-4D8D-9DDB-8C7FDAFA615B}" ShortID="252506960">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="yah5" ID="{DDCE4236-7173-447A-B58B-9E1489DC61E6}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A97DCBC2-941D-438B-B439-89FF4CA0B88E}" ShortID="831981482">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="yah2_03" ID="{BE550AC0-7194-4556-9BBB-17DB07466C95}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackAx7" ID="{1E07DFA2-FBDF-4850-A6AC-BAF84207D3C3}">
+					<ChildrenList>
+						<Action Name="" ID="{FB317AFE-CE98-499F-9A70-F1500305565E}" ShortID="720618377">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackAx7" ID="{15F86314-8DAA-4BD7-BEBD-47762EF6B65C}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboB1" ID="{16C5D5AF-D8E6-4DD3-86CD-9CE22165F26C}">
+					<ChildrenList>
+						<Action Name="" ID="{6362EF7C-6BEF-4EC5-B56B-810E5186A87B}" ShortID="431874887">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackXred" ID="{27FB5B2A-F32E-4416-8EDC-D926B509DCD8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboB2" ID="{09C4074F-F7CD-40F9-9FAC-FD4151CF73DC}">
+					<ChildrenList>
+						<Action Name="" ID="{92223D57-F3A2-4681-890F-C23991527F78}" ShortID="769695934">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackXred" ID="{27FB5B2A-F32E-4416-8EDC-D926B509DCD8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboB3" ID="{67998566-4E1D-43C6-B3E4-B2046EFFBB5A}">
+					<ChildrenList>
+						<Action Name="" ID="{836262FB-C5AF-46E5-AA89-C0214A917216}" ShortID="308603193">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackXred" ID="{27FB5B2A-F32E-4416-8EDC-D926B509DCD8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboB4" ID="{F11EE7CF-1927-4048-A4B9-173A5C981646}">
+					<ChildrenList>
+						<Action Name="" ID="{1F6BD8A5-C229-4A63-8A94-AD80EC78DB75}" ShortID="596825206">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackXred" ID="{27FB5B2A-F32E-4416-8EDC-D926B509DCD8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{59F2B42A-2A81-42F2-A5CC-5AD691E11C0E}" ShortID="903132331">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ComboB" ID="{87CD4EEC-B04D-4203-9D5D-179B616B0B66}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackXx5" ID="{931189DA-8C79-4009-8A63-376D0A4E74F2}">
+					<ChildrenList>
+						<Action Name="" ID="{F798F606-C403-4895-B3F6-7B07978383A2}" ShortID="752304216">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackXx5" ID="{09E88E42-4D58-41F8-807E-4AF11B13027B}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerAttackYx5" ID="{433507AC-415D-40FC-9665-F4007AD4322A}">
+					<ChildrenList>
+						<Action Name="" ID="{36DCB8D4-1D8C-4BF1-B8A0-B175F6208526}" ShortID="919568402">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackYx5" ID="{0FC8D335-495C-4424-A99E-B73F358EDEDF}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerComboB5" ID="{C225548A-F5C4-4FA9-85E2-D2AFF4F4AFCD}">
+					<ChildrenList>
+						<Action Name="" ID="{B97E4854-1025-4CC4-956E-A462E75694F1}" ShortID="1045285087">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AttackXred" ID="{27FB5B2A-F32E-4416-8EDC-D926B509DCD8}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{17066D2F-E333-4DF0-BEB5-054F27C79048}" ShortID="307895082">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ComboB" ID="{87CD4EEC-B04D-4203-9D5D-179B616B0B66}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerShurikenHit" ID="{4501BD4F-FC30-45AC-B092-A4FBFFFE00AD}">
+					<ChildrenList>
+						<Action Name="" ID="{2BEDF462-BA68-49BE-AD2A-323630B17A7E}" ShortID="15914516">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerShurikenHit" ID="{215C7DF8-A7A9-478E-9FAD-89A8FAD45501}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerGetsSoul" ID="{DFC35E38-043E-4F90-BADE-DED41A4482AD}">
+					<ChildrenList>
+						<Action Name="" ID="{C83CB23C-DE8C-4547-B212-0597C579B166}" ShortID="341497455">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="getSoul" ID="{C062B082-6D1D-49D8-BF23-78F62418761B}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{96E229F7-7455-41AD-B8F1-B2BDF91076E7}" ShortID="294611041">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerXP" ID="{B557440B-6775-4ECB-AE3A-F0E1F8D50DB3}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerLvlUp" ID="{C9B82D18-6CB3-4A29-9E96-DF133D80E3FB}">
+					<ChildrenList>
+						<Action Name="" ID="{B860D93B-F4CD-43EF-9CB6-E343C157573C}" ShortID="627842105">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerXPLvlUp" ID="{B0125424-8842-4921-A178-0D99DF967DF3}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{88ED65AB-8067-499C-87C7-0BFD144E5F63}" ShortID="172748046">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="skyclad_sound_stab_whoosh_dark_airy_resonant_whistles_152 (1)" ID="{0EF5CAFC-12C7-449E-A53A-B8EC55D018F6}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerXPNoteOn" ID="{41CA1699-F6F5-408A-9D52-AD6F7A4E1B35}">
+					<ChildrenList>
+						<Action Name="" ID="{B47FCF29-61DC-4D05-8591-B42BE990E524}" ShortID="74050941">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerXPTone" ID="{5F5F2247-70A2-4CC9-B606-6CCEBE5586F0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayerXPNoteOff" ID="{74F5F5EC-62E6-4E4A-8204-DE129D9C0C54}">
+					<ChildrenList>
+						<Action Name="" ID="{FFB239DC-50EA-414C-9CFF-2EB287DA819D}" ShortID="614046638">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerXPTone" ID="{5F5F2247-70A2-4CC9-B606-6CCEBE5586F0}" WorkUnitID="{65608CFD-93A4-4C12-A062-E72EA559CA14}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

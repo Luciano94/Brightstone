@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IncrementalBankBuild Version="6" Flags="861300542">
+	<Platform GUID="{91718346-02A5-443C-BCA5-79732E5C68B3}">
+		<Banks>
+			<Language ID="393239870">
+				<File Name="Init" Hash="350631909" Timestamp="1576604384"/>
+				<File Name="Level1" Hash="2804395727" Timestamp="1576599444"/>
+				<File Name="Level1Music" Hash="3367313553" Timestamp="1576607389"/>
+				<File Name="MainMenu" Hash="2587794370" Timestamp="1576599274"/>
+				<File Name="MainScene" Hash="368531230" Timestamp="1569382153"/>
+			</Language>
+		</Banks>
+		<XMLInfo>
+			<Language ID="-1">
+				<File Name="" Hash="3778109974" Timestamp="1576607389"/>
+			</Language>
+		</XMLInfo>
+	</Platform>
+	<Platform GUID="{8A9DF881-5B17-45CE-8930-446D9EA26387}">
+		<Banks>
+			<Language ID="393239870">
+				<File Name="Init" Hash="3429960831" Timestamp="1576604384"/>
+				<File Name="Level1" Hash="2804395727" Timestamp="1576599445"/>
+				<File Name="Level1Music" Hash="3367313553" Timestamp="1576607389"/>
+				<File Name="MainMenu" Hash="2587794370" Timestamp="1576599282"/>
+				<File Name="MainScene" Hash="642641627" Timestamp="1570670796"/>
+			</Language>
+		</Banks>
+		<XMLInfo>
+			<Language ID="-1">
+				<File Name="" Hash="1711325824" Timestamp="1576607389"/>
+			</Language>
+		</XMLInfo>
+	</Platform>
+</IncrementalBankBuild>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{EA75C936-4560-43FC-A297-F0D4BBE2E39F}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Main Menu" ID="{357A51F7-1730-4AFA-B57B-FA812502EFCF}" PersistMode="Reference"/>
+				<WorkUnit Name="Level 1" ID="{E49D8D28-54F3-446D-A991-A6328235968E}" PersistMode="Reference"/>
+				<WorkUnit Name="Synopsis" ID="{698D856A-7761-4335-B61C-E5190F25495F}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

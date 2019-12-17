@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{13B655B3-8F48-48FF-891B-57CAF533CEAC}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{13B655B3-8F48-48FF-891B-57CAF533CEAC}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="SFX" ID="{7A7C6E6A-641E-4422-A2E0-4FCAF9234A00}" ShortID="365176557">
+					<PropertyList>
+						<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+						<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="Map" ID="{0C354141-45D9-4443-869A-5303252CEE2A}" PersistMode="Reference"/>
+						<WorkUnit Name="Enemy" ID="{92C30F1E-4FE9-4773-B18B-3124FBDC0B37}" PersistMode="Reference"/>
+						<WorkUnit Name="Main Menu" ID="{9A0BC1A8-0433-40A4-AC44-9FB56BE93706}" PersistMode="Reference"/>
+						<WorkUnit Name="Player" ID="{65608CFD-93A4-4C12-A062-E72EA559CA14}" PersistMode="Reference"/>
+					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="PlayerLife" ID="{E880214F-480A-4670-8AD5-DE88DCE5DAA4}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Victory" ID="{48577BE6-46B4-41ED-B2E4-1BFEE335C5CB}"/>
+								<CustomState Name="" ID="{793C5EB6-9638-431F-A2BB-24D05B63ADC5}" ShortID="730514815"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Alive" ID="{807F67A2-1386-4479-8E57-2254955E7969}"/>
+								<CustomState Name="" ID="{83664BBF-1ED1-4467-91DD-CE24B6FD7D9F}" ShortID="80097621"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Dead" ID="{A8773E38-9EBE-4B1C-A600-1A37C954F1B3}"/>
+								<CustomState Name="" ID="{A26BE604-8C33-4D88-B164-58E3AA0782E4}" ShortID="813474113">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="65"/>
+										<Property Name="Volume" Type="Real64" Value="-13"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
+				</ActorMixer>
+				<ActorMixer Name="Voice" ID="{3B225EF4-16ED-44CE-B467-EB467E6B46FB}" ShortID="985325028">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{EB56433A-159C-4579-A789-8431A05150F1}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Synopsis" ID="{5AD24F6D-6848-4232-BB27-69713AF4C937}" ShortID="990293887">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{708A8B9A-DD23-46C2-8B48-63662ECD09A9}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Hall_Large_Dark" ID="{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{65C614B8-C1A7-49B3-99F3-481AEE659B0E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Synopsis" ID="{F609C5A2-7D42-41E7-8638-045AE41EE9DB}" ShortID="585338568">
+									<Language>SFX</Language>
+									<AudioFile>Synopsis.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Synopsis" ID="{F609C5A2-7D42-41E7-8638-045AE41EE9DB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
