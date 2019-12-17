@@ -43,8 +43,6 @@ public class PlayerAnimations : MonoBehaviour{
 
         SoundManager.Instance.PlayerDeath();
 
-        EntityOrderManager.Instance.OnEntityDeath(GetComponent<SpriteRenderer>());
-
         enabled = false;
     }
 
